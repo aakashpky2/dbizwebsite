@@ -11,6 +11,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+import Link from "next/link";
+
 interface ServiceItem {
   name: string;
   path: string;
@@ -48,13 +50,14 @@ const ServiceCard = ({
         <ul className="space-y-3 relative z-10 transition-all duration-300">
           {items.map((item, index) => (
             <li key={index}>
-              <div
-                className="flex items-center group/link text-gray-600 hover:text-dbiz-teal transition-all duration-300 py-1 cursor-default"
+              <Link
+                href={item.path}
+                className="flex items-center group/link text-gray-600 hover:text-dbiz-teal transition-all duration-300 py-1 cursor-pointer"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal/40 group-hover/link:bg-dbiz-teal group-hover/link:w-3 transition-all duration-300 mr-3"></div>
                 <span className="text-sm font-medium tracking-wide leading-relaxed uppercase opacity-85 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-300">{item.name}</span>
                 <ArrowRight className="h-3 w-3 ml-auto opacity-0 -translate-x-2 group-hover/link:opacity-100 group-hover/link:translate-x-0 transition-all duration-300" />
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

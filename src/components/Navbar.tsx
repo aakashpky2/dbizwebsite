@@ -31,7 +31,6 @@ import { cn } from "@/lib/utils";
 
 
 const LOGO_SRC = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   Accordion,
   AccordionContent,
@@ -43,7 +42,7 @@ import {
 const mainNavMenus = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/#about" },
-  { name: "Company Registration", path: "/#services", hasMegaMenu: true },
+  { name: "Company Registration", path: "/#services", hasMegaMenu: true, hidden: true },
   { name: "Registrations", path: "/#services", hasMegaMenu: true, hidden: true },
   { name: "Startups", path: "/#services", hasMegaMenu: true, hidden: true },
   { name: "Intellectual Property", path: "/#services", hasMegaMenu: true, hidden: true },
@@ -145,8 +144,19 @@ const ipMenu = [
   }
 ];
 
+interface MenuItem {
+  name: string;
+  path: string;
+}
+
+interface MenuSection {
+  title: string;
+  icon: React.ReactNode;
+  items: MenuItem[];
+}
+
 // Map main menus to their submenus
-const megaMenuMap: Record<string, typeof startBusinessMenu> = {
+const megaMenuMap: Record<string, MenuSection[]> = {
   "Company Registration": startBusinessMenu,
   "Registrations": registrationsComplianceMenu,
   "Startups": startupMenu,
@@ -163,10 +173,6 @@ const Navbar = () => {
   const closeMenu = () => {
     setOpen(false);
     setActiveMobileMenu(null);
-  };
-
-  const handleMobileMenuClick = (menuName: string) => {
-    setActiveMobileMenu(menuName);
   };
 
   const handleBackClick = () => {
