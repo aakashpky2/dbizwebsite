@@ -1,0 +1,126 @@
+[
+    {
+        "path": "/private-limited",
+        "component": "EnhancedPrivateLimitedPage"
+    },
+    {
+        "path": "/llp",
+        "component": "LLPRegistrationPage"
+    },
+    {
+        "path": "/one-person-company",
+        "component": "OnePersonCompanyPage"
+    },
+    {
+        "path": "/nidhi-company",
+        "component": "NidhiCompanyPage"
+    },
+    {
+        "path": "/producer-company",
+        "component": "ProducerCompanyPage"
+    },
+    {
+        "path": "/nbfc",
+        "component": "NBFCPage"
+    },
+    {
+        "path": "/partnership",
+        "component": "PartnershipPage"
+    },
+    {
+        "path": "/sole-proprietorship",
+        "component": "SoleProprietorshipPage"
+    },
+    {
+        "path": "/12a-80g-registration",
+        "component": "TwelveAEightyGPage"
+    },
+    {
+        "path": "/digital-signature",
+        "component": "DigitalSignaturePage"
+    },
+    {
+        "path": "/tools",
+        "component": "ToolsPage"
+    },
+    {
+        "path": "/gst-registration",
+        "component": "GSTRegistrationPage"
+    },
+    {
+        "path": "/startup-registration",
+        "component": "StartupRegistrationPage"
+    },
+    {
+        "path": "/udyam-msme-registration",
+        "component": "MSMERegistrationPage"
+    },
+    {
+        "path": "/iso-certification",
+        "component": "ISOCertificationPage"
+    },
+    {
+        "path": "/fssai-registration",
+        "component": "FSSAIRegistrationPage"
+    },
+    {
+        "path": "/iec-registration",
+        "component": "IECRegistrationPage"
+    },
+    {
+        "path": "/trade-license",
+        "component": "TradeLicensePage"
+    },
+    {
+        "path": "/drug-license",
+        "component": "DrugLicensePage"
+    },
+    {
+        "path": "/shop-establishment",
+        "component": "ShopEstablishmentPage"
+    },
+    {
+        "path": "/trademark-registration",
+        "component": "TrademarkRegistrationPage"
+    },
+    {
+        "path": "/patent-registration",
+        "component": "PatentRegistrationPage"
+    },
+    {
+        "path": "/copyright-registration",
+        "component": "CopyrightRegistrationPage"
+    },
+    {
+        "path": "/tds-filings",
+        "component": "TDSFilingsPage"
+    },
+    {
+        "path": "/gst-filings",
+        "component": "GSTFilingsPage"
+    },
+    {
+        "path": "/income-tax-filing",
+        "component": "IncomeTaxFilingPage"
+    },
+    {
+        "path": "/mca-compliance",
+        "component": "MCACompliancePage"
+    },
+    {
+        "path": "/admin/login",
+        "component": "AdminLogin"
+    },
+    {
+        "path": "/admin/dashboard",
+        "component": "AdminDashboard"
+    },
+    {
+        "path": "/admin/edit/:service",
+        "component": "ServiceEditor"
+    },
+    {
+        "path": "/admin/llp-editor",
+        "component": "LLPContentEditor"
+    }
+]
