@@ -9,22 +9,12 @@ import {
   X,
   ChevronDown,
   ArrowLeft,
-  ChevronUp,
   Building,
-  Globe,
-  FileText,
   ShieldCheck,
-  BarChart3,
-  Home,
-  Info,
-  Briefcase,
   ClipboardCheck,
   FileCheck,
   LineChart,
   Palette,
-  Wrench,
-  Phone,
-  User,
   Rocket
 } from "lucide-react";
 import { cn } from "@/lib/utils";
