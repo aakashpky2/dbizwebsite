@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import gstCsvData from "@/data/gstRateData.csv";
+import gstCsvData from "@/data/gstRateData.csv?raw";
 
 interface GSTRateItem {
   hsnCode: string;
