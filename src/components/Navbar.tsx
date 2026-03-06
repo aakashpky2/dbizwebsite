@@ -39,10 +39,10 @@ import {
 const mainNavMenus = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/#about" },
-  { name: "Services", path: "/#services", hasMegaMenu: true },
-  { name: "Startups", path: "/#services", hasMegaMenu: true },
-  { name: "IP Services", path: "/#services", hasMegaMenu: true },
-  { name: "Tools", path: "/tools" },
+  { name: "Services", path: "/#services", hasMegaMenu: true, hidden: true },
+  { name: "Startups", path: "/#services", hasMegaMenu: true, hidden: true },
+  { name: "IP Services", path: "/#services", hasMegaMenu: true, hidden: true },
+  { name: "Tools", path: "/tools", hidden: true },
   { name: "Contact", path: "/#contact" },
 ];
 
