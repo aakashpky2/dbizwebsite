@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import { useParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 import ServicePage from "@/components/ServicePage";
 import { getServiceContent } from "@/data/serviceContent";
 import { indianCities } from "@/data/keralaLocations";
@@ -11,27 +11,27 @@ const ServiceDetailPage = () => {
   const params = useParams();
   const service = params?.service as string;
   const location = params?.location as string;
-  
+
   // Get the content for this service
   const serviceContent = getServiceContent(service || "");
-  
+
   // If invalid service path, show 404
   if (!serviceContent) {
     return <NotFound />;
   }
-  
+
   // Check if location is valid (if provided)
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
-  
+
   if (location && !isValidLocation) {
     return <NotFound />;
   }
-  
+
   // If location is provided, we're on a city-specific page
-  const cityName = location 
-    ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) 
+  const cityName = location
+    ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location)
     : "India";
-    
+
   return (
     <ServicePage
       title={serviceContent.title}

@@ -44,7 +44,7 @@ const AboutSection = () => {
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=75"
           alt="About Background"
           className={cn(
-            "absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ease-out z-0",
+            "absolute inset-0 w-full h-full object-cover transition-transform [transition-duration:2000ms] ease-out z-0",
             isVisible ? "scale-105" : "scale-100"
           )}
           loading="eager"

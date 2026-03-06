@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 import LLPServicePage from "@/components/LLPServicePage";
 import { indianCities } from "@/data/keralaLocations";
 import NotFound from "./NotFound";

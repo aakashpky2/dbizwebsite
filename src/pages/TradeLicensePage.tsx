@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";

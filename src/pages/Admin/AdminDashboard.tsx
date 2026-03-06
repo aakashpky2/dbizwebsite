@@ -1,7 +1,7 @@
 
 
 import React, { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 import AdminLayout from "@/components/Admin/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, FileEdit, FileText, Users } from "lucide-react";
@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     if (!isLoggedIn) {
       navigate("/admin/login");
     }
-  }, [router]);
+  }, [navigate]);
 
   const services = [
     {
