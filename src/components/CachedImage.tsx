@@ -8,37 +8,74 @@ interface CachedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   alt: string;
   className?: string;
   wrapperClassName?: string;
+  shimmerClassName?: string;
+  // Architecture: Zero-Gravity Principle - Reserve space via Aspect Ratio
+  aspectRatio?: string | number;
 }
 
 /**
- * CachedImage component that shows images instantly if cached,
- * or loads them with a smooth fade-in transition.
+ * Advanced Zero-Gravity Image Component
+ * Eliminates CLS by ensuring layout stability and uses high-end shimmers.
  */
 const CachedImage: React.FC<CachedImageProps> = ({
   src,
   alt,
   className,
   wrapperClassName,
+  shimmerClassName,
+  aspectRatio,
   ...props
 }) => {
-  const [loaded, setLoaded] = useState(isImageCached(src));
+  const [isLoaded, setIsLoaded] = useState(isImageCached(src));
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    if (!loaded) {
-      preloadImage(src).then(() => setLoaded(true));
+    if (!isLoaded) {
+      preloadImage(src)
+        .then(() => setIsLoaded(true))
+        .catch(() => setHasError(true));
     }
-  }, [src, loaded]);
+  }, [src, isLoaded]);
+
+  const wrapperStyle = aspectRatio
+    ? { aspectRatio: String(aspectRatio) }
+    : undefined;
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      className={className}
-      loading="eager"
-      decoding="sync"
-      onLoad={() => setLoaded(true)}
-      {...props}
-    />
+    <div
+      className={cn("relative overflow-hidden bg-gray-100", wrapperClassName)}
+      style={wrapperStyle}
+    >
+      {/* High-End Shimmer Skeleton */}
+      {!isLoaded && !hasError && (
+        <div className={cn(
+          "absolute inset-0 z-10 animate-pulse bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200",
+          shimmerClassName
+        )} />
+      )}
+
+      {/* Error State */}
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-gray-400">
+          <span className="text-xs">Image unavailable</span>
+        </div>
+      )}
+
+      <img
+        src={src}
+        alt={alt}
+        className={cn(
+          "transition-opacity duration-700 ease-in-out",
+          isLoaded ? "opacity-100" : "opacity-0",
+          className
+        )}
+        onLoad={() => setIsLoaded(true)}
+        onError={() => setHasError(true)}
+        loading={props.loading || "lazy"}
+        decoding="async"
+        {...props}
+      />
+    </div>
   );
 };
 
