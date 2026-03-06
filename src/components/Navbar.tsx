@@ -12,7 +12,7 @@ import {
   SheetClose
 } from "@/components/ui/sheet";
 
-const LOGO_SRC = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png";
+const LOGO_SRC = "/dbiz-uploads/main-logo.png";
 
 const mainNavMenus = [
   { name: "Home", path: "/" },
