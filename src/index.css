@@ -1,82 +1,81 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+ 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
+ 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
+ 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
+ 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
+ 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-
+ 
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
+ 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
+ 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
+ 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
+ 
     --ring: 215 20.2% 65.1%;
-
+ 
     --radius: 0.5rem;
   }
-
+ 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
+ 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
+ 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
+ 
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
+ 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-
+ 
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
+ 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
+ 
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
+ 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
-
+ 
     --ring: 217.2 32.6% 17.5%;
   }
 }
-
+ 
 @layer base {
   * {
     @apply border-border;
   }
-
   html {
-    font-size: 17px;
+    font-size: 17px; /* Increased base font size from default */
   }
-
   body {
     @apply bg-background text-foreground;
   }
@@ -86,33 +85,33 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-
+  
   .section-title {
     @apply text-3xl md:text-4xl lg:text-5xl font-bold text-dbiz-navy mb-4;
   }
-
+  
   .section-subtitle {
     @apply text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto;
   }
-
+  
   .btn-primary {
     @apply inline-flex items-center justify-center bg-dbiz-teal text-white px-6 py-3 rounded-md font-medium text-lg;
   }
-
+  
   /* Menu styles - Clean & Minimal */
   .menu-container {
     @apply relative static;
   }
-
+  
   .menu-item {
     @apply flex items-center gap-1 text-dbiz-navy hover:text-dbiz-teal relative px-4 py-2.5 transition-all duration-200 font-medium text-sm;
   }
-
+  
   .menu-item::after {
     content: '';
     @apply absolute bottom-1 left-1/2 w-0 h-0.5 bg-dbiz-teal rounded-full transition-all duration-300 -translate-x-1/2;
   }
-
+  
   .menu-item:hover::after {
     @apply w-1/2;
   }
@@ -120,19 +119,19 @@
   .menu-item.active {
     @apply text-dbiz-teal;
   }
-
+  
   .menu-item.active::after {
     @apply w-1/2;
   }
-
+  
   .mega-menu {
     @apply absolute left-1/2 -translate-x-1/2 bg-white shadow-xl rounded-xl mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-100 w-max;
   }
-
+  
   .mega-menu-content {
     @apply p-5 flex gap-8;
   }
-
+  
   .mega-menu-title {
     @apply text-dbiz-navy font-semibold text-xs uppercase tracking-wider pb-2 mb-2 border-b border-gray-100 flex items-center gap-2;
   }
@@ -140,23 +139,23 @@
   .mega-menu-title-icon {
     @apply text-dbiz-teal;
   }
-
+  
   .mega-menu-items {
     @apply grid gap-0;
   }
-
+  
   .mega-menu-item {
     @apply text-gray-600 hover:text-dbiz-teal px-3 py-1.5 rounded-md transition-all duration-150 hover:bg-gray-50 text-sm;
   }
-
+  
   .mega-menu-item.active {
     @apply text-dbiz-teal font-medium bg-dbiz-teal/5;
   }
-
+  
   .mobile-back-button {
     @apply flex items-center gap-2 px-6 py-3 text-white hover:bg-dbiz-navy/80;
   }
-
+  
   .mobile-submenu {
     @apply fixed inset-0 bg-dbiz-navy overflow-auto z-40 transition-transform duration-300;
   }
@@ -173,8 +172,6 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .no-scrollbar {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

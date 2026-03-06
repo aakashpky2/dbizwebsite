@@ -1,8 +1,7 @@
-"use client";
 
 
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -29,7 +28,7 @@ import {
   AlertTriangle,
   HelpCircle
 } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { privateLimitedContent } from "@/data/serviceContent";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -115,7 +114,7 @@ const PrivateLimitedPage = () => {
               
               {location !== undefined && (
                 <div className="inline-block bg-dbiz-teal/20 px-4 py-2 rounded-md text-sm font-medium mb-6">
-                  <Link href="/private-limited" className="text-dbiz-teal hover:underline">
+                  <Link to="/private-limited" className="text-dbiz-teal hover:underline">
                     View our services across India
                   </Link>
                 </div>

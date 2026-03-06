@@ -1,4 +1,3 @@
-"use client";
 
 
 import React, { useState, useEffect } from "react";
@@ -38,7 +37,7 @@ import * as z from "zod";
 import { llpContent } from "@/data/serviceContent";
 
 const LLPContentEditor = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -48,7 +47,7 @@ const LLPContentEditor = () => {
     // Check if admin is logged in
     const isLoggedIn = sessionStorage.getItem("isAdminLoggedIn") === "true";
     if (!isLoggedIn) {
-      router.push("/admin/login");
+      navigate("/admin/login");
       return;
     }
 

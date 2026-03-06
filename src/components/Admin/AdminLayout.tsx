@@ -1,8 +1,7 @@
-"use client";
 
 
 import React, { useState } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,8 +23,8 @@ interface AdminLayoutProps {
 }
 
 const AdminLayout = ({ children, title }: AdminLayoutProps) => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleLogout = () => {
@@ -34,7 +33,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
       title: "Logged out successfully",
       description: "You have been logged out of the admin panel",
     });
-    router.push("/admin/login");
+    navigate("/admin/login");
   };
 
   const menuItems = [
@@ -109,7 +108,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
               {menuItems.map((item, index) => (
                 <li key={index}>
                   <Link
-                    href={item.path}
+                    to={item.path}
                     className={`flex items-center px-4 py-3 rounded-lg ${isActive(item.path)
                       ? "bg-dbiz-teal/10 text-dbiz-teal"
                       : "text-gray-600 hover:bg-gray-100"

@@ -1,11 +1,10 @@
-"use client";
 
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, CheckCircle2, Phone, MessageCircle, Clock, Shield, FileText, Award } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import {
   Popover,
   PopoverContent,
@@ -75,7 +74,7 @@ const ServicePage = ({
               
               {location !== "India" && (
                 <div className="inline-block bg-dbiz-teal/20 px-4 py-2 rounded-md text-sm font-medium mb-6">
-                  <Link href={`/${title.toLowerCase().replace(/\s+/g, '-')}`} className="text-dbiz-teal hover:underline">
+                  <Link to={`/${title.toLowerCase().replace(/\s+/g, '-')}`} className="text-dbiz-teal hover:underline">
                     View our services across India
                   </Link>
                 </div>
@@ -228,7 +227,7 @@ const ServicePage = ({
                 {cities.map((city, index) => (
                   <Link 
                     key={index}
-                    href={`/${title.toLowerCase().replace(/\s+/g, '-')}/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={`/${title.toLowerCase().replace(/\s+/g, '-')}/${city.toLowerCase().replace(/\s+/g, '-')}`}
                     className="bg-white p-4 rounded-md shadow-sm hover:shadow-md transition-all text-center border border-gray-100 hover:border-dbiz-teal/40"
                   >
                     <span className="text-dbiz-navy font-medium">{city}</span>
@@ -252,7 +251,7 @@ const ServicePage = ({
                 {relatedServices.map((service, index) => (
                   <Link 
                     key={index}
-                    href={service.path}
+                    to={service.path}
                     className="bg-gradient-to-br from-dbiz-navy/5 to-dbiz-teal/10 p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-dbiz-teal/40 group"
                   >
                     <h3 className="text-xl font-semibold text-dbiz-navy mb-2 group-hover:text-dbiz-teal transition-colors">

@@ -1,4 +1,3 @@
-"use client";
 
 
 import React, { useEffect } from "react";
@@ -8,13 +7,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, FileEdit, FileText, Users } from "lucide-react";
 
 const AdminDashboard = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check if admin is logged in
     const isLoggedIn = sessionStorage.getItem("isAdminLoggedIn") === "true";
     if (!isLoggedIn) {
-      router.push("/admin/login");
+      navigate("/admin/login");
     }
   }, [router]);
 
@@ -96,7 +95,7 @@ const AdminDashboard = () => {
           <Card
             key={index}
             className="border border-gray-200 hover:border-dbiz-teal/40 hover:shadow-md transition-all cursor-pointer"
-            onClick={() => router.push(service.path)}
+            onClick={() => navigate(service.path)}
           >
             <CardContent className="pt-6">
               <div className="mb-4">

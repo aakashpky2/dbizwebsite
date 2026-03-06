@@ -1,7 +1,6 @@
-"use client";
 
 import React, { useState, useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useNavigate } from "react-router-dom";
 import AdminLayout from "@/components/Admin/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -44,7 +43,7 @@ const capitalizeWords = (str: string) => {
 const ServiceEditor = () => {
   const params = useParams();
   const service = params?.service as string;
-  const router = useRouter();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -56,7 +55,7 @@ const ServiceEditor = () => {
     // Check if admin is logged in
     const isLoggedIn = sessionStorage.getItem("isAdminLoggedIn") === "true";
     if (!isLoggedIn) {
-      router.push("/admin/login");
+      navigate("/admin/login");
       return;
     }
 
@@ -74,7 +73,7 @@ const ServiceEditor = () => {
         description: "The requested service does not exist",
         variant: "destructive",
       });
-      router.push("/admin/dashboard");
+      navigate("/admin/dashboard");
     }
   }, [service, router]);
 

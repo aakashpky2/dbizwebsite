@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import {
@@ -11,7 +10,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 interface ServiceItem {
   name: string;
@@ -51,7 +50,7 @@ const ServiceCard = ({
           {items.map((item, index) => (
             <li key={index}>
               <Link
-                href={item.path}
+                to={item.path}
                 className="flex items-center group/link text-gray-600 hover:text-dbiz-teal transition-all duration-300 py-1 cursor-pointer"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal/40 group-hover/link:bg-dbiz-teal group-hover/link:w-3 transition-all duration-300 mr-3"></div>

@@ -1,4 +1,3 @@
-"use client";
 
 
 import React, { useEffect, useState } from "react";
@@ -8,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ChevronRight, CheckCircle2, FileText, Calendar, HelpCircle, ShieldCheck } from "lucide-react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { indianCities } from "@/data/keralaLocations";
 import { llpContent } from "@/data/serviceContent";
 
@@ -53,7 +52,7 @@ const LLPServicePage = ({
               
               {location !== "India" && (
                 <div className="inline-block bg-dbiz-teal/20 px-4 py-2 rounded-md text-sm font-medium mb-6">
-                  <Link href="/limited-liability-partnership" className="text-dbiz-teal hover:underline">
+                  <Link to="/limited-liability-partnership" className="text-dbiz-teal hover:underline">
                     View our services across India
                   </Link>
                 </div>
@@ -328,7 +327,7 @@ const LLPServicePage = ({
                 {indianCities.map((city, index) => (
                   <Link 
                     key={index}
-                    href={`/limited-liability-partnership/${city.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={`/limited-liability-partnership/${city.toLowerCase().replace(/\s+/g, '-')}`}
                     className="bg-white p-4 rounded-md shadow-sm hover:shadow-md transition-all text-center border border-gray-100 hover:border-dbiz-teal/40"
                   >
                     <span className="text-dbiz-navy font-medium">{city}</span>
@@ -351,7 +350,7 @@ const LLPServicePage = ({
               {content.relatedServices?.map((service, index) => (
                 <Link 
                   key={index}
-                  href={service.path}
+                  to={service.path}
                   className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all hover:border-dbiz-teal/40 group"
                 >
                   <h3 className="text-xl font-semibold text-dbiz-navy mb-2 group-hover:text-dbiz-teal transition-colors">

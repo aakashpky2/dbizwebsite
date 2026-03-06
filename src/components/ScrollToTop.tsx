@@ -1,14 +1,13 @@
-"use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import { ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { initImageCache } from "@/lib/imageCache";
 
 const ScrollToTop = () => {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
   // Initialize image cache and reset scroll on route change

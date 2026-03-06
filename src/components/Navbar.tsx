@@ -1,8 +1,5 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Menu,
@@ -167,7 +164,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   const toggleMenu = () => setOpen(!open);
   const closeMenu = () => {
@@ -239,7 +236,7 @@ const Navbar = () => {
                           {section.items.map((item, itemIndex) => (
                             <Link
                               key={itemIndex}
-                              href={item.path}
+                              to={item.path}
                               className={cn(
                                 "mega-menu-item",
                                 isActiveLink(item.path) && "active"
@@ -257,7 +254,7 @@ const Navbar = () => {
               </div>
             ) : (
               <Link
-                href={menu.path}
+                to={menu.path}
                 className={cn(
                   "menu-item",
                   isActiveLink(menu.path) && "active"
@@ -304,7 +301,7 @@ const Navbar = () => {
                       {column.items.map((item, itemIndex) => (
                         <Link
                           key={itemIndex}
-                          href={item.path}
+                          to={item.path}
                           className={cn(
                             "flex items-center px-6 py-2.5 text-white hover:bg-white/10 rounded-md transition-colors",
                             isActiveLink(item.path) && "text-dbiz-teal bg-white/5"
@@ -346,7 +343,7 @@ const Navbar = () => {
                           {section.items.map((item, itemIndex) => (
                             <Link
                               key={itemIndex}
-                              href={item.path}
+                              to={item.path}
                               className={cn(
                                 "flex items-center px-10 py-2.5 text-white hover:bg-white/10 rounded-md transition-colors",
                                 isActiveLink(item.path) && "text-dbiz-teal bg-white/5"
@@ -365,7 +362,7 @@ const Navbar = () => {
             ) : (
               <div key={index} className="border-b border-white/10">
                 <Link
-                  href={menu.path}
+                  to={menu.path}
                   className={cn(
                     "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal",
                     isActiveLink(menu.path) && "text-dbiz-teal"
@@ -394,7 +391,7 @@ const Navbar = () => {
     >
 
       <div className="container-custom flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 group" onClick={closeMenu}>
+        <Link to="/" className="flex items-center gap-2 group" onClick={closeMenu}>
           <img
             src={LOGO_SRC}
             alt="D BIZ CONSULTANCY"
@@ -433,7 +430,7 @@ const Navbar = () => {
           )}
         >
           <div className="flex justify-between items-center p-4 border-b border-white/10 bg-white">
-            <Link href="/" onClick={closeMenu}>
+            <Link to="/" onClick={closeMenu}>
               <img
                 src={LOGO_SRC}
                 alt="D BIZ CONSULTANCY"

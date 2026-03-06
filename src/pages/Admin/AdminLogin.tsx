@@ -1,4 +1,3 @@
-"use client";
 
 
 import React, { useState } from "react";
@@ -13,7 +12,7 @@ const AdminLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +32,7 @@ const AdminLogin = () => {
       });
       
       // Navigate to admin dashboard
-      router.push("/admin/dashboard");
+      navigate("/admin/dashboard");
     } else {
       toast({
         title: "Login failed",

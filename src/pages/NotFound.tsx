@@ -1,13 +1,12 @@
-"use client";
 
 
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const NotFound = () => {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     console.log(
