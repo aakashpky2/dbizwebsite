@@ -5,30 +5,29 @@ import {
   Menu,
   X,
   ChevronDown,
+  ArrowLeft,
+  ChevronUp,
   Building,
+  Globe,
+  FileText,
+  ShieldCheck,
+  BarChart3,
+  Home,
+  Info,
+  Briefcase,
   ClipboardCheck,
   FileCheck,
-  ShieldCheck,
-  Rocket,
   LineChart,
   Palette,
+  Wrench,
   Phone,
-  Mail,
-  MapPin,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin
+  User,
+  Rocket
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-  SheetClose
-} from "@/components/ui/sheet";
+
+
+const LOGO_SRC = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png";
 import {
   Accordion,
   AccordionContent,
@@ -36,8 +35,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const LOGO_SRC = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png";
-
+// Define the main navigation menus with sentence case for better readability
 const mainNavMenus = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/#about" },
@@ -48,6 +46,18 @@ const mainNavMenus = [
   { name: "Contact", path: "/#contact" },
 ];
 
+// Reorganized Start Business menu with company registration and other business types
+const startBusinessMenu = [
+  {
+    title: "Company Registration",
+    icon: <Building size={18} />,
+    items: [
+      { name: "Private Limited", path: "/private-limited" },
+    ]
+  }
+];
+
+// Combined Registrations and Compliance menu
 const registrationsComplianceMenu = [
   {
     title: "Business Registrations",
@@ -92,6 +102,7 @@ const registrationsComplianceMenu = [
   }
 ];
 
+// Define the startup submenu
 const startupMenu = [
   {
     title: "Startup Services",
@@ -116,6 +127,7 @@ const startupMenu = [
   }
 ];
 
+// Define the Intellectual Property (IP) submenu
 const ipMenu = [
   {
     title: "IP Registration",
@@ -128,12 +140,18 @@ const ipMenu = [
   }
 ];
 
+interface MenuItem {
+  name: string;
+  path: string;
+}
+
 interface MenuSection {
   title: string;
   icon: React.ReactNode;
-  items: { name: string; path: string }[];
+  items: MenuItem[];
 }
 
+// Map main menus to their submenus
 const megaMenuMap: Record<string, MenuSection[]> = {
   "Services": registrationsComplianceMenu,
   "Startups": startupMenu,
@@ -141,215 +159,240 @@ const megaMenuMap: Record<string, MenuSection[]> = {
 };
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
+  const toggleMenu = () => setOpen(!open);
+  const closeMenu = () => {
+    setOpen(false);
+  };
+
+
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Check if the current path matches or is part of a menu item's path
   const isActiveLink = (path: string) => {
-    if (path === "/") return pathname === "/";
-    if (!path.startsWith("/#")) return pathname.startsWith(path);
+    if (!pathname) return false;
+
+    if (path === "/") {
+      return pathname === "/";
+    }
+
+    // For submenu items, check if the current path starts with the item path
+    // This allows for both /service and /service/location to be highlighted
+    if (!path.startsWith("/#")) {
+      return pathname.startsWith(path);
+    }
+
     return false;
+  };
+
+  // Render desktop menu with hover-based expansion
+  const renderDesktopMenu = () => {
+    return (
+      <nav className="hidden lg:flex items-center justify-center space-x-2 relative">
+        {mainNavMenus.filter(menu => !(menu as any).hidden).map((menu, index) => (
+          <div key={index} className="relative group">
+            {menu.hasMegaMenu ? (
+              <div className="menu-container">
+                <button
+                  className={cn(
+                    "menu-item group",
+                    isActiveLink(menu.path) && "active"
+                  )}
+                >
+                  {menu.name}
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+
+                <div className="mega-menu">
+                  <div className="mega-menu-content">
+                    {megaMenuMap[menu.name as keyof typeof megaMenuMap]?.map((section, sectionIndex) => (
+                      <div key={sectionIndex} className="mega-menu-section min-w-[180px]">
+                        <h3 className="mega-menu-title">
+                          <span className="mega-menu-title-icon">{section.icon}</span>
+                          {section.title}
+                        </h3>
+                        <div className="mega-menu-items">
+                          {section.items.map((item, itemIndex) => (
+                            <Link
+                              key={itemIndex}
+                              to={item.path}
+                              className={cn(
+                                "mega-menu-item",
+                                isActiveLink(item.path) && "active"
+                              )}
+                              onClick={closeMenu}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                to={menu.path}
+                className={cn(
+                  "menu-item",
+                  isActiveLink(menu.path) && "active"
+                )}
+              >
+                {menu.name}
+              </Link>
+            )}
+          </div>
+        ))}
+      </nav>
+    );
+  };
+
+  const renderMobileContent = () => {
+    return (
+      <div className="py-4 px-2">
+        <Accordion type="single" collapsible className="w-full">
+          {mainNavMenus.filter(menu => !(menu as any).hidden).map((menu, index) => (
+            menu.hasMegaMenu ? (
+              <AccordionItem key={index} value={`menu-${index}`} className="border-none">
+                <AccordionTrigger className="px-6 py-4 text-white hover:text-dbiz-teal text-lg font-medium border-b border-white/5 no-underline hover:no-underline">
+                  {menu.name}
+                </AccordionTrigger>
+                <AccordionContent className="bg-white/5 rounded-lg mt-2 mx-4">
+                  <div className="py-2">
+                    {megaMenuMap[menu.name as keyof typeof megaMenuMap]?.map((section, sectionIndex) => (
+                      <div key={sectionIndex} className="mb-6 last:mb-2">
+                        <h3 className="px-6 py-2 text-dbiz-teal font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                          {section.icon}
+                          {section.title}
+                        </h3>
+                        <div className="mt-2 grid gap-1">
+                          {section.items.map((item, itemIndex) => (
+                            <Link
+                              key={itemIndex}
+                              to={item.path}
+                              className={cn(
+                                "flex items-center px-8 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-all text-sm",
+                                isActiveLink(item.path) && "text-dbiz-teal bg-white/5 font-medium"
+                              )}
+                              onClick={closeMenu}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ) : (
+              <div key={index} className="border-b border-white/5">
+                <Link
+                  to={menu.path}
+                  className={cn(
+                    "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal text-lg font-medium transition-colors",
+                    isActiveLink(menu.path) && "text-dbiz-teal"
+                  )}
+                  onClick={closeMenu}
+                >
+                  {menu.name}
+                </Link>
+              </div>
+            )
+          ))}
+        </Accordion>
+      </div>
+    );
   };
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500",
-        scrolled
-          ? "bg-white/80 backdrop-blur-lg shadow-md py-2 border-b border-gray-100"
-          : "bg-white py-4"
+        "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300",
+        scrolled || open
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-1"
+          : "bg-white py-1"
       )}
+      style={{ position: 'fixed' }}
     >
+
       <div className="container-custom flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group relative z-50">
+        <Link to="/" className="flex items-center gap-2 group" onClick={closeMenu}>
           <img
             src={LOGO_SRC}
             alt="D BIZ CONSULTANCY"
             className={cn(
-              "transition-all duration-500 h-[60px] lg:h-[90px]",
-              scrolled ? "lg:h-[70px]" : "lg:h-[90px]"
+              "transition-all duration-300",
+              "h-[80px] lg:h-[120px] -my-[18px] lg:-my-[28px]"
             )}
+            loading="eager"
+            decoding="sync"
+            fetchPriority="high"
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-1">
-          {mainNavMenus.map((menu, index) => (
-            <div key={index} className="relative group">
-              {menu.hasMegaMenu ? (
-                <div className="menu-container">
-                  <button
-                    className={cn(
-                      "menu-item",
-                      isActiveLink(menu.path) && "active"
-                    )}
-                  >
-                    {menu.name}
-                    <ChevronDown className="ml-1 h-3 w-3 transition-transform group-hover:rotate-180" />
-                  </button>
+        <div className="flex items-center gap-4">
+          {/* Desktop Navigation */}
+          {renderDesktopMenu()}
 
-                  <div className="mega-menu">
-                    <div className="mega-menu-content grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6">
-                      {megaMenuMap[menu.name as keyof typeof megaMenuMap]?.map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="space-y-3">
-                          <h3 className="mega-menu-title">
-                            <span className="text-dbiz-teal">{section.icon}</span>
-                            {section.title}
-                          </h3>
-                          <div className="flex flex-col gap-1">
-                            {section.items.map((item, itemIndex) => (
-                              <Link
-                                key={itemIndex}
-                                to={item.path}
-                                className={cn(
-                                  "mega-menu-item",
-                                  isActiveLink(item.path) && "active"
-                                )}
-                              >
-                                {item.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <Link
-                  to={menu.path}
-                  className={cn(
-                    "menu-item",
-                    isActiveLink(menu.path) && "active"
-                  )}
-                >
-                  {menu.name}
-                </Link>
-              )}
-            </div>
-          ))}
-          <Button asChild className="ml-4 bg-dbiz-teal hover:bg-dbiz-teal/90 text-white rounded-full px-6 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-dbiz-teal/20">
-            <Link to="/#contact">Get Started</Link>
-          </Button>
-        </nav>
+          <div className="lg:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleMenu}
+              aria-label="Toggle menu"
+              className="text-dbiz-navy hover:bg-dbiz-teal/10 hover:text-dbiz-teal transition-colors"
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
 
-        {/* Mobile Navigation Trigger */}
-        <div className="lg:hidden flex items-center gap-4">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-dbiz-navy hover:bg-dbiz-teal/10 hover:text-dbiz-teal transition-all duration-300 active:scale-90"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[380px] p-0 border-l border-gray-100 bg-white">
-              <div className="flex flex-col h-full">
-                {/* Header */}
-                <SheetHeader className="p-6 border-b border-gray-50 flex items-center justify-between">
-                  <SheetTitle className="text-left">
-                    <img src={LOGO_SRC} alt="D BIZ" className="h-12" />
-                  </SheetTitle>
-                </SheetHeader>
+        <div
+          className={cn(
+            "fixed inset-0 bg-dbiz-navy lg:hidden z-40 transition-transform duration-300 ease-in-out overflow-auto",
+            open ? "translate-x-0" : "translate-x-full"
+          )}
+        >
+          <div className="flex justify-between items-center p-4 border-b border-white/10 bg-dbiz-navy sticky top-0 z-50">
+            <Link to="/" onClick={closeMenu}>
+              <img
+                src={LOGO_SRC}
+                alt="D BIZ CONSULTANCY"
+                className="h-16 brightness-0 invert"
+                loading="eager"
+                decoding="sync"
+              />
+            </Link>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleMenu}
+              className="text-white hover:bg-white/10"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
 
-                {/* Content */}
-                <div className="flex-1 overflow-y-auto py-4 px-2">
-                  <Accordion type="single" collapsible className="w-full space-y-1">
-                    {mainNavMenus.map((menu, index) => (
-                      menu.hasMegaMenu ? (
-                        <AccordionItem key={index} value={`menu-${index}`} className="border-none">
-                          <AccordionTrigger className="px-4 py-3 text-dbiz-navy hover:text-dbiz-teal hover:bg-dbiz-teal/5 rounded-lg transition-all text-base font-medium no-underline hover:no-underline [&[data-state=open]]:text-dbiz-teal [&[data-state=open]]:bg-dbiz-teal/5">
-                            <span className="flex items-center gap-3">
-                              {menu.name === "Services" && <Building className="h-5 w-5" />}
-                              {menu.name === "Startups" && <Rocket className="h-5 w-5" />}
-                              {menu.name === "IP Services" && <ShieldCheck className="h-5 w-5" />}
-                              {menu.name}
-                            </span>
-                          </AccordionTrigger>
-                          <AccordionContent className="pt-2 pb-1">
-                            {megaMenuMap[menu.name as keyof typeof megaMenuMap]?.map((section, sectionIndex) => (
-                              <div key={sectionIndex} className="mb-4 last:mb-0">
-                                <h3 className="px-10 py-2 text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                                  {section.title}
-                                </h3>
-                                <div className="mt-1 flex flex-col gap-1">
-                                  {section.items.map((item, itemIndex) => (
-                                    <SheetClose asChild key={itemIndex}>
-                                      <Link
-                                        to={item.path}
-                                        className={cn(
-                                          "flex items-center px-10 py-2.5 text-gray-600 hover:text-dbiz-teal hover:bg-dbiz-teal/5 rounded-lg transition-all text-sm",
-                                          isActiveLink(item.path) && "text-dbiz-teal bg-dbiz-teal/5 font-medium"
-                                        )}
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    </SheetClose>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ) : (
-                        <div key={index}>
-                          <SheetClose asChild>
-                            <Link
-                              to={menu.path}
-                              className={cn(
-                                "flex items-center px-4 py-3 text-dbiz-navy hover:text-dbiz-teal hover:bg-dbiz-teal/5 rounded-lg transition-all text-base font-medium",
-                                isActiveLink(menu.path) && "text-dbiz-teal bg-dbiz-teal/5"
-                              )}
-                            >
-                              <span className="flex items-center gap-3">
-                                {menu.name === "Home" && <Building className="h-5 w-5 opacity-0 group-hover:opacity-100" />}
-                                {menu.name}
-                              </span>
-                            </Link>
-                          </SheetClose>
-                        </div>
-                      )
-                    ))}
-                  </Accordion>
-                </div>
-
-                {/* Footer Info */}
-                <div className="p-6 border-t border-gray-50 bg-gray-50/50 space-y-4">
-                  <div className="space-y-3">
-                    <a href="tel:+918075273408" className="flex items-center gap-3 text-sm text-gray-600 hover:text-dbiz-teal transition-colors">
-                      <div className="w-8 h-8 rounded-full bg-dbiz-teal/10 flex items-center justify-center text-dbiz-teal">
-                        <Phone size={14} />
-                      </div>
-                      +91 80752 73408
-                    </a>
-                    <a href="mailto:info@dbiz.com" className="flex items-center gap-3 text-sm text-gray-600 hover:text-dbiz-teal transition-colors">
-                      <div className="w-8 h-8 rounded-full bg-dbiz-teal/10 flex items-center justify-center text-dbiz-teal">
-                        <Mail size={14} />
-                      </div>
-                      info@dbizconsultancy.com
-                    </a>
-                  </div>
-                  <div className="flex items-center gap-4 pt-2">
-                    {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                      <a key={i} href="#" className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-dbiz-teal hover:border-dbiz-teal transition-all">
-                        <Icon size={16} />
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <div className="pt-2">
+            {renderMobileContent()}
+          </div>
         </div>
       </div>
     </header>
