@@ -39,11 +39,10 @@ import {
 const mainNavMenus = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/#about" },
-  { name: "Company Registration", path: "/#services", hasMegaMenu: true, hidden: true },
-  { name: "Registrations", path: "/#services", hasMegaMenu: true, hidden: true },
-  { name: "Startups", path: "/#services", hasMegaMenu: true, hidden: true },
-  { name: "Intellectual Property", path: "/#services", hasMegaMenu: true, hidden: true },
-  { name: "Tools", path: "/tools", hidden: true },
+  { name: "Services", path: "/#services", hasMegaMenu: true },
+  { name: "Startups", path: "/#services", hasMegaMenu: true },
+  { name: "IP Services", path: "/#services", hasMegaMenu: true },
+  { name: "Tools", path: "/tools" },
   { name: "Contact", path: "/#contact" },
 ];
 
@@ -154,27 +153,22 @@ interface MenuSection {
 
 // Map main menus to their submenus
 const megaMenuMap: Record<string, MenuSection[]> = {
-  "Company Registration": startBusinessMenu,
-  "Registrations": registrationsComplianceMenu,
+  "Services": registrationsComplianceMenu,
   "Startups": startupMenu,
-  "Intellectual Property": ipMenu,
+  "IP Services": ipMenu,
 };
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeMobileMenu, setActiveMobileMenu] = useState<string | null>(null);
   const { pathname } = useLocation();
 
   const toggleMenu = () => setOpen(!open);
   const closeMenu = () => {
     setOpen(false);
-    setActiveMobileMenu(null);
   };
 
-  const handleBackClick = () => {
-    setActiveMobileMenu(null);
-  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -269,84 +263,32 @@ const Navbar = () => {
     );
   };
 
-  // Render mobile menu with accordion
   const renderMobileContent = () => {
-    if (activeMobileMenu) {
-      const menuItems = megaMenuMap[activeMobileMenu as keyof typeof megaMenuMap] || [];
-
-      return (
-        <div className="mobile-submenu fixed inset-0 bg-dbiz-navy translate-x-0 transition-transform duration-300 ease-in-out z-50 overflow-auto">
-          <button
-            className="flex items-center text-white px-6 py-4 hover:bg-dbiz-navy/50"
-            onClick={handleBackClick}
-          >
-            <ArrowLeft size={20} className="mr-2" />
-            Back to Main Menu
-          </button>
-
-          <div className="py-2">
-            <h2 className="text-white font-medium text-lg px-6 py-4 border-b border-white/10 flex items-center">
-              {activeMobileMenu}
-            </h2>
-
-            <Accordion type="single" collapsible className="w-full">
-              {menuItems.map((column, colIndex) => (
-                <AccordionItem key={colIndex} value={`section-${colIndex}`} className="border-b border-white/10">
-                  <AccordionTrigger className="px-6 py-3 text-white hover:text-dbiz-teal flex items-center">
-                    <span className="text-dbiz-teal mr-2">{column.icon}</span>
-                    {column.title}
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="mt-1 mb-2 pl-2">
-                      {column.items.map((item, itemIndex) => (
-                        <Link
-                          key={itemIndex}
-                          to={item.path}
-                          className={cn(
-                            "flex items-center px-6 py-2.5 text-white hover:bg-white/10 rounded-md transition-colors",
-                            isActiveLink(item.path) && "text-dbiz-teal bg-white/5"
-                          )}
-                          onClick={closeMenu}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      );
-    }
-
     return (
-      <div className="py-2">
+      <div className="py-4 px-2">
         <Accordion type="single" collapsible className="w-full">
           {mainNavMenus.filter(menu => !menu.hidden).map((menu, index) => (
             menu.hasMegaMenu ? (
-              <AccordionItem key={index} value={`menu-${index}`} className="border-b border-white/10">
-                <AccordionTrigger className="px-6 py-3 text-white hover:text-dbiz-teal flex items-center">
+              <AccordionItem key={index} value={`menu-${index}`} className="border-none">
+                <AccordionTrigger className="px-6 py-4 text-white hover:text-dbiz-teal text-lg font-medium border-b border-white/5 no-underline hover:no-underline">
                   {menu.name}
                 </AccordionTrigger>
-                <AccordionContent>
-                  {/* Direct display of submenu */}
-                  <div className="mt-1 mb-2">
+                <AccordionContent className="bg-white/5 rounded-lg mt-2 mx-4">
+                  <div className="py-2">
                     {megaMenuMap[menu.name as keyof typeof megaMenuMap]?.map((section, sectionIndex) => (
-                      <div key={sectionIndex} className="mb-4">
-                        <h3 className="px-6 py-2 font-medium text-dbiz-teal border-l-2 border-dbiz-teal flex items-center">
-                          <span className="mr-2">{section.icon}</span>
+                      <div key={sectionIndex} className="mb-6 last:mb-2">
+                        <h3 className="px-6 py-2 text-dbiz-teal font-bold text-xs uppercase tracking-widest flex items-center gap-2">
+                          {section.icon}
                           {section.title}
                         </h3>
-                        <div className="mt-1">
+                        <div className="mt-2 grid gap-1">
                           {section.items.map((item, itemIndex) => (
                             <Link
                               key={itemIndex}
                               to={item.path}
                               className={cn(
-                                "flex items-center px-10 py-2.5 text-white hover:bg-white/10 rounded-md transition-colors",
-                                isActiveLink(item.path) && "text-dbiz-teal bg-white/5"
+                                "flex items-center px-8 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-all text-sm",
+                                isActiveLink(item.path) && "text-dbiz-teal bg-white/5 font-medium"
                               )}
                               onClick={closeMenu}
                             >
@@ -360,11 +302,11 @@ const Navbar = () => {
                 </AccordionContent>
               </AccordionItem>
             ) : (
-              <div key={index} className="border-b border-white/10">
+              <div key={index} className="border-b border-white/5">
                 <Link
                   to={menu.path}
                   className={cn(
-                    "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal",
+                    "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal text-lg font-medium transition-colors",
                     isActiveLink(menu.path) && "text-dbiz-teal"
                   )}
                   onClick={closeMenu}
@@ -397,7 +339,7 @@ const Navbar = () => {
             alt="D BIZ CONSULTANCY"
             className={cn(
               "transition-all duration-300",
-              "h-[120px] -my-[28px]"
+              "h-[80px] lg:h-[120px] -my-[18px] lg:-my-[28px]"
             )}
             loading="eager"
             decoding="sync"
@@ -422,19 +364,18 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div
           className={cn(
             "fixed inset-0 bg-dbiz-navy lg:hidden z-40 transition-transform duration-300 ease-in-out overflow-auto",
             open ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="flex justify-between items-center p-4 border-b border-white/10 bg-white">
+          <div className="flex justify-between items-center p-4 border-b border-white/10 bg-dbiz-navy sticky top-0 z-50">
             <Link to="/" onClick={closeMenu}>
               <img
                 src={LOGO_SRC}
                 alt="D BIZ CONSULTANCY"
-                className="h-20"
+                className="h-16 brightness-0 invert"
                 loading="eager"
                 decoding="sync"
               />
@@ -443,13 +384,15 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={toggleMenu}
-              className="text-dbiz-navy hover:bg-dbiz-teal/10"
+              className="text-white hover:bg-white/10"
             >
               <X className="h-6 w-6" />
             </Button>
           </div>
 
-          {renderMobileContent()}
+          <div className="pt-2">
+            {renderMobileContent()}
+          </div>
         </div>
       </div>
     </header>
