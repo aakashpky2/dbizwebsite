@@ -15,12 +15,10 @@ export const metadata: Metadata = {
     description: "Your trusted partner for business registration, compliance, and growth.",
     icons: {
         icon: [
-            { url: "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png", sizes: "32x32", type: "image/png" },
-            { url: "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png", sizes: "16x16", type: "image/png" },
-            { url: "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png", sizes: "48x48", type: "image/png" },
+            { url: "/dbiz-uploads/favicon.ico", sizes: "any" },
         ],
         apple: [
-            { url: "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png", sizes: "180x180", type: "image/png" },
+            { url: "/dbiz-uploads/favicon.ico", sizes: "180x180", type: "image/x-icon" },
         ],
     },
 };
