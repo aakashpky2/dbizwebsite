@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { isImageCached, preloadImage } from "@/lib/imageCache";
+import { cn } from "@/lib/utils";
 
 interface CachedImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -18,6 +19,7 @@ const CachedImage: React.FC<CachedImageProps> = ({
   src,
   alt,
   className,
+  wrapperClassName,
   ...props
 }) => {
   const [loaded, setLoaded] = useState(isImageCached(src));
