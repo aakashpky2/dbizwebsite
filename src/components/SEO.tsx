@@ -16,11 +16,11 @@ interface SEOProps {
  * Ensures weightless and omnipresent indexing across all search engines.
  */
 const SEO: React.FC<SEOProps> = ({
-    title = "D BIZ CONSULTANCY - Professional Business Consultancy",
-    description = "Complete business consultancy services including Company Registration, GST, Trademark, and Audit Support across India.",
-    keywords = "company registration, gst registration, trademark filing, startup india registration, business consultancy india",
-    image = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png",
-    url = "https://dbizsolutions.in",
+    title = "D BIZ CONSULTANCY | Professional Business Consultancy",
+    description = "Leading business consultancy in Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, and Audit support.",
+    keywords = "business consultancy kerala, company registration, gst registration, trademark filing, startup advisory india",
+    image = "/og-image.png",
+    url = "https://www.dbizsolutions.in",
     type = "website",
 }) => {
     const siteTitle = title.includes("D BIZ") ? title : `${title} | D BIZ CONSULTANCY`;
