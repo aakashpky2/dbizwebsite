@@ -48,8 +48,8 @@ const TDSFilingsPage = lazy(() => import("./pages/TDSFilingsPage"));
 const GSTFilingsPage = lazy(() => import("./pages/GSTFilingsPage"));
 const IncomeTaxFilingPage = lazy(() => import("./pages/IncomeTaxFilingPage"));
 const MCACompliancePage = lazy(() => import("./pages/MCACompliancePage"));
+const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
-// Loading Shimmer Architecture
 const PageLoader = () => (
   <div className="fixed inset-0 flex items-center justify-center bg-white z-[9999]">
     <div className="w-12 h-12 border-4 border-dbiz-teal/20 border-t-dbiz-teal rounded-full animate-spin"></div>
@@ -142,6 +142,7 @@ const App = () => {
                   <Route path="/admin/llp-editor" element={<LLPContentEditor />} />
                   <Route path="/:service" element={<ServiceDetailPage />} />
                   <Route path="/:service/:location" element={<ServiceDetailPage />} />
+                  <Route path="/coming-soon" element={<ComingSoon />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
