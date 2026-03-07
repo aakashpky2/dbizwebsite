@@ -15,9 +15,10 @@ import {
 const LOGO_SRC = "/dbiz-uploads/main-logo.png";
 
 const mainNavMenus = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/#about" },
-  { name: "Contact", path: "/#contact" },
+  { name: "Home", path: "#home" },
+  { name: "About Us", path: "#about" },
+  { name: "Services", path: "#services" },
+  { name: "Contact", path: "#contact" },
 ];
 
 const Navbar = () => {
@@ -32,9 +33,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.startsWith("#") && pathname === "/") {
+      e.preventDefault();
+      const element = document.querySelector(path);
+      if (element) {
+        const offset = 80; // Adjust for fixed header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
   const isActiveLink = (path: string) => {
-    if (path === "/") return pathname === "/";
-    if (!path.startsWith("/#")) return pathname.startsWith(path);
+    if (path === "#home") return pathname === "/";
     return false;
   };
 
@@ -42,9 +59,7 @@ const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300",
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-2"
-          : "bg-white py-3 shadow-sm"
+        "bg-white/90 backdrop-blur-lg shadow-md py-0"
       )}
     >
       <div className="container-custom flex justify-between items-center">
@@ -54,10 +69,8 @@ const Navbar = () => {
             src={LOGO_SRC}
             alt="D BIZ CONSULTANCY"
             className={cn(
-              "transition-all duration-300",
-              scrolled
-                ? "h-[60px] lg:h-[80px]"
-                : "h-[70px] lg:h-[100px]"
+              "transition-all duration-300 origin-left",
+              "h-[70px] lg:h-[90px] scale-[1.6] translate-x-4"
             )}
             loading="eager"
             decoding="sync"
@@ -67,16 +80,17 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-2">
           {mainNavMenus.map((menu, index) => (
-            <Link
+            <a
               key={index}
-              to={menu.path}
+              href={menu.path}
+              onClick={(e) => handleLinkClick(e, menu.path)}
               className={cn(
                 "menu-item",
                 isActiveLink(menu.path) && "active"
               )}
             >
               {menu.name}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -97,22 +111,23 @@ const Navbar = () => {
               <div className="flex flex-col h-full bg-dbiz-navy">
                 <SheetHeader className="p-6 border-b border-white/10 bg-dbiz-navy">
                   <SheetTitle className="text-left">
-                    <img src={LOGO_SRC} alt="D BIZ" className="h-10 brightness-0 invert" />
+                    <img src={LOGO_SRC} alt="D BIZ" className="h-16 brightness-0 invert" />
                   </SheetTitle>
                 </SheetHeader>
 
                 <div className="flex-1 py-8 px-4 space-y-2">
                   {mainNavMenus.map((menu, index) => (
                     <SheetClose asChild key={index}>
-                      <Link
-                        to={menu.path}
+                      <a
+                        href={menu.path}
+                        onClick={(e) => handleLinkClick(e, menu.path)}
                         className={cn(
                           "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal text-xl font-medium rounded-lg transition-all hover:bg-white/5",
                           isActiveLink(menu.path) && "text-dbiz-teal bg-white/5"
                         )}
                       >
                         {menu.name}
-                      </Link>
+                      </a>
                     </SheetClose>
                   ))}
                 </div>

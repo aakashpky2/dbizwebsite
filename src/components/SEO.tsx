@@ -16,14 +16,14 @@ interface SEOProps {
  * Ensures weightless and omnipresent indexing across all search engines.
  */
 const SEO: React.FC<SEOProps> = ({
-    title = "D BIZ SOLUTIONS - Professional Business & IT Consultancy",
-    description = "Complete business and IT solutions including Company Registration, GST, Trademark, and Custom Software Development across India.",
+    title = "D BIZ CONSULTANCY - Professional Business Consultancy",
+    description = "Complete business consultancy services including Company Registration, GST, Trademark, and Audit Support across India.",
     keywords = "company registration, gst registration, trademark filing, startup india registration, business consultancy india",
     image = "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png",
     url = "https://dbizsolutions.in",
     type = "website",
 }) => {
-    const siteTitle = title.includes("D BIZ") ? title : `${title} | D BIZ SOLUTIONS`;
+    const siteTitle = title.includes("D BIZ") ? title : `${title} | D BIZ CONSULTANCY`;
 
     return (
         <Helmet>

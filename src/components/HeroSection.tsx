@@ -21,7 +21,7 @@ const HeroSection = () => {
   const keyFeatures = ["Expert Business Solutions", "Fast Turnaround Time", "Trusted by 500+ Clients", "Dedicated Support Team"];
 
   return (
-    <section id="home" className="relative pt-28 pb-20 lg:py-32 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white overflow-hidden">
+    <section id="home" className="relative pt-24 pb-20 lg:pt-32 lg:pb-32 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white overflow-hidden">
       {/* Background Pattern/Image Overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <CachedImage
