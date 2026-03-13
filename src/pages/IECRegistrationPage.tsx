@@ -51,8 +51,8 @@ const IECRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "IEC Registration | Import Export Code | D BIZ CONSULTANCY"
-    : `IEC Registration in ${cityName} | Import Export Code | D BIZ CONSULTANCY`;
+    ? "IEC Registration | Import Export Code | DBIZ CONSULTANCY"
+    : `IEC Registration in ${cityName} | Import Export Code | DBIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -100,7 +100,7 @@ const IECRegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get your Import Export Code (IEC) quickly with D BIZ CONSULTANCY. Mandatory 10-digit code for anyone engaged in import or export business in India. Lifetime validity with no renewal required.
+                  Get your Import Export Code (IEC) quickly with DBIZ CONSULTANCY. Mandatory 10-digit code for anyone engaged in import or export business in India. Lifetime validity with no renewal required.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -287,7 +287,7 @@ const IECRegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of IEC Registration</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                D BIZ CONSULTANCY helps businesses across {cityName} obtain IEC and expand into international markets.
+                DBIZ CONSULTANCY helps businesses across {cityName} obtain IEC and expand into international markets.
               </p>
             </div>
 
@@ -418,11 +418,11 @@ const IECRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Why Choose D BIZ Section */}
+        {/* Why Choose DBIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for IEC registration across {cityName}
               </p>

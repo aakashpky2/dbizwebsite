@@ -54,8 +54,8 @@ const LLPRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "Limited Liability Partnership Registration | Best in India | D BIZ CONSULTANCY"
-    : `Limited Liability Partnership Registration in ${cityName} | Best in India | D BIZ CONSULTANCY`;
+    ? "Limited Liability Partnership Registration | Best in India | DBIZ CONSULTANCY"
+    : `Limited Liability Partnership Registration in ${cityName} | Best in India | DBIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -103,7 +103,7 @@ const LLPRegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Register your LLP with D BIZ CONSULTANCY - combining the benefits of a partnership with limited liability protection. Perfect for professional services and small businesses seeking flexibility with legal protection.
+                  Register your LLP with DBIZ CONSULTANCY - combining the benefits of a partnership with limited liability protection. Perfect for professional services and small businesses seeking flexibility with legal protection.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -326,7 +326,7 @@ const LLPRegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of Limited Liability Partnership</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                D BIZ CONSULTANCY helps businesses across {cityName} leverage LLP advantages for professional growth.
+                DBIZ CONSULTANCY helps businesses across {cityName} leverage LLP advantages for professional growth.
               </p>
             </div>
 
@@ -604,7 +604,7 @@ const LLPRegistrationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-dbiz-navy mb-2">Need Help with Documentation?</h3>
                   <p className="text-gray-600 mb-4">
-                    Our expert team at D BIZ CONSULTANCY will guide you through the entire documentation process.
+                    Our expert team at DBIZ CONSULTANCY will guide you through the entire documentation process.
                   </p>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -644,7 +644,7 @@ const LLPRegistrationPage = () => {
                   step: "1",
                   title: "Obtain Digital Signature Certificate (DSC)",
                   description: "Apply for DSC for designated partners who will sign the LLP incorporation documents electronically.",
-                  advantage: "D BIZ CONSULTANCY assists in obtaining DSC quickly from authorized certifying agencies."
+                  advantage: "DBIZ CONSULTANCY assists in obtaining DSC quickly from authorized certifying agencies."
                 },
                 {
                   step: "2",
@@ -662,7 +662,7 @@ const LLPRegistrationPage = () => {
                   step: "4",
                   title: "File Form FiLLiP",
                   description: "Submit the integrated LLP incorporation form (FiLLiP) along with required documents to MCA.",
-                  advantage: "D BIZ CONSULTANCY prepares and files Form FiLLiP with complete accuracy and compliance."
+                  advantage: "DBIZ CONSULTANCY prepares and files Form FiLLiP with complete accuracy and compliance."
                 },
                 {
                   step: "5",
@@ -674,7 +674,7 @@ const LLPRegistrationPage = () => {
                   step: "6",
                   title: "Certificate of Incorporation",
                   description: "Receive the Certificate of Incorporation and LLP Identification Number (LLPIN) from MCA.",
-                  advantage: "D BIZ CONSULTANCY ensures timely receipt and helps with post-incorporation formalities including PAN, TAN, and bank account opening."
+                  advantage: "DBIZ CONSULTANCY ensures timely receipt and helps with post-incorporation formalities including PAN, TAN, and bank account opening."
                 }
               ].map((item, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
@@ -694,7 +694,7 @@ const LLPRegistrationPage = () => {
                           <div className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-dbiz-navy mb-1">D BIZ Advantage</p>
+                              <p className="text-sm font-medium text-dbiz-navy mb-1">DBIZ Advantage</p>
                               <p className="text-sm text-gray-600">{item.advantage}</p>
                             </div>
                           </div>
@@ -771,18 +771,18 @@ const LLPRegistrationPage = () => {
                   How long does LLP registration take?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  With all documents ready, LLP registration typically takes 7-10 working days. The timeline includes DSC and DPIN procurement, name approval, and filing of incorporation documents. D BIZ CONSULTANCY ensures a smooth process with expert guidance at each step.
+                  With all documents ready, LLP registration typically takes 7-10 working days. The timeline includes DSC and DPIN procurement, name approval, and filing of incorporation documents. DBIZ CONSULTANCY ensures a smooth process with expert guidance at each step.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
         </section>
 
-        {/* Why Choose D BIZ Section */}
+        {/* Why Choose DBIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for LLP registration across {cityName}
               </p>

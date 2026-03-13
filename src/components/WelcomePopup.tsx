@@ -88,12 +88,12 @@ const WelcomePopup = () => {
           <div className="mb-2">
             <img 
               src="/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png" 
-              alt="D BIZ Consultancy" 
+              alt="DBIZ Consultancy" 
               className="h-12 mb-2"
             />
           </div>
           <DialogTitle className="text-xl text-dbiz-navy">
-            At D BIZ Consultancy Private Limited, we strongly believe that your success is our business.
+            At DBIZ Consultancy Private Limited, we strongly believe that your success is our business.
           </DialogTitle>
         </DialogHeader>
         

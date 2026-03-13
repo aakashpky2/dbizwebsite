@@ -56,8 +56,8 @@ const GSTRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "GST Registration | Quick & Easy GST Registration | D BIZ CONSULTANCY"
-    : `GST Registration in ${cityName} | Quick & Easy GST Registration | D BIZ CONSULTANCY`;
+    ? "GST Registration | Quick & Easy GST Registration | DBIZ CONSULTANCY"
+    : `GST Registration in ${cityName} | Quick & Easy GST Registration | DBIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -106,7 +106,7 @@ const GSTRegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get your GST registration done quickly and hassle-free with D BIZ CONSULTANCY. Our expert team ensures 100% compliance with GST regulations, helping your business operate legally and claim input tax credits.
+                  Get your GST registration done quickly and hassle-free with DBIZ CONSULTANCY. Our expert team ensures 100% compliance with GST regulations, helping your business operate legally and claim input tax credits.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -339,7 +339,7 @@ const GSTRegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of GST Registration</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                D BIZ CONSULTANCY helps businesses across {cityName} navigate GST registration with ease and confidence.
+                DBIZ CONSULTANCY helps businesses across {cityName} navigate GST registration with ease and confidence.
               </p>
             </div>
 
@@ -643,7 +643,7 @@ const GSTRegistrationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-dbiz-navy mb-2">Need Help with Documentation?</h3>
                   <p className="text-gray-600 mb-4">
-                    Our expert team at D BIZ CONSULTANCY will guide you through the entire documentation process and ensure all requirements are met.
+                    Our expert team at DBIZ CONSULTANCY will guide you through the entire documentation process and ensure all requirements are met.
                   </p>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -707,7 +707,7 @@ const GSTRegistrationPage = () => {
                   step: "5",
                   title: "Verification Process",
                   description: "GST authorities verify the submitted documents and may request additional information if needed.",
-                  advantage: "D BIZ CONSULTANCY handles all queries and provides additional documents promptly."
+                  advantage: "DBIZ CONSULTANCY handles all queries and provides additional documents promptly."
                 },
                 {
                   step: "6",
@@ -733,7 +733,7 @@ const GSTRegistrationPage = () => {
                           <div className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-dbiz-navy mb-1">D BIZ Advantage</p>
+                              <p className="text-sm font-medium text-dbiz-navy mb-1">DBIZ Advantage</p>
                               <p className="text-sm text-gray-600">{item.advantage}</p>
                             </div>
                           </div>
@@ -774,7 +774,7 @@ const GSTRegistrationPage = () => {
                   How long does GST registration take?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  The GST registration process typically takes 3-5 working days from the date of application submission, provided all documents are correct and complete. D BIZ CONSULTANCY ensures your application is error-free to avoid any delays.
+                  The GST registration process typically takes 3-5 working days from the date of application submission, provided all documents are correct and complete. DBIZ CONSULTANCY ensures your application is error-free to avoid any delays.
                 </AccordionContent>
               </AccordionItem>
 
@@ -810,18 +810,18 @@ const GSTRegistrationPage = () => {
                   What happens if I don't register for GST when required?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Failure to register for GST when required can result in penalties of up to 10% of the tax due or ₹10,000, whichever is higher. Additionally, you cannot claim input tax credit and may face legal consequences. D BIZ CONSULTANCY helps ensure timely registration to avoid such penalties.
+                  Failure to register for GST when required can result in penalties of up to 10% of the tax due or ₹10,000, whichever is higher. Additionally, you cannot claim input tax credit and may face legal consequences. DBIZ CONSULTANCY helps ensure timely registration to avoid such penalties.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
         </section>
 
-        {/* Why Choose D BIZ Section */}
+        {/* Why Choose DBIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for GST registration across {cityName}
               </p>

@@ -24,7 +24,7 @@ const CopyrightRegistrationPage = () => {
     { id: "types", label: "Types" },
     { id: "documents", label: "Documents" },
     { id: "process", label: "Process" },
-    { id: "why-us", label: "Why D BIZ CONSULTANCY" },
+    { id: "why-us", label: "Why DBIZ CONSULTANCY" },
     { id: "faqs", label: "FAQs" },
   ];
 
@@ -302,7 +302,7 @@ const CopyrightRegistrationPage = () => {
       {/* Why Us Section */}
       <section id="why-us" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-dbiz-navy mb-12 text-center">Why Choose D BIZ CONSULTANCY?</h2>
+          <h2 className="text-3xl font-bold text-dbiz-navy mb-12 text-center">Why Choose DBIZ CONSULTANCY?</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="text-center">
               <div className="w-16 h-16 bg-dbiz-teal/10 rounded-full flex items-center justify-center text-dbiz-teal mx-auto mb-4">

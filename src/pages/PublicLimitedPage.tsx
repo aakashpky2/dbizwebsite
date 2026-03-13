@@ -249,7 +249,7 @@ const EnhancedPublicLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Public Limited Company</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for scalable business success.
+              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for scalable business success.
             </p>
           </div>
 

@@ -20,7 +20,7 @@ const SEOContentSection = () => {
                 {/* Main Heading Section */}
                 <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
                     <h2 className="text-2xl md:text-4xl font-bold text-dbiz-navy leading-tight tracking-tight">
-                        Why Choose <span className="text-3xl md:text-5xl uppercase inline-block my-1">D BIZ CONSULTANCY</span> as your Business Growth & Compliance Partner?
+                        Why Choose <span className="text-3xl md:text-5xl uppercase inline-block my-1">DBIZ CONSULTANCY</span> as your Business Growth & Compliance Partner?
                     </h2>
                     <div className="w-24 h-1.5 bg-dbiz-teal mx-auto rounded-full"></div>
                     <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -43,7 +43,7 @@ const SEOContentSection = () => {
                                 </h3>
                             </div>
                             <p className="text-gray-600 mb-8 italic">
-                                Unlike ordinary registration consultants, D BIZ CONSULTANCY offers comprehensive statutory and legal support including:
+                                Unlike ordinary registration consultants, DBIZ CONSULTANCY offers comprehensive statutory and legal support including:
                             </p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700 flex-grow mb-8">
                                 {[

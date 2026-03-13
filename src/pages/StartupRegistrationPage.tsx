@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, FileText, Shield, Building2, FileBarChart, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, TrendingUp, Award, Lightbulb, Banknote } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,8 +54,8 @@ const StartupRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "Startup India Registration | DPIIT Recognition | D BIZ CONSULTANCY"
-    : `Startup India Registration in ${cityName} | DPIIT Recognition | D BIZ CONSULTANCY`;
+    ? "Startup India Registration | DPIIT Recognition | DBIZ CONSULTANCY"
+    : `Startup India Registration in ${cityName} | DPIIT Recognition | DBIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -76,6 +77,7 @@ const StartupRegistrationPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title={seoTitle} />
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
         {/* Hero Section */}
@@ -102,7 +104,7 @@ const StartupRegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get DPIIT recognition for your startup and unlock exclusive benefits including tax exemptions, easier compliance, and access to funding opportunities with D BIZ CONSULTANCY.
+                  Get DPIIT recognition for your startup and unlock exclusive benefits including tax exemptions, easier compliance, and access to funding opportunities with DBIZ CONSULTANCY.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -325,7 +327,7 @@ const StartupRegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of Startup India Recognition</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                D BIZ CONSULTANCY helps startups across {cityName} leverage these powerful benefits for growth and success.
+                DBIZ CONSULTANCY helps startups across {cityName} leverage these powerful benefits for growth and success.
               </p>
             </div>
 
@@ -570,7 +572,7 @@ const StartupRegistrationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-dbiz-navy mb-2">Expert Assistance Available</h3>
                   <p className="text-gray-600 mb-4">
-                    D BIZ CONSULTANCY provides complete support in preparing your application and gathering required documents for Startup India recognition.
+                    DBIZ CONSULTANCY provides complete support in preparing your application and gathering required documents for Startup India recognition.
                   </p>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -606,7 +608,7 @@ const StartupRegistrationPage = () => {
                   step: "1",
                   title: "Incorporate Your Entity",
                   description: "First, incorporate your business as a Private Limited Company, LLP, or Partnership Firm. We can help with entity formation if needed.",
-                  advantage: "D BIZ CONSULTANCY provides complete entity incorporation services along with Startup India registration."
+                  advantage: "DBIZ CONSULTANCY provides complete entity incorporation services along with Startup India registration."
                 },
                 {
                   step: "2",
@@ -636,7 +638,7 @@ const StartupRegistrationPage = () => {
                   step: "6",
                   title: "Receive Recognition Certificate",
                   description: "Upon approval, you'll receive the DPIIT recognition certificate via email. You can now avail all Startup India benefits.",
-                  advantage: "D BIZ CONSULTANCY helps you understand and access all available benefits post-recognition including tax exemptions and funding opportunities."
+                  advantage: "DBIZ CONSULTANCY helps you understand and access all available benefits post-recognition including tax exemptions and funding opportunities."
                 }
               ].map((item, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
@@ -656,7 +658,7 @@ const StartupRegistrationPage = () => {
                           <div className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-dbiz-navy mb-1">D BIZ Advantage</p>
+                              <p className="text-sm font-medium text-dbiz-navy mb-1">DBIZ Advantage</p>
                               <p className="text-sm text-gray-600">{item.advantage}</p>
                             </div>
                           </div>
@@ -724,7 +726,7 @@ const StartupRegistrationPage = () => {
                   What happens if my Startup India application is rejected?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  If rejected, you'll receive reasons for rejection. You can address the issues and reapply. Common reasons include insufficient innovation description or not meeting eligibility criteria. D BIZ CONSULTANCY helps ensure applications meet all requirements to minimize rejection chances.
+                  If rejected, you'll receive reasons for rejection. You can address the issues and reapply. Common reasons include insufficient innovation description or not meeting eligibility criteria. DBIZ CONSULTANCY helps ensure applications meet all requirements to minimize rejection chances.
                 </AccordionContent>
               </AccordionItem>
 
@@ -740,11 +742,11 @@ const StartupRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Why Choose D BIZ Section */}
+        {/* Why Choose DBIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for Startup India registration across {cityName}
               </p>

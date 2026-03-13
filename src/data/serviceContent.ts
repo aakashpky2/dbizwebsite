@@ -11,7 +11,7 @@ interface ServiceContent {
 // TDS Filings content
 export const tdsFilingsContent: ServiceContent = {
   title: "TDS Filings",
-  description: "D BIZ CONSULTANCY offers comprehensive TDS (Tax Deducted at Source) filing services to businesses across India. Our expert team ensures timely and accurate TDS returns to keep you compliant with income tax regulations.",
+  description: "DBIZ CONSULTANCY offers comprehensive TDS (Tax Deducted at Source) filing services to businesses across India. Our expert team ensures timely and accurate TDS returns to keep you compliant with income tax regulations.",
   importance: [
     "Avoiding penalties and legal issues from non-compliance with TDS regulations",
     "Ensuring accurate tax deductions for various payment categories",
@@ -23,7 +23,7 @@ export const tdsFilingsContent: ServiceContent = {
   steps: [
     {
       title: "Document Collection",
-      description: "D BIZ CONSULTANCY collects all relevant payment details, PAN information, and deduction records for the quarter."
+      description: "DBIZ CONSULTANCY collects all relevant payment details, PAN information, and deduction records for the quarter."
     },
     {
       title: "Verification & Calculation",
@@ -52,7 +52,7 @@ export const tdsFilingsContent: ServiceContent = {
 // GST Filings content
 export const gstFilingsContent: ServiceContent = {
   title: "GST Filings",
-  description: "D BIZ CONSULTANCY provides expert GST filing services to businesses of all sizes across India. Our team ensures accurate and timely GST returns to maintain compliance with GST regulations.",
+  description: "DBIZ CONSULTANCY provides expert GST filing services to businesses of all sizes across India. Our team ensures accurate and timely GST returns to maintain compliance with GST regulations.",
   importance: [
     "Ensuring compliance with GST laws and avoiding penalties",
     "Maintaining proper input tax credit records",
@@ -93,7 +93,7 @@ export const gstFilingsContent: ServiceContent = {
 // Income Tax Filing content
 export const itrFilingContent: ServiceContent = {
   title: "Income Tax Filing",
-  description: "D BIZ CONSULTANCY offers comprehensive Income Tax Return (ITR) filing services for individuals, businesses, and organizations throughout India. Our tax experts ensure accurate returns while maximizing legitimate deductions.",
+  description: "DBIZ CONSULTANCY offers comprehensive Income Tax Return (ITR) filing services for individuals, businesses, and organizations throughout India. Our tax experts ensure accurate returns while maximizing legitimate deductions.",
   importance: [
     "Meeting legal compliance requirements to avoid penalties",
     "Claiming all eligible deductions and exemptions",
@@ -134,7 +134,7 @@ export const itrFilingContent: ServiceContent = {
 // MCA Compliance content
 export const mcaComplianceContent: ServiceContent = {
   title: "MCA Compliance",
-  description: "D BIZ CONSULTANCY provides expert MCA compliance services to companies across India, ensuring they meet all statutory requirements under the Companies Act and MCA regulations.",
+  description: "DBIZ CONSULTANCY provides expert MCA compliance services to companies across India, ensuring they meet all statutory requirements under the Companies Act and MCA regulations.",
   importance: [
     "Avoiding penalties and legal actions for non-compliance",
     "Maintaining good standing with the Ministry of Corporate Affairs",
@@ -175,7 +175,7 @@ export const mcaComplianceContent: ServiceContent = {
 // Private Limited Company content
 export const privateLimitedContent: ServiceContent = {
   title: "Private Limited Company",
-  description: "D BIZ CONSULTANCY provides complete Private Limited Company registration services across India. Our expert team ensures a hassle-free process from name approval to compliance management.",
+  description: "DBIZ CONSULTANCY provides complete Private Limited Company registration services across India. Our expert team ensures a hassle-free process from name approval to compliance management.",
   importance: [
     "Limited liability protection, safeguarding personal assets from business liabilities",
     "Enhanced credibility and trust among clients, suppliers, and financial institutions",
@@ -190,7 +190,7 @@ export const privateLimitedContent: ServiceContent = {
   steps: [
     {
       title: "Digital Signature Certificate (DSC)",
-      description: "D BIZ CONSULTANCY assists in obtaining DSCs for all proposed directors from certified authorities."
+      description: "DBIZ CONSULTANCY assists in obtaining DSCs for all proposed directors from certified authorities."
     },
     {
       title: "Director Identification Number (DIN)",
@@ -214,7 +214,7 @@ export const privateLimitedContent: ServiceContent = {
     },
     {
       title: "Post-Registration Compliance",
-      description: "D BIZ CONSULTANCY provides guidance on GST registration, compliance requirements, and annual filings."
+      description: "DBIZ CONSULTANCY provides guidance on GST registration, compliance requirements, and annual filings."
     }
   ],
   relatedServices: [
@@ -227,7 +227,7 @@ export const privateLimitedContent: ServiceContent = {
 // Limited Liability Partnership (LLP) content
 export const llpContent: ServiceContent = {
   title: "Limited Liability Partnership",
-  description: "D BIZ CONSULTANCY provides comprehensive Limited Liability Partnership (LLP) registration services across India. Our expert team assists businesses in blending the features of a partnership and a private company, offering limited liability protection with simplified compliance requirements.",
+  description: "DBIZ CONSULTANCY provides comprehensive Limited Liability Partnership (LLP) registration services across India. Our expert team assists businesses in blending the features of a partnership and a private company, offering limited liability protection with simplified compliance requirements.",
   importance: [
     "Limited liability protection safeguarding partners' personal assets from business liabilities",
     "Separate legal entity status allowing the LLP to own assets and enter contracts independently",
@@ -243,7 +243,7 @@ export const llpContent: ServiceContent = {
   steps: [
     {
       title: "Consultation and Planning",
-      description: "D BIZ CONSULTANCY experts discuss your business requirements to determine the most suitable LLP structure for your needs."
+      description: "DBIZ CONSULTANCY experts discuss your business requirements to determine the most suitable LLP structure for your needs."
     },
     {
       title: "Name Reservation",
@@ -259,7 +259,7 @@ export const llpContent: ServiceContent = {
     },
     {
       title: "Document Preparation",
-      description: "D BIZ CONSULTANCY prepares all necessary documentation including the LLP Agreement detailing roles, responsibilities, and profit-sharing."
+      description: "DBIZ CONSULTANCY prepares all necessary documentation including the LLP Agreement detailing roles, responsibilities, and profit-sharing."
     },
     {
       title: "Filing with Registrar",
@@ -271,7 +271,7 @@ export const llpContent: ServiceContent = {
     },
     {
       title: "Post-Registration Compliance",
-      description: "D BIZ CONSULTANCY assists with PAN and TAN applications, LLP agreement registration, and guides you through ongoing compliance requirements."
+      description: "DBIZ CONSULTANCY assists with PAN and TAN applications, LLP agreement registration, and guides you through ongoing compliance requirements."
     }
   ],
   relatedServices: [
@@ -284,7 +284,7 @@ export const llpContent: ServiceContent = {
 // Public Limited Company content
 export const publicLimitedContent: ServiceContent = {
   title: "Public Limited Company",
-  description: "D BIZ CONSULTANCY offers expert Public Limited Company registration services across India. We guide you through the complex regulatory requirements to establish a transparent, scalable legal entity capable of raising public capital.",
+  description: "DBIZ CONSULTANCY offers expert Public Limited Company registration services across India. We guide you through the complex regulatory requirements to establish a transparent, scalable legal entity capable of raising public capital.",
   importance: [
     "Ability to raise capital through public issue of shares (IPO) and debentures",
     "Free transferability of shares providing high liquidity to investors and shareholders",
@@ -299,7 +299,7 @@ export const publicLimitedContent: ServiceContent = {
   steps: [
     {
       title: "Digital Signature Certificate (DSC)",
-      description: "D BIZ CONSULTANCY obtains DSCs for all proposed directors to sign electronic forms securely."
+      description: "DBIZ CONSULTANCY obtains DSCs for all proposed directors to sign electronic forms securely."
     },
     {
       title: "Name Approval (RUN)",

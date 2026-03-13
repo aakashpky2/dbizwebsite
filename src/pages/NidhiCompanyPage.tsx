@@ -65,7 +65,7 @@ const NidhiCompanyPage = () => {
 
   // If location is provided, we're on a city-specific page
   const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-  const seoTitle = location === undefined ? "Nidhi Company Registration in India | D BIZ CONSULTANCY" : `Nidhi Company Registration in ${cityName} | D BIZ CONSULTANCY`;
+  const seoTitle = location === undefined ? "Nidhi Company Registration in India | DBIZ CONSULTANCY" : `Nidhi Company Registration in ${cityName} | DBIZ CONSULTANCY`;
 
   if (location && !isValidLocation) {
     return <NotFound />;
@@ -680,10 +680,10 @@ const NidhiCompanyPage = () => {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Why D BIZ
+                Why DBIZ
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY?</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">

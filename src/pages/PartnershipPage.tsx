@@ -40,7 +40,7 @@ const PartnershipPage = () => {
 
   // If location is provided, we're on a city-specific page
   const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-  const seoTitle = location === undefined ? "Partnership Firm Registration in India | D BIZ CONSULTANCY" : `Partnership Firm Registration in ${cityName} | D BIZ CONSULTANCY`;
+  const seoTitle = location === undefined ? "Partnership Firm Registration in India | DBIZ CONSULTANCY" : `Partnership Firm Registration in ${cityName} | DBIZ CONSULTANCY`;
 
   if (location && !isValidLocation) {
     return <NotFound />;
@@ -83,7 +83,7 @@ const PartnershipPage = () => {
               </h1>
 
               <p className="text-lg opacity-90 mb-6 leading-relaxed">
-                D BIZ CONSULTANCY provides comprehensive Partnership Firm Registration services across {cityName || "India"}, including Partnership Deed drafting, stamp duty compliance, Registrar of Firms (ROF) filing, PAN registration, GST registration, and ongoing tax and regulatory support.
+                DBIZ CONSULTANCY provides comprehensive Partnership Firm Registration services across {cityName || "India"}, including Partnership Deed drafting, stamp duty compliance, Registrar of Firms (ROF) filing, PAN registration, GST registration, and ongoing tax and regulatory support.
               </p>
 
               <p className="text-lg opacity-90 mb-8 leading-relaxed">
@@ -312,7 +312,7 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Partnership Firm</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
+              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
             </p>
           </div>
 
@@ -396,7 +396,7 @@ const PartnershipPage = () => {
                 </h2>
 
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  D BIZ CONSULTANCY helps businesses leverage these advantages for maximum growth and protection.
+                  DBIZ CONSULTANCY helps businesses leverage these advantages for maximum growth and protection.
                 </p>
 
                 <div className="hidden md:block mt-8">
@@ -521,7 +521,7 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              D BIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+              DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
             </p>
           </div>
 
@@ -838,10 +838,10 @@ const PartnershipPage = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Why D BIZ
+              Why DBIZ
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Partnership Firm Registration?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Partnership Firm Registration?</h2>
 
             <p className="text-lg text-gray-600">Registering a partnership firm requires precision in deed drafting, stamp duty compliance, and proper procedural filing.</p>
           </div>
@@ -849,7 +849,7 @@ const PartnershipPage = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
+                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
               </h3>
               <ul className="space-y-3">
                 {[

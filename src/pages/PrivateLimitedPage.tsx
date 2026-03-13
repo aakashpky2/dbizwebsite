@@ -4,6 +4,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { 
   CheckCircle2, 
@@ -88,8 +89,8 @@ const PrivateLimitedPage = () => {
     : "India";
 
   const seoTitle = location === undefined
-    ? "Private Limited Company Registration | Best in India | D BIZ CONSULTANCY" 
-    : `Private Limited Company Registration in ${cityName} | Best in India | D BIZ CONSULTANCY`;
+    ? "Private Limited Company Registration | Best in India | DBIZ CONSULTANCY" 
+    : `Private Limited Company Registration in ${cityName} | Best in India | DBIZ CONSULTANCY`;
 
   // Function to scroll to features section
   const scrollToFeatures = () => {
@@ -101,6 +102,7 @@ const PrivateLimitedPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO title={seoTitle} />
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
         {/* Hero Section */}
@@ -174,7 +176,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Key Features of a Private Limited Company</h2>
             <p className="section-subtitle text-center">
-              D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
+              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -248,7 +250,7 @@ const PrivateLimitedPage = () => {
               Benefits of a Private Limited Company {location !== undefined ? `in ${cityName}` : ""}
             </h2>
             <p className="section-subtitle text-center">
-              D BIZ CONSULTANCY helps businesses in {cityName} leverage these advantages.
+              DBIZ CONSULTANCY helps businesses in {cityName} leverage these advantages.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -335,7 +337,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Documents Required</h2>
             <p className="section-subtitle text-center">
-              D BIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+              DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -422,7 +424,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We handle the entire DSC application process, including document submission and verification.</p>
                       </div>
                     </div>
@@ -467,7 +469,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">Our team ensures accurate form filing with all required details to avoid delays in processing.</p>
                       </div>
                     </div>
@@ -519,7 +521,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">Our legal experts customize these documents to suit your specific business needs and future growth plans.</p>
                       </div>
                     </div>
@@ -550,7 +552,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We follow up with the ROC to ensure timely issuance and help you understand all details of your incorporation certificate.</p>
                       </div>
                     </div>
@@ -595,7 +597,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We assist with preparing all required bank documents and guide you through the account opening process with our banking partners.</p>
                       </div>
                     </div>
@@ -640,7 +642,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We guide you on the exact capital amount to be deposited and ensure proper documentation for compliance.</p>
                       </div>
                     </div>
@@ -691,7 +693,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We ensure timely filing of INC-20A with all required documents and professional certification, so your company can legally commence business without delays.</p>
                       </div>
                     </div>

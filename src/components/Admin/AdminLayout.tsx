@@ -97,7 +97,7 @@ const AdminLayout = ({ children, title }: AdminLayoutProps) => {
           <div className="p-4 border-b text-center">
             <img
               src="/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png"
-              alt="D BIZ Consultancy"
+              alt="DBIZ Consultancy"
               className="h-12 mx-auto"
             />
             <h2 className="text-sm font-medium mt-2 text-dbiz-navy">Admin Portal</h2>

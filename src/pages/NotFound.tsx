@@ -23,7 +23,7 @@ const NotFound = () => {
         <div className="text-center px-4">
           <img
             src="/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png"
-            alt="D BIZ Consultancy"
+            alt="DBIZ Consultancy"
             className="mx-auto h-20 mb-8"
           />
           <h1 className="text-5xl font-bold mb-6 text-dbiz-navy">COMING SOON</h1>
