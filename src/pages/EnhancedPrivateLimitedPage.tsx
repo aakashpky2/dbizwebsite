@@ -215,23 +215,7 @@ const EnhancedPrivateLimitedPage = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
-                  <div className="text-dbiz-teal mb-3">
-                    <Shield className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-dbiz-navy">Limited Liability</h3>
-                  <p className="text-gray-600">In a company limited by shares, the liability of each member is limited to the amount unpaid on shares held — protecting personal assets from business debts.</p>
-                </div>
 
-                <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
-                  <div className="text-dbiz-teal mb-3">
-                    <Users className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2 text-dbiz-navy">Perpetual Succession</h3>
-                  <p className="text-gray-600">From incorporation, the company becomes a body corporate with perpetual succession — business continues regardless of changes in ownership or management.</p>
-                </div>
-              </div>
             </div>
 
             <div className="md:w-1/3">

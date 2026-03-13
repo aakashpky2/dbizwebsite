@@ -77,63 +77,63 @@ const ServicesSection = () => {
       title: "Start a Business",
       items: [
         { name: "PRIVATE LIMITED COMPANY", path: "/private-limited" },
-        { name: "PUBLIC COMPANY", path: "/coming-soon" },
-        { name: "ONE PERSON COMPANY (OPC)", path: "/coming-soon" },
-        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/coming-soon" },
-        { name: "PARTNERSHIP", path: "/coming-soon" },
-        { name: "SOLE PROPRIETORSHIP", path: "/coming-soon" }
+        { name: "PUBLIC COMPANY", path: "/public-limited" },
+        { name: "ONE PERSON COMPANY (OPC)", path: "/one-person-company" },
+        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
+        { name: "PARTNERSHIP", path: "/partnership" },
+        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
       ]
     },
     {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/coming-soon" },
-        { name: "12A AND 80G", path: "/coming-soon" },
-        { name: "ISO REGISTRATION", path: "/coming-soon" },
-        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
-        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
+        { name: "GST Registration", path: "/gst-registration" },
+        { name: "12A AND 80G", path: "/12a-80g-registration" },
+        { name: "ISO REGISTRATION", path: "/iso-certification" },
+        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
+        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
       ]
     },
     {
       icon: ClipboardList,
       title: "Compliance",
       items: [
-        { name: "INCOME TAX RETURNS (ITR)", path: "/coming-soon" },
-        { name: "ANNUAL MCA COMPLIANCE", path: "/coming-soon" },
-        { name: "GST MONTHLY FILINGS", path: "/coming-soon" },
-        { name: "NIDHI COMPANY COMPLIANCES", path: "/coming-soon" },
-        { name: "TDS FILINGS", path: "/coming-soon" }
+        { name: "INCOME TAX RETURNS (ITR)", path: "/income-tax-filing" },
+        { name: "ANNUAL MCA COMPLIANCE", path: "/mca-compliance" },
+        { name: "GST MONTHLY FILINGS", path: "/gst-filings" },
+        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company" },
+        { name: "TDS FILINGS", path: "/tds-filings" }
       ]
     },
     {
       icon: BarChart,
-      title: "Audit",
+      title: "Registration (Continued)",
       items: [
-        { name: "INTERNAL AUDIT", path: "/coming-soon" },
-        { name: "STOCK AUDIT", path: "/coming-soon" },
-        { name: "GST AUDIT", path: "/coming-soon" },
-        { name: "COMPANY AUDIT", path: "/coming-soon" },
-        { name: "OPERATIONAL AUDIT", path: "/coming-soon" }
+        { name: "NBFC REGISTRATION", path: "/nbfc" },
+        { name: "PRODUCER COMPANY", path: "/producer-company" },
+        { name: "UDYAM MSME REGISTRATION", path: "/udyam-msme-registration" },
+        { name: "TRADE LICENSE", path: "/trade-license" },
+        { name: "SHOP & ESTABLISHMENT", path: "/shop-establishment" }
       ]
     },
     {
       icon: Star,
       title: "Intellectual Property (IP)",
       items: [
-        { name: "TRADEMARK", path: "/coming-soon" },
-        { name: "PATENT", path: "/coming-soon" },
-        { name: "COPYRIGHT", path: "/coming-soon" }
+        { name: "TRADEMARK", path: "/trademark-registration" },
+        { name: "PATENT", path: "/patent-registration" },
+        { name: "COPYRIGHT", path: "/copyright-registration" }
       ]
     },
     {
       icon: TrendingUp,
-      title: "Fund Raising",
+      title: "Specialized Services",
       items: [
-        { name: "Investor Pitch", path: "/coming-soon" },
-        { name: "Investor Networking", path: "/coming-soon" },
-        { name: "Compliance Support", path: "/coming-soon" },
-        { name: "Financing Support", path: "/coming-soon" }
+        { name: "DIGITAL SIGNATURE", path: "/digital-signature" },
+        { name: "DRUG LICENSE", path: "/drug-license" },
+        { name: "IEC REGISTRATION", path: "/iec-registration" },
+        { name: "NIDHI COMPANY", path: "/nidhi-company" }
       ]
     }
   ];
