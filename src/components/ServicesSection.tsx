@@ -78,62 +78,62 @@ const ServicesSection = () => {
       items: [
         { name: "PRIVATE LIMITED COMPANY", path: "/private-limited" },
         { name: "PUBLIC COMPANY", path: "/public-limited" },
-        { name: "ONE PERSON COMPANY (OPC)", path: "/one-person-company" },
-        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
-        { name: "PARTNERSHIP", path: "/partnership" },
-        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
+        { name: "ONE PERSON COMPANY (OPC)", path: "/coming-soon" },
+        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/coming-soon" },
+        { name: "PARTNERSHIP", path: "/coming-soon" },
+        { name: "SOLE PROPRIETORSHIP", path: "/coming-soon" }
       ]
     },
     {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/gst-registration" },
-        { name: "12A AND 80G", path: "/12a-80g-registration" },
-        { name: "ISO REGISTRATION", path: "/iso-certification" },
-        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
-        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
+        { name: "GST Registration", path: "/coming-soon" },
+        { name: "12A AND 80G", path: "/coming-soon" },
+        { name: "ISO REGISTRATION", path: "/coming-soon" },
+        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
+        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
       ]
     },
     {
       icon: ClipboardList,
       title: "Compliance",
       items: [
-        { name: "INCOME TAX RETURNS (ITR)", path: "/income-tax-filing" },
-        { name: "ANNUAL MCA COMPLIANCE", path: "/mca-compliance" },
-        { name: "GST MONTHLY FILINGS", path: "/gst-filings" },
-        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company" },
-        { name: "TDS FILINGS", path: "/tds-filings" }
+        { name: "INCOME TAX RETURNS (ITR)", path: "/coming-soon" },
+        { name: "ANNUAL MCA COMPLIANCE", path: "/coming-soon" },
+        { name: "GST MONTHLY FILINGS", path: "/coming-soon" },
+        { name: "NIDHI COMPANY COMPLIANCES", path: "/coming-soon" },
+        { name: "TDS FILINGS", path: "/coming-soon" }
       ]
     },
     {
       icon: BarChart,
       title: "Registration (Continued)",
       items: [
-        { name: "NBFC REGISTRATION", path: "/nbfc" },
-        { name: "PRODUCER COMPANY", path: "/producer-company" },
-        { name: "UDYAM MSME REGISTRATION", path: "/udyam-msme-registration" },
-        { name: "TRADE LICENSE", path: "/trade-license" },
-        { name: "SHOP & ESTABLISHMENT", path: "/shop-establishment" }
+        { name: "NBFC REGISTRATION", path: "/coming-soon" },
+        { name: "PRODUCER COMPANY", path: "/coming-soon" },
+        { name: "UDYAM MSME REGISTRATION", path: "/coming-soon" },
+        { name: "TRADE LICENSE", path: "/coming-soon" },
+        { name: "SHOP & ESTABLISHMENT", path: "/coming-soon" }
       ]
     },
     {
       icon: Star,
       title: "Intellectual Property (IP)",
       items: [
-        { name: "TRADEMARK", path: "/trademark-registration" },
-        { name: "PATENT", path: "/patent-registration" },
-        { name: "COPYRIGHT", path: "/copyright-registration" }
+        { name: "TRADEMARK", path: "/coming-soon" },
+        { name: "PATENT", path: "/coming-soon" },
+        { name: "COPYRIGHT", path: "/coming-soon" }
       ]
     },
     {
       icon: TrendingUp,
       title: "Specialized Services",
       items: [
-        { name: "DIGITAL SIGNATURE", path: "/digital-signature" },
-        { name: "DRUG LICENSE", path: "/drug-license" },
-        { name: "IEC REGISTRATION", path: "/iec-registration" },
-        { name: "NIDHI COMPANY", path: "/nidhi-company" }
+        { name: "DIGITAL SIGNATURE", path: "/coming-soon" },
+        { name: "DRUG LICENSE", path: "/coming-soon" },
+        { name: "IEC REGISTRATION", path: "/coming-soon" },
+        { name: "NIDHI COMPANY", path: "/coming-soon" }
       ]
     }
   ];
