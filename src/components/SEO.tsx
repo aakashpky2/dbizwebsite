@@ -17,7 +17,7 @@ interface SEOProps {
  */
 const SEO: React.FC<SEOProps> = ({
     title = "D BIZ CONSULTANCY | Professional Business Consultancy",
-    description = "D BIZ CONSULTANCY – Leading business consultancy in Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, and Audit support.",
+    description = "D BIZ CONSULTANCY | STARTUP CONSULTATION | COMPANY REGISTRATION | LLP REGISTRATION | FUND RAISING | GST REGISTRATION",
     keywords = "business consultancy kerala, company registration, gst registration, trademark filing, startup advisory india",
     image = "/og-image.jpg",
     url = "https://www.dbizsolutions.in",
