@@ -6,14 +6,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { 
-  CheckCircle2, 
-  ChevronRight, 
-  ArrowRight, 
-  FileText, 
-  Users, 
-  Shield, 
-  Building2, 
+import {
+  CheckCircle2,
+  ChevronRight,
+  ArrowRight,
+  FileText,
+  Users,
+  Shield,
+  Building2,
   FileBarChart,
   Phone,
   MessageCircle,
@@ -52,14 +52,14 @@ const phoneNumber = "+918075273408";
 const ContactOptions = () => {
   return (
     <div className="grid grid-cols-2 gap-3 p-2">
-      <a 
+      <a
         href={`tel:${phoneNumber}`}
         className="flex items-center justify-center gap-2 bg-dbiz-teal text-white px-4 py-2 rounded-md hover:bg-dbiz-teal/90 transition-colors"
       >
         <Phone size={16} />
         <span>Call</span>
       </a>
-      <a 
+      <a
         href={`https://wa.me/${phoneNumber.replace('+', '')}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -75,22 +75,22 @@ const ContactOptions = () => {
 const PrivateLimitedPage = () => {
   const params = useParams();
   const location = params?.location as string;
-  
+
   // Check if location is valid (if provided)
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
-  
+
   if (location && !isValidLocation) {
     return <NotFound />;
   }
-  
+
   // If location is provided, we're on a city-specific page
-  const cityName = location 
-    ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) 
-    : "India";
+  const cityName = location
+    ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location)
+    : "";
 
   const seoTitle = location === undefined
-    ? "Private Limited Company Registration | Best in India | DBIZ CONSULTANCY" 
-    : `Private Limited Company Registration in ${cityName} | Best in India | DBIZ CONSULTANCY`;
+    ? "Private Limited Company Registration | DBIZ CONSULTANCY"
+    : `Private Limited Company Registration${cityName ? ` in ${cityName}` : ""} | DBIZ CONSULTANCY`;
 
   // Function to scroll to features section
   const scrollToFeatures = () => {
@@ -113,15 +113,15 @@ const PrivateLimitedPage = () => {
               <p className="text-lg opacity-90 mb-6">
                 {privateLimitedContent.description}
               </p>
-              
+
               {location !== undefined && (
                 <div className="inline-block bg-dbiz-teal/20 px-4 py-2 rounded-md text-sm font-medium mb-6">
                   <Link to="/private-limited" className="text-dbiz-teal hover:underline">
-                    View our services across India
+                    View our services
                   </Link>
                 </div>
               )}
-              
+
               <div className="flex flex-wrap gap-4">
                 <Popover>
                   <PopoverTrigger asChild>
@@ -134,8 +134,8 @@ const PrivateLimitedPage = () => {
                   </PopoverContent>
                 </Popover>
 
-                <Button 
-                  onClick={scrollToFeatures} 
+                <Button
+                  onClick={scrollToFeatures}
                   className="bg-purple-600 hover:bg-purple-700 text-white"
                 >
                   <ArrowDownCircle className="mr-2 h-4 w-4" /> Learn More
@@ -176,7 +176,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Key Features of a Private Limited Company</h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
+              DBIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -189,7 +189,7 @@ const PrivateLimitedPage = () => {
                   <p className="text-gray-700">Shareholders' liability is limited to their investment, protecting personal assets from business debts.</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader className="pb-3">
                   <Building2 className="h-8 w-8 text-dbiz-teal mb-2" />
@@ -199,7 +199,7 @@ const PrivateLimitedPage = () => {
                   <p className="text-gray-700">The company can own assets, enter contracts, and operate independently from its owners.</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader className="pb-3">
                   <Users className="h-8 w-8 text-dbiz-teal mb-2" />
@@ -209,17 +209,17 @@ const PrivateLimitedPage = () => {
                   <p className="text-gray-700">Requires at least 2 members and allows up to 200 members, ideal for small to medium businesses.</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader className="pb-3">
                   <FileBarChart className="h-8 w-8 text-dbiz-teal mb-2" />
                   <CardTitle className="text-dbiz-navy">No Minimum Capital</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">No mandatory minimum capital investment required to register a private limited company in India.</p>
+                  <p className="text-gray-700">No mandatory minimum capital investment required to register a private limited company.</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader className="pb-3">
                   <FileText className="h-8 w-8 text-dbiz-teal mb-2" />
@@ -229,7 +229,7 @@ const PrivateLimitedPage = () => {
                   <p className="text-gray-700">Various tax exemptions available for startups and small companies under different schemes.</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader className="pb-3">
                   <Users className="h-8 w-8 text-dbiz-teal mb-2" />
@@ -250,7 +250,7 @@ const PrivateLimitedPage = () => {
               Benefits of a Private Limited Company {location !== undefined ? `in ${cityName}` : ""}
             </h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY helps businesses in {cityName} leverage these advantages.
+              DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -269,7 +269,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Difference Between Business Structures</h2>
             <p className="section-subtitle text-center">
-              Understand why Private Limited is often the preferred choice for businesses in {cityName}.
+              Understand why Private Limited is often the preferred choice for businesses{location ? ` in ${cityName}` : ""}.
             </p>
 
             <div className="mt-10 overflow-x-auto">
@@ -337,13 +337,13 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Documents Required</h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+              DBIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-dbiz-navy">For Indian Nationals</CardTitle>
+                  <CardTitle className="text-dbiz-navy">For Domestic Nationals</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p><strong>Identity Proof:</strong> PAN Card (Mandatory), Passport, Aadhar Card, Voter ID</p>
@@ -351,7 +351,7 @@ const PrivateLimitedPage = () => {
                   <p><strong>Photographs:</strong> Recent passport-sized photographs</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-dbiz-navy">For Foreign Nationals</CardTitle>
@@ -362,7 +362,7 @@ const PrivateLimitedPage = () => {
                   <p><strong>Photographs:</strong> Recent passport-sized photographs</p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-dbiz-navy">For Company Registration</CardTitle>
@@ -375,7 +375,7 @@ const PrivateLimitedPage = () => {
                   <p><strong>Director Identification Number (DIN)</strong></p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardHeader>
                   <CardTitle className="text-dbiz-navy">Registered Office Proof</CardTitle>
@@ -394,7 +394,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Step-by-Step Private Limited Company Registration Process</h2>
             <p className="section-subtitle text-center">
-              A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs in {cityName}. 
+              A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs{location ? ` in ${cityName}` : ""}.
             </p>
 
             <div className="mt-12 space-y-12">
@@ -405,9 +405,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">1</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Obtain a Digital Signature Certificate (DSC)</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Digital Signature" 
+                  <img
+                    src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Digital Signature"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -439,9 +439,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">2</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">File the SPICe+ Form</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="SPICe Form Filing" 
+                  <img
+                    src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="SPICe Form Filing"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -484,9 +484,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">3</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Draft and File the MOA and AOA</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1586282391129-76a6df230234?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="MOA and AOA" 
+                  <img
+                    src="https://images.unsplash.com/photo-1586282391129-76a6df230234?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="MOA and AOA"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -536,9 +536,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">4</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Obtain the Certificate of Incorporation</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Certificate of Incorporation" 
+                  <img
+                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Certificate of Incorporation"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -567,9 +567,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">5</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Opening Bank Account</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Opening Bank Account" 
+                  <img
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Opening Bank Account"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -612,9 +612,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">6</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Depositing Capital Contribution</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Capital Contribution" 
+                  <img
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Capital Contribution"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
@@ -657,9 +657,9 @@ const PrivateLimitedPage = () => {
                     <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">7</div>
                     <h3 className="text-xl font-semibold text-dbiz-navy">Filing INC-20A Form – Commencement of Business</h3>
                   </div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
-                    alt="Commencement of Business" 
+                  <img
+                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Commencement of Business"
                     className="rounded-lg shadow-md w-full h-auto object-cover"
                   />
                 </div>
