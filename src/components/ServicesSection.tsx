@@ -78,21 +78,21 @@ const ServicesSection = () => {
       items: [
         { name: "PRIVATE LIMITED COMPANY", path: "/private-limited" },
         { name: "PUBLIC COMPANY", path: "/public-limited" },
-        { name: "ONE PERSON COMPANY (OPC)", path: "/one-person-company" },
-        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/coming-soon" },
-        { name: "PARTNERSHIP", path: "/coming-soon" },
-        { name: "SOLE PROPRIETORSHIP", path: "/coming-soon" }
+        { name: "ONE PERSON COMPANY (OPC)", path: "/coming-soon" },
+        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
+        { name: "PARTNERSHIP", path: "/partnership" },
+        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
       ]
     },
     {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/coming-soon" },
-        { name: "12A AND 80G", path: "/coming-soon" },
-        { name: "ISO REGISTRATION", path: "/coming-soon" },
-        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
-        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
+        { name: "GST Registration", path: "/gst-registration" },
+        { name: "12A AND 80G", path: "/12a-80g-registration" },
+        { name: "ISO REGISTRATION", path: "/iso-certification" },
+        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
+        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
       ]
     },
     {

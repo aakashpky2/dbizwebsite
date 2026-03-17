@@ -38,9 +38,7 @@ const EnhancedPublicLimitedPage = () => {
   // Check if location is valid (if provided)
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
 
-  // If location is provided, we're on a city-specific page
-  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-
+  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "";
   if (location && !isValidLocation) {
     return <NotFound />;
   }
@@ -182,7 +180,7 @@ const EnhancedPublicLimitedPage = () => {
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-dbiz-navy">Minimum 3 Directors</p>
-                      <p className="text-sm text-gray-600">At least one must be an Indian resident director</p>
+                      <p className="text-sm text-gray-600">At least one must be a local resident director</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -334,6 +332,9 @@ const EnhancedPublicLimitedPage = () => {
                   Benefits of a Public Limited Company
                   {location !== undefined && <span className="block text-xl mt-2">in {cityName}</span>}
                 </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
+                </p>
 
                 <div className="hidden md:block mt-8 relative group">
                   <div className="absolute inset-0 bg-gray-200 rounded-lg animate-pulse -z-10"></div>
@@ -500,8 +501,8 @@ const EnhancedPublicLimitedPage = () => {
         </div>
       </section>
 
-      {/* Documents Required Section */}
-      <section id="documents" className="py-16 bg-gray-50 scroll-mt-32">
+      {/* Documents Required Section — matching Private Limited design */}
+      <section id="documents" className="py-16 scroll-mt-32">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -509,102 +510,159 @@ const EnhancedPublicLimitedPage = () => {
               Documents
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required for Public Limited Company Registration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Ensure you have the following documents ready for a smooth and quick registration process.
+              D BIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Category 1 */}
+          {/* Common rejection prevention tip */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
+            <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-amber-800 mb-1">Common Rejection Prevention Tips</p>
+              <ul className="text-sm text-amber-700 space-y-1">
+                <li>• Address proofs must match spelling across PAN / Aadhaar / Passport and the SPICe+ application.</li>
+                <li>• Registered office proofs must be consistent (owner name on utility bill, rent agreement, and NOC).</li>
+                <li>• Utility bills and bank statements should be dated within the last 2 months.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                <Users className="h-8 w-8 mx-auto mb-2 opacity-80" />
-                <h3 className="text-xl font-bold">For Directors & Shareholders</h3>
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-bold">For Domestic Nationals</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Identity Proof</p>
-                    <p className="text-sm text-gray-600">PAN Card (Mandatory), Aadhaar Card, or Passport.</p>
+                    <p className="font-medium text-dbiz-navy">Identity Proof</p>
+                    <p className="text-gray-600 mt-1">PAN Card (Mandatory), Passport, Aadhar Card, Voter ID</p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Address Proof</p>
-                    <p className="text-sm text-gray-600">Latest bank statement or utility bill.</p>
+                    <p className="font-medium text-dbiz-navy">Address Proof</p>
+                    <p className="text-gray-600 mt-1">Utility Bills, Bank Statements (dated within last 2 months)</p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Recent Photographs</p>
-                    <p className="text-sm text-gray-600">Passport-sized photos of all directors.</p>
+                    <p className="font-medium text-dbiz-navy">Photographs</p>
+                    <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Category 2 */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="bg-gradient-to-r from-dbiz-teal to-dbiz-teal/90 p-6 text-white text-center">
-                <FileText className="h-8 w-8 mx-auto mb-2 opacity-80" />
-                <h3 className="text-xl font-bold">For Company Incorporation</h3>
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-navy/60 mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Draft MOA & AOA</p>
-                    <p className="text-sm text-gray-600">Constitutional documents of the company.</p>
+                    <p className="font-medium text-dbiz-navy">Identity Proof</p>
+                    <p className="text-gray-600 mt-1">Passport (Mandatory)</p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-navy/60 mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Digital Signature (DSC)</p>
-                    <p className="text-sm text-gray-600">For all proposed directors to sign documents.</p>
+                    <p className="font-medium text-dbiz-navy">Address Proof</p>
+                    <p className="text-gray-600 mt-1">Driver's License, Bank Statement, or Residence Card</p>
                   </div>
                 </div>
+
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-navy/60 mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Director Identification (DIN)</p>
-                    <p className="text-sm text-gray-600">Identification number for each director.</p>
+                    <p className="font-medium text-dbiz-navy">Notarisation / Apostille</p>
+                    <p className="text-gray-600 mt-1">May be required depending on director/shareholder status and current MCA practice</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Photographs</p>
+                    <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Category 3 */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="bg-gradient-to-r from-dbiz-navy/80 to-dbiz-navy/90 p-6 text-white text-center">
-                <Building2 className="h-8 w-8 mx-auto mb-2 opacity-80" />
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-bold">For Company Registration</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Memorandum of Association (MOA)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Articles of Association (AOA)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Declaration and Consent Forms</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Digital Signature Certificate (DSC)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-dbiz-navy">Director Identification Number (DIN)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
                 <h3 className="text-xl font-bold">For Registered Office</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Proof of Address</p>
-                    <p className="text-sm text-gray-600">Electricity/water bill or property tax receipt.</p>
+                    <p className="font-medium text-dbiz-navy">Rent Agreement + NOC</p>
+                    <p className="text-gray-600 mt-1">For a rented office/residential address, with NOC from the owner</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">NOC from Owner</p>
-                    <p className="text-sm text-gray-600">No Objection Certificate from the premise owner.</p>
+                    <p className="font-medium text-dbiz-navy">Property Documents</p>
+                    <p className="text-gray-600 mt-1">For owned property, proof of ownership</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-semibold text-dbiz-navy">Rent Agreement</p>
-                    <p className="text-sm text-gray-600">If the office space is rented or leased.</p>
+                    <p className="font-medium text-dbiz-navy">Utility Bills</p>
+                    <p className="text-gray-600 mt-1">Recent electricity or water bill of the premises (owner name must match)</p>
                   </div>
                 </div>
               </div>
@@ -614,25 +672,34 @@ const EnhancedPublicLimitedPage = () => {
       </section>
 
       {/* Registration Process Section */}
-      <section id="process" className="py-16 scroll-mt-32">
-        <div className="container-custom">
+      <section id="process" className="py-24 bg-dbiz-navy text-white scroll-mt-32 relative overflow-hidden">
+        {/* Subtle patterned background for depth */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        
+        {/* Decorative glows */}
+        <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-dbiz-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-dbiz-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+        
+        <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
               Registration Process
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Public Limited Company Registration Process in India</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Public Limited Company Registration Process</h2>
             
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Registering a Public Limited Company in India involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA). The process includes obtaining digital signatures, reserving the company name, filing incorporation documents with the Registrar of Companies (ROC), and completing post-incorporation formalities.
-            </p>
+            <div className="text-lg text-white/80 mb-8 leading-relaxed max-w-5xl mx-auto flex flex-col items-center">
+              <p className="text-center">Registering a Public Limited Company{location ? ` in ${cityName}` : ""} involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA).</p>
+              <p className="text-center">The process includes obtaining digital signatures, reserving the company name, filing incorporation documents with the Registrar of Companies (ROC),</p>
+              <p className="text-center">and completing post-incorporation formalities.</p>
+            </div>
             
-            <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic">
+            <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic bg-white/5 py-4 rounded-r-lg">
               With professional assistance from D BIZ CONSULTANCY, businesses can complete the Public Limited Company registration process efficiently while ensuring full compliance with statutory requirements.
             </p>
 
-            <h3 className="text-2xl font-bold text-dbiz-navy mt-12 mb-8 text-center">Step-by-Step Public Limited Company Registration Process</h3>
+            <h3 className="text-2xl font-bold mt-12 mb-8 text-center text-white">Step-by-Step Public Limited Company Registration Process</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -719,39 +786,48 @@ const EnhancedPublicLimitedPage = () => {
             ))}
           </div>
 
-          <div className="mt-16 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <div className="mt-16">
             <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center">Estimated Timeline for Registration</h3>
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-gray-50 border-b-2 border-dbiz-teal/20">
-                    <TableHead className="py-4 text-dbiz-navy font-bold text-lg">Stage of Process</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold text-lg text-right">Typical Time Required</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <TableCell className="py-4 font-medium text-dbiz-navy">DSC and DIN Acquisition</TableCell>
-                    <TableCell className="py-4 text-right">1 – 2 Working Days</TableCell>
-                  </TableRow>
-                  <TableRow className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <TableCell className="py-4 font-medium text-dbiz-navy">Name Reservation (RUN)</TableCell>
-                    <TableCell className="py-4 text-right">2 – 3 Working Days</TableCell>
-                  </TableRow>
-                  <TableRow className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <TableCell className="py-4 font-medium text-dbiz-navy">Document Preparation (MOA/AOA)</TableCell>
-                    <TableCell className="py-4 text-right">2 – 4 Working Days</TableCell>
-                  </TableRow>
-                  <TableRow className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <TableCell className="py-4 font-medium text-dbiz-navy">ROC Approval & Incorporation</TableCell>
-                    <TableCell className="py-4 text-right">7 – 15 Working Days</TableCell>
-                  </TableRow>
-                  <TableRow className="bg-dbiz-teal/10 border-t-2 border-dbiz-teal/30">
-                    <TableCell className="py-6 font-bold text-dbiz-teal text-xl">Total Registration Time</TableCell>
-                    <TableCell className="py-6 text-right font-bold text-dbiz-teal text-xl">20 – 30 Working Days</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-dbiz-teal font-bold text-sm">1-2</span>
+                </div>
+                <p className="text-sm font-medium text-dbiz-navy">Days</p>
+                <p className="text-xs text-gray-600 mt-1">DSC and DIN Acquisition</p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-dbiz-teal font-bold text-sm">2-3</span>
+                </div>
+                <p className="text-sm font-medium text-dbiz-navy">Days</p>
+                <p className="text-xs text-gray-600 mt-1">Name Reservation (RUN)</p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-dbiz-teal font-bold text-sm">2-4</span>
+                </div>
+                <p className="text-sm font-medium text-dbiz-navy">Days</p>
+                <p className="text-xs text-gray-600 mt-1">Document Preparation (MOA/AOA)</p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-dbiz-teal font-bold text-sm">7-15</span>
+                </div>
+                <p className="text-sm font-medium text-dbiz-navy">Days</p>
+                <p className="text-xs text-gray-600 mt-1">ROC Approval & Incorporation</p>
+              </div>
+
+              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all sm:col-span-2 lg:col-span-1">
+                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-dbiz-teal font-bold text-sm">20-30</span>
+                </div>
+                <p className="text-sm font-medium text-dbiz-navy">Working Days</p>
+                <p className="text-xs text-gray-600 mt-1 font-bold">Total Registration Time</p>
+              </div>
             </div>
           </div>
         </div>
@@ -836,7 +912,7 @@ const EnhancedPublicLimitedPage = () => {
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why Choose D BIZ CONSULTANCY?</h2>
                   <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                    D BIZ CONSULTANCY is a trusted business consultancy firm based in <span className="font-semibold text-dbiz-navy">Trivandrum and Kochi</span>, providing comprehensive support for business registrations, statutory compliance, taxation services, and corporate advisory across Kerala and major states in India.
+                    D BIZ CONSULTANCY is a trusted business consultancy firm based in <span className="font-semibold text-dbiz-navy">Trivandrum and Kochi</span>, providing comprehensive support for business registrations, statutory compliance, taxation services, and corporate advisory.
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-8">
                     With extensive experience in company incorporation and regulatory compliance, our team ensures that entrepreneurs, startups, and growing businesses receive reliable guidance, accurate documentation, and complete compliance support under the applicable laws and regulations.
@@ -881,28 +957,38 @@ const EnhancedPublicLimitedPage = () => {
       </section>
 
       {/* FAQs Section */}
-      <section id="faqs" className="py-16 scroll-mt-32">
-        <div className="container-custom max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+      <section id="faqs" className="py-20 bg-gray-50 scroll-mt-32">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Questions Answers
+              FAQs
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy">FAQs on Public Limited Company Registration in India</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on Public Limited Company Registration</h2>
+            <p className="text-sm text-gray-500 mb-2 italic">Last updated: Feb 2026</p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Whether you're curious about the SPICe+ process, post-incorporation compliance, institutional investor interest, or stock exchange listing requirements — we've covered the most-searched questions with accurate, statute-aligned answers.
+            </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqData.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
-                <AccordionTrigger className="px-6 py-4 hover:no-underline text-left">
-                  <span className="font-semibold text-dbiz-navy">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqData.map((faq, index) => (
+                <AccordionItem 
+                  key={`faq-${index}`} 
+                  value={`item-${index}`} 
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
+                >
+                  <AccordionTrigger className="px-6 py-5 hover:no-underline text-left group-hover:bg-gray-50/50 transition-colors">
+                    <span className="font-semibold text-dbiz-navy text-lg">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50 bg-white">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
 

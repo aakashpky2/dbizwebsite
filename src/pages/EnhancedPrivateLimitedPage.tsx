@@ -14,6 +14,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { indianCities } from "@/data/keralaLocations";
 import NotFound from "./NotFound";
+import CachedImage from "@/components/CachedImage";
 
 const phoneNumber = "+918075273408";
 
@@ -44,8 +45,8 @@ const EnhancedPrivateLimitedPage = () => {
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
 
   // If location is provided, we're on a city-specific page
-  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-  const seoTitle = location === undefined ? "Private Limited Company Registration in India | DBIZ CONSULTANCY" : `Private Limited Company Registration in ${cityName} | DBIZ CONSULTANCY`;
+  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "";
+  const seoTitle = location === undefined ? "Private Limited Company Registration | DBIZ CONSULTANCY" : `Private Limited Company Registration${cityName ? ` in ${cityName}` : ""} | DBIZ CONSULTANCY`;
 
   if (location && !isValidLocation) {
     return <NotFound />;
@@ -73,7 +74,13 @@ const EnhancedPrivateLimitedPage = () => {
       {/* Hero Section with Background Image */}
       <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Background" className="w-full h-full object-cover" />
+          <CachedImage 
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=70" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
         </div>
 
         <div className="container-custom relative z-10">
@@ -85,8 +92,7 @@ const EnhancedPrivateLimitedPage = () => {
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                Private Limited Company Registration in {cityName || "India"}
-
+                Private Limited Company Registration{location ? ` in ${cityName}` : ""}
               </h1>
 
               <p className="text-lg opacity-90 mb-8 leading-relaxed">
@@ -111,7 +117,12 @@ const EnhancedPrivateLimitedPage = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
-                  <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Private Limited Company" className="w-full h-auto rounded-lg shadow-lg" />
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+                    alt="Private Limited Company" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                    aspectRatio={4/3}
+                  />
 
                   <div className="mt-6 grid grid-cols-2 gap-4">
                     <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
@@ -195,7 +206,7 @@ const EnhancedPrivateLimitedPage = () => {
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-dbiz-navy">2 Directors</p>
-                      <p className="text-sm text-gray-600">At least one must be an Indian resident (182+ days in India during the FY)</p>
+                      <p className="text-sm text-gray-600">At least one must be a local resident (182+ days in the country during the FY)</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -268,7 +279,7 @@ const EnhancedPrivateLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Private Limited Company</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for business success.
+              DBIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features for business success.
             </p>
           </div>
 
@@ -309,7 +320,7 @@ const EnhancedPrivateLimitedPage = () => {
                 <CardTitle className="text-xl text-dbiz-navy">No Minimum Capital</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600">No statutory minimum paid-up capital requirement to register a private limited company in India. Capital should be practical for banking and business needs.</p>
+                <p className="text-gray-600">No statutory minimum paid-up capital requirement to register a private limited company. Capital should be practical for banking and business needs.</p>
               </CardContent>
             </Card>
 
@@ -353,11 +364,16 @@ const EnhancedPrivateLimitedPage = () => {
                 </h2>
 
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses in {cityName} leverage these advantages for maximum growth and protection.
+                  DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
                 </p>
 
                 <div className="hidden md:block mt-8">
-                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Business Growth" className="rounded-lg shadow-lg max-w-sm" />
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
+                    alt="Business Growth" 
+                    className="rounded-lg shadow-lg max-w-sm" 
+                    aspectRatio={4/3}
+                  />
                 </div>
               </div>
             </div>
@@ -392,7 +408,7 @@ const EnhancedPrivateLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Difference Between Business Structures</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              Understand why Private Limited is often the preferred choice for businesses in {cityName}.
+              Understand why Private Limited is often the preferred choice for businesses{location ? ` in ${cityName}` : ""}.
             </p>
           </div>
 
@@ -470,7 +486,7 @@ const EnhancedPrivateLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+              D BIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
             </p>
           </div>
 
@@ -490,7 +506,7 @@ const EnhancedPrivateLimitedPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Indian Nationals</h3>
+                <h3 className="text-xl font-bold">For Domestic Nationals</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
@@ -556,7 +572,7 @@ const EnhancedPrivateLimitedPage = () => {
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-500 italic mt-2">Note: At least one director must be a resident of India (182+ days stay requirement).</p>
+                <p className="text-sm text-gray-500 italic mt-2">Note: At least one director must be a resident (182+ days stay requirement).</p>
               </div>
             </div>
 
@@ -642,7 +658,7 @@ const EnhancedPrivateLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step Private Limited Company Registration Process</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs in {cityName}. The registration process requires submitting key documents, adhering to compliance regulations, and opening a current account for financial transactions.
+              A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs{location ? ` in ${cityName}` : ""}. The registration process requires submitting key documents, adhering to compliance regulations, and opening a current account for financial transactions.
             </p>
           </div>
 
@@ -1126,7 +1142,7 @@ const EnhancedPrivateLimitedPage = () => {
               FAQs
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on Private Limited Company Registration (India)</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on Private Limited Company Registration</h2>
             <p className="text-sm text-gray-500 mb-2 italic">Last updated: Feb 2026</p>
             <p className="text-lg text-gray-600 leading-relaxed">
               Whether you're curious about the SPICe+ process, post-incorporation compliance, Small Company benefits, or recent regulatory changes — we've covered the most-searched questions with accurate, statute-aligned answers.
