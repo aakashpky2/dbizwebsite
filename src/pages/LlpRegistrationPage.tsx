@@ -94,7 +94,13 @@ const LlpRegistrationPage = () => {
                 {/* Hero Section with Background Image */}
                 <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
                     <div className="absolute inset-0 z-0 opacity-10">
-                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Background" className="w-full h-full object-cover" />
+                        <img 
+                            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50" 
+                            alt="Background" 
+                            className="w-full h-full object-cover" 
+                            loading="eager"
+                            fetchPriority="high"
+                        />
                     </div>
 
                     <div className="container-custom relative z-10">
@@ -129,7 +135,13 @@ const LlpRegistrationPage = () => {
                                 <div className="relative">
                                     <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
-                                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="LLP Registration" className="w-full h-auto rounded-lg shadow-lg" />
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
+                                            alt="LLP Registration" 
+                                            className="w-full h-auto rounded-lg shadow-lg" 
+                                            loading="eager"
+                                            fetchPriority="high"
+                                        />
 
                                         <div className="mt-6 grid grid-cols-2 gap-4">
                                             <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">

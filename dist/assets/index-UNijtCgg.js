@@ -1,1 +1,0 @@
-import{r,m as n,E as s}from"./index-DK5sMxSW.js";var u=s.useId||(()=>{}),c=0;function x(t){const[e,o]=r.useState(u());return n(()=>{o(a=>a??String(c++))},[t]),t||(e?`radix-${e}`:"")}var i=r.createContext(void 0);function f(t){const e=r.useContext(i);return t||e||"ltr"}export{x as a,f as u};

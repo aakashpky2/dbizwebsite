@@ -66,9 +66,11 @@ const EnhancedPublicLimitedPage = () => {
       <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">
           <img 
-            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=70" 
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50" 
             alt="Background" 
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
         </div>
 

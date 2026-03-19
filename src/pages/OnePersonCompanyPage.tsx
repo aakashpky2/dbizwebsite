@@ -114,9 +114,11 @@ const EnhancedOnePersonCompanyPage = () => {
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
             <img
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50"
               alt="Background"
               className="w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
 
@@ -159,9 +161,11 @@ const EnhancedOnePersonCompanyPage = () => {
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
                     <img
-                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf"
+                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
                       alt="One Person Company"
                       className="w-full h-auto rounded-lg shadow-lg"
+                      loading="eager"
+                      fetchPriority="high"
                     />
 
                     <div className="mt-6 grid grid-cols-2 gap-4">
@@ -296,6 +300,7 @@ const EnhancedOnePersonCompanyPage = () => {
                     src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=800&q=80"
                     alt="One Person Company Definition"
                     className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="relative z-10">
                     <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Major Reforms (April 2021)</h3>
@@ -437,9 +442,10 @@ const EnhancedOnePersonCompanyPage = () => {
 
                   <div className="hidden md:block mt-8">
                     <img
-                      src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2"
+                      src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80"
                       alt="Business Growth"
                       className="rounded-lg shadow-lg max-w-sm"
+                      loading="lazy"
                     />
                   </div>
                 </div>
