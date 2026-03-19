@@ -38,10 +38,17 @@ const ContactOptions = () => {
   );
 };
 
+
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 const LLPRegistrationPage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  const publishDate = "2026-02-20T10:00:00+05:30";
+  const modifiedDate = "2026-03-19T12:50:00+05:30";
 
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
   
@@ -54,8 +61,22 @@ const LLPRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "Limited Liability Partnership Registration | Best in India | DBIZ CONSULTANCY"
-    : `Limited Liability Partnership Registration in ${cityName} | Best in India | DBIZ CONSULTANCY`;
+    ? "Limited Liability Partnership (LLP) Registration in India | DBIZ CONSULTANCY"
+    : `LLP Registration in ${cityName} | Limited Liability Partnership in ${cityName}`;
+
+  const seoDescription = location === undefined
+    ? "Register your Limited Liability Partnership (LLP) in India with DBIZ CONSULTANCY. Expert LLP registration, DSC, DIN, and compliance support."
+    : `Register LLP in ${cityName}. DBIZ CONSULTANCY provide fast LLP registration services in ${cityName} with minimal documentation and experts support.`;
+
+  const seoUrl = location ? `/llp/${location}` : "/llp";
+
+  const breadcrumbs = [
+    { name: "Services", item: "/#services" },
+    { name: "LLP Registration", item: "/llp" }
+  ];
+  if (location) {
+    breadcrumbs.push({ name: cityName as string, item: `/llp/${location}` });
+  }
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -77,8 +98,18 @@ const LLPRegistrationPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        url={seoUrl}
+        publishDate={publishDate}
+        modifiedDate={modifiedDate}
+        breadcrumbs={breadcrumbs.map(b => ({ name: b.name, item: b.item }))}
+        keywords={`llp registration ${cityName}, limited liability partnership ${cityName}, register llp india, llp agreement, designated partner`}
+      />
       <Navbar />
-      <main className="flex-grow pt-24 pb-16">
+      <main className="flex-grow pt-20 pb-16">
+        <Breadcrumbs items={breadcrumbs.map(b => ({ name: b.name, path: b.item, current: b.item === seoUrl }))} />
         {/* Hero Section with Background Image */}
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">

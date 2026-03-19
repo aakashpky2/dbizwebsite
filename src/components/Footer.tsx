@@ -1,4 +1,6 @@
+
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -53,14 +55,15 @@ const Footer = () => {
             </ul>
           </div>
 
+
           <div className="lg:col-span-2">
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5">Quick Links</h3>
             <ul className="space-y-2.5 text-[13px]">
-              <li><a href="#about" className="text-gray-300 hover:text-dbiz-teal transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-dbiz-teal transition-colors">Our Services</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-dbiz-teal transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-dbiz-teal transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-dbiz-teal transition-colors">Sitemap</a></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-dbiz-teal transition-colors">About Us</Link></li>
+              <li><Link to="/#services" className="text-gray-300 hover:text-dbiz-teal transition-colors">Our Services</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-dbiz-teal transition-colors">Contact Us</Link></li>
+              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-dbiz-teal transition-colors">Privacy Policy</Link></li>
+              <li><a href="/sitemap.xml" className="text-gray-300 hover:text-dbiz-teal transition-colors">Sitemap</a></li>
             </ul>
           </div>
 

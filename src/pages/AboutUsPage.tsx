@@ -1,16 +1,27 @@
 
+
+
 import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { CheckCircle2, Target, Eye, Users, FileText, CheckCircle, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CachedImage from "@/components/CachedImage";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const AboutUsPage = () => {
     return (
         <div className="min-h-screen flex flex-col">
+
+            <SEO 
+                title="About Us | Top Business Consultants in Trivandrum & Kochi | DBIZ CONSULTANCY"
+                description="Learn about DBIZ CONSULTANCY PVT. LTD., a premier business consultancy firm in Thiruvananthapuram and Kochi, Kerala. We provide expert GST, company registration, and startup advisory services."
+                url="/about"
+            />
             <Navbar />
             <main className="flex-grow pt-24 pb-16">
+                <Breadcrumbs items={[{ name: "About Us", path: "/about", current: true }]} />
                 {/* Hero section */}
                 <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 lg:py-32 overflow-hidden">
                     <div className="absolute inset-0 z-0 opacity-10">
@@ -25,8 +36,10 @@ const AboutUsPage = () => {
                             </div>
 
                             {/* H1 */}
+
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                                Business Consultancy Services in <span className="text-dbiz-teal">Thiruvananthapuram, Kerala</span>
+                                Top Business Consultancy in <br />
+                                <span className="text-dbiz-teal">Trivandrum & Kochi, Kerala</span>
                                 <br />
                                 <span className="text-2xl md:text-4xl text-white/90 mt-4 block">DBIZ CONSULTANCY PVT. LTD.</span>
                             </h1>
