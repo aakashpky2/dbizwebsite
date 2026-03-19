@@ -1,6 +1,4 @@
-
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,13 +8,13 @@ const Footer = () => {
           {/* Brand Column - Tightened and closer to left margin */}
           <div className="lg:col-span-3 space-y-4">
             <div className="text-2xl font-bold">
-              D BIZ<span className="text-gray-50"> CONSULTANCY</span>
+              DBIZ<span className="text-gray-50"> CONSULTANCY</span>
             </div>
             <p className="text-gray-300">
               Business Consultancy Services
             </p>
             <p className="text-gray-400 text-[11px] leading-relaxed max-w-[240px]">
-              D BIZ CONSULTANCY is a leading business consultant in Trivandrum, Kerala and Kochi, Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
+              DBIZ CONSULTANCY is a leading business consultant in Trivandrum, Kerala and Kochi, Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
             </p>
             <div className="flex space-x-3 pt-1">
               {/* Social media icons */}
@@ -55,15 +53,14 @@ const Footer = () => {
             </ul>
           </div>
 
-
           <div className="lg:col-span-2">
             <h3 className="text-sm font-bold uppercase tracking-wider mb-5">Quick Links</h3>
             <ul className="space-y-2.5 text-[13px]">
-              <li><Link to="/about" className="text-gray-300 hover:text-dbiz-teal transition-colors">About Us</Link></li>
-              <li><Link to="/#services" className="text-gray-300 hover:text-dbiz-teal transition-colors">Our Services</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-dbiz-teal transition-colors">Contact Us</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-dbiz-teal transition-colors">Privacy Policy</Link></li>
-              <li><a href="/sitemap.xml" className="text-gray-300 hover:text-dbiz-teal transition-colors">Sitemap</a></li>
+              <li><a href="#about" className="text-gray-300 hover:text-dbiz-teal transition-colors">About Us</a></li>
+              <li><a href="#services" className="text-gray-300 hover:text-dbiz-teal transition-colors">Our Services</a></li>
+              <li><a href="#contact" className="text-gray-300 hover:text-dbiz-teal transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-dbiz-teal transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-dbiz-teal transition-colors">Sitemap</a></li>
             </ul>
           </div>
 
@@ -117,7 +114,7 @@ const Footer = () => {
       <div className="border-t border-gray-800 py-4">
         <div className="container-custom text-center">
           <p className="text-gray-400 text-xs">
-            &copy; {new Date().getFullYear()} D BIZ CONSULTANCY Pvt. Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} DBIZ CONSULTANCY Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </div>

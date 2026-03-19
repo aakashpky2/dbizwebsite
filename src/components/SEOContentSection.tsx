@@ -178,42 +178,6 @@ const SEOContentSection = () => {
                             </div>
                         </CardContent>
                     </Card>
-
-                </div>
-
-                {/* Local Presence Section */}
-                <div className="mt-24 pt-16 border-t border-gray-100">
-                    <div className="text-center mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-dbiz-navy mb-4">Our Local Presence & Service Areas in Kerala</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto">Providing best-in-class business consultancy and registration services across major hubs in Kerala.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5">
-                            <div className="p-3 bg-dbiz-teal/10 rounded-xl">
-                                <Network className="h-6 w-6 text-dbiz-teal" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-dbiz-navy mb-2">Thiruvananthapuram (Trivandrum)</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                    Headquartered in the capital city, we provide extensive support for **Company Registration in Trivandrum**, GST filings, and Technopark startup compliance. Our local experts understand the regulatory landscape of Thiruvananthapuram to ensure seamless business setup.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-5">
-                            <div className="p-3 bg-dbiz-teal/10 rounded-xl">
-                                <Network className="h-6 w-6 text-dbiz-teal" />
-                            </div>
-                            <div>
-                                <h3 className="text-xl font-bold text-dbiz-navy mb-2">Kochi (Ernakulam)</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                    As the commercial hub, Kochi is central to our operations. We offer specialized **Business Consultancy in Kochi**, including Trademark registration, Import Export Code (IEC), and ROC compliance for enterprises in Infopark and across Ernakulam district.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-12 text-center text-gray-500 text-sm italic">
-                        Serving clients across Kerala including Kozhikode, Thrissur, Kollam, and Kottayam.
-                    </div>
                 </div>
             </div>
         </section>

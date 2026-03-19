@@ -40,16 +40,13 @@ const HeroSection = () => {
             The Business Consultancy
           </div>
 
-
-          <h1 className="text-4xl md:text-5xl lg:text-3xl font-bold leading-tight uppercase tracking-tight">
-            Best Business Consultancy in <br />
-            <span className="text-5xl md:text-6xl lg:text-7xl text-dbiz-teal block mt-2">Kerala</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            Your Success is <span className="text-dbiz-teal">Our Business</span>
           </h1>
-
 
           <div className="text-lg text-white/90 max-w-lg space-y-4">
             <p>
-              Your trusted partner for business registration, GST compliance, and corporate advisory services across Kerala, specifically focusing on the growth of startups and SMEs.
+              We build strategic partnerships grounded in trust, integrity, and proven industry expertise to help your business achieve sustainable and long-term growth.
             </p>
           </div>
 
