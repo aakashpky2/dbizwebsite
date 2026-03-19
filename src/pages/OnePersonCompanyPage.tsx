@@ -262,86 +262,70 @@ const EnhancedOnePersonCompanyPage = () => {
                 {/* Minimum Requirements Mini-block */}
                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
                   <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-medium text-dbiz-navy">1 Member</p>
-                        <p className="text-sm text-gray-600">Exactly 1 member (the subscriber/shareholder).</p>
+                        <p className="text-sm text-gray-600">Exactly 1 member</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-medium text-dbiz-navy">Min 1 Director</p>
-                        <p className="text-sm text-gray-600">Minimum 1 director (and up to 15).</p>
+                        <p className="text-sm text-gray-600">Can be the same member</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-medium text-dbiz-navy">1 Nominee</p>
-                        <p className="text-sm text-gray-600">Mandatory nomination (with prior consent) to step in.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-dbiz-navy">No Min Capital</p>
-                        <p className="text-sm text-gray-600">No statutory minimum paid-up capital.</p>
+                        <p className="text-sm text-gray-600">Mandatory nomination</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                  <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
-                    <div className="text-dbiz-teal mb-3">
-                      <Shield className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-dbiz-navy">Limited Liability</h3>
-                    <p className="text-gray-600">Protect your personal assets from business debts and liabilities. Liability is limited to any unpaid amount on shares held.</p>
-                  </div>
-
-                  <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
-                    <div className="text-dbiz-teal mb-3">
-                      <Users className="h-8 w-8" />
-                    </div>
-                    <h3 className="text-xl font-semibold mb-2 text-dbiz-navy">Perpetual Succession</h3>
-                    <p className="text-gray-600">The company continues despite changes in the individual's status, ensuring corporate continuity.</p>
-                  </div>
-                </div>
               </div>
 
               <div className="md:w-1/3">
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Major Reforms (April 2021)</h3>
-                  <p className="text-gray-700 mb-4">
-                    Key relaxations introduced to OPC eligibility and conversion rules:
-                  </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Indian citizens resident outside India (NRIs) can now form OPCs.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Residency test reduced to 120 days.</span>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <span>Removed earlier conversion restrictions/threshold triggers.</span>
-                    </li>
-                  </ul>
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 h-full flex flex-col justify-center relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
+                  <img
+                    src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=800&q=80"
+                    alt="One Person Company Definition"
+                    className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="relative z-10">
+                    <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Major Reforms (April 2021)</h3>
+                    <p className="text-gray-700 mb-4">
+                      Key relaxations introduced to OPC eligibility and conversion rules:
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                        <span>Indian citizens resident outside India (NRIs) can now form OPCs.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                        <span>Residency test reduced to 120 days.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                        <span>Removed earlier conversion restrictions/threshold triggers.</span>
+                      </li>
+                    </ul>
 
-                  <div className="mt-6 pt-6 border-t border-gray-200">
-                    <div className="flex items-center">
-                      <div className="bg-dbiz-teal/10 p-2 rounded-full">
-                        <Phone className="h-5 w-5 text-dbiz-teal" />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-sm text-gray-500">Need expert guidance?</p>
-                        <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                    <div className="mt-6 pt-6 border-t border-gray-200">
+                      <div className="flex items-center">
+                        <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                          <Phone className="h-5 w-5 text-dbiz-teal" />
+                        </div>
+                        <div className="ml-3">
+                          <p className="text-sm text-gray-500">Need expert guidance?</p>
+                          <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                        </div>
                       </div>
                     </div>
                   </div>

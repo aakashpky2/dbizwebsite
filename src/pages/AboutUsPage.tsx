@@ -41,7 +41,7 @@ const AboutUsPage = () => {
                                 Top Business Consultancy in <br />
                                 <span className="text-dbiz-teal">Trivandrum & Kochi, Kerala</span>
                                 <br />
-                                <span className="text-2xl md:text-4xl text-white/90 mt-4 block">DBIZ CONSULTANCY PVT. LTD.</span>
+                                <span className="text-2xl md:text-4xl text-white/90 mt-4 block">D BIZ CONSULTANCY PVT. LTD.</span>
                             </h1>
 
                             <p className="text-lg md:text-xl opacity-90 leading-relaxed font-light mt-6">
@@ -59,12 +59,12 @@ const AboutUsPage = () => {
                             <div className="lg:col-span-8">
                                 <h2 className="text-3xl font-bold text-dbiz-navy mb-8 flex items-center">
                                     <Target className="mr-3 h-8 w-8 text-dbiz-teal" />
-                                    About DBIZ CONSULTANCY PVT. LTD.
+                                    About D BIZ CONSULTANCY PVT. LTD.
                                 </h2>
 
                                 <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
                                     <p className="text-xl leading-relaxed font-medium">
-                                        DBIZ CONSULTANCY PVT. LTD. is a professional business consultancy firm based in Thiruvananthapuram, Kerala, India, delivering comprehensive financial advisory, statutory compliance, and corporate consultancy services to startups, SMEs, and established enterprises.
+                                        D BIZ CONSULTANCY PVT. LTD. is a professional business consultancy firm based in Thiruvananthapuram, Kerala, India, delivering comprehensive financial advisory, statutory compliance, and corporate consultancy services to startups, SMEs, and established enterprises.
                                     </p>
 
                                     <div className="bg-white rounded-2xl p-8 border border-gray-100 my-10 shadow-md transition-shadow hover:shadow-lg">

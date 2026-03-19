@@ -10,13 +10,13 @@ const Footer = () => {
           {/* Brand Column - Tightened and closer to left margin */}
           <div className="lg:col-span-3 space-y-4">
             <div className="text-2xl font-bold">
-              DBIZ<span className="text-gray-50"> CONSULTANCY</span>
+              D BIZ<span className="text-gray-50"> CONSULTANCY</span>
             </div>
             <p className="text-gray-300">
               Business Consultancy Services
             </p>
             <p className="text-gray-400 text-[11px] leading-relaxed max-w-[240px]">
-              DBIZ CONSULTANCY is a leading business consultant in Trivandrum, Kerala and Kochi, Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
+              D BIZ CONSULTANCY is a leading business consultant in Trivandrum, Kerala and Kochi, Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
             </p>
             <div className="flex space-x-3 pt-1">
               {/* Social media icons */}
@@ -117,7 +117,7 @@ const Footer = () => {
       <div className="border-t border-gray-800 py-4">
         <div className="container-custom text-center">
           <p className="text-gray-400 text-xs">
-            &copy; {new Date().getFullYear()} DBIZ CONSULTANCY Pvt. Ltd. All rights reserved.
+            &copy; {new Date().getFullYear()} D BIZ CONSULTANCY Pvt. Ltd. All rights reserved.
           </p>
         </div>
       </div>

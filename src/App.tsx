@@ -52,6 +52,7 @@ const TDSFilingsPage = lazy(() => import("./pages/TDSFilingsPage"));
 const GSTFilingsPage = lazy(() => import("./pages/GSTFilingsPage"));
 const IncomeTaxFilingPage = lazy(() => import("./pages/IncomeTaxFilingPage"));
 const MCACompliancePage = lazy(() => import("./pages/MCACompliancePage"));
+const PublicLimitedPage = lazy(() => import("./pages/PublicLimitedPage"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
 const PageLoader = () => (
@@ -147,6 +148,8 @@ const App = () => {
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/dashboard" element={<AdminDashboard />} />
                   <Route path="/admin/edit/:service" element={<ServiceEditor />} />
+                  <Route path="/public-limited" element={<PublicLimitedPage />} />
+                  <Route path="/public-limited/:location" element={<PublicLimitedPage />} />
                   <Route path="/admin/llp-editor" element={<LLPContentEditor />} />
                   <Route path="/:service" element={<ServiceDetailPage />} />
                   <Route path="/:service/:location" element={<ServiceDetailPage />} />

@@ -175,7 +175,7 @@ export const mcaComplianceContent: ServiceContent = {
 // Private Limited Company content
 export const privateLimitedContent: ServiceContent = {
   title: "Private Limited Company",
-  description: "DBIZ CONSULTANCY provides complete Private Limited Company registration services across India. Our expert team ensures a hassle-free process from name approval to compliance management.",
+  description: "DBIZ CONSULTANCY provides complete Private Limited Company registration services. Our expert team ensures a hassle-free process from name approval to compliance management.",
   importance: [
     "Limited liability protection, safeguarding personal assets from business liabilities",
     "Enhanced credibility and trust among clients, suppliers, and financial institutions",

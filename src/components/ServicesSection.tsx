@@ -77,22 +77,22 @@ const ServicesSection = () => {
       title: "Start a Business",
       items: [
         { name: "PRIVATE LIMITED COMPANY", path: "/private-limited" },
-        { name: "PUBLIC COMPANY", path: "/coming-soon" },
+        { name: "PUBLIC COMPANY", path: "/public-limited" },
         { name: "ONE PERSON COMPANY (OPC)", path: "/coming-soon" },
-        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/coming-soon" },
-        { name: "PARTNERSHIP", path: "/coming-soon" },
-        { name: "SOLE PROPRIETORSHIP", path: "/coming-soon" }
+        { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
+        { name: "PARTNERSHIP", path: "/partnership" },
+        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
       ]
     },
     {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/coming-soon" },
-        { name: "12A AND 80G", path: "/coming-soon" },
-        { name: "ISO REGISTRATION", path: "/coming-soon" },
-        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
-        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
+        { name: "GST Registration", path: "/gst-registration" },
+        { name: "12A AND 80G", path: "/12a-80g-registration" },
+        { name: "ISO REGISTRATION", path: "/iso-certification" },
+        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
+        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
       ]
     },
     {
@@ -108,13 +108,13 @@ const ServicesSection = () => {
     },
     {
       icon: BarChart,
-      title: "Audit",
+      title: "Registration (Continued)",
       items: [
-        { name: "INTERNAL AUDIT", path: "/coming-soon" },
-        { name: "STOCK AUDIT", path: "/coming-soon" },
-        { name: "GST AUDIT", path: "/coming-soon" },
-        { name: "COMPANY AUDIT", path: "/coming-soon" },
-        { name: "OPERATIONAL AUDIT", path: "/coming-soon" }
+        { name: "NBFC REGISTRATION", path: "/coming-soon" },
+        { name: "PRODUCER COMPANY", path: "/coming-soon" },
+        { name: "UDYAM MSME REGISTRATION", path: "/coming-soon" },
+        { name: "TRADE LICENSE", path: "/coming-soon" },
+        { name: "SHOP & ESTABLISHMENT", path: "/coming-soon" }
       ]
     },
     {
@@ -128,12 +128,12 @@ const ServicesSection = () => {
     },
     {
       icon: TrendingUp,
-      title: "Fund Raising",
+      title: "Specialized Services",
       items: [
-        { name: "Investor Pitch", path: "/coming-soon" },
-        { name: "Investor Networking", path: "/coming-soon" },
-        { name: "Compliance Support", path: "/coming-soon" },
-        { name: "Financing Support", path: "/coming-soon" }
+        { name: "DIGITAL SIGNATURE", path: "/coming-soon" },
+        { name: "DRUG LICENSE", path: "/coming-soon" },
+        { name: "IEC REGISTRATION", path: "/coming-soon" },
+        { name: "NIDHI COMPANY", path: "/coming-soon" }
       ]
     }
   ];

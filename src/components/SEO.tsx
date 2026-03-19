@@ -36,8 +36,8 @@ interface SEOProps {
  * Ensures weightless and omnipresent indexing across all search engines.
  */
 const SEO: React.FC<SEOProps> = ({
-    title = "DBIZ CONSULTANCY | Professional Business Consultancy",
-    description = "DBIZ CONSULTANCY – Leading business consultancy in Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, and Audit support.",
+    title = "D BIZ CONSULTANCY | Professional Business Consultancy",
+    description = "D BIZ CONSULTANCY | STARTUP CONSULTATION | COMPANY REGISTRATION | LLP REGISTRATION | FUND RAISING | GST REGISTRATION",
     keywords = "business consultancy kerala, company registration, gst registration, trademark filing, startup advisory india",
     image = "https://www.dbizsolutions.in/og-image.jpg",
     url = "https://www.dbizsolutions.in",
@@ -45,18 +45,19 @@ const SEO: React.FC<SEOProps> = ({
     publishDate,
     modifiedDate,
 
+
     author = "DBIZ CONSULTANCY",
     breadcrumbs,
     localBusiness,
 }) => {
-    const siteTitle = title.includes("DBIZ") ? title : `${title} | DBIZ CONSULTANCY`;
+    const siteTitle = title.includes("D BIZ") ? title : `${title} | D BIZ CONSULTANCY`;
     const canonicalUrl = url.startsWith("http") ? url : `https://www.dbizsolutions.in${url.startsWith("/") ? "" : "/"}${url}`;
 
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
         "@id": "https://www.dbizsolutions.in/#organization",
-        "name": "DBIZ CONSULTANCY",
+        "name": "D BIZ CONSULTANCY",
         "url": "https://www.dbizsolutions.in",
         "logo": {
             "@type": "ImageObject",
@@ -130,7 +131,7 @@ const SEO: React.FC<SEOProps> = ({
         },
         "publisher": {
             "@type": "Organization",
-            "name": "DBIZ CONSULTANCY",
+            "name": "D BIZ CONSULTANCY",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://www.dbizsolutions.in/logo.png"
@@ -155,8 +156,9 @@ const SEO: React.FC<SEOProps> = ({
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
+
             <meta property="og:url" content={canonicalUrl} />
-            <meta property="og:site_name" content="DBIZ CONSULTANCY" />
+            <meta property="og:site_name" content="D BIZ CONSULTANCY" />
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
@@ -174,6 +176,8 @@ const SEO: React.FC<SEOProps> = ({
 
             {/* Structured Data */}
             <script type="application/ld+json">
+
+
                 {JSON.stringify(organizationSchema)}
             </script>
             {localBusinessSchema && (
