@@ -88,11 +88,11 @@ const ServicesSection = () => {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/gst-registration" },
-        { name: "12A AND 80G", path: "/12a-80g-registration" },
-        { name: "ISO REGISTRATION", path: "/iso-certification" },
-        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
-        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
+        { name: "GST Registration", path: "/coming-soon" },
+        { name: "12A AND 80G", path: "/coming-soon" },
+        { name: "ISO REGISTRATION", path: "/coming-soon" },
+        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
+        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
       ]
     },
     {
@@ -108,13 +108,13 @@ const ServicesSection = () => {
     },
     {
       icon: BarChart,
-      title: "Registration (Continued)",
+      title: "Audit",
       items: [
-        { name: "NBFC REGISTRATION", path: "/coming-soon" },
-        { name: "PRODUCER COMPANY", path: "/coming-soon" },
-        { name: "UDYAM MSME REGISTRATION", path: "/coming-soon" },
-        { name: "TRADE LICENSE", path: "/coming-soon" },
-        { name: "SHOP & ESTABLISHMENT", path: "/coming-soon" }
+        { name: "INTERNAL AUDIT", path: "/coming-soon" },
+        { name: "STOCK AUDIT", path: "/coming-soon" },
+        { name: "GST AUDIT", path: "/coming-soon" },
+        { name: "COMPANY AUDIT", path: "/coming-soon" },
+        { name: "OPERATIONAL AUDIT", path: "/coming-soon" }
       ]
     },
     {
@@ -128,12 +128,12 @@ const ServicesSection = () => {
     },
     {
       icon: TrendingUp,
-      title: "Specialized Services",
+      title: "Fund Raising",
       items: [
-        { name: "DIGITAL SIGNATURE", path: "/coming-soon" },
-        { name: "DRUG LICENSE", path: "/coming-soon" },
-        { name: "IEC REGISTRATION", path: "/coming-soon" },
-        { name: "NIDHI COMPANY", path: "/coming-soon" }
+        { name: "Investor Pitch", path: "/coming-soon" },
+        { name: "Investor Networking", path: "/coming-soon" },
+        { name: "Compliance Support", path: "/coming-soon" },
+        { name: "Financing Support", path: "/coming-soon" }
       ]
     }
   ];

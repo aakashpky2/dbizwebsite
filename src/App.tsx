@@ -12,6 +12,10 @@ import SEO from "./components/SEO";
 
 // Architecture: Zero-Gravity Lazy Loading
 // We lazily load all pages to ensure the initial bundle (TTI) is under 1s.
+
+const AboutUsPage = lazy(() => import("./pages/AboutUsPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
@@ -80,8 +84,12 @@ const App = () => {
             <BrowserRouter>
               <ScrollToTop />
               <Suspense fallback={<PageLoader />}>
+
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<AboutUsPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/private-limited" element={<EnhancedPrivateLimitedPage />} />
                   <Route path="/private-limited/:location" element={<EnhancedPrivateLimitedPage />} />
                   <Route path="/llp" element={<LLPRegistrationPage />} />

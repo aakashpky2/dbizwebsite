@@ -33,20 +33,41 @@ const ContactOptions = () => {
 
 import { faqData } from "@/data/privateLimitedFaq";
 
+
+import Breadcrumbs from "@/components/Breadcrumbs";
+
 // Private Limited Company Registration Page - SEO Optimized Feb 2026
 const EnhancedPrivateLimitedPage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  // JSON-LD structured data is now handled server-side in page.tsx
+  const publishDate = "2026-02-15T10:00:00+05:30";
+  const modifiedDate = "2026-03-19T12:50:00+05:30";
 
   // Check if location is valid (if provided)
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
 
+
   // If location is provided, we're on a city-specific page
-  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "";
-  const seoTitle = location === undefined ? "Private Limited Company Registration | DBIZ CONSULTANCY" : `Private Limited Company Registration${cityName ? ` in ${cityName}` : ""} | DBIZ CONSULTANCY`;
+  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
+  const seoTitle = location === undefined 
+    ? "Private Limited Company Registration in India | DBIZ CONSULTANCY" 
+    : `Private Limited Company Registration in ${cityName} | Best PVT LTD Registration`;
+  
+  const seoDescription = location === undefined
+    ? "Register your Private Limited Company in India with DBIZ CONSULTANCY. Expert registration, compliance, and legal support at lowest prices."
+    : `Register Private Limited Company in ${cityName}. DBIZ CONSULTANCY provides fast PVT LTD registration, DSC, DIN, and ROC compliance services in ${cityName}.`;
+
+  const seoUrl = location ? `/private-limited/${location}` : "/private-limited";
+
+  const breadcrumbs = [
+    { name: "Services", item: "/#services" },
+    { name: "Private Limited Company", item: "/private-limited" }
+  ];
+  if (location) {
+    breadcrumbs.push({ name: cityName as string, item: `/private-limited/${location}` });
+  }
 
   if (location && !isValidLocation) {
     return <NotFound />;
@@ -68,9 +89,18 @@ const EnhancedPrivateLimitedPage = () => {
   const isActive = (section: string) => activeSection === section;
 
   return <div className="min-h-screen flex flex-col">
-    <SEO title={seoTitle} />
+    <SEO 
+      title={seoTitle} 
+      description={seoDescription}
+      url={seoUrl}
+      publishDate={publishDate}
+      modifiedDate={modifiedDate}
+      breadcrumbs={breadcrumbs.map(b => ({ name: b.name, item: b.item }))}
+      keywords={`private limited registration ${cityName}, pvt ltd company ${cityName}, register company india, roc compliance, startup registration`}
+    />
     <Navbar />
-    <main className="flex-grow pt-24 pb-16">
+    <main className="flex-grow pt-20">
+      <Breadcrumbs items={breadcrumbs.map(b => ({ name: b.name, path: b.item, current: b.item === seoUrl }))} />
       {/* Hero Section with Background Image */}
       <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10">

@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const { pathname } = useLocation();
@@ -17,6 +18,10 @@ const NotFound = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SEO 
+        title="Page Not Found | DBIZ CONSULTANCY"
+        noIndex={true}
+      />
       <Navbar />
 
       <main className="flex-grow flex items-center justify-center bg-gray-100 py-24">

@@ -15,10 +15,10 @@ import {
 const LOGO_SRC = "/dbiz-uploads/main-logo.png";
 
 const mainNavMenus = [
-  { name: "Home", path: "/" },
-  { name: "About Us", path: "/#about" },
-  { name: "Services", path: "/#services" },
-  { name: "Contact", path: "/#contact" },
+  { name: "Home", path: "#home" },
+  { name: "About Us", path: "#about" },
+  { name: "Services", path: "#services" },
+  { name: "Contact", path: "#contact" },
 ];
 
 const Navbar = () => {
@@ -33,36 +33,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLElement>, path: string) => {
-    const targetHash = path.includes("#") ? path.substring(path.indexOf("#")) : "";
-    const isHomePage = pathname === "/";
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.startsWith("#") && pathname === "/") {
+      e.preventDefault();
+      const element = document.querySelector(path);
+      if (element) {
+        const offset = 80; // Adjust for fixed header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-    if (isHomePage) {
-      if (path === "/" || targetHash === "#home") {
-        e.preventDefault();
         window.scrollTo({
-          top: 0,
+          top: offsetPosition,
           behavior: "smooth"
         });
-      } else if (targetHash) {
-        e.preventDefault();
-        const element = document.querySelector(targetHash);
-        if (element) {
-          const offset = 80; // Adjust for fixed header height
-          const elementPosition = element.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
-        }
       }
     }
   };
 
   const isActiveLink = (path: string) => {
-    if (path === "/" || path === "#home" || path === "/#home") return pathname === "/";
+    if (path === "#home") return pathname === "/";
     return false;
   };
 
@@ -91,9 +80,9 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-2">
           {mainNavMenus.map((menu, index) => (
-            <Link
+            <a
               key={index}
-              to={menu.path}
+              href={menu.path}
               onClick={(e) => handleLinkClick(e, menu.path)}
               className={cn(
                 "menu-item",
@@ -101,7 +90,7 @@ const Navbar = () => {
               )}
             >
               {menu.name}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -129,8 +118,8 @@ const Navbar = () => {
                 <div className="flex-1 py-8 px-4 space-y-2">
                   {mainNavMenus.map((menu, index) => (
                     <SheetClose asChild key={index}>
-                      <Link
-                        to={menu.path}
+                      <a
+                        href={menu.path}
                         onClick={(e) => handleLinkClick(e, menu.path)}
                         className={cn(
                           "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal text-xl font-medium rounded-lg transition-all hover:bg-white/5",
@@ -138,7 +127,7 @@ const Navbar = () => {
                         )}
                       >
                         {menu.name}
-                      </Link>
+                      </a>
                     </SheetClose>
                   ))}
                 </div>
