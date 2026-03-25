@@ -35,6 +35,7 @@ import {
 import { indianCities } from "@/data/keralaLocations";
 import NotFound from "./NotFound";
 import { faqData } from "@/data/onePersonCompanyFaq";
+import CachedImage from "@/components/CachedImage";
 
 const phoneNumber = "+918075273408";
 
@@ -113,12 +114,11 @@ const EnhancedOnePersonCompanyPage = () => {
         {/* Hero Section with Background Image */}
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
-            <img
+            <CachedImage
               src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50"
               alt="Background"
               className="w-full h-full object-cover"
               loading="eager"
-              fetchPriority="high"
             />
           </div>
 
@@ -131,12 +131,12 @@ const EnhancedOnePersonCompanyPage = () => {
                 </div>
 
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                  One Person Company Registration
+                  One Person Company (OPC) Registration
                   {location && <span className="block text-2xl md:text-3xl mt-2">in {cityName}</span>}
                 </h1>
 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  A One Person Company (OPC) is a single-member private company with separate legal personality, created to let solo founders operate with limited liability and corporate continuity without adding shareholders.
+                  D BIZ CONSULTANCY provides complete One Person Company (OPC) registration services. Our expert team ensures a smooth and compliant incorporation process — from name approval and documentation to ROC filing and post-incorporation compliance support.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -152,7 +152,7 @@ const EnhancedOnePersonCompanyPage = () => {
 
                 <div className="mt-8 flex items-center text-sm font-medium text-white/80">
                   <Clock className="h-4 w-4 mr-2" />
-                  <span>Quick Registration • Guaranteed Compliance • Expert Support</span>
+                  <span>Quick Registration • Regulatory Compliance • Expert Advisory</span>
                 </div>
               </div>
 
@@ -160,12 +160,11 @@ const EnhancedOnePersonCompanyPage = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
-                    <img
-                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
-                      alt="One Person Company"
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
+                      alt="One Person Company" 
                       className="w-full h-auto rounded-lg shadow-lg"
                       loading="eager"
-                      fetchPriority="high"
                     />
 
                     <div className="mt-6 grid grid-cols-2 gap-4">
@@ -252,41 +251,58 @@ const EnhancedOnePersonCompanyPage = () => {
                   Overview
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">What Is a One Person Company?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">What is a One Person Company (OPC)?</h2>
 
                 <div className="prose prose-lg max-w-none">
                   <p className="text-gray-700 mb-4 leading-relaxed">
-                    An OPC is a corporate structure designed for single-owner businesses that want a company form (CIN, statutory filings, perpetual succession) but with fewer governance frictions than multi-member companies. The Companies Act defines OPC as "a company which has only one person as a member," and permits formation of a company by one person where the company "is to be One Person Company that is to say, a private company."
+                    A One Person Company (OPC) is considered a separate legal entity from its owner, providing a structured and secure framework for conducting business while protecting the personal assets of the individual. Introduced under the Companies Act, 2013, this business structure is ideal for individual entrepreneurs who wish to operate with the benefits of a corporate entity.
                   </p>
                   <p className="text-gray-700 mb-4 leading-relaxed">
-                    OPCs benefit from the standard "company" effects: on incorporation, the entity becomes a body corporate capable of owning property, contracting, and suing/being sued, with perpetual succession. The name clause must include "Private Limited" and additionally "(OPC)" in brackets below the company name wherever printed.
+                    An OPC combines the advantages of a sole proprietorship and a private limited company by offering limited liability, complete ownership control, and business continuity through a nominee mechanism. It is particularly suitable for small businesses and startups that are owned and managed by a single person.
+                  </p>
+                  <p className="text-gray-700 mb-8 leading-relaxed">
+                    Under law, an OPC allows only one member, requires the appointment of a nominee, and operates as a private company with simplified compliance requirements. Upon incorporation, it becomes a body corporate with perpetual succession, having the ability to own property, enter contracts, and sue or be sued in its own name.
                   </p>
                 </div>
 
                 {/* Minimum Requirements Mini-block */}
                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
                   <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <div className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-dbiz-navy">1 Member</p>
-                        <p className="text-sm text-gray-600">Exactly 1 member</p>
-                      </div>
+                  <div className="flex flex-wrap gap-x-8 gap-y-4">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                      <p className="text-sm">
+                        <span className="font-semibold text-dbiz-navy">1 Director & 1 Shareholder</span> 
+                        <span className="text-gray-600 ml-1">(same person allowed)</span>
+                      </p>
                     </div>
-                    <div className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-dbiz-navy">Min 1 Director</p>
-                        <p className="text-sm text-gray-600">Can be the same member</p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                      <p className="text-sm">
+                        <span className="font-semibold text-dbiz-navy">Nominee</span> 
+                        <span className="text-gray-600 ml-1">(mandatory appointment)</span>
+                      </p>
                     </div>
-                    <div className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-dbiz-navy">1 Nominee</p>
-                        <p className="text-sm text-gray-600">Mandatory nomination</p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                      <p className="text-sm">
+                        <span className="font-semibold text-dbiz-navy">Resident Director</span> 
+                        <span className="text-gray-600 ml-1">(at least one Indian director)</span>
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                      <p className="text-sm">
+                        <span className="font-semibold text-dbiz-navy">No Minimum Capital</span> 
+                        <span className="text-gray-600 ml-1">(no paid-up capital requirement)</span>
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                      <p className="text-sm">
+                        <span className="font-semibold text-dbiz-navy">Registered Office</span> 
+                        <span className="text-gray-600 ml-1">(must be in India)</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -296,29 +312,28 @@ const EnhancedOnePersonCompanyPage = () => {
               <div className="md:w-1/3">
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 h-full flex flex-col justify-center relative overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
-                  <img
-                    src="https://images.unsplash.com/photo-1542744094-24638ea095b5?auto=format&fit=crop&w=800&q=80"
+                  <CachedImage
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
                     alt="One Person Company Definition"
                     className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
                   />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Major Reforms (April 2021)</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
                     <p className="text-gray-700 mb-4">
-                      Key relaxations introduced to OPC eligibility and conversion rules:
+                      As per Section 2(62) of the Companies Act, 2013, a One Person Company (OPC) is a company that:
                     </p>
                     <ul className="space-y-3">
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                        <span>Indian citizens resident outside India (NRIs) can now form OPCs.</span>
+                        <span>Has only one member (shareholder)</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                        <span>Residency test reduced to 120 days.</span>
+                        <span>Requires the appointment of a nominee</span>
                       </li>
                       <li className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                        <span>Removed earlier conversion restrictions/threshold triggers.</span>
+                        <span>Is incorporated as a private company with one person</span>
                       </li>
                     </ul>
 
@@ -329,7 +344,7 @@ const EnhancedOnePersonCompanyPage = () => {
                         </div>
                         <div className="ml-3">
                           <p className="text-sm text-gray-500">Need expert guidance?</p>
-                          <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                          <p className="text-dbiz-navy font-medium text-sm">Contact our team at D BIZ CONSULTANCY for professional assistance with OPC registration and compliance.</p>
                         </div>
                       </div>
                     </div>
@@ -349,10 +364,10 @@ const EnhancedOnePersonCompanyPage = () => {
                 Features
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a One Person Company</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a One Person Company (OPC)</h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for business success.
+                D BIZ CONSULTANCY helps individual entrepreneurs understand and leverage these key features for structured and secure business operations.
               </p>
             </div>
 
@@ -363,7 +378,7 @@ const EnhancedOnePersonCompanyPage = () => {
                   <CardTitle className="text-xl text-dbiz-navy">Limited Liability</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">The member's liability is limited to any unpaid amount on shares held, separating personal assets from company debts.</p>
+                  <p className="text-gray-600">In a One Person Company, the liability of the member is limited to the amount invested in the company. This ensures that the personal assets of the owner remain protected from business liabilities and financial risks.</p>
                 </CardContent>
               </Card>
 
@@ -373,47 +388,47 @@ const EnhancedOnePersonCompanyPage = () => {
                   <CardTitle className="text-xl text-dbiz-navy">Separate Legal Entity</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">Distinct from the member/director, serving as the foundation for contracts, bank accounts, and property ownership.</p>
+                  <p className="text-gray-600">An OPC is recognized as a separate legal entity from its owner. It can own property, enter into contracts, and initiate legal proceedings in its own name, independent of the individual.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                <CardHeader className="pb-3">
+                  <Users className="h-10 w-10 text-dbiz-teal mb-4" />
+                  <CardTitle className="text-xl text-dbiz-navy">Single Ownership with Full Control</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">An OPC allows a single individual to own and manage the entire business, providing complete control over operations, decision-making, and financial management.</p>
                 </CardContent>
               </Card>
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileBarChart className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Governance Simplifications</CardTitle>
+                  <CardTitle className="text-xl text-dbiz-navy">No Minimum Capital Requirement</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">No Annual General Meeting (AGM) required. Relaxed board meeting frequencies and compliance.</p>
+                  <p className="text-gray-600">There is no statutory minimum paid-up capital requirement for incorporating an OPC. The capital can be decided based on business requirements and operational needs.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                <CardHeader className="pb-3">
+                  <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
+                  <CardTitle className="text-xl text-dbiz-navy">Simplified Compliance</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">Compared to other company structures, OPCs have reduced compliance requirements, including fewer mandatory meetings and simplified filing procedures.</p>
                 </CardContent>
               </Card>
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <ArrowRight className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Strategic Flexibility</CardTitle>
+                  <CardTitle className="text-xl text-dbiz-navy">Perpetual Succession</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">Relaxed conversion rules support growth without forced conversion based solely on paid-up capital/turnover.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-                <CardHeader className="pb-3">
-                  <AlertTriangle className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Fundraising Constraints</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">Equity fundraising requires conversion to a multi-member company, as issuing shares creates additional members.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-                <CardHeader className="pb-3">
-                  <CheckCircle2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Activity Restrictions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">Historically restricted from carrying out Non-Banking Financial Investment activities.</p>
+                  <p className="text-gray-600">An OPC continues to exist as a body corporate with perpetual succession. The appointment of a nominee ensures business continuity even in the event of death or incapacity of the owner.</p>
                 </CardContent>
               </Card>
             </div>
@@ -432,20 +447,18 @@ const EnhancedOnePersonCompanyPage = () => {
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">
-                    Benefits of a One Person Company
-                    {location !== undefined && <span className="block text-xl mt-2">in {cityName}</span>}
+                    Benefits of a One Person Company (OPC)
                   </h2>
 
                   <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                    DBIZ CONSULTANCY helps businesses in {cityName} leverage advantages tailored for solo entrepreneurs.
+                    D BIZ CONSULTANCY helps individual entrepreneurs leverage the practical advantages of OPC for structured growth, protection, and business credibility.
                   </p>
 
                   <div className="hidden md:block mt-8">
-                    <img
-                      src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80"
-                      alt="Business Growth"
-                      className="rounded-lg shadow-lg max-w-sm"
-                      loading="lazy"
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80" 
+                      alt="Business Growth" 
+                      className="rounded-lg shadow-lg max-w-sm" 
                     />
                   </div>
                 </div>
@@ -454,12 +467,15 @@ const EnhancedOnePersonCompanyPage = () => {
               <div className="md:w-3/5">
                 <div className="grid grid-cols-1 gap-4">
                   {[
-                    "Solo Control: Start and manage your company with 100% control.",
-                    "Limited Liability Protection: Your personal assets are protected from business liabilities.",
-                    "Separate Legal Entity: The OPC exists as a separate legal entity from its owner.",
-                    "Minimized Compliance: Exempt from AGMs and fewer board meeting requirements.",
-                    "Perpetual Succession: Built-in nominee mechanism ensures corporate continuity.",
-                    "Tax Concessions: Eligible to opt into the Section 115BAA corporate tax regime."
+                    "Limited liability protection, safeguarding the personal assets of the owner from business liabilities",
+                    "Enhanced credibility and trust among clients, suppliers, and financial institutions compared to proprietorship",
+                    "Perpetual succession through nominee mechanism, ensuring business continuity even in unforeseen circumstances",
+                    "Better access to funding options such as bank loans and financial institutions compared to unregistered business structures",
+                    "Tax planning flexibility under corporate taxation provisions, allowing structured financial management",
+                    "Complete ownership and control, enabling faster decision-making without involvement of partners or shareholders",
+                    "Separate legal entity status, allowing the company to own assets and enter into contracts independently",
+                    "Professional business structure, improving brand value and making it easier to scale operations",
+                    "Opportunity for future expansion, with easy conversion into a Private Limited Company as the business grows"
                   ].map((item, index) => (
                     <div
                       key={index}
@@ -493,7 +509,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Difference Between Business Structures</h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                Understand why One Person Company is often the preferred choice for solo founders in {cityName}.
+                Understand why One Person Company (OPC) is a preferred choice for individual entrepreneurs seeking limited liability with full control.
               </p>
             </div>
 
@@ -503,68 +519,54 @@ const EnhancedOnePersonCompanyPage = () => {
                   <TableHeader>
                     <TableRow className="bg-gray-50">
                       <TableHead className="py-4 text-dbiz-navy font-bold">Feature</TableHead>
-                      <TableHead className="bg-dbiz-teal/10 py-4 text-dbiz-navy font-bold">One Person Company</TableHead>
-                      <TableHead className="py-4 text-dbiz-navy font-bold">Private Limited</TableHead>
-                      <TableHead className="py-4 text-dbiz-navy font-bold">LLP</TableHead>
-                      <TableHead className="py-4 text-dbiz-navy font-bold">Sole Proprietorship</TableHead>
+                      <TableHead className="bg-dbiz-teal/10 py-4 text-dbiz-navy font-bold text-center">OPC</TableHead>
+                      <TableHead className="py-4 text-dbiz-navy font-bold text-center">LLP</TableHead>
+                      <TableHead className="py-4 text-dbiz-navy font-bold text-center">Sole Proprietorship</TableHead>
+                      <TableHead className="py-4 text-dbiz-navy font-bold text-center">Partnership</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     <TableRow>
-                      <TableCell className="font-medium border-r">Legal status</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">Separate legal entity (company)</TableCell>
-                      <TableCell className="border-r">Separate legal entity (company)</TableCell>
-                      <TableCell className="border-r">Separate legal entity (statutory LLP)</TableCell>
-                      <TableCell>Not separate from owner</TableCell>
+                      <TableCell className="font-medium border-r">Liability</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Limited to shares</TableCell>
+                      <TableCell className="border-r text-center">Limited to contribution</TableCell>
+                      <TableCell className="border-r text-center">Unlimited</TableCell>
+                      <TableCell className="text-center">Unlimited</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell className="font-medium border-r">Legal Entity</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Separate entity</TableCell>
+                      <TableCell className="border-r text-center">Separate entity</TableCell>
+                      <TableCell className="border-r text-center">Not separate</TableCell>
+                      <TableCell className="text-center">Not separate</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="font-medium border-r">Ownership</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">1 member (OPC carve-out)</TableCell>
-                      <TableCell className="border-r">2–200 members</TableCell>
-                      <TableCell className="border-r">2+ partners</TableCell>
-                      <TableCell>1 owner</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Single owner</TableCell>
+                      <TableCell className="border-r text-center">2+ partners</TableCell>
+                      <TableCell className="border-r text-center">Single owner</TableCell>
+                      <TableCell className="text-center">2–50 partners</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium border-r">Directors/Management</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">Min 1 director; resident director required</TableCell>
-                      <TableCell className="border-r">Min 2 directors; resident director required</TableCell>
-                      <TableCell className="border-r">Designated partners as per LLP law</TableCell>
-                      <TableCell>Owner-managed</TableCell>
+                      <TableCell className="font-medium border-r">Tax Rate</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Corporate tax regime applicable</TableCell>
+                      <TableCell className="border-r text-center">Flat 30%</TableCell>
+                      <TableCell className="border-r text-center">Individual income tax</TableCell>
+                      <TableCell className="text-center">Individual income tax</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium border-r">Liability</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">Limited (unpaid shares) if limited by shares</TableCell>
-                      <TableCell className="border-r">Limited (unpaid shares) if limited by shares</TableCell>
-                      <TableCell className="border-r">Limited to agreed contribution</TableCell>
-                      <TableCell>Unlimited</TableCell>
+                      <TableCell className="font-medium border-r">Compliance</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center font-medium">Moderate compliance (ROC filings, audit, annual returns)</TableCell>
+                      <TableCell className="border-r text-center">Moderate</TableCell>
+                      <TableCell className="border-r text-center">Minimal</TableCell>
+                      <TableCell className="text-center">Minimal</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell className="font-medium border-r">AGM Requirement</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">AGM not required</TableCell>
-                      <TableCell className="border-r">AGM required (subject to exemptions)</TableCell>
-                      <TableCell className="border-r">Not applicable</TableCell>
-                      <TableCell>Not applicable</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium border-r">Fundraising (equity)</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">Constrained—single member; conversion usually needed</TableCell>
-                      <TableCell className="border-r">Better (still private—no public invitation)</TableCell>
-                      <TableCell className="border-r">Typically partner capital / debt</TableCell>
-                      <TableCell>Personal funds / debt</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium border-r">Typical ROC compliance</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Moderate (reduced meetings; filings still apply)</TableCell>
-                      <TableCell className="border-r">Higher (AGM + board cadence + filings)</TableCell>
-                      <TableCell className="border-r">Moderate (LLP filings)</TableCell>
-                      <TableCell>Minimal</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium border-r">Tax positioning</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r">Company taxation; can opt concessional regime if eligible</TableCell>
-                      <TableCell className="border-r">Company taxation; can opt concessional regime if eligible</TableCell>
-                      <TableCell className="border-r">LLP taxed as firm (separate regime)</TableCell>
-                      <TableCell>Taxed in owner's hands</TableCell>
+                      <TableCell className="font-medium border-r">Best For</TableCell>
+                      <TableCell className="bg-dbiz-teal/10 border-r text-center font-bold text-dbiz-teal uppercase text-xs">Solo entrepreneurs, startups</TableCell>
+                      <TableCell className="border-r text-center">Small businesses</TableCell>
+                      <TableCell className="border-r text-center">Freelancers, traders</TableCell>
+                      <TableCell className="text-center">Family businesses</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
@@ -582,278 +584,640 @@ const EnhancedOnePersonCompanyPage = () => {
                 Documents
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required for OPC Registration</h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+                D BIZ CONSULTANCY assists clients with collecting and preparing all required documentation for One Person Company (OPC) registration to ensure a smooth and compliant incorporation process.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Rejection Prevention Tips */}
+            <div className="mb-12 bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl shadow-sm">
+              <div className="flex items-center mb-4">
+                <AlertTriangle className="h-6 w-6 text-amber-500 mr-3" />
+                <h3 className="text-lg font-bold text-dbiz-navy uppercase tracking-wider">Common Rejection Prevention Tips</h3>
+              </div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Ensure name spelling consistency across PAN, Aadhaar, Passport, and incorporation forms",
+                  "Registered office documents must have matching owner details across utility bill, rent agreement, and NOC",
+                  "Utility bills and bank statements should be dated within the last 2 months",
+                  "Nominee details must be accurate and properly documented"
+                ].map((tip, i) => (
+                  <li key={i} className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-amber-900 font-medium">{tip}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* For Indian Resident */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">Sole Member + Director (Indian Citizen)</h3>
+                  <h3 className="text-xl font-bold">For Indian Resident (Director/Member)</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-600">PAN, identity proof, address proof.</p>
-                      <p className="text-sm text-gray-500 mt-1">Note: Director must satisfy the resident-director rule at the company level (≥182 days in India).</p>
-                    </div>
+                <div className="p-6 space-y-6">
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Identity Proof</h4>
+                    <p className="text-gray-600 text-sm">PAN Card (Mandatory), Aadhaar Card, Passport, or Voter ID</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Address Proof</h4>
+                    <p className="text-gray-600 text-sm">Bank Statement or Utility Bill (dated within last 2 months)</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Photographs</h4>
+                    <p className="text-gray-600 text-sm">Recent passport-sized photographs</p>
                   </div>
                 </div>
               </div>
 
+              {/* For Nominee */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">Nominee</h3>
+                  <h3 className="text-xl font-bold">For Nominee (Mandatory in OPC)</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-600">Consent in Form INC-3, plus PAN/ID/address proofs.</p>
-                      <p className="text-sm text-gray-500 mt-1">Pursuant to Companies Act + Incorporation Rules.</p>
-                    </div>
+                <div className="p-6 space-y-6">
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Identity Proof</h4>
+                    <p className="text-gray-600 text-sm">PAN Card and Aadhaar Card (or Passport in case of foreign nominee)</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Address Proof</h4>
+                    <p className="text-gray-600 text-sm">Bank Statement or Utility Bill (latest)</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Consent</h4>
+                    <p className="text-gray-600 text-sm">Written consent in prescribed format (INC-3)</p>
                   </div>
                 </div>
               </div>
 
+              {/* For Foreign Nationals */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">Registered Office</h3>
+                  <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-600">Address + proof for Section 12 verification.</p>
-                      <p className="text-sm text-gray-500 mt-1">Registered office verification must be filed within 30 days of incorporation.</p>
-                    </div>
+                <div className="p-6 space-y-6">
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Identity Proof</h4>
+                    <p className="text-gray-600 text-sm">Passport (Mandatory)</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Address Proof</h4>
+                    <p className="text-gray-600 text-sm">Driver’s License, Bank Statement, or Residence Card</p>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-dbiz-teal uppercase tracking-widest mb-3">Notarisation</h4>
+                    <p className="text-gray-600 text-sm">Documents may require notarisation or apostille as per MCA requirements</p>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-                <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">Incorporation Filings</h3>
+              {/* For OPC Incorporation */}
+              <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden lg:col-span-2 hover:shadow-lg transition-all duration-300">
+                <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
+                  <h3 className="text-xl font-bold">For OPC Incorporation</h3>
                 </div>
-                <div className="p-6 space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-600">eMoA/eAoA + SPICe+ linked declarations.</p>
-                      <p className="text-sm text-gray-500 mt-1">SPICe+ is the integrated incorporation framework used on MCA.</p>
-                    </div>
+                <div className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-3">
+                        <FileText className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold text-dbiz-navy text-sm uppercase italic tracking-wider leading-tight mb-0.5">Memorandum of Association (MOA)</p>
+                          <p className="text-[13px] text-gray-600">Defines business objectives and scope of operations</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <FileText className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold text-dbiz-navy text-sm uppercase italic tracking-wider leading-tight mb-0.5">Articles of Association (AOA)</p>
+                          <p className="text-[13px] text-gray-600">Specifies internal rules and governance structure</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <FileText className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold text-dbiz-navy text-sm uppercase italic tracking-wider leading-tight mb-0.5">Declaration and Consent</p>
+                          <p className="text-[13px] text-gray-600">Required declarations from director and nominee</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-3">
+                        <FileText className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold text-dbiz-navy text-sm uppercase italic tracking-wider leading-tight mb-0.5">Digital Signature (DSC)</p>
+                          <p className="text-[13px] text-gray-600">For signing electronic documents</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <FileText className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-semibold text-dbiz-navy text-sm uppercase italic tracking-wider leading-tight mb-0.5">Director Identification Number (DIN)</p>
+                          <p className="text-[13px] text-gray-600">Mandatory for director</p>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden md:col-span-2 hover:shadow-lg transition-all duration-300">
+              {/* For Registered Office */}
+              <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">Post-Incorporation</h3>
+                  <h3 className="text-xl font-bold">For Registered Office</h3>
                 </div>
                 <div className="p-6 space-y-4">
-                  <div className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <p className="text-gray-600">Bank a/c documents; subscription proof; INC-20A.</p>
-                      <p className="text-sm text-gray-500 mt-1">INC-20A ties to Section 10A and Rule 23A.</p>
-                    </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700 font-medium">Rent Agreement + NOC</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700 font-medium">Property Docs (Ownership Proof)</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-700 font-medium">Utility Bills (Recent Electricity/Water)</p>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-12 bg-dbiz-navy text-white p-6 rounded-xl flex items-center gap-4 shadow-lg border border-dbiz-teal/20">
+              <div className="bg-dbiz-teal/20 p-3 rounded-full">
+                <Shield className="h-6 w-6 text-dbiz-teal" />
+              </div>
+              <p className="text-sm md:text-base font-medium">
+                <span className="text-dbiz-teal font-bold uppercase tracking-widest mr-2 underline decoration-dbiz-teal/40">Statutory Note:</span>
+                The director of an OPC must be a resident of India (182+ days stay requirement) as per the Companies Act, 2013.
+              </p>
             </div>
           </div>
         </section>
 
         {/* Registration Process Section */}
-        <section id="process" className="py-16 bg-gray-50 scroll-mt-32">
-          <div className="container-custom">
+        {/* Registration Process Section - Matching Public Limited Design */}
+        <section id="process" className="py-24 bg-dbiz-navy text-white scroll-mt-32 relative overflow-hidden">
+          {/* Subtle patterned background for depth */}
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+          
+          {/* Decorative glows */}
+          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-dbiz-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-dbiz-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
+          
+          <div className="container-custom relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Process
+                Registration Process
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Registration Process</h2>
-
-              <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY delivers an efficient, transparent, and hassle-free OPC registration experience.
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Step-by-Step One Person Company (OPC) Registration Process</h2>
+              
+              <div className="text-lg text-white/80 mb-8 leading-relaxed max-w-5xl mx-auto flex flex-col items-center">
+                <p className="text-center">A One Person Company (OPC) provides limited liability protection to a single entrepreneur while offering the benefits of a corporate structure.</p>
+                <p className="text-center">The registration process involves submitting required documents, complying with statutory requirements,</p>
+                <p className="text-center">and completing post-incorporation formalities through the Ministry of Corporate Affairs (MCA).</p>
+              </div>
+              
+              <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic bg-white/5 py-4 rounded-r-lg">
+                With professional assistance from D BIZ CONSULTANCY, individual entrepreneurs can complete the OPC registration process efficiently while ensuring full compliance with the Companies Act, 2013.
               </p>
             </div>
 
-            <div className="mb-16 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-white p-6">
-              <h3 className="text-xl font-bold text-dbiz-navy mb-6 text-center">Process Flow</h3>
-              <div className="overflow-x-auto flex justify-center">
-                {mounted ? (
-                  <div className="mermaid max-w-full">
-                    {`flowchart TD
-                      A[DSC for subscriber/director] --> B[Name reservation: OPC format + uniqueness checks]
-                      B --> C[Nominee selection + INC-3 consent]
-                      C --> D[SPICe+ Part B + linked forms (eMoA/eAoA, INC-9, AGILE-PRO-S)]
-                      D --> E[Certificate of Incorporation (COI)]
-                      E --> F[Bank account + share subscription deposit]
-                      F --> G[INC-20A (Commencement of Business)]
-                      G --> H[Operational + annual compliance cycle]`}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  step: "1",
+                  title: "Obtain Digital Signature Certificate (DSC)",
+                  desc: "A Digital Signature Certificate (DSC) is mandatory for filing electronically signed documents with the Ministry of Corporate Affairs (MCA). It ensures the authenticity and security of all filings.",
+                  points: ["Mandatory for all electronically filed documents", "Ensures authenticity and security of filings", "Our team assists in obtaining from certified authorities"]
+                },
+                {
+                  step: "2",
+                  title: "File the SPICe+ Form",
+                  desc: "The SPICe+ form is an integrated online application used for OPC incorporation. It covers name reservation, DIN allotment, and various tax registrations in a single workflow.",
+                  points: ["Part A: Reserved name approval", "Part B: Incorporation and DIN/PAN/TAN allotment", "AGILE-PRO-S: Statutory registrations (GST, ESIC, etc.)"]
+                },
+                {
+                  step: "3",
+                  title: "Draft and File MOA and AOA",
+                  desc: "The Memorandum of Association (MOA) and Articles of Association (AOA) are foundational documents defining the company’s objectives and internal rules.",
+                  points: ["MOA: Defines business objectives and scope", "AOA: Specifies internal governance and management", "Customized clauses to reflect your business structure"]
+                },
+                {
+                  step: "4",
+                  title: "Obtain Certificate of Incorporation",
+                  desc: "The Certificate of Incorporation (COI) is issued by the Registrar of Companies (ROC) as official confirmation that the OPC is legally registered.",
+                  points: ["Contains the unique CIN for the company", "Includes PAN and TAN of the business", "Conclusive proof of separate legal entity status"]
+                },
+                {
+                  step: "5",
+                  title: "Opening Bank Account",
+                  desc: "After incorporation, a current bank account must be opened in the name of the OPC to facilitate all business transactions legally.",
+                  points: ["Requires COI, PAN, and MOA/AOA docs", "KYC documents of the director are mandatory", "Necessary for share capital deposit"]
+                },
+                {
+                  step: "6",
+                  title: "Appointment of Nominee",
+                  desc: "In an OPC, the appointment of a nominee is mandatory to ensure perpetual succession and business continuity in case of death or incapacity.",
+                  points: ["Nominee acts as the legal successor", "Provides continuity of operations", "Written consent via Form INC-3 required"]
+                },
+                {
+                  step: "7",
+                  title: "Commencement of Business (INC-20A)",
+                  desc: "Filing Form INC-20A is a mandatory statutory requirement before commencing business operations to certify capital payment and office verification.",
+                  points: ["Must be filed within 180 days of incorporation", "Declaration of paid-up share capital", "Professional certification required for filing"]
+                }
+              ].map((s, i) => (
+                <div key={i} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-all group">
+                  <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white">
+                    <h4 className="text-lg font-bold flex items-center">
+                      <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg mr-3 font-bold group-hover:scale-110 transition-transform">{s.step}</span>
+                      {s.title}
+                    </h4>
                   </div>
-                ) : (
-                  <div className="h-[300px] flex items-center justify-center text-gray-400">Loading flow diagram...</div>
-                )}
-              </div>
-            </div>
-
-            <div className="relative mt-8">
-              <div className="absolute left-6 top-8 bottom-0 w-1 bg-gradient-to-b from-dbiz-navy to-dbiz-teal hidden md:block"></div>
-
-              <div className="space-y-12">
-                {[
-                  {
-                    title: "Digital Signature",
-                    desc: "Obtain DSC for the subscriber/director for MCA e-filing. SPICe+ is electronic; DSC is operationally required."
-                  },
-                  {
-                    title: "Name Reservation",
-                    desc: "Choose a compliant name and reserve via MCA workflow. Illustrative OPC name format appears in MCA instruction guidance."
-                  },
-                  {
-                    title: "Nominee Appointment",
-                    desc: "Confirm nominee and obtain consent. INC-3 (consent), nominee details in MoA. Nominee mechanism required at formation."
-                  },
-                  {
-                    title: "File SPICe+",
-                    desc: "Submit integrated incorporation (Part B + linked forms like AGILE-PRO-S, eMoA/eAoA, INC-9). SPICe+ Part B is the main incorporation route; it links multiple services."
-                  },
-                  {
-                    title: "Certificate of Incorporation",
-                    desc: "ROC issues COI; company becomes body corporate. Effect of incorporation and corporate status begins from incorporation date."
-                  },
-                  {
-                    title: "Open Bank Account + Fund Subscription",
-                    desc: "Open company bank account; subscriber deposits share subscription. Needed to support commencement declaration."
-                  },
-                  {
-                    title: "Commencement of Business",
-                    desc: "File commencement declaration before starting business/borrowing (where applicable). Section 10A restricts commencement/borrowing until declaration + office verification."
-                  }
-                ].map((step, index) => (
-                  <div key={index} className="flex flex-col md:flex-row items-start gap-6 group">
-                    <div className="flex flex-col items-center">
-                      <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-teal text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 shadow-md z-10 group-hover:scale-110 transition-transform duration-300">
-                        <span className="font-bold">{index + 1}</span>
-                      </div>
-                      <div className="text-sm font-semibold text-dbiz-navy mt-2 hidden md:block">
-                        Step {index + 1}
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 flex-1 hover:shadow-md transition-shadow duration-300 group-hover:border-dbiz-teal/30">
-                      <h3 className="text-xl font-semibold text-dbiz-navy mb-3 group-hover:text-dbiz-teal transition-colors">{step.title}</h3>
-                      <p className="text-gray-600">{step.desc}</p>
+                  <div className="p-6 flex-grow">
+                    <p className="text-gray-700 mb-4 leading-relaxed text-sm">
+                      {s.desc}
+                    </p>
+                    <div className="space-y-2 mt-auto">
+                      <p className="font-semibold text-dbiz-navy text-xs uppercase">Key Highlights:</p>
+                      <ul className="text-sm text-gray-600 space-y-1">
+                        {s.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-0.5 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Compliance Timeline Section */}
-        <section className="py-16 bg-white">
+        {/* Mandatory MCA Compliance Section */}
+        <section id="compliance" className="py-20 bg-white scroll-mt-32">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Compliance
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Mandatory Compliance and Post-Incorporation Timeline</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                What remains mandatory (even with OPC relaxations).
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">Mandatory MCA Compliance for One Person Company (OPC)</h2>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto text-center">
+                Maintaining compliance with the Ministry of Corporate Affairs (MCA) is essential to ensure legal validity and operational continuity. OPCs enjoy certain relaxations compared to private companies, but key statutory filings and audits remain mandatory.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">Commencement (INC-20A)</h3>
-                <p className="text-sm text-gray-700">A company incorporated after the relevant amendment and having share capital cannot commence business or borrow unless it files the prescribed declaration within 180 days and completes registered-office verification.</p>
+            <div className="rounded-2xl border border-gray-100 shadow-xl overflow-hidden bg-white mb-12">
+              <div className="bg-dbiz-navy p-6 text-white overflow-hidden relative">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <Shield size={64} className="rotate-12" />
+                </div>
+                <h3 className="text-xl font-bold">Compliance Requirements Table</h3>
+                <p className="text-white/70 text-sm mt-1">Official MCA Statutory Benchmarks</p>
               </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">Audit + Auditor Appointment</h3>
-                <p className="text-sm text-gray-700">Statutory audit applies to companies through the Companies Act audit framework; the first auditor must be appointed by the Board within 30 days from registration, and the company must file notice of auditor appointment within 15 days.</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">Annual Filings (OPC)</h3>
-                <p className="text-sm text-gray-700">Financial statements must be filed within 180 days from closure of the financial year. Annual return: OPC is exempt from AGM, so firms generally align the due date to the statutory “AGM should have been held” window (within 60 days).</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">Board/Member Actions</h3>
-                <p className="text-sm text-gray-700">OPC board meeting obligations are relaxed to one meeting per half-year (90-day gap), and if there is only one director, even that meeting/quorum layer does not apply; resolutions can be recorded in minutes and treated as valid.</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">DIR-3 KYC Update Cycle</h3>
-                <p className="text-sm text-gray-700">(Effective March 31, 2026). DIR-3 KYC Web must be filed on or before 30th June of the immediately following every third consecutive financial year, and changes in mobile/email/residential address updated within 30 days.</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-200 p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-dbiz-navy mb-3">Small Company Positioning</h3>
-                <p className="text-sm text-gray-700">OPCs are not excluded by definition from being a "small company" and may qualify if thresholds/conditions are met, unlocking lighter reporting elements like cash-flow statement exemption.</p>
+
+              <div className="overflow-x-auto">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-gray-50/80">
+                      <TableHead className="font-bold text-dbiz-navy py-4">Aspect</TableHead>
+                      <TableHead className="font-bold text-dbiz-navy py-4">Compliance Requirement</TableHead>
+                      <TableHead className="font-bold text-dbiz-navy py-4">Frequency / Timeline</TableHead>
+                      <TableHead className="font-bold text-dbiz-navy py-4">Why It's Important</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {[
+                      { 
+                        aspect: "First Board Meeting", 
+                        req: "Conduct first Board Meeting and record resolutions (bank account, setup).", 
+                        timeline: "Within 30 days of incorporation", 
+                        importance: "Establishes governance framework and official documentation." 
+                      },
+                      { 
+                        aspect: "Auditor Appointment", 
+                        req: "Appoint first statutory auditor (Filing ADT-1 where applicable).", 
+                        timeline: "Within 30 days of incorporation", 
+                        importance: "Ensures audit readiness and compliance with the 2013 Act." 
+                      },
+                      { 
+                        aspect: "INC-20A Filing", 
+                        req: "Declaration of Commencement of Business (Section 10A).", 
+                        timeline: "Within 180 days of incorporation", 
+                        importance: "Statutory requirement to legally start operations and avoid penalties." 
+                      },
+                      { 
+                        aspect: "Board Meetings", 
+                        req: "Exempt from frequent meetings if only one director exists; record resolutions.", 
+                        timeline: "As applicable", 
+                        importance: "Simplifies management while maintaining audit trails of decisions." 
+                      },
+                      { 
+                        aspect: "Statutory Audit", 
+                        req: "Audit of financial statements by a Chartered Accountant.", 
+                        timeline: "Annually", 
+                        importance: "Mandatory for all OPCs irrespective of turnover or capital." 
+                      },
+                      { 
+                        aspect: "AGM", 
+                        req: "OPC is exempt from holding AGM; minutes serve as record.", 
+                        timeline: "Not required", 
+                        importance: "Significantly reduces the compliance burden for solo entrepreneurs." 
+                      },
+                      { 
+                        aspect: "Financial (AOC-4)", 
+                        req: "File financial statements with the ROC.", 
+                        timeline: "Within 180 days from end of FY", 
+                        importance: "Ensures financial disclosure and transparency with the MCA." 
+                      },
+                      { 
+                        aspect: "Return (MGT-7A)", 
+                        req: "File annual return containing the company's detailed data.", 
+                        timeline: "Within 60 days from due date", 
+                        importance: "Ensures company records stay updated in the national registry." 
+                      },
+                      { 
+                        aspect: "DIR-3 KYC", 
+                        req: "Update director KYC details with the MCA.", 
+                        timeline: "Periodic / Event-based", 
+                        importance: "Prevents DIN deactivation and operational disruptions." 
+                      },
+                      { 
+                        aspect: "Income Tax Filing", 
+                        req: "File Income Tax Return (ITR-6).", 
+                        timeline: "Annually (by statutory deadline)", 
+                        importance: "Ensures adherence to the Income Tax Act and avoids high penalties." 
+                      }
+                    ].map((row, idx) => (
+                      <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
+                        <TableCell className="font-bold text-dbiz-navy whitespace-nowrap">{row.aspect}</TableCell>
+                        <TableCell className="text-gray-700 min-w-[200px]">{row.req}</TableCell>
+                        <TableCell className="font-medium text-dbiz-teal text-sm whitespace-nowrap">{row.timeline}</TableCell>
+                        <TableCell className="text-gray-600 italic text-sm border-l border-gray-100">{row.importance}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
               </div>
             </div>
 
-            <div className="mb-16 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 p-6">
-              <h3 className="text-xl font-bold text-dbiz-navy mb-6 text-center">Post-Incorporation Timeline</h3>
-              <div className="overflow-x-auto flex justify-center">
-                {mounted ? (
-                  <div className="mermaid max-w-full">
-                    {`timeline
-                      title OPC Post-Incorporation Compliance
-                      day 0 : Certificate of Incorporation (COI)
-                      day 0-30 : RO verification (Sec 12) + First auditor appt
-                      day 0-180 : INC-20A (Commencement of Business)
-                      every half-year : Board meeting (or minutes-only if 1 director)
-                      FY close + 180 days : File financial statements (OPC specific)
-                      post FY close window : Annual return filing window (AGM-exempt)
-                      every 3rd FY cycle : DIR-3 KYC-Web by 30 June (eff. Mar 2026)`}
-                  </div>
-                ) : (
-                  <div className="h-[300px] flex items-center justify-center text-gray-400">Loading timeline...</div>
-                )}
+            <div className="bg-dbiz-teal/10 p-6 rounded-2xl flex items-center gap-6 border border-dbiz-teal/20 max-w-4xl mx-auto shadow-inner">
+              <div className="bg-dbiz-navy p-4 rounded-xl shadow-lg">
+                <AlertTriangle className="h-8 w-8 text-dbiz-teal" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-dbiz-navy mb-1 tracking-tight">Need expert assistance for your OPC compliance?</h4>
+                <p className="text-gray-700">Contact our expert team at D BIZ CONSULTANCY for end-to-end guidance on statutory audit, tax planning, and MCA filings.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
-        <section className="py-16">
+        {/* OPC Compliance Reliefs Section */}
+        <section className="py-20 bg-gray-50/50 border-y border-gray-100 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Key Advantages
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">OPC Compliance Reliefs</h2>
+              <p className="text-lg text-gray-600 leading-relaxed text-center">
+                OPCs are provided with certain relaxations under the Companies Act, 2013, making them easier to manage compared to other company structures.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[
+                {
+                  title: "Board Meetings",
+                  relief: "Not mandatory if only one director; resolutions can be recorded directly in minutes without a formal meeting call.",
+                  icon: <Users className="h-6 w-6" />
+                },
+                {
+                  title: "Annual General Meeting (AGM)",
+                  relief: "Complete exemption from holding an AGM; statutory resolutions are recorded in the minutes book as valid.",
+                  icon: <Clock className="h-6 w-6" />
+                },
+                {
+                  title: "Annual Return",
+                  relief: "Can be signed by a single director; no Company Secretary requirement for most OPCs unless certain thresholds are met.",
+                  icon: <FileText className="h-6 w-6" />
+                },
+                {
+                  title: "Reduced Compliance Burden",
+                  relief: "Significantly fewer statutory filings and a simplified governance structure designed specifically for solo founders.",
+                  icon: <Shield className="h-6 w-6" />
+                },
+                {
+                  title: "Lower Penalties",
+                  relief: "Reduced penalty rates for certain procedural non-compliances compared to larger private or public firms.",
+                  icon: <FileBarChart className="h-6 w-6" />
+                }
+              ].map((item, i) => (
+                <div key={i} className={`bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all group border-t-4 ${i >= 3 ? 'border-t-dbiz-teal' : 'border-t-dbiz-navy'}`}>
+                  <div className={`mb-4 w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${i >= 3 ? 'bg-dbiz-teal/10 text-dbiz-teal group-hover:bg-dbiz-teal group-hover:text-white' : 'bg-dbiz-navy/10 text-dbiz-navy group-hover:bg-dbiz-navy group-hover:text-white'}`}>
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">{item.relief}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Post-Incorporation Compliance Timeline Section - Redesigned to Match Public Limited Design */}
+        <section className="py-20 bg-gray-50/50 border-t border-gray-100 scroll-mt-32">
+          <div className="container-custom">
+            <h3 className="text-2xl font-bold text-dbiz-navy mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              {[
+                {
+                  value: "30",
+                  sub: "Days",
+                  label: "First Board Meeting + First Auditor Appointment"
+                },
+                {
+                  value: "180",
+                  sub: "Days",
+                  label: "INC-20A (Commencement of Business)"
+                },
+                {
+                  value: "FY End",
+                  sub: "Annual Cycle",
+                  label: "Statutory Audit → AOC-4 → MGT-7A (Annual Return)"
+                },
+                {
+                  value: "Periodic",
+                  sub: "Statutory Update",
+                  label: "DIR-3 KYC Filing / Update (Every Financial Year)"
+                }
+              ].map((item, i) => (
+                <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all h-full">
+                  <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-dbiz-teal font-bold text-sm">{item.value === "FY End" ? "FY" : (item.value === "Periodic" ? "Reg" : item.value)}</span>
+                  </div>
+                  <p className="text-sm font-medium text-dbiz-navy mb-1">{item.sub}</p>
+                  <p className="text-xs text-gray-600 mt-1 leading-relaxed">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-gray-400 italic text-xs">Last updated: Feb 2026</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section - Strategic Overview */}
+        <section className="py-24 bg-gray-50/30 scroll-mt-32">
+          <div className="container-custom">
+            <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Why DBIZ
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for OPC Registration?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">Why D BIZ CONSULTANCY for One Person Company (OPC) Registration?</h2>
 
-              <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY's OPC registration service scope (aligned to MCA process requirements) focuses on reducing resubmissions and keeping incorporation + compliance "audit-ready" from day one.
-              </p>
+              <div className="text-lg text-gray-600 leading-relaxed text-center max-w-4xl mx-auto">
+                <p>
+                  Registering a One Person Company (OPC) is a strategic step for individual entrepreneurs looking to operate with limited liability and a structured corporate identity. While the process involves legal formalities and compliance requirements, it can be complex without expert support.
+                </p>
+              </div>
             </div>
 
-            <div className="max-w-4xl mx-auto mb-12">
-              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-8">
-                <ul className="space-y-4">
+
+
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold text-dbiz-navy">Comprehensive Service Roadmap</h3>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {/* What DBIZ Handles */}
+              <div className="bg-dbiz-teal/[0.03] rounded-3xl p-8 md:p-10 border border-dbiz-teal/10 shadow-sm relative overflow-hidden group hover:border-dbiz-teal/30 transition-all">
+                <h3 className="text-2xl font-bold text-dbiz-navy mb-8 flex items-center">
+                  <span className="w-10 h-10 rounded-full bg-dbiz-teal/10 text-dbiz-teal flex items-center justify-center mr-4">
+                    <CheckCircle2 size={24} />
+                  </span>
+                  What DBIZ Handles
+                </h3>
+                
+                <ul className="grid grid-cols-1 gap-5">
                   {[
-                    "Eligibility + structure check (OPC vs Private Ltd vs LLP) against statutory constraints (single member, nominee requirement, director residency rule).",
-                    "Name shortlisting + OPC naming format alignment (including the statutory 'One Person Company' bracket disclosure).",
-                    "Nominee documentation workflow (INC-3 consent; nominee change/withdrawal handling using INC-4 where required).",
-                    "SPICe+ preparation and filing (Part B + linked forms), and post-incorporation steps including INC-20A readiness.",
-                    "Conversion readiness planning (OPC → Private/Public) with the April 2021 amended conversion pathway (INC-6 and updated conditions)."
+                    "Document validation and pre-upload review",
+                    "OPC name selection and trademark risk check",
+                    "Object clause drafting aligned with business activities",
+                    "DSC procurement and DIN application for director",
+                    "SPICe+ / AGILE-PRO-S filing and ROC coordination",
+                    "MOA & AOA drafting and incorporation filing",
+                    "Nominee documentation and consent (INC-3) handling",
+                    "ROC resubmission and clarification handling (if required)",
+                    "Post-incorporation setup (PAN, TAN, GST if applicable)",
+                    "INC-20A filing and commencement support",
+                    "Annual compliance guidance and reminders"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
+                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="10" className="stroke-dbiz-teal/30" strokeWidth="2" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+                        </svg>
+                      </div>
+                      <span className="ml-3 text-gray-700 leading-relaxed font-medium">{item}</span>
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* What You Provide */}
+              <div className="bg-gray-50/50 rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm relative overflow-hidden group hover:border-gray-300 transition-all">
+                <h3 className="text-2xl font-bold text-dbiz-navy mb-8 flex items-center">
+                  <span className="w-10 h-10 rounded-full bg-dbiz-navy/5 text-dbiz-navy flex items-center justify-center mr-4">
+                    <FileText size={24} />
+                  </span>
+                  What You Provide
+                </h3>
+
+                <ul className="space-y-6">
+                  {[
+                    "Identity and address proofs of all directors/shareholders",
+                    "Registered office address proofs (rent agreement / ownership docs)",
+                    "Passport-sized photographs",
+                    "Business activity details and preferred company names",
+                    "Capital contribution details (share value per subscriber)",
+                    "Bank statement confirming subscription deposit"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start text-gray-700">
+                      <ArrowRight className="h-5 w-5 text-gray-400 mr-4 mt-1 flex-shrink-0" />
+                      <span className="leading-relaxed font-medium">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-12 p-5 rounded-2xl bg-white border border-dashed border-gray-200 text-center shadow-sm">
+                  <p className="text-gray-500 text-sm italic italic leading-relaxed">
+                    Our team provides a precise checklist of required document formats after the initial consultation to ensure "first-time-right" filing.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-20 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-3xl p-8 md:p-14 text-white shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-dbiz-teal/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+              
+              <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div className="space-y-6">
+                  <p className="text-xl md:text-2xl font-medium leading-relaxed">
+                    That’s where D BIZ CONSULTANCY adds value. We simplify the OPC registration process by handling all legal, documentation, and compliance requirements on your behalf. From accurate document preparation to seamless MCA filing, our team ensures your company is incorporated efficiently and in full compliance with the Companies Act, 2013.
+                  </p>
+                  <p className="text-xl md:text-2xl font-medium leading-relaxed opacity-90">
+                    We also support you beyond incorporation — assisting with PAN, TAN, GST registration, and ongoing compliance, so your OPC remains fully compliant and operational without hassle.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    {
+                      title: "Expert Guidance",
+                      desc: "Personalized support from experienced incorporation and compliance professionals"
+                    },
+                    {
+                      title: "End-to-End Service",
+                      desc: "Complete assistance from registration to post-incorporation compliance"
+                    },
+                    {
+                      title: "Transparent Process",
+                      desc: "Clear communication with no hidden charges"
+                    },
+                    {
+                      title: "Timely Delivery",
+                      desc: "Efficient processing and quick turnaround for all services"
+                    }
+                  ].map((card, i) => (
+                    <div key={i} className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-all">
+                      <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-4" />
+                      <h4 className="text-xl font-bold mb-2">{card.title}</h4>
+                      <p className="text-white/80 text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -868,21 +1232,25 @@ const EnhancedOnePersonCompanyPage = () => {
                 FAQs
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on OPC Registration (India)</h2>
-              <p className="text-sm text-gray-500 mb-2 italic">Last updated: Feb 2026</p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Prioritized sources (for legal accuracy and auditability): Companies Act, 2013; Companies (Incorporation) Rules; MCA21 instruction kit.
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-4">FAQs on One Person Company (OPC) Registration</h2>
+              <p className="text-xs text-dbiz-teal font-bold mb-4 uppercase tracking-widest bg-dbiz-teal/10 inline-block px-4 py-1 rounded-full">Last updated: Feb 2026</p>
+              <p className="text-lg text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                Whether you're researching OPC eligibility, taxation, conversion rules, compliance, or MCA procedures — below are the most searched, practical, and decision-making questions answered in a clear and statute-aligned manner.
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 {faqData.map((faq, index) => (
-                  <AccordionItem key={`faq-${index}`} value={`item-${index}`} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                    <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                      <h3 className="text-left font-medium text-base">{faq.question}</h3>
+                  <AccordionItem 
+                    key={`faq-${index}`} 
+                    value={`item-${index}`} 
+                    className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
+                  >
+                    <AccordionTrigger className="px-6 py-5 hover:no-underline text-left group-hover:bg-gray-50/50 transition-colors">
+                      <span className="font-semibold text-dbiz-navy text-lg">{faq.question}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed">
+                    <AccordionContent className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50 bg-white">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

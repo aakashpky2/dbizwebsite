@@ -88,8 +88,8 @@ const App = () => {
                   <Route path="/llp/:location" element={<LLPRegistrationPage />} />
                   <Route path="/limited-liability-partnership" element={<LLPRegistrationPage />} />
                   <Route path="/limited-liability-partnership/:location" element={<LLPRegistrationPage />} />
-                  <Route path="/one-person-company" element={<ComingSoon />} />
-                  <Route path="/one-person-company/:location" element={<ComingSoon />} />
+                  <Route path="/one-person-company" element={<OnePersonCompanyPage />} />
+                  <Route path="/one-person-company/:location" element={<OnePersonCompanyPage />} />
                   <Route path="/nidhi-company" element={<ComingSoon />} />
                   <Route path="/nidhi-company/:location" element={<ComingSoon />} />
                   <Route path="/producer-company" element={<ComingSoon />} />
@@ -98,8 +98,8 @@ const App = () => {
                   <Route path="/nbfc/:location" element={<ComingSoon />} />
                   <Route path="/partnership" element={<ComingSoon />} />
                   <Route path="/partnership/:location" element={<ComingSoon />} />
-                  <Route path="/sole-proprietorship" element={<ComingSoon />} />
-                  <Route path="/sole-proprietorship/:location" element={<ComingSoon />} />
+                  <Route path="/sole-proprietorship" element={<SoleProprietorshipPage />} />
+                  <Route path="/sole-proprietorship/:location" element={<SoleProprietorshipPage />} />
                   <Route path="/12a-80g-registration" element={<ComingSoon />} />
                   <Route path="/12a-80g-registration/:location" element={<ComingSoon />} />
                   <Route path="/digital-signature" element={<ComingSoon />} />

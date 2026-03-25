@@ -220,27 +220,41 @@ const LlpRegistrationPage = () => {
                                 {/* Minimum Requirements Mini-block */}
                                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
                                     <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                        <div className="flex items-start">
-                                            <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                                            <div>
-                                                <p className="font-medium text-dbiz-navy">Min 2 Partners</p>
-                                                <p className="text-sm text-gray-600">At least 2 partners. No statutory maximum cap is stated in the Act.</p>
-                                            </div>
+                                    <div className="flex flex-wrap gap-x-8 gap-y-4">
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                                            <p className="text-sm">
+                                                <span className="font-semibold text-dbiz-navy">Minimum 2 Partners</span> 
+                                                <span className="text-gray-600 ml-1">(at least two individuals or entities)</span>
+                                            </p>
                                         </div>
-                                        <div className="flex items-start">
-                                            <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                                            <div>
-                                                <p className="font-medium text-dbiz-navy">2 Designated Partners</p>
-                                                <p className="text-sm text-gray-600">At least 1 must be resident in India (staying not less than 120 days during FY).</p>
-                                            </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                                            <p className="text-sm">
+                                                <span className="font-semibold text-dbiz-navy">2 Designated Partners</span> 
+                                                <span className="text-gray-600 ml-1">(responsible for compliance)</span>
+                                            </p>
                                         </div>
-                                        <div className="flex items-start">
-                                            <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                                            <div>
-                                                <p className="font-medium text-dbiz-navy">No Share Capital rules</p>
-                                                <p className="text-sm text-gray-600">Partners bring contribution (money, property, services) accounted for and disclosed.</p>
-                                            </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                                            <p className="text-sm">
+                                                <span className="font-semibold text-dbiz-navy">Resident DP</span> 
+                                                <span className="text-gray-600 ml-1">(at least one must be resident in India)</span>
+                                            </p>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                                            <p className="text-sm">
+                                                <span className="font-semibold text-dbiz-navy">No Minimum Capital</span> 
+                                                <span className="text-gray-600 ml-1">(no requirement for LLP incorporation)</span>
+                                            </p>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
+                                            <p className="text-sm">
+                                                <span className="font-semibold text-dbiz-navy">Limited Liability</span> 
+                                                <span className="text-gray-600 ml-1">(protection for partners)</span>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

@@ -78,7 +78,7 @@ const ServicesSection = () => {
       items: [
         { name: "PRIVATE LIMITED COMPANY", path: "/private-limited" },
         { name: "PUBLIC COMPANY", path: "/public-limited" },
-        { name: "ONE PERSON COMPANY (OPC)", path: "/coming-soon" },
+        { name: "ONE PERSON COMPANY (OPC)", path: "/one-person-company" },
         { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
         { name: "PARTNERSHIP", path: "/partnership" },
         { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
