@@ -123,8 +123,8 @@ const EnhancedOnePersonCompanyPage = () => {
           </div>
 
           <div className="container-custom relative z-10">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="max-w-3xl">
+            <div className="grid md:grid-cols-5 gap-12 items-center">
+              <div className="md:col-span-3">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-6">
                   <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                   Business Registration Services
@@ -156,12 +156,12 @@ const EnhancedOnePersonCompanyPage = () => {
                 </div>
               </div>
 
-              <div className="hidden md:block">
-                <div className="relative">
+              <div className="hidden md:flex justify-center md:justify-end md:col-span-2">
+                <div className="relative max-w-md w-full">
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
                     <CachedImage 
-                      src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
+                      src="/dbiz-uploads/opc-hero.png" 
                       alt="One Person Company" 
                       className="w-full h-auto rounded-lg shadow-lg"
                       loading="eager"
@@ -186,7 +186,7 @@ const EnhancedOnePersonCompanyPage = () => {
         </section>
 
         {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
+        <section className="sticky top-16 z-40 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
               <div
@@ -268,41 +268,41 @@ const EnhancedOnePersonCompanyPage = () => {
                 {/* Minimum Requirements Mini-block */}
                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
                   <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
-                  <div className="flex flex-wrap gap-x-8 gap-y-4">
-                    <div className="flex items-center gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">1 Director & 1 Shareholder</span> 
-                        <span className="text-gray-600 ml-1">(same person allowed)</span>
-                      </p>
+                      <div>
+                        <p className="font-semibold text-dbiz-navy text-sm">1 Director & 1 Shareholder</p>
+                        <p className="text-gray-500 text-xs">(Same person allowed)</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Nominee</span> 
-                        <span className="text-gray-600 ml-1">(mandatory appointment)</span>
-                      </p>
+                      <div>
+                        <p className="font-semibold text-dbiz-navy text-sm">Nominee</p>
+                        <p className="text-gray-500 text-xs">(Mandatory appointment)</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Resident Director</span> 
-                        <span className="text-gray-600 ml-1">(at least one Indian director)</span>
-                      </p>
+                      <div>
+                        <p className="font-semibold text-dbiz-navy text-sm">Resident Director</p>
+                        <p className="text-gray-500 text-xs">(At least one Indian director)</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">No Minimum Capital</span> 
-                        <span className="text-gray-600 ml-1">(no paid-up capital requirement)</span>
-                      </p>
+                      <div>
+                        <p className="font-semibold text-dbiz-navy text-sm">No Minimum Capital</p>
+                        <p className="text-gray-500 text-xs">(No paid-up capital requirement)</p>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Registered Office</span> 
-                        <span className="text-gray-600 ml-1">(must be in India)</span>
-                      </p>
+                      <div>
+                        <p className="font-semibold text-dbiz-navy text-sm">Registered Office</p>
+                        <p className="text-gray-500 text-xs">(Must be in India)</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -310,10 +310,10 @@ const EnhancedOnePersonCompanyPage = () => {
               </div>
 
               <div className="md:w-1/3">
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 h-full flex flex-col justify-center relative overflow-hidden group">
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <CachedImage
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                    src="/dbiz-uploads/opc-definition.png"
                     alt="One Person Company Definition"
                     className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
                   />
@@ -344,7 +344,7 @@ const EnhancedOnePersonCompanyPage = () => {
                         </div>
                         <div className="ml-3">
                           <p className="text-sm text-gray-500">Need expert guidance?</p>
-                          <p className="text-dbiz-navy font-medium text-sm">Contact our team at D BIZ CONSULTANCY for professional assistance with OPC registration and compliance.</p>
+                          <p className="text-dbiz-navy font-medium text-sm">Contact our team.</p>
                         </div>
                       </div>
                     </div>
@@ -456,7 +456,7 @@ const EnhancedOnePersonCompanyPage = () => {
 
                   <div className="hidden md:block mt-8">
                     <CachedImage 
-                      src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=600&q=80" 
+                      src="/dbiz-uploads/opc-benefits.png" 
                       alt="Business Growth" 
                       className="rounded-lg shadow-lg max-w-sm" 
                     />
@@ -556,14 +556,14 @@ const EnhancedOnePersonCompanyPage = () => {
                     </TableRow>
                     <TableRow>
                       <TableCell className="font-medium border-r">Compliance</TableCell>
-                      <TableCell className="bg-dbiz-teal/5 border-r text-center font-medium">Moderate compliance (ROC filings, audit, annual returns)</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Moderate compliance (ROC filings, audit, annual returns)</TableCell>
                       <TableCell className="border-r text-center">Moderate</TableCell>
                       <TableCell className="border-r text-center">Minimal</TableCell>
                       <TableCell className="text-center">Minimal</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell className="font-medium border-r">Best For</TableCell>
-                      <TableCell className="bg-dbiz-teal/10 border-r text-center font-bold text-dbiz-teal uppercase text-xs">Solo entrepreneurs, startups</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r text-center">Solo entrepreneurs, startups</TableCell>
                       <TableCell className="border-r text-center">Small businesses</TableCell>
                       <TableCell className="border-r text-center">Freelancers, traders</TableCell>
                       <TableCell className="text-center">Family businesses</TableCell>
@@ -591,25 +591,18 @@ const EnhancedOnePersonCompanyPage = () => {
               </p>
             </div>
 
-            {/* Rejection Prevention Tips */}
-            <div className="mb-12 bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl shadow-sm">
-              <div className="flex items-center mb-4">
-                <AlertTriangle className="h-6 w-6 text-amber-500 mr-3" />
-                <h3 className="text-lg font-bold text-dbiz-navy uppercase tracking-wider">Common Rejection Prevention Tips</h3>
+            {/* Common Rejection Prevention Tips */}
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3 shadow-sm">
+              <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-semibold text-amber-800 mb-1">Common Rejection Prevention Tips</p>
+                <ul className="text-sm text-amber-700 space-y-1">
+                  <li>• Ensure name spelling consistency across PAN, Aadhaar, Passport, and incorporation forms.</li>
+                  <li>• Registered office documents must have matching owner details across utility bill, rent agreement, and NOC.</li>
+                  <li>• Utility bills and bank statements should be dated within the last 2 months.</li>
+                  <li>• Nominee details must be accurate and properly documented.</li>
+                </ul>
               </div>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {[
-                  "Ensure name spelling consistency across PAN, Aadhaar, Passport, and incorporation forms",
-                  "Registered office documents must have matching owner details across utility bill, rent agreement, and NOC",
-                  "Utility bills and bank statements should be dated within the last 2 months",
-                  "Nominee details must be accurate and properly documented"
-                ].map((tip, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-amber-900 font-medium">{tip}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -761,31 +754,23 @@ const EnhancedOnePersonCompanyPage = () => {
         </section>
 
         {/* Registration Process Section */}
-        {/* Registration Process Section - Matching Public Limited Design */}
-        <section id="process" className="py-24 bg-dbiz-navy text-white scroll-mt-32 relative overflow-hidden">
-          {/* Subtle patterned background for depth */}
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-          
-          {/* Decorative glows */}
-          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-dbiz-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
-          <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-dbiz-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
-          
+        {/* Registration Process Section */}
+        <section id="process" className="py-24 bg-white text-dbiz-navy scroll-mt-32 relative overflow-hidden">
           <div className="container-custom relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Registration Process
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">Step-by-Step One Person Company (OPC) Registration Process</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Step-by-Step One Person Company (OPC) Registration Process</h2>
               
-              <div className="text-lg text-white/80 mb-8 leading-relaxed max-w-5xl mx-auto flex flex-col items-center">
+              <div className="text-lg text-gray-600 mb-12 leading-relaxed max-w-5xl mx-auto space-y-1">
                 <p className="text-center">A One Person Company (OPC) provides limited liability protection to a single entrepreneur while offering the benefits of a corporate structure.</p>
-                <p className="text-center">The registration process involves submitting required documents, complying with statutory requirements,</p>
-                <p className="text-center">and completing post-incorporation formalities through the Ministry of Corporate Affairs (MCA).</p>
+                <p className="text-center">The registration process involves submitting required documents, complying with statutory requirements, and completing post-incorporation formalities through the Ministry of Corporate Affairs (MCA).</p>
               </div>
               
-              <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic bg-white/5 py-4 rounded-r-lg">
+              <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic bg-dbiz-teal/5 py-4 rounded-r-lg">
                 With professional assistance from D BIZ CONSULTANCY, individual entrepreneurs can complete the OPC registration process efficiently while ensuring full compliance with the Companies Act, 2013.
               </p>
             </div>
@@ -879,22 +864,16 @@ const EnhancedOnePersonCompanyPage = () => {
             </div>
 
             <div className="rounded-2xl border border-gray-100 shadow-xl overflow-hidden bg-white mb-12">
-              <div className="bg-dbiz-navy p-6 text-white overflow-hidden relative">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                  <Shield size={64} className="rotate-12" />
-                </div>
-                <h3 className="text-xl font-bold">Compliance Requirements Table</h3>
-                <p className="text-white/70 text-sm mt-1">Official MCA Statutory Benchmarks</p>
-              </div>
+
 
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="bg-gray-50/80">
-                      <TableHead className="font-bold text-dbiz-navy py-4">Aspect</TableHead>
-                      <TableHead className="font-bold text-dbiz-navy py-4">Compliance Requirement</TableHead>
-                      <TableHead className="font-bold text-dbiz-navy py-4">Frequency / Timeline</TableHead>
-                      <TableHead className="font-bold text-dbiz-navy py-4">Why It's Important</TableHead>
+                    <TableRow className="bg-dbiz-navy hover:bg-dbiz-navy transition-none border-none">
+                      <TableHead className="py-5 text-white font-bold text-lg">Aspect</TableHead>
+                      <TableHead className="py-5 text-white font-bold text-lg">Compliance Requirement</TableHead>
+                      <TableHead className="py-5 text-white font-bold text-lg">Frequency / Timeline</TableHead>
+                      <TableHead className="py-5 text-white font-bold text-lg">Why It's Important</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -960,11 +939,11 @@ const EnhancedOnePersonCompanyPage = () => {
                         importance: "Ensures adherence to the Income Tax Act and avoids high penalties." 
                       }
                     ].map((row, idx) => (
-                      <TableRow key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
-                        <TableCell className="font-bold text-dbiz-navy whitespace-nowrap">{row.aspect}</TableCell>
-                        <TableCell className="text-gray-700 min-w-[200px]">{row.req}</TableCell>
-                        <TableCell className="font-medium text-dbiz-teal text-sm whitespace-nowrap">{row.timeline}</TableCell>
-                        <TableCell className="text-gray-600 italic text-sm border-l border-gray-100">{row.importance}</TableCell>
+                      <TableRow key={idx} className={`${idx % 2 === 0 ? "bg-white hover:bg-white" : "bg-gray-50/30 hover:bg-gray-50/30"} transition-none border-none`}>
+                        <TableCell className="py-4 font-medium text-dbiz-navy whitespace-nowrap">{row.aspect}</TableCell>
+                        <TableCell className="py-4 text-gray-700 min-w-[200px]">{row.req}</TableCell>
+                        <TableCell className="py-4 text-gray-700 whitespace-nowrap font-medium text-sm">{row.timeline}</TableCell>
+                        <TableCell className="py-4 text-gray-600 text-sm border-l border-gray-100">{row.importance}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -1039,11 +1018,11 @@ const EnhancedOnePersonCompanyPage = () => {
         </section>
 
         {/* Post-Incorporation Compliance Timeline Section - Redesigned to Match Public Limited Design */}
-        <section className="py-20 bg-gray-50/50 border-t border-gray-100 scroll-mt-32">
+        <section className="pt-20 pb-2 bg-gray-50/50 border-t border-gray-100 scroll-mt-32">
           <div className="container-custom">
             <h3 className="text-2xl font-bold text-dbiz-navy mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {[
                 {
                   value: "30",
@@ -1056,21 +1035,21 @@ const EnhancedOnePersonCompanyPage = () => {
                   label: "INC-20A (Commencement of Business)"
                 },
                 {
-                  value: "FY End",
-                  sub: "Annual Cycle",
+                  value: "FY",
+                  sub: "Cycle",
                   label: "Statutory Audit → AOC-4 → MGT-7A (Annual Return)"
                 },
                 {
-                  value: "Periodic",
-                  sub: "Statutory Update",
-                  label: "DIR-3 KYC Filing / Update (Every Financial Year)"
+                  value: "KYC",
+                  sub: "Annual",
+                  label: "DIR-3 KYC Filing / Update with MCA"
                 }
               ].map((item, i) => (
-                <div key={i} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all h-full">
-                  <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-dbiz-teal font-bold text-sm">{item.value === "FY End" ? "FY" : (item.value === "Periodic" ? "Reg" : item.value)}</span>
+                <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-dbiz-teal font-bold text-sm">{item.value}</span>
                   </div>
-                  <p className="text-sm font-medium text-dbiz-navy mb-1">{item.sub}</p>
+                  <p className="text-sm font-medium text-dbiz-navy">{item.sub}</p>
                   <p className="text-xs text-gray-600 mt-1 leading-relaxed">
                     {item.label}
                   </p>
@@ -1078,14 +1057,14 @@ const EnhancedOnePersonCompanyPage = () => {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <p className="text-gray-400 italic text-xs">Last updated: Feb 2026</p>
+            <div className="text-center mt-6">
+                <p className="text-gray-400 italic text-xs font-bold">Last updated: Feb 2026</p>
             </div>
           </div>
         </section>
 
         {/* Why Choose Us Section - Strategic Overview */}
-        <section className="py-24 bg-gray-50/30 scroll-mt-32">
+        <section className="py-24 mb-2 bg-gray-50/30 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -1104,21 +1083,15 @@ const EnhancedOnePersonCompanyPage = () => {
 
 
 
-            <div className="text-center mb-12">
-              <h3 className="text-2xl font-bold text-dbiz-navy">Comprehensive Service Roadmap</h3>
-            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
               {/* What DBIZ Handles */}
-              <div className="bg-dbiz-teal/[0.03] rounded-3xl p-8 md:p-10 border border-dbiz-teal/10 shadow-sm relative overflow-hidden group hover:border-dbiz-teal/30 transition-all">
-                <h3 className="text-2xl font-bold text-dbiz-navy mb-8 flex items-center">
-                  <span className="w-10 h-10 rounded-full bg-dbiz-teal/10 text-dbiz-teal flex items-center justify-center mr-4">
-                    <CheckCircle2 size={24} />
-                  </span>
-                  What DBIZ Handles
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
                 </h3>
-                
-                <ul className="grid grid-cols-1 gap-5">
+                <ul className="space-y-3">
                   {[
                     "Document validation and pre-upload review",
                     "OPC name selection and trademark risk check",
@@ -1127,67 +1100,52 @@ const EnhancedOnePersonCompanyPage = () => {
                     "SPICe+ / AGILE-PRO-S filing and ROC coordination",
                     "MOA & AOA drafting and incorporation filing",
                     "Nominee documentation and consent (INC-3) handling",
-                    "ROC resubmission and clarification handling (if required)",
-                    "Post-incorporation setup (PAN, TAN, GST if applicable)",
+                    "ROC resubmission and clarification handling",
+                    "Post-incorporation setup (PAN, TAN, GST)",
                     "INC-20A filing and commencement support",
                     "Annual compliance guidance and reminders"
                   ].map((item, i) => (
                     <li key={i} className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="12" cy="12" r="10" className="stroke-dbiz-teal/30" strokeWidth="2" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
-                        </svg>
-                      </div>
-                      <span className="ml-3 text-gray-700 leading-relaxed font-medium">{item}</span>
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* What You Provide */}
-              <div className="bg-gray-50/50 rounded-3xl p-8 md:p-10 border border-gray-200 shadow-sm relative overflow-hidden group hover:border-gray-300 transition-all">
-                <h3 className="text-2xl font-bold text-dbiz-navy mb-8 flex items-center">
-                  <span className="w-10 h-10 rounded-full bg-dbiz-navy/5 text-dbiz-navy flex items-center justify-center mr-4">
-                    <FileText size={24} />
-                  </span>
-                  What You Provide
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                  <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
                 </h3>
-
-                <ul className="space-y-6">
+                <ul className="space-y-3">
                   {[
-                    "Identity and address proofs of all directors/shareholders",
-                    "Registered office address proofs (rent agreement / ownership docs)",
+                    "Identity and address proofs of director/shareholder",
+                    "Registered office address proofs (rent / ownership)",
                     "Passport-sized photographs",
-                    "Business activity details and preferred company names",
-                    "Capital contribution details (share value per subscriber)",
+                    "Business activity details and preferred names",
+                    "Capital contribution details (share value)",
                     "Bank statement confirming subscription deposit"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start text-gray-700">
-                      <ArrowRight className="h-5 w-5 text-gray-400 mr-4 mt-1 flex-shrink-0" />
-                      <span className="leading-relaxed font-medium">{item}</span>
+                    <li key={i} className="flex items-start">
+                      <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-12 p-5 rounded-2xl bg-white border border-dashed border-gray-200 text-center shadow-sm">
-                  <p className="text-gray-500 text-sm italic italic leading-relaxed">
-                    Our team provides a precise checklist of required document formats after the initial consultation to ensure "first-time-right" filing.
-                  </p>
-                </div>
               </div>
             </div>
 
-            <div className="mt-20 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-3xl p-8 md:p-14 text-white shadow-2xl relative overflow-hidden">
+            <div className="mt-20 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-dbiz-teal/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
               
               <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div className="space-y-6">
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed">
+                  <p className="text-lg leading-relaxed mb-6">
                     That’s where D BIZ CONSULTANCY adds value. We simplify the OPC registration process by handling all legal, documentation, and compliance requirements on your behalf. From accurate document preparation to seamless MCA filing, our team ensures your company is incorporated efficiently and in full compliance with the Companies Act, 2013.
                   </p>
-                  <p className="text-xl md:text-2xl font-medium leading-relaxed opacity-90">
+                  <p className="text-lg leading-relaxed opacity-90">
                     We also support you beyond incorporation — assisting with PAN, TAN, GST registration, and ongoing compliance, so your OPC remains fully compliant and operational without hassle.
                   </p>
                 </div>
@@ -1211,9 +1169,9 @@ const EnhancedOnePersonCompanyPage = () => {
                       desc: "Efficient processing and quick turnaround for all services"
                     }
                   ].map((card, i) => (
-                    <div key={i} className="bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-all">
-                      <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-4" />
-                      <h4 className="text-xl font-bold mb-2">{card.title}</h4>
+                    <div key={i} className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/10 hover:bg-white/15 transition-all">
+                      <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                      <h4 className="text-xl font-semibold mb-2">{card.title}</h4>
                       <p className="text-white/80 text-sm leading-relaxed">{card.desc}</p>
                     </div>
                   ))}
@@ -1224,7 +1182,7 @@ const EnhancedOnePersonCompanyPage = () => {
         </section>
 
         {/* FAQs Section */}
-        <section id="faqs" className="py-16 bg-gray-50 scroll-mt-32">
+        <section id="faqs" className="pt-4 pb-16 mb-24 bg-gray-50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ChevronRight, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, RefreshCw, Info, ThumbsUp, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle } from "lucide-react";
+import { CheckCircle2, ChevronRight, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, RefreshCw, Info, ThumbsUp, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -173,7 +173,7 @@ const LLPRegistrationPage = () => {
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
                     <CachedImage 
-                      src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80" 
+                      src="/dbiz-uploads/llp_hero_v2.png" 
                       alt="LLP Registration" 
                       className="w-full h-auto rounded-lg shadow-lg"
                       aspectRatio={4/3}
@@ -200,7 +200,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
+        <section className="sticky top-20 z-50 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
               <div 
@@ -270,7 +270,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Overview Section */}
-        <section id="overview" className="py-16 scroll-mt-32">
+        <section id="overview" className="pt-24 pb-16 scroll-mt-40">
           <div className="container-custom">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-2/3">
@@ -295,50 +295,65 @@ const LLPRegistrationPage = () => {
 
                 {/* Minimum Requirements Mini-block — Combined into Overview */}
                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
-                  <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
-                  <div className="flex flex-wrap gap-x-8 gap-y-4">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Minimum 2 Partners</span> 
-                        <span className="text-gray-600 ml-1">(at least two individuals or entities)</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">2 Designated Partners</span> 
-                        <span className="text-gray-600 ml-1">(responsible for compliance)</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Resident DP</span> 
-                        <span className="text-gray-600 ml-1">(at least one must be resident in India)</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">No Minimum Capital</span> 
-                        <span className="text-gray-600 ml-1">(no requirement for LLP incorporation)</span>
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                      <p className="text-sm">
-                        <span className="font-semibold text-dbiz-navy">Limited Liability</span> 
-                        <span className="text-gray-600 ml-1">(protection for partners)</span>
-                      </p>
-                    </div>
+                  <h3 className="text-lg font-bold text-dbiz-navy mb-5 flex items-center">
+                    <span className="w-7 h-7 rounded-full bg-dbiz-teal text-white flex items-center justify-center mr-3 text-sm">
+                      <ChevronRight size={16} />
+                    </span>
+                    Minimum Requirements at a Glance
+                  </h3>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-10">
+                    {[
+                      {
+                        title: "Minimum 2 Partners",
+                        desc: "At least two individuals or corporate entities"
+                      },
+                      {
+                        title: "2 Designated Partners",
+                        desc: "Mandatory for statutory compliance"
+                      },
+                      {
+                        title: "1 Resident DP",
+                        desc: "One must be resident in India"
+                      },
+                      {
+                        title: "Digital Signatures",
+                        desc: "Required for all designated partners"
+                      },
+                      {
+                        title: "No Min Capital",
+                        desc: "Flexible contribution for partners"
+                      },
+                      {
+                        title: "Registered Office",
+                        desc: "Must be located within India"
+                      }
+                    ].map((item, index) => (
+                      <div key={index} className="flex items-start group">
+                        <div className="mt-1 mr-4 bg-white p-1 rounded-full shadow-sm border border-dbiz-teal/20 group-hover:scale-110 transition-transform">
+                          <CheckCircle className="h-5 w-5 text-dbiz-teal" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-dbiz-navy leading-tight mb-1">{item.title}</p>
+                          <p className="text-xs text-gray-500 leading-normal">{item.desc}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
               
               <div className="md:w-1/3">
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the LLP Act, 2008</h3>
+                  <div className="mb-6 overflow-hidden rounded-xl shadow-sm border border-gray-200">
+                    <CachedImage 
+                      src="/dbiz-uploads/llp_definition_v2.png" 
+                      alt="LLP Act Definition" 
+                      className="w-full h-auto object-cover"
+                      aspectRatio={4/3}
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy text-center">Definition as per the LLP Act, 2008</h3>
                   <p className="text-gray-700 mb-4">
                     The LLP Act, 2008, defines a Limited Liability Partnership as a body corporate that is:
                   </p>
@@ -377,7 +392,7 @@ const LLPRegistrationPage = () => {
 
 
         {/* Key Features Section */}
-        <section id="features" className="py-16 bg-gray-50 scroll-mt-32">
+        <section id="features" className="pt-24 pb-16 bg-gray-50 scroll-mt-40">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -457,7 +472,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-20 scroll-mt-32">
+        <section id="benefits" className="pt-24 pb-16 scroll-mt-40">
           <div className="container-custom">
             <div className="grid lg:grid-cols-12 gap-12 items-start">
               {/* Left Side: Content & Image */}
@@ -477,7 +492,7 @@ const LLPRegistrationPage = () => {
 
                 <div className="relative group overflow-hidden rounded-2xl shadow-xl">
                   <CachedImage 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                    src="/dbiz-uploads/llp_benefits_v2.png" 
                     alt="LLP Benefits" 
                     className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
                     aspectRatio={4/3}
@@ -514,7 +529,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Comparison Section */}
-        <section id="comparison" className="py-16 bg-gray-50 scroll-mt-32">
+        <section id="comparison" className="pt-24 pb-16 bg-gray-50 scroll-mt-40">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -531,70 +546,70 @@ const LLPRegistrationPage = () => {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-gray-50">
-                    <TableHead className="font-bold text-dbiz-navy py-4">Feature</TableHead>
-                    <TableHead className="bg-dbiz-navy/10 font-bold text-dbiz-navy py-4">LLP</TableHead>
-                    <TableHead className="font-bold text-dbiz-navy py-4">Private Limited</TableHead>
-                    <TableHead className="font-bold text-dbiz-navy py-4">Sole Proprietorship</TableHead>
-                    <TableHead className="font-bold text-dbiz-navy py-4">Partnership</TableHead>
+                  <TableRow className="border-b border-gray-100">
+                    <TableHead className="py-5 font-bold text-black text-lg pl-6">Feature</TableHead>
+                    <TableHead className="py-5 font-bold text-black text-lg bg-dbiz-teal/10 text-left pl-6">LLP</TableHead>
+                    <TableHead className="py-5 font-bold text-black text-lg">Private Limited</TableHead>
+                    <TableHead className="py-5 font-bold text-black text-lg text-center">Sole Proprietorship</TableHead>
+                    <TableHead className="py-5 font-bold text-black text-lg pr-6 text-center">Partnership</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Liability</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Limited to contribution</TableCell>
-                    <TableCell>Limited to shares</TableCell>
-                    <TableCell>Unlimited</TableCell>
-                    <TableCell>Unlimited</TableCell>
+                  <TableRow>
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Liability</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Limited to contribution</TableCell>
+                    <TableCell className="py-4 text-black">Limited to shares</TableCell>
+                    <TableCell className="py-4 text-black text-center">Unlimited</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Unlimited</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Legal Entity</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Separate legal entity</TableCell>
-                    <TableCell>Separate legal entity</TableCell>
-                    <TableCell>Not a separate entity</TableCell>
-                    <TableCell>Not a separate entity</TableCell>
+                  <TableRow className="bg-gray-50/50">
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Legal Entity</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Separate legal entity</TableCell>
+                    <TableCell className="py-4 text-black">Separate legal entity</TableCell>
+                    <TableCell className="py-4 text-black text-center">Not a separate entity</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Not a separate entity</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Ownership</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Minimum 2 partners (no maximum limit)</TableCell>
-                    <TableCell>2–200 shareholders</TableCell>
-                    <TableCell>Single owner</TableCell>
-                    <TableCell>2–50 partners</TableCell>
+                  <TableRow>
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Ownership</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Minimum 2 partners (no limit)</TableCell>
+                    <TableCell className="py-4 text-black">2–200 shareholders</TableCell>
+                    <TableCell className="py-4 text-black text-center">Single owner</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">2–50 partners</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Tax Rate</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Flat 30%</TableCell>
-                    <TableCell>Corporate tax regime (subject to conditions)</TableCell>
-                    <TableCell>Individual income tax slab</TableCell>
-                    <TableCell>Flat 30%</TableCell>
+                  <TableRow className="bg-gray-50/50">
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Tax Rate</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Flat 30%</TableCell>
+                    <TableCell className="py-4 text-black">Corporate tax regime</TableCell>
+                    <TableCell className="py-4 text-black text-center">Individual slab</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Flat 30%</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Compliance</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Moderate compliance</TableCell>
-                    <TableCell>High compliance</TableCell>
-                    <TableCell>Minimal</TableCell>
-                    <TableCell>Minimal</TableCell>
+                  <TableRow>
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Compliance</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Moderate compliance</TableCell>
+                    <TableCell className="py-4 text-black">High compliance</TableCell>
+                    <TableCell className="py-4 text-black text-center">Minimal</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Minimal</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Management Structure</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Flexible partner-managed structure</TableCell>
-                    <TableCell>Structured and regulated</TableCell>
-                    <TableCell>Fully controlled by owner</TableCell>
-                    <TableCell>Jointly managed</TableCell>
+                  <TableRow className="bg-gray-50/50">
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Management</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Flexible partner-managed</TableCell>
+                    <TableCell className="py-4 text-black">Structured & regulated</TableCell>
+                    <TableCell className="py-4 text-black text-center">Fully controlled</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Jointly managed</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Cost of Setup</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Moderate</TableCell>
-                    <TableCell>Higher</TableCell>
-                    <TableCell>Very low</TableCell>
-                    <TableCell>Low</TableCell>
+                  <TableRow>
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Cost of Setup</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Moderate</TableCell>
+                    <TableCell className="py-4 text-black">Higher</TableCell>
+                    <TableCell className="py-4 text-black text-center">Very low</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Low</TableCell>
                   </TableRow>
-                  <TableRow className="hover:bg-gray-50">
-                    <TableCell className="font-semibold text-dbiz-navy">Best For</TableCell>
-                    <TableCell className="bg-dbiz-navy/5 font-medium text-dbiz-navy">Professionals, service firms, growing businesses</TableCell>
-                    <TableCell>Startups and scalable businesses</TableCell>
-                    <TableCell>Freelancers and small traders</TableCell>
-                    <TableCell>Small businesses and family ventures</TableCell>
+                  <TableRow className="bg-gray-50/50">
+                    <TableCell className="py-4 font-semibold text-black pl-6 border-r border-gray-100">Best For</TableCell>
+                    <TableCell className="py-4 text-black font-bold bg-dbiz-teal/5 text-left pl-6">Professionals, growth firms</TableCell>
+                    <TableCell className="py-4 text-black">Startups & scalable biz</TableCell>
+                    <TableCell className="py-4 text-black text-center">Freelancers</TableCell>
+                    <TableCell className="py-4 text-black pr-6 text-center">Small family ventures</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -603,7 +618,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Documents Section */}
-        <section id="documents" className="py-16 scroll-mt-32">
+        <section id="documents" className="pt-24 pb-16 scroll-mt-40">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-4">
@@ -618,7 +633,7 @@ const LLPRegistrationPage = () => {
 
             {/* Common Rejection Prevention Tips */}
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-10 flex items-start gap-3">
-              <FileText className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+              <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-amber-800 mb-2">Common Rejection Prevention Tips</p>
                 <ul className="text-sm text-amber-700 space-y-1.5">
@@ -792,7 +807,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Process Section */}
-        <section id="process" className="py-16 scroll-mt-32">
+        <section id="process" className="pt-24 pb-16 bg-gray-50 scroll-mt-40">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -1151,7 +1166,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* Compliance Section */}
-        <section id="compliance" className="py-16 bg-gray-50 scroll-mt-32">
+        <section id="compliance" className="pt-24 pb-16 bg-gray-50 scroll-mt-44">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -1166,77 +1181,91 @@ const LLPRegistrationPage = () => {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
-              <div className="inline-block min-w-full align-middle">
-                <div className="overflow-hidden rounded-xl border border-gray-200 shadow-md">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-dbiz-navy">
-                      <tr>
-                        <th scope="col" className="px-6 py-4 text-left text-sm font-medium text-white">Aspect</th>
-                        <th scope="col" className="px-6 py-4 text-left text-sm font-medium text-white">Compliance Requirement</th>
-                        <th scope="col" className="px-6 py-4 text-left text-sm font-medium text-white">Frequency / Timeline</th>
-                        <th scope="col" className="px-6 py-4 text-left text-sm font-medium text-white">Why It's Important</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200 bg-white">
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">LLP Agreement Filing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">File LLP Agreement with authorities after incorporation</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Within 30 days of incorporation</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Defines rights, duties, and profit-sharing among partners</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Partner Details Update</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Update any changes in partners or designated partners</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">As and when changes occur</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Ensures correct legal records and avoids penalties</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Books of Accounts</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Maintain proper financial records including income, expenses, assets, and liabilities</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Continuous / Ongoing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Helps in financial tracking and compliance</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Annual Return Filing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">File annual return with partner and management details</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Annually (within prescribed due date)</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Keeps official records updated and avoids penalties</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Statement of Accounts &amp; Solvency</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">File financial statement including assets, liabilities, and solvency declaration</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Annually (within prescribed due date)</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Ensures financial transparency and compliance</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Income Tax Return</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">File income tax return of LLP</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Annually (as per due date)</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Mandatory tax compliance</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Audit Requirement</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Conduct audit if turnover or contribution exceeds prescribed limits</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Annually (if applicable)</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Ensures accuracy of financial statements</td>
-                      </tr>
-                      <tr className="bg-gray-50">
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">GST Compliance (If Applicable)</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">File GST returns such as GSTR-1, GSTR-3B</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Monthly / Quarterly</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Required if registered under GST</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">Bank Account Compliance</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Maintain proper transactions through LLP bank account</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Ongoing</td>
-                        <td className="px-6 py-4 text-sm text-gray-700">Ensures financial discipline and transparency</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  aspect: "LLP Agreement Filing",
+                  req: "File LLP Agreement with authorities after incorporation",
+                  timeline: "Within 30 days of incorporation",
+                  importance: "Defines rights, duties, and profit-sharing among partners"
+                },
+                {
+                  aspect: "Annual Return (Form 11)",
+                  req: "File annual return with partner and management details",
+                  timeline: "Annually (Within 60 days of FY end)",
+                  importance: "Keeps official records updated and avoids heavy penalties"
+                },
+                {
+                  aspect: "Statement of Accounts (Form 8)",
+                  req: "File financial statement including assets, liabilities, and solvency",
+                  timeline: "Annually (Within 30 days from 6 months of FY end)",
+                  importance: "Ensures financial transparency and statutory compliance"
+                },
+                {
+                  aspect: "Income Tax Return",
+                  req: "File mandatory income tax return of LLP",
+                  timeline: "Annually (By July 31st or Sept 30th if audit required)",
+                  importance: "Mandatory tax compliance with Income Tax Dept"
+                },
+                {
+                  aspect: "Books of Accounts",
+                  req: "Maintain proper financial records of income and expenses",
+                  timeline: "Continuous / Ongoing",
+                  importance: "Provides accurate financial health and audit readiness"
+                },
+                {
+                  aspect: "Statutory Audit",
+                  req: "Conduct audit if turnover > 40L or contribution > 25L",
+                  timeline: "Annually (if applicable)",
+                  importance: "Verifies accuracy of financial statements for stakeholders"
+                },
+                {
+                  aspect: "GST Compliance",
+                  req: "File monthly/quarterly returns (GSTR-1, GSTR-3B)",
+                  timeline: "Monthly / Quarterly",
+                  importance: "Required to maintain active GST status and ITC eligibility"
+                },
+                {
+                  aspect: "Partner Details Update",
+                  req: "Update any changes in partners or address with ROC",
+                  timeline: "Within 30 days of change",
+                  importance: "Ensures legal records show current management"
+                },
+                {
+                  aspect: "Bank Compliance",
+                  req: "Maintain active bank account in LLP name",
+                  timeline: "Continuous / Ongoing",
+                  importance: "Ensures financial discipline and transparent transactions"
+                }
+              ].map((item, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col group">
+                  <div className="bg-dbiz-navy p-5 text-white">
+                    <h3 className="text-lg font-bold group-hover:text-dbiz-teal transition-colors">
+                      {item.aspect}
+                    </h3>
+                  </div>
+                  <div className="p-6 space-y-4 flex-grow">
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-gray-400 font-bold mb-1">Requirement</p>
+                      <p className="text-gray-900 font-medium leading-relaxed">{item.req}</p>
+                    </div>
+                    <div className="pt-4 border-t border-gray-50 flex items-start gap-3">
+                      <Clock className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-xs font-bold text-dbiz-navy">Timeline</p>
+                        <p className="text-sm text-gray-600">{item.timeline}</p>
+                      </div>
+                    </div>
+                    <div className="pt-2 flex items-start gap-3">
+                      <Shield className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="text-xs font-bold text-dbiz-navy">Importance</p>
+                        <p className="text-sm text-gray-600 italic">"{item.importance}"</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -1315,7 +1344,7 @@ const LLPRegistrationPage = () => {
 
             {/* Registration Timeline Cards — matching Public/Private Limited design */}
             <div className="mt-16 max-w-5xl mx-auto">
-              <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center underline decoration-dbiz-teal/30 underline-offset-8">Estimated Timeline for LLP Registration</h3>
+              <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center">Estimated Timeline for LLP Registration</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all group">
                   <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3 group-hover:bg-dbiz-teal/20 transition-colors">
@@ -1361,39 +1390,31 @@ const LLPRegistrationPage = () => {
 
             <p className="text-sm text-gray-500 mt-12 text-center italic font-medium">Last updated: March 2026</p>
 
-            {/* Mandatory Compliance Summary Table */}
-            <div className="mt-16 bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden max-w-2xl mx-auto mb-8">
-              <div className="bg-dbiz-navy p-4 text-white text-center">
+            <div className="mt-16 max-w-4xl mx-auto">
+              <div className="bg-dbiz-navy p-4 rounded-t-xl text-white text-center">
                 <h3 className="text-xl font-bold">Mandatory Compliance for LLP</h3>
               </div>
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-gray-50 pointer-events-none">
-                    <TableHead className="font-semibold text-dbiz-navy">Compliance</TableHead>
-                    <TableHead className="font-semibold text-dbiz-navy">Timeline</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium">Filing Statement of Accounts (Form 8)</TableCell>
-                    <TableCell>Annually</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Filing Annual Return (Form 11)</TableCell>
-                    <TableCell>Annually</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium">Income Tax Return</TableCell>
-                    <TableCell>Annually</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-x border-b border-gray-200 rounded-b-xl overflow-hidden bg-white">
+                {[
+                  { title: "Filing Statement of Accounts", form: "Form 8", timeline: "Annually" },
+                  { title: "Filing Annual Return", form: "Form 11", timeline: "Annually" },
+                  { title: "Income Tax Return", form: "ITR", timeline: "Annually" }
+                ].map((item, i) => (
+                  <div key={i} className={`p-6 text-center ${i !== 2 ? 'border-r border-gray-100' : ''} hover:bg-gray-50 transition-colors`}>
+                    <p className="text-xs font-bold text-dbiz-teal uppercase tracking-widest mb-1">{item.form}</p>
+                    <p className="text-sm font-bold text-dbiz-navy mb-2 leading-tight">{item.title}</p>
+                    <div className="inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded bg-gray-100 text-gray-500 uppercase">
+                      <Clock className="h-3 w-3 mr-1" /> {item.timeline}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Why Choose us Section — following Private Limited page design exactly */}
-        <section id="why-dbiz" className="py-16 scroll-mt-32">
+        <section id="why-dbiz" className="pt-24 pb-16 scroll-mt-44">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -1455,7 +1476,7 @@ const LLPRegistrationPage = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white overflow-hidden shadow-2xl">
+            <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white overflow-hidden shadow-2xl mt-16">
               <div className="grid md:grid-cols-2 gap-12 items-center relative">
                 <div>
                   <p className="text-lg leading-relaxed mb-6">
@@ -1513,7 +1534,7 @@ const LLPRegistrationPage = () => {
         </section>
 
         {/* FAQs Section — relocated to the bottom */}
-        <section id="faqs" className="py-16 scroll-mt-32">
+        <section id="faqs" className="pt-24 pb-16 scroll-mt-44">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-4">

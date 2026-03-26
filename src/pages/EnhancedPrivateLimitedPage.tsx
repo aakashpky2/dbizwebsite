@@ -260,34 +260,41 @@ const EnhancedPrivateLimitedPage = () => {
             </div>
 
             <div className="md:w-1/3">
-              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
-                <p className="text-gray-700 mb-4">
-                  Section 2(68) of the Companies Act, 2013, defines a Private Limited Company as an entity that:
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Restricts the Transfer of Shares</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Limits the Number of Members (maximum of 200, except OPC)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Prohibits Public Invitations to subscribe to its securities</span>
-                  </li>
-                </ul>
-
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center">
-                    <div className="bg-dbiz-teal/10 p-2 rounded-full">
-                      <Phone className="h-5 w-5 text-dbiz-teal" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm text-gray-500">Need expert guidance?</p>
-                      <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start">
+                <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
+                <CachedImage
+                  src="/dbiz-uploads/opc-definition.png"
+                  alt="Private Limited Company Definition"
+                  className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
+                  <p className="text-gray-700 mb-4">
+                    Section 2(68) of the Companies Act, 2013, defines a Private Limited Company as an entity that:
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Restricts the Transfer of Shares</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Limits the Number of Members (maximum of 200, except OPC)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span>Prohibits Public Invitations to subscribe to its securities</span>
+                    </li>
+                  </ul>
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex items-center">
+                      <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                        <Phone className="h-5 w-5 text-dbiz-teal" />
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-gray-500">Need expert guidance?</p>
+                        <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                      </div>
                     </div>
                   </div>
                 </div>

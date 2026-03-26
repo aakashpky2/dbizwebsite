@@ -11,6 +11,8 @@ import {
   MessageCircle,
   Building2,
   Shield,
+  ShieldCheck,
+  Info,
   Users,
   FileText,
   Briefcase,
@@ -198,7 +200,7 @@ const SoleProprietorshipPage = () => {
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
             <img 
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72" 
+              src="/dbiz-uploads/sole_proprietor_hero.png" 
               alt="Background" 
               className="w-full h-full object-cover"
             />
@@ -222,33 +224,47 @@ const SoleProprietorshipPage = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <Button size="lg" className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white">
-                        <Phone className="mr-2 h-4 w-4" /> Contact Us Today
-                      </Button>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-56 p-0">
-                      <ContactOptions />
-                    </PopoverContent>
-                  </Popover>
+
                   
                   <Button 
                     size="lg" 
-                    className="bg-purple-600 hover:bg-purple-700 text-white"
+                    variant="outline"
+                    className="border-white text-slate-50 bg-dbiz-navy hover:bg-dbiz-navy/90"
                     onClick={() => handleSectionClick('benefits')}
                   >
                     <ArrowDownCircle className="mr-2 h-4 w-4" /> Learn More
                   </Button>
                 </div>
+                
+                <div className="mt-8 flex items-center text-sm font-medium text-white/80">
+                  <Clock className="h-4 w-4 mr-2" /> 
+                  <span>Quick Registration • Guaranteed Compliance • Expert Support</span>
+                </div>
               </div>
               
               <div className="hidden md:block">
-                <img 
-                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" 
-                  alt="Sole Proprietorship" 
-                  className="w-full h-80 rounded-lg shadow-lg object-cover"
-                />
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
+                    <img 
+                      src="/dbiz-uploads/sole_proprietor_side_image_v2.png" 
+                      alt="Sole Proprietorship" 
+                      className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+                    />
+                    
+                    <div className="mt-6 grid grid-cols-2 gap-4">
+                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                        <div className="text-4xl font-bold">3-7</div>
+                        <div className="text-sm opacity-80">Days (Typical)</div>
+                      </div>
+                      
+                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
+                        <div className="text-4xl font-bold">100%</div>
+                        <div className="text-sm opacity-80">Compliance Assured</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -317,7 +333,7 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Overview Section - Replicated Private Limited Design */}
-        <section id="overview" className="py-24 scroll-mt-32">
+        <section id="overview" className="pt-24 pb-12 scroll-mt-32">
           <div className="container-custom">
             <div className="flex flex-col lg:flex-row gap-12">
               {/* Primary Content Column */}
@@ -363,9 +379,13 @@ const SoleProprietorshipPage = () => {
 
               {/* Sidebar Column */}
               <div className="lg:w-1/3">
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative overflow-hidden group hover:border-dbiz-teal/20 transition-all mb-8">
-                  <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
-                    <FileText size={120} className="text-dbiz-navy" />
+                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 relative group overflow-hidden mb-8">
+                  <div className="mb-6 overflow-hidden rounded-xl shadow-sm border border-gray-200">
+                    <img 
+                      src="/dbiz-uploads/sole_proprietorship_definition.png" 
+                      alt="Proprietorship Definition" 
+                      className="w-full h-32 object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-dbiz-navy border-b border-gray-100 pb-3 font-outfit">Definition as per Business Law</h3>
                   <p className="text-gray-700 mb-6 leading-relaxed">
@@ -404,7 +424,7 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Key Features Section */}
-        <section id="features" className="py-24 bg-gray-50/50 scroll-mt-32">
+        <section id="features" className="pt-12 pb-24 bg-gray-50 border-y border-gray-200/50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -463,7 +483,7 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Benefits Section - Replicating Private Limited Design with Updated Points */}
-        <section id="benefits" className="py-24 bg-gray-50/30 scroll-mt-32">
+        <section id="benefits" className="pt-24 pb-12 bg-gray-50/30 scroll-mt-32">
           <div className="container-custom">
             <div className="flex flex-col lg:flex-row gap-16">
               {/* Left Column: Heading & Image - Sticky */}
@@ -473,7 +493,7 @@ const SoleProprietorshipPage = () => {
                     Benefits
                   </div>
                   
-                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-8 leading-tight">
+                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-12 leading-tight">
                     Benefits of a Sole <br /> <span className="text-dbiz-teal">Proprietorship</span>
                   </h2>
                   
@@ -483,7 +503,7 @@ const SoleProprietorshipPage = () => {
 
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                     <img 
-                      src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80" 
+                      src="/dbiz-uploads/sole_proprietor_benefits.png" 
                       alt="Entrepreneur Success" 
                       className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -520,15 +540,15 @@ const SoleProprietorshipPage = () => {
             </div>
           </div>
         </section>        {/* Comparison Section */}
-        <section id="comparison" className="py-24 bg-gray-50/50 scroll-mt-32">
+        <section id="comparison" className="pt-12 pb-24 bg-gray-50 border-y border-gray-200/50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Comparison
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Comparison of Business Structures</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-10">Comparison of Business Structures</h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-12">
                 Understand why Sole Proprietorship is a simple and practical choice for individuals starting a business compared to other legal entities.
               </p>
             </div>
@@ -572,14 +592,14 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Documents Required Section */}
-        <section id="documents" className="py-24 scroll-mt-32">
+        <section id="documents" className="pt-24 pb-12 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Documentation
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required for Proprietorship</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-10">Documents Required for Proprietorship</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 DBIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Proprietorship registration and setup.
               </p>
@@ -727,33 +747,48 @@ const SoleProprietorshipPage = () => {
             </div>
 
             {/* Important Note */}
-            <div className="mt-12 bg-dbiz-teal/5 p-6 rounded-2xl border border-dbiz-teal/20 text-center relative overflow-hidden group max-w-3xl mx-auto">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-dbiz-teal/10 rounded-full -mr-12 -mt-12 group-hover:scale-110 transition-transform duration-700"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-dbiz-navy/5 rounded-full -ml-12 -mb-12 group-hover:scale-110 transition-transform duration-700"></div>
-              
-              <div className="relative z-10">
-                <h3 className="text-dbiz-navy font-bold text-xl mb-4 text-center">Important Note</h3>
-                <p className="text-gray-800 font-semibold mb-4 text-sm">Proper documentation is essential for:</p>
-                <div className="flex flex-col items-center space-y-2 mb-6">
-                  {["Opening a current account", "Obtaining GST or other registrations", "Avoiding delays or rejection"].map((point, i) => (
-                    <div key={i} className="flex items-center text-gray-700 font-medium tracking-tight text-sm">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal mr-2" />
-                      {point}
-                    </div>
-                  ))}
+            <div className="mt-12 bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 relative overflow-hidden group">
+              <div className="flex items-start gap-6 relative z-10">
+                <div className="flex-shrink-0 hidden md:block">
+                  <div className="w-14 h-14 rounded-full bg-dbiz-teal/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    <FileText className="h-7 w-7 text-dbiz-teal" />
+                  </div>
                 </div>
-                <p className="text-dbiz-navy font-bold text-base italic mt-2 border-t border-dbiz-teal/10 pt-4">
-                  DBIZ CONSULTANCY ensures complete document verification and smooth processing at every stage.
-                </p>
+                <div>
+                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">Important Note</h3>
+                  <p className="text-gray-700 mb-4 leading-relaxed font-medium">Proper documentation is essential for:</p>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "Successful Proprietorship registration",
+                      "Opening a current account without delays",
+                      "Obtaining GST or other core registrations",
+                      "Avoiding technical delays or rejections"
+                    ].map((note, i) => (
+                      <li key={i} className="flex items-center gap-3 text-gray-600">
+                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal flex-shrink-0" />
+                        <span className="font-medium text-[15px]">{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-dbiz-navy font-bold flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-dbiz-teal"></span>
+                    D BIZ CONSULTANCY ensures complete document verification and smooth processing at every stage.
+                  </p>
+                </div>
               </div>
+              <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-dbiz-teal/5 rounded-full blur-3xl group-hover:bg-dbiz-teal/10 transition-colors duration-700"></div>
             </div>
           </div>
         </section>
 
         {/* Registration Process Section */}
-        <section id="process" className="py-24 bg-white scroll-mt-32">
+        <section id="process" className="pt-12 pb-24 bg-gray-50 border-y border-gray-200/50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Registration Process
+              </div>
               <h2 className="text-3xl md:text-5xl font-bold text-dbiz-navy mb-8">
                 Step-by-Step Proprietorship Registration Process
               </h2>
@@ -916,39 +951,58 @@ const SoleProprietorshipPage = () => {
               </div>
             </div>
 
-            <div className="bg-dbiz-navy/5 p-8 rounded-2xl border border-dbiz-navy/10 mb-8">
-               <h3 className="text-dbiz-navy font-bold text-lg mb-6">Important Notes</h3>
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 {[
-                   "No requirement for board meetings, AGM, or corporate filings",
-                   "No requirement for separate legal compliance filings like companies",
-                   "Compliance is mainly individual based (owner level)",
-                   "Business and owners are treated as the same legal entity"
-                 ].map((note, i) => (
-                   <div key={i} className="flex items-start">
-                     <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal mt-2 mr-3 flex-shrink-0"></div>
-                     <p className="text-gray-700 font-medium text-sm leading-relaxed">{note}</p>
-                   </div>
-                 ))}
-               </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {/* Important Notes Card */}
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 relative overflow-hidden group">
+                <div className="flex items-start gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <Info className="h-6 w-6 text-dbiz-teal" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dbiz-navy mb-4">Important Notes</h3>
+                    <div className="space-y-3">
+                      {[
+                        "No requirement for board meetings, AGM, or corporate filings",
+                        "No requirement for separate legal compliance filings like companies",
+                        "Compliance is mainly individual based (owner level)",
+                        "Business and owners are treated as the same legal entity"
+                      ].map((note, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-0.5 flex-shrink-0" />
+                          <p className="text-gray-700 font-medium text-sm leading-relaxed">{note}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute -right-6 -top-6 w-24 h-24 bg-dbiz-teal/5 rounded-full blur-2xl group-hover:bg-dbiz-teal/10 transition-all duration-700"></div>
+              </div>
 
-            <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 mb-16">
-               <h3 className="text-dbiz-navy font-bold text-lg mb-4">Simplified Compliance Advantage</h3>
-               <p className="text-gray-600 mb-6 font-medium">Sole Proprietorship offers:</p>
-               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                 {[
-                   "Very low compliance burden",
-                   "Minimal regulatory requirements",
-                   "Easy maintenance of records",
-                   "Cost-effective compliance management"
-                 ].map((adv, i) => (
-                   <div key={i} className="flex items-center gap-3">
-                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0" />
-                     <span className="text-dbiz-navy font-semibold text-sm leading-snug">{adv}</span>
-                   </div>
-                 ))}
-               </div>
+              {/* Simplified Compliance Advantage Card */}
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 relative overflow-hidden group">
+                <div className="flex items-start gap-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <ShieldCheck className="h-6 w-6 text-dbiz-teal" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-dbiz-navy mb-4">Simplified Compliance Advantage</h3>
+                    <div className="space-y-3">
+                      {[
+                        "Very low overall compliance burden compared to LLPs or Companies",
+                        "Minimal regulatory and statutory audit requirements",
+                        "Easy maintenance of record and accounts",
+                        "Direct and cost-effective compliance management"
+                      ].map((adv, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-0.5 flex-shrink-0" />
+                          <p className="text-gray-700 font-medium text-sm leading-relaxed">{adv}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute -left-6 -bottom-6 w-24 h-24 bg-dbiz-teal/5 rounded-full blur-2xl group-hover:bg-dbiz-teal/10 transition-all duration-700"></div>
+              </div>
             </div>
 
             <div className="text-center max-w-3xl mx-auto mb-16">
