@@ -207,7 +207,7 @@ const PartnershipPage = () => {
 
 
               {/* Minimum Requirements Mini-block */}
-              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
+              <div className="bg-sky-50/50 border border-sky-100 rounded-xl p-6 mt-6">
                 <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-start">
@@ -310,53 +310,48 @@ const PartnershipPage = () => {
             {[
               {
                 icon: AlertTriangle,
-                title: "Unlimited Liability",
+                title: "1. Unlimited Liability",
                 desc: "In a partnership firm, each partner has unlimited liability, meaning they are personally responsible for all business debts and obligations. If the firm’s assets are insufficient, partners’ personal assets may be used to settle liabilities."
               },
               {
                 icon: Building2,
-                title: "No Separate Legal Entity",
+                title: "2. No Separate Legal Entity",
                 desc: "A partnership firm does not have a separate legal identity from its partners. The firm and its partners are considered the same under law, and all legal rights and obligations are directly linked to the partners."
               },
               {
                 icon: Users,
-                title: "Mutual Agency",
+                title: "3. Mutual Agency",
                 desc: "Each partner acts as an agent of the firm as well as other partners, meaning any act done by one partner during business is binding on the entire firm and all partners."
               },
               {
                 icon: FileText,
-                title: "Partnership Agreement (Deed-Based Structure)",
+                title: "4. Partnership Deed (Deed-Based Structure)",
                 desc: "The partnership is governed by a Partnership Deed, which defines profit-sharing ratio, capital contribution, roles, responsibilities, and operational rules. This provides flexibility to customize business arrangements."
               },
               {
                 icon: Users,
-                title: "Membership Flexibility",
+                title: "5. Membership Flexibility",
                 desc: "A partnership firm requires a minimum of 2 partners and can have up to 50 partners, making it suitable for small businesses, professional firms, and family enterprises."
               },
               {
                 icon: CheckCircle2,
-                title: "No Minimum Capital Requirement",
+                title: "6. No Minimum Capital Requirement",
                 desc: "There is no statutory minimum capital requirement to start a partnership firm. Partners can decide the capital contribution based on business needs and mutual agreement."
               },
               {
                 icon: Clock,
-                title: "Ease of Formation and Closure",
-                desc: "A partnership firm can be easily formed and dissolved with minimal legal formalities compared to companies, making it highly flexible for entrepreneurs."
+                title: "7. Ease of Formation and Closure",
+                desc: "A partnership firm can be formed easily with simple legal procedures and low cost, as it does not require complex incorporation formalities. It can also be dissolved conveniently through mutual consent or according to the partnership deed."
               },
               {
                 icon: Shield,
-                title: "Optional Registration",
-                desc: "Registration with the Registrar of Firms is not mandatory, but a registered firm enjoys legal advantages such as the right to file suits against third parties."
+                title: "8. Optional Registration",
+                desc: "Registration with the Registrar of Firms is not mandatory; however, a registered firm enjoys legal benefits such as the right to file suits against third parties and improved business credibility."
               },
               {
                 icon: FileBarChart,
-                title: "Taxation Structure",
-                desc: "Partnership firms are taxed at a flat rate (generally 30%), and partners can receive salary/interest as per the partnership deed, subject to Income Tax provisions."
-              },
-              {
-                icon: CheckCircle2,
-                title: "Limited Compliance Requirement",
-                desc: "Compared to companies, partnership firms have minimal compliance requirements, with no requirement for ROC filings, board meetings, or annual general meetings."
+                title: "9. Taxation and Limited Compliance Requirement",
+                desc: "Partnership firms are taxed at a flat rate (generally 30%), and partners may receive salary or interest as per the partnership deed. Compliance requirements are minimal compared to companies, with no ROC filings or mandatory meetings."
               }
             ].map((feature, i) => (
               <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300">
@@ -669,7 +664,7 @@ const PartnershipPage = () => {
           </div>
 
           {/* Important Note Box — Synced with Rejection Prevention Style */}
-          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12 flex items-start gap-4 shadow-sm max-w-4xl">
+          <div className="bg-transparent border border-amber-200 rounded-xl p-6 mb-12 flex items-start gap-4 shadow-sm max-w-4xl">
             <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-bold text-amber-900 mb-2 text-lg">Important Note</p>
@@ -761,11 +756,21 @@ const PartnershipPage = () => {
                   "Proper books of accounts established",
                   "Routine compliance monitoring started"
                 ]
+              },
+              {
+                step: "8",
+                title: "Ongoing Compliance and Record Maintenance",
+                desc: "Ensures smooth functioning and legal sustainability of the partnership firm.",
+                details: [
+                  "Maintenance of proper books of accounts and financial records",
+                  "Filing of Income Tax Returns annually",
+                  "Renewal of licenses and compliance with applicable laws and regulations"
+                ]
               }
             ].map((step, i) => (
               <div key={i} className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white flex items-center">
-                  <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg font-bold mr-4 shrink-0 shadow-lg">
+                <div className="bg-sky-50/50 border-b border-sky-100 p-5 text-dbiz-navy flex items-center">
+                  <span className="flex items-center justify-center bg-dbiz-teal text-white rounded-full h-8 w-8 text-lg font-bold mr-4 shrink-0 shadow-sm">
                     {step.step}
                   </span>
                   <h3 className="text-xl font-bold">{step.title}</h3>
@@ -842,7 +847,7 @@ const PartnershipPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16">
             {/* Important Notes */}
-            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-transparent border border-gray-200 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal shrink-0">
                 <Info className="h-6 w-6" />
               </div>
@@ -865,7 +870,7 @@ const PartnershipPage = () => {
             </div>
 
             {/* Simplified Compliance Advantage */}
-            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div className="bg-transparent border border-gray-200 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal shrink-0">
                 <Shield className="h-6 w-6" />
               </div>
@@ -957,9 +962,9 @@ const PartnershipPage = () => {
             </div>
 
             {/* What You Provide */}
-            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="bg-gray-50 border border-gray-200 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal">
+                <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-navy">
                    <FileText className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-bold text-dbiz-navy">What You Provide</h3>
@@ -973,7 +978,7 @@ const PartnershipPage = () => {
                   "Capital contribution details of each partner"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4 group">
-                    <ArrowRight className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-5 w-5 text-gray-500 shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
                     <span className="text-gray-700 font-medium text-[15px]">{item}</span>
                   </li>
                 ))}
@@ -995,7 +1000,7 @@ const PartnershipPage = () => {
 
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">FAQs on Partnership Firm Registration</h2>
             <div className="flex flex-col items-center">
-              <p className="text-sm text-gray-500 mb-6 italic">Last updated: March 2026</p>
+              <p className="text-xl font-semibold text-gray-500 mb-6 italic">Last updated: March 2026</p>
               <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-center mb-12">
                 Whether you're exploring the basics of partnership formation, documentation, taxation, or operational aspects — here are the most commonly asked questions explained in a clear and practical manner.
               </p>
