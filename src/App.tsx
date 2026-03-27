@@ -104,8 +104,8 @@ const App = () => {
                   <Route path="/producer-company/:location" element={<ComingSoon />} />
                   <Route path="/nbfc" element={<ComingSoon />} />
                   <Route path="/nbfc/:location" element={<ComingSoon />} />
-                  <Route path="/partnership" element={<ComingSoon />} />
-                  <Route path="/partnership/:location" element={<ComingSoon />} />
+                  <Route path="/partnership" element={<PartnershipPage />} />
+                  <Route path="/partnership/:location" element={<PartnershipPage />} />
                   <Route path="/sole-proprietorship" element={<SoleProprietorshipPage />} />
                   <Route path="/sole-proprietorship/:location" element={<SoleProprietorshipPage />} />
                   <Route path="/12a-80g-registration" element={<ComingSoon />} />

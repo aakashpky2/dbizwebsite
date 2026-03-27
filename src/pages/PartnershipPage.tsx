@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ChevronRight, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, AlertTriangle, AlertCircle } from "lucide-react";
+import { CheckCircle2, ChevronRight, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, AlertTriangle, AlertCircle, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -85,15 +85,11 @@ const PartnershipPage = () => {
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                Partnership Firm Registration in {cityName || "India"}
+                Partnership Firm Registration
               </h1>
 
-              <p className="text-lg opacity-90 mb-6 leading-relaxed">
-                DBIZ CONSULTANCY provides comprehensive Partnership Firm Registration services across {cityName || "India"}, including Partnership Deed drafting, stamp duty compliance, Registrar of Firms (ROF) filing, PAN registration, GST registration, and ongoing tax and regulatory support.
-              </p>
-
               <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                Whether you are starting a trading business, professional practice, family enterprise, or small-scale venture, we ensure your partnership is legally structured, properly documented, and fully compliant.
+                DBIZ CONSULTANCY provides end-to-end Partnership Firm registration services. ensuring a legally sound structure, properly drafted agreements, and smooth business setup with ongoing compliance guidance.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -115,7 +111,7 @@ const PartnershipPage = () => {
 
               <div className="mt-8 flex items-center text-sm font-medium text-white/80">
                 <Clock className="h-4 w-4 mr-2" />
-                <span>Quick Registration • Legally Structured Documentation • Expert Compliance Support</span>
+                <span>Quick Setup • Legally Structured • Expert Support</span>
               </div>
             </div>
 
@@ -198,27 +194,17 @@ const PartnershipPage = () => {
 
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  A Partnership Firm is a business structure formed when two or more individuals agree to carry on a business together and share its profits and losses. It is governed by the Indian Partnership Act, 1932.
+                  A Partnership Firm is a business structure in which two or more individuals come together to carry on a business and share its profits based on a mutually agreed arrangement. This form of business is governed by the Indian Partnership Act, 1932 and is widely adopted by small and medium enterprises, professionals, and family-run businesses due to its simplicity and operational flexibility.
                 </p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
-                  Unlike a company, a partnership firm does not have a separate legal identity distinct from its partners. The firm and its partners are legally considered the same entity. The partners jointly own the business and are collectively responsible for its operations, liabilities, and obligations.
+                  Unlike a private limited company, a partnership firm does not have a separate legal identity from its partners, meaning the business and its owners are legally considered the same. As a result, partners have unlimited liability, making them personally responsible for the obligations and debts of the firm.
                 </p>
-                <p className="text-gray-700 mb-4 leading-relaxed font-semibold">
-                  Although registration of a partnership firm is not mandatory under the law, an unregistered firm suffers significant legal disadvantages — including restrictions on filing suits to enforce contractual rights. Therefore, formal registration with the Registrar of Firms is strongly recommended to ensure enforceability, banking credibility, and structured governance.
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Under the law, a partnership is created through an agreement (Partnership Deed), which defines the roles, responsibilities, and profit-sharing ratios among partners. The relationship between partners is based on mutual trust and agency, where each partner acts on behalf of the firm and other partners.
                 </p>
               </div>
 
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-dbiz-navy mb-4">This structure is widely used for:</h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-                  {["Small and medium enterprises", "Professional firms (CA, CS, Legal, Architects, Consultants)", "Family businesses", "Trading and distribution businesses", "Service-based enterprises"].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
 
               {/* Minimum Requirements Mini-block */}
               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
@@ -227,36 +213,29 @@ const PartnershipPage = () => {
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-dbiz-navy">2 Partners (Minimum)</p>
-                      <p className="text-sm text-gray-600">A partnership requires at least two persons. The maximum number of partners is 50.</p>
+                      <p className="font-medium text-dbiz-navy">2 Partners</p>
+                      <p className="text-sm text-gray-600">A minimum of two individuals are required to form a partnership firm</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-dbiz-navy">No Minimum Capital</p>
-                      <p className="text-sm text-gray-600">No statutory minimum capital requirement. Capital contribution is mutually decided.</p>
+                      <p className="font-medium text-dbiz-navy">Maximum 50 Partners</p>
+                      <p className="text-sm text-gray-600">The number of partners is restricted as per applicable rules</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
                       <p className="font-medium text-dbiz-navy">Partnership Deed</p>
-                      <p className="text-sm text-gray-600">A written agreement outlining rights, duties, capital, and profit-sharing makes it essential.</p>
+                      <p className="text-sm text-gray-600">A legally binding agreement defining rights, duties, and profit-sharing ratio</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-medium text-dbiz-navy">Registered Office</p>
-                      <p className="text-sm text-gray-600">A valid business address in India must be provided.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start sm:col-span-2">
-                    <AlertCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <p className="font-medium text-dbiz-navy">Unlimited Liability</p>
-                      <p className="text-sm text-gray-600">Partners are personally liable for the debts and obligations of the firm.</p>
+                      <p className="font-medium text-dbiz-navy">No Minimum Capital</p>
+                      <p className="text-sm text-gray-600">There is no statutory minimum capital requirement; contribution is based on mutual agreement</p>
                     </div>
                   </div>
                 </div>
@@ -265,44 +244,43 @@ const PartnershipPage = () => {
             </div>
 
             <div className="md:w-1/3">
-              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Indian Partnership Act, 1932</h3>
-                <p className="text-gray-700 mb-4">
-                  Section 4 of the Indian Partnership Act, 1932 defines Partnership as:
-                </p>
-                <div className="bg-white p-4 rounded-lg border-l-4 border-dbiz-teal italic text-gray-800 mb-4 shadow-sm">
-                  “The relation between persons who have agreed to share the profits of a business carried on by all or any of them acting for all.”
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
+                <div className="mb-6 rounded-xl overflow-hidden shadow-md relative z-10">
+                  <img 
+                    src="/dbiz-uploads/partnership_definition_sidebar.png" 
+                    alt="Partnership Act Definition" 
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" 
+                  />
                 </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold mb-3 text-dbiz-navy">Definition as per the Indian Partnership Act, 1932</h3>
+                  <p className="text-gray-700 mb-4">
+                    Section 4 of the Indian Partnership Act, 1932, defines a Partnership as an entity that:
+                  </p>
+                  <ul className="space-y-3 mb-4">
+                    {[
+                      "Involving two or more people entering into an agreement",
+                      "Exists for carrying on a lawful business",
+                      "Operates with the objective of sharing profits",
+                      "Functions under mutual agency, where each partner acts for all"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                <p className="font-medium text-dbiz-navy mb-2">This highlights four essential elements:</p>
-                <ul className="space-y-3 mb-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Agreement between two or more persons</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Business activity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Profit-sharing arrangement</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Mutual agency (each partner acts as agent for others)</span>
-                  </li>
-                </ul>
-                <p className="text-sm text-gray-600">The concept of mutual agency distinguishes partnership from other business forms.</p>
-
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center">
-                    <div className="bg-dbiz-teal/10 p-2 rounded-full">
-                      <Phone className="h-5 w-5 text-dbiz-teal" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm text-gray-500">Need expert guidance?</p>
-                      <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex items-center">
+                      <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                        <Phone className="h-5 w-5 text-dbiz-teal" />
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-gray-500">Need expert guidance?</p>
+                        <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -324,70 +302,71 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Partnership Firm</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features.
+              DBIZ CONSULTANCY helps entrepreneurs understand and effectively structure Partnership Firms for smooth operations, flexibility, and business growth.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <Users className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">Mutual Agency</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Every partner has the authority to act on behalf of the firm and bind other partners through business transactions conducted within the scope of the business.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <AlertCircle className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">Unlimited Liability</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Partners are personally liable for the debts of the firm. If business assets are insufficient, personal assets can be used to satisfy obligations.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <Users className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">Shared Management</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Unless otherwise agreed in the partnership deed, all partners have equal rights in the management of the business.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">Flexible Internal Structure</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">The deed allows customization of profit-sharing ratios, capital contribution, roles, responsibilities, admission rules, and dispute resolution.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">No Separate Legal Entity</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">The firm does not have independent legal existence separate from its partners. Legal action involving the firm directly affects partners.</p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
-              <CardHeader className="pb-3">
-                <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                <CardTitle className="text-xl text-dbiz-navy">Minimal Regulatory Compliance</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">There are no mandatory annual ROC filings, board meetings, or AGMs required under the Partnership Act.</p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: AlertTriangle,
+                title: "Unlimited Liability",
+                desc: "In a partnership firm, each partner has unlimited liability, meaning they are personally responsible for all business debts and obligations. If the firm’s assets are insufficient, partners’ personal assets may be used to settle liabilities."
+              },
+              {
+                icon: Building2,
+                title: "No Separate Legal Entity",
+                desc: "A partnership firm does not have a separate legal identity from its partners. The firm and its partners are considered the same under law, and all legal rights and obligations are directly linked to the partners."
+              },
+              {
+                icon: Users,
+                title: "Mutual Agency",
+                desc: "Each partner acts as an agent of the firm as well as other partners, meaning any act done by one partner during business is binding on the entire firm and all partners."
+              },
+              {
+                icon: FileText,
+                title: "Partnership Agreement (Deed-Based Structure)",
+                desc: "The partnership is governed by a Partnership Deed, which defines profit-sharing ratio, capital contribution, roles, responsibilities, and operational rules. This provides flexibility to customize business arrangements."
+              },
+              {
+                icon: Users,
+                title: "Membership Flexibility",
+                desc: "A partnership firm requires a minimum of 2 partners and can have up to 50 partners, making it suitable for small businesses, professional firms, and family enterprises."
+              },
+              {
+                icon: CheckCircle2,
+                title: "No Minimum Capital Requirement",
+                desc: "There is no statutory minimum capital requirement to start a partnership firm. Partners can decide the capital contribution based on business needs and mutual agreement."
+              },
+              {
+                icon: Clock,
+                title: "Ease of Formation and Closure",
+                desc: "A partnership firm can be easily formed and dissolved with minimal legal formalities compared to companies, making it highly flexible for entrepreneurs."
+              },
+              {
+                icon: Shield,
+                title: "Optional Registration",
+                desc: "Registration with the Registrar of Firms is not mandatory, but a registered firm enjoys legal advantages such as the right to file suits against third parties."
+              },
+              {
+                icon: FileBarChart,
+                title: "Taxation Structure",
+                desc: "Partnership firms are taxed at a flat rate (generally 30%), and partners can receive salary/interest as per the partnership deed, subject to Income Tax provisions."
+              },
+              {
+                icon: CheckCircle2,
+                title: "Limited Compliance Requirement",
+                desc: "Compared to companies, partnership firms have minimal compliance requirements, with no requirement for ROC filings, board meetings, or annual general meetings."
+              }
+            ].map((feature, i) => (
+              <div key={i} className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="mb-6">
+                  <feature.icon className="h-10 w-10 text-dbiz-teal" />
+                </div>
+                <h3 className="text-xl font-bold text-dbiz-navy mb-4 leading-tight">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -395,53 +374,54 @@ const PartnershipPage = () => {
       {/* Benefits Section */}
       <section id="benefits" className="py-16 scroll-mt-32">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-2/5">
+          <div className="flex flex-col md:flex-row gap-12">
+            <div className="md:w-1/3">
               <div className="sticky top-32">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                   <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                   Benefits
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">
-                  Benefits of a Registered Partnership Firm
+                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 leading-tight">
+                  Benefits of a Partnership Firm
                 </h2>
 
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses leverage these advantages for maximum growth and protection.
+                  DBIZ CONSULTANCY helps businesses leverage the practical advantages of Partnership Firms for efficient operations, cost control, and flexible business management.
                 </p>
 
-                <div className="hidden md:block mt-8">
+                <div className="hidden md:block">
                    <img 
-                     src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
-                     alt="Business Growth" 
-                     className="rounded-lg shadow-lg max-w-sm" 
+                     src="/dbiz-uploads/partnership_benefits_main.png" 
+                     alt="Partnership Benefits" 
+                     className="rounded-2xl shadow-xl w-full h-[450px] object-cover" 
                      loading="lazy"
                    />
                 </div>
               </div>
             </div>
 
-            <div className="md:w-3/5">
-              <div className="grid grid-cols-1 gap-4">
+            <div className="md:w-2/3">
+              <div className="space-y-4">
                 {[
-                  { title: "Ease of Formation", text: "The formation process is straightforward and does not require complex statutory approvals like companies or NBFCs." },
-                  { title: "Lower Compliance Cost", text: "Compared to companies, partnership firms have significantly reduced compliance obligations and administrative overhead." },
-                  { title: "Operational Flexibility", text: "Partners can quickly make decisions without formal board structures." },
-                  { title: "Tax Simplicity", text: "Partnership firms are taxed at a flat 30% under the Income Tax Act, plus surcharge and cess, providing clarity in tax planning." },
-                  { title: "Suitable for Small & Professional Businesses", text: "Ideal for consultants, traders, service providers, and family-owned businesses where mutual trust exists." },
-                  { title: "Banking Recognition", text: "Registered firms enjoy improved credibility when opening bank accounts or applying for loans." },
-                ].map((item, index) => <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
-                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
+                  "Easy to manage with minimal legal formalities.",
+                  "Low cost to start and maintain the business.",
+                  "Faster decisions due to fewer stakeholders.",
+                  "Partners directly manage and control operations.",
+                  "Profit sharing can be decided and changed mutually.",
+                  "Easy to dissolve or restructure the firm.",
+                  "No requirement to publicly disclose financial details.",
+                  "Ideal for small businesses and professional services.",
+                  "Can be converted into LLP or company when needed.",
+                  "Built on trust and strong partner relationships."
+                ].map((item, index) => (
+                  <div key={index} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all group flex items-center">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-1.5 rounded-full mr-4 group-hover:bg-dbiz-teal group-hover:text-white transition-colors duration-300">
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal group-hover:text-white" />
                     </div>
-                    <div className="ml-5">
-                      <p className="text-dbiz-navy font-bold text-lg mb-1">{item.title}</p>
-                      <p className="text-gray-700">{item.text}</p>
-                    </div>
+                    <p className="text-gray-700 font-medium leading-relaxed">{item}</p>
                   </div>
-                </div>)}
+                ))}
               </div>
             </div>
           </div>
@@ -464,61 +444,37 @@ const PartnershipPage = () => {
             </p>
           </div>
 
-          <div className="rounded-xl bg-white shadow-md border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
                   <TableRow className="bg-gray-50">
                     <TableHead className="py-4 text-dbiz-navy font-bold">Feature</TableHead>
-                    <TableHead className="bg-dbiz-teal/10 py-4 text-dbiz-navy font-bold">Partnership Firm</TableHead>
+                    <TableHead className="bg-dbiz-teal/10 py-4 text-dbiz-navy font-bold">Partnership</TableHead>
                     <TableHead className="py-4 text-dbiz-navy font-bold">Private Limited</TableHead>
                     <TableHead className="py-4 text-dbiz-navy font-bold">LLP</TableHead>
                     <TableHead className="py-4 text-dbiz-navy font-bold">Sole Proprietorship</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Liability</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Unlimited</TableCell>
-                    <TableCell className="border-r">Limited</TableCell>
-                    <TableCell className="border-r">Limited</TableCell>
-                    <TableCell>Unlimited</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Legal Entity</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Not Separate</TableCell>
-                    <TableCell className="border-r">Separate</TableCell>
-                    <TableCell className="border-r">Separate</TableCell>
-                    <TableCell>Not Separate</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Registration</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Optional (recommended)</TableCell>
-                    <TableCell className="border-r">Mandatory</TableCell>
-                    <TableCell className="border-r">Mandatory</TableCell>
-                    <TableCell>Not Required</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Compliance</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Minimal</TableCell>
-                    <TableCell className="border-r">High</TableCell>
-                    <TableCell className="border-r">Moderate</TableCell>
-                    <TableCell>Minimal</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Tax Rate</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">30%</TableCell>
-                    <TableCell className="border-r">Corporate tax regime</TableCell>
-                    <TableCell className="border-r">30%</TableCell>
-                    <TableCell>Individual Slab</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Governance</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">Deed-Based</TableCell>
-                    <TableCell className="border-r">Board & Shareholders</TableCell>
-                    <TableCell className="border-r">Partners</TableCell>
-                    <TableCell>Single Owner</TableCell>
-                  </TableRow>
+                  {[
+                    { f: "Liability", p: "Unlimited (shared among partners)", pl: "Limited to shares", llp: "Limited to contribution", sp: "Unlimited" },
+                    { f: "Legal Entity", p: "Not separate", pl: "Separate entity", llp: "Separate entity", sp: "Not separate" },
+                    { f: "Ownership", p: "2–50 partners", pl: "2–200 shareholders", llp: "2+ partners", sp: "Single owner" },
+                    { f: "Tax Rate", p: "Flat 30% (simple taxation)", pl: "Corporate tax (with conditions)", llp: "Flat 30%", sp: "Individual income tax" },
+                    { f: "Compliance", p: "Minimal compliance", pl: "High compliance", llp: "Moderate", sp: "Very minimal" },
+                    { f: "Decision Making", p: "Fast and flexible", pl: "Structured and slower", llp: "Moderate", sp: "Fully independent" },
+                    { f: "Cost of Setup", p: "Low cost", pl: "Higher cost", llp: "Moderate", sp: "Very low" },
+                    { f: "Best For", p: "Small businesses, professionals, partnerships", pl: "Startups, scalable businesses", llp: "Growing small businesses", sp: "Individual businesses" }
+                  ].map((row, i) => (
+                    <TableRow key={i}>
+                      <TableCell className="font-medium border-r">{row.f}</TableCell>
+                      <TableCell className="bg-dbiz-teal/5 border-r font-medium text-dbiz-navy">{row.p}</TableCell>
+                      <TableCell className="border-r">{row.pl}</TableCell>
+                      <TableCell className="border-r">{row.llp}</TableCell>
+                      <TableCell>{row.sp}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
@@ -538,74 +494,133 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY assists clients in {cityName} with collecting and preparing all required documentation.
+              DBIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Partnership Firm registration.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Common Rejection Prevention Tips */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12 flex items-start gap-4">
+            <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold text-amber-900 mb-2 text-lg">Common Rejection Prevention Tips</p>
+              <ul className="text-amber-800 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Ensure name and spelling are consistent across PAN, Aadhaar, Passport, and all submitted documents</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Address proofs must be uniform and clearly readable in all documents</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Registered office documents must match — owner name in utility bill, rent agreement, and NOC should be identical</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Utility bills and bank statements should be recent (within the last 2 months)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Signatures of partners should be consistent across all documents</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">•</span>
+                  <span>Ensure all documents are clear, valid, and not expired</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* For Partners */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Indian Partners</h3>
+                <h3 className="text-xl font-bold">For Partners</h3>
+              </div>
+              <div className="p-6 space-y-6">
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Identity Proof</p>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> PAN Card (Mandatory)</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Aadhaar Card</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Passport (for international)</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Voter ID / Govt ID</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Address Proof</p>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Bank Statement (latest 2 months)</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Electricity / Water / Gas Bill</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Photographs</p>
+                  <p className="text-gray-600 flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Recent passport-sized photographs</p>
+                </div>
+              </div>
+            </div>
+
+            {/* For Foreign Nationals */}
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+              </div>
+              <div className="p-6 space-y-6">
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Identity & Address</p>
+                  <ul className="space-y-2 text-gray-600">
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Passport (Mandatory)</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Driving License / Residence Card</li>
+                    <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Bank Statement</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Legal Verification</p>
+                  <p className="text-gray-600 flex items-center leading-tight">
+                    <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0" /> 
+                    Notarisation / Apostille depending on jurisdiction
+                  </p>
+                </div>
+                <div>
+                  <p className="font-bold text-dbiz-navy mb-3">Photographs</p>
+                  <p className="text-gray-600 flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Recent passport-sized photographs</p>
+                </div>
+              </div>
+            </div>
+
+            {/* For Partnership Registration */}
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-bold">For Partnership Registration</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Identity Proof</p>
-                    <p className="text-gray-600 mt-1">PAN Card (Mandatory)</p>
+                    <p className="font-bold text-dbiz-navy">Partnership Deed</p>
+                    <p className="text-sm text-gray-600 mt-1">Stampted deed with capital, profit ratio, rights, and exit clauses</p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Address Proof</p>
-                    <p className="text-gray-600 mt-1">Aadhaar / Passport / Voter ID / Driving License</p>
+                    <p className="font-bold text-dbiz-navy">PAN Application</p>
+                    <p className="text-sm text-gray-600 mt-1">PAN obtained in the firm name for taxation and banking</p>
                   </div>
                 </div>
-
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Photographs</p>
-                    <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
+                    <p className="font-bold text-dbiz-navy">Bank Account Opening</p>
+                    <p className="text-sm text-gray-600 mt-1">Current account using Deed, PAN, and Partner KYCs</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Foreign Partners</h3>
-              </div>
-              <div className="p-6 space-y-4">
-                <div className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-dbiz-navy">Passport</p>
-                    <p className="text-gray-600 mt-1">(Notarised & Apostilled)</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-dbiz-navy">Address Proof</p>
-                    <p className="text-gray-600 mt-1">Overseas Address Proof</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium text-dbiz-navy">FEMA Documentation</p>
-                    <p className="text-gray-600 mt-1">compliance documentation (if applicable)</p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
+            {/* For Registered Office */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
                 <h3 className="text-xl font-bold">For Registered Office</h3>
@@ -614,43 +629,26 @@ const PartnershipPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Rent Agreement + NOC</p>
-                    <p className="text-gray-600 mt-1">(if rented)</p>
+                    <p className="font-bold text-dbiz-navy">Rent Agreement + NOC</p>
+                    <p className="text-sm text-gray-600 mt-1">Required if premises is rented; must match owner names</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Property Documents</p>
-                    <p className="text-gray-600 mt-1">Ownership Documents (if owned)</p>
+                    <p className="font-bold text-dbiz-navy">Property Documents</p>
+                    <p className="text-sm text-gray-600 mt-1">Ownership proof required if property is owned by partners</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Utility Bills</p>
-                    <p className="text-gray-600 mt-1">(within 2 months)</p>
+                    <p className="font-bold text-dbiz-navy">Utility Bills</p>
+                    <p className="text-sm text-gray-600 mt-1">Recent electricity or water bill (last 2 months)</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="md:col-span-3 bg-white rounded-xl shadow-md border border-gray-100 p-6 sm:p-8 hover:shadow-lg transition-all duration-300 mt-4">
-              <h3 className="text-2xl font-bold text-dbiz-navy mb-6">Partnership Deed Must Clearly Include</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {[
-                  "Firm Name", "Nature of Business", "Principal Place of Business",
-                  "Capital Contribution", "Profit & Loss Sharing Ratio", "Duties and Powers of Partners",
-                  "Remuneration & Interest Clauses", "Admission & Retirement Rules", "Dissolution Clause"
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0" />
-                    <span className="font-medium text-gray-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
@@ -664,249 +662,324 @@ const PartnershipPage = () => {
               Registration Process
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step Partnership Firm Registration Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">Step-by-Step Partnership Firm Registration Process</h2>
+            <p className="text-lg text-gray-600 leading-relaxed text-center">
+              A Partnership Firm is one of the simplest forms of business to establish, offering flexibility in operations and minimal regulatory requirements. The registration process involves drafting a legally valid agreement, completing essential registrations, and setting up a bank account for business transactions.
+            </p>
           </div>
 
-          <div className="space-y-6">
+          {/* Important Note Box — Synced with Rejection Prevention Style */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12 flex items-start gap-4 shadow-sm max-w-4xl">
+            <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-bold text-amber-900 mb-2 text-lg">Important Note</p>
+              <p className="text-amber-800 mb-4 font-medium italic">Proper documentation is critical for ensuring the longevity and legal standing of your firm.</p>
+              <ul className="text-amber-800 flex flex-col space-y-2">
+                {[
+                  "Smooth registration and banking process",
+                  "Avoiding application rejection or delays",
+                  "Ensuring legal validity of the partnership firm"
+                ].map((note, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="mr-2 text-amber-600">•</span>
+                    <span className="text-sm md:text-base">{note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {[
               {
                 step: "1",
                 title: "Drafting the Partnership Deed",
-                desc: "The deed is drafted according to agreed terms. Stamp duty must be paid as per the relevant State Stamp Act.",
+                desc: "Preparing a legally sound Partnership Deed is the foundation of your business.",
+                details: [
+                  "Firm Name, address, and partner details",
+                  "Capital contribution & profit-sharing ratio",
+                  "Roles, responsibilities, and authority of partners",
+                  "Admission, retirement, and dispute resolution clauses"
+                ]
               },
               {
                 step: "2",
-                title: "Execution of Deed",
-                desc: "All partners sign the deed before witnesses. Notarisation is recommended.",
+                title: "Execution of the Partnership Deed",
+                desc: "Legally formalizes the agreement and makes it binding on all partners.",
+                details: [
+                  "Printed on stamp paper as per State laws",
+                  "Signed by all partners",
+                  "Witnessed by at least two individuals"
+                ]
               },
               {
                 step: "3",
-                title: "PAN Application",
-                desc: "Apply for PAN of the partnership firm under Income Tax Act.",
+                title: "Apply for PAN of the Firm",
+                desc: "A Permanent Account Number (PAN) must be obtained in the firm name for legal identity.",
+                details: [
+                  "Essential for all future tax filings",
+                  "Required for bank account opening",
+                  "Mandatory for financial transactions"
+                ]
               },
               {
                 step: "4",
-                title: "Registration with Registrar of Firms",
-                desc: "Submit application along with Partnership Deed, Form 1, Affidavit, and Prescribed fee. Upon approval, the firm receives a Registration Certificate.",
+                title: "Opening of Bank Account",
+                desc: "A current account ensures separation of personal and business finances.",
+                details: [
+                  "Uses firm's PAN and executed Deed",
+                  "Requires KYC documents of all partners",
+                  "Necessary for GST and GST operations"
+                ]
               },
               {
                 step: "5",
-                title: "Bank Account Opening",
-                desc: "Open current account in the name of the firm.",
+                title: "Registration with Registrar of Firms",
+                desc: "Optional but highly recommended for legal standing in Indian courts.",
+                details: [
+                  "Right to file cases against third parties",
+                  "Formal legal recognition of the firm",
+                  "Improved banking and vendor credibility"
+                ]
               },
               {
                 step: "6",
                 title: "GST Registration (If Applicable)",
-                desc: "Mandatory if turnover exceeds prescribed threshold.",
+                desc: "Required based on turnover or nature of operations.",
+                details: [
+                  "Mandatory if turnover exceeds specified limits",
+                  "Required for interstate transactions",
+                  "Essential for e-commerce and digital services"
+                ]
+              },
+              {
+                step: "7",
+                title: "Commencement of Business",
+                desc: "Begin commercial activities once all compliance steps are complete.",
+                details: [
+                  "Capital introduction and maintenance",
+                  "Proper books of accounts established",
+                  "Routine compliance monitoring started"
+                ]
               }
-            ].map((process, i) => (
-              <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden">
-                <div className="flex flex-col md:flex-row items-center border-l-4 border-dbiz-navy">
-                  <div className="p-6 bg-dbiz-navy/5 h-full flex items-center justify-center min-w-[120px]">
-                    <span className="text-3xl font-bold text-dbiz-navy">Step {process.step}</span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-dbiz-navy mb-2">{process.title}</h3>
-                    <p className="text-gray-700">{process.desc}</p>
-                  </div>
+            ].map((step, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white flex items-center">
+                  <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg font-bold mr-4 shrink-0 shadow-lg">
+                    {step.step}
+                  </span>
+                  <h3 className="text-xl font-bold">{step.title}</h3>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-700 mb-4 font-medium leading-relaxed">{step.desc}</p>
+                  <ul className="space-y-2">
+                    {step.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal mr-3 mt-1 shrink-0" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12">
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
-              <div className="bg-gradient-to-r from-dbiz-teal to-dbiz-teal/90 p-4 text-white">
-                <h3 className="text-xl font-bold">State-Wise Stamp Duty & Registration Fees</h3>
-                <p className="text-white/90 text-sm">Stamp duty on Partnership Deed varies by state and capital contribution.</p>
-              </div>
-              <div className="overflow-x-auto p-0">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-gray-50">
-                      <TableHead className="font-bold text-dbiz-navy">State</TableHead>
-                      <TableHead className="font-bold text-dbiz-navy">Approx Stamp Duty</TableHead>
-                      <TableHead className="font-bold text-dbiz-navy">ROF Registration Fee</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell className="font-medium">Kerala</TableCell>
-                      <TableCell>₹1,000 – ₹2,000</TableCell>
-                      <TableCell>₹500 – ₹1,000</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Tamil Nadu</TableCell>
-                      <TableCell>₹300 – ₹1,000</TableCell>
-                      <TableCell>₹500</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Karnataka</TableCell>
-                      <TableCell>₹500 – ₹2,000</TableCell>
-                      <TableCell>₹500 – ₹1,000</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Maharashtra</TableCell>
-                      <TableCell>0.1% of capital (capped)</TableCell>
-                      <TableCell>₹1,000+</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Delhi</TableCell>
-                      <TableCell>₹200 – ₹500</TableCell>
-                      <TableCell>₹1,000</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className="font-medium">Gujarat</TableCell>
-                      <TableCell>0.5% of capital (capped)</TableCell>
-                      <TableCell>₹500 – ₹1,000</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </div>
-              <div className="p-4 bg-gray-50 border-t border-gray-100">
-                <p className="text-sm text-gray-500 italic">Exact duty depends on state stamp laws and capital amount.</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
-      {/* Mandatory Compliance */}
-      <section className="py-16 scroll-mt-32">
+      {/* Mandatory Compliance Section */}
+      <section id="compliance" className="py-16 scroll-mt-32">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
               Compliance
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Mandatory Compliance for Partnership Firms</h2>
-            <p className="text-lg text-gray-600 mb-2">No AGM, Board Meetings, or ROC filings required.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Basic Compliance Requirements for Partnership Firms</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Establishing a Partnership Firm is only the first step; maintaining proper compliance is essential to ensure smooth operations, financial discipline, and legal validity. Compared to companies, partnership firms have simplified compliance requirements, but certain key obligations must still be followed to avoid penalties and operational issues.
+            </p>
           </div>
+
+
 
           <div className="rounded-xl bg-white shadow-md border border-gray-100 overflow-hidden mb-12">
             <div className="overflow-x-auto">
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-gray-50">
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Aspect</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Compliance Requirement</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Frequency</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Why It's Important</TableHead>
+                  <TableRow className="bg-dbiz-navy hover:bg-dbiz-navy border-none">
+                    <TableHead className="py-4 text-white font-bold min-w-[200px]">Aspect</TableHead>
+                    <TableHead className="py-4 text-white font-bold min-w-[280px]">Compliance Requirement</TableHead>
+                    <TableHead className="py-4 text-white font-bold min-w-[150px]">Frequency / Timeline</TableHead>
+                    <TableHead className="py-4 text-white font-bold min-w-[250px]">Why It's Important</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Income Tax Return</TableCell>
-                    <TableCell className="border-r">ITR-5 Filing</TableCell>
-                    <TableCell className="border-r">Annually</TableCell>
-                    <TableCell>Mandatory tax compliance</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Tax Audit</TableCell>
-                    <TableCell className="border-r">If turnover exceeds ₹1 crore (business)</TableCell>
-                    <TableCell className="border-r">Annually</TableCell>
-                    <TableCell>Financial accuracy</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">GST Returns</TableCell>
-                    <TableCell className="border-r">If registered</TableCell>
-                    <TableCell className="border-r">Monthly/Quarterly</TableCell>
-                    <TableCell>Avoid penalties</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">TDS Returns</TableCell>
-                    <TableCell className="border-r">If applicable</TableCell>
-                    <TableCell className="border-r">Quarterly</TableCell>
-                    <TableCell>Income Tax compliance</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Change in Partners</TableCell>
-                    <TableCell className="border-r">Inform ROF</TableCell>
-                    <TableCell className="border-r">As required</TableCell>
-                    <TableCell>Legal validity</TableCell>
-                  </TableRow>
+                  {[
+                    { a: "Partnership Deed Maintenance", r: "Maintain and update the Partnership Deed whenever there are changes in partners, profit-sharing ratio, or business terms", f: "As and when changes occur", w: "Ensures clarity in rights, duties, and prevents disputes" },
+                    { a: "PAN & Tax Registration", r: "Obtain and maintain PAN in the name of the firm", f: "One-time (update if changes)", w: "Mandatory for taxation, banking, and financial transactions" },
+                    { a: "Books of Accounts", r: "Maintain proper books of accounts including income, expenses, assets, and liabilities", f: "Continuous / Ongoing", w: "Helps in financial tracking, tax filing, and decision making" },
+                    { a: "Income Tax Return (ITR-5)", r: "File income tax return of the partnership firm", f: "Annually (as per due date)", w: "Ensures compliance with tax laws and avoids penalties" },
+                    { a: "GST Compliance (If Applicable)", r: "File GST returns such as GSTR-1, GSTR-3B", f: "Monthly / Quarterly", w: "Mandatory if registered under GST" },
+                    { a: "Audit Requirement", r: "Conduct audit if turnover exceeds prescribed limits under tax laws", f: "Annually (if applicable)", w: "Ensures accuracy of financial statements and compliance" },
+                    { a: "Bank Account Compliance", r: "Maintain proper banking records and transactions through firm’s account", f: "Ongoing", w: "Supports transparency and financial control" },
+                    { a: "Changes in Constitution", r: "Inform authorities (where applicable) for changes in partners or structure", f: "As required", w: "Maintains updated legal and financial records" }
+                  ].map((item, i) => (
+                    <TableRow key={i}>
+                      <TableCell className="font-medium border-r text-dbiz-navy">{item.a}</TableCell>
+                      <TableCell className="border-r text-gray-700">{item.r}</TableCell>
+                      <TableCell className="border-r text-gray-700">{item.f}</TableCell>
+                      <TableCell className="text-gray-700">{item.w}</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <h3 className="text-2xl font-bold text-dbiz-navy md:col-span-3 mb-2 text-left">Post-Registration Compliance Timeline</h3>
-            <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 shadow-sm">
-              <div className="text-blue-600 font-bold text-xl mb-2">30 Days</div>
-              <div className="font-medium text-gray-800">PAN + Bank Account</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16">
+            {/* Important Notes */}
+            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal shrink-0">
+                <Info className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-dbiz-navy mb-4">Important Notes</h3>
+                <ul className="space-y-4">
+                  {[
+                    "No requirement for board meetings or annual general meetings",
+                    "No requirement for corporate filings or complex regulatory approvals",
+                    "Compliance is mainly focused on taxation, documentation, and records",
+                    "Proper documentation reduces the risk of disputes among partners"
+                  ].map((note, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" />
+                      <span className="text-gray-700 text-sm md:text-base leading-snug">{note}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="bg-green-50 border border-green-100 rounded-xl p-6 shadow-sm">
-              <div className="text-green-600 font-bold text-xl mb-2">Annual Cycle</div>
-              <div className="font-medium text-gray-800">ITR-5 Filing</div>
+
+            {/* Simplified Compliance Advantage */}
+            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 flex items-start gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal shrink-0">
+                <Shield className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-dbiz-navy mb-4">Simplified Compliance Advantage</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Significantly lower compliance burden compared to companies",
+                    "Reduced Administrative and Management Costs",
+                    "Greater flexibility in internal operational management",
+                    "Simplified record maintenance and reporting structures"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" />
+                      <span className="text-gray-700 text-sm md:text-base leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="bg-purple-50 border border-purple-100 rounded-xl p-6 shadow-sm">
-              <div className="text-purple-600 font-bold text-xl mb-2">As Applicable</div>
-              <div className="font-medium text-gray-800">GST / TDS Compliance</div>
+          </div>
+
+          <div className="mt-16">
+            <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center uppercase tracking-wider">Post-Registration Compliance Timeline</h3>
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
+              {[
+                { label: "Immediate", task: "PAN Application and Bank Account Setup", milestone: "Start" },
+                { label: "During Operations", task: "Maintain books of accounts and proper documentation", milestone: "Ongoing" },
+                { label: "Annual Cycle", task: "Income Tax Filing → Audit (if applicable) → GST Returns (if registered)", milestone: "FY End" }
+              ].map((card, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full md:max-w-[300px] flex flex-col items-center">
+                  <div className="bg-dbiz-teal/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 border border-dbiz-teal/20">
+                    <span className="text-dbiz-teal font-bold text-base">{card.milestone}</span>
+                  </div>
+                  <p className="text-base font-bold text-dbiz-navy mb-2">{card.label}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{card.task}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+               <p className="text-gray-400 text-xs italic">Last updated: March 2026</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Why DBIZ Section — Clean Grid Style */}
+      <section id="why-dbiz" className="py-20 bg-gray-50/30 scroll-mt-32">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Why DBIZ
+              Why Choose DBIZ
             </div>
-
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Partnership Firm Registration?</h2>
-
-            <p className="text-lg text-gray-600">Registering a partnership firm requires precision in deed drafting, stamp duty compliance, and proper procedural filing.</p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Registering a Partnership Firm is a crucial step toward starting a business with the right structure and clarity between partners. While the process is simpler than other business forms, it still requires proper drafting, documentation, and legal structuring. DBIZ additions value by ensuring your partnership is legally strong and smoothly executed from the beginning.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
-              </h3>
-              <ul className="space-y-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* What DBIZ Handles */}
+            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal">
+                  <CheckCircle2 className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-dbiz-navy">What DBIZ Handles</h3>
+              </div>
+              <ul className="space-y-4">
                 {[
-                  "Partnership Deed Drafting",
-                  "State-wise Stamp Duty Calculation",
-                  "Registrar of Firms Filing",
-                  "PAN & GST Registration",
-                  "Amendment & Reconstitution",
-                  "Ongoing Tax Compliance"
+                  "Drafting a customized Partnership Deed",
+                  "Structuring profit-sharing and partner roles",
+                  "Document validation and pre-submission review",
+                  "Assistance in firm name selection and check",
+                  "PAN application for the partnership firm",
+                  "Support in current account opening",
+                  "Guidance on GST registration (if applicable)",
+                  "Registration with Registrar of Firms (if opted)",
+                  "Handling corrections or rework in documentation",
+                  "Post-registration compliance and support"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
+                    <span className="text-gray-700 font-medium text-[15px]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
-              </h3>
-              <ul className="space-y-3">
+            {/* What You Provide */}
+            <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal">
+                   <FileText className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold text-dbiz-navy">What You Provide</h3>
+              </div>
+              <ul className="space-y-5">
                 {[
-                  "Partner KYC Documents",
-                  "Office Address Proof",
-                  "Capital Contribution Details",
-                  "Business Activity Description"
+                  "Identity and address proof of all partners",
+                  "Passport-sized photographs",
+                  "Registered office address proof (Rent/Ownership)",
+                  "Business activity details and firm name",
+                  "Capital contribution details of each partner"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                  <li key={i} className="flex items-start gap-4 group">
+                    <ArrowRight className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5 group-hover:translate-x-1 transition-transform" />
+                    <span className="text-gray-700 font-medium text-[15px]">{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          </div>
 
-          <div className="text-center max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-            <p className="text-lg text-dbiz-navy font-semibold italic">"We ensure your partnership is legally structured, enforceable, and fully compliant from day one."</p>
+            </div>
           </div>
         </div>
       </section>
@@ -920,20 +993,25 @@ const PartnershipPage = () => {
               FAQs
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on Partnership Firm Registration (India)</h2>
-            <p className="text-sm text-gray-500 mb-2 italic">Last Updated: Feb 2026</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">FAQs on Partnership Firm Registration</h2>
+            <div className="flex flex-col items-center">
+              <p className="text-sm text-gray-500 mb-6 italic">Last updated: March 2026</p>
+              <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed text-center mb-12">
+                Whether you're exploring the basics of partnership formation, documentation, taxation, or operational aspects — here are the most commonly asked questions explained in a clear and practical manner.
+              </p>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {partnershipFaq.map((faq, index) => (
                 <AccordionItem key={`faq-${index}`} value={`item-${index}`} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <h3 className="text-left font-medium text-base">{faq.question}</h3>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
+                    <AccordionTrigger className="px-6 py-4 hover:no-underline text-left">
+                      <h3 className="font-medium text-base leading-relaxed text-dbiz-navy">{faq.question}</h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-5 pt-1 text-gray-600 leading-relaxed bg-white border-t border-gray-100">
+                      {faq.answer}
+                    </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

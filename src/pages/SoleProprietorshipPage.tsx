@@ -782,7 +782,7 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Registration Process Section */}
-        <section id="process" className="pt-12 pb-24 bg-gray-50 border-y border-gray-200/50 scroll-mt-32">
+        <section id="process" className="pt-12 pb-24 bg-white scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -904,7 +904,7 @@ const SoleProprietorshipPage = () => {
         </section>
 
         {/* Compliance Section */}
-        <section id="compliance" className="py-24 bg-white scroll-mt-32">
+        <section id="compliance" className="py-24 bg-gray-50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
@@ -922,10 +922,10 @@ const SoleProprietorshipPage = () => {
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-dbiz-navy hover:bg-dbiz-navy">
-                      <TableHead className="py-5 px-6 text-white font-bold text-base">Aspect</TableHead>
-                      <TableHead className="py-5 px-6 text-dbiz-teal font-bold text-base">Compliance Requirement</TableHead>
-                      <TableHead className="py-5 px-6 text-white font-bold text-base">Frequency</TableHead>
-                      <TableHead className="py-5 px-6 text-white font-bold text-base">Why It's Important</TableHead>
+                      <TableHead className="px-6 py-4 text-left text-sm font-medium text-white">Aspect</TableHead>
+                      <TableHead className="px-6 py-4 text-left text-sm font-medium text-white">Compliance Requirement</TableHead>
+                      <TableHead className="px-6 py-4 text-left text-sm font-medium text-white">Frequency</TableHead>
+                      <TableHead className="px-6 py-4 text-left text-sm font-medium text-white">Why It's Important</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -939,11 +939,11 @@ const SoleProprietorshipPage = () => {
                       { a: "Bank Trans.", r: "Maintain transactions via Current account", f: "Ongoing", w: "Ensures transparency and control" },
                       { a: "MSME etc.", r: "Maintain Udyam/other registrations", f: "As required", w: "Help in availing benefits/subsidies" }
                     ].map((row, i) => (
-                      <TableRow key={i} className="hover:bg-gray-50/50 transition-colors">
-                        <TableCell className="py-4 px-6 font-bold text-dbiz-navy">{row.a}</TableCell>
-                        <TableCell className="py-4 px-6 font-medium text-gray-700">{row.r}</TableCell>
-                        <TableCell className="py-4 px-6 text-gray-600 italic">{row.f}</TableCell>
-                        <TableCell className="py-4 px-6 text-gray-600 text-sm leading-relaxed">{row.w}</TableCell>
+                      <TableRow key={i} className={`hover:bg-gray-50/50 transition-colors border-b border-gray-200 ${i % 2 === 1 ? 'bg-gray-50/50' : 'bg-white'}`}>
+                        <TableCell className="px-6 py-4 text-sm font-medium text-gray-900">{row.a}</TableCell>
+                        <TableCell className="px-6 py-4 text-sm text-gray-700">{row.r}</TableCell>
+                        <TableCell className="px-6 py-4 text-sm text-gray-700">{row.f}</TableCell>
+                        <TableCell className="px-6 py-4 text-sm text-gray-700">{row.w}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -953,9 +953,9 @@ const SoleProprietorshipPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {/* Important Notes Card */}
-              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 relative overflow-hidden group">
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 relative overflow-hidden">
                 <div className="flex items-start gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0">
                     <Info className="h-6 w-6 text-dbiz-teal" />
                   </div>
                   <div>
@@ -975,14 +975,13 @@ const SoleProprietorshipPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="absolute -right-6 -top-6 w-24 h-24 bg-dbiz-teal/5 rounded-full blur-2xl group-hover:bg-dbiz-teal/10 transition-all duration-700"></div>
               </div>
 
               {/* Simplified Compliance Advantage Card */}
-              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 relative overflow-hidden group">
-                <div className="flex items-start gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
-                    <ShieldCheck className="h-6 w-6 text-dbiz-teal" />
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-dbiz-teal/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="h-6 w-6 text-dbiz-teal" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-dbiz-navy mb-4">Simplified Compliance Advantage</h3>
@@ -1005,30 +1004,23 @@ const SoleProprietorshipPage = () => {
               </div>
             </div>
 
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h3 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Post-Registration Compliance Timeline</h3>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 px-4">
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-dbiz-navy mb-6 text-center">Post-Registration Compliance Timeline</h3>
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
               {[
                 { label: "Immediate", task: "PAN and Bank Account Setup", milestone: "Start" },
                 { label: "Operations", task: "Maintain books of accounts and proper billing", milestone: "Ongoing" },
                 { label: "Annual Cycle", task: "Income Tax Filing → GST Returns (if applicable) → Audit (if required)", milestone: "FY End" }
               ].map((card, i) => (
-                <div key={i} className="bg-white rounded-3xl p-5 shadow-xl border border-gray-100 flex flex-col items-center justify-center text-center hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-dbiz-teal/5 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-700"></div>
-                  
-                  <p className="text-xl font-bold text-dbiz-teal mb-0.5 tracking-tight">
-                    {card.milestone}
-                  </p>
-                  <p className="text-dbiz-navy font-bold text-[13px] mb-3">
-                    {card.label}
-                  </p>
-                  <p className="text-gray-500 font-normal text-[11px] leading-relaxed max-w-[150px] mx-auto">
-                    {card.task}
-                  </p>
+                <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:shadow-md transition-all duration-300 w-full md:max-w-[280px] flex flex-col items-center">
+                  <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <span className="text-dbiz-teal font-bold text-lg">{card.milestone}</span>
+                  </div>
+                  <p className="text-sm font-medium text-dbiz-navy">{card.label}</p>
+                  <p className="text-xs text-gray-600 mt-1">{card.task}</p>
                 </div>
               ))}
+              </div>
             </div>
 
             <div className="text-center">
@@ -1038,28 +1030,20 @@ const SoleProprietorshipPage = () => {
             <div className="mt-16 space-y-16">
               {/* Registration Timeline Cards */}
               <div>
-                <h4 className="text-xl font-bold text-dbiz-navy mb-8 text-center italic border-b border-dbiz-teal/20 pb-4 max-w-lg mx-auto">
-                  Timeline for Proprietorship Registration
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+                <h3 className="text-2xl font-bold text-dbiz-navy mb-6 text-center">Timeline for Proprietorship Registration</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
                   {[
                     { milestone: "1-2", label: "Days", task: "Document Preparation" },
                     { milestone: "2-5", label: "Days", task: "GST / MSME Registration" },
                     { milestone: "2-3", label: "Days", task: "Bank Account Opening" },
                     { milestone: "3-7", label: "Working Days", task: "Total Setup Time", highlight: true }
                   ].map((card, i) => (
-                    <div key={i} className="bg-white rounded-3xl p-5 shadow-xl border border-gray-100 flex flex-col items-center justify-center text-center hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden h-36">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-dbiz-teal/5 rounded-full -mr-8 -mt-8 group-hover:scale-125 transition-transform duration-700"></div>
-                      
-                      <p className="text-xl font-bold text-dbiz-teal mb-0.5 tracking-tight">
-                        {card.milestone}
-                      </p>
-                      <p className="text-dbiz-navy font-bold text-[13px] mb-2">
-                        {card.label}
-                      </p>
-                      <p className="text-gray-500 font-normal text-[11px] leading-relaxed max-w-[150px] mx-auto">
-                        {card.task}
-                      </p>
+                    <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:shadow-md transition-all duration-300 w-full flex flex-col items-center">
+                      <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-dbiz-teal font-bold text-lg">{card.milestone}</span>
+                      </div>
+                      <p className="text-sm font-medium text-dbiz-navy">{card.label}</p>
+                      <p className="text-xs text-gray-600 mt-1">{card.task}</p>
                     </div>
                   ))}
                 </div>
@@ -1067,26 +1051,19 @@ const SoleProprietorshipPage = () => {
 
               {/* Mandatory Compliance Cards */}
               <div>
-                <h4 className="text-xl font-bold text-dbiz-navy mb-8 text-center italic border-b border-dbiz-teal/20 pb-4 max-w-lg mx-auto">
-                  Mandatory Compliance for Proprietorship
-                </h4>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+                <h3 className="text-2xl font-bold text-dbiz-navy mb-6 text-center">Mandatory Compliance for Proprietorship</h3>
+                <div className="flex flex-wrap justify-center gap-4 px-4">
                   {[
                     { milestone: "Monthly", label: "GST Filing", task: "GST Return Filing (if applicable)" },
                     { milestone: "Annual", label: "ITR Filing", task: "Income Tax Return (ITR-3 / ITR-4)" },
                     { milestone: "Renewal", label: "Licenses", task: "Business License Renewal (Local Rules)" }
                   ].map((card, i) => (
-                    <div key={i} className="bg-white rounded-3xl p-5 shadow-xl border border-gray-100 flex flex-col items-center justify-center text-center hover:-translate-y-1 transition-all duration-300 relative overflow-hidden h-36">
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-dbiz-teal/5 rounded-full -mr-8 -mt-8"></div>
-                      <p className="text-xl font-bold text-dbiz-teal mb-0.5 tracking-tight">
-                        {card.milestone}
-                      </p>
-                      <p className="text-dbiz-navy font-bold text-[13px] mb-2">
-                        {card.label}
-                      </p>
-                      <p className="text-gray-500 font-normal text-[11px] leading-relaxed max-w-[150px] mx-auto">
-                        {card.task}
-                      </p>
+                    <div key={i} className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:shadow-md transition-all duration-300 w-full md:max-w-[280px] flex flex-col items-center">
+                      <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-dbiz-teal font-bold text-lg">{card.milestone}</span>
+                      </div>
+                      <p className="text-sm font-medium text-dbiz-navy">{card.label}</p>
+                      <p className="text-xs text-gray-600 mt-1">{card.task}</p>
                     </div>
                   ))}
                 </div>
@@ -1120,15 +1097,15 @@ const SoleProprietorshipPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
               {/* Box 1: What DBIZ Handles */}
-              <div className="bg-cyan-50/20 rounded-3xl p-8 md:p-10 border border-cyan-100 shadow-sm transition-all duration-300">
+              <div className="bg-dbiz-teal/5 rounded-xl p-6 border border-dbiz-teal/20 shadow-sm transition-all duration-300">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="bg-cyan-100 p-2.5 rounded-xl">
-                    <CheckCircle2 className="h-7 w-7 text-cyan-600" />
+                  <div className="bg-dbiz-teal/10 p-2.5 rounded-xl">
+                    <CheckCircle2 className="h-7 w-7 text-dbiz-teal" />
                   </div>
-                  <h3 className="text-2xl font-bold text-dbiz-navy">What DBIZ Handles</h3>
+                  <h3 className="text-xl font-bold text-dbiz-navy">What DBIZ Handles</h3>
                 </div>
                 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {[
                     "Guidance in selecting the appropriate business registration (GST / Udyam / Shop License)",
                     "Assistance in business name selection and basic verification",
@@ -1142,25 +1119,23 @@ const SoleProprietorshipPage = () => {
                     "Post-setup compliance guidance and reminders"
                   ].map((item, i) => (
                     <div key={i} className="flex items-start group">
-                      <div className="bg-white rounded-full p-1 mr-4 mt-0.5 shadow-sm border border-cyan-100 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-300">
-                        <CheckCircle2 className="h-4 w-4 text-cyan-600 group-hover:text-white" />
-                      </div>
-                      <span className="text-gray-700 font-medium text-[15px] leading-relaxed group-hover:text-dbiz-navy transition-colors">{item}</span>
+                      <CheckCircle2 className="h-4 w-4 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Box 2: What You Provide */}
-              <div className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-md transition-all duration-300">
+              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 shadow-sm transition-all duration-300">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="bg-dbiz-navy/10 p-2.5 rounded-xl">
                     <FileText className="h-7 w-7 text-dbiz-navy" />
                   </div>
-                  <h3 className="text-2xl font-bold text-dbiz-navy">What You Provide</h3>
+                  <h3 className="text-xl font-bold text-dbiz-navy">What You Provide</h3>
                 </div>
                 
-                <div className="space-y-5">
+                <div className="space-y-4">
                   {[
                     "Identity and address proof of proprietor",
                     "Passport-sized photographs",
@@ -1169,13 +1144,11 @@ const SoleProprietorshipPage = () => {
                     "Basic bank details (if required for setup)"
                   ].map((item, i) => (
                     <div key={i} className="flex items-start group">
-                      <ArrowRight className="h-5 w-5 text-gray-400 mr-4 mt-1 flex-shrink-0 group-hover:text-dbiz-teal transition-all duration-300 group-hover:translate-x-1" />
-                      <span className="text-gray-700 font-medium text-[15px] leading-relaxed group-hover:text-dbiz-navy transition-colors">{item}</span>
+                      <ArrowRight className="h-4 w-4 text-gray-500 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
                 </div>
-
-
               </div>
             </div>
 
@@ -1188,29 +1161,25 @@ const SoleProprietorshipPage = () => {
 
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-start">
                 <div>
-                  <h3 className="text-lg font-bold mb-6 leading-relaxed tracking-tight">
+                  <p className="text-lg leading-relaxed mb-6 text-white/90">
                     That's where DBIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you.
-                  </h3>
-                  <div className="space-y-6 opacity-90 text-lg leading-relaxed font-normal text-gray-300">
-                    <p>
-                      DBIZ CONSULTANCY simplifies the entire process by handling documentation, guiding you on the right registrations, and ensuring accuracy at every stage. Our approach helps you avoid delays, rejections, and compliance issues. From initial setup to ongoing support, we ensure your business starts smoothly and operates without interruptions.
-                    </p>
-                  </div>
+                  </p>
+                  <p className="text-lg leading-relaxed text-white/90">
+                    DBIZ CONSULTANCY simplifies the entire process by handling documentation, guiding you on the right registrations, and ensuring accuracy at every stage. Our approach helps you avoid delays, rejections, and compliance issues. From initial setup to ongoing support, we ensure your business starts smoothly and operates without interruptions.
+                  </p>
                 </div>
 
-                <div className="lg:sticky lg:top-32 grid grid-cols-1 sm:grid-cols-2 gap-6 z-0">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {[
                     { t: "Expert Guidance", d: "Professional support for selecting the right registrations and business setup" },
                     { t: "End-to-End Service", d: "Complete assistance from registration to compliance" },
                     { t: "Transparent Process", d: "Clear communication with no hidden charges" },
                     { t: "Timely Delivery", d: "Quick and efficient execution of all services" }
                   ].map((card, i) => (
-                    <div key={i} className="bg-[#112240] border border-white/5 p-6 rounded-3xl hover:bg-[#1a365d] transition-all duration-300 group shadow-lg">
-                      <div className="bg-dbiz-teal/10 w-10 h-10 rounded-full flex items-center justify-center mb-4 border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:border-dbiz-teal transition-all duration-300">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal group-hover:text-white transition-colors" />
-                      </div>
-                      <h4 className="text-lg font-bold mb-2 tracking-tight">{card.t}</h4>
-                      <p className="text-gray-400 text-[13px] leading-relaxed font-normal">{card.d}</p>
+                    <div key={i} className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                      <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                      <h3 className="text-xl font-semibold mb-2">{card.t}</h3>
+                      <p className="text-white/80">{card.d}</p>
                     </div>
                   ))}
                 </div>
@@ -1223,15 +1192,14 @@ const SoleProprietorshipPage = () => {
         {/* FAQs Section */}
         <section id="faqs" className="py-20 bg-gray-50 scroll-mt-32 relative z-40">
           <div className="container-custom">
-            <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+            <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 FAQs
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-dbiz-navy mb-4">FAQs on Proprietorship Registration</h2>
-              <p className="text-[13px] text-gray-500 mb-6 italic">Last updated: March 2026</p>
-              <p className="text-base text-gray-600 leading-relaxed font-medium">
-                Whether you're exploring how to start a proprietorship, required registrations, taxation, or day-to-day compliance — here are the most commonly asked questions explained in a simple and practical manner.
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs</h2>
+              <p className="text-lg text-gray-600 leading-relaxed font-normal">
+                Everything you need to know about setting up a proprietorship — explained in simple, practical terms.
               </p>
             </div>
 
@@ -1241,12 +1209,12 @@ const SoleProprietorshipPage = () => {
                   <AccordionItem 
                     key={index} 
                     value={`item-${index}`}
-                    className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
+                    className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
                   >
-                    <AccordionTrigger className="px-6 py-4 hover:no-underline text-left group-hover:bg-gray-50/50 transition-colors">
-                      <span className="font-semibold text-dbiz-navy text-[15px] leading-relaxed">{faq.question}</span>
+                    <AccordionTrigger className="px-6 py-4 hover:no-underline text-left">
+                      <h3 className="font-medium text-base leading-relaxed text-dbiz-navy">{faq.question}</h3>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-5 pt-1 text-gray-600 text-sm leading-relaxed bg-white border-t border-gray-50">
+                    <AccordionContent className="px-6 pb-5 pt-1 text-gray-600 leading-relaxed bg-white border-t border-gray-100">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

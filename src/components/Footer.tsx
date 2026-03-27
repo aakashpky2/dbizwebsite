@@ -13,8 +13,8 @@ const Footer = () => {
             <p className="text-gray-300">
               Business Consultancy Services
             </p>
-            <p className="text-gray-400 text-[11px] leading-relaxed max-w-[240px]">
-              DBIZ CONSULTANCY is a leading business consultant in Trivandrum, Kerala and Kochi, Kerala providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
+            <p className="text-gray-400 text-[11px] leading-relaxed max-w-[320px]">
+              DBIZ CONSULTANCY is a leading business consultancy in Trivandrum and Kochi in Kerala across India providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.
             </p>
             <div className="flex space-x-3 pt-1">
               {/* Social media icons */}

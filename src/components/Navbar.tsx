@@ -15,10 +15,10 @@ import {
 const LOGO_SRC = "/dbiz-uploads/main-logo.png";
 
 const mainNavMenus = [
-  { name: "Home", path: "#home" },
-  { name: "About Us", path: "#about" },
-  { name: "Services", path: "#services" },
-  { name: "Contact", path: "#contact" },
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/#about" },
+  { name: "Services", path: "/#services" },
+  { name: "Contact", path: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -34,11 +34,12 @@ const Navbar = () => {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (path.startsWith("#") && pathname === "/") {
+    if (path.startsWith("/#") && pathname === "/") {
       e.preventDefault();
-      const element = document.querySelector(path);
+      const elementId = path.substring(2);
+      const element = document.getElementById(elementId);
       if (element) {
-        const offset = 80; // Adjust for fixed header height
+        const offset = 80;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -51,7 +52,8 @@ const Navbar = () => {
   };
 
   const isActiveLink = (path: string) => {
-    if (path === "#home") return pathname === "/";
+    if (path === "/") return pathname === "/";
+    if (path.startsWith("/#")) return pathname === "/" && window.location.hash === path.substring(1);
     return false;
   };
 
@@ -80,17 +82,17 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-2">
           {mainNavMenus.map((menu, index) => (
-            <a
+            <Link
               key={index}
-              href={menu.path}
-              onClick={(e) => handleLinkClick(e, menu.path)}
+              to={menu.path}
+              onClick={(e) => handleLinkClick(e as any, menu.path)}
               className={cn(
                 "menu-item",
                 isActiveLink(menu.path) && "active"
               )}
             >
               {menu.name}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -118,16 +120,16 @@ const Navbar = () => {
                 <div className="flex-1 py-8 px-4 space-y-2">
                   {mainNavMenus.map((menu, index) => (
                     <SheetClose asChild key={index}>
-                      <a
-                        href={menu.path}
-                        onClick={(e) => handleLinkClick(e, menu.path)}
+                      <Link
+                        to={menu.path}
+                        onClick={(e) => handleLinkClick(e as any, menu.path)}
                         className={cn(
                           "flex items-center w-full px-6 py-4 text-white hover:text-dbiz-teal text-xl font-medium rounded-lg transition-all hover:bg-white/5",
                           isActiveLink(menu.path) && "text-dbiz-teal bg-white/5"
                         )}
                       >
                         {menu.name}
-                      </a>
+                      </Link>
                     </SheetClose>
                   ))}
                 </div>
