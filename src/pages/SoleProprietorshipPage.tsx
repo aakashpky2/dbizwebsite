@@ -247,7 +247,7 @@ const SoleProprietorshipPage = () => {
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
                     <img 
-                      src="/dbiz-uploads/sole_proprietor_side_image_v2.png" 
+                      src="/dbiz-uploads/sole_proprietor_side_image_v5.png" 
                       alt="Sole Proprietorship" 
                       className="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
                     />

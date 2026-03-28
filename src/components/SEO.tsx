@@ -17,7 +17,7 @@ interface SEOProps {
  */
 const SEO: React.FC<SEOProps> = ({
     title = "D BIZ CONSULTANCY | Your Success Is Our Business",
-    description = "DBIZ CONSULTANCY is a leading business consultancy in Trivandrum and Kochi in Kerala across India providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India.",
+    description = "DBIZ CONSULTANCY is a leading business consultancy in Trivandrum and Kochi in Kerala across India providing Business Registrations, GST services, Company compliances, Startup advisory, Fund Raising and Audit support across Kerala and other Major States in India. Contact us at +91 8075273408 or info@dbizsolutions.in. Offices at Trivandrum & Kochi.",
     keywords = "business consultancy kerala, company registration, gst registration, trademark filing, startup advisory india",
     image = "/og-image.jpg",
     url = "https://www.dbizsolutions.in",
