@@ -149,8 +149,8 @@ const TwelveAEightyGPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

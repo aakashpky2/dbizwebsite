@@ -53,8 +53,8 @@ const MSMERegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "MSME / Udyam Registration | Free MSME Certificate | DBIZ CONSULTANCY"
-    : `MSME / Udyam Registration in ${cityName} | Free MSME Certificate | DBIZ CONSULTANCY`;
+    ? "MSME / Udyam Registration | Free MSME Certificate | D BIZ CONSULTANCY"
+    : `MSME / Udyam Registration in ${cityName} | Free MSME Certificate | D BIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -102,7 +102,7 @@ const MSMERegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get your Udyam Registration Certificate instantly online with DBIZ CONSULTANCY. Access government benefits, subsidies, and priority sector lending with this free MSME registration.
+                  Get your Udyam Registration Certificate instantly online with D BIZ CONSULTANCY. Access government benefits, subsidies, and priority sector lending with this free MSME registration.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -321,7 +321,7 @@ const MSMERegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of Udyam Registration</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY helps businesses across {cityName} obtain MSME registration and access all available benefits.
+                D BIZ CONSULTANCY helps businesses across {cityName} obtain MSME registration and access all available benefits.
               </p>
             </div>
 
@@ -584,7 +584,7 @@ const MSMERegistrationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-dbiz-navy mb-2">Simple Documentation Process</h3>
                   <p className="text-gray-600 mb-4">
-                    DBIZ CONSULTANCY helps you gather and verify all required information for seamless Udyam registration.
+                    D BIZ CONSULTANCY helps you gather and verify all required information for seamless Udyam registration.
                   </p>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -620,7 +620,7 @@ const MSMERegistrationPage = () => {
                   step: "1",
                   title: "Visit Udyam Portal",
                   description: "Go to the official Udyam Registration portal (udyamregistration.gov.in) to begin your registration process.",
-                  advantage: "DBIZ CONSULTANCY guides you through the portal and ensures you're on the correct official website."
+                  advantage: "D BIZ CONSULTANCY guides you through the portal and ensures you're on the correct official website."
                 },
                 {
                   step: "2",
@@ -644,7 +644,7 @@ const MSMERegistrationPage = () => {
                   step: "5",
                   title: "Add Bank Details",
                   description: "Enter bank account number and IFSC code. GSTIN details are auto-fetched if registered.",
-                  advantage: "DBIZ CONSULTANCY verifies bank details and ensures seamless integration with GST database."
+                  advantage: "D BIZ CONSULTANCY verifies bank details and ensures seamless integration with GST database."
                 },
                 {
                   step: "6",
@@ -670,7 +670,7 @@ const MSMERegistrationPage = () => {
                           <div className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-dbiz-navy mb-1">DBIZ Advantage</p>
+                              <p className="text-sm font-medium text-dbiz-navy mb-1">D BIZ Advantage</p>
                               <p className="text-sm text-gray-600">{item.advantage}</p>
                             </div>
                           </div>
@@ -747,18 +747,18 @@ const MSMERegistrationPage = () => {
                   Are there any charges for Udyam Registration?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  No, Udyam Registration is completely free. The Government of India does not charge any fee for this registration. Be cautious of intermediaries charging exorbitant fees. DBIZ CONSULTANCY provides assistance at minimal charges for convenience.
+                  No, Udyam Registration is completely free. The Government of India does not charge any fee for this registration. Be cautious of intermediaries charging exorbitant fees. D BIZ CONSULTANCY provides assistance at minimal charges for convenience.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
         </section>
 
-        {/* Why Choose DBIZ Section */}
+        {/* Why Choose D BIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for MSME registration across {cityName}
               </p>

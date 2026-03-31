@@ -233,8 +233,8 @@ const ShopEstablishmentPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

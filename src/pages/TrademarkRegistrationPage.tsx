@@ -233,8 +233,8 @@ const TrademarkRegistrationPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

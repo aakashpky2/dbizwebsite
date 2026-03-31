@@ -58,8 +58,8 @@ const ServicePage = ({
   location = "India"
 }: ServicePageProps) => {
   const seoTitle = location === "India" 
-    ? `${title} Services | Best in India | DBIZ CONSULTANCY` 
-    : `${title} Services in ${location} | Best in India | DBIZ CONSULTANCY`;
+    ? `${title} Services | Best in India | D BIZ CONSULTANCY` 
+    : `${title} Services in ${location} | Best in India | D BIZ CONSULTANCY`;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -85,7 +85,7 @@ const ServicePage = ({
               <Popover>
                 <PopoverTrigger asChild>
                   <Button className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white">
-                    Contact DBIZ CONSULTANCY Today
+                    Contact D BIZ CONSULTANCY Today
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-56 p-0">
@@ -103,7 +103,7 @@ const ServicePage = ({
               Why {title} is Important {location !== "India" ? `in ${location}` : ""}
             </h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY provides the best {title.toLowerCase()} services {location !== "India" ? `in ${location}` : "across India"}.
+              D BIZ CONSULTANCY provides the best {title.toLowerCase()} services {location !== "India" ? `in ${location}` : "across India"}.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -126,7 +126,7 @@ const ServicePage = ({
                   Step-by-Step {title} Registration Process
                 </h2>
                 <p className="section-subtitle">
-                  DBIZ CONSULTANCY makes the process simple and hassle-free for clients in {location}.
+                  D BIZ CONSULTANCY makes the process simple and hassle-free for clients in {location}.
                 </p>
               </div>
 
@@ -222,7 +222,7 @@ const ServicePage = ({
             <div className="container-custom">
               <h2 className="section-title text-center">Our {title} Services Across India</h2>
               <p className="section-subtitle text-center">
-                DBIZ CONSULTANCY provides the best {title.toLowerCase()} services in the following cities and towns:
+                D BIZ CONSULTANCY provides the best {title.toLowerCase()} services in the following cities and towns:
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-10">
@@ -246,7 +246,7 @@ const ServicePage = ({
             <div className="container-custom">
               <h2 className="section-title text-center">Related Services</h2>
               <p className="section-subtitle text-center">
-                Explore other services offered by DBIZ CONSULTANCY in {location}
+                Explore other services offered by D BIZ CONSULTANCY in {location}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
@@ -277,7 +277,7 @@ const ServicePage = ({
               Ready to Start Your {title} Process?
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              DBIZ CONSULTANCY is the leading service provider for {title.toLowerCase()} in {location}. 
+              D BIZ CONSULTANCY is the leading service provider for {title.toLowerCase()} in {location}. 
               Contact us today to get started!
             </p>
             <Popover>

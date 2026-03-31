@@ -85,8 +85,8 @@ const EnhancedOnePersonCompanyPage = () => {
     : "India";
 
   const seoTitle = location === undefined
-    ? "One Person Company Registration in India | DBIZ CONSULTANCY"
-    : `One Person Company Registration in ${cityName} | DBIZ CONSULTANCY`;
+    ? "One Person Company Registration in India | D BIZ CONSULTANCY"
+    : `One Person Company Registration in ${cityName} | D BIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -1069,7 +1069,7 @@ const EnhancedOnePersonCompanyPage = () => {
             <div className="text-center max-w-4xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Why DBIZ
+                Why D BIZ
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center">Why D BIZ CONSULTANCY for One Person Company (OPC) Registration?</h2>
@@ -1086,10 +1086,10 @@ const EnhancedOnePersonCompanyPage = () => {
 
 
             <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-              {/* What DBIZ Handles */}
+              {/* What D BIZ Handles */}
               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 shadow-sm">
                 <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
                 </h3>
                 <ul className="space-y-3">
                   {[
@@ -1218,9 +1218,8 @@ const EnhancedOnePersonCompanyPage = () => {
           </div>
         </section>
 
-        {/* Footer */}
-        <Footer />
       </main>
+      <Footer />
 
       {/* Mermaid init script */}
       <script type="module" dangerouslySetInnerHTML={{

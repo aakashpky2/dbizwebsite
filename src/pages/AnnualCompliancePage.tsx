@@ -174,8 +174,8 @@ const AnnualCompliancePage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

@@ -1,62 +1,82 @@
 export const producerCompanyFaq = [
     {
-        question: "What is “Producer Company registration” in India?",
-        answer: "It is incorporation of a Producer Company under Companies Act, 2013 Chapter XXIA, enabling primary producers to operate as a company with producer-centric governance, equity-only capital, and limited liability."
+        question: "What is a Producer Company?",
+        answer: "A Producer Company is a company formed by producers (such as farmers, dairy farmers, fishermen, etc.) to collectively manage production, processing, and marketing activities."
     },
     {
-        question: "Which sections of the Companies Act govern Producer Companies?",
-        answer: "Producer Companies are governed by Sections 378A to 378ZU (Chapter XXIA)."
+        question: "Who can become a member of a Producer Company?",
+        answer: "Only individuals or institutions engaged in primary production activities can become members."
     },
     {
-        question: "Who can form a Producer Company?",
-        answer: "Any 10+ individual producers, or 2+ Producer Institutions, or a permitted combination can incorporate a Producer Company (Section 378C)."
+        question: "What are the minimum requirements to start a Producer Company?",
+        answer: "Minimum 10 individual producers or 2 producer institutions and 5 directors are required."
     },
     {
-        question: "Is there a maximum number of members?",
-        answer: "After incorporation, there is no statutory limit to the number of members, and the company cannot become a public limited company."
+        question: "Is Producer Company suitable for farmers and rural businesses?",
+        answer: "Yes, it is specifically designed to benefit farmers, agricultural groups, and rural producers."
     },
     {
-        question: "How many directors are required?",
-        answer: "A Producer Company must have at least 5 and not more than 15 directors, with a limited transitional relaxation for certain converted inter-State co-operatives."
+        question: "What activities can a Producer Company carry out?",
+        answer: "Activities include production, harvesting, procurement, grading, pooling, marketing, selling, export, and value addition of produce."
     },
     {
-        question: "Is a resident director mandatory?",
-        answer: "Yes—every company must have at least one director who stays in India for ≥182 days in a financial year (proportionate in the incorporation year)."
+        question: "Can non-producers invest in a Producer Company?",
+        answer: "No, only producers can be members and shareholders of the company."
     },
     {
-        question: "What are the naming rules for Producer Companies?",
-        answer: "The name must end with “Producer Company Limited” (MOA requirement). Misuse of this suffix by entities that are not Producer Companies triggers statutory penalties."
+        question: "What is the naming requirement for a Producer Company?",
+        answer: "The name must end with “Producer Company Limited”."
     },
     {
-        question: "Are nominees mandatory for members?",
-        answer: "Yes. A member must nominate a person within 3 months of becoming a member. If the nominee is not a producer, the Board must direct surrender of shares/special rights to the company at par value or as determined."
+        question: "Can a Producer Company take loans?",
+        answer: "Yes, it can avail loans from banks, financial institutions, and government schemes."
     },
     {
-        question: "Can a Producer Company issue preference shares?",
-        answer: "No. Producer Company share capital must consist of equity shares only."
+        question: "Is there any restriction on transfer of shares?",
+        answer: "Yes, shares can be transferred only among existing members or eligible producers."
     },
     {
-        question: "When is the first AGM due?",
-        answer: "A Producer Company must hold its first AGM within 90 days from incorporation (a special rule under Chapter XXIA)."
+        question: "Do members have voting rights?",
+        answer: "Yes, but voting is based on the principle of “one member, one vote”, not on shareholding."
     },
     {
-        question: "Is internal audit mandatory?",
-        answer: "Yes. Every Producer Company must have internal audit by a Chartered Accountant, as per intervals/manner specified in its Articles."
+        question: "Can a Producer Company distribute profits freely?",
+        answer: "No, profits are distributed as patronage bonus and limited dividend, not like regular companies."
     },
     {
-        question: "Does INC-20A apply to Producer Companies?",
-        answer: "Producer Companies are companies limited by shares (Section 378C(3)), and the commencement of business declaration (Section 10A) applies to companies having share capital before they commence business/borrowing."
+        question: "Is GST applicable to Producer Companies?",
+        answer: "Yes, GST is applicable based on turnover and type of supply."
     },
     {
-        question: "Can a Producer Company convert into a public limited company?",
-        answer: "No. It “shall not, under any circumstance whatsoever, become or be deemed to become a public limited company.”"
+        question: "Is it mandatory to maintain books of accounts?",
+        answer: "Yes, proper books of accounts must be maintained as per Companies Act requirements."
     },
     {
-        question: "Can a cooperative society convert into a Producer Company?",
-        answer: "An inter-State co-operative society (and certain eligible producer co-ops/federations with objects extended outside a State) can apply to be registered as a Producer Company under Section 378J, subject to resolution and prescribed attachments."
+        question: "Can a Producer Company convert into another entity?",
+        answer: "Yes, it can be converted into another company structure subject to legal provisions."
     },
     {
-        question: "How does foreign investment (FDI) apply?",
-        answer: "FDI is governed by FEMA Non-debt Instruments Rules and sectoral policy. However, Producer Company membership/share transfer restrictions (active member-only transfer, producer-linked eligibility) can materially constrain FDI feasibility; treat case-by-case."
+        question: "Is annual filing mandatory even if there is no business activity?",
+        answer: "Yes, annual compliance is mandatory regardless of activity."
+    },
+    {
+        question: "What happens if compliance is not maintained?",
+        answer: "Non-compliance may lead to penalties, fines, and even strike-off by ROC."
+    },
+    {
+        question: "Can a Producer Company operate in multiple states?",
+        answer: "Yes, it can operate across India without restrictions."
+    },
+    {
+        question: "Is digital signature mandatory for directors?",
+        answer: "Yes, DSC is required for filing all MCA-related forms."
+    },
+    {
+        question: "Can government schemes support Producer Companies?",
+        answer: "Yes, many central and state government schemes provide financial and technical support."
+    },
+    {
+        question: "How is a Producer Company different from a normal company?",
+        answer: "It focuses on mutual benefit of producers, restricts membership to producers, and follows “one member, one vote”."
     }
 ];

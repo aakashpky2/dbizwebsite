@@ -79,7 +79,7 @@ const AboutSection = () => {
             isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           )}>
             <p>
-              <strong className="font-semibold text-white">DBIZ CONSULTANCY PVT. LTD.</strong> is a professional business consultancy and corporate advisory firm headquartered in Thiruvananthapuram, Kerala, with a branch office in Kochi, providing comprehensive consultancy and compliance services to startups, entrepreneurs, and established businesses across India.
+              <strong className="font-semibold text-white">D BIZ CONSULTANCY PVT. LTD.</strong> is a professional business consultancy and corporate advisory firm headquartered in Thiruvananthapuram, Kerala, with a branch office in Kochi, providing comprehensive consultancy and compliance services to startups, entrepreneurs, and established businesses across India.
             </p>
             <p>
               Our team comprises experienced Chartered Accountants, Company Secretaries, Cost Accountants, and other skilled professionals with over 10 years of professional experience in corporate advisory, statutory compliance, taxation, accounting, and financial consulting.
@@ -88,7 +88,7 @@ const AboutSection = () => {
               With strong domain expertise and in-depth knowledge of the Indian regulatory framework, we assist businesses in navigating complex compliance requirements, improving financial management, and achieving sustainable growth.
             </p>
             <p className="pt-2">
-              With a strong commitment to professionalism, integrity, and client satisfaction, DBIZ CONSULTANCY PVT. LTD. continues to support businesses with reliable advisory services and long-term strategic guidance.
+              With a strong commitment to professionalism, integrity, and client satisfaction, D BIZ CONSULTANCY PVT. LTD. continues to support businesses with reliable advisory services and long-term strategic guidance.
             </p>
           </div>
 

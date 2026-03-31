@@ -84,8 +84,9 @@ const ToolsPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Navbar />
+      <main className="flex-grow">
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90">
@@ -239,7 +240,7 @@ const ToolsPage = () => {
           </div>
         </div>
       </section>
-
+      </main>
       <Footer />
     </div>
   );

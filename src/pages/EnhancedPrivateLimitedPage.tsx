@@ -52,12 +52,12 @@ const EnhancedPrivateLimitedPage = () => {
   // If location is provided, we're on a city-specific page
   const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
   const seoTitle = location === undefined 
-    ? "Private Limited Company Registration in India | DBIZ CONSULTANCY" 
+    ? "Private Limited Company Registration in India | D BIZ CONSULTANCY" 
     : `Private Limited Company Registration in ${cityName} | Best PVT LTD Registration`;
   
   const seoDescription = location === undefined
-    ? "Register your Private Limited Company in India with DBIZ CONSULTANCY. Expert registration, compliance, and legal support at lowest prices."
-    : `Register Private Limited Company in ${cityName}. DBIZ CONSULTANCY provides fast PVT LTD registration, DSC, DIN, and ROC compliance services in ${cityName}.`;
+    ? "Register your Private Limited Company in India with D BIZ CONSULTANCY. Expert registration, compliance, and legal support at lowest prices."
+    : `Register Private Limited Company in ${cityName}. D BIZ CONSULTANCY provides fast PVT LTD registration, DSC, DIN, and ROC compliance services in ${cityName}.`;
 
   const seoUrl = location ? `/private-limited/${location}` : "/private-limited";
 
@@ -88,7 +88,8 @@ const EnhancedPrivateLimitedPage = () => {
   };
   const isActive = (section: string) => activeSection === section;
 
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
     <SEO 
       title={seoTitle} 
       description={seoDescription}
@@ -316,7 +317,7 @@ const EnhancedPrivateLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Private Limited Company</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features for business success.
+              D BIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features for business success.
             </p>
           </div>
 
@@ -401,7 +402,7 @@ const EnhancedPrivateLimitedPage = () => {
                 </h2>
 
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
+                  D BIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
                 </p>
 
                 <div className="hidden md:block mt-8">
@@ -964,7 +965,7 @@ const EnhancedPrivateLimitedPage = () => {
           <div className="mt-12 bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 md:p-8">
             <h3 className="text-2xl font-bold text-dbiz-navy mb-4">Small Company Compliance Reliefs (Check Eligibility First)</h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              If your Private Limited Company qualifies as a "Small Company" under the Companies Act definition and the latest government thresholds (paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore, effective Dec 1, 2025), you may be eligible for reduced board meeting requirements, cash flow statement exemption, and reduced penalties for certain non-compliances. These benefits can materially simplify governance overhead for early-stage companies — without removing annual ROC filings and statutory audit expectations. DBIZ CONSULTANCY can assess eligibility and maintain a simplified compliance calendar for Small Companies.
+              If your Private Limited Company qualifies as a "Small Company" under the Companies Act definition and the latest government thresholds (paid-up capital ≤ ₹10 crore and turnover ≤ ₹100 crore, effective Dec 1, 2025), you may be eligible for reduced board meeting requirements, cash flow statement exemption, and reduced penalties for certain non-compliances. These benefits can materially simplify governance overhead for early-stage companies — without removing annual ROC filings and statutory audit expectations. D BIZ CONSULTANCY can assess eligibility and maintain a simplified compliance calendar for Small Companies.
             </p>
 
             <div className="overflow-x-auto">
@@ -1069,10 +1070,10 @@ const EnhancedPrivateLimitedPage = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Why DBIZ
+              Why D BIZ
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Private Limited Company Registration?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Private Limited Company Registration?</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
               Registering a Private Limited Company is a significant step toward building your business in {cityName}. While the process involves several steps, it can feel overwhelming without the right guidance.
@@ -1083,7 +1084,7 @@ const EnhancedPrivateLimitedPage = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
               </h3>
               <ul className="space-y-3">
                 {[
@@ -1131,10 +1132,10 @@ const EnhancedPrivateLimitedPage = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg leading-relaxed mb-6">
-                  That's where DBIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you. From preparing and submitting accurate documents to ensuring full compliance with the Companies Act, 2013, our team is here to support you every step of the way. We also take care of post-registration essentials, including obtaining your PAN, TAN, GST Registration, and assisting with annual filings to ensure your business stays compliant.
+                  That's where D BIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you. From preparing and submitting accurate documents to ensuring full compliance with the Companies Act, 2013, our team is here to support you every step of the way. We also take care of post-registration essentials, including obtaining your PAN, TAN, GST Registration, and assisting with annual filings to ensure your business stays compliant.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  With our experience and focus on your success, DBIZ CONSULTANCY is the trusted partner for entrepreneurs and businesses across {cityName}. Let us handle the paperwork while you focus on growing your dream.
+                  With our experience and focus on your success, D BIZ CONSULTANCY is the trusted partner for entrepreneurs and businesses across {cityName}. Let us handle the paperwork while you focus on growing your dream.
                 </p>
               </div>
 
@@ -1203,9 +1204,9 @@ const EnhancedPrivateLimitedPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      </main>
       <Footer />
-    </main>
-  </div>;
+    </div>
+  );
 };
 export default EnhancedPrivateLimitedPage;

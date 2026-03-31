@@ -174,8 +174,8 @@ const MarketResearchPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

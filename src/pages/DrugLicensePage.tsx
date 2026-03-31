@@ -233,8 +233,8 @@ const DrugLicensePage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

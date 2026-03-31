@@ -27,7 +27,7 @@ const AdminLogin = () => {
       // Show success toast
       toast({
         title: "Login successful",
-        description: "Welcome to DBIZ Admin Panel",
+        description: "Welcome to D BIZ Admin Panel",
         variant: "default",
       });
       
@@ -50,7 +50,7 @@ const AdminLogin = () => {
         <div className="text-center mb-8">
           <img 
             src="/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png" 
-            alt="DBIZ Consultancy" 
+            alt="D BIZ Consultancy" 
             className="mx-auto h-24 mb-6"
           />
           <h1 className="text-3xl font-bold text-white">Admin Portal</h1>

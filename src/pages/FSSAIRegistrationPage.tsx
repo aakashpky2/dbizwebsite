@@ -53,8 +53,8 @@ const FSSAIRegistrationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "FSSAI Registration | Food License | DBIZ CONSULTANCY"
-    : `FSSAI Registration in ${cityName} | Food License | DBIZ CONSULTANCY`;
+    ? "FSSAI Registration | Food License | D BIZ CONSULTANCY"
+    : `FSSAI Registration in ${cityName} | Food License | D BIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -102,7 +102,7 @@ const FSSAIRegistrationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get your FSSAI Food License quickly and legally with DBIZ CONSULTANCY. Mandatory for all food businesses in India - from manufacturers to retailers, restaurants to e-commerce.
+                  Get your FSSAI Food License quickly and legally with D BIZ CONSULTANCY. Mandatory for all food businesses in India - from manufacturers to retailers, restaurants to e-commerce.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -414,11 +414,11 @@ const FSSAIRegistrationPage = () => {
         {/* Documents, Process, FAQs sections would follow similar pattern... */}
         {/* For brevity, I'll add a simplified CTA section */}
 
-        {/* Why Choose DBIZ Section */}
+        {/* Why Choose D BIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for FSSAI registration across {cityName}
               </p>

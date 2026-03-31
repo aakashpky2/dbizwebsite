@@ -219,34 +219,41 @@ const EnhancedPublicLimitedPage = () => {
             </div>
 
             <div className="md:w-1/3">
-              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
-                <p className="text-gray-700 mb-4">
-                  As per Section 2(71) of the Companies Act, 2013, a Public Limited Company is a company that:
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Does not restrict the transfer of shares, allowing shareholders to freely transfer their shares.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>Requires a minimum of 7 members, with no maximum limit on the number of members.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                    <span>May invite the public to subscribe to its shares, debentures, or other securities for raising capital.</span>
-                  </li>
-                </ul>
+              <div className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img 
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" 
+                  alt="Companies Act Legal Definition" 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
+                  <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                    As per Section 2(71) of the Companies Act, 2013, a Public Limited Company is a company that:
+                  </p>
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Does not restrict the transfer of shares, allowing shareholders to freely transfer their shares.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Requires a minimum of 7 members, with no maximum limit on the number of members.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">May invite the public to subscribe to its shares, debentures, or other securities for raising capital.</span>
+                    </li>
+                  </ul>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center">
-                    <div className="bg-dbiz-teal/10 p-2 rounded-full">
-                      <Phone className="h-5 w-5 text-dbiz-teal" />
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm text-gray-500">Need expert guidance?</p>
-                      <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex items-center">
+                      <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                        <Phone className="h-5 w-5 text-dbiz-teal" />
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-gray-500">Need expert guidance?</p>
+                        <p className="text-dbiz-navy font-medium">Contact Our Team</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -268,7 +275,7 @@ const EnhancedPublicLimitedPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Public Limited Company</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for scalable business success.
+              D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for scalable business success.
             </p>
           </div>
 
@@ -335,7 +342,7 @@ const EnhancedPublicLimitedPage = () => {
                   {location !== undefined && <span className="block text-xl mt-2">in {cityName}</span>}
                 </h2>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
+                  D BIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
                 </p>
 
                 <div className="hidden md:block mt-8 relative group">
@@ -994,9 +1001,9 @@ const EnhancedPublicLimitedPage = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
-    </main>
-  </div>
+    </div>
   );
 };
 

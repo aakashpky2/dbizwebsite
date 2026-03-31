@@ -320,7 +320,7 @@ const SoleProprietorshipPage = () => {
                 className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('why-dbiz') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`}
                 onClick={() => handleSectionClick('why-dbiz')}
               >
-                <Star className="mr-2 h-4 w-4" /> Why DBIZ
+                <Star className="mr-2 h-4 w-4" /> Why D BIZ
               </div>
               <div 
                 className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`}
@@ -498,7 +498,7 @@ const SoleProprietorshipPage = () => {
                   </h2>
                   
                   <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                    DBIZ CONSULTANCY helps entrepreneurs take advantage of simplicity, flexibility, and cost-effectiveness to start and manage their business with ease.
+                    D BIZ CONSULTANCY helps entrepreneurs take advantage of simplicity, flexibility, and cost-effectiveness to start and manage their business with ease.
                   </p>
 
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
@@ -601,7 +601,7 @@ const SoleProprietorshipPage = () => {
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-10">Documents Required for Proprietorship</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Proprietorship registration and setup.
+                D BIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Proprietorship registration and setup.
               </p>
             </div>
 
@@ -896,7 +896,7 @@ const SoleProprietorshipPage = () => {
               <div className="flex-1 text-center md:text-left">
                 <p className="text-[#0a2540] font-bold text-xl mb-3">Important Note</p>
                 <p className="text-gray-700 leading-relaxed font-medium">
-                  A proprietorship does not require complex approvals or incorporation procedures. However, proper registration and documentation are essential for smooth operations, banking, and compliance. DBIZ CONSULTANCY ensures quick setup, proper registration, and complete support from start to business operations.
+                  A proprietorship does not require complex approvals or incorporation procedures. However, proper registration and documentation are essential for smooth operations, banking, and compliance. D BIZ CONSULTANCY ensures quick setup, proper registration, and complete support from start to business operations.
                 </p>
               </div>
             </div>
@@ -1076,7 +1076,7 @@ const SoleProprietorshipPage = () => {
           </div>
         </section>
 
-        {/* Why DBIZ Section */}
+        {/* Why D BIZ Section */}
         <section id="why-dbiz" className="py-24 bg-gray-50/50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -1084,25 +1084,25 @@ const SoleProprietorshipPage = () => {
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Why Choose Us
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Proprietorship Registration?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Proprietorship Registration?</h2>
               <div className="text-lg text-gray-600 leading-relaxed space-y-4">
                 <p>
                   Starting a Sole Proprietorship is one of the simplest ways to begin a business. However, selecting the right registrations, preparing proper documentation, and ensuring compliance with tax and regulatory requirements are essential for smooth operations.
                 </p>
                 <p>
-                  That’s where DBIZ CONSULTANCY plays a key role — by helping you set up your business quickly, correctly, and with complete clarity.
+                  That’s where D BIZ CONSULTANCY plays a key role — by helping you set up your business quickly, correctly, and with complete clarity.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-              {/* Box 1: What DBIZ Handles */}
+              {/* Box 1: What D BIZ Handles */}
               <div className="bg-dbiz-teal/5 rounded-xl p-6 border border-dbiz-teal/20 shadow-sm transition-all duration-300">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="bg-dbiz-teal/10 p-2.5 rounded-xl">
                     <CheckCircle2 className="h-7 w-7 text-dbiz-teal" />
                   </div>
-                  <h3 className="text-xl font-bold text-dbiz-navy">What DBIZ Handles</h3>
+                  <h3 className="text-xl font-bold text-dbiz-navy">What D BIZ Handles</h3>
                 </div>
                 
                 <div className="space-y-4">
@@ -1162,10 +1162,10 @@ const SoleProprietorshipPage = () => {
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-start">
                 <div>
                   <p className="text-lg leading-relaxed mb-6 text-white/90">
-                    That's where DBIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you.
+                    That's where D BIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you.
                   </p>
                   <p className="text-lg leading-relaxed text-white/90">
-                    DBIZ CONSULTANCY simplifies the entire process by handling documentation, guiding you on the right registrations, and ensuring accuracy at every stage. Our approach helps you avoid delays, rejections, and compliance issues. From initial setup to ongoing support, we ensure your business starts smoothly and operates without interruptions.
+                    D BIZ CONSULTANCY simplifies the entire process by handling documentation, guiding you on the right registrations, and ensuring accuracy at every stage. Our approach helps you avoid delays, rejections, and compliance issues. From initial setup to ongoing support, we ensure your business starts smoothly and operates without interruptions.
                   </p>
                 </div>
 
@@ -1224,10 +1224,8 @@ const SoleProprietorshipPage = () => {
           </div>
         </section>
 
-        <div className="relative z-40 bg-white">
-          <Footer />
-        </div>
       </main>
+      <Footer />
     </div>
   );
 };

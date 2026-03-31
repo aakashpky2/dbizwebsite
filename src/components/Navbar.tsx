@@ -69,7 +69,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2 group relative z-50">
           <img
             src={LOGO_SRC}
-            alt="DBIZ CONSULTANCY"
+            alt="D BIZ CONSULTANCY"
             className={cn(
               "transition-all duration-300 origin-left",
               "h-[70px] lg:h-[90px] scale-[1.6] translate-x-4"
@@ -113,7 +113,7 @@ const Navbar = () => {
               <div className="flex flex-col h-full bg-dbiz-navy">
                 <SheetHeader className="p-6 border-b border-white/10 bg-dbiz-navy">
                   <SheetTitle className="text-left">
-                    <img src={LOGO_SRC} alt="DBIZ" className="h-16 brightness-0 invert" />
+                    <img src={LOGO_SRC} alt="D BIZ" className="h-16 brightness-0 invert" />
                   </SheetTitle>
                 </SheetHeader>
 
@@ -135,7 +135,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="p-8 border-t border-white/10 text-center">
-                  <p className="text-white/40 text-xs">© 2026 DBIZ CONSULTANCY</p>
+                  <p className="text-white/40 text-xs">© 2026 D BIZ CONSULTANCY</p>
                 </div>
               </div>
             </SheetContent>

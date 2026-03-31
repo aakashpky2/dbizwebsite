@@ -233,8 +233,8 @@ const TradeLicensePage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

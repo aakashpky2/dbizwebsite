@@ -40,7 +40,7 @@ const PartnershipPage = () => {
 
   // If location is provided, we're on a city-specific page
   const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-  const seoTitle = location === undefined ? "Partnership Firm Registration in India | DBIZ CONSULTANCY" : `Partnership Firm Registration in ${cityName} | DBIZ CONSULTANCY`;
+  const seoTitle = location === undefined ? "Partnership Firm Registration in India | D BIZ CONSULTANCY" : `Partnership Firm Registration in ${cityName} | D BIZ CONSULTANCY`;
 
   if (location && !isValidLocation) {
     return <NotFound />;
@@ -89,7 +89,7 @@ const PartnershipPage = () => {
               </h1>
 
               <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                DBIZ CONSULTANCY provides end-to-end Partnership Firm registration services. ensuring a legally sound structure, properly drafted agreements, and smooth business setup with ongoing compliance guidance.
+                D BIZ CONSULTANCY provides end-to-end Partnership Firm registration services. ensuring a legally sound structure, properly drafted agreements, and smooth business setup with ongoing compliance guidance.
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -302,7 +302,7 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Partnership Firm</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY helps entrepreneurs understand and effectively structure Partnership Firms for smooth operations, flexibility, and business growth.
+              D BIZ CONSULTANCY helps entrepreneurs understand and effectively structure Partnership Firms for smooth operations, flexibility, and business growth.
             </p>
           </div>
 
@@ -382,7 +382,7 @@ const PartnershipPage = () => {
                 </h2>
 
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses leverage the practical advantages of Partnership Firms for efficient operations, cost control, and flexible business management.
+                  D BIZ CONSULTANCY helps businesses leverage the practical advantages of Partnership Firms for efficient operations, cost control, and flexible business management.
                 </p>
 
                 <div className="hidden md:block">
@@ -489,7 +489,7 @@ const PartnershipPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              DBIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Partnership Firm registration.
+              D BIZ CONSULTANCY assists clients with collecting, verifying, and preparing all required documentation for smooth Partnership Firm registration.
             </p>
           </div>
 
@@ -917,28 +917,28 @@ const PartnershipPage = () => {
         </div>
       </section>
 
-      {/* Why DBIZ Section — Clean Grid Style */}
+      {/* Why D BIZ Section — Clean Grid Style */}
       <section id="why-dbiz" className="py-20 bg-gray-50/30 scroll-mt-32">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
               <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Why Choose DBIZ
+              Why Choose D BIZ
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Partnership Firm Registration?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Partnership Firm Registration?</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Registering a Partnership Firm is a crucial step toward starting a business with the right structure and clarity between partners. While the process is simpler than other business forms, it still requires proper drafting, documentation, and legal structuring. DBIZ additions value by ensuring your partnership is legally strong and smoothly executed from the beginning.
+              Registering a Partnership Firm is a crucial step toward starting a business with the right structure and clarity between partners. While the process is simpler than other business forms, it still requires proper drafting, documentation, and legal structuring. D BIZ additions value by ensuring your partnership is legally strong and smoothly executed from the beginning.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* What DBIZ Handles */}
+            {/* What D BIZ Handles */}
             <div className="bg-sky-50/50 border border-sky-100 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-white p-3 rounded-full shadow-sm text-dbiz-teal">
                   <CheckCircle2 className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold text-dbiz-navy">What DBIZ Handles</h3>
+                <h3 className="text-xl font-bold text-dbiz-navy">What D BIZ Handles</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -1024,10 +1024,9 @@ const PartnershipPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      </main>
       <Footer />
-    </main>
-  </div>;
+    </div>;
 };
 
 export default PartnershipPage;

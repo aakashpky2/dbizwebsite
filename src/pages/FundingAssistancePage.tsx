@@ -174,8 +174,8 @@ const FundingAssistancePage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

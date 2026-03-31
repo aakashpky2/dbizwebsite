@@ -53,8 +53,8 @@ const ISOCertificationPage = () => {
     : "India";
   
   const seoTitle = location === undefined
-    ? "ISO Certification | ISO 9001, 14001, 45001 | DBIZ CONSULTANCY"
-    : `ISO Certification in ${cityName} | ISO 9001, 14001, 45001 | DBIZ CONSULTANCY`;
+    ? "ISO Certification | ISO 9001, 14001, 45001 | D BIZ CONSULTANCY"
+    : `ISO Certification in ${cityName} | ISO 9001, 14001, 45001 | D BIZ CONSULTANCY`;
 
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
@@ -102,7 +102,7 @@ const ISOCertificationPage = () => {
                 </h1>
                 
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get internationally recognized ISO certifications including ISO 9001, ISO 14001, ISO 45001, and more with DBIZ CONSULTANCY. Enhance your business credibility and access global markets.
+                  Get internationally recognized ISO certifications including ISO 9001, ISO 14001, ISO 45001, and more with D BIZ CONSULTANCY. Enhance your business credibility and access global markets.
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
@@ -325,7 +325,7 @@ const ISOCertificationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of ISO Certification</h2>
               
               <p className="text-lg text-gray-600 leading-relaxed">
-                DBIZ CONSULTANCY helps businesses across {cityName} achieve ISO certification and enhance their competitive advantage.
+                D BIZ CONSULTANCY helps businesses across {cityName} achieve ISO certification and enhance their competitive advantage.
               </p>
             </div>
 
@@ -678,7 +678,7 @@ const ISOCertificationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-dbiz-navy mb-2">Complete Documentation Support</h3>
                   <p className="text-gray-600 mb-4">
-                    DBIZ CONSULTANCY provides end-to-end support in preparing all documentation, creating quality manuals, and ensuring compliance with ISO standards.
+                    D BIZ CONSULTANCY provides end-to-end support in preparing all documentation, creating quality manuals, and ensuring compliance with ISO standards.
                   </p>
                   <Popover>
                     <PopoverTrigger asChild>
@@ -714,7 +714,7 @@ const ISOCertificationPage = () => {
                   step: "1",
                   title: "Initial Consultation & Gap Analysis",
                   description: "We assess your current processes, identify gaps, and develop a customized implementation plan for ISO certification.",
-                  advantage: "DBIZ CONSULTANCY provides expert gap analysis to identify areas needing improvement and creates a realistic timeline."
+                  advantage: "D BIZ CONSULTANCY provides expert gap analysis to identify areas needing improvement and creates a realistic timeline."
                 },
                 {
                   step: "2",
@@ -744,7 +744,7 @@ const ISOCertificationPage = () => {
                   step: "6",
                   title: "Certification Audit",
                   description: "The certification body conducts a two-stage audit to verify compliance with ISO standards and award certification.",
-                  advantage: "DBIZ CONSULTANCY provides on-site support during the audit and helps address any auditor queries."
+                  advantage: "D BIZ CONSULTANCY provides on-site support during the audit and helps address any auditor queries."
                 },
                 {
                   step: "7",
@@ -776,7 +776,7 @@ const ISOCertificationPage = () => {
                           <div className="flex items-start gap-2">
                             <CheckCircle2 className="h-5 w-5 text-dbiz-teal flex-shrink-0 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-dbiz-navy mb-1">DBIZ Advantage</p>
+                              <p className="text-sm font-medium text-dbiz-navy mb-1">D BIZ Advantage</p>
                               <p className="text-sm text-gray-600">{item.advantage}</p>
                             </div>
                           </div>
@@ -817,7 +817,7 @@ const ISOCertificationPage = () => {
                   How much does ISO certification cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  Costs vary based on organization size, number of employees, certification scope, and chosen certification body. Generally includes consultation fees, documentation costs, training expenses, and certification body audit fees. DBIZ CONSULTANCY provides transparent pricing and helps optimize costs.
+                  Costs vary based on organization size, number of employees, certification scope, and chosen certification body. Generally includes consultation fees, documentation costs, training expenses, and certification body audit fees. D BIZ CONSULTANCY provides transparent pricing and helps optimize costs.
                 </AccordionContent>
               </AccordionItem>
 
@@ -853,18 +853,18 @@ const ISOCertificationPage = () => {
                   What happens if we don't pass the certification audit?
                 </AccordionTrigger>
                 <AccordionContent className="text-gray-600 leading-relaxed">
-                  If non-conformities are identified, you'll be given time to address them before certification is awarded. Minor issues can typically be resolved quickly through corrective actions. DBIZ CONSULTANCY supports you throughout this process to ensure successful certification.
+                  If non-conformities are identified, you'll be given time to address them before certification is awarded. Minor issues can typically be resolved quickly through corrective actions. D BIZ CONSULTANCY supports you throughout this process to ensure successful certification.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           </div>
         </section>
 
-        {/* Why Choose DBIZ Section */}
+        {/* Why Choose D BIZ Section */}
         <section className="py-16 bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose DBIZ CONSULTANCY?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose D BIZ CONSULTANCY?</h2>
               <p className="text-lg opacity-90">
                 Your trusted partner for ISO certification across {cityName}
               </p>

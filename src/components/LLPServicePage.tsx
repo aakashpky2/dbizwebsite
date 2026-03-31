@@ -35,8 +35,8 @@ const LLPServicePage = ({
   }, []);
 
   const seoTitle = location === "India" 
-    ? `Limited Liability Partnership Registration | Best in India | DBIZ CONSULTANCY` 
-    : `Limited Liability Partnership Registration in ${location} | Best in India | DBIZ CONSULTANCY`;
+    ? `Limited Liability Partnership Registration | Best in India | D BIZ CONSULTANCY` 
+    : `Limited Liability Partnership Registration in ${location} | Best in India | D BIZ CONSULTANCY`;
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -61,7 +61,7 @@ const LLPServicePage = ({
               )}
               
               <Button className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white">
-                Contact DBIZ CONSULTANCY Today
+                Contact D BIZ CONSULTANCY Today
               </Button>
             </div>
           </div>
@@ -86,7 +86,7 @@ const LLPServicePage = ({
                   for availability using the RUN-LLP service on the Ministry of Corporate Affairs (MCA) portal.
                 </p>
                 <p>
-                  DBIZ CONSULTANCY provides complete LLP registration services {location !== "India" ? `in ${location}` : "throughout India"}, 
+                  D BIZ CONSULTANCY provides complete LLP registration services {location !== "India" ? `in ${location}` : "throughout India"}, 
                   ensuring that your business gets established with proper compliance and documentation. We assist with every step, from name 
                   reservation to obtaining the Certificate of Incorporation.
                 </p>
@@ -96,7 +96,7 @@ const LLPServicePage = ({
                   MCA issues a Certificate of Incorporation, officially recognizing the LLP as a legal entity.
                 </p>
                 <p>
-                  Our expert team at DBIZ CONSULTANCY will help you navigate the entire process, ensuring that all statutory requirements are met 
+                  Our expert team at D BIZ CONSULTANCY will help you navigate the entire process, ensuring that all statutory requirements are met 
                   and your LLP is registered properly {location !== "India" ? `in ${location}` : "across India"}.
                 </p>
               </div>
@@ -230,7 +230,7 @@ const LLPServicePage = ({
               
               {/* Process Tab */}
               <TabsContent value="process" className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-2xl font-bold text-dbiz-navy mb-6">DBIZ CONSULTANCY's LLP Registration Process</h3>
+                <h3 className="text-2xl font-bold text-dbiz-navy mb-6">D BIZ CONSULTANCY's LLP Registration Process</h3>
                 
                 <div className="mt-8 space-y-8">
                   {content.steps?.map((step, index) => (
@@ -298,7 +298,7 @@ const LLPServicePage = ({
                     <h4 className="text-xl font-semibold mb-2">How long does it take to register an LLP in India?</h4>
                     <p className="text-gray-700">
                       The timeframe to register your LLP typically ranges from 15 to 20 working days, subject to the submission of complete documents and 
-                      approvals from regulatory authorities. DBIZ CONSULTANCY strives to expedite the process as much as possible.
+                      approvals from regulatory authorities. D BIZ CONSULTANCY strives to expedite the process as much as possible.
                     </p>
                   </div>
                   
@@ -322,7 +322,7 @@ const LLPServicePage = ({
             <div className="container-custom">
               <h2 className="section-title text-center">Our LLP Registration Services Across India</h2>
               <p className="section-subtitle text-center">
-                DBIZ CONSULTANCY provides the best Limited Liability Partnership registration services in the following cities and towns:
+                D BIZ CONSULTANCY provides the best Limited Liability Partnership registration services in the following cities and towns:
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-10">
@@ -345,7 +345,7 @@ const LLPServicePage = ({
           <div className="container-custom">
             <h2 className="section-title text-center">Related Services</h2>
             <p className="section-subtitle text-center">
-              Explore other services offered by DBIZ CONSULTANCY in {location}
+              Explore other services offered by D BIZ CONSULTANCY in {location}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
@@ -375,7 +375,7 @@ const LLPServicePage = ({
               Ready to Register Your Limited Liability Partnership?
             </h2>
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              DBIZ CONSULTANCY is the leading service provider for LLP registration in {location}. 
+              D BIZ CONSULTANCY is the leading service provider for LLP registration in {location}. 
               Contact us today to get started!
             </p>
             <Button className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white text-lg px-8 py-6">

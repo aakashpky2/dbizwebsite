@@ -65,7 +65,7 @@ const LlpRegistrationPage = () => {
 
     // If location is provided, we're on a city-specific page
     const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
-    const seoTitle = location === undefined ? "LLP Registration in India | DBIZ CONSULTANCY" : `LLP Registration in ${cityName} | DBIZ CONSULTANCY`;
+    const seoTitle = location === undefined ? "LLP Registration in India | D BIZ CONSULTANCY" : `LLP Registration in ${cityName} | D BIZ CONSULTANCY`;
 
     if (location && !isValidLocation) {
         return <NotFound />;
@@ -324,7 +324,7 @@ const LlpRegistrationPage = () => {
                             <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features and Benefits</h2>
 
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                DBIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features of an LLP.
+                                D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features of an LLP.
                             </p>
                         </div>
 
@@ -408,7 +408,7 @@ const LlpRegistrationPage = () => {
                                     </h2>
 
                                     <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                                        DBIZ CONSULTANCY helps businesses understand why an LLP may be the ideal structure over traditional entities.
+                                        D BIZ CONSULTANCY helps businesses understand why an LLP may be the ideal structure over traditional entities.
                                     </p>
                                 </div>
                             </div>
@@ -730,10 +730,10 @@ const LlpRegistrationPage = () => {
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                                Why DBIZ
+                                Why D BIZ
                             </div>
 
-                            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for LLP Registration?</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for LLP Registration?</h2>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -813,9 +813,8 @@ const LlpRegistrationPage = () => {
                     </div>
                 </section>
 
-                {/* Footer */}
-                <Footer />
             </main>
+            <Footer />
         </div>
     );
 };

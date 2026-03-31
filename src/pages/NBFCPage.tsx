@@ -288,8 +288,8 @@ const NBFCPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

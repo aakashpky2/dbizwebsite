@@ -11,8 +11,8 @@ const PrivacyPolicyPage = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <SEO 
-                title="Privacy Policy | DBIZ CONSULTANCY"
-                description="Our privacy policy details how we handle your personal data and protect your information at DBIZ CONSULTANCY."
+                title="Privacy Policy | D BIZ CONSULTANCY"
+                description="Our privacy policy details how we handle your personal data and protect your information at D BIZ CONSULTANCY."
                 url="/privacy-policy"
                 publishDate={publishDate}
             />
@@ -29,7 +29,7 @@ const PrivacyPolicyPage = () => {
                             
                             <section>
                                 <h2 className="text-2xl font-semibold text-dbiz-navy mb-4">1. Introduction</h2>
-                                <p>Welcome to DBIZ CONSULTANCY. We are committed to protecting your personal data and your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.</p>
+                                <p>Welcome to D BIZ CONSULTANCY. We are committed to protecting your personal data and your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.</p>
                             </section>
                             
                             <section>
@@ -68,7 +68,7 @@ const PrivacyPolicyPage = () => {
                             <section>
                                 <h2 className="text-2xl font-semibold text-dbiz-navy mb-4">6. Contact Us</h2>
                                 <p>If you have any questions about this Privacy Policy, please contact us at:</p>
-                                <p><strong>DBIZ CONSULTANCY</strong><br />
+                                <p><strong>D BIZ CONSULTANCY</strong><br />
                                 Thiruvananthapuram, Kerala, India<br />
                                 Email: info@dbizsolutions.in<br />
                                 Phone: +91 8075273408</p>

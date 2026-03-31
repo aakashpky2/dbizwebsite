@@ -174,8 +174,8 @@ const IncubationSupportPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

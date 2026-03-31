@@ -53,6 +53,17 @@ const GSTFilingsPage = lazy(() => import("./pages/GSTFilingsPage"));
 const IncomeTaxFilingPage = lazy(() => import("./pages/IncomeTaxFilingPage"));
 const MCACompliancePage = lazy(() => import("./pages/MCACompliancePage"));
 const PublicLimitedPage = lazy(() => import("./pages/PublicLimitedPage"));
+const NidhiCompanyCompliancePage = lazy(() => import("./pages/NidhiCompanyCompliancePage"));
+const AnnualCompliancePage = lazy(() => import("./pages/AnnualCompliancePage"));
+const BusinessPlanPage = lazy(() => import("./pages/BusinessPlanPage"));
+const FundingAssistancePage = lazy(() => import("./pages/FundingAssistancePage"));
+const GrowthStrategyPage = lazy(() => import("./pages/GrowthStrategyPage"));
+const IncubationSupportPage = lazy(() => import("./pages/IncubationSupportPage"));
+const LegalAdvisoryPage = lazy(() => import("./pages/LegalAdvisoryPage"));
+const MarketResearchPage = lazy(() => import("./pages/MarketResearchPage"));
+const PitchDeckPage = lazy(() => import("./pages/PitchDeckPage"));
+const StartupIndiaRecognitionPage = lazy(() => import("./pages/StartupIndiaRecognitionPage"));
+const NgoRegistrationPage = lazy(() => import("./pages/NgoRegistrationPage"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
 const PageLoader = () => (
@@ -81,7 +92,7 @@ const App = () => {
             <SEO />
             <Toaster />
             <Sonner />
-            <BrowserRouter>
+            <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
               <ScrollToTop />
               <Suspense fallback={<PageLoader />}>
 
@@ -98,58 +109,79 @@ const App = () => {
                   <Route path="/limited-liability-partnership/:location" element={<LLPRegistrationPage />} />
                   <Route path="/one-person-company" element={<OnePersonCompanyPage />} />
                   <Route path="/one-person-company/:location" element={<OnePersonCompanyPage />} />
-                  <Route path="/nidhi-company" element={<ComingSoon />} />
-                  <Route path="/nidhi-company/:location" element={<ComingSoon />} />
-                  <Route path="/producer-company" element={<ComingSoon />} />
-                  <Route path="/producer-company/:location" element={<ComingSoon />} />
-                  <Route path="/nbfc" element={<ComingSoon />} />
-                  <Route path="/nbfc/:location" element={<ComingSoon />} />
+                  <Route path="/nidhi-company" element={<NidhiCompanyPage />} />
+                  <Route path="/nidhi-company/:location" element={<NidhiCompanyPage />} />
+                  <Route path="/producer-company" element={<ProducerCompanyPage />} />
+                  <Route path="/producer-company/:location" element={<ProducerCompanyPage />} />
+                  <Route path="/nbfc" element={<NBFCPage />} />
+                  <Route path="/nbfc/:location" element={<NBFCPage />} />
                   <Route path="/partnership" element={<PartnershipPage />} />
                   <Route path="/partnership/:location" element={<PartnershipPage />} />
                   <Route path="/sole-proprietorship" element={<SoleProprietorshipPage />} />
                   <Route path="/sole-proprietorship/:location" element={<SoleProprietorshipPage />} />
-                  <Route path="/12a-80g-registration" element={<ComingSoon />} />
-                  <Route path="/12a-80g-registration/:location" element={<ComingSoon />} />
-                  <Route path="/digital-signature" element={<ComingSoon />} />
-                  <Route path="/digital-signature/:location" element={<ComingSoon />} />
-                  <Route path="/tools" element={<ComingSoon />} />
-                  <Route path="/gst-registration" element={<ComingSoon />} />
-                  <Route path="/gst-registration/:location" element={<ComingSoon />} />
-                  <Route path="/startup-registration" element={<ComingSoon />} />
-                  <Route path="/startup-registration/:location" element={<ComingSoon />} />
-                  <Route path="/udyam-msme-registration" element={<ComingSoon />} />
-                  <Route path="/udyam-msme-registration/:location" element={<ComingSoon />} />
-                  <Route path="/iso-certification" element={<ComingSoon />} />
-                  <Route path="/iso-certification/:location" element={<ComingSoon />} />
-                  <Route path="/fssai-registration" element={<ComingSoon />} />
-                  <Route path="/fssai-registration/:location" element={<ComingSoon />} />
-                  <Route path="/iec-registration" element={<ComingSoon />} />
-                  <Route path="/iec-registration/:location" element={<ComingSoon />} />
-                  <Route path="/trade-license" element={<ComingSoon />} />
-                  <Route path="/trade-license/:location" element={<ComingSoon />} />
-                  <Route path="/drug-license" element={<ComingSoon />} />
-                  <Route path="/drug-license/:location" element={<ComingSoon />} />
-                  <Route path="/shop-establishment" element={<ComingSoon />} />
-                  <Route path="/shop-establishment/:location" element={<ComingSoon />} />
-                  <Route path="/trademark-registration" element={<ComingSoon />} />
-                  <Route path="/trademark-registration/:location" element={<ComingSoon />} />
-                  <Route path="/patent-registration" element={<ComingSoon />} />
-                  <Route path="/patent-registration/:location" element={<ComingSoon />} />
-                  <Route path="/copyright-registration" element={<ComingSoon />} />
-                  <Route path="/copyright-registration/:location" element={<ComingSoon />} />
-                  <Route path="/tds-filings" element={<ComingSoon />} />
-                  <Route path="/tds-filings/:location" element={<ComingSoon />} />
-                  <Route path="/gst-filings" element={<ComingSoon />} />
-                  <Route path="/gst-filings/:location" element={<ComingSoon />} />
-                  <Route path="/income-tax-filing" element={<ComingSoon />} />
-                  <Route path="/income-tax-filing/:location" element={<ComingSoon />} />
-                  <Route path="/mca-compliance" element={<ComingSoon />} />
-                  <Route path="/mca-compliance/:location" element={<ComingSoon />} />
+                  <Route path="/12a-80g-registration" element={<TwelveAEightyGPage />} />
+                  <Route path="/12a-80g-registration/:location" element={<TwelveAEightyGPage />} />
+                  <Route path="/digital-signature" element={<DigitalSignaturePage />} />
+                  <Route path="/digital-signature/:location" element={<DigitalSignaturePage />} />
+                  <Route path="/gst-registration" element={<GSTRegistrationPage />} />
+                  <Route path="/gst-registration/:location" element={<GSTRegistrationPage />} />
+                  <Route path="/startup-registration" element={<StartupRegistrationPage />} />
+                  <Route path="/startup-registration/:location" element={<StartupRegistrationPage />} />
+                  <Route path="/udyam-msme-registration" element={<MSMERegistrationPage />} />
+                  <Route path="/udyam-msme-registration/:location" element={<MSMERegistrationPage />} />
+                  <Route path="/iso-certification" element={<ISOCertificationPage />} />
+                  <Route path="/iso-certification/:location" element={<ISOCertificationPage />} />
+                  <Route path="/fssai-registration" element={<FSSAIRegistrationPage />} />
+                  <Route path="/fssai-registration/:location" element={<FSSAIRegistrationPage />} />
+                  <Route path="/iec-registration" element={<IECRegistrationPage />} />
+                  <Route path="/iec-registration/:location" element={<IECRegistrationPage />} />
+                  <Route path="/trade-license" element={<TradeLicensePage />} />
+                  <Route path="/trade-license/:location" element={<TradeLicensePage />} />
+                  <Route path="/drug-license" element={<DrugLicensePage />} />
+                  <Route path="/drug-license/:location" element={<DrugLicensePage />} />
+                  <Route path="/shop-establishment" element={<ShopEstablishmentPage />} />
+                  <Route path="/shop-establishment/:location" element={<ShopEstablishmentPage />} />
+                  <Route path="/trademark-registration" element={<TrademarkRegistrationPage />} />
+                  <Route path="/trademark-registration/:location" element={<TrademarkRegistrationPage />} />
+                  <Route path="/patent-registration" element={<PatentRegistrationPage />} />
+                  <Route path="/patent-registration/:location" element={<PatentRegistrationPage />} />
+                  <Route path="/copyright-registration" element={<CopyrightRegistrationPage />} />
+                  <Route path="/copyright-registration/:location" element={<CopyrightRegistrationPage />} />
+                  <Route path="/tds-filings" element={<TDSFilingsPage />} />
+                  <Route path="/tds-filings/:location" element={<TDSFilingsPage />} />
+                  <Route path="/gst-filings" element={<GSTFilingsPage />} />
+                  <Route path="/gst-filings/:location" element={<GSTFilingsPage />} />
+                  <Route path="/income-tax-filing" element={<IncomeTaxFilingPage />} />
+                  <Route path="/income-tax-filing/:location" element={<IncomeTaxFilingPage />} />
+                  <Route path="/mca-compliance" element={<MCACompliancePage />} />
+                  <Route path="/mca-compliance/:location" element={<MCACompliancePage />} />
                   <Route path="/admin/login" element={<AdminLogin />} />
                   <Route path="/admin/dashboard" element={<AdminDashboard />} />
                   <Route path="/admin/edit/:service" element={<ServiceEditor />} />
                   <Route path="/public-limited" element={<PublicLimitedPage />} />
                   <Route path="/public-limited/:location" element={<PublicLimitedPage />} />
+                  <Route path="/nidhi-company-compliance" element={<NidhiCompanyCompliancePage />} />
+                  <Route path="/nidhi-company-compliance/:location" element={<NidhiCompanyCompliancePage />} />
+                  <Route path="/annual-compliance" element={<AnnualCompliancePage />} />
+                  <Route path="/annual-compliance/:location" element={<AnnualCompliancePage />} />
+                  <Route path="/business-plan" element={<BusinessPlanPage />} />
+                  <Route path="/business-plan/:location" element={<BusinessPlanPage />} />
+                  <Route path="/funding-assistance" element={<FundingAssistancePage />} />
+                  <Route path="/funding-assistance/:location" element={<FundingAssistancePage />} />
+                  <Route path="/growth-strategy" element={<GrowthStrategyPage />} />
+                  <Route path="/growth-strategy/:location" element={<GrowthStrategyPage />} />
+                  <Route path="/incubation-support" element={<IncubationSupportPage />} />
+                  <Route path="/incubation-support/:location" element={<IncubationSupportPage />} />
+                  <Route path="/legal-advisory" element={<LegalAdvisoryPage />} />
+                  <Route path="/legal-advisory/:location" element={<LegalAdvisoryPage />} />
+                  <Route path="/market-research" element={<MarketResearchPage />} />
+                  <Route path="/market-research/:location" element={<MarketResearchPage />} />
+                  <Route path="/pitch-deck" element={<PitchDeckPage />} />
+                  <Route path="/pitch-deck/:location" element={<PitchDeckPage />} />
+                  <Route path="/startup-india-recognition" element={<StartupIndiaRecognitionPage />} />
+                  <Route path="/startup-india-recognition/:location" element={<StartupIndiaRecognitionPage />} />
+                  <Route path="/ngo-trust-registration" element={<NgoRegistrationPage />} />
+                  <Route path="/ngo-trust-registration/:location" element={<NgoRegistrationPage />} />
                   <Route path="/admin/llp-editor" element={<LLPContentEditor />} />
                   <Route path="/:service" element={<ComingSoon />} />
                   <Route path="/:service/:location" element={<ComingSoon />} />

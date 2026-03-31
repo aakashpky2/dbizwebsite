@@ -15,8 +15,8 @@ const AboutUsPage = () => {
         <div className="min-h-screen flex flex-col">
 
             <SEO 
-                title="About Us | Top Business Consultants in Trivandrum & Kochi | DBIZ CONSULTANCY"
-                description="Learn about DBIZ CONSULTANCY PVT. LTD., a premier business consultancy firm in Thiruvananthapuram and Kochi, Kerala. We provide expert GST, company registration, and startup advisory services."
+                title="About Us | Top Business Consultants in Trivandrum & Kochi | D BIZ CONSULTANCY"
+                description="Learn about D BIZ CONSULTANCY PVT. LTD., a premier business consultancy firm in Thiruvananthapuram and Kochi, Kerala. We provide expert GST, company registration, and startup advisory services."
                 url="/about"
             />
             <Navbar />

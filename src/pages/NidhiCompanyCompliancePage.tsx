@@ -174,8 +174,8 @@ const NidhiCompanyCompliancePage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

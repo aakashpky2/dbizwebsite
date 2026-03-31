@@ -227,8 +227,8 @@ const GSTFilingsPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

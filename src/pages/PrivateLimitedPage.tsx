@@ -89,8 +89,8 @@ const PrivateLimitedPage = () => {
     : "";
 
   const seoTitle = location === undefined
-    ? "Private Limited Company Registration | DBIZ CONSULTANCY"
-    : `Private Limited Company Registration${cityName ? ` in ${cityName}` : ""} | DBIZ CONSULTANCY`;
+    ? "Private Limited Company Registration | D BIZ CONSULTANCY"
+    : `Private Limited Company Registration${cityName ? ` in ${cityName}` : ""} | D BIZ CONSULTANCY`;
 
   // Function to scroll to features section
   const scrollToFeatures = () => {
@@ -176,7 +176,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Key Features of a Private Limited Company</h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features.
+              D BIZ CONSULTANCY helps entrepreneurs {location ? `across ${cityName}` : ""} understand and leverage these key features.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -250,7 +250,7 @@ const PrivateLimitedPage = () => {
               Benefits of a Private Limited Company {location !== undefined ? `in ${cityName}` : ""}
             </h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
+              D BIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -337,7 +337,7 @@ const PrivateLimitedPage = () => {
           <div className="container-custom">
             <h2 className="section-title text-center">Documents Required</h2>
             <p className="section-subtitle text-center">
-              DBIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
+              D BIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -424,7 +424,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We handle the entire DSC application process, including document submission and verification.</p>
                       </div>
                     </div>
@@ -469,7 +469,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">Our team ensures accurate form filing with all required details to avoid delays in processing.</p>
                       </div>
                     </div>
@@ -521,7 +521,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">Our legal experts customize these documents to suit your specific business needs and future growth plans.</p>
                       </div>
                     </div>
@@ -552,7 +552,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We follow up with the ROC to ensure timely issuance and help you understand all details of your incorporation certificate.</p>
                       </div>
                     </div>
@@ -597,7 +597,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We assist with preparing all required bank documents and guide you through the account opening process with our banking partners.</p>
                       </div>
                     </div>
@@ -642,7 +642,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We guide you on the exact capital amount to be deposited and ensure proper documentation for compliance.</p>
                       </div>
                     </div>
@@ -693,7 +693,7 @@ const PrivateLimitedPage = () => {
                         <CheckCircle2 className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">DBIZ Advantage</h4>
+                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
                         <p className="text-sm text-gray-600">We ensure timely filing of INC-20A with all required documents and professional certification, so your company can legally commence business without delays.</p>
                       </div>
                     </div>
@@ -704,9 +704,45 @@ const PrivateLimitedPage = () => {
           </div>
         </section>
 
-        {/* Footer section */}
-        <Footer />
+        {/* Post-Incorporation Compliance Timeline Section */}
+        <section className="py-20 bg-white border-t border-gray-100">
+          <div className="container-custom">
+            <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Compliance
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Mandatory MCA Compliance Timeline</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Incorporating a Private Limited Company is just the beginning; maintaining compliance with the Ministry of Corporate Affairs (MCA) and other applicable laws is essential to retain legal status and avoid penalties. Regular filings, meetings, and audits ensure smooth functioning and transparency.
+              </p>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-2xl font-bold text-[#1a365d] mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
+              <div className="grid md:grid-cols-4 gap-6">
+                {[
+                  { time: "30", unit: "Days", text: "First Board Meeting + First Auditor Appointment" },
+                  { time: "180", unit: "Days", text: "INC-20A (Commencement of Business)" },
+                  { time: "FY End", unit: "Annual Cycle", text: "Audit → AGM → AOC-4 (30d) → MGT-7 (60d)" },
+                  { time: "3 Yr", unit: "DIR-3 KYC-Web", text: "Every 3rd FY cycle (effective March 2026)" }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center">
+                    <div className="w-[72px] h-[72px] rounded-full bg-[#f0f9f9] flex flex-col items-center justify-center mb-4">
+                      <span className="text-[#0891b2] font-bold text-lg leading-tight">{item.time}</span>
+                    </div>
+                    <p className="font-semibold text-[#1a365d] mb-2 text-sm">{item.unit}</p>
+                    <p className="text-[13px] text-gray-500 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-sm text-gray-400 mt-10 italic">Last updated: Feb 2026</p>
+            </div>
+          </div>
+        </section>
+
       </main>
+      <Footer />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const NotFound = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <SEO 
-        title="Page Not Found | DBIZ CONSULTANCY"
+        title="Page Not Found | D BIZ CONSULTANCY"
         noIndex={true}
       />
       <Navbar />
@@ -28,7 +28,7 @@ const NotFound = () => {
         <div className="text-center px-4">
           <img
             src="/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png"
-            alt="DBIZ Consultancy"
+            alt="D BIZ Consultancy"
             className="mx-auto h-20 mb-8"
           />
           <h1 className="text-5xl font-bold mb-6 text-dbiz-navy">COMING SOON</h1>

@@ -66,8 +66,8 @@ const LLPRegistrationPage = () => {
     : `Limited Liability Partnership Registration in ${cityName} | Best in India | D BIZ CONSULTANCY`;
 
   const seoDescription = location === undefined
-    ? "Register your Limited Liability Partnership (LLP) in India with DBIZ CONSULTANCY. Expert LLP registration, DSC, DIN, and compliance support."
-    : `Register LLP in ${cityName}. DBIZ CONSULTANCY provide fast LLP registration services in ${cityName} with minimal documentation and experts support.`;
+    ? "Register your Limited Liability Partnership (LLP) in India with D BIZ CONSULTANCY. Expert LLP registration, DSC, DIN, and compliance support."
+    : `Register LLP in ${cityName}. D BIZ CONSULTANCY provide fast LLP registration services in ${cityName} with minimal documentation and experts support.`;
 
   const seoUrl = location ? `/llp/${location}` : "/llp";
 
@@ -487,7 +487,7 @@ const LLPRegistrationPage = () => {
                 </h2>
                 
                 <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-                  DBIZ CONSULTANCY helps businesses leverage the practical advantages of an LLP for maximum growth and asset protection.
+                  D BIZ CONSULTANCY helps businesses leverage the practical advantages of an LLP for maximum growth and asset protection.
                 </p>
 
                 <div className="relative group overflow-hidden rounded-2xl shadow-xl">
@@ -1419,10 +1419,10 @@ const LLPRegistrationPage = () => {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Why DBIZ
+                Why D BIZ
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for LLP Registration?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for LLP Registration?</h2>
 
               <p className="text-lg text-gray-600 leading-relaxed">
                 Registering a Limited Liability Partnership (LLP) is an important step for businesses seeking a balance between flexibility and limited liability protection. While the process is simpler than a company, it still requires proper documentation, structured agreements, and accurate filings. 
@@ -1433,7 +1433,7 @@ const LLPRegistrationPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
-                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
                 </h3>
                 <ul className="space-y-3">
                   {[
@@ -1480,10 +1480,10 @@ const LLPRegistrationPage = () => {
               <div className="grid md:grid-cols-2 gap-12 items-center relative">
                 <div>
                   <p className="text-lg leading-relaxed mb-6">
-                    That's where DBIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you. From preparing and submitting accurate documents to ensuring full compliance with the LLP Act, our team is here to support you every step of the way. 
+                    That's where D BIZ CONSULTANCY comes in. We make the process simple and stress-free by handling all the details for you. From preparing and submitting accurate documents to ensuring full compliance with the LLP Act, our team is here to support you every step of the way. 
                   </p>
                   <p className="text-lg leading-relaxed mb-8">
-                    With our experience and focus on your success, DBIZ CONSULTANCY is the trusted partner for entrepreneurs and businesses seeking reliable LLP registration and maintenance support.
+                    With our experience and focus on your success, D BIZ CONSULTANCY is the trusted partner for entrepreneurs and businesses seeking reliable LLP registration and maintenance support.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">

@@ -81,14 +81,16 @@ const ServicesSection = () => {
         { name: "ONE PERSON COMPANY (OPC)", path: "/one-person-company" },
         { name: "LIMITED LIABILITY PARTNERSHIP (LLP)", path: "/llp" },
         { name: "PARTNERSHIP", path: "/partnership" },
-        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" }
+        { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" },
+        { name: "NGO/TRUST", path: "/ngo-trust-registration" },
+        { name: "PRODUCER COMPANY", path: "/producer-company" }
       ]
     },
     {
       icon: FileText,
       title: "Registration",
       items: [
-        { name: "GST Registration", path: "/coming-soon" },
+        { name: "GST Registration", path: "/gst-registration" },
         { name: "12A AND 80G", path: "/coming-soon" },
         { name: "ISO REGISTRATION", path: "/coming-soon" },
         { name: "FSSAI REGISTRATION", path: "/coming-soon" },

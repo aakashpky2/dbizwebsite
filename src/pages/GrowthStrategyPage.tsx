@@ -174,8 +174,8 @@ const GrowthStrategyPage = () => {
           </div>
         </section>
 
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };

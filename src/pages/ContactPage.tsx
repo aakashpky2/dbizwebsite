@@ -10,8 +10,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Contact Us | DBIZ CONSULTANCY"
-        description="Get in touch with DBIZ CONSULTANCY for expert business consultancy, registration, and compliance services. We are here to help your business grow."
+        title="Contact Us | D BIZ CONSULTANCY"
+        description="Get in touch with D BIZ CONSULTANCY for expert business consultancy, registration, and compliance services. We are here to help your business grow."
         url="/contact"
       />
       <Navbar />
