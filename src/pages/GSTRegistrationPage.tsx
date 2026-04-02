@@ -293,94 +293,94 @@ const EnhancedGSTRegistrationPage = () => {
         </section>
 
         {/* 1. Overview Section */}
-        <section id="overview" className="py-16 scroll-mt-32">
+        <section id="overview" className="py-20 scroll-mt-32">
           <div className="container-custom">
             <div className="flex flex-col md:flex-row gap-12">
+              {/* Left Content (2/3) */}
               <div className="md:w-2/3">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-6 animate-on-scroll">
                   <span className="w-2 h-2 rounded-full bg-dbiz-navy mr-2"></span>
                   Overview
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-8 animate-on-scroll [animation-delay:100ms]">
-                   GST Registration — Definition as per the GST Act, 2017
+                <h2 className="text-3xl md:text-5xl font-bold text-dbiz-navy mb-8 animate-on-scroll [animation-delay:100ms] tracking-tight">
+                  What is GST Registration?
                 </h2>
 
                 <div className="prose prose-lg max-w-none animate-on-scroll [animation-delay:200ms]">
-                  <p className="text-gray-700 mb-10 leading-relaxed font-medium">
-                    Under the Goods and Services Tax (GST) Act, 2017, GST Registration is a mandatory process through which a business becomes legally recognized as a supplier of goods or services under GST laws and obtains a GST Identification Number (GSTIN).
+                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                    GST (Goods and Services Tax) Registration is a statutory requirement under the GST Act, 2017 for businesses engaged in the supply of goods or services in India. It establishes the business as a legally recognized taxable entity under the GST regime.
                   </p>
-                  
-                  {/* Mandatory Trigger box */}
-                  <div className="border border-dbiz-teal/20 rounded-xl overflow-hidden mb-10 animate-on-scroll [animation-delay:300ms]">
-                    <div className="bg-dbiz-navy px-8 py-5 border-b border-white/10">
-                      <h3 className="text-xl font-extrabold text-white">When GST Registration is Mandatory</h3>
-                    </div>
-                    
-                    <div className="p-8">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
-                          {[
-                            "Exceeds the prescribed turnover threshold limit",
-                            "Supplies goods or services across states (Interstate supply)",
-                            "Operates through e-commerce platforms",
-                            "Is required to collect and pay GST under applicable rules"
-                          ].map((point, idx) => (
-                            <div key={idx} className="flex items-start gap-3">
-                              <span className="text-dbiz-teal font-black text-xl leading-none mt-1">✔</span>
-                              <p className="text-[15px] font-bold text-gray-700 leading-snug">{point}</p>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                    Upon registration, a unique GST Identification Number (GSTIN) is allotted, which must be used on invoices, returns, and all tax-related documents. Registered businesses are authorized to collect GST from customers and can claim Input Tax Credit (ITC) on eligible purchases, thereby reducing their overall tax liability.
+                  </p>
+                  <p className="text-gray-700 mb-8 leading-relaxed font-medium">
+                    GST has replaced multiple indirect taxes such as VAT, Service Tax, and Excise Duty, creating a unified and transparent tax system across India. This simplifies compliance and facilitates seamless interstate trade.
+                  </p>
                 </div>
+
+                {/* Why GST Importance block */}
+                <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-[2rem] p-8 md:p-10 mt-10 animate-on-scroll [animation-delay:300ms]">
+                    <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center gap-2">
+                       <CheckCircle className="text-dbiz-teal h-6 w-6" /> 
+                       Why GST Registration is Important
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-6 font-medium italic">GST Registration is not just a legal formality — it plays a critical role in business operations:</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                       {[
+                         "Ensures legal recognition as a tax-compliant entity",
+                         "Enables collection of GST from customers",
+                         "Allows claiming input tax credit to reduce costs",
+                         "Builds trust with clients, vendors, and financial institutions",
+                         "Mandatory for expanding across states or online"
+                       ].map((point, idx) => (
+                         <div key={idx} className="flex items-start gap-3">
+                           <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-1 shrink-0" />
+                           <p className="text-[15px] font-bold text-gray-700 leading-tight">{point}</p>
+                         </div>
+                       ))}
+                    </div>
+                </div>
+
+
+
               </div>
 
+              {/* Right Sidebar (1/3) */}
               <div className="md:w-1/3">
-                <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
+                <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <CachedImage
-                    src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600&q=80"
-                    alt="GST Registration Process"
-                    className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
+                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80"
+                    alt="GST Act Documentation"
+                    className="w-full h-56 object-cover rounded-2xl shadow-md mb-8 relative z-10 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy underline underline-offset-8 decoration-dbiz-teal/30 tracking-tight uppercase">Definition as per the GST Act, 2017</h3>
-                    
-                    <div className="space-y-4">
-                      <p className="text-gray-700 text-sm leading-relaxed font-bold">
-                         Under the GST Act, 2017, registration is mandatory to be legally recognized as a supplier.
-                      </p>
-                      
-                      <div className="rounded-xl overflow-hidden border border-gray-200 mt-4">
-                        <div className="bg-dbiz-navy px-4 py-3">
-                          <p className="text-xs font-black text-white uppercase tracking-widest leading-none">Registration Required if:</p>
-                        </div>
-                        
-                        <div className="p-4 space-y-2">
-                          {[
-                            "Exceeds Turnover limit",
-                            "Interstate supply of goods",
-                            "Selling via E-commerce",
-                            "Mandatory Tax Collection"
-                          ].map((point, idx) => (
-                             <div key={idx} className="flex items-center gap-2">
-                                <span className="text-dbiz-teal font-black text-sm">✔</span>
-                                <p className="text-[13px] font-bold text-gray-600">{point}</p>
-                             </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-gray-200">
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the GST Act, 2017</h3>
+                    <p className="text-gray-600 text-[15px] mb-6 leading-relaxed">
+                      Section-wise, the GST Act defines registration as the process of being legally identified as a taxable person:
+                    </p>
+                    <ul className="space-y-4">
+                      {[
+                        "Mandatory for Interstate Supply",
+                        "Required above Turnover Thresholds",
+                        "Compulsory for E-commerce Platforms",
+                        "Enables Legal Tax Collection Capability"
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700 font-bold text-sm leading-tight">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 pt-7 border-t border-gray-200">
                       <div className="flex items-center">
-                        <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                        <div className="bg-dbiz-teal/10 p-2.5 rounded-full">
                           <Phone className="h-5 w-5 text-dbiz-teal" />
                         </div>
-                        <div className="ml-3">
-                          <p className="text-xs text-gray-500 uppercase font-black">Need assistance?</p>
-                          <p className="text-dbiz-navy font-bold">Expert GST Support</p>
+                        <div className="ml-4">
+                          <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Expert Guidance</p>
+                          <p className="text-dbiz-navy font-bold">Contact Our GST Team</p>
                         </div>
                       </div>
                     </div>
@@ -390,6 +390,8 @@ const EnhancedGSTRegistrationPage = () => {
             </div>
           </div>
         </section>
+
+
 
         {/* 2. Legal Framework Section - Full-width background color */}
         <section className="bg-gray-50 py-20 scroll-mt-32">
