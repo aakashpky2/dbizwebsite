@@ -86,7 +86,7 @@ export const gstFilingsContent: ServiceContent = {
   relatedServices: [
     { name: "TDS Filings", path: "/tds-filings" },
     { name: "Income Tax Filing (ITR)", path: "/income-tax-filing" },
-    { name: "GST Registration", path: "/gst-registration" }
+    { name: "GST Registration", path: "/coming-soon" }
   ]
 };
 
@@ -218,7 +218,7 @@ export const privateLimitedContent: ServiceContent = {
     }
   ],
   relatedServices: [
-    { name: "GST Registration", path: "/gst-registration" },
+    { name: "GST Registration", path: "/coming-soon" },
     { name: "MCA Compliance", path: "/mca-compliance" },
     { name: "Annual Compliance", path: "/annual-compliance" }
   ]
@@ -276,7 +276,7 @@ export const llpContent: ServiceContent = {
   ],
   relatedServices: [
     { name: "Private Limited Company", path: "/private-limited" },
-    { name: "GST Registration", path: "/gst-registration" },
+    { name: "GST Registration", path: "/coming-soon" },
     { name: "MSME Registration", path: "/udyam-msme-registration" }
   ]
 };

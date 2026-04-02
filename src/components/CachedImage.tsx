@@ -30,12 +30,17 @@ const CachedImage: React.FC<CachedImageProps> = ({
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
-    if (!isLoaded) {
+    // Correctly reset states when src changes
+    setHasError(false);
+    const cached = isImageCached(src);
+    setIsLoaded(cached);
+    
+    if (!cached) {
       preloadImage(src)
         .then(() => setIsLoaded(true))
         .catch(() => setHasError(true));
     }
-  }, [src, isLoaded]);
+  }, [src]);
 
   const wrapperStyle = aspectRatio
     ? { aspectRatio: String(aspectRatio) }

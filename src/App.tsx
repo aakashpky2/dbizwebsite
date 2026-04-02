@@ -25,7 +25,8 @@ const LimitedLiabilityPartnershipPage = lazy(() => import("./pages/LimitedLiabil
 const LLPRegistrationPage = lazy(() => import("./pages/LLP/LLPRegistrationPage"));
 const OnePersonCompanyPage = lazy(() => import("./pages/OnePersonCompanyPage"));
 const ToolsPage = lazy(() => import("./pages/ToolsPage"));
-const GSTRegistrationPage = lazy(() => import("./pages/GSTRegistrationPage"));
+const GSTRegistrationPage = lazy(() => import("./pages/GSTRegistrationPage")); // Force Vite reload
+
 const StartupRegistrationPage = lazy(() => import("./pages/StartupRegistrationPage"));
 const MSMERegistrationPage = lazy(() => import("./pages/MSMERegistrationPage"));
 const ISOCertificationPage = lazy(() => import("./pages/ISOCertificationPage"));
@@ -125,6 +126,7 @@ const App = () => {
                   <Route path="/digital-signature/:location" element={<DigitalSignaturePage />} />
                   <Route path="/gst-registration" element={<GSTRegistrationPage />} />
                   <Route path="/gst-registration/:location" element={<GSTRegistrationPage />} />
+
                   <Route path="/startup-registration" element={<StartupRegistrationPage />} />
                   <Route path="/startup-registration/:location" element={<StartupRegistrationPage />} />
                   <Route path="/udyam-msme-registration" element={<MSMERegistrationPage />} />

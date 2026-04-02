@@ -23,7 +23,11 @@ import {
   Target,
   Sparkles,
   Layers,
-  MapPin
+  MapPin,
+  Zap,
+  Activity,
+  Repeat,
+  RefreshCw
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -52,6 +56,51 @@ import CachedImage from "@/components/CachedImage";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const phoneNumber = "+918075273408";
+
+// ── Extracted outside component for React Fast Refresh / HMR stability ──
+const TIMELINE_DESKTOP = [
+  {
+    step: "01",
+    label: "Application Filing",
+    duration: "Same Day",
+    desc: "Collection of business details, document verification, and submission on the GST portal.",
+    headerStyle: { background: "linear-gradient(135deg, #2563eb, #3b82f6)" },
+    pill: "bg-blue-50 text-blue-700 border-blue-100",
+  },
+  {
+    step: "02",
+    label: "Processing",
+    duration: "1–2 Working Days",
+    desc: "System processing with Aadhaar authentication and basic validation of details.",
+    headerStyle: { background: "linear-gradient(135deg, #1e40af, #2563eb)" },
+    pill: "bg-blue-100 text-blue-800 border-blue-200",
+  },
+  {
+    step: "03",
+    label: "Approval (Normal Case)",
+    duration: "1–2 Working Days",
+    desc: "GSTIN issued if all details are correct and Aadhaar authentication completed successfully.",
+    headerStyle: { background: "linear-gradient(135deg, #172554, #1e3a8a)" },
+    pill: "bg-blue-200 text-blue-900 border-blue-300",
+  },
+  {
+    step: "04",
+    label: "Approval (With Query)",
+    duration: "Up to 4 Working Days",
+    desc: "Time increases if GST officer raises queries or physical verification is required.",
+    headerStyle: { background: "linear-gradient(135deg, #040b18, #0b1d3a)" },
+    pill: "bg-[#0b1d3a]/10 text-[#0b1d3a] border-[#0b1d3a]/20",
+  },
+];
+
+const TIMELINE_MOBILE = [
+  { step: "01", label: "Application Filing",                 duration: "Same Day",             desc: "Collection of business details, document verification, and submission of the GST application on the portal.", sideStyle: { background: "linear-gradient(180deg, #2563eb, #3b82f6)" }, pill: "bg-blue-50 text-blue-700 border-blue-100" },
+  { step: "02", label: "Processing",                         duration: "1–2 Working Days",     desc: "System processing along with Aadhaar authentication and basic validation of details.",                         sideStyle: { background: "linear-gradient(180deg, #1e40af, #2563eb)" }, pill: "bg-blue-100 text-blue-800 border-blue-200" },
+  { step: "03", label: "Approval (Normal Case)",              duration: "1–2 Working Days",     desc: "GSTIN is issued if all details are correct and Aadhaar authentication is completed successfully.",               sideStyle: { background: "linear-gradient(180deg, #172554, #1e3a8a)" }, pill: "bg-blue-200 text-blue-900 border-blue-300" },
+  { step: "04", label: "Approval (With Query / Verification)", duration: "Up to 4 Working Days", desc: "Time may increase if the GST officer raises queries or physical verification is required.",                     sideStyle: { background: "linear-gradient(180deg, #040b18, #0b1d3a)" }, pill: "bg-[#0b1d3a]/10 text-[#0b1d3a] border-[#0b1d3a]/20" },
+];
+
+const TIMELINE_ICONS = [Clock, Users, CheckCircle2, AlertTriangle];
 
 const ContactOptions = () => {
   return (
@@ -134,14 +183,13 @@ const EnhancedGSTRegistrationPage = () => {
             />
           </div>
           
-          {/* Drastically reduced gradient opacity so the image pops heavily */}
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-dbiz-navy/95 via-dbiz-navy/60 to-transparent"></div>
+          <div className="absolute inset-0 z-0 bg-gradient-to-r from-dbiz-navy/95 via-dbiz-navy/70 to-transparent"></div>
 
           <div className="container-custom relative z-10">
             <div className="grid md:grid-cols-5 gap-12 items-center">
               <div className="md:col-span-3">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-dbiz-teal/20 border border-dbiz-teal/30 text-dbiz-teal text-sm font-bold tracking-wider mb-6 uppercase animate-on-scroll">
-                  <span className="w-2.5 h-2.5 rounded-full bg-dbiz-teal mr-2 animate-pulse"></span>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-6 animate-on-scroll">
+                  <span className="w-2.5 h-2.5 rounded-full bg-dbiz-teal mr-2"></span>
                   Fast GST Registration | Expert Filing | Complete Compliance Support
                 </div>
 
@@ -174,7 +222,6 @@ const EnhancedGSTRegistrationPage = () => {
               <div className="hidden md:block md:col-span-2 relative animate-on-scroll [animation-delay:400ms]">
                 <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/30 to-transparent rounded-2xl blur-2xl"></div>
                 <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-8 shadow-2xl relative transition-transform transform hover:scale-[1.02] overflow-hidden">
-                  {/* Decorative ambient light */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-dbiz-teal/10 rounded-full blur-3xl"></div>
                   
                   <h3 className="text-xl font-bold text-white mb-6 border-b border-white/20 pb-4 relative z-10">Quick Highlights</h3>
@@ -255,37 +302,37 @@ const EnhancedGSTRegistrationPage = () => {
                   Overview
                 </div>
 
-                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 animate-on-scroll [animation-delay:100ms]">What is GST Registration?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-8 animate-on-scroll [animation-delay:100ms]">
+                   GST Registration — Definition as per the GST Act, 2017
+                </h2>
 
                 <div className="prose prose-lg max-w-none animate-on-scroll [animation-delay:200ms]">
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    GST (Goods and Services Tax) Registration is a statutory requirement under the GST Act, 2017 for businesses engaged in the supply of goods or services in India. It establishes the business as a legally recognized taxable entity under the GST regime.
+                  <p className="text-gray-700 mb-10 leading-relaxed font-medium">
+                    Under the Goods and Services Tax (GST) Act, 2017, GST Registration is a mandatory process through which a business becomes legally recognized as a supplier of goods or services under GST laws and obtains a GST Identification Number (GSTIN).
                   </p>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    Upon registration, a unique GST Identification Number (GSTIN) is allotted, which must be used on invoices, returns, and all tax-related documents. Registered businesses are authorized to collect GST from customers and can claim Input Tax Credit (ITC) on eligible purchases, thereby reducing their overall tax liability.
-                  </p>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    GST has replaced multiple indirect taxes such as VAT, Service Tax, and Excise Duty, creating a unified and transparent tax system across India. This simplifies compliance and facilitates seamless interstate trade.
-                  </p>
-                </div>
-
-                {/* Importance box */}
-                <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-8 animate-on-scroll [animation-delay:300ms]">
-                   <h3 className="text-xl font-bold text-dbiz-navy mb-4">Why GST Registration is Important</h3>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {[
-                        "Ensures legal recognition as a tax-compliant entity",
-                        "Enables collection of GST from customers",
-                        "Allows claiming input tax credit to reduce costs",
-                        "Builds trust with clients, vendors, and financial institutions",
-                        "Mandatory for expanding business across states or online platforms"
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
-                          <p className="text-sm font-medium text-gray-700 leading-snug">{item}</p>
-                        </div>
-                      ))}
-                   </div>
+                  
+                  {/* Mandatory Trigger box */}
+                  <div className="border border-dbiz-teal/20 rounded-xl overflow-hidden mb-10 animate-on-scroll [animation-delay:300ms]">
+                    <div className="bg-dbiz-navy px-8 py-5 border-b border-white/10">
+                      <h3 className="text-xl font-extrabold text-white">When GST Registration is Mandatory</h3>
+                    </div>
+                    
+                    <div className="p-8">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8">
+                          {[
+                            "Exceeds the prescribed turnover threshold limit",
+                            "Supplies goods or services across states (Interstate supply)",
+                            "Operates through e-commerce platforms",
+                            "Is required to collect and pay GST under applicable rules"
+                          ].map((point, idx) => (
+                            <div key={idx} className="flex items-start gap-3">
+                              <span className="text-dbiz-teal font-black text-xl leading-none mt-1">✔</span>
+                              <p className="text-[15px] font-bold text-gray-700 leading-snug">{point}</p>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -298,11 +345,35 @@ const EnhancedGSTRegistrationPage = () => {
                     className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-4 text-dbiz-navy underline underline-offset-8 decoration-dbiz-teal/30">Tax Compliance in India</h3>
-                    <p className="text-gray-700 mb-4 text-sm leading-relaxed font-medium">
-                      The GST regime aims to create a "One Nation, One Tax" system, removing barriers and ensuring transparency in business transactions.
-                    </p>
-                    <div className="mt-6 pt-6 border-t border-gray-200">
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy underline underline-offset-8 decoration-dbiz-teal/30 tracking-tight uppercase">Definition as per the GST Act, 2017</h3>
+                    
+                    <div className="space-y-4">
+                      <p className="text-gray-700 text-sm leading-relaxed font-bold">
+                         Under the GST Act, 2017, registration is mandatory to be legally recognized as a supplier.
+                      </p>
+                      
+                      <div className="rounded-xl overflow-hidden border border-gray-200 mt-4">
+                        <div className="bg-dbiz-navy px-4 py-3">
+                          <p className="text-xs font-black text-white uppercase tracking-widest leading-none">Registration Required if:</p>
+                        </div>
+                        
+                        <div className="p-4 space-y-2">
+                          {[
+                            "Exceeds Turnover limit",
+                            "Interstate supply of goods",
+                            "Selling via E-commerce",
+                            "Mandatory Tax Collection"
+                          ].map((point, idx) => (
+                             <div key={idx} className="flex items-center gap-2">
+                                <span className="text-dbiz-teal font-black text-sm">✔</span>
+                                <p className="text-[13px] font-bold text-gray-600">{point}</p>
+                             </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-gray-200">
                       <div className="flex items-center">
                         <div className="bg-dbiz-teal/10 p-2 rounded-full">
                           <Phone className="h-5 w-5 text-dbiz-teal" />
@@ -317,11 +388,15 @@ const EnhancedGSTRegistrationPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Legal Framework Section - Moved outside columns for true centering */}
-            <div className="mt-20 pt-10 border-t border-gray-100 animate-on-scroll [animation-delay:450ms]">
-              <h3 className="text-2xl font-bold text-dbiz-navy mb-4 uppercase tracking-tighter text-center">Legal Framework</h3>
-              <p className="text-gray-600 mb-10 text-base font-medium text-center max-w-2xl mx-auto">GST Registration is governed by the following statutory laws that regulate India's unified tax structure:</p>
+        {/* 2. Legal Framework Section - Full-width background color */}
+        <section className="bg-gray-50 py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="animate-on-scroll">
+              <h3 className="text-2xl font-extrabold text-dbiz-navy mb-4 uppercase tracking-tighter text-center">Legal Framework</h3>
+              <p className="text-dbiz-navy/80 mb-12 text-base font-bold text-center max-w-2xl mx-auto">GST Registration is governed by the following statutory laws that regulate India's unified tax structure:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {[
@@ -329,8 +404,8 @@ const EnhancedGSTRegistrationPage = () => {
                   { title: "SGST Act", desc: "Governs state GST (varies by state)" },
                   { title: "IGST Act, 2017", desc: "Governs interstate supply of goods/services" }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-dbiz-teal/30 transition-all duration-500 group text-center">
-                    <div className="w-12 h-12 rounded-2xl bg-dbiz-teal/10 flex items-center justify-center text-dbiz-teal font-black text-sm mb-6 group-hover:bg-dbiz-teal group-hover:text-white transition-colors mx-auto">
+                  <div key={idx} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-dbiz-teal transition-all duration-500 group text-center">
+                    <div className="w-12 h-12 rounded-2xl bg-dbiz-teal flex items-center justify-center text-white font-black text-sm mb-6 shadow-lg mx-auto">
                       0{idx + 1}
                     </div>
                     <h4 className="text-xl font-bold text-dbiz-navy mb-4 tracking-tight group-hover:text-dbiz-teal transition-colors uppercase">{item.title}</h4>
@@ -339,16 +414,20 @@ const EnhancedGSTRegistrationPage = () => {
                 ))}
               </div>
 
-              <div className="mt-12 flex items-center justify-center gap-4 p-6 bg-gray-50 rounded-[2rem] border border-gray-100/50 italic max-w-3xl mx-auto">
+              <div className="mt-12 flex items-center justify-center gap-4 p-6 bg-white/40 backdrop-blur-md rounded-[2rem] border border-dbiz-teal/20 italic max-w-3xl mx-auto shadow-inner">
                 <Shield className="h-6 w-6 text-dbiz-teal shrink-0" />
-                <p className="text-sm text-gray-400 font-bold leading-relaxed tracking-tight">
+                <p className="text-sm text-dbiz-navy/60 font-bold leading-relaxed tracking-tight">
                   These laws collectively regulate registration, tax collection, filing, compliance, and penalties.
                 </p>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Minimum Requirements box - Re-aligned to full center under Legal Framework */}
-            <div className="mt-20 pt-10 border-t border-gray-100 animate-on-scroll [animation-delay:250ms] max-w-5xl mx-auto">
+        {/* 3. Minimum Requirements box */}
+        <section className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="mt-10 animate-on-scroll [animation-delay:250ms] max-w-5xl mx-auto">
                <h3 className="text-2xl font-black text-dbiz-navy mb-10 uppercase tracking-tighter text-center">Minimum Requirements for GST Registration</h3>
                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {[
@@ -370,11 +449,15 @@ const EnhancedGSTRegistrationPage = () => {
                   ))}
                </div>
             </div>
+          </div>
+        </section>
 
-            {/* Eligibility Conditions box - Re-aligned to full center */}
-            <div className="mt-20 pt-10 border-t border-gray-100 animate-on-scroll [animation-delay:350ms] max-w-5xl mx-auto">
+        {/* 4. Eligibility Conditions Section - Full-width background color */}
+        <section id="eligibility" className="bg-gray-50 py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="animate-on-scroll">
                <div className="text-center mb-10">
-                 <h3 className="text-2xl font-black text-dbiz-navy uppercase tracking-tighter">Eligibility Conditions <span className="text-sm text-gray-500 font-bold normal-case tracking-normal ml-2 block sm:inline mt-2 sm:mt-0">(Quick Understanding)</span></h3>
+                 <h3 className="text-2xl font-black text-dbiz-navy uppercase tracking-tighter">Eligibility Conditions</h3>
                  <p className="text-base font-bold text-gray-600 mt-3">GST registration is generally mandatory if:</p>
                </div>
                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -391,9 +474,9 @@ const EnhancedGSTRegistrationPage = () => {
                       <p className="text-base font-black text-dbiz-navy mb-3 tracking-tight group-hover:text-dbiz-teal transition-colors">{item.title}</p>
                       <p className="text-[13px] text-gray-500 font-medium leading-relaxed">{item.desc}</p>
                     </div>
-                  ))}
-               </div>
-            </div>
+                   ))}
+                </div>
+             </div>
           </div>
         </section>
 
@@ -549,11 +632,11 @@ const EnhancedGSTRegistrationPage = () => {
                   <h3 className="text-2xl font-bold text-dbiz-navy mb-8 border-b border-gray-100 pb-3">4. When GST Registration is Mandatory</h3>
                   <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
                     <Table>
-                      <TableHeader className="bg-gray-50">
+                      <TableHeader className="bg-dbiz-navy">
                         <TableRow>
-                          <TableHead className="font-extrabold text-dbiz-navy py-4">Condition</TableHead>
-                          <TableHead className="font-extrabold text-dbiz-navy py-4">Requirement</TableHead>
-                          <TableHead className="font-extrabold text-dbiz-navy py-4">Description</TableHead>
+                          <TableHead className="font-extrabold text-white py-4">Condition</TableHead>
+                          <TableHead className="font-extrabold text-white py-4">Requirement</TableHead>
+                          <TableHead className="font-extrabold text-white py-4">Description</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
@@ -823,70 +906,436 @@ const EnhancedGSTRegistrationPage = () => {
         </section>
 
         {/* 7. Timeline & Why Choose D BIZ Section */}
-        <section className="py-24 bg-[#1a365d] text-white">
+        <section className="py-24 bg-white">
           <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div className="flex flex-col gap-16 max-w-5xl mx-auto">
               
               <div>
-                <h3 className="text-3xl font-extrabold mb-8 text-white">7. Processing Timeline</h3>
-                <div className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/10">
-                  <div className="space-y-6">
-                    <div className="flex justify-between items-center border-b border-white/20 pb-4">
-                      <span className="font-bold flex items-center gap-3"><Clock className="text-dbiz-teal h-5 w-5"/> Application Filing</span>
-                      <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">Same Day</span>
+                {/* Header */}
+                <div className="mb-10">
+                  <span className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-dbiz-teal uppercase mb-3">
+                    <Clock className="h-3.5 w-3.5" /> 7. Processing Timeline
+                  </span>
+                  <h3 className="text-3xl font-extrabold text-dbiz-navy">How Long Does It Take?</h3>
+                  <p className="text-gray-500 font-medium mt-1 text-sm">End-to-end GST registration timeframes at a glance.</p>
+                </div>
+
+                {/* ── DESKTOP: Horizontal pipeline flow ── */}
+                <div className="hidden md:flex items-stretch gap-0">
+                  {TIMELINE_DESKTOP.map((item, i, arr) => {
+                    const Icon = TIMELINE_ICONS[i];
+                    return (
+                      <div key={i} className="flex items-stretch flex-1 animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+                        {/* Card */}
+                        <div className="flex flex-col flex-1 rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                          {/* Colored header */}
+                          <div className="p-6 flex flex-col items-center text-center" style={item.headerStyle}>
+                            <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                              <Icon className="h-7 w-7 text-white" />
+                            </div>
+                            <span className="text-white/70 text-[10px] font-black tracking-widest uppercase">Step {item.step}</span>
+                          </div>
+                          {/* White content body */}
+                          <div className="bg-white flex-1 p-5 flex flex-col">
+                            <p className="text-base font-black text-dbiz-navy group-hover:text-dbiz-teal transition-colors leading-snug mb-3">{item.label}</p>
+                            <span className={`self-start text-xs font-bold px-3 py-1.5 rounded-full border mb-3 ${item.pill}`}>
+                              {item.duration}
+                            </span>
+                            <p className="text-sm text-gray-500 font-medium leading-relaxed flex-1">{item.desc}</p>
+                          </div>
+                        </div>
+                        {/* Arrow connector */}
+                        {i < arr.length - 1 && (
+                          <div className="flex items-center justify-center w-6 shrink-0 text-gray-300">
+                            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M9 18l6-6-6-6"/></svg>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* ── MOBILE: stacked rows ── */}
+                <div className="md:hidden space-y-4">
+                  {TIMELINE_MOBILE.map((item, i) => {
+                    const Icon = TIMELINE_ICONS[i];
+                    return (
+                      <div key={i} className="flex items-start gap-4 rounded-2xl overflow-hidden border border-gray-100 shadow-sm animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+                        <div className="p-4 flex flex-col items-center gap-2 shrink-0" style={item.sideStyle}>
+                          <Icon className="h-5 w-5 text-white" />
+                          <span className="text-white/70 text-[9px] font-black tracking-widest uppercase" style={{ writingMode: 'vertical-rl' }}>{item.step}</span>
+                        </div>
+                        <div className="p-4 flex-1">
+                          <p className="text-base font-black text-dbiz-navy leading-tight mb-2">{item.label}</p>
+                          <span className={`inline-block text-xs font-bold px-3 py-1.5 rounded-full border mb-2 ${item.pill}`}>{item.duration}</span>
+                          <p className="text-sm text-gray-500 font-medium leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Quick Summary Cards */}
+                <div className="mt-12">
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                    <p className="text-xs font-black tracking-[0.3em] text-gray-400 uppercase">⚡ Quick Summary</p>
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Card 1: Fast Track */}
+                    <div className="relative group animate-on-scroll">
+                      <div className="absolute inset-0 bg-dbiz-teal/5 rounded-3xl blur-xl group-hover:bg-dbiz-teal/10 transition-all duration-500 opacity-0 group-hover:opacity-100 translate-y-4"></div>
+                      <div className="relative bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                        {/* Top Accent */}
+                        <div className="absolute top-0 left-0 right-0 h-1.5 bg-dbiz-teal rounded-t-3xl"></div>
+                        
+                        <div className="flex justify-between items-start mb-6">
+                          <div className="bg-dbiz-teal/10 p-3 rounded-2xl">
+                            <Zap className="h-6 w-6 text-dbiz-teal" />
+                          </div>
+                          <div className="text-right">
+                            <span className="text-4xl font-black text-dbiz-navy tracking-tighter">1–3</span>
+                            <span className="ml-1 text-sm font-black text-gray-400 uppercase tracking-widest">Days</span>
+                          </div>
+                        </div>
+
+                        <h4 className="text-xl font-black text-dbiz-navy mb-3 group-hover:text-dbiz-teal transition-colors">Fast Track Approval</h4>
+                        <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                          Ideal for businesses with active Aadhaar authentication. Standard processing is completed within a very short window.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center border-b border-white/20 pb-4">
-                      <span className="font-bold flex items-center gap-3"><Users className="text-dbiz-teal h-5 w-5"/> Processing Validation</span>
-                      <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">1-2 Working Days</span>
+
+                    {/* Card 2: Delayed Case */}
+                    <div className="relative group animate-on-scroll" style={{ animationDelay: '150ms' }}>
+                      <div className="absolute inset-0 bg-amber-400/5 rounded-3xl blur-xl group-hover:bg-amber-400/10 transition-all duration-500 opacity-0 group-hover:opacity-100 translate-y-4"></div>
+                      <div className="relative bg-white rounded-3xl border border-gray-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300">
+                        {/* Top Accent */}
+                        <div className="absolute top-0 left-0 right-0 h-1.5 bg-amber-400 rounded-t-3xl"></div>
+                        
+                        <div className="flex justify-between items-start mb-6">
+                          <div className="bg-amber-50 p-3 rounded-2xl">
+                            <AlertTriangle className="h-6 w-6 text-amber-500" />
+                          </div>
+                          <div className="text-right">
+                            <span className="text-4xl font-black text-dbiz-navy tracking-tighter">~4</span>
+                            <span className="ml-1 text-sm font-black text-gray-400 uppercase tracking-widest">Days</span>
+                          </div>
+                        </div>
+
+                        <h4 className="text-xl font-black text-dbiz-navy mb-3 group-hover:text-amber-500 transition-colors">Queries or Verification</h4>
+                        <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                          Time increases if the GST officer raises queries or requires physical site verification to validate business details.
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center border-b border-white/20 pb-4">
-                      <span className="font-bold flex items-center gap-3"><CheckCircle2 className="text-dbiz-teal h-5 w-5"/> Approval (Normal)</span>
-                      <span className="bg-dbiz-teal px-3 py-1 rounded-full text-sm font-bold">1-2 Working Days</span>
+                  </div>
+
+                  {/* Final Hint */}
+                  <div className="mt-8 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
+                    <p className="text-sm text-gray-500 font-semibold italic">
+                      Correct documents and accurate details ensure the <span className="text-dbiz-teal not-italic font-black">fastest possible</span> approval.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+                {/* 8. Post-Registration Compliance Section */}
+                <div className="pt-16 border-t border-gray-100 animate-on-scroll">
+                  <div className="mb-10 text-center md:text-left">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[10px] font-black tracking-widest uppercase mb-4 border border-dbiz-teal/20">
+                      <Shield className="h-3 w-3" /> Mandatory Maintenance
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="font-bold flex items-center gap-3"><AlertTriangle className="text-amber-400 h-5 w-5"/> Dept Query Case</span>
-                      <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-semibold">Up to 4 Days</span>
+                    <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">8. Post-Registration Compliance</h3>
+                    <p className="text-gray-500 font-medium text-sm max-w-2xl">
+                      Once registered, your business must maintain these mandatory filing cycles to remain legally active and avoid high non-compliance penalties.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {[
+                      { 
+                        type: "GSTR-1", 
+                        freq: "Monthly / Quarterly", 
+                        purpose: "Sales Return", 
+                        color: "from-blue-500 to-indigo-600", 
+                        bg: "bg-blue-50/50",
+                        accent: "border-blue-100",
+                        icon: Activity,
+                        desc: "Used for reporting detailed outward supplies (sales) made during the period." 
+                      },
+                      { 
+                        type: "GSTR-3B", 
+                        freq: "Monthly", 
+                        purpose: "Summary Return", 
+                        color: "from-emerald-500 to-teal-600", 
+                        bg: "bg-emerald-50/50",
+                        accent: "border-emerald-100",
+                        icon: Repeat,
+                        desc: "A summary return used for claiming Input Tax Credit (ITC) and paying taxes." 
+                      },
+                      { 
+                        type: "Annual Return", 
+                        freq: "Yearly", 
+                        purpose: "GSTR-9 / 9C", 
+                        color: "from-purple-500 to-violet-600", 
+                        bg: "bg-purple-50/50",
+                        accent: "border-purple-100",
+                        icon: RefreshCw,
+                        desc: "Consolidated yearly data for reconciliation of all monthly returns filed." 
+                      }
+                    ].map((filing, idx) => (
+                      <div key={idx} className={`relative group p-8 rounded-3xl border ${filing.accent} ${filing.bg} hover:bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden`}>
+                        {/* Status bar */}
+                        <div className={`absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 rounded-full bg-white opacity-40 group-hover:opacity-100 transition-opacity`}></div>
+                        
+                        <div className="relative">
+                          <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${filing.color} flex items-center justify-center mb-6 shadow-lg shadow-gray-200 group-hover:scale-110 transition-transform`}>
+                            <filing.icon className="h-6 w-6 text-white" />
+                          </div>
+                          
+                          <div className="flex items-center gap-2 mb-2">
+                             <h4 className="text-xl font-black text-dbiz-navy">{filing.type}</h4>
+                             <span className="text-[9px] font-black uppercase text-gray-400 bg-white px-2 py-0.5 rounded-full border border-gray-100">{filing.freq}</span>
+                          </div>
+                          
+                          <p className="text-xs font-black text-dbiz-teal uppercase tracking-[0.2em] mb-4">{filing.purpose}</p>
+                          
+                          <p className="text-sm text-gray-500 font-medium leading-relaxed">
+                            {filing.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Requirements Checklist */}
+                  <div className="mt-12 bg-dbiz-navy/5 rounded-[2rem] p-8 md:p-10 border border-dbiz-navy/5 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                       <div className="shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
+                          <p className="text-xs font-black text-dbiz-teal uppercase tracking-[0.3em] mb-2">Essential</p>
+                          <h4 className="text-xl font-black text-dbiz-navy leading-none">Compliance Requirements</h4>
+                       </div>
+                       
+                       <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+                          {[
+                            "Maintain proper invoices",
+                            "File returns on time",
+                            "Pay GST liability",
+                            "Maintain accounting records"
+                          ].map((req, i) => (
+                            <div key={i} className="flex items-center gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm group hover:border-dbiz-teal/30 hover:shadow-md transition-all duration-300">
+                               <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 transition-colors">
+                                  <CheckCircle2 className="h-4 w-4 text-emerald-500 group-hover:text-white" />
+                               </div>
+                               <p className="text-[13px] font-bold text-gray-700 leading-snug">{req}</p>
+                            </div>
+                          ))}
+                       </div>
+                    </div>
+                  </div>
+
+                  {/* Penalties & Risk Section */}
+                  <div className="mt-6 bg-amber-50/50 rounded-[2rem] p-8 md:p-10 border border-amber-100 animate-on-scroll" style={{ animationDelay: '450ms' }}>
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                       <div className="shrink-0 flex flex-col items-center md:items-start text-center md:text-left">
+                          <p className="text-xs font-black text-amber-600 uppercase tracking-[0.3em] mb-2">Caution</p>
+                          <h4 className="text-xl font-black text-dbiz-navy leading-none font-sans">Legal Penalties</h4>
+                       </div>
+                       
+                       <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                          {[
+                            { title: "Late Filing", desc: "Late fee + interest" },
+                            { title: "Non-registration", desc: "Heavy penalty" },
+                            { title: "Wrong Filing", desc: "Notices & fines" }
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-amber-100/50 shadow-sm group hover:border-amber-400 group-hover:shadow-md transition-all duration-300">
+                               <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center shrink-0 group-hover:bg-amber-500 transition-colors">
+                                  <AlertTriangle className="h-5 w-5 text-amber-500 group-hover:text-white" />
+                               </div>
+                               <div>
+                                  <p className="text-[14px] font-black text-dbiz-navy leading-tight mb-1">{item.title}</p>
+                                  <p className="text-[12px] font-medium text-gray-500">{item.desc}</p>
+                               </div>
+                            </div>
+                          ))}
+                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-3xl font-extrabold mb-8 text-white">8. Why Choose DBIZ?</h3>
-                <p className="text-blue-100/90 leading-relaxed mb-8">
-                  Registering under GST involves technical filings, tricky validations, and zero margin for error. We make it completely stress-free. Our approach prevents rejection and guarantees your business operates legally from day one.
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    "Expert GST professionals",
-                    "Quick turnaround times",
-                    "Aadhaar OTP support",
-                    "Status tracking",
-                    "Compliance-focused",
-                    "Reply to Dept Queries",
-                  ].map((adv, i) => (
-                    <div key={i} className="flex gap-3 items-center bg-white/5 p-4 rounded-xl border border-white/10">
-                      <CheckCircle2 className="text-dbiz-teal h-5 w-5 flex-shrink-0" />
-                      <span className="font-medium text-sm text-blue-50">{adv}</span>
+                {/* 9. Why DBIZ CONSULTANCY for GST Registration? */}
+                <div className="pt-20 border-t border-gray-100 animate-on-scroll">
+                  <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                      <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                      Why D BIZ
                     </div>
-                  ))}
+                    <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for GST Registration?</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Registering under GST is an essential step for any business operating in India. While the process may appear simple, it involves multiple compliance checks, document validations, and technical filings on the GST portal. Even minor errors can lead to application rejection, delays, or future notices.
+                    </p>
+                  </div>
+
+                  {/* What We Handle vs What You Provide */}
+                  <div className="grid md:grid-cols-2 gap-8 mb-12">
+                    <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-8">
+                      <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                      </h3>
+                      <ul className="space-y-4">
+                        {[
+                          "GST eligibility assessment based on activity/turnover",
+                          "Document validation and pre-upload review",
+                          "Selection of correct registration type (Regular/Composition)",
+                          "GST application filing (GST REG-01) on the portal",
+                          "Aadhaar authentication and OTP verification support",
+                          "ARN generation and continuous status tracking",
+                          "Handling GST department queries and clarifications",
+                          "Follow-up with authorities for faster approval",
+                          "GSTIN issuance and certificate download",
+                          "Post-registration guidance (returns & invoicing)"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-700 font-medium">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="bg-gray-50 border border-gray-200 rounded-xl p-8">
+                      <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center">
+                        <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
+                      </h3>
+                      <ul className="space-y-4">
+                        {[
+                          "Identity and address proof (PAN & Aadhaar)",
+                          "Business details and nature of activity",
+                          "Registered office address proof (rent/ownership)",
+                          "Bank account details (cancelled cheque / statement)",
+                          "Photograph (if applicable)"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start">
+                            <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-700 font-medium">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* When Should You Apply? - Strategic Trigger Points */}
+                  <div className="mt-12 bg-gray-50/80 p-10 md:p-14 rounded-[3rem] border border-gray-100 relative overflow-hidden group mb-12 animate-on-scroll">
+                     <div className="absolute top-0 left-0 w-40 h-40 bg-dbiz-teal/5 rounded-full blur-3xl -ml-20 -mt-20 group-hover:bg-dbiz-teal/10 transition-all"></div>
+                     
+                     <div className="flex flex-col lg:flex-row items-center gap-10">
+                        <div className="lg:w-1/3 text-center lg:text-left relative z-10">
+                           <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                              <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
+                           </div>
+                           <h3 className="text-3xl font-black text-dbiz-navy mb-4 tracking-tighter leading-tight italic">When Should You Apply?</h3>
+                           <p className="text-sm font-bold text-gray-500 leading-relaxed italic">Identify the key milestones that trigger the need for immediate GST registration.</p>
+                        </div>
+
+                        <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
+                           {[
+                              "Starting a new business or startup",
+                              "When turnover crosses GST threshold",
+                              "Selling through e-commerce platforms",
+                              "Expanding to interstate operations",
+                              "Required by clients, vendors or contracts",
+                              "To claim Input Tax Credit (ITC) benefits"
+                           ].map((point, index) => (
+                              <div key={index} className="flex items-center gap-4 group/point">
+                                 <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
+                                 </div>
+                                 <p className="text-sm font-bold text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors">{point}</p>
+                              </div>
+                           ))}
+                        </div>
+                     </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white relative overflow-hidden group/banner shadow-2xl">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+                    
+                    <div className="grid lg:grid-cols-5 gap-12 items-center relative z-10">
+                      <div className="lg:col-span-2">
+                        <h3 className="text-2xl font-bold mb-8 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Our Advantage</h3>
+                        <div className="space-y-6">
+                           <p className="text-lg leading-relaxed text-white">
+                             GST registration is not just about obtaining a GSTIN—it is about ensuring correct classification, proper compliance setup, and future-ready filing structure.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
+                             At DBIZ CONSULTANCY, we go beyond basic registration. We ensure that your business is fully aligned with GST laws from day one. Our structured approach reduces risks, prevents errors, and helps you avoid future compliance issues.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
+                             From documentation to approval and ongoing compliance support, we act as your complete GST partner.
+                           </p>
+                        </div>
+                      </div>
+ 
+                      <div className="lg:col-span-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {[
+                            { title: "Expert GST Professionals", desc: "Specialists with deep practical experience" },
+                            { title: "Quick Turnaround", desc: "Proactive follow-up for faster approval" },
+                            { title: "Error-Free Filing", desc: "Compliance-focused approach to avoid notices" },
+                            { title: "End-to-End Service", desc: "Assistance from registration to returns" },
+                            { title: "Dedicated Support", desc: "Help for queries and department notices" },
+                            { title: "Ongoing Guidance", desc: "Regular filing reminders and law updates" }
+                          ].map((adv, idx) => (
+                            <div key={idx} className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/5 hover:bg-white/20 transition-all group/adv">
+                               <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3 group-hover:scale-110 transition-transform" />
+                               <div>
+                                  <h4 className="text-xl font-semibold text-white mb-2">{adv.title}</h4>
+                                  <p className="text-sm text-white/80 leading-relaxed">{adv.desc}</p>
+                               </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
 
-            </div>
-          </div>
-        </section>
+              </div> {/* End of flex-col 871 */}
+            </div> {/* End of container-custom 870 */}
+        </section> {/* End of section 869 */}
 
-        {/* 10. FAQs Section */}
-        <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16 animate-on-scroll">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20 uppercase">
-                9. FAQs on GST Registration
-              </div>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight [animation-delay:100ms]">Most Commonly Asked Questions</h2>
-              <p className="text-gray-500 mb-8 font-medium [animation-delay:200ms]">Last updated: March 2026</p>
-            </div>
+         {/* Our Commitment Section */}
+         <section className="py-12 bg-white">
+           <div className="container-custom">
+             <div className="max-w-4xl mx-auto text-center animate-on-scroll">
+               <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+               <p className="text-lg text-gray-700 leading-relaxed mb-6 font-medium">
+                 With a strong track record in handling business registrations and tax compliance, DBIZ CONSULTANCY is a trusted partner for entrepreneurs, startups, and growing businesses across India.
+               </p>
+               <p className="text-lg text-dbiz-teal font-bold leading-relaxed border-t border-gray-100 pt-6">
+                 We take care of the entire GST process—so you can focus on building and scaling your business with confidence.
+               </p>
+             </div>
+           </div>
+         </section>
+
+         {/* 10. FAQs Section */}
+         <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">
+           <div className="container-custom">
+             <div className="text-center max-w-4xl mx-auto mb-16 animate-on-scroll">
+               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20 uppercase">
+                 10. FAQs on GST Registration
+               </div>
+               <h2 className="text-4xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight [animation-delay:100ms]">Frequently Asked Questions</h2>
+               <p className="text-gray-500 mb-8 font-medium [animation-delay:200ms]">Last updated: March 2026</p>
+               <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                 Whether you're starting a business, understanding GST applicability, or planning compliance — here are the most commonly asked questions with clear, practical answers.
+               </p>
+             </div>
 
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="w-full space-y-4">
@@ -901,29 +1350,6 @@ const EnhancedGSTRegistrationPage = () => {
                   </AccordionItem>
                 ))}
               </Accordion>
-            </div>
-          </div>
-        </section>
-
-        {/* 11. Final Call To Action */}
-        <section className="py-20 bg-dbiz-teal text-white">
-          <div className="container-custom text-center max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-8 shadow-sm">Get GST Registration in 3–7 Days</h2>
-            <p className="text-xl mb-12 opacity-90 font-medium">Avoid penalties and start your business legally today with India's best expert assistance framework.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-5">
-              <Popover>
-                <PopoverTrigger asChild>
-                  <Button size="lg" className="bg-white text-dbiz-teal hover:bg-gray-100 text-lg px-10 py-7 rounded-2xl font-bold shadow-xl transition-transform hover:-translate-y-1">
-                    Apply Now <ArrowRight className="ml-2 h-6 w-6" />
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-56 p-0 rounded-2xl">
-                  <ContactOptions />
-                </PopoverContent>
-              </Popover>
-              <Button size="lg" variant="outline" className="border-2 border-white bg-transparent text-white hover:bg-white/10 text-lg px-10 py-7 rounded-2xl font-bold transition-all">
-                Talk directly to an Expert
-              </Button>
             </div>
           </div>
         </section>

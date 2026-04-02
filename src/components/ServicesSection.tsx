@@ -91,21 +91,21 @@ const ServicesSection = () => {
       title: "Registration",
       items: [
         { name: "GST Registration", path: "/gst-registration" },
-        { name: "12A AND 80G", path: "/coming-soon" },
-        { name: "ISO REGISTRATION", path: "/coming-soon" },
-        { name: "FSSAI REGISTRATION", path: "/coming-soon" },
-        { name: "STARTUP REGISTRATION", path: "/coming-soon" }
+        { name: "12A AND 80G", path: "/12a-80g-registration" },
+        { name: "ISO REGISTRATION", path: "/iso-certification" },
+        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
+        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
       ]
     },
     {
       icon: ClipboardList,
       title: "Compliance",
       items: [
-        { name: "INCOME TAX RETURNS (ITR)", path: "/coming-soon" },
-        { name: "ANNUAL MCA COMPLIANCE", path: "/coming-soon" },
-        { name: "GST MONTHLY FILINGS", path: "/coming-soon" },
-        { name: "NIDHI COMPANY COMPLIANCES", path: "/coming-soon" },
-        { name: "TDS FILINGS", path: "/coming-soon" }
+        { name: "INCOME TAX RETURNS (ITR)", path: "/income-tax-filing" },
+        { name: "ANNUAL MCA COMPLIANCE", path: "/mca-compliance" },
+        { name: "GST MONTHLY FILINGS", path: "/gst-filings" },
+        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company-compliance" },
+        { name: "TDS FILINGS", path: "/tds-filings" }
       ]
     },
     {
@@ -123,9 +123,9 @@ const ServicesSection = () => {
       icon: Star,
       title: "Intellectual Property (IP)",
       items: [
-        { name: "TRADEMARK", path: "/coming-soon" },
-        { name: "PATENT", path: "/coming-soon" },
-        { name: "COPYRIGHT", path: "/coming-soon" }
+        { name: "TRADEMARK", path: "/trademark-registration" },
+        { name: "PATENT", path: "/patent-registration" },
+        { name: "COPYRIGHT", path: "/copyright-registration" }
       ]
     },
     {
