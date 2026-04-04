@@ -76,38 +76,41 @@ const IECRegistrationPage = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 z-0 opacity-10">
+        <section className="relative text-white py-28 lg:py-36 overflow-hidden">
+          {/* High-Definition Workspace Background - Matching GST Aesthetic */}
+          <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738" 
-              alt="Background" 
-              className="w-full h-full object-cover" 
+              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920&q=80" 
+              alt="Modern Professional Workspace" 
+              className="w-full h-full object-cover opacity-60 transition-all duration-1000"
             />
+            {/* Lighter Gradient Overlays for High Visibility */}
+            <div className="absolute inset-0 bg-dbiz-navy/40 z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-dbiz-navy/80 via-dbiz-navy/40 to-transparent z-10"></div>
           </div>
-          
+
           <div className="container-custom relative z-10">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-6">
-                  <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                  IEC Registration Services
+            <div className="grid md:grid-cols-5 gap-12 items-center">
+              <div className="md:col-span-3">
+                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-semibold mb-8 animate-on-scroll">
+                  <span className="w-2.5 h-2.5 rounded-full bg-dbiz-teal mr-2 animate-pulse"></span>
+                  Fast IEC Registration | DGFT Filing | Complete Compliance Support
                 </div>
-                
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                  IEC Registration
-                  {location && <span className="block text-2xl md:text-3xl mt-2">in {cityName}</span>}
+
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-8 leading-[1.1] uppercase tracking-tighter animate-on-scroll [animation-delay:100ms]">
+                  IMPORT EXPORT CODE (IEC) <br className="hidden lg:block" /> REGISTRATION SERVICES
+                  {location && <span className="block text-2xl md:text-4xl lg:text-5xl mt-4 normal-case font-medium text-dbiz-teal italic tracking-normal">in {cityName}</span>}
                 </h1>
                 
-                <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Get your Import Export Code (IEC) quickly with D BIZ CONSULTANCY. Mandatory 10-digit code for anyone engaged in import or export business in India. Lifetime validity with no renewal required.
+                <p className="text-lg md:text-xl opacity-95 mb-10 leading-relaxed font-medium max-w-2xl animate-on-scroll [animation-delay:200ms]">
+                  DBIZ CONSULTANCY provides complete Import Export Code (IEC) registration services. From eligibility verification to IEC issuance and compliance guidance, our experts ensure a smooth and hassle-free registration process.
                 </p>
                 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-5 animate-on-scroll [animation-delay:300ms]">
                   <Popover>
                     <PopoverTrigger asChild>
-                      <Button size="lg" className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white">
-                        <Phone className="mr-2 h-4 w-4" /> Contact Us Today
+                      <Button size="lg" className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white font-bold h-16 px-10 text-xl rounded-xl shadow-xl shadow-dbiz-teal/20 transition-all duration-300 hover:scale-105">
+                        Apply Now <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-56 p-0">
@@ -119,37 +122,48 @@ const IECRegistrationPage = () => {
                     size="lg" 
                     variant="outline" 
                     onClick={() => handleSectionClick('features')}
-                    className="border-white text-slate-50 bg-dbiz-navy"
+                    className="border-white/40 text-white bg-white/10 backdrop-blur-md font-bold h-16 px-10 text-xl rounded-xl hover:bg-white hover:text-dbiz-navy transition-all duration-500 shadow-xl shadow-black/10 hover:scale-105"
                   >
-                    <ArrowDownCircle className="mr-2 h-4 w-4" /> Learn More
+                    Get Free Consultation
                   </Button>
                 </div>
-                
-                <div className="mt-8 flex items-center text-sm font-medium text-white/80">
-                  <Clock className="h-4 w-4 mr-2" /> 
-                  <span>Quick Registration • Lifetime Validity • Global Trade Access</span>
-                </div>
               </div>
-              
-              <div className="hidden md:block">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
-                    <img 
-                      src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d" 
-                      alt="IEC Registration" 
-                      className="w-full h-auto rounded-lg shadow-lg" 
-                    />
-                    
-                    <div className="mt-6 grid grid-cols-2 gap-4">
-                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                        <div className="text-4xl font-bold">2-3</div>
-                        <div className="text-sm opacity-80">Days for IEC</div>
+
+              <div className="hidden md:block md:col-span-2 relative animate-on-scroll [animation-delay:400ms]">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/30 to-transparent rounded-2xl blur-2xl"></div>
+                <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-dbiz-teal/10 rounded-full blur-3xl"></div>
+                  
+                  <h3 className="text-2xl font-semibold text-white mb-8 border-b border-white/20 pb-4">Quick Highlights</h3>
+                  
+                  <div className="space-y-8">
+                    <div className="flex items-center gap-5">
+                      <div className="w-14 h-14 rounded-full bg-dbiz-teal/20 flex items-center justify-center flex-shrink-0">
+                        <Clock className="w-7 h-7 text-dbiz-teal" />
                       </div>
-                      
-                      <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                        <div className="text-4xl font-bold">Lifetime</div>
-                        <div className="text-sm opacity-80">Validity</div>
+                      <div>
+                        <p className="text-sm font-medium text-blue-200">Timeline</p>
+                        <p className="text-2xl font-bold text-white">1 – 3 Days</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-5">
+                      <div className="w-14 h-14 rounded-full bg-dbiz-teal/20 flex items-center justify-center flex-shrink-0">
+                        <Shield className="w-7 h-7 text-dbiz-teal" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-blue-200">Compliance</p>
+                        <p className="text-2xl font-bold text-white">100% Filing Accuracy</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-5">
+                      <div className="w-14 h-14 rounded-full bg-dbiz-teal/20 flex items-center justify-center flex-shrink-0">
+                        <MessageCircle className="w-7 h-7 text-dbiz-teal" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-blue-200">Support</p>
+                        <p className="text-2xl font-bold text-white">Expert Guidance</p>
                       </div>
                     </div>
                   </div>
@@ -157,6 +171,8 @@ const IECRegistrationPage = () => {
               </div>
             </div>
           </div>
+
+
         </section>
 
         {/* Navigation Section */}
@@ -295,7 +311,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <CheckCircle className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Lifetime Validity</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Lifetime Validity</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">One-time registration valid for lifetime with no renewal requirements.</p>
@@ -305,7 +321,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <TrendingUp className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Quick Process</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Quick Process</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Fast online registration process with instant digital IEC certificate.</p>
@@ -315,7 +331,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">PAN-Based</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">PAN-Based</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Linked to your PAN ensuring seamless integration with tax systems.</p>
@@ -325,7 +341,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">No Renewal</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">No Renewal</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">No renewal fees or periodic compliance requirements after registration.</p>
@@ -335,7 +351,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Globe2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Global Recognition</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Global Recognition</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Accepted worldwide for all import-export transactions from India.</p>
@@ -345,7 +361,7 @@ const IECRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Award className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Mandatory Compliance</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Mandatory Compliance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Required by customs authorities for all import-export clearances.</p>

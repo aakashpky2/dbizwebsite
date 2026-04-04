@@ -358,7 +358,7 @@ const PartnershipPage = () => {
                 <div className="mb-6">
                   <feature.icon className="h-10 w-10 text-dbiz-teal" />
                 </div>
-                <h3 className="text-xl font-bold text-dbiz-navy mb-4 leading-tight">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-dbiz-navy mb-4 leading-tight">{feature.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
               </div>
             ))}
@@ -531,11 +531,11 @@ const PartnershipPage = () => {
             {/* For Partners */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Partners</h3>
+                <h3 className="text-xl font-semibold">For Partners</h3>
               </div>
               <div className="p-6 space-y-6">
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Identity Proof</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Identity Proof</p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> PAN Card (Mandatory)</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Aadhaar Card</li>
@@ -544,14 +544,14 @@ const PartnershipPage = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Address Proof</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Address Proof</p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Bank Statement (latest 2 months)</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Electricity / Water / Gas Bill</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Photographs</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Photographs</p>
                   <p className="text-gray-600 flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Recent passport-sized photographs</p>
                 </div>
               </div>
@@ -560,11 +560,11 @@ const PartnershipPage = () => {
             {/* For Foreign Nationals */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+                <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
               </div>
               <div className="p-6 space-y-6">
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Identity & Address</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Identity & Address</p>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Passport (Mandatory)</li>
                     <li className="flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Driving License / Residence Card</li>
@@ -572,14 +572,14 @@ const PartnershipPage = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Legal Verification</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Legal Verification</p>
                   <p className="text-gray-600 flex items-center leading-tight">
                     <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0" /> 
                     Notarisation / Apostille depending on jurisdiction
                   </p>
                 </div>
                 <div>
-                  <p className="font-bold text-dbiz-navy mb-3">Photographs</p>
+                  <p className="font-semibold text-dbiz-navy mb-3">Photographs</p>
                   <p className="text-gray-600 flex items-center"><CheckCircle className="h-4 w-4 text-dbiz-teal mr-2" /> Recent passport-sized photographs</p>
                 </div>
               </div>
@@ -588,27 +588,27 @@ const PartnershipPage = () => {
             {/* For Partnership Registration */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Partnership Registration</h3>
+                <h3 className="text-xl font-semibold">For Partnership Registration</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">Partnership Deed</p>
+                    <p className="font-semibold text-dbiz-navy">Partnership Deed</p>
                     <p className="text-sm text-gray-600 mt-1">Stampted deed with capital, profit ratio, rights, and exit clauses</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">PAN Application</p>
+                    <p className="font-semibold text-dbiz-navy">PAN Application</p>
                     <p className="text-sm text-gray-600 mt-1">PAN obtained in the firm name for taxation and banking</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">Bank Account Opening</p>
+                    <p className="font-semibold text-dbiz-navy">Bank Account Opening</p>
                     <p className="text-sm text-gray-600 mt-1">Current account using Deed, PAN, and Partner KYCs</p>
                   </div>
                 </div>
@@ -618,27 +618,27 @@ const PartnershipPage = () => {
             {/* For Registered Office */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Registered Office</h3>
+                <h3 className="text-xl font-semibold">For Registered Office</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">Rent Agreement + NOC</p>
+                    <p className="font-semibold text-dbiz-navy">Rent Agreement + NOC</p>
                     <p className="text-sm text-gray-600 mt-1">Required if premises is rented; must match owner names</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">Property Documents</p>
+                    <p className="font-semibold text-dbiz-navy">Property Documents</p>
                     <p className="text-sm text-gray-600 mt-1">Ownership proof required if property is owned by partners</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-dbiz-navy">Utility Bills</p>
+                    <p className="font-semibold text-dbiz-navy">Utility Bills</p>
                     <p className="text-sm text-gray-600 mt-1">Recent electricity or water bill (last 2 months)</p>
                   </div>
                 </div>
@@ -773,7 +773,7 @@ const PartnershipPage = () => {
                   <span className="flex items-center justify-center bg-dbiz-teal text-white rounded-full h-8 w-8 text-lg font-bold mr-4 shrink-0 shadow-sm">
                     {step.step}
                   </span>
-                  <h3 className="text-xl font-bold">{step.title}</h3>
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
                 </div>
                 <div className="p-6">
                   <p className="text-gray-700 mb-4 font-medium leading-relaxed">{step.desc}</p>

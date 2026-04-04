@@ -340,7 +340,7 @@ const ProducerCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Limited Liability</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Limited Liability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">The liability of the members is limited to the amount of shares held by them, protecting their personal assets from company debts.</p>
@@ -350,7 +350,7 @@ const ProducerCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Users className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Mutual Benefit Principle</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Mutual Benefit Principle</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">The company operates primarily for the benefit of its members. Surplus is distributed through patronage bonus and limited dividend based on participation.</p>
@@ -360,7 +360,7 @@ const ProducerCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Professional Governance</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Professional Governance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">Managed by a Board of Directors elected from among members. Ensures structured management, transparency, and better decision-making.</p>
@@ -370,7 +370,7 @@ const ProducerCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Clock className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Perpetual Succession</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Perpetual Succession</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">The company continues to exist irrespective of changes in membership or management, ensuring long-term continuity.</p>
@@ -380,7 +380,7 @@ const ProducerCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 lg:col-span-1 md:col-span-2 lg:translate-x-0">
                 <CardHeader className="pb-3">
                   <Scale className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Access to Government Schemes</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Access to Government Schemes</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">Eligible for various government subsidies, schemes, and financial assistance aimed at supporting agriculture and producer-based businesses.</p>
@@ -581,7 +581,7 @@ const ProducerCompanyPage = () => {
               {/* Card 1: Domestic Nationals */}
               <div className="rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col hover:shadow-lg transition-shadow">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-left">
-                  <h3 className="text-xl font-bold">For Domestic Nationals</h3>
+                  <h3 className="text-xl font-semibold">For Domestic Nationals</h3>
                 </div>
                 <div className="bg-white p-6 space-y-5 flex-grow">
                   <div className="flex items-start text-left">
@@ -613,7 +613,7 @@ const ProducerCompanyPage = () => {
               {/* Card 2: Foreign Nationals */}
               <div className="rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col hover:shadow-lg transition-shadow">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-left">
-                  <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+                  <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
                 </div>
                 <div className="bg-white p-6 space-y-5 flex-grow">
                   <div className="flex items-start text-left">
@@ -647,7 +647,7 @@ const ProducerCompanyPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-8">
               <div className="rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col hover:shadow-lg transition-shadow">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-left">
-                  <h3 className="text-xl font-bold">For Company Registration</h3>
+                  <h3 className="text-xl font-semibold">For Company Registration</h3>
                 </div>
                 <div className="bg-white p-6 space-y-4 flex-grow">
                   {[
@@ -659,7 +659,7 @@ const ProducerCompanyPage = () => {
                     <div key={i} className="flex items-start text-left">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-dbiz-navy">{item.h}</p>
+                        <p className="font-semibold text-dbiz-navy">{item.h}</p>
                         <p className="text-gray-600 mt-1 text-sm">{item.d}</p>
                       </div>
                     </div>
@@ -669,7 +669,7 @@ const ProducerCompanyPage = () => {
 
               <div className="rounded-xl overflow-hidden shadow-md border border-gray-100 flex flex-col hover:shadow-lg transition-shadow text-left">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-left">
-                  <h3 className="text-xl font-bold">For Registered Office</h3>
+                  <h3 className="text-xl font-semibold">For Registered Office</h3>
                 </div>
                 <div className="bg-white p-6 space-y-4 flex-grow text-left">
                   {[
@@ -680,7 +680,7 @@ const ProducerCompanyPage = () => {
                     <div key={i} className="flex items-start text-left">
                       <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="font-medium text-dbiz-navy">{item.h}</p>
+                        <p className="font-semibold text-dbiz-navy">{item.h}</p>
                         <p className="text-gray-600 mt-1 text-sm">{item.d}</p>
                       </div>
                     </div>
@@ -711,7 +711,7 @@ const ProducerCompanyPage = () => {
               {/* Step 1 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gradient-to-r from-[#1a365d] to-[#1a365d]/90 p-4 text-white">
-                  <h3 className="text-xl font-bold flex items-center">
+                  <h3 className="text-xl font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-[#1a365d] rounded-full h-8 w-8 text-lg mr-3 font-bold">1</span>
                     Obtain a Digital Signature Certificate (DSC)
                   </h3>
@@ -726,7 +726,7 @@ const ProducerCompanyPage = () => {
               {/* Step 2 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gradient-to-r from-[#1a365d] to-[#1a365d]/90 p-4 text-white">
-                  <h3 className="text-xl font-bold flex items-center">
+                  <h3 className="text-xl font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-[#1a365d] rounded-full h-8 w-8 text-lg mr-3 font-bold">2</span>
                     File the SPICe+ Form
                   </h3>
@@ -753,7 +753,7 @@ const ProducerCompanyPage = () => {
               {/* Step 3 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gradient-to-r from-[#1a365d] to-[#1a365d]/90 p-4 text-white">
-                  <h3 className="text-xl font-bold flex items-center">
+                  <h3 className="text-xl font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-[#1a365d] rounded-full h-8 w-8 text-lg mr-3 font-bold">3</span>
                     Draft and File the MOA and AOA
                   </h3>
@@ -774,7 +774,7 @@ const ProducerCompanyPage = () => {
               {/* Step 4 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gradient-to-r from-[#1a365d] to-[#1a365d]/90 p-4 text-white">
-                  <h3 className="text-xl font-bold flex items-center">
+                  <h3 className="text-xl font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-[#1a365d] rounded-full h-8 w-8 text-lg mr-3 font-bold">4</span>
                     Obtain the Certificate of Incorporation
                   </h3>
@@ -795,7 +795,7 @@ const ProducerCompanyPage = () => {
               {/* Step 5 */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                 <div className="bg-gradient-to-r from-[#1a365d] to-[#1a365d]/90 p-4 text-white">
-                  <h3 className="text-xl font-bold flex items-center">
+                  <h3 className="text-xl font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-[#1a365d] rounded-full h-8 w-8 text-lg mr-3 font-bold">5</span>
                     Opening Bank Account
                   </h3>

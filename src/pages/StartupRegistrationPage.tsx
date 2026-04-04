@@ -82,14 +82,17 @@ const StartupRegistrationPage = () => {
       <main className="flex-grow pt-24 pb-16">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 z-0 opacity-10">
+          {/* High-Definition Startup Aesthetic - Professional Silhouettes */}
+          <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&q=50" 
-              alt="Background" 
-              className="w-full h-full object-cover" 
+              src="https://images.unsplash.com/photo-1522071823992-b48e163d12d9?auto=format&fit=crop&w=1920&q=80" 
+              alt="Strategic Team Meeting" 
+              className="w-full h-full object-cover opacity-50" 
               loading="eager"
               fetchPriority="high"
             />
+            {/* Focused Overlay for Hero Content Readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-dbiz-navy via-dbiz-navy/80 to-transparent z-10"></div>
           </div>
           
           <div className="container-custom relative z-10">
@@ -339,7 +342,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Banknote className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Tax Exemptions</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Tax Exemptions</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Income tax exemption for 3 consecutive years out of first 10 years of operation.</p>
@@ -349,7 +352,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <TrendingUp className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Funding Support</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Funding Support</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Access to ₹10,000 Crore Fund of Funds for funding through SIDBI and various VC firms.</p>
@@ -359,7 +362,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">IPR Benefits</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">IPR Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">80% rebate on patent filing fees and expedited examination of patent applications.</p>
@@ -369,7 +372,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Easier Compliance</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Easier Compliance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Self-certification under 9 labor laws and 3 environmental laws for first 5 years.</p>
@@ -379,7 +382,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Government Tenders</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Government Tenders</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Exemption from requirement of prior experience/turnover for government tenders.</p>
@@ -389,7 +392,7 @@ const StartupRegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Award className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Networking</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Networking</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Access to startup events, mentorship programs, and networking opportunities.</p>
@@ -655,7 +658,7 @@ const StartupRegistrationPage = () => {
                       </div>
                       
                       <div className="flex-grow">
-                        <h3 className="text-2xl font-bold text-dbiz-navy mb-3">{item.title}</h3>
+                        <h3 className="text-2xl font-semibold text-dbiz-navy mb-3">{item.title}</h3>
                         <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
                         
                         <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-lg p-4">

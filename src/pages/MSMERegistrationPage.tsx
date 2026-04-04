@@ -329,7 +329,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <CheckCircle className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">100% Free</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">100% Free</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Completely free government registration with no charges or fees involved.</p>
@@ -339,7 +339,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <TrendingUp className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Instant Process</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Instant Process</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Quick online registration process with instant certificate generation upon approval.</p>
@@ -349,7 +349,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Lifetime Validity</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Lifetime Validity</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Registration is valid for lifetime with self-updating through Aadhaar and PAN integration.</p>
@@ -359,7 +359,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Single Registration</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Single Registration</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">One registration valid across India for all business activities and locations.</p>
@@ -369,7 +369,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Minimal Documents</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Minimal Documents</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Only Aadhaar and PAN required, with automatic verification from government databases.</p>
@@ -379,7 +379,7 @@ const MSMERegistrationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Award className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Priority Benefits</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Priority Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Access to government subsidies, schemes, and priority sector lending from banks.</p>
@@ -663,7 +663,7 @@ const MSMERegistrationPage = () => {
                       </div>
                       
                       <div className="flex-grow">
-                        <h3 className="text-2xl font-bold text-dbiz-navy mb-3">{item.title}</h3>
+                        <h3 className="text-2xl font-semibold text-dbiz-navy mb-3">{item.title}</h3>
                         <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
                         
                         <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-lg p-4">

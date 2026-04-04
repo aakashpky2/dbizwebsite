@@ -183,7 +183,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <Shield className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">Limited Liability</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Limited Liability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">Shareholders' liability is limited to their investment, protecting personal assets from business debts.</p>
@@ -193,7 +193,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <Building2 className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">Separate Legal Entity</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Separate Legal Entity</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">The company can own assets, enter contracts, and operate independently from its owners.</p>
@@ -203,7 +203,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <Users className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">Membership Flexibility</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Membership Flexibility</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">Requires at least 2 members and allows up to 200 members, ideal for small to medium businesses.</p>
@@ -213,7 +213,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <FileBarChart className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">No Minimum Capital</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">No Minimum Capital</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">No mandatory minimum capital investment required to register a private limited company.</p>
@@ -223,7 +223,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <FileText className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">Tax Benefits</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Tax Benefits</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">Various tax exemptions available for startups and small companies under different schemes.</p>
@@ -233,7 +233,7 @@ const PrivateLimitedPage = () => {
               <Card>
                 <CardHeader className="pb-3">
                   <Users className="h-8 w-8 text-dbiz-teal mb-2" />
-                  <CardTitle className="text-dbiz-navy">Perpetual Succession</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Perpetual Succession</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-700">The company continues to exist regardless of changes in ownership or member status.</p>
@@ -343,7 +343,7 @@ const PrivateLimitedPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-dbiz-navy">For Domestic Nationals</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">For Domestic Nationals</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p><strong>Identity Proof:</strong> PAN Card (Mandatory), Passport, Aadhar Card, Voter ID</p>
@@ -354,7 +354,7 @@ const PrivateLimitedPage = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-dbiz-navy">For Foreign Nationals</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">For Foreign Nationals</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p><strong>Identity Proof:</strong> Passport (Mandatory)</p>
@@ -365,7 +365,7 @@ const PrivateLimitedPage = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-dbiz-navy">For Company Registration</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">For Company Registration</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p><strong>Memorandum of Association (MOA)</strong></p>
@@ -378,7 +378,7 @@ const PrivateLimitedPage = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-dbiz-navy">Registered Office Proof</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Registered Office Proof</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <p><strong>Utility Bill:</strong> Electricity bill or property tax receipt not older than 30 days</p>
@@ -719,7 +719,7 @@ const PrivateLimitedPage = () => {
             </div>
 
             <div className="mt-8">
-              <h3 className="text-2xl font-bold text-[#1a365d] mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
+              <h3 className="text-2xl font-semibold text-[#1a365d] mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
               <div className="grid md:grid-cols-4 gap-6">
                 {[
                   { time: "30", unit: "Days", text: "First Board Meeting + First Auditor Appointment" },

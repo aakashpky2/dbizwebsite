@@ -349,7 +349,7 @@ const NgoRegistrationPage = () => {
                 <Card key={index} className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 flex flex-col">
                   <CardHeader className="pb-3">
                     <feature.icon className="h-10 w-10 text-dbiz-teal mb-4" />
-                    <CardTitle className="text-xl text-dbiz-navy">{feature.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold text-dbiz-navy">{feature.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-gray-600 text-sm leading-relaxed">{feature.desc}</p>
@@ -493,7 +493,7 @@ const NgoRegistrationPage = () => {
               {/* Card 1: Indian Trustees */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold">For Indian Trustees / Members</h3>
+                  <h3 className="text-xl font-semibold">For Indian Trustees / Members</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   {[
@@ -506,7 +506,7 @@ const NgoRegistrationPage = () => {
                         <CheckCircle className="h-5 w-5 text-dbiz-teal" />
                       </div>
                       <div>
-                        <p className="font-bold text-dbiz-navy text-lg">{doc.title}</p>
+                        <p className="font-semibold text-dbiz-navy text-lg">{doc.title}</p>
                         <p className="text-gray-600 mt-1 leading-relaxed">{doc.desc}</p>
                       </div>
                     </div>
@@ -517,7 +517,7 @@ const NgoRegistrationPage = () => {
               {/* Card 2: Foreign Trustees */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold">For Foreign Trustees / NRIs</h3>
+                  <h3 className="text-xl font-semibold">For Foreign Trustees / NRIs</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   {[
@@ -531,7 +531,7 @@ const NgoRegistrationPage = () => {
                         <CheckCircle className="h-5 w-5 text-dbiz-teal" />
                       </div>
                       <div>
-                        <p className="font-bold text-dbiz-navy text-lg">{doc.title}</p>
+                        <p className="font-semibold text-dbiz-navy text-lg">{doc.title}</p>
                         <p className="text-gray-600 mt-1 leading-relaxed">{doc.desc}</p>
                       </div>
                     </div>
@@ -542,7 +542,7 @@ const NgoRegistrationPage = () => {
               {/* Card 3: NGO Registration */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold">For NGO / Trust Registration</h3>
+                  <h3 className="text-xl font-semibold">For NGO / Trust Registration</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   {[
@@ -555,7 +555,7 @@ const NgoRegistrationPage = () => {
                         <CheckCircle className="h-5 w-5 text-dbiz-teal" />
                       </div>
                       <div>
-                        <p className="font-bold text-dbiz-navy text-lg">{doc.title}</p>
+                        <p className="font-semibold text-dbiz-navy text-lg">{doc.title}</p>
                         <p className="text-gray-600 mt-1 leading-relaxed">{doc.desc}</p>
                       </div>
                     </div>
@@ -566,7 +566,7 @@ const NgoRegistrationPage = () => {
               {/* Card 4: Registered Office */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold">For Registered Office</h3>
+                  <h3 className="text-xl font-semibold">For Registered Office</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   {[
@@ -579,7 +579,7 @@ const NgoRegistrationPage = () => {
                         <CheckCircle className="h-5 w-5 text-dbiz-teal" />
                       </div>
                       <div>
-                        <p className="font-bold text-dbiz-navy text-lg">{doc.title}</p>
+                        <p className="font-semibold text-dbiz-navy text-lg">{doc.title}</p>
                         <p className="text-gray-600 mt-1 leading-relaxed">{doc.desc}</p>
                       </div>
                     </div>
@@ -646,7 +646,7 @@ const NgoRegistrationPage = () => {
               ].map((step, i) => (
                 <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
                   <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white">
-                    <h3 className="text-xl font-bold flex items-center">
+                    <h3 className="text-xl font-semibold flex items-center">
                       <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg mr-3 font-bold">{i + 1}</span>
                       {step.title}
                     </h3>

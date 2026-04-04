@@ -375,7 +375,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Limited Liability</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Limited Liability</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">In a One Person Company, the liability of the member is limited to the amount invested in the company. This ensures that the personal assets of the owner remain protected from business liabilities and financial risks.</p>
@@ -385,7 +385,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Separate Legal Entity</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Separate Legal Entity</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">An OPC is recognized as a separate legal entity from its owner. It can own property, enter into contracts, and initiate legal proceedings in its own name, independent of the individual.</p>
@@ -395,7 +395,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Users className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Single Ownership with Full Control</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Single Ownership with Full Control</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">An OPC allows a single individual to own and manage the entire business, providing complete control over operations, decision-making, and financial management.</p>
@@ -405,7 +405,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileBarChart className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">No Minimum Capital Requirement</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">No Minimum Capital Requirement</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">There is no statutory minimum paid-up capital requirement for incorporating an OPC. The capital can be decided based on business requirements and operational needs.</p>
@@ -415,7 +415,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Simplified Compliance</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Simplified Compliance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Compared to other company structures, OPCs have reduced compliance requirements, including fewer mandatory meetings and simplified filing procedures.</p>
@@ -425,7 +425,7 @@ const EnhancedOnePersonCompanyPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <ArrowRight className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Perpetual Succession</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Perpetual Succession</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">An OPC continues to exist as a body corporate with perpetual succession. The appointment of a nominee ensures business continuity even in the event of death or incapacity of the owner.</p>
@@ -609,7 +609,7 @@ const EnhancedOnePersonCompanyPage = () => {
               {/* For Indian Resident */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Indian Resident (Director/Member)</h3>
+                  <h3 className="text-xl font-semibold">For Indian Resident (Director/Member)</h3>
                 </div>
                 <div className="p-6 space-y-6">
                   <div>
@@ -630,7 +630,7 @@ const EnhancedOnePersonCompanyPage = () => {
               {/* For Nominee */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Nominee (Mandatory in OPC)</h3>
+                  <h3 className="text-xl font-semibold">For Nominee (Mandatory in OPC)</h3>
                 </div>
                 <div className="p-6 space-y-6">
                   <div>
@@ -651,7 +651,7 @@ const EnhancedOnePersonCompanyPage = () => {
               {/* For Foreign Nationals */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+                  <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
                 </div>
                 <div className="p-6 space-y-6">
                   <div>
@@ -672,7 +672,7 @@ const EnhancedOnePersonCompanyPage = () => {
               {/* For OPC Incorporation */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden lg:col-span-2 hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold">For OPC Incorporation</h3>
+                  <h3 className="text-xl font-semibold">For OPC Incorporation</h3>
                 </div>
                 <div className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -722,7 +722,7 @@ const EnhancedOnePersonCompanyPage = () => {
               {/* For Registered Office */}
               <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Registered Office</h3>
+                  <h3 className="text-xl font-semibold">For Registered Office</h3>
                 </div>
                 <div className="p-6 space-y-4">
                   <div className="flex items-start gap-2">
@@ -822,7 +822,7 @@ const EnhancedOnePersonCompanyPage = () => {
               ].map((s, i) => (
                 <div key={i} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-all group">
                   <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white">
-                    <h4 className="text-lg font-bold flex items-center">
+                    <h4 className="text-lg font-semibold flex items-center">
                       <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg mr-3 font-bold group-hover:scale-110 transition-transform">{s.step}</span>
                       {s.title}
                     </h4>
@@ -1009,7 +1009,7 @@ const EnhancedOnePersonCompanyPage = () => {
                   <div className={`mb-4 w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${i >= 3 ? 'bg-dbiz-teal/10 text-dbiz-teal group-hover:bg-dbiz-teal group-hover:text-white' : 'bg-dbiz-navy/10 text-dbiz-navy group-hover:bg-dbiz-navy group-hover:text-white'}`}>
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-dbiz-navy mb-3">{item.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">{item.relief}</p>
                 </div>
               ))}
@@ -1088,7 +1088,7 @@ const EnhancedOnePersonCompanyPage = () => {
             <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
               {/* What D BIZ Handles */}
               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                <h3 className="text-xl font-semibold text-dbiz-navy mb-4 flex items-center">
                   <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
                 </h3>
                 <ul className="space-y-3">
@@ -1115,7 +1115,7 @@ const EnhancedOnePersonCompanyPage = () => {
 
               {/* What You Provide */}
               <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm">
-                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                <h3 className="text-xl font-semibold text-dbiz-navy mb-4 flex items-center">
                   <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
                 </h3>
                 <ul className="space-y-3">

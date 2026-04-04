@@ -333,7 +333,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Globe className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">International Recognition</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">International Recognition</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Globally accepted certification that opens doors to international markets and clients.</p>
@@ -343,7 +343,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <TrendingUp className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Improved Efficiency</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Improved Efficiency</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Streamlined processes and reduced waste leading to cost savings and better productivity.</p>
@@ -353,7 +353,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Risk Management</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Risk Management</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Better risk identification and mitigation through systematic management approaches.</p>
@@ -363,7 +363,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Customer Confidence</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Customer Confidence</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Enhanced credibility and trust among clients, suppliers, and stakeholders.</p>
@@ -373,7 +373,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Regulatory Compliance</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Regulatory Compliance</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Easier compliance with legal and regulatory requirements across jurisdictions.</p>
@@ -383,7 +383,7 @@ const ISOCertificationPage = () => {
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                 <CardHeader className="pb-3">
                   <Award className="h-10 w-10 text-dbiz-teal mb-4" />
-                  <CardTitle className="text-xl text-dbiz-navy">Competitive Edge</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy">Competitive Edge</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">Stand out from competitors and win more business opportunities with ISO certification.</p>
@@ -471,7 +471,7 @@ const ISOCertificationPage = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 9001:2015</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 9001:2015</CardTitle>
                   <CardDescription className="text-base">Quality Management System</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -496,7 +496,7 @@ const ISOCertificationPage = () => {
                   <div className="inline-block px-3 py-1 rounded-full bg-dbiz-teal text-white text-xs font-medium mb-2">
                     Most Popular
                   </div>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 14001:2015</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 14001:2015</CardTitle>
                   <CardDescription className="text-base">Environmental Management System</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -518,7 +518,7 @@ const ISOCertificationPage = () => {
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 45001:2018</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 45001:2018</CardTitle>
                   <CardDescription className="text-base">Occupational Health & Safety</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -540,7 +540,7 @@ const ISOCertificationPage = () => {
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 27001:2013</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 27001:2013</CardTitle>
                   <CardDescription className="text-base">Information Security Management</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -562,7 +562,7 @@ const ISOCertificationPage = () => {
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 22000:2018</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 22000:2018</CardTitle>
                   <CardDescription className="text-base">Food Safety Management</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -584,7 +584,7 @@ const ISOCertificationPage = () => {
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">ISO 50001:2018</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">ISO 50001:2018</CardTitle>
                   <CardDescription className="text-base">Energy Management System</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -769,7 +769,7 @@ const ISOCertificationPage = () => {
                       </div>
                       
                       <div className="flex-grow">
-                        <h3 className="text-2xl font-bold text-dbiz-navy mb-3">{item.title}</h3>
+                        <h3 className="text-2xl font-semibold text-dbiz-navy mb-3">{item.title}</h3>
                         <p className="text-gray-600 mb-4 leading-relaxed">{item.description}</p>
                         
                         <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-lg p-4">

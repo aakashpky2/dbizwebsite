@@ -387,7 +387,7 @@ const SoleProprietorshipPage = () => {
                       className="w-full h-32 object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-dbiz-navy border-b border-gray-100 pb-3 font-outfit">Definition as per Business Law</h3>
+                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy border-b border-gray-100 pb-3 font-outfit">Definition as per Business Law</h3>
                   <p className="text-gray-700 mb-6 leading-relaxed">
                     A Proprietorship is not governed by a specific statute like companies or LLPs. It is a business owned by one individual who is personally responsible for all business operations, profits, and liabilities.
                   </p>
@@ -413,7 +413,7 @@ const SoleProprietorshipPage = () => {
                       </div>
                       <div className="ml-4">
                         <p className="text-sm text-gray-500 font-medium">Need expert guidance?</p>
-                        <p className="text-dbiz-navy font-bold text-lg">Contact Our Team</p>
+                        <p className="text-dbiz-navy font-semibold text-lg">Contact Our Team</p>
                       </div>
                     </div>
                   </div>
@@ -474,7 +474,7 @@ const SoleProprietorshipPage = () => {
                   <div className="bg-dbiz-teal/10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-dbiz-teal group-hover:text-white transition-colors duration-300">
                     <feature.icon className="h-7 w-7 text-dbiz-teal transition-colors duration-300 group-hover:text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold text-dbiz-navy mb-3">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
                 </div>
               ))}
@@ -628,27 +628,27 @@ const SoleProprietorshipPage = () => {
               {/* Category 1: For Proprietor */}
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Proprietor</h3>
+                  <h3 className="text-xl font-semibold">For Proprietor</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Identity Proof</p>
+                      <p className="font-semibold text-dbiz-navy">Identity Proof</p>
                       <p className="text-gray-600 mt-1">PAN Card (Mandatory), Aadhaar Card, Passport, Voter ID</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Address Proof</p>
+                      <p className="font-semibold text-dbiz-navy">Address Proof</p>
                       <p className="text-gray-600 mt-1">Utility Bills, Bank Statements (latest 2 months), or any valid proof</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Photographs</p>
+                      <p className="font-semibold text-dbiz-navy">Photographs</p>
                       <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
                     </div>
                   </div>
@@ -658,27 +658,27 @@ const SoleProprietorshipPage = () => {
               {/* Category 2: For Foreign Nationals */}
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+                  <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Identity Proof</p>
+                      <p className="font-semibold text-dbiz-navy">Identity Proof</p>
                       <p className="text-gray-600 mt-1">Passport (Mandatory)</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Address Proof</p>
+                      <p className="font-semibold text-dbiz-navy">Address Proof</p>
                       <p className="text-gray-600 mt-1">Driving License, Bank Statement, or Residence Card</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Notarization / Apostille</p>
+                      <p className="font-semibold text-dbiz-navy">Notarization / Apostille</p>
                       <p className="text-gray-600 mt-1 font-medium italic opacity-80">May be required depending on applicable regulations</p>
                     </div>
                   </div>
@@ -688,27 +688,27 @@ const SoleProprietorshipPage = () => {
               {/* Category 3: For Proprietorship Registration */}
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Proprietorship Registration</h3>
+                  <h3 className="text-xl font-semibold">For Proprietorship Registration</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Business Proof (Any One)</p>
+                      <p className="font-semibold text-dbiz-navy">Business Proof (Any One)</p>
                       <p className="text-gray-600 mt-1">GST Certificate, Udyam (MSME), Shop Act, or Trade License</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">PAN of Proprietor</p>
+                      <p className="font-semibold text-dbiz-navy">PAN of Proprietor</p>
                       <p className="text-gray-600 mt-1">Mandatory for taxation and business registration</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Bank Account Opening</p>
+                      <p className="font-semibold text-dbiz-navy">Bank Account Opening</p>
                       <p className="text-gray-600 mt-1">Current account requires PAN, Business proof, and KYC</p>
                     </div>
                   </div>
@@ -718,27 +718,27 @@ const SoleProprietorshipPage = () => {
               {/* Category 4: For Business Address */}
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                  <h3 className="text-xl font-bold">For Business Address</h3>
+                  <h3 className="text-xl font-semibold">For Business Address</h3>
                 </div>
                 <div className="p-8 space-y-6">
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Rent Agreement + NOC</p>
+                      <p className="font-semibold text-dbiz-navy">Rent Agreement + NOC</p>
                       <p className="text-gray-600 mt-1">For rented premises, along with NOC from the owner</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Property Documents</p>
+                      <p className="font-semibold text-dbiz-navy">Property Documents</p>
                       <p className="text-gray-600 mt-1">Ownership proof if the premises is owned</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-bold text-dbiz-navy">Utility Bills</p>
+                      <p className="font-semibold text-dbiz-navy">Utility Bills</p>
                       <p className="text-gray-600 mt-1">Electricity or water bill where address exactly matches</p>
                     </div>
                   </div>
@@ -755,7 +755,7 @@ const SoleProprietorshipPage = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">Important Note</h3>
+                  <h3 className="text-xl font-semibold text-dbiz-navy mb-3">Important Note</h3>
                   <p className="text-gray-700 mb-4 leading-relaxed font-medium">Proper documentation is essential for:</p>
                   <ul className="space-y-3 mb-6">
                     {[
@@ -866,7 +866,7 @@ const SoleProprietorshipPage = () => {
                     <div className="w-10 h-10 rounded-full bg-white text-[#0a2540] flex items-center justify-center font-bold text-lg mr-4 flex-shrink-0">
                       {process.step}
                     </div>
-                    <h3 className="text-xl font-bold text-white leading-tight">
+                    <h3 className="text-xl font-semibold text-white leading-tight">
                       {process.title}
                     </h3>
                   </div>
@@ -894,7 +894,7 @@ const SoleProprietorshipPage = () => {
                  <FileText className="h-12 w-12 text-[#0a2540]" />
               </div>
               <div className="flex-1 text-center md:text-left">
-                <p className="text-[#0a2540] font-bold text-xl mb-3">Important Note</p>
+                <p className="text-[#0a2540] font-semibold text-xl mb-3">Important Note</p>
                 <p className="text-gray-700 leading-relaxed font-medium">
                   A proprietorship does not require complex approvals or incorporation procedures. However, proper registration and documentation are essential for smooth operations, banking, and compliance. D BIZ CONSULTANCY ensures quick setup, proper registration, and complete support from start to business operations.
                 </p>
@@ -959,7 +959,7 @@ const SoleProprietorshipPage = () => {
                     <Info className="h-6 w-6 text-dbiz-teal" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-dbiz-navy mb-4">Important Notes</h3>
+                    <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Important Notes</h3>
                     <div className="space-y-3">
                       {[
                         "No requirement for board meetings, AGM, or corporate filings",
@@ -984,7 +984,7 @@ const SoleProprietorshipPage = () => {
                     <CheckCircle2 className="h-6 w-6 text-dbiz-teal" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-dbiz-navy mb-4">Simplified Compliance Advantage</h3>
+                    <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Simplified Compliance Advantage</h3>
                     <div className="space-y-3">
                       {[
                         "Very low overall compliance burden compared to LLPs or Companies",
@@ -1102,7 +1102,7 @@ const SoleProprietorshipPage = () => {
                   <div className="bg-dbiz-teal/10 p-2.5 rounded-xl">
                     <CheckCircle2 className="h-7 w-7 text-dbiz-teal" />
                   </div>
-                  <h3 className="text-xl font-bold text-dbiz-navy">What D BIZ Handles</h3>
+                  <h3 className="text-xl font-semibold text-dbiz-navy">What D BIZ Handles</h3>
                 </div>
                 
                 <div className="space-y-4">
@@ -1132,7 +1132,7 @@ const SoleProprietorshipPage = () => {
                   <div className="bg-dbiz-navy/10 p-2.5 rounded-xl">
                     <FileText className="h-7 w-7 text-dbiz-navy" />
                   </div>
-                  <h3 className="text-xl font-bold text-dbiz-navy">What You Provide</h3>
+                  <h3 className="text-xl font-semibold text-dbiz-navy">What You Provide</h3>
                 </div>
                 
                 <div className="space-y-4">

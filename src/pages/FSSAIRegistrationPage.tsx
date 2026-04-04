@@ -332,7 +332,7 @@ const FSSAIRegistrationPage = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">Basic Registration</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">Basic Registration</CardTitle>
                   <CardDescription className="text-base">For small food businesses</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -360,7 +360,7 @@ const FSSAIRegistrationPage = () => {
                   <div className="inline-block px-3 py-1 rounded-full bg-dbiz-teal text-white text-xs font-medium mb-2">
                     Most Common
                   </div>
-                  <CardTitle className="text-2xl text-dbiz-navy">State License</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">State License</CardTitle>
                   <CardDescription className="text-base">For medium-sized businesses</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -385,7 +385,7 @@ const FSSAIRegistrationPage = () => {
 
               <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-dbiz-navy">Central License</CardTitle>
+                  <CardTitle className="text-2xl font-semibold text-dbiz-navy">Central License</CardTitle>
                   <CardDescription className="text-base">For large food businesses</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">

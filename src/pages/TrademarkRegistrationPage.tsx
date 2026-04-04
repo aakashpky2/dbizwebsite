@@ -321,7 +321,7 @@ const TrademarkRegistrationPage = () => {
                 <Card key={idx} className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 p-2">
                   <CardHeader className="pb-3">
                     <item.icon className="h-10 w-10 text-dbiz-teal mb-4" />
-                    <CardTitle className="text-xl text-dbiz-navy">{item.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold text-dbiz-navy">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 leading-relaxed text-[15px]">{item.desc}</p>
@@ -463,7 +463,7 @@ const TrademarkRegistrationPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-dbiz-navy p-8 text-white">
-                  <h3 className="text-xl font-black uppercase tracking-tighter">Individual / Proprietor</h3>
+                  <h3 className="text-xl font-semibold uppercase tracking-tighter">Individual / Proprietor</h3>
                 </div>
                 <div className="p-10 space-y-6">
                   {[
@@ -482,7 +482,7 @@ const TrademarkRegistrationPage = () => {
 
               <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                 <div className="bg-dbiz-navy p-8 text-white">
-                  <h3 className="text-xl font-black uppercase tracking-tighter">Companies / LLP</h3>
+                  <h3 className="text-xl font-semibold uppercase tracking-tighter">Companies / LLP</h3>
                 </div>
                 <div className="p-10 space-y-6">
                   {[
@@ -525,7 +525,7 @@ const TrademarkRegistrationPage = () => {
                      {item.s}
                    </div>
                    <div>
-                      <h3 className="text-2xl font-black text-dbiz-navy mb-3 uppercase tracking-tighter group-hover:text-dbiz-teal transition-colors">{item.t}</h3>
+                      <h3 className="text-2xl font-semibold text-dbiz-navy mb-3 uppercase tracking-tighter group-hover:text-dbiz-teal transition-colors">{item.t}</h3>
                       <p className="text-gray-500 leading-relaxed font-medium">{item.d}</p>
                    </div>
                 </div>
@@ -539,14 +539,14 @@ const TrademarkRegistrationPage = () => {
            <div className="container-custom">
               <div className="flex flex-col lg:flex-row gap-16 items-start">
                  <div className="lg:w-1/2">
-                    <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-10 tracking-tighter">Trade License Services</h2>
+                    <h2 className="text-3xl md:text-5xl font-semibold text-dbiz-navy mb-10 tracking-tighter">Trade License Services</h2>
                     <div className="prose prose-lg text-gray-700 mb-10 leading-relaxed font-medium">
                        <p>Getting a Trade License is essential to legally operate your business within municipal limits. Any error can lead to delays, rejection, or penalties.</p>
                        <p>DBIZ CONSULTANCY makes the process simple, fast, and hassle-free — handling everything from filing to final approval.</p>
                     </div>
                     
                     <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                       <h3 className="text-xl font-bold text-dbiz-navy mb-6 uppercase tracking-widest">Who Needs It?</h3>
+                       <h3 className="text-xl font-semibold text-dbiz-navy mb-6 uppercase tracking-widest">Who Needs It?</h3>
                        <div className="space-y-4">
                           {[
                             "Shops and retail businesses",
@@ -567,7 +567,7 @@ const TrademarkRegistrationPage = () => {
                     <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
                        <Scale className="w-56 h-56 text-dbiz-teal" />
                     </div>
-                    <h3 className="text-3xl font-black mb-10 tracking-tight text-dbiz-teal underline underline-offset-[14px]">Required for License</h3>
+                    <h3 className="text-3xl font-semibold mb-10 tracking-tight text-dbiz-teal underline underline-offset-[14px]">Required for License</h3>
                     <ul className="space-y-8">
                        {[
                          "PAN & Aadhaar of applicant",

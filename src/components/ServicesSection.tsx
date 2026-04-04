@@ -91,6 +91,7 @@ const ServicesSection = () => {
       title: "Registration",
       items: [
         { name: "GST Registration", path: "/gst-registration" },
+        { name: "IMPORT EXPORT CODE (IEC)", path: "/iec-registration" },
         { name: "12A AND 80G", path: "/12a-80g-registration" },
         { name: "ISO REGISTRATION", path: "/iso-certification" },
         { name: "FSSAI REGISTRATION", path: "/fssai-registration" },

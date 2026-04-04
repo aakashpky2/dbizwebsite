@@ -332,7 +332,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">Separate legal entity + perpetual succession</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">Separate legal entity + perpetual succession</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">The LLP is legally distinct from partners and continues regardless of partner changes—useful for contracts, assets, IP ownership, and long-running client engagements.</p>
@@ -342,7 +342,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <Shield className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">Limited liability (with statutory exceptions)</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">Limited liability (with statutory exceptions)</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">A partner is not personally liable for LLP obligations solely by reason of being a partner. If business is carried on with intent to defraud, liability can become unlimited.</p>
@@ -352,7 +352,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <CheckCircle2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">Designated partner compliance accountability</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">Designated partner compliance accountability</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">Designated partners are responsible for required acts/filings under the LLP Act and can be liable for penalties for contraventions.</p>
@@ -362,7 +362,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <FileText className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">Contract-driven governance</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">Contract-driven governance</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">Mutual rights/duties of partners and LLP governance are primarily determined by the LLP Agreement; default provisions apply only where agreement is silent.</p>
@@ -372,7 +372,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <FileBarChart className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">Tax positioning</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">Tax positioning</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">LLPs are taxed as partnership firms: for AY 2025–26, the headline tax rate is 30% (plus surcharge/cess). Corporate concessional regimes are inapplicable to LLPs.</p>
@@ -382,7 +382,7 @@ const LlpRegistrationPage = () => {
                             <Card className="border-none shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
                                 <CardHeader className="pb-3">
                                     <Building2 className="h-10 w-10 text-dbiz-teal mb-4" />
-                                    <CardTitle className="text-xl text-dbiz-navy">FDI permissibility</CardTitle>
+                                    <CardTitle className="text-xl font-semibold text-dbiz-navy">FDI permissibility</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-600">Eligible foreign investors may invest in LLPs generally only where 100% FDI is allowed under automatic route and there are no FDI-linked performance conditions.</p>
@@ -534,7 +534,7 @@ const LlpRegistrationPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">Partner/DP KYC</h3>
+                                    <h3 className="text-xl font-semibold">Partner/DP KYC</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">ID + address proofs for all partners and designated partners.</p>
@@ -544,7 +544,7 @@ const LlpRegistrationPage = () => {
 
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">DSC</h3>
+                                    <h3 className="text-xl font-semibold">DSC</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">Digital signatures for designated partners / authorized signatory.</p>
@@ -554,7 +554,7 @@ const LlpRegistrationPage = () => {
 
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">DPIN/DIN</h3>
+                                    <h3 className="text-xl font-semibold">DPIN/DIN</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">DPIN/DIN for designated partners (or apply during incorporation).</p>
@@ -564,7 +564,7 @@ const LlpRegistrationPage = () => {
 
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">Registered Office Proof</h3>
+                                    <h3 className="text-xl font-semibold">Registered Office Proof</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">Address + supporting proof.</p>
@@ -574,7 +574,7 @@ const LlpRegistrationPage = () => {
 
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">Incorporation Filing</h3>
+                                    <h3 className="text-xl font-semibold">Incorporation Filing</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">FiLLiP incorporation document + prescribed attachments.</p>
@@ -584,7 +584,7 @@ const LlpRegistrationPage = () => {
 
                             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
                                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                                    <h3 className="text-xl font-bold">LLP Agreement</h3>
+                                    <h3 className="text-xl font-semibold">LLP Agreement</h3>
                                 </div>
                                 <div className="p-6 space-y-4">
                                     <p className="text-gray-600">Signed LLP agreement + stamp duty as applicable.</p>
@@ -627,7 +627,7 @@ const LlpRegistrationPage = () => {
                                             <span className="text-3xl font-bold text-dbiz-navy">Step {process.step}</span>
                                         </div>
                                         <div className="p-6">
-                                            <h3 className="text-xl font-bold text-dbiz-navy mb-2">{process.title}</h3>
+                                            <h3 className="text-xl font-semibold text-dbiz-navy mb-2">{process.title}</h3>
                                             <p className="text-gray-700">{process.desc}</p>
                                         </div>
                                     </div>
@@ -656,7 +656,7 @@ const LlpRegistrationPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">LLP Agreement filing (Form 3)</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">LLP Agreement filing (Form 3)</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">Every LLP must file information about its LLP Agreement in Form 3 within 30 days of incorporation, and file changes within 30 days of change.</p>
@@ -665,7 +665,7 @@ const LlpRegistrationPage = () => {
 
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">Annual return (Form 11)</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">Annual return (Form 11)</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">Every LLP must file an annual return with the Registrar within 60 days of closure of its financial year.</p>
@@ -674,7 +674,7 @@ const LlpRegistrationPage = () => {
 
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">Statement of Account & Solvency (Form 8)</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">Statement of Account & Solvency (Form 8)</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">LLP must prepare the Statement within 6 months from FY end, and file Form 8 within 30 days from the end of six months from FY end.</p>
@@ -683,7 +683,7 @@ const LlpRegistrationPage = () => {
 
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">Audit Requirement</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">Audit Requirement</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">Audit exemption where turnover does not exceed ₹40 lakh or contribution does not exceed ₹25 lakh. Otherwise, audit is required.</p>
@@ -692,7 +692,7 @@ const LlpRegistrationPage = () => {
 
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">DIR-3 KYC Applicability</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">DIR-3 KYC Applicability</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">MCA Gazette notification effective 31 March 2026 changes DIN KYC to DIR-3-KYC-Web once every third consecutive FY (by June 30) with event-based updates within 30 days.</p>
@@ -701,7 +701,7 @@ const LlpRegistrationPage = () => {
 
                             <Card className="border-none shadow-md bg-white border border-gray-100">
                                 <CardHeader>
-                                    <CardTitle className="text-dbiz-navy font-bold text-lg">Small Company Exclusion</CardTitle>
+                                    <CardTitle className="text-dbiz-navy font-semibold text-lg">Small Company Exclusion</CardTitle>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-gray-700">"Small Company" concept does not apply to LLPs. LLPs instead may qualify as Small LLP based on statutory thresholds/conditions.</p>
@@ -738,7 +738,7 @@ const LlpRegistrationPage = () => {
 
                         <div className="grid md:grid-cols-2 gap-8 mb-12">
                             <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
-                                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                                <h3 className="text-xl font-semibold text-dbiz-navy mb-4 flex items-center">
                                     <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What We Handle (End-to-end Setup)
                                 </h3>
                                 <ul className="space-y-3">
@@ -759,7 +759,7 @@ const LlpRegistrationPage = () => {
                                 </ul>
                             </div>
                             <div className="bg-white border border-gray-200 rounded-xl p-6">
-                                <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center">
+                                <h3 className="text-xl font-semibold text-dbiz-navy mb-4 flex items-center">
                                     <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
                                 </h3>
                                 <ul className="space-y-3">

@@ -315,7 +315,7 @@ const EnhancedPublicLimitedPage = () => {
               <Card key={idx} className="border-none shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-gradient-to-br from-white to-gray-50 group animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
                 <CardHeader className="pb-3">
                   <feature.Icon className="h-10 w-10 text-dbiz-teal mb-4 group-hover:scale-110 transition-transform duration-300" />
-                  <CardTitle className="text-xl text-dbiz-navy group-hover:text-dbiz-teal transition-colors">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy group-hover:text-dbiz-teal transition-colors">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600">{feature.content}</p>
@@ -542,13 +542,13 @@ const EnhancedPublicLimitedPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Domestic Nationals</h3>
+                <h3 className="text-xl font-semibold">For Domestic Nationals</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Identity Proof</p>
+                    <p className="font-semibold text-dbiz-navy">Identity Proof</p>
                     <p className="text-gray-600 mt-1">PAN Card (Mandatory), Passport, Aadhar Card, Voter ID</p>
                   </div>
                 </div>
@@ -556,7 +556,7 @@ const EnhancedPublicLimitedPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Address Proof</p>
+                    <p className="font-semibold text-dbiz-navy">Address Proof</p>
                     <p className="text-gray-600 mt-1">Utility Bills, Bank Statements (dated within last 2 months)</p>
                   </div>
                 </div>
@@ -564,7 +564,7 @@ const EnhancedPublicLimitedPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Photographs</p>
+                    <p className="font-semibold text-dbiz-navy">Photographs</p>
                     <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
                   </div>
                 </div>
@@ -573,13 +573,13 @@ const EnhancedPublicLimitedPage = () => {
 
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Foreign Nationals / NRIs</h3>
+                <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Identity Proof</p>
+                    <p className="font-semibold text-dbiz-navy">Identity Proof</p>
                     <p className="text-gray-600 mt-1">Passport (Mandatory)</p>
                   </div>
                 </div>
@@ -587,7 +587,7 @@ const EnhancedPublicLimitedPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Address Proof</p>
+                    <p className="font-semibold text-dbiz-navy">Address Proof</p>
                     <p className="text-gray-600 mt-1">Driver's License, Bank Statement, or Residence Card</p>
                   </div>
                 </div>
@@ -595,7 +595,7 @@ const EnhancedPublicLimitedPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Notarisation / Apostille</p>
+                    <p className="font-semibold text-dbiz-navy">Notarisation / Apostille</p>
                     <p className="text-gray-600 mt-1">May be required depending on director/shareholder status and current MCA practice</p>
                   </div>
                 </div>
@@ -603,7 +603,7 @@ const EnhancedPublicLimitedPage = () => {
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Photographs</p>
+                    <p className="font-semibold text-dbiz-navy">Photographs</p>
                     <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
                   </div>
                 </div>
@@ -612,37 +612,37 @@ const EnhancedPublicLimitedPage = () => {
 
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Company Registration</h3>
+                <h3 className="text-xl font-semibold">For Company Registration</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Memorandum of Association (MOA)</p>
+                    <p className="font-semibold text-dbiz-navy">Memorandum of Association (MOA)</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Articles of Association (AOA)</p>
+                    <p className="font-semibold text-dbiz-navy">Articles of Association (AOA)</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Declaration and Consent Forms</p>
+                    <p className="font-semibold text-dbiz-navy">Declaration and Consent Forms</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Digital Signature Certificate (DSC)</p>
+                    <p className="font-semibold text-dbiz-navy">Digital Signature Certificate (DSC)</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Director Identification Number (DIN)</p>
+                    <p className="font-semibold text-dbiz-navy">Director Identification Number (DIN)</p>
                   </div>
                 </div>
               </div>
@@ -650,27 +650,27 @@ const EnhancedPublicLimitedPage = () => {
 
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
               <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
-                <h3 className="text-xl font-bold">For Registered Office</h3>
+                <h3 className="text-xl font-semibold">For Registered Office</h3>
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Rent Agreement + NOC</p>
+                    <p className="font-semibold text-dbiz-navy">Rent Agreement + NOC</p>
                     <p className="text-gray-600 mt-1">For a rented office/residential address, with NOC from the owner</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Property Documents</p>
+                    <p className="font-semibold text-dbiz-navy">Property Documents</p>
                     <p className="text-gray-600 mt-1">For owned property, proof of ownership</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-medium text-dbiz-navy">Utility Bills</p>
+                    <p className="font-semibold text-dbiz-navy">Utility Bills</p>
                     <p className="text-gray-600 mt-1">Recent electricity or water bill of the premises (owner name must match)</p>
                   </div>
                 </div>
@@ -770,7 +770,7 @@ const EnhancedPublicLimitedPage = () => {
             ].map((s, i) => (
               <div key={i} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-all group">
                 <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white">
-                  <h4 className="text-lg font-bold flex items-center">
+                  <h4 className="text-lg font-semibold flex items-center">
                     <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg mr-3 font-bold group-hover:scale-110 transition-transform">{s.step}</span>
                     {s.title}
                   </h4>
