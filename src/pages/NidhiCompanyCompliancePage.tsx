@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users, FileText, Calendar, AlertTriangle } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users, FileText, Calendar, AlertTriangle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { indianCities } from "@/data/keralaLocations";
@@ -42,10 +42,21 @@ const content = {
     { title: "Statutory Registers", description: "Maintain all required registers and records" }
   ],
   faqs: [
-    { question: "What is NDH-1 return?", answer: "NDH-1 is a half-yearly return that Nidhi Companies must file within 30 days from the close of each half year. It contains details about membership, deposits, and loans." },
-    { question: "What is NDH-3 return?", answer: "NDH-3 is an annual return filed to declare that the Nidhi Company has complied with the Net Owned Funds (NOF) requirements as per Nidhi Rules, 2014." },
-    { question: "What are the penalties for non-compliance?", answer: "Penalties can range from ₹5,000 to ₹5 lakhs depending on the nature and duration of non-compliance. Directors may also face personal liability." },
-    { question: "How often must board meetings be held?", answer: "Nidhi Companies must hold a minimum of 4 board meetings every year with a gap of not more than 120 days between two consecutive meetings." }
+    { question: "What is a Nidhi Company?", answer: "A Nidhi Company is a type of NBFC that promotes savings and lends money only to its members. It is governed by Section 406 of the Companies Act, 2013 and the Nidhi Rules, 2014." },
+    { question: "Is Nidhi Company compliance mandatory?", answer: "Yes, compliance is mandatory under the Companies Act, 2013 and Nidhi Rules, 2014. Non-compliance can lead to penalties, restrictions, or cancellation of Nidhi status." },
+    { question: "What is the minimum member requirement?", answer: "A Nidhi Company must have at least 200 members within 1 year of incorporation. Maintaining this requirement is a continuous statutory obligation." },
+    { question: "What is Net Owned Funds (NOF)?", answer: "NOF is the company's own capital — share capital plus free reserves minus accumulated losses and intangible assets. A minimum of ₹10 lakhs NOF must be maintained at all times." },
+    { question: "What is the NOF to deposit ratio?", answer: "The ratio of Net Owned Funds to deposits should not exceed 1:20. This means for every ₹1 of NOF, the company cannot accept more than ₹20 in deposits." },
+    { question: "What is NDH-1?", answer: "NDH-1 is an annual return filed with the ROC confirming compliance with member count, deposit requirements, and Net Owned Funds as prescribed under the Nidhi Rules." },
+    { question: "What is NDH-3?", answer: "NDH-3 is a half-yearly return containing details of members, deposits, and loans. It must be filed within 30 days from the close of each half year." },
+    { question: "Can a Nidhi Company accept deposits from the public?", answer: "No. A Nidhi Company can only accept deposits from its registered members. Accepting deposits from the public is strictly prohibited under the Nidhi Rules, 2014." },
+    { question: "Is audit compulsory for a Nidhi Company?", answer: "Yes, statutory audit by a Chartered Accountant is mandatory every financial year. Audited financial statements are required for ROC filings and general meetings." },
+    { question: "What happens if compliance is not done?", answer: "Non-compliance may lead to monetary penalties, restrictions on operations, disqualification of directors, or cancellation of the Nidhi Company's recognition by the Central Government." },
+    { question: "What are the main annual compliances?", answer: "The key annual compliances include AOC-4 (financial statements), MGT-7 (annual return), NDH-1, statutory audit, and holding the Annual General Meeting (AGM) within the prescribed timelines." },
+    { question: "What is an unencumbered term deposit?", answer: "A Nidhi Company must maintain at least 10% of its outstanding deposits as unencumbered term deposits with a scheduled bank or post office. This acts as a liquidity reserve to protect member deposits." },
+    { question: "Can a Nidhi Company give loans to non-members?", answer: "No. Loans can only be given to registered members of the Nidhi Company. Lending to non-members is not permitted under the Nidhi Rules, 2014." },
+    { question: "Is ROC filing mandatory every year?", answer: "Yes, annual ROC filings such as AOC-4 and MGT-7 are compulsory to maintain legal status. Failure to file can result in penalties and may affect the company's active status with MCA." },
+    { question: "How can D BIZ CONSULTANCY help?", answer: "D BIZ CONSULTANCY handles complete compliance management including NDH-1, NDH-3, AOC-4, MGT-7, audit coordination, member monitoring, and NOF tracking — ensuring 100% regulatory compliance for your Nidhi Company." }
   ]
 };
 
@@ -116,8 +127,8 @@ const NidhiCompanyCompliancePage = () => {
                     />
                     <div className="mt-6 grid grid-cols-2 gap-4">
                       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                        <div className="text-3xl md:text-4xl font-bold">100%</div>
-                        <div className="text-sm opacity-80">Compliance</div>
+                        <div className="text-3xl md:text-4xl font-bold">12</div>
+                        <div className="text-sm opacity-80">Returns (Typical)</div>
                       </div>
                       <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
                         <div className="text-3xl md:text-4xl font-bold">0</div>
@@ -395,118 +406,91 @@ const NidhiCompanyCompliancePage = () => {
                 <div className="grid grid-cols-1 gap-5">
                   {/* Benefit 1 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Regulatory Protection</h3>
-                        <p className="text-gray-700 leading-relaxed">Proper compliance ensures the company operates within legal boundaries, avoiding penalties, restrictions, or cancellation of Nidhi status.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Regulatory Protection ensures the company operates within legal limits and avoids penalties.</p>
                     </div>
                   </div>
 
                   {/* Benefit 2 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Member Trust & Credibility</h3>
-                        <p className="text-gray-700 leading-relaxed">Maintaining compliance builds strong confidence among members, ensuring transparency in deposits, lending, and financial management.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Member Trust &amp; Credibility builds confidence among members through transparent compliance practices.</p>
                     </div>
                   </div>
 
                   {/* Benefit 3 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Smooth Business Operations</h3>
-                        <p className="text-gray-700 leading-relaxed">Timely filings and adherence to rules prevent interruptions, allowing uninterrupted functioning of lending and deposit activities.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Smooth Business Operations helps the company function without interruptions or regulatory issues.</p>
                     </div>
                   </div>
 
                   {/* Benefit 4 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Financial Discipline</h3>
-                        <p className="text-gray-700 leading-relaxed">Compliance requirements such as maintaining NOF, deposit ratios, and reserves ensure strong financial stability and risk control.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Financial Discipline maintains financial stability through proper ratio and reserve compliance.</p>
                     </div>
                   </div>
 
                   {/* Benefit 5 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Improved Governance</h3>
-                        <p className="text-gray-700 leading-relaxed">Structured compliance promotes better record-keeping, accountability, and internal control systems within the company.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Improved Governance strengthens accountability, record-keeping, and internal control systems.</p>
                     </div>
                   </div>
 
                   {/* Benefit 6 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Audit Readiness</h3>
-                        <p className="text-gray-700 leading-relaxed">Regular compliance ensures that financial statements, registers, and records are always prepared for audit and verification.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Audit Readiness keeps books, records, and statements ready for audit and verification.</p>
                     </div>
                   </div>
 
                   {/* Benefit 7 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Legal Continuity</h3>
-                        <p className="text-gray-700 leading-relaxed">Ensures the company continues its operations without regulatory hurdles, maintaining its legal status and existence.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Legal Continuity supports uninterrupted legal existence and ongoing business operations.</p>
                     </div>
                   </div>
 
                   {/* Benefit 8 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Member Protection</h3>
-                        <p className="text-gray-700 leading-relaxed">Compliance safeguards the interests of members by ensuring proper utilization and management of funds.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Member Protection protects members' interests through proper fund management and compliance.</p>
                     </div>
                   </div>
 
                   {/* Benefit 9 */}
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                    <div className="flex">
-                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                    <div className="flex items-center">
+                      <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center">
                         <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                       </div>
-                      <div className="ml-5">
-                        <h3 className="font-bold text-[17px] text-dbiz-navy mb-1">Long-Term Sustainability</h3>
-                        <p className="text-gray-700 leading-relaxed">A well-compliant Nidhi Company is more stable, trustworthy, and capable of long-term growth within regulatory frameworks.</p>
-                      </div>
+                      <p className="ml-5 text-gray-700 font-medium leading-relaxed">Long-Term Sustainability improves the company's stability, credibility, and future growth.</p>
                     </div>
                   </div>
 
@@ -1232,25 +1216,177 @@ const NidhiCompanyCompliancePage = () => {
                   <div className="w-[56px] h-[56px] rounded-full bg-[#f0f9f9] flex flex-col items-center justify-center mb-3">
                     <span className="text-[#0891b2] font-bold text-base leading-tight">{item.time}</span>
                   </div>
-                  <p className="font-semibold text-[#1a365d] mb-1 text-xs">{item.unit}</p>
-                  <p className="text-[11.5px] text-gray-500 leading-relaxed">{item.text}</p>
+                  <p className="font-medium text-[#1a365d] mb-1 text-[14.875px]">{item.unit}</p>
+                  <p className="text-[12.75px] text-gray-500 leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Why Compliance Is Critical Section */}
+        <section className="py-16 bg-white scroll-mt-32 border-t border-gray-100">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Why It Matters
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why Compliance Is Critical for Nidhi Companies</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                "Ensures legal validity of Nidhi operations",
+                "Prevents penalties, restrictions, and closure risk",
+                "Builds strong trust among members",
+                "Maintains financial discipline and transparency",
+                "Enables smooth long-term growth",
+              ].map((point, i) => (
+                <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 p-5 flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-dbiz-teal/10 flex items-center justify-center mt-0.5">
+                    <svg className="w-4 h-4 text-dbiz-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 font-medium text-[14.875px] leading-relaxed">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why D BIZ CONSULTANCY Section */}
+        <section className="py-16 bg-gray-50 scroll-mt-32 border-t border-gray-100">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[14.875px] font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Why D BIZ
+              </div>
+              <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Nidhi Company Compliance?</h2>
+              <p className="text-[19.125px] text-gray-600 leading-relaxed font-medium">
+                D BIZ CONSULTANCY helps your Nidhi Company stay compliant with the Companies Act, 2013 and the Nidhi Rules, 2014 without stress or delays. From regular filings to ongoing compliance monitoring, we manage the process with accuracy and care so you can focus on running your business.
+              </p>
+              <p className="text-[17px] text-gray-500 leading-relaxed font-medium mt-4">
+                With our experience in corporate compliance and financial documentation, we are a trusted compliance partner for businesses across India.
+              </p>
+            </div>
+
+            {/* What We Handle vs What You Provide */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6">
+                <h3 className="text-[21.25px] font-bold text-dbiz-navy mb-4 flex items-center">
+                  <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Complete compliance calendar management for NDH-1, NDH-3, AOC-4, and MGT-7",
+                    "Monitoring of member count and statutory conditions, including 200 members compliance",
+                    "Tracking of Net Owned Funds (NOF) and deposit ratio requirements",
+                    "Preparation and filing of all ROC and Nidhi compliance forms",
+                    "Financial statement support and audit coordination",
+                    "Maintenance guidance for statutory registers relating to members, deposits, and loans",
+                    "Compliance support for unencumbered term deposit requirements",
+                    "Handling of ROC notices, resubmissions, and compliance corrections",
+                    "Annual compliance planning, review, and reminders",
+                    "Advisory support for smooth and compliant Nidhi operations",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <CheckCircle2 className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-[17px]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                <h3 className="text-[21.25px] font-bold text-dbiz-navy mb-4 flex items-center">
+                  <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Company incorporation documents such as COI, PAN, MOA, and AOA",
+                    "Member details and KYC documents",
+                    "Deposit and loan transaction details",
+                    "Company bank statements",
+                    "Financial data and supporting records",
+                    "Details of the statutory auditor",
+                    "Registered office proof, where applicable or updated",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start">
+                      <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700 text-[17px]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <p className="text-lg leading-relaxed mb-6">
+                    D BIZ CONSULTANCY helps your Nidhi Company stay compliant with the Companies Act, 2013 and the Nidhi Rules, 2014 without stress or delays. From regular filings to ongoing compliance monitoring, we manage the process with accuracy and care so you can focus on running your business.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    With our experience in corporate compliance and financial documentation, we are a trusted compliance partner for businesses across India.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                    <h3 className="text-xl font-semibold mb-2">Expert Guidance</h3>
+                    <p className="text-white/80">Personalized support from professionals with practical expertise in Nidhi Company compliance.</p>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                    <h3 className="text-xl font-semibold mb-2">End-to-End Service</h3>
+                    <p className="text-white/80">Complete assistance from compliance setup to ongoing statutory filing and monitoring.</p>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                    <h3 className="text-xl font-semibold mb-2">Transparent Process</h3>
+                    <p className="text-white/80">Clear communication, structured workflow, and professional support at every stage.</p>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                    <CheckCircle2 className="h-8 w-8 text-dbiz-teal mb-3" />
+                    <h3 className="text-xl font-semibold mb-2">Timely Compliance</h3>
+                    <p className="text-white/80">On-time filings and proactive follow-up to reduce the risk of penalties and non-compliance.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="faqs" className="py-16 bg-white scroll-mt-32">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold text-dbiz-navy mb-8 text-center">Frequently Asked Questions</h2>
-            <Accordion type="single" collapsible className="w-full">
-              {content.faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                FAQs
+              </div>
+              <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-3">FAQs on Nidhi Company Compliance</h2>
+              <p className="text-sm text-gray-400 italic mb-4">Last updated: Feb 2026</p>
+              <p className="text-[19.125px] text-gray-600 leading-relaxed font-medium">
+                Here are the most important and commonly asked questions on Nidhi Company compliance, explained in a simple and practical manner.
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                {content.faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                      <h3 className="text-left font-medium text-base text-dbiz-navy">{faq.question}</h3>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-6 pb-4 pt-2 text-[14.875px] text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </section>
 
