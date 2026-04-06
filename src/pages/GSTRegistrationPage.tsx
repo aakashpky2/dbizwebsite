@@ -586,9 +586,9 @@ const EnhancedGSTRegistrationPage = () => {
                           <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Businesses dealing in goods must obtain GST registration if turnover exceeds ₹40 lakhs (₹20 lakhs in some states based on government notifications).</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Interstate Supply</TableCell>
+                          <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Export of Goods Supply</TableCell>
                           <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Mandatory</TableCell>
-                          <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Any business supplying goods or services across state borders must register under GST, irrespective of turnover limits.</TableCell>
+                          <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Any business engaged in exporting goods must register under GST, irrespective of turnover limits.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
                           <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>E-commerce Sellers</TableCell>
@@ -748,10 +748,10 @@ const EnhancedGSTRegistrationPage = () => {
               
               <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
                 <table className="w-full text-left border-collapse bg-white">
-                  <thead className="bg-gray-50/80 border-b border-gray-100">
+                  <thead className="bg-dbiz-navy border-b border-dbiz-navy">
                     <tr>
-                      <th className="px-6 py-4 text-xs font-black text-dbiz-navy uppercase tracking-wider w-1/3">Task / Guideline</th>
-                      <th className="px-6 py-4 text-xs font-black text-dbiz-navy uppercase tracking-wider">Filing Protocol</th>
+                      <th className="px-6 py-4 text-xs font-black text-white uppercase tracking-wider w-1/3">Task / Guideline</th>
+                      <th className="px-6 py-4 text-xs font-black text-white uppercase tracking-wider">Filing Protocol</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-50">
@@ -764,7 +764,7 @@ const EnhancedGSTRegistrationPage = () => {
                       { title: "Data Validation", desc: "Ensure names, dates, and addresses are fully consistent across all supporting proof." },
                       { title: "Fast-Track Cases", desc: "B2B and special cases require highly accurate and compliant supporting documentation." }
                     ].map((item, idx) => (
-                      <tr key={idx} className="group hover:bg-gray-50/50 transition-colors">
+                      <tr key={idx} className={`group hover:bg-gray-100 transition-colors ${idx % 2 !== 0 ? 'bg-gray-50/80' : ''}`}>
                         <td className="px-6 py-5 align-top border-r border-gray-50">
                           <div className="flex items-center gap-3">
                             <div className="h-2 w-2 rounded-full bg-dbiz-teal shadow-[0_0_8px_rgba(20,184,166,0.5)]" />

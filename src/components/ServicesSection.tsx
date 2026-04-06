@@ -83,7 +83,8 @@ const ServicesSection = () => {
         { name: "PARTNERSHIP", path: "/partnership" },
         { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" },
         { name: "NGO/TRUST", path: "/ngo-trust-registration" },
-        { name: "PRODUCER COMPANY", path: "/producer-company" }
+        { name: "PRODUCER COMPANY", path: "/producer-company" },
+        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company-compliance" }
       ]
     },
     {
