@@ -25,7 +25,7 @@ const HeroSection = () => {
       {/* Background Pattern/Image Overlay */}
       <div className="absolute inset-0 z-0 opacity-10">
         <CachedImage
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=70"
+          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=40"
           alt="Background"
           className="w-full h-full object-cover"
           loading="eager"

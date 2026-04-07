@@ -86,7 +86,12 @@ const NidhiCompanyCompliancePage = () => {
       <main className="flex-grow pt-24 pb-16">
         <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c" alt="Background" className="w-full h-full object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1440&q=40" 
+              alt="Background" 
+              className="w-full h-full object-cover" 
+              fetchPriority="high"
+            />
           </div>
           <div className="container-custom relative z-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -121,7 +126,7 @@ const NidhiCompanyCompliancePage = () => {
                   <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
                     <img 
-                      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" 
+                      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=60" 
                       alt="Nidhi Company Compliance Documents" 
                       className="w-full aspect-[4/3] rounded-lg shadow-lg object-cover"
                     />
@@ -225,7 +230,7 @@ const NidhiCompanyCompliancePage = () => {
                 <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <img
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80"
+                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=60"
                     alt="Legal Definition"
                     className="w-full h-48 object-cover rounded-xl shadow-md mb-6 relative z-10 group-hover:scale-105 transition-transform duration-500"
                   />
@@ -394,7 +399,7 @@ const NidhiCompanyCompliancePage = () => {
 
                   <div className="hidden md:block mt-8">
                     <img 
-                      src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600&q=80" 
+                      src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600&q=60" 
                       alt="Nidhi Compliance Benefits" 
                       className="rounded-xl shadow-lg max-w-sm w-full object-cover aspect-[4/3] border border-gray-100" 
                     />

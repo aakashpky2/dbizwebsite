@@ -5,12 +5,12 @@ const imageCache = new Map<string, HTMLImageElement>();
 export const criticalImages = [
   "/dbiz-uploads/5811ce1b-59a5-4195-9ade-c745a34d0dbd.png", // Logo
   "/dbiz-uploads/80e6af29-5d04-498a-bd8c-a3a5594b6eea.png", // Hero image
-  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=70", // Hero Background
+  "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=40", // Hero Background
 ];
 
 // Secondary images to preload after critical ones
 export const secondaryImages = [
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=75", // About Background
+  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=40", // About Background
   "/dbiz-uploads/a75a8440-5707-4bf5-9cd2-8590206fd2ed.png",
   "/dbiz-uploads/32069ace-e979-4eee-8ed4-c4bbbb796b3c.png",
   "/dbiz-uploads/afd683e8-0e3d-4fd4-9ba8-58e64040d98c.png",
