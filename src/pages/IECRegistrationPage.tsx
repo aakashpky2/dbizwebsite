@@ -61,21 +61,21 @@ const TIMELINE_DESKTOP = [
   {
     step: "02",
     label: "Processing",
-    duration: "1 Working Day",
+    duration: "Same Day",
     desc: "System processing along with Aadhaar / DSC verification and validation of submitted details.",
     pill: "bg-blue-100 text-blue-800 border-blue-200",
   },
   {
     step: "03",
     label: "Approval (Normal Case)",
-    duration: "1 – 2 Working Days",
+    duration: "Same Day",
     desc: "IEC number is issued if all details are correct and verification is completed successfully.",
     pill: "bg-blue-200 text-blue-900 border-blue-300",
   },
   {
     step: "04",
     label: "Approval (With Query / Correction)",
-    duration: "Up to 3 Working Days",
+    duration: "1-2 Working Days",
     desc: "Time may increase if DGFT raises queries or requires clarification or correction.",
     pill: "bg-[#0b1d3a]/10 text-[#0b1d3a] border-[#0b1d3a]/20",
   },
@@ -113,7 +113,7 @@ const IECRegistrationPage = () => {
     { q: "Who needs IEC registration?", a: "Any individual or business involved in import, export, or receiving foreign payments must obtain IEC." },
     { q: "Is IEC mandatory for service exports?", a: "Yes, IEC is required if you are receiving foreign currency for services such as freelancing, consulting, or software exports." },
     { q: "Is there any minimum turnover required for IEC?", a: "No, there is no minimum turnover requirement. IEC can be obtained at any stage of business." },
-    { q: "How long does IEC registration take?", a: "Typically, IEC is issued within 1–2 working days if documents and details are correct." },
+    { q: "How long does IEC registration take?", a: "Typically, IEC is issued on the Same Day if documents and details are correct." },
     { q: "Does IEC require renewal?", a: "No renewal is required. However, annual update on the DGFT portal is mandatory to keep IEC active." },
     { q: "Can an individual apply for IEC?", a: "Yes, individuals can apply for IEC without forming a company." },
     { q: "Is GST required for IEC registration?", a: "No, GST is not mandatory for obtaining IEC. However, it may be required based on business activities." },
@@ -264,13 +264,13 @@ const IECRegistrationPage = () => {
                 </h2>
 
                 <div className="prose prose-lg max-w-none animate-on-scroll [animation-delay:200ms]">
-                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                  <p className="text-gray-700 mb-6 text-[17px] leading-relaxed font-medium">
                     Import Export Code (IEC) is a mandatory registration issued by the Directorate General of Foreign Trade (DGFT) for businesses engaged in import or export of goods and services from India. It establishes the business as a legally recognized entity for international trade.
                   </p>
-                  <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                  <p className="text-gray-700 mb-6 text-[17px] leading-relaxed font-medium">
                     Upon registration, a unique 10-digit IEC number is allotted, which must be used for customs clearance, international payments, and trade documentation. Without IEC, businesses cannot import or export goods legally.
                   </p>
-                  <p className="text-gray-700 mb-8 leading-relaxed font-medium">
+                  <p className="text-gray-700 mb-8 text-[17px] leading-relaxed font-medium">
                     IEC is a one-time registration with lifetime validity, and annual update is required. It simplifies global trade by enabling businesses to expand beyond domestic markets.
                   </p>
                 </div>
@@ -398,7 +398,7 @@ const IECRegistrationPage = () => {
                 {[
                   { icon: Shield, title: "Legal Authorization for International Trade", desc: "IEC registration provides legal permission to import and export goods or services from India, ensuring compliance with foreign trade regulations.", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=50" },
                   { icon: CheckCircle2, title: "Unique IEC Allotment", desc: "A unique 10-digit Import Export Code is issued by DGFT, which is used for all import-export transactions, customs clearance, and international payments.", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Clock, title: "One-Time Registration (Lifetime Validity)", desc: "IEC is a one-time registration with no renewal requirement. It remains valid for the lifetime of the business, subject to annual updates if required.", image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Clock, title: "One-Time Registration (Annual Update Is Required)", desc: "IEC is a one-time registration with no renewal requirement. It remains valid for the lifetime of the business, subject to annual updates if required.", image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?auto=format&fit=crop&w=500&q=50" },
                   { icon: Activity, title: "Mandatory for Import & Export Activities", desc: "IEC is compulsory for clearing goods through customs, sending shipments abroad, and receiving goods from foreign countries.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=500&q=50" },
                   { icon: CreditCard, title: "Facilitates International Payments", desc: "Banks require IEC for processing foreign currency transactions, remittances, and export proceeds, making it essential for global trade.", image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=500&q=50" },
                   { icon: Award, title: "Access to Government Benefits & Incentives", desc: "IEC holders can avail various export promotion schemes, subsidies, and incentives provided by the Government of India.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=50" },
@@ -426,7 +426,7 @@ const IECRegistrationPage = () => {
                           <CardTitle className="text-2xl font-black text-dbiz-navy group-hover:text-dbiz-teal transition-colors tracking-tight leading-tight">{feature.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="px-8 pb-10 pt-0 flex-grow">
-                          <p className="text-gray-600 text-base leading-relaxed font-medium">{feature.desc}</p>
+                          <p className="text-gray-600 text-[17px] leading-relaxed font-medium">{feature.desc}</p>
                         </CardContent>
                       </div>
                     </Card>
@@ -720,7 +720,7 @@ const IECRegistrationPage = () => {
                       <div className="flex justify-end pr-4">
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-dbiz-teal/30 transition-all duration-300 max-w-sm text-right group">
                           <h3 className="text-xl lg:text-2xl font-semibold text-dbiz-navy mb-3 group-hover:text-dbiz-teal transition-colors">Step {item.step}: {item.title}</h3>
-                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base">{item.desc}</p>
+                          <p className="text-gray-600 leading-relaxed text-[14.875px]">{item.desc}</p>
                         </div>
                       </div>
                     ) : (
@@ -739,7 +739,7 @@ const IECRegistrationPage = () => {
                       <div className="flex justify-start pl-4">
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-dbiz-teal/30 transition-all duration-300 max-w-sm text-left group">
                           <h3 className="text-xl lg:text-2xl font-semibold text-dbiz-navy mb-3 group-hover:text-dbiz-teal transition-colors">Step {item.step}: {item.title}</h3>
-                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base">{item.desc}</p>
+                          <p className="text-gray-600 leading-relaxed text-[14.875px]">{item.desc}</p>
                         </div>
                       </div>
                     ) : (
@@ -826,7 +826,7 @@ const IECRegistrationPage = () => {
                         </div>
                         {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">1 - 2 Days</div>
+                          <div className="card-duration">Same Day</div>
                           <p className="card-description">
                             Typical timeframe for IEC issuance with correct documentation and active Aadhaar verification.
                           </p>
@@ -844,7 +844,7 @@ const IECRegistrationPage = () => {
                         </div>
                         {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">Up to 3 Days</div>
+                          <div className="card-duration">1-2 Working Days</div>
                           <p className="card-description">
                             Applies when DGFT raises queries or clarification is required in the submitted application.
                           </p>
@@ -867,22 +867,22 @@ const IECRegistrationPage = () => {
         </section>
 
         {/* 8. Post-Registration Compliance Section */}
-        <section id="compliance" className="py-24 bg-gray-50 scroll-mt-32">
+        <section id="compliance" className="py-24 bg-[#f0fbff] scroll-mt-32">
           <div className="container-custom">
             
             <div className="flex flex-col gap-16 max-w-5xl mx-auto">
               <div>
-                <div className="mb-10 text-center md:text-left animate-on-scroll">
+                <div className="mb-10 text-center animate-on-scroll">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
                     <Shield className="h-3 w-3" /> Mandatory Maintenance
                   </div>
                   <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">8. Post-Registration Compliance</h3>
-                  <p className="text-gray-500 font-medium text-sm max-w-2xl">
+                  <p className="text-gray-500 font-medium text-sm max-w-2xl mx-auto">
                     Once registered, your business must maintain these mandatory filing cycles to remain legally active and avoid deactivation or penalties by DGFT.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center mb-10 py-6 max-w-2xl mx-auto md:mx-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center mb-10 py-6 max-w-2xl mx-auto">
                   {[
                     { type: "Annual Update", freq: "Once a year (April - June)" },
                     { type: "Trade Reporting", freq: "Based on export activities" }
@@ -947,17 +947,20 @@ const IECRegistrationPage = () => {
         <section className="py-24 bg-white scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16 animate-on-scroll">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6">
-                9. Why DBIZ CONSULTANCY for IEC Registration?
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6 border border-dbiz-teal/20 uppercase tracking-widest">
+                Why D BIZ
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+              <h2 className="text-[38.25px] font-black text-dbiz-navy mb-8 tracking-tighter [animation-delay:200ms]">
+                9. Why DBIZ CONSULTANCY <br /> for IEC Registration?
+              </h2>
+              <p className="text-[17px] text-gray-600 leading-relaxed font-medium">
                 Obtaining an Import Export Code (IEC) is a crucial step for businesses planning to enter international markets. While the process is online and appears simple, errors in documentation, incorrect details, or improper filing can lead to rejection or delays in approval. That’s where DBIZ CONSULTANCY comes in.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 mb-20 animate-on-scroll">
                <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-[2.5rem] p-10">
-                  <h3 className="text-2xl font-black text-dbiz-navy mb-8 flex items-center gap-3">
+                  <h3 className="text-[21.25px] font-medium text-dbiz-navy mb-8 flex items-center gap-3">
                      <CheckCircle2 className="h-7 w-7 text-dbiz-teal" /> What DBIZ Handles
                   </h3>
                   <ul className="space-y-4">
@@ -972,16 +975,16 @@ const IECRegistrationPage = () => {
                        "IEC certificate download and delivery",
                        "Post-registration guidance and compliance support"
                      ].map((item, i) => (
-                       <li key={i} className="flex items-start gap-3">
+                       <li key={i} className="flex items-start gap-4 text-gray-700 font-medium text-[17px]">
                           <CheckCircle className="h-5 w-5 text-dbiz-teal shrink-0 mt-1" />
-                          <span className="text-gray-700 font-medium">{item}</span>
+                          <span>{item}</span>
                        </li>
                      ))}
                   </ul>
                </div>
 
-               <div className="bg-gray-50 border border-gray-100 rounded-[2.5rem] p-10 font-bold">
-                  <h3 className="text-2xl font-black text-dbiz-navy mb-8 flex items-center gap-3 font-sans">
+               <div className="bg-gray-50 border border-gray-100 rounded-[2.5rem] p-10">
+                  <h3 className="text-[21.25px] font-medium text-dbiz-navy mb-8 flex items-center gap-3 font-sans">
                      <FileText className="h-7 w-7 text-dbiz-navy" /> What You Provide
                   </h3>
                   <ul className="space-y-5">
@@ -992,7 +995,7 @@ const IECRegistrationPage = () => {
                        "Bank account details (cancelled cheque / statement)",
                        "Photograph (if applicable)"
                      ].map((item, i) => (
-                       <li key={i} className="flex items-center gap-4 text-gray-700 font-bold text-lg font-sans">
+                       <li key={i} className="flex items-center gap-4 text-gray-700 font-medium text-[17px] font-sans">
                           <CheckCircle2 className="h-6 w-6 text-dbiz-teal shrink-0" /> {item}
                        </li>
                      ))}
@@ -1000,12 +1003,20 @@ const IECRegistrationPage = () => {
                </div>
             </div>
 
-            <div className="bg-gray-50/50 p-12 md:p-16 rounded-[4rem] border border-gray-100 mb-20">
-               <div className="flex flex-col lg:flex-row items-center gap-12">
-                  <div className="lg:w-1/3">
-                     <h3 className="text-[38.25px] font-bold text-dbiz-navy leading-tight tracking-tighter">When Should You Apply?</h3>
+            {/* When Should You Apply? - Strategic Trigger Points */}
+            <div className="mt-12 bg-gray-50/80 p-10 md:p-14 rounded-[3rem] border border-gray-100 relative overflow-hidden group mb-12 animate-on-scroll">
+               <div className="absolute top-0 left-0 w-40 h-40 bg-dbiz-teal/5 rounded-full blur-3xl -ml-20 -mt-20 group-hover:bg-dbiz-teal/10 transition-all"></div>
+               
+               <div className="flex flex-col lg:flex-row items-center gap-10">
+                  <div className="lg:w-1/3 text-center lg:text-left relative z-10">
+                     <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                        <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
+                     </div>
+                     <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 tracking-tighter leading-tight font-sans">When Should You Apply?</h3>
+                     <p className="text-[17px] text-gray-500 leading-relaxed font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>Identify the key milestones that trigger the need for immediate IEC registration.</p>
                   </div>
-                  <div className="lg:w-2/3 grid sm:grid-cols-2 gap-8 w-full">
+
+                  <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
                      {[
                        "Starting an import-export business",
                        "Planning to sell goods or services internationally",
@@ -1013,14 +1024,19 @@ const IECRegistrationPage = () => {
                        "Expanding business to global markets",
                        "Required for customs clearance or trade documentation",
                        "To avail export incentives and government schemes"
-                     ].map((point, i) => (
-                       <div key={i} className="flex items-center gap-4 text-[17px] text-gray-700 font-bold">
-                          <div className="h-3 w-3 rounded-full bg-dbiz-teal shrink-0 shadow-[0_0_10px_rgba(20,184,166,0.5)]"></div> {point}
-                       </div>
+                     ].map((point, index) => (
+                        <div key={index} className="flex items-center gap-4 group/point">
+                           <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
+                              <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
+                           </div>
+                           <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{point}</p>
+                        </div>
                      ))}
                   </div>
                </div>
             </div>
+
+
 
             <div className="bg-dbiz-navy text-white rounded-[3rem] p-12 md:p-16 relative overflow-hidden group">
                <div className="absolute inset-0 bg-gradient-to-tr from-dbiz-teal/10 to-transparent z-0"></div>
@@ -1054,8 +1070,8 @@ const IECRegistrationPage = () => {
             </div>
 
             <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
-               <h3 className="text-3xl font-black text-dbiz-navy mb-8 uppercase tracking-widest leading-tight">Our Commitment</h3>
-               <p className="text-2xl font-bold text-gray-700 leading-snug tracking-tight">
+               <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+               <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
                  With strong experience in business registrations and compliance services, DBIZ CONSULTANCY is a trusted partner for businesses entering global markets. We handle the entire IEC process—so you can focus on expanding your business internationally with confidence.
                </p>
             </div>
@@ -1080,7 +1096,7 @@ const IECRegistrationPage = () => {
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {iecFaqs.map((faq, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 overflow-hidden animate-on-scroll">
-                    <AccordionTrigger className="text-[17px] font-medium text-[#020817] hover:text-dbiz-teal hover:no-underline py-5 text-left font-sans font-bold">
+                    <AccordionTrigger className="text-[17px] font-medium text-[#020817] hover:text-dbiz-teal hover:no-underline py-5 text-left font-sans">
                        {faq.q}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-600 leading-relaxed text-[15px] pb-6 whitespace-pre-line font-medium">
