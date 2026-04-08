@@ -15,7 +15,7 @@ const ContactPage = () => {
         url="/contact"
       />
       <Navbar />
-      <main className="flex-grow pt-24">
+      <main id="overview" className="flex-grow pt-24">
         <Breadcrumbs items={[{ name: "Contact", path: "/contact", current: true }]} />
         <div className="py-12">
           <ContactSection />

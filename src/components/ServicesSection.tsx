@@ -8,6 +8,7 @@ import {
   Star,
   ArrowRight,
   TrendingUp,
+  Award,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
@@ -84,60 +85,55 @@ const ServicesSection = () => {
         { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" },
         { name: "NGO/TRUST", path: "/ngo-trust-registration" },
         { name: "PRODUCER COMPANY", path: "/producer-company" },
-        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company-compliance" }
+        { name: "NIDHI COMPANY", path: "/nidhi-company-compliance" }
       ]
     },
     {
       icon: FileText,
-      title: "Registration",
+      title: "Business Registrations",
       items: [
         { name: "GST Registration", path: "/gst-registration" },
-        { name: "IMPORT EXPORT CODE (IEC)", path: "/iec-registration" },
-        { name: "12A AND 80G", path: "/12a-80g-registration" },
-        { name: "ISO REGISTRATION", path: "/iso-certification" },
-        { name: "FSSAI REGISTRATION", path: "/fssai-registration" },
-        { name: "STARTUP REGISTRATION", path: "/startup-registration" }
-      ]
-    },
-    {
-      icon: ClipboardList,
-      title: "Compliance",
-      items: [
-        { name: "INCOME TAX RETURNS (ITR)", path: "/income-tax-filing" },
-        { name: "ANNUAL MCA COMPLIANCE", path: "/mca-compliance" },
-        { name: "GST MONTHLY FILINGS", path: "/gst-filings" },
-        { name: "NIDHI COMPANY COMPLIANCES", path: "/nidhi-company-compliance" },
-        { name: "TDS FILINGS", path: "/tds-filings" }
-      ]
-    },
-    {
-      icon: BarChart,
-      title: "Audit",
-      items: [
-        { name: "INTERNAL AUDIT", path: "/coming-soon" },
-        { name: "STOCK AUDIT", path: "/coming-soon" },
-        { name: "GST AUDIT", path: "/coming-soon" },
-        { name: "COMPANY AUDIT", path: "/coming-soon" },
-        { name: "OPERATIONAL AUDIT", path: "/coming-soon" }
+        { name: "Import Export Code (IEC)", path: "/iec-registration" },
+        { name: "Udyam MSME Registration", path: "/udyam-msme-registration" },
+        { name: "Trade License", path: "/trade-license" },
+        { name: "Shop & Establishment License", path: "/shop-establishment" },
+        { name: "Startup Registration (DPIIT)", path: "/startup-registration" },
+        { name: "ISO Certification", path: "/iso-certification" },
+        { name: "Digital Signature (DSC)", path: "/digital-signature" },
+        { name: "FSSAI License", path: "/fssai-registration" },
+        { name: "Drug License", path: "/drug-license" }
       ]
     },
     {
       icon: Star,
-      title: "Intellectual Property (IP)",
+      title: "Intellectual Property",
       items: [
-        { name: "TRADEMARK", path: "/trademark-registration" },
-        { name: "PATENT", path: "/patent-registration" },
-        { name: "COPYRIGHT", path: "/copyright-registration" }
+        { name: "Trademark", path: "/trademark-registration" },
+        { name: "Patent", path: "/patent-registration" },
+        { name: "Copyright", path: "/copyright-registration" },
+        { name: "Design Registration", path: "/coming-soon" }
+      ]
+    },
+    {
+      icon: ClipboardList,
+      title: "Tax & Compliance",
+      items: [
+        { name: "Income Tax Returns (ITR)", path: "/income-tax-filing" },
+        { name: "GST Filings", path: "/gst-filings" },
+        { name: "TDS Filings", path: "/tds-filings" },
+        { name: "MCA Annual Compliance", path: "/mca-compliance" },
+        { name: "Nidhi Company Compliance", path: "/nidhi-company-compliance" }
       ]
     },
     {
       icon: TrendingUp,
       title: "Fund Raising",
       items: [
-        { name: "Investor Pitch", path: "/coming-soon" },
-        { name: "Investor Networking", path: "/coming-soon" },
-        { name: "Compliance Support", path: "/coming-soon" },
-        { name: "Financing Support", path: "/coming-soon" }
+        { name: "Startup India Recognition", path: "/startup-india-recognition" },
+        { name: "Funding Assistance", path: "/funding-assistance" },
+        { name: "Growth Strategy", path: "/growth-strategy" },
+        { name: "Incubation Support", path: "/incubation-support" },
+        { name: "Pitch Deck Preparation", path: "/pitch-deck" }
       ]
     }
   ];

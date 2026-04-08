@@ -97,7 +97,7 @@ const ServicePage = ({
         </section>
 
         {/* Importance Section */}
-        <section className="py-16 bg-gray-50">
+        <section id="overview" className="py-16 bg-gray-50">
           <div className="container-custom">
             <h2 className="section-title text-center">
               Why {title} is Important {location !== "India" ? `in ${location}` : ""}

@@ -16,6 +16,7 @@ const LOGO_SRC = "/dbiz-uploads/main-logo.png";
 
 const mainNavMenus = [
   { name: "Home", path: "/" },
+  { name: "Overview", path: "#overview" },
   { name: "About Us", path: "/#about" },
   { name: "Services", path: "/#services" },
   { name: "Contact", path: "/#contact" },
@@ -34,10 +35,14 @@ const Navbar = () => {
   }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (path.startsWith("/#") && pathname === "/") {
+    // Determine if it's a hash link for the current page
+    const isHashLink = path.startsWith("#") || (path.startsWith("/#") && pathname === "/");
+    
+    if (isHashLink) {
       e.preventDefault();
-      const elementId = path.substring(2);
+      const elementId = path.startsWith("#") ? path.substring(1) : path.substring(2);
       const element = document.getElementById(elementId);
+      
       if (element) {
         const offset = 80;
         const elementPosition = element.getBoundingClientRect().top;
@@ -53,6 +58,7 @@ const Navbar = () => {
 
   const isActiveLink = (path: string) => {
     if (path === "/") return pathname === "/";
+    if (path.startsWith("#")) return false; // Hash links on same page are not marked active by default path check
     if (path.startsWith("/#")) return pathname === "/" && window.location.hash === path.substring(1);
     return false;
   };

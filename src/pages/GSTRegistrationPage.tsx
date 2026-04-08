@@ -267,18 +267,22 @@ const EnhancedGSTRegistrationPage = () => {
                 { id: 'process', icon: ArrowRight, label: 'Process' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
-                <div
+                <a
                   key={item.id}
+                  href={`#${item.id}`}
                   className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
                   }`}
-                  onClick={() => handleSectionClick(item.id)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
                 >
                   <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
-                </div>
+                </a>
               ))}
             </div>
           </div>

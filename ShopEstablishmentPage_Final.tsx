@@ -51,43 +51,52 @@ import {
 } from "@/components/ui/popover";
 import { indianCities } from "@/data/keralaLocations";
 import NotFound from "./NotFound";
-import { msmeFaq } from "@/data/msmeFaq";
+import { shopEstablishmentFaq } from "@/data/shopEstablishmentFaq";
 import CachedImage from "@/components/CachedImage";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const phoneNumber = "+918075273408";
 
+// ── Extracted outside component for React Fast Refresh / HMR stability ──
 const TIMELINE_DESKTOP = [
   {
     step: "01",
     label: "Application Filing",
     duration: "Same Day",
-    desc: "Collection of business details, Aadhaar verification, and submission of Udyam application on the portal.",
+    desc: "Collection of business details, document verification, and submission of application on Labour Department portal.",
     pill: "bg-blue-50 text-blue-700 border-blue-100",
   },
   {
     step: "02",
     label: "Processing",
-    duration: "Instant to Same Day",
-    desc: "System-based processing with PAN and Aadhaar validation through government database.",
+    duration: "1 – 3 Working Days",
+    desc: "Initial verification of application and documents by the Labour Department.",
     pill: "bg-blue-100 text-blue-800 border-blue-200",
   },
   {
     step: "03",
     label: "Approval (Normal Case)",
-    duration: "Same Day",
-    desc: "Udyam Registration Number and certificate are issued immediately if details are correct.",
+    duration: "2 – 5 Working Days",
+    desc: "Registration certificate is issued if all details are correct and no clarification is required.",
     pill: "bg-blue-200 text-blue-900 border-blue-300",
-  }
+  },
+  {
+    step: "04",
+    label: "Approval (With Query / Correction)",
+    duration: "Up to 7 Working Days",
+    desc: "Time may increase if department raises queries or additional documents are required.",
+    pill: "bg-[#0b1d3a]/10 text-[#0b1d3a] border-[#0b1d3a]/20",
+  },
 ];
 
 const TIMELINE_MOBILE = [
-  { step: "01", label: "Application Filing", duration: "Same Day", desc: "Collection of business details, Aadhaar verification, and submission of Udyam application on the portal.", pill: "bg-blue-50 text-blue-700 border-blue-100" },
-  { step: "02", label: "Processing", duration: "Instant to Same Day", desc: "System-based processing with PAN and Aadhaar validation through government database.", pill: "bg-blue-100 text-blue-800 border-blue-200" },
-  { step: "03", label: "Approval (Normal Case)", duration: "Same Day", desc: "Udyam Registration Number and certificate are issued immediately if details are correct.", pill: "bg-blue-200 text-blue-900 border-blue-300" }
+  { step: "01", label: "Application Filing",                 duration: "Same Day",             desc: "Collection of business details, document verification, and submission of the application on the Labour Department portal.", pill: "bg-blue-50 text-blue-700 border-blue-100" },
+  { step: "02", label: "Processing",                         duration: "1 – 3 Working Days",    desc: "Initial verification of application and documents by the Labour Department.",                         pill: "bg-blue-100 text-blue-800 border-blue-200" },
+  { step: "03", label: "Approval (Normal Case)",              duration: "2 – 5 Working Days",    desc: "Registration certificate is issued if all details are correct and no clarification is required.",               pill: "bg-blue-200 text-blue-900 border-blue-300" },
+  { step: "04", label: "Approval (With Query / Correction)", duration: "Up to 7 Working Days", desc: "Time may increase if the department raises queries or additional documents are required.",                     pill: "bg-[#0b1d3a]/10 text-[#0b1d3a] border-[#0b1d3a]/20" },
 ];
 
-const TIMELINE_ICONS = [Clock, Users, CheckCircle2];
+const TIMELINE_ICONS = [Clock, Users, CheckCircle2, AlertTriangle];
 
 const ContactOptions = () => {
   return (
@@ -114,7 +123,7 @@ const ContactOptions = () => {
 
 
 
-const MSMERegistrationPage = () => {
+const ShopEstablishmentPage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -179,38 +188,38 @@ const MSMERegistrationPage = () => {
               <div className="md:col-span-6">
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-6 animate-on-scroll">
                   <span className="w-2.5 h-2.5 rounded-full bg-dbiz-teal mr-2"></span>
-                  Fast MSME Registration | Government Recognition | Complete Support
+                  Fast Registration | Labour Law Compliance | Complete Support
                 </div>
 
                 <h1 className="text-[63.75px] font-extrabold mb-6 leading-tight tracking-tight animate-on-scroll [animation-delay:100ms]">
-                  UDYAM MSME REGISTRATION SERVICES
+                  SHOP & ESTABLISHMENT LICENSE REGISTRATION SERVICES
                   {location && <span className="block text-2xl md:text-3xl mt-2 text-dbiz-teal font-semibold">in {cityName}</span>}
                 </h1>
 
                 <p className="text-lg opacity-90 mb-10 leading-relaxed max-w-2xl animate-on-scroll [animation-delay:200ms]">
-                  D BIZ CONSULTANCY provides complete Udyam MSME registration services. From eligibility assessment to Udyam certificate issuance and benefits guidance, our experts ensure a smooth and hassle-free registration process.
+                  DBIZ CONSULTANCY provides complete Shop & Establishment registration services. From eligibility assessment to registration certificate issuance and compliance setup, our experts ensure a smooth, error-free process.
                 </p>
 
                 <Button
                   onClick={() => handleSectionClick('overview')}
                   className="bg-[#0b1d33] hover:bg-[#112a4d] text-white px-8 py-6 rounded-xl text-lg font-semibold flex items-center gap-3 mb-10 shadow-xl transition-all hover:-translate-y-1 animate-on-scroll [animation-delay:300ms]"
                 >
-                  <ArrowDownCircle className="h-5 w-5" /> Apply Now
+                  <ArrowDownCircle className="h-5 w-5" /> Learn More
                 </Button>
 
                 {/* Status Detail - Small text line under description */}
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/80 text-sm font-medium animate-on-scroll [animation-delay:300ms]">
                    <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-dbiz-teal" />
-                      <span>Same Day Filing</span>
+                      <span>Fast Timeline</span>
                    </div>
                    <div className="flex items-center gap-2">
                       <Shield className="w-4 h-4 text-dbiz-teal" />
-                      <span>100% Accurate</span>
+                      <span>100% Compliance</span>
                    </div>
                    <div className="flex items-center gap-2">
                       <MessageCircle className="w-4 h-4 text-dbiz-teal" />
-                      <span>Expert Guidance</span>
+                      <span>Expert Support</span>
                    </div>
                 </div>
               </div>
@@ -224,20 +233,20 @@ const MSMERegistrationPage = () => {
                   {/* Hero Image */}
                   <img 
                     src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=60" 
-                    alt="Udyam MSME Registration Professional Services" 
+                    alt="GST Registration Professional Services" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-white/20 mb-6"
                   />
                   
                   {/* Stats Grid - "The Marked Design" */}
                   <div className="grid grid-cols-2 gap-4 relative z-10">
                     <div className="bg-[#0b1d33] border border-white/20 p-5 rounded-2xl text-center shadow-xl group hover:bg-[#112a4d] transition-all duration-300 transform hover:-translate-y-1">
-                      <div className="text-3xl lg:text-4xl font-black text-white mb-1">Same</div>
-                      <div className="text-[10px] uppercase tracking-widest text-[#00e5ff] font-bold">Day Filing</div>
+                      <div className="text-3xl lg:text-4xl font-black text-white mb-1">2 – 5</div>
+                      <div className="text-[10px] uppercase tracking-widest text-[#00e5ff] font-bold">Days</div>
                     </div>
 
                     <div className="bg-[#0b1d33] border border-white/20 p-5 rounded-2xl text-center shadow-xl group hover:bg-[#112a4d] transition-all duration-300 transform hover:-translate-y-1">
                       <div className="text-3xl lg:text-4xl font-black text-white mb-1">100%</div>
-                      <div className="text-[10px] uppercase tracking-widest text-[#00e5ff] font-bold">Accurate</div>
+                      <div className="text-[10px] uppercase tracking-widest text-[#00e5ff] font-bold">Filing Accuracy</div>
                     </div>
                   </div>
                 </div>
@@ -291,18 +300,18 @@ const MSMERegistrationPage = () => {
                 </div>
 
                 <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-8 animate-on-scroll [animation-delay:100ms] tracking-tight">
-                  What is Udyam MSME Registration?
+                  What is Shop & Establishment Registration?
                 </h2>
 
                 <div className="prose prose-lg max-w-none animate-on-scroll [animation-delay:200ms]">
                   <p className="text-gray-700 mb-6 leading-relaxed font-medium">
-                    Udyam Registration is a government registration provided to Micro, Small, and Medium Enterprises (MSMEs) under the Ministry of Micro, Small & Medium Enterprises. It gives official recognition to businesses as MSMEs and enables them to avail various benefits, subsidies, and support schemes offered by the Government of India.
+                    Shop & Establishment Registration is a statutory requirement under the respective State Shops and Establishments Act for businesses operating shops, offices, or commercial establishments. It provides legal recognition to businesses and regulates working conditions, employee rights, wages, working hours, and overall workplace compliance.
                   </p>
                   <p className="text-gray-700 mb-6 leading-relaxed font-medium">
-                    Upon registration, a unique Udyam Registration Number (URN) and certificate are issued. This certificate serves as proof of MSME status and is required to claim benefits such as priority sector lending, subsidies, and protection under MSME laws.
+                    Upon registration, a Shop & Establishment Registration Certificate is issued by the Labour Department. This certificate is used for compliance, opening bank accounts, and obtaining other business registrations.
                   </p>
                   <p className="text-gray-700 mb-8 leading-relaxed font-medium">
-                    Udyam registration is completely online, paperless, and based on self-declaration, making it simple and accessible for businesses across India.
+                    This registration applies to a wide range of businesses including retail shops, offices, service providers, restaurants, and other commercial establishments.
                   </p>
                 </div>
 
@@ -310,16 +319,17 @@ const MSMERegistrationPage = () => {
                 <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-[2rem] p-8 md:p-10 mt-10 animate-on-scroll [animation-delay:300ms]">
                     <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center gap-2">
                        <CheckCircle className="text-dbiz-teal h-6 w-6" /> 
-                       Why Udyam Registration is Important
+                       Why Shop & Establishment Registration is Important
                     </h3>
-                    <p className="text-[17px] text-gray-600 mb-6 font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>Udyam registration plays a key role in business growth and government recognition:</p>
+                    <p className="text-[17px] text-gray-600 mb-6 font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>Shop & Establishment registration is not just a legal requirement — it plays a critical role in business operations:</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
                        {[
-                         "Provides official MSME recognition from the Government of India",
-                         "Enables access to government schemes, subsidies, and incentives",
-                         "Helps in obtaining collateral-free loans under MSME schemes",
-                         "Provides protection against delayed payments under MSME Act",
-                         "Enhances credibility with banks, financial institutions, and clients"
+                         
+                        "Ensures legal recognition under labour laws",
+                        "Mandatory for businesses employing staff in most states",
+                        "Regulates working conditions, wages, and employee benefits",
+                        "Helps in opening current bank accounts and other registrations",
+                        "Builds trust with employees, clients, and authorities"
                        ].map((point, idx) => (
                          <div key={idx} className="flex items-start gap-3">
                            <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-1 shrink-0" />
@@ -338,16 +348,17 @@ const MSMERegistrationPage = () => {
                 <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the MSME Development Act, 2006</h3>
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Legal Framework</h3>
                     <p className="text-gray-600 text-[17px] mb-7 leading-relaxed font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-                      As per the Ministry of Micro, Small and Medium Enterprises, Udyam Registration is the official government recognition provided to Micro, Small, and Medium Enterprises (MSMEs) in India:
+                      Shop & Establishment Registration is governed by the following:
                     </p>
                     <ul className="space-y-5">
                       {[
-                        "Provides Official MSME Recognition Certificate",
-                        "Enables Access to Government Subsidies & Schemes",
-                        "Required for MSME Benefits & Priority Lending",
-                        "Supports Business Growth & Credit Facilities"
+                        
+                        "State Shops & Establishments Act",
+                        "Labour Department",
+                        "State-specific Rules",
+                        "Labour Law Compliance"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-dbiz-teal mr-4 flex-shrink-0 mt-0.5" />
@@ -364,7 +375,7 @@ const MSMERegistrationPage = () => {
                         </div>
                         <div className="ml-4">
                           <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Expert Guidance</p>
-                          <p className="text-dbiz-navy font-bold">Contact Our MSME Team</p>
+                          <p className="text-dbiz-navy font-bold">Contact Our GST Team</p>
                         </div>
                       </div>
                     </div>
@@ -382,13 +393,13 @@ const MSMERegistrationPage = () => {
           <div className="container-custom">
             <div className="animate-on-scroll">
               <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 uppercase tracking-tighter text-center">Legal Framework</h3>
-              <p className="text-dbiz-navy/80 mb-12 text-[19.125px] font-medium text-center max-w-3xl mx-auto">Udyam Registration is governed by the following:</p>
+              <p className="text-dbiz-navy/80 mb-12 text-[19.125px] font-medium text-center max-w-3xl mx-auto">Shop & Establishment Registration is governed by the following statutory laws:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {[
-                  { title: "MSME Development Act, 2006", desc: "Governs MSME classification and benefits" },
-                  { title: "Ministry of MSME", desc: "Authority issuing Udyam Registration" },
-                  { title: "Government of India Notifications", desc: "Defines classification and eligibility criteria" }
+                  { title: "State Shops & Establishments Act", desc: "Governs labour conditions and registration" },
+                  { title: "Labour Department", desc: "Issues registration certificate" },
+                  { title: "State-specific Rules", desc: "Defines compliance, working hours, and employee welfare" }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-dbiz-teal transition-all duration-500 group text-center">
                     <div className="w-12 h-12 rounded-2xl bg-dbiz-teal flex items-center justify-center text-white font-black text-sm mb-6 shadow-lg mx-auto">
@@ -402,14 +413,9 @@ const MSMERegistrationPage = () => {
 
               <div className="mt-12 flex items-center justify-center gap-4 p-6 bg-white/40 backdrop-blur-md rounded-[2rem] border border-dbiz-teal/20 italic max-w-3xl mx-auto shadow-inner">
                 <Shield className="h-6 w-6 text-dbiz-teal shrink-0" />
-                <div className="text-sm text-dbiz-navy/80 font-bold leading-relaxed tracking-tight flex flex-col">
-                  <span>Eligibility Conditions (Quick Understanding): applicable if</span>
-                  <span className="font-normal">• Business falls under Micro, Small, or Medium category</span>
-                  <span className="font-normal">• Engaged in manufacturing or service activities</span>
-                  <span className="font-normal">• Investment and turnover are within prescribed MSME limits</span>
-                  <span className="font-normal">• New or existing business seeking government benefits</span>
-                  <span className="font-normal">• Businesses looking for MSME recognition and support</span>
-                </div>
+                <p className="text-sm text-dbiz-navy/60 font-bold leading-relaxed tracking-tight">
+                  These laws collectively regulate registration, tax collection, filing, compliance, and penalties.
+                </p>
               </div>
             </div>
           </div>
@@ -431,7 +437,7 @@ const MSMERegistrationPage = () => {
               <div className="inline-flex items-center px-6 py-2.5 rounded-full bg-white text-dbiz-navy text-sm font-bold tracking-[0.4em] mb-8 border border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                 2. FEATURES
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 tracking-tight [animation-delay:100ms]">Key Features of Udyam MSME Registration (Detailed)</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 tracking-tight [animation-delay:100ms]">Key Features Of GST Registration</h2>
             </div>
 
             <Carousel 
@@ -445,16 +451,16 @@ const MSMERegistrationPage = () => {
             >
               <CarouselContent className="-ml-4 md:-ml-6">
                 {[
-                  { icon: Shield, title: "Government Recognition of Business", desc: "Udyam registration provides official recognition as a Micro, Small, or Medium Enterprise under the Government of India. This status helps businesses avail various MSME benefits and protections.", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=50" },
-                  { icon: CheckCircle2, title: "Unique Udyam Registration Number (URN)", desc: "A permanent Udyam Registration Number (URN) and certificate are issued. This certificate acts as valid proof for banks, government authorities, and business transactions.", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=500&q=50" },
-                  { icon: CreditCard, title: "Completely Online & Paperless Process", desc: "The entire registration process is digital and based on self-declaration. No physical documents or manual approvals are required, making it fast and convenient.", image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=500&q=50" },
-                  { icon: TrendingUp, title: "No Government Fees", desc: "Udyam registration is completely free on the official government portal, making it easily accessible for startups and small businesses.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=50" },
-                  { icon: MapPin, title: "Lifetime Validity", desc: "Once registered, the Udyam certificate remains valid for the lifetime of the business. Only periodic updates may be required based on business changes on every year.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=500&q=50" },
-                  { icon: FileText, title: "Integration with PAN & GST Systems", desc: "The system is linked with PAN and GST databases, enabling automatic verification of turnover and investment details, reducing chances of errors.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Building2, title: "Applicable to All Business Structures", desc: "Available for proprietorships, partnerships, LLPs, and companies engaged in manufacturing or service sectors.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Users, title: "Simplified Compliance Requirements", desc: "Compared to other registrations, MSME compliance is minimal, making it easier for small businesses to maintain their registration.", image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Award, title: "Access to Government Schemes & Incentives", desc: "Registered MSMEs can avail benefits such as subsidies, credit support, priority sector lending, and various central and state government schemes.", image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Shield, title: "Enhanced Business Credibility", desc: "Udyam registration improves credibility with banks, financial institutions, vendors, and customers, making it easier to secure loans and business opportunities.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=50" }
+                  { icon: Shield, title: "Legal Recognition of Business", desc: "GST registration establishes the business as a legally recognized taxable entity under the GST Act, 2017. It ensures that the business operates in compliance with Indian tax laws.", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=50" },
+                  { icon: CheckCircle2, title: "Unique GSTIN Allotment", desc: "Upon registration, a 15-digit GST Identification Number (GSTIN) is issued. This number is used for all GST-related activities including invoicing, return filing, and communication with tax authorities.", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=500&q=50" },
+                  { icon: CreditCard, title: "Authority to Collect Tax", desc: "Only registered businesses are legally permitted to collect GST from customers. This ensures proper tax flow to the government and avoids penalties for unauthorized collection.", image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=500&q=50" },
+                  { icon: TrendingUp, title: "Input Tax Credit (ITC) Advantage", desc: "Registered businesses can claim ITC on GST paid for purchases, expenses, and services used in business. This reduces the overall tax burden and avoids cascading (tax on tax effect).", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=50" },
+                  { icon: MapPin, title: "Interstate Supply Without Restrictions", desc: "GST registration allows businesses to supply goods or services across state borders without additional tax barriers, enabling smooth nationwide operations.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=500&q=50" },
+                  { icon: FileText, title: "Mandatory Return Filing & Compliance", desc: "Registered entities must file periodic GST returns such as GSTR-1 and GSTR-3B. This ensures transparency, proper record-keeping, and compliance with statutory requirements.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Building2, title: "Composition Scheme for Small Businesses", desc: "Eligible small taxpayers can opt for the composition scheme, which offers lower tax rates and simplified compliance, though with limited ITC benefits.", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Users, title: "Facilitates E-commerce Operations", desc: "GST registration is mandatory for sellers dealing through e-commerce platforms like Amazon or Flipkart, enabling them to operate legally in the digital marketplace.", image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Award, title: "Enhances Business Credibility", desc: "Having GST registration increases the credibility of the business among clients, vendors, and financial institutions, making it easier to build trust and secure contracts.", image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Shield, title: "Uniform Tax Structure Across India", desc: "GST replaces multiple indirect taxes like VAT, Service Tax, and Excise Duty, creating a single, unified tax system that simplifies compliance and improves efficiency in business operations.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=50" }
                 ].map((feature, idx) => (
                   <CarouselItem key={idx} className="pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3 flex animate-on-scroll" style={{ animationDelay: `${idx * 100 + 200}ms` }}>
                     <Card className="border-none shadow-[0_10px_40px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 bg-white overflow-hidden group w-full flex flex-col h-full">
@@ -498,7 +504,7 @@ const MSMERegistrationPage = () => {
               <div className="xl:w-1/3">
                 <div className="sticky top-32 animate-on-scroll">
                   <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20">
-                    3. BENEFITS OF UDYAM MSME REGISTRATION
+                    3. BENEFITS OF SHOP & ESTABLISHMENT REGISTRATION
                   </div>
                   <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-8 tracking-tight leading-tight [animation-delay:200ms]">
                     Categorized Advantages
@@ -530,10 +536,10 @@ const MSMERegistrationPage = () => {
                       </div>
                       <h4 className="text-[21.25px] font-bold text-dbiz-navy mb-3">Business Advantages</h4>
                       <ul className="space-y-3 text-[17px] text-gray-600 font-normal">
-                        <li>• Official recognition as MSME under Government of India</li>
-                        <li>• Improved credibility with banks, clients, and vendors</li>
-                        <li>• Protection against delayed payments under MSME Act</li>
-                        <li>• Easier participation in government tenders and contracts</li>
+                        <li>• Legal recognition under State Labour Laws</li>
+                        <li>• Ensures compliance with employee and workplace regulations</li>
+                        <li>• Builds credibility with employees, clients, and authorities</li>
+                        <li>• Avoids legal issues, penalties, and business interruptions</li>
                       </ul>
                     </div>
 
@@ -543,10 +549,10 @@ const MSMERegistrationPage = () => {
                       </div>
                       <h4 className="text-[21.25px] font-bold text-dbiz-navy mb-3">Financial Advantages</h4>
                       <ul className="space-y-3 text-[17px] text-gray-600 font-normal">
-                        <li>• Access to collateral-free loans under MSME schemes</li>
-                        <li>• Lower interest rates on business loans</li>
-                        <li>• Eligibility for subsidies, incentives, and tax benefits</li>
-                        <li>• Better access to credit and working capital support</li>
+                        <li>• Helps in opening current bank accounts</li>
+                        <li>• Supports loan approvals and financial credibility</li>
+                        <li>• Avoids fines and penalties for non-compliance</li>
+                        <li>• Enables structured payroll and employee management</li>
                       </ul>
                     </div>
 
@@ -556,10 +562,10 @@ const MSMERegistrationPage = () => {
                       </div>
                       <h4 className="text-[21.25px] font-bold text-dbiz-navy mb-3">Growth Opportunities</h4>
                       <ul className="space-y-3 text-[17px] text-gray-600 font-normal">
-                        <li>• Access to government support schemes and funding programs</li>
-                        <li>• Expansion opportunities with priority sector lending</li>
-                        <li>• Support for technology upgradation and modernization</li>
-                        <li>• Increased scalability and business development opportunities</li>
+                        <li>• Supports business expansion and hiring of employees</li>
+                        <li>• Required for obtaining other registrations (GST, Trade License, etc.)</li>
+                        <li>• Improves business reputation and operational stability</li>
+                        <li>• Enables smooth scaling with proper compliance structure</li>
                       </ul>
                     </div>
                   </div>
@@ -567,8 +573,8 @@ const MSMERegistrationPage = () => {
 
                 {/* When is it Mandatory Table */}
                 <div className="animate-on-scroll [animation-delay:400ms]">
-                  <h3 className="text-2xl font-bold text-dbiz-navy mb-8 border-b border-gray-100 pb-3">4. When Udyam MSME Registration is Applicable</h3>
-                  <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-6">
+                  <h3 className="text-2xl font-bold text-dbiz-navy mb-8 border-b border-gray-100 pb-3">4. WHEN SHOP & ESTABLISHMENT REGISTRATION IS REQUIRED</h3>
+                  <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
                     <Table>
                       <TableHeader className="bg-dbiz-navy">
                         <TableRow>
@@ -578,35 +584,67 @@ const MSMERegistrationPage = () => {
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        <TableRow>
-                          <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Micro Enterprise</TableCell>
-                          <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Investment not more than 2.5 Crore & not more than 10 Crore</TableCell>
-                          <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Businesses with low investment and turnover engaged in manufacturing or services can register under Micro category to avail of MSME benefits.</TableCell>
-                        </TableRow>
-                        <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Small Enterprise</TableCell>
-                          <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Investment not more than 25 Crore & not more than 100 Crore</TableCell>
-                          <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Businesses with moderate operations and growing scale qualify as Small Enterprises and can access financial support and subsidies.</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-normal text-gray-700 text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Medium Enterprise</TableCell>
-                          <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Investment not more than 125 Crore & not more than 500 Crore</TableCell>
-                          <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Larger businesses within MSME limits can register as Medium Enterprises to benefit from government schemes and institutional support.</TableCell>
-                        </TableRow>
-                       </TableBody>
+                          <TableRow hoverable={false}>
+                            <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Shops</TableCell>
+                            <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Retail businesses</TableCell>
+                            <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Includes stores, outlets, showrooms, and trading establishments engaged in selling goods.</TableCell>
+                          </TableRow>
+                          <TableRow className="bg-gray-50/50" hoverable={false}>
+                            <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Commercial Establishments</TableCell>
+                            <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Offices / Service providers</TableCell>
+                            <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Includes offices, IT companies, consultancies, and agencies providing services.</TableCell>
+                          </TableRow>
+                          <TableRow hoverable={false}>
+                            <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Hotels & Restaurants</TableCell>
+                            <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Hospitality sector</TableCell>
+                            <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Includes hotels, restaurants, cafes, and food service businesses.</TableCell>
+                          </TableRow>
+                          <TableRow className="bg-gray-50/50" hoverable={false}>
+                            <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Entertainment & Service Units</TableCell>
+                            <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Service businesses</TableCell>
+                            <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Includes salons, gyms, theatres, and other service-oriented establishments.</TableCell>
+                          </TableRow>
+                        </TableBody>
                      </Table>
                    </div>
-                   
-                   <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100 flex items-start gap-4">
-                     <AlertTriangle className="h-6 w-6 text-blue-600 shrink-0 mt-1" />
-                     <div>
-                       <p className="font-bold text-dbiz-navy mb-2">Last updated on 01-04-2025</p>
-                       <ul className="text-sm text-gray-600 space-y-1">
-                         <li>• The above mentioned classification is based on amendment made till 01-04-2025</li>
-                         <li>• Applicable from April 2026 onwards; subject to change as per Government regulations from time to time</li>
-                       </ul>
-                     </div>
-                   </div>
+ 
+                   <h4 className="text-2xl font-bold text-dbiz-navy mb-8 border-b border-gray-100 pb-3 mt-16 tracking-tight">Types of Establishments Covered</h4>
+                   <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-12">
+                     <Table>
+                       <TableHeader className="bg-dbiz-navy">
+                         <TableRow hoverable={false}>
+                           <TableHead className="font-medium text-white py-4 text-[14.875px]">Registration Type</TableHead>
+                            <TableHead className="font-medium text-white py-4 text-[14.875px]">Suitable For</TableHead>
+                            <TableHead className="font-medium text-white py-4 text-[14.875px]">Description</TableHead>
+                         </TableRow>
+                       </TableHeader>
+                       <TableBody>
+                         <TableRow hoverable={false}>
+                           <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Regular Scheme</TableCell>
+                           <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Normal businesses</TableCell>
+                           <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Applicable to most businesses. Allows collection of GST and claiming of Input Tax Credit (ITC) with full compliance requirements like regular return filing.</TableCell>
+                         </TableRow>
+                         <TableRow className="bg-gray-50/50" hoverable={false}>
+                           <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Composition Scheme</TableCell>
+                           <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Small taxpayers</TableCell>
+                           <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Designed for small businesses with lower turnover. Offers reduced tax rates and simplified compliance but does not allow ITC and restricts interstate supply.</TableCell>
+                         </TableRow>
+                         <TableRow hoverable={false}>
+                           <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Casual Taxable Person</TableCell>
+                           <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Temporary operations</TableCell>
+                           <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>For businesses that occasionally supply goods/services in a state where they do not have a fixed place of business (e.g., exhibitions, events). Requires advance tax payment.</TableCell>
+                         </TableRow>
+                         <TableRow className="bg-gray-50/50" hoverable={false}>
+                           <TableCell className="font-bold text-dbiz-navy text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Non-Resident Taxable Person</TableCell>
+                           <TableCell className="text-gray-700 font-normal text-[14.875px]" style={{ fontFamily: "'Inter', sans-serif" }}>Foreign entities</TableCell>
+                           <TableCell className="text-gray-600 text-[14.875px] leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>Applicable to non-residents supplying goods/services in India. Requires registration before commencing business and advance tax deposit.</TableCell>
+                         </TableRow>
+                       </TableBody>
+                     
+                        
+                      
+                    </Table>
+                  </div>
                 </div>
 
               </div>
@@ -641,7 +679,7 @@ const MSMERegistrationPage = () => {
                 <div className="p-10 flex-grow">
                   <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Individual / Proprietor</h3>
                   <ul className="space-y-5">
-                    {["PAN Card (Mandatory)", "Aadhaar Card of proprietor (mandatory for registration)", "Bank account details (for business transactions)", "Address proof (Aadhaar / utility bill / bank statement)"].map((item, i) => (
+                    {["PAN Card (Mandatory)", "Aadhaar Card of proprietor", "Passport-sized photograph", "Business address proof (rent agreement / utility bill)", "Details of business activity and establishment"].map((item, i) => (
                       <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
                         <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
@@ -664,7 +702,7 @@ const MSMERegistrationPage = () => {
                   </div>
                 </div>
                 <div className="p-10 flex-grow">
-                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Company / LLP</h3>
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Company / LLP / Proprietorship</h3>
                   <ul className="space-y-5">
                     {["Certificate of Incorporation / Registration", "PAN Card of Company / LLP", "MOA & AOA / LLP Agreement", "Directors’ / Partners’ KYC documents (PAN, Aadhaar, address proof)"].map((item, i) => (
                       <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
@@ -691,7 +729,7 @@ const MSMERegistrationPage = () => {
                 <div className="p-10 flex-grow">
                   <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Registered Office Proof</h3>
                   <ul className="space-y-5">
-                    {["Rent Agreement + NOC from owner (if rented)", "Latest Electricity / Utility Bill (within 2 months)", "Ownership proof (if property is owned)"].map((item, i) => (
+                    {["Rent Agreement + NOC from owner (if rented)", "Latest Electricity / Utility Bill (within 2 months)", "Ownership proof (if premises is owned)"].map((item, i) => (
                       <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
                         <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
@@ -702,49 +740,38 @@ const MSMERegistrationPage = () => {
             </div>
 
             {/* Documentation Guidelines - Header at Top */}
-            <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-gray-100 p-8 md:p-14 shadow-sm animate-on-scroll [animation-delay:400ms]">
-              <div className="text-center max-w-2xl mx-auto mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-xs font-black tracking-widest mb-6 border border-dbiz-teal/20 uppercase">
-                  <Sparkles className="h-3 w-3" />
-                  Critical
-                </div>
-                <h3 className="text-3xl md:text-4xl font-black text-dbiz-navy leading-tight">Important Documentation Guidelines</h3>
-                <p className="text-gray-500 mt-4 font-medium italic">Standard protocols for successful Udyam MSME registration.</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 animate-on-scroll [animation-delay:400ms]">
+              <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm">
+                <h3 className="text-xl font-bold text-dbiz-navy mb-6">Additional Documents (If Applicable)</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Employee details (number of employees, if applicable)",
+                    "Appointment letter / employee records (in some states)",
+                    "Business registration proof (if already registered under other laws)"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                <table className="w-full text-left border-collapse bg-white">
-                  <thead className="bg-dbiz-navy border-b border-dbiz-navy">
-                    <tr>
-                      <th className="px-6 py-4 text-xs font-black text-white uppercase tracking-wider w-1/3">Task / Guideline</th>
-                      <th className="px-6 py-4 text-xs font-black text-white uppercase tracking-wider">Filing Protocol</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-50">
-                    {[
-                      { title: "ID Consistency", desc: "Details must match across PAN, Aadhaar, and application." },
-                      { title: "Mobile Linking", desc: "Aadhaar must be linked with mobile number for OTP verification." },
-                      { title: "Recent Proofs", desc: "Utility bills should be recent (within 2 months)." },
-                      { title: "Address Consistency", desc: "Address consistency across all documents is essential." },
-                      { title: "Activity Accuracy", desc: "Business activity and classification details must be accurate." },
-                      { title: "Paperless Process", desc: "No documents needed to submit to the MSME department; documents are for verification purpose only." }
-                    ].map((item, idx) => (
-                      <tr key={idx} className={`group hover:bg-gray-100 transition-colors ${idx % 2 !== 0 ? 'bg-gray-50/80' : ''}`}>
-                        <td className="px-6 py-5 align-top border-r border-gray-50">
-                          <div className="flex items-center gap-3">
-                            <div className="h-2 w-2 rounded-full bg-dbiz-teal shadow-[0_0_8px_rgba(20,184,166,0.5)]" />
-                            <span className="font-bold text-dbiz-navy text-[15px]">{item.title}</span>
-                          </div>
-                        </td>
-                        <td className="px-6 py-5">
-                          <p className="text-gray-600 text-[14px] font-medium leading-relaxed">{item.desc}</p>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 p-8 rounded-[2rem]">
+                <h3 className="text-xl font-bold text-dbiz-navy mb-6">Important Documentation Guidelines</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Details must match across PAN, Aadhaar, and application",
+                    "Address proof must be valid and consistent across all documents",
+                    "Business activity must be clearly defined as per registration",
+                    "NOC must be properly signed by property owner (if rented)",
+                    "State-specific requirements may apply based on location"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                      <Sparkles className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <p className="text-[13px] text-gray-400 font-medium mt-6 italic text-center">Note: Even minute discrepancies in data can lead to application query or rejection.</p>
             </div>
           </div>
         </section>
@@ -777,12 +804,13 @@ const MSMERegistrationPage = () => {
               <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent hidden md:block rounded-full z-0"></div>
 
               {[
-                { step: "1", title: "Data Collection & Verification", desc: "The process begins with collecting all required business and applicant details. All details are verified carefully to ensure accuracy and avoid rejection." },
-                { step: "2", title: "Aadhaar-Based Registration on Portal", desc: "The applicant visits the Udyam Registration portal and enters Aadhaar details. OTP verification is completed using the Aadhaar-linked mobile number." },
-                { step: "3", title: "Filling Udyam Registration Form", desc: "The application is filled out online, including business details, organization type, investment in plant & machinery, turnover, and bank account information." },
-                { step: "4", title: "Self-Declaration & Classification", desc: "The applicant declares business details based on investment and turnover. The system automatically classifies the business as Micro, Small, or Medium enterprise." },
-                { step: "5", title: "Application Submission", desc: "After entering all details, the application is submitted online using Aadhaar OTP authentication. No physical documents are required to be uploaded." },
-                { step: "6", title: "Udyam Certificate Generation", desc: "Upon successful verification, the system issues the Udyam Registration Number (URN) and Certificate. The business is now officially recognized as an MSME." }
+                { step: "1", title: "Data Collection & Verification", desc: "The process begins with collecting all required business and KYC details. All documents are carefully verified to ensure accuracy and consistency, as mismatches may lead to rejection." },
+                { step: "2", title: "Creation of Temporary Reference Number (TRN)", desc: "Navigate to portal, enter basic details (PAN, mobile, email). OTP verification is completed, TRN is generated securely." },
+                { step: "3", title: "Filling GST Application", desc: "Using TRN, full application is completed including Business Details, Authorized Signatories, Bank accounts, and uploading forms." },
+                { step: "4", title: "Aadhaar Authentication", desc: "Opting for Aadhaar authentication generates OTP. If successful, ensures significantly faster approval. If not, physical verification." },
+                { step: "5", title: "Application Submission", desc: "Digital submission using DSC for companies or EVC for proprietors. Application Reference Number (ARN) instantly generated." },
+                { step: "6", title: "Department Verification", desc: "GST officer reviews application. If clarification is needed, notice GST REG-03 is issued. Proper reply must be filed extremely fast." },
+                { step: "7", title: "GSTIN Allotment & Cert Issue", desc: "Once perfectly approved, the new 15-digit GSTIN is activated. Form GST REG-06 Certificate generated indicating full compliance." }
               ].map((item, index) => {
                 const isOdd = index % 2 === 0; // 0-indexed: 0,2,4,6 → left; 1,3,5 → right
                 const isEvenStep = !isOdd;
@@ -830,12 +858,13 @@ const MSMERegistrationPage = () => {
               <div className="md:hidden space-y-8 relative pl-10">
                 <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent rounded-full"></div>
                 {[
-                  { step: "1", title: "Data Collection & Verification", desc: "The process begins with collecting all required business and applicant details. All details are verified carefully to ensure accuracy and avoid rejection." },
-                  { step: "2", title: "Aadhaar-Based Registration on Portal", desc: "The applicant visits the Udyam Registration portal and enters Aadhaar details. OTP verification is completed using the Aadhaar-linked mobile number." },
-                  { step: "3", title: "Filling Udyam Registration Form", desc: "The application is filled out online, including business details, organization type, investment in plant & machinery, turnover, and bank account information." },
-                  { step: "4", title: "Self-Declaration & Classification", desc: "The applicant declares business details based on investment and turnover. The system automatically classifies the business as Micro, Small, or Medium enterprise." },
-                  { step: "5", title: "Application Submission", desc: "After entering all details, the application is submitted online using Aadhaar OTP authentication. No physical documents are required to be uploaded." },
-                  { step: "6", title: "Udyam Certificate Generation", desc: "Upon successful verification, the system issues the Udyam Registration Number (URN) and Certificate. The business is now officially recognized as an MSME." }
+                  { step: "1", title: "Data Collection & Verification", desc: "The process begins with collecting all required business and KYC details. All documents are carefully verified to ensure accuracy and consistency, as mismatches may lead to rejection." },
+                  { step: "2", title: "Creation of Temporary Reference Number (TRN)", desc: "Navigate to portal, enter basic details (PAN, mobile, email). OTP verification is completed, TRN is generated securely." },
+                  { step: "3", title: "Filling GST Application", desc: "Using TRN, full application is completed including Business Details, Authorized Signatories, Bank accounts, and uploading forms." },
+                  { step: "4", title: "Aadhaar Authentication", desc: "Opting for Aadhaar authentication generates OTP. If successful, ensures significantly faster approval. If not, physical verification." },
+                  { step: "5", title: "Application Submission", desc: "Digital submission using DSC for companies or EVC for proprietors. Application Reference Number (ARN) instantly generated." },
+                  { step: "6", title: "Department Verification", desc: "GST officer reviews application. If clarification is needed, notice GST REG-03 is issued. Proper reply must be filed extremely fast." },
+                  { step: "7", title: "GSTIN Allotment & Cert Issue", desc: "Once perfectly approved, the new 15-digit GSTIN is activated. Form GST REG-06 Certificate generated indicating full compliance." }
                 ].map((item, index) => (
                   <div key={index} className="relative animate-on-scroll" style={{ animationDelay: `${index * 150}ms` }}>
                     <div className="absolute -left-10 top-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-4 border-dbiz-teal flex items-center justify-center text-dbiz-navy font-bold shadow-md z-10">
@@ -867,7 +896,7 @@ const MSMERegistrationPage = () => {
                 </div>
 
                 {/* ── UIVERSE ANIMATED CARDS ── */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {TIMELINE_DESKTOP.map((item, i) => (
                     <div 
                       key={i} 
@@ -902,9 +931,9 @@ const MSMERegistrationPage = () => {
                         </div>
                         {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">Same Day</div>
+                          <div className="card-duration">1–3 Days</div>
                           <p className="card-description">
-                            In most cases where valid Aadhaar authentication and correct details are provided.
+                            Typical timeframe with active Aadhaar authentication and perfect documentation.
                           </p>
                         </div>
                       </div>
@@ -920,9 +949,9 @@ const MSMERegistrationPage = () => {
                         </div>
                         {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">1–2 Days</div>
+                          <div className="card-duration">Up to 4 Days</div>
                           <p className="card-description">
-                            Applies if there are technical portal errors or delays in document submission.
+                            Applies when Queries are raised or physical site verification is required by tax officers.
                           </p>
                         </div>
                       </div>
@@ -932,30 +961,31 @@ const MSMERegistrationPage = () => {
                   {/* Final Hint */}
                   <div className="mt-12 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
                     <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
-                    <p className="text-sm text-gray-500 font-semibold italic max-w-2xl text-center">
-                      Note: Since Udyam registration is fully automated, <span className="text-dbiz-navy not-italic font-black">accurate PAN, Aadhaar, and business details</span> ensure instant approval without delays.
+                    <p className="text-sm text-gray-500 font-semibold italic">
+                      Note: Timeline may vary depending on state regulations, Labour Department processing, and accuracy of submitted details. Proper documentation ensures faster approval.
                     </p>
                   </div>
                 </div>
                 </div>
 
 
-                {/* 8. Post-Registration Compliance Section */}
+                {/* 8. Post-REGISTRATION COMPLIANCE Section */}
                 <div className="pt-16 border-t border-gray-100 animate-on-scroll">
                   <div className="mb-10 text-center md:text-left">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
                       <Shield className="h-3 w-3" /> Mandatory Maintenance
                     </div>
-                    <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">8. Post-Registration MSME Compliance</h3>
+                    <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">8. Post-REGISTRATION COMPLIANCE</h3>
                     <p className="text-gray-500 font-medium text-sm max-w-2xl">
-                      Once registered as an MSME, there are no monthly returns, but some updates help maintain active status and benefits.
+                      Once registered, your business must maintain these mandatory filing cycles to remain legally active and avoid high non-compliance penalties.
                     </p>
                   </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-12 place-items-center mb-10 py-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center mb-10 py-6">
                       {[
-                        { type: "Address or Data Updates", freq: "As required (based on changes)" },
-                        { type: "Income Tax Filing Updates", freq: "Annually" }
+                        { type: "GSTR-1", freq: "Monthly / Quarterly" },
+                        { type: "GSTR-3B", freq: "Monthly" },
+                        { type: "Annual Return", freq: "Yearly" }
                       ].map((filing, idx) => (
                         <div key={idx} className="blob-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
                            <div className="blob-card-orbit"></div>
@@ -967,18 +997,43 @@ const MSMERegistrationPage = () => {
                       ))}
                     </div>
 
-
+                    {/* Compliance Section */}
+                    <div className="consultancy-section-card animate-on-scroll">
+                      <p className="consultancy-label">Essential</p>
+                      <h4 className="consultancy-heading">Compliance Requirements</h4>
+                      <div className="compliance-grid">
+                        {[
+                          "Maintain employee registers",
+                          "Follow working hours rules",
+                          "Display certificate at shop",
+                          "Comply with wage regulations",
+                          "Update changes in details",
+                          "Maintain mandatory records"
+                        ].map((req, i) => (
+                          <div key={i} className="compliance-inner-card">
+                             <div className="compliance-check-icon">
+                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                             </div>
+                             <span className="compliance-label-text">{req}</span>
+                          </div>
+                        ))}
+                      </div>
+                             <span className="compliance-label-text">{req}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
                     {/* Penalties Section */}
                     <div className="consultancy-section-card animate-on-scroll">
                       <p className="consultancy-label">Caution</p>
-                      <h4 className="consultancy-heading">Penalties</h4>
+                      <h4 className="consultancy-heading">Legal Penalties</h4>
                       <div className="penalty-grid">
                         {[
-                          { title: "Incorrect Information", desc: "Cancellation of Udyam Registration" },
-                          { title: "Non-update of Business Details", desc: "Loss of MSME benefits" },
-                          { title: "Misclassification (wrong data)", desc: "Reclassification or legal action" },
-                          { title: "Non-compliance with MSME rules", desc: "Disqualification from schemes / benefits" }
+                          { title: "No Registration", desc: "Fine and legal action" },
+                          { title: "Labour Violations", desc: "Penalties and notices" },
+                          { title: "Record Failures", desc: "Fines or inspection issues" },
+                          { title: "Late Renewal", desc: "Additional fees" }
                         ].map((item, i) => (
                           <div key={i} className="penalty-inner-card">
                              <div className="penalty-header">
@@ -989,50 +1044,47 @@ const MSMERegistrationPage = () => {
                           </div>
                         ))}
                       </div>
-
-                      <div className="mt-8 pt-6 border-t border-red-500/10">
-                        <p className="text-[13px] text-gray-500 italic leading-relaxed">
-                          <span className="font-semibold text-red-600 not-italic mr-1">Note:</span> 
-                          Udyam registration has lifetime validity, but updating correct business details is essential to continue availing MSME benefits.
-                        </p>
+                      <p className="text-[13px] text-gray-400 font-medium mt-6 italic text-center">
+                        Note: Compliance requirements may vary based on state-specific laws, but maintaining proper records and following labour regulations is essential to avoid penalties and ensure smooth business operations.
+                      </p>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
                 </div>
 
-                {/* 9. Why D BIZ CONSULTANCY for GST Registration? */}
+                {/* 9. Why DBIZ CONSULTANCY for Shop & Establishment Registration? */}
                 <div className="pt-20 border-t border-gray-100 animate-on-scroll">
                   <div className="text-center max-w-3xl mx-auto mb-16">
                     <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                       <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                       Why D BIZ
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why D BIZ CONSULTANCY for Udyam MSME Registration?</h2>
-                    <div className="text-lg text-gray-600 leading-relaxed space-y-4">
-                      <p>Registering under Udyam MSME is an important step for businesses to gain government recognition and unlock various benefits. While the process is online and simple, incorrect details, mismatched data, or improper classification can lead to rejection or loss of benefits.</p>
-                      <p className="font-semibold text-dbiz-navy">That’s where D BIZ CONSULTANCY comes in.</p>
-                      <p>We make the entire Udyam registration process smooth, accurate, and hassle-free by handling everything—from eligibility check to certificate issuance and guidance on MSME benefits.</p>
-                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for Shop & Establishment Registration?</h2>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      Registering under GST is an essential step for any business operating in India. While the process may appear simple, it involves multiple compliance checks, document validations, and technical filings on the GST portal. Even minor errors can lead to application rejection, delays, or future notices.
+                    </p>
                   </div>
 
                   {/* What We Handle vs What You Provide */}
                   <div className="grid md:grid-cols-2 gap-8 mb-12">
                     <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-8">
                       <h3 className="text-xl font-semibold text-dbiz-navy mb-6 flex items-center">
-                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What D BIZ Handles
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
                       </h3>
                       <ul className="space-y-4">
                         {[
-                          "MSME eligibility assessment based on investment and turnover",
-                          "Classification guidance (Micro / Small / Medium)",
-                          "Document verification and data validation",
-                          "Udyam portal registration and application filing",
+                          "GST eligibility assessment based on activity/turnover",
+                          "Document validation and pre-upload review",
+                          "Selection of correct registration type (Regular/Composition)",
+                          "GST application filing (GST REG-01) on the portal",
                           "Aadhaar authentication and OTP verification support",
-                          "Ensuring correct PAN and GST data linkage",
-                          "Error-free submission to avoid rejection or mismatch",
-                          "Udyam certificate download and delivery",
-                          "Guidance on MSME schemes, subsidies, and benefits",
-                          "Post-registration advisory and updates"
+                          "ARN generation and continuous status tracking",
+                          "Handling GST department queries and clarifications",
+                          "Follow-up with authorities for faster approval",
+                          "GSTIN issuance and certificate download",
+                          "Post-registration guidance (returns & invoicing)"
                         ].map((item, i) => (
                           <li key={i} className="flex items-start">
                             <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
@@ -1047,11 +1099,11 @@ const MSMERegistrationPage = () => {
                       </h3>
                       <ul className="space-y-4">
                         {[
-                          "Aadhaar and PAN of applicant / business",
+                          "Identity and address proof (PAN & Aadhaar)",
                           "Business details and nature of activity",
-                          "Investment and turnover details",
-                          "Bank account details",
-                          "Basic business address details"
+                          "Registered office address proof (rent/ownership)",
+                          "Bank account details (cancelled cheque / statement)",
+                          "Photograph (if applicable)"
                         ].map((item, i) => (
                           <li key={i} className="flex items-start">
                             <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
@@ -1072,22 +1124,25 @@ const MSMERegistrationPage = () => {
                               <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
                            </div>
                            <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 tracking-tighter leading-tight font-sans">When Should You Apply?</h3>
-                           <p className="text-[17px] text-gray-500 leading-relaxed font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>Identify the key milestones that trigger the need for immediate MSME registration.</p>
+                           <p className="text-[17px] text-gray-500 leading-relaxed font-normal" style={{ fontFamily: "'Inter', sans-serif" }}>Identify the key milestones that trigger the need for immediate Shop & Establishment registration.</p>
                         </div>
 
                         <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
                            {[
-                              "Starting a new business or startup",
-                              "Wanting MSME recognition and government benefits",
-                              "Applying for business loans or subsidies",
-                              "Participating in government tenders",
-                              "Expanding business operations",
-                              "Seeking protection under MSME Act (delayed payments)"
+                              "Starting a new shop, office, or business establishment",
+                              "Hiring employees or expanding workforce",
+                              "Opening current bank account for business",
+                              "Applying for GST, Trade License, or other registrations",
+                              "Ensuring compliance with labour laws",
+                              "Avoiding penalties and legal issues"
                            ].map((point, index) => (
                               <div key={index} className="flex items-center gap-4 group/point">
                                  <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
                                     <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
                                  </div>
+                                 <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{point}</p>
+                              </div>
+                           ))}
                                  <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors" style={{ fontFamily: "'Inter', sans-serif" }}>{point}</p>
                               </div>
                            ))}
@@ -1103,13 +1158,13 @@ const MSMERegistrationPage = () => {
                         <h3 className="text-2xl font-semibold mb-8 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Our Advantage</h3>
                         <div className="space-y-6">
                            <p className="text-lg leading-relaxed text-white">
-                             Udyam registration is not just about getting a certificate, it is about proper classification, correct data submission, and ensuring eligibility for long-term benefits.
+                             Shop & Establishment registration is not just about getting a certificate—it is about ensuring proper compliance with labour laws, maintaining employee records, and avoiding future risks.
                            </p>
                            <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
-                             At D BIZ CONSULTANCY, we go beyond registration. We ensure your business is correctly registered and positioned to take full advantage of MSME schemes and opportunities.
+                             At DBIZ CONSULTANCY, we ensure your registration is done correctly from the start, minimizing errors and ensuring smooth approval. Our structured approach helps you build a solid foundation for your business operations.
                            </p>
                            <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
-                             From application to post-registration guidance, we act as your complete MSME partner.
+                             From application to compliance guidance, we act as your complete business compliance partner.
                            </p>
                         </div>
                       </div>
@@ -1117,12 +1172,12 @@ const MSMERegistrationPage = () => {
                       <div className="lg:col-span-3">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                           {[
-                            { title: "Expert Professionals", desc: "With MSME and compliance experience" },
-                            { title: "Quick & Same-Day", desc: "Registration support" },
-                            { title: "Error-Free Filing", desc: "With proper classification" },
-                            { title: "End-to-End Service", desc: "From application to certificate" },
-                            { title: "Dedicated Support", desc: "For queries and updates" },
-                            { title: "Ongoing Guidance", desc: "On loans, subsidies, and MSME benefits" }
+                            { title: "Expert knowledge of state-specific labour laws", desc: "Specialists with deep practical experience" },
+                            { title: "Quick Processing", desc: "Fast and proactive application filing" },
+                            { title: "Error-Free Documentation", desc: "Thorough verification to avoid rejections" },
+                            { title: "End-to-End Service", desc: "From registration to compliance setup" },
+                            { title: "Dedicated Support", desc: "Expert help for all department queries" },
+                            { title: "Ongoing Guidance", desc: "Continuous support for labour law compliance" }
                           ].map((adv, idx) => (
                             <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/20 transition-all duration-300">
                                <CheckCircle2 className="h-6 w-6 text-dbiz-teal mb-4" />
@@ -1146,7 +1201,7 @@ const MSMERegistrationPage = () => {
              <div className="max-w-4xl mx-auto text-center animate-on-scroll">
                <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
                <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
-                 With strong expertise in business registrations and compliance, D BIZ CONSULTANCY is a trusted partner for startups and growing businesses across India. <span className="text-gray-600">We take care of the entire Udyam registration process—so you can focus on scaling your business with confidence.</span>
+                 With a strong track record in handling business registrations and tax compliance, DBIZ CONSULTANCY is a trusted partner for entrepreneurs, startups, and growing businesses across India. <span className="text-gray-600">We take care of the entire Shop & Establishment registration process—so you can focus on running and scaling your business with confidence.</span>
                </p>
                
                  
@@ -1162,16 +1217,16 @@ const MSMERegistrationPage = () => {
                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20 uppercase">
                  FAQs
                </div>
-               <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-6 tracking-tight [animation-delay:100ms]">FAQs on Udyam MSME Registration</h2>
+               <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-6 tracking-tight [animation-delay:100ms]">FAQs on Shop & Establishment Registration</h2>
                <p className="text-gray-500 mb-8 font-medium [animation-delay:200ms]">Last updated: March 2026</p>
                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                 Whether you're starting a business, understanding MSME eligibility, or planning to avail government benefits — here are the most commonly asked questions with clear and practical answers.
+                 Whether you're starting a business, understanding GST applicability, or planning compliance — here are the most commonly asked questions with clear, practical answers.
                </p>
              </div>
 
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="w-full space-y-4">
-                {msmeFaq.map((faq, idx) => (
+                {shopEstablishmentFaq.map((faq, idx) => (
                   <AccordionItem key={faq.value} value={faq.value} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 overflow-hidden animate-on-scroll" style={{ animationDelay: `${idx * 50 + 300}ms` }}>
                     <AccordionTrigger className="text-[17px] font-medium text-[#020817] hover:text-dbiz-teal hover:no-underline py-5 text-left font-sans">
                       {faq.question}
@@ -1192,4 +1247,4 @@ const MSMERegistrationPage = () => {
   );
 };
 
-export default MSMERegistrationPage;
+export default ShopEstablishmentPage;

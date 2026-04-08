@@ -101,15 +101,27 @@ const TwelveAEightyGPage = () => {
         <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
+              <a 
+                href="#overview"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('overview'); }}
+              >
                 <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('benefits')}>
+              </a>
+              <a 
+                href="#benefits"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('benefits'); }}
+              >
                 <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </div>
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
+              </a>
+              <a 
+                href="#faqs"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('faqs'); }}
+              >
                 <Users className="mr-2 h-4 w-4" /> FAQs
-              </div>
+              </a>
             </div>
           </div>
         </section>

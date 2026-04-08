@@ -153,33 +153,61 @@ const NidhiCompanyPage = () => {
         <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
+              <a 
+                href="#overview"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('overview'); }}
+              >
                 <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('features')}>
+              <a 
+                href="#features"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('features'); }}
+              >
                 <Shield className="mr-2 h-4 w-4" /> Key Features
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('comparison')}>
+              <a 
+                href="#comparison"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('comparison'); }}
+              >
                 <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('documents')}>
+              <a 
+                href="#documents"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('documents'); }}
+              >
                 <FileText className="mr-2 h-4 w-4" /> Documents
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('process')}>
+              <a 
+                href="#process"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('process'); }}
+              >
                 <ArrowRight className="mr-2 h-4 w-4" /> Process
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('compliance') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('compliance')}>
+              <a 
+                href="#compliance"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('compliance') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('compliance'); }}
+              >
                 <Clock className="mr-2 h-4 w-4" /> Compliance
-              </div>
+              </a>
 
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
+              <a 
+                href="#faqs"
+                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
+                onClick={(e) => { e.preventDefault(); handleSectionClick('faqs'); }}
+              >
                 <Users className="mr-2 h-4 w-4" /> FAQs
-              </div>
+              </a>
             </div>
           </div>
         </section>
