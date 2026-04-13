@@ -97,7 +97,7 @@ const ServicesSection = () => {
         { name: "Udyam MSME Registration", path: "/udyam-msme-registration" },
         { name: "Trade License", path: "/trade-license" },
         { name: "Shop & Establishment License", path: "/shop-establishment" },
-        { name: "Startup Registration (DPIIT)", path: "/startup-registration" },
+        { name: "Startup Registration (DPIIT)", path: "/startup-india-registration" },
         { name: "ISO Certification", path: "/iso-certification" },
         { name: "Digital Signature (DSC)", path: "/digital-signature" },
         { name: "FSSAI License", path: "/fssai-registration" },
@@ -129,7 +129,7 @@ const ServicesSection = () => {
       icon: TrendingUp,
       title: "Fund Raising",
       items: [
-        { name: "Startup India Recognition", path: "/startup-india-recognition" },
+        { name: "Startup India Recognition", path: "/startup-india-registration" },
         { name: "Funding Assistance", path: "/funding-assistance" },
         { name: "Growth Strategy", path: "/growth-strategy" },
         { name: "Incubation Support", path: "/incubation-support" },

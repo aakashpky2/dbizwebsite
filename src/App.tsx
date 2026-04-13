@@ -64,6 +64,7 @@ const LegalAdvisoryPage = lazy(() => import("./pages/LegalAdvisoryPage"));
 const MarketResearchPage = lazy(() => import("./pages/MarketResearchPage"));
 const PitchDeckPage = lazy(() => import("./pages/PitchDeckPage"));
 const StartupIndiaRecognitionPage = lazy(() => import("./pages/StartupIndiaRecognitionPage"));
+const StartupIndiaRegistrationPage = lazy(() => import("./pages/StartupIndiaRegistrationPage"));
 const NgoRegistrationPage = lazy(() => import("./pages/NgoRegistrationPage"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
@@ -127,8 +128,8 @@ const App = () => {
                   <Route path="/gst-registration" element={<GSTRegistrationPage />} />
                   <Route path="/gst-registration/:location" element={<GSTRegistrationPage />} />
 
-                  <Route path="/startup-registration" element={<StartupRegistrationPage />} />
-                  <Route path="/startup-registration/:location" element={<StartupRegistrationPage />} />
+                  <Route path="/startup-registration" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-registration/:location" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/udyam-msme-registration" element={<MSMERegistrationPage />} />
                   <Route path="/udyam-msme-registration/:location" element={<MSMERegistrationPage />} />
                   <Route path="/iso-certification" element={<ISOCertificationPage />} />
@@ -180,8 +181,10 @@ const App = () => {
                   <Route path="/market-research/:location" element={<MarketResearchPage />} />
                   <Route path="/pitch-deck" element={<PitchDeckPage />} />
                   <Route path="/pitch-deck/:location" element={<PitchDeckPage />} />
-                  <Route path="/startup-india-recognition" element={<StartupIndiaRecognitionPage />} />
-                  <Route path="/startup-india-recognition/:location" element={<StartupIndiaRecognitionPage />} />
+                  <Route path="/startup-india-recognition" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-india-recognition/:location" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-india-registration" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-india-registration/:location" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/ngo-trust-registration" element={<NgoRegistrationPage />} />
                   <Route path="/ngo-trust-registration/:location" element={<NgoRegistrationPage />} />
                   <Route path="/admin/llp-editor" element={<LLPContentEditor />} />
