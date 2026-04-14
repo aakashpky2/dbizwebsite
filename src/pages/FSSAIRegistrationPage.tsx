@@ -199,13 +199,6 @@ const FSSAIRegistrationPage = () => {
                   >
                     Apply Now
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-dbiz-navy px-8 py-6 rounded-xl text-lg font-semibold animate-on-scroll [animation-delay:300ms]"
-                    onClick={() => window.open(`tel:${phoneNumber}`)}
-                  >
-                    Get Free Consultation
-                  </Button>
                 </div>
 
                 {/* Status Detail */}
@@ -340,21 +333,23 @@ const FSSAIRegistrationPage = () => {
                 <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Minimum Requirements</h3>
-                    <p className="text-gray-600 text-[17px] mb-7 leading-relaxed font-medium">
-                      To apply for FSSAI registration, the following basic requirements must be fulfilled:
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the FSSAI</h3>
+                    <p className="text-gray-600 text-[15px] mb-7 leading-relaxed font-medium">
+                      Section-wise, the Food Safety and Standards Act defines FSSAI Registration/License as the mandatory approval required for businesses involved in manufacturing, processing, storage, distribution, or sale of food products in India.
                     </p>
                     <ul className="space-y-5">
                       {[
-                        "Business Activity: Must be engaged in food-related activities",
-                        "Identity Proof: PAN / Aadhaar",
-                        "Business Address: Registered premises proof required",
-                        "Food Category: Type of food handled",
-                        "Turnover: Determines license type (Basic/State/Central)"
+                        "Mandatory for Food Business Operators (FBOs)",
+                        "Required Above Prescribed Turnover Limits",
+                        "Compulsory for Restaurants, Cloud Kitchens & Food Manufacturers",
+                        "Ensures Compliance with Food Safety Standards",
+                        "Enables Legal Production, Sale & Distribution of Food Products",
+                        "Authorizes Use of FSSAI License Number on Food Packaging",
+                        "Required for Online Food Sellers & Delivery Platforms"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-dbiz-teal mr-4 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 font-normal text-[17px] tracking-tight leading-snug">
+                          <span className="text-gray-700 font-bold text-[15px] tracking-tight leading-snug">
                             {item}
                           </span>
                         </li>
@@ -389,7 +384,8 @@ const FSSAIRegistrationPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+
+              </div>
           </div>
         </section>
 
@@ -415,7 +411,7 @@ const FSSAIRegistrationPage = () => {
                   { icon: FileBarChart, title: "Unique 14-Digit Number", desc: "A singular license number issued post-registration, mandatory for labels, packaging, and invoices.", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=50" },
                   { icon: UtensilsCrossed, title: "Mandatory for Food Business", desc: "Covers manufacturers, traders, restaurants, cloud kitchens, and distributors across India.", image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=500&q=50" },
                   { icon: Shield, title: "Ensures Safety & Hygiene", desc: "FSSAI certification ensures adherence to safety, hygiene, and quality standards in food handling.", image: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=500&q=50" },
-                  { icon: ChefHat, title: "Applicable to All Sectors", desc: "Used by home kitchens, bakeries, hotels, catering services, and online food sellers.", image: "https://images.unsplash.com/photo-1556910602-3884ee026896?auto=format&fit=crop&w=500&q=50" },
+                  { icon: ChefHat, title: "Applicable to All Sectors", desc: "Used by home kitchens, bakeries, hotels, catering services, and online food sellers.", image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=60" },
                   { icon: Layers, title: "Three-Type Structure", desc: "Basic Registration (Small), State License (Medium), and Central License (Large/Interstate).", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=50" },
                   { icon: ShoppingCart, title: "Online Business Enablement", desc: "Mandatory for listing on delivery platforms like Swiggy, Zomato, Amazon, and other e-commerce sites.", image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=500&q=50" },
                   { icon: Users, title: "Enhances Business Credibility", desc: "Builds absolute trust among customers and vendors, significantly improving overall brand value.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=50" },
@@ -525,28 +521,28 @@ const FSSAIRegistrationPage = () => {
                       </TableHeader>
                       <TableBody>
                         <TableRow>
-                          <TableCell className="font-bold">Small Food Business</TableCell>
-                          <TableCell>Basic Registration</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Small Food Business</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Basic Registration</TableCell>
                           <TableCell>For turnover up to ₹12 lakhs (home kitchens, petty vendors, small shops).</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">Medium Food Business</TableCell>
-                          <TableCell>State License</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Medium Food Business</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">State License</TableCell>
                           <TableCell>For turnover between ₹12 lakhs and ₹20 crores operating in one state.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold">Large Food Business</TableCell>
-                          <TableCell>Central License</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Large Food Business</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Central License</TableCell>
                           <TableCell>For turnover above ₹20 crores or operating in multiple states.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">Food Manufacturing</TableCell>
-                          <TableCell>Mandatory</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Food Manufacturing</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Mandatory</TableCell>
                           <TableCell>Any business manufacturing, processing, or packaging food.</TableCell>
                         </TableRow>
                          <TableRow>
-                          <TableCell className="font-bold">Online Food Selling</TableCell>
-                          <TableCell>Mandatory</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Online Food Selling</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Mandatory</TableCell>
                           <TableCell>Required for platforms like Swiggy, Zomato, Amazon, etc.</TableCell>
                         </TableRow>
                       </TableBody>
@@ -565,18 +561,18 @@ const FSSAIRegistrationPage = () => {
                       </TableHeader>
                       <TableBody>
                         <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">Basic Registration</TableCell>
-                          <TableCell>Small businesses</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Basic Registration</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Small businesses</TableCell>
                           <TableCell>For small-scale food businesses with limited turnover and operations.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold text-dbiz-teal">State License</TableCell>
-                          <TableCell>Medium businesses</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">State License</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Medium businesses</TableCell>
                           <TableCell>For businesses operating within a state with moderate turnover.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">Central License</TableCell>
-                          <TableCell>Large businesses</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Central License</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy text-[14.875px]">Large businesses</TableCell>
                           <TableCell>For large-scale businesses, exporters, importers, and interstate operators.</TableCell>
                         </TableRow>
                       </TableBody>
@@ -599,60 +595,108 @@ const FSSAIRegistrationPage = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 px-4 md:px-0">
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll">
-                  <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <Users className="h-6 w-6 text-dbiz-teal" />
+               {/* 1. Individual / Proprietor */}
+               <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col h-full">
+                  <div className="relative h-48 overflow-hidden shrink-0">
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=600&q=50" 
+                      alt="Individual Documentation" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-6">
+                      <div className="bg-dbiz-teal/20 backdrop-blur-md p-2.5 rounded-xl border border-white/20">
+                        <Users className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Individual / Proprietor</h3>
-                  <ul className="space-y-4">
-                    {["PAN Card", "Aadhaar Card", "Photograph", "Bank account details", "Address proof (Valid ID)"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-8 flex-grow">
+                    <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Individual / Proprietor</h3>
+                    <ul className="space-y-4">
+                      {["PAN Card", "Aadhaar Card", "Photograph", "Bank account details", "Address proof"].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-gray-700 font-bold group/list text-[15px]">
+                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                </div>
 
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll" style={{ animationDelay: '100ms' }}>
-                  <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <Building2 className="h-6 w-6 text-dbiz-teal" />
+               {/* 2. Company / LLP */}
+               <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col h-full" style={{ animationDelay: '100ms' }}>
+                  <div className="relative h-48 overflow-hidden shrink-0">
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=50" 
+                      alt="Corporate Documentation" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-6">
+                      <div className="bg-dbiz-teal/20 backdrop-blur-md p-2.5 rounded-xl border border-white/20">
+                        <Building2 className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Company / LLP</h3>
-                  <ul className="space-y-4">
-                    {["Certificate of Inc.", "PAN of Company/LLP", "MOA & AOA / Agreement", "Directors’ KYC docs", "Authorization letter"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-8 flex-grow">
+                    <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Company / LLP</h3>
+                    <ul className="space-y-4">
+                      {["Certificate of Inc.", "PAN of Company/LLP", "MOA & AOA / Agreement", "Directors’ KYC docs", "Authorization letter"].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-gray-700 font-bold group/list text-[15px]">
+                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                </div>
 
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll" style={{ animationDelay: '200ms' }}>
-                  <div className="bg-dbiz-navy/5 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <MapPin className="h-6 w-6 text-dbiz-navy" />
+               {/* 3. Business Premises */}
+               <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col h-full" style={{ animationDelay: '200ms' }}>
+                  <div className="relative h-48 overflow-hidden shrink-0">
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=50" 
+                      alt="Office Premises Proof" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-6">
+                      <div className="bg-dbiz-teal/20 backdrop-blur-md p-2.5 rounded-xl border border-white/20">
+                        <MapPin className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Business Premises</h3>
-                  <ul className="space-y-4">
-                    {["Rent Agreement + NOC", "Utility Bill (Recent)", "Ownership proof"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-8 flex-grow">
+                    <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Business Premises</h3>
+                    <ul className="space-y-4">
+                      {["Rent Agreement + NOC", "Utility Bill (Recent)", "Ownership proof"].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 text-gray-700 font-bold group/list text-[15px]">
+                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                </div>
 
-               <div className="bg-dbiz-navy rounded-3xl p-8 shadow-xl text-white animate-on-scroll" style={{ animationDelay: '300ms' }}>
-                  <div className="bg-dbiz-teal/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <FileCheck className="h-6 w-6 text-white" />
+               {/* 4. FSSAI Specific */}
+               <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col h-full" style={{ animationDelay: '300ms' }}>
+                  <div className="relative h-48 overflow-hidden shrink-0">
+                    <CachedImage 
+                      src="https://images.unsplash.com/photo-1579113800032-c38bd7635818?auto=format&fit=crop&w=600&q=60" 
+                      alt="FSSAI Food Safety Documentation" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-6">
+                      <div className="bg-dbiz-teal/20 backdrop-blur-md p-2.5 rounded-xl border border-white/20">
+                        <FileCheck className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-black text-white text-xl mb-6 uppercase tracking-tight leading-tight">FSSAI Specific</h3>
-                  <ul className="space-y-4">
-                    {["Food category details", "Product list handled", "Premises layout map", "Equipment details", "Water test report"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-blue-50/90 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-8 flex-grow">
+                    <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">FSSAI Specific</h3>
+                    <ul className="space-y-4">
+                      {["Food category details", "Product list handled", "Premises layout map", "Equipment details", "Water test report"].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3 text-gray-700 font-bold group/list text-[15px]">
+                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0 mt-0.5" /> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                </div>
             </div>
 
@@ -776,25 +820,56 @@ const FSSAIRegistrationPage = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-                   <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex items-center gap-6">
-                      <div className="bg-dbiz-teal/10 p-4 rounded-2xl">
-                         <Zap className="h-8 w-8 text-dbiz-teal" />
+                <div className="mt-16">
+                  <div className="flex items-center gap-3 mb-12">
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                    <div className="px-6 py-2 rounded-full border border-gray-100 bg-white shadow-sm">
+                      <p className="text-[10px] font-black tracking-[0.4em] text-dbiz-navy/40 uppercase">Quick Summary</p>
+                    </div>
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    {/* Card 1: Fast Track Approval */}
+                    <div className="three-d-card animate-on-scroll">
+                      <div className="card-wrapper">
+                        {/* Front Face */}
+                        <div className="card-face front bg-white shadow-sm border border-gray-100">
+                          <div className="flex flex-col items-center justify-center h-full">
+                            <Zap className="h-16 w-16 text-dbiz-teal mb-6 animate-pulse" />
+                            <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Fast Track Approval</h4>
+                          </div>
+                        </div>
+                        {/* Back Face */}
+                        <div className="card-face back bg-dbiz-navy">
+                          <div className="card-duration text-dbiz-teal">3 – 5 Days</div>
+                          <p className="card-description text-blue-50/80 font-medium">
+                            3 – 5 working days (with complete documents)
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                         <h4 className="font-bold text-dbiz-navy text-xl">Fast Track Approval</h4>
-                         <p className="text-gray-500 text-sm">3 – 5 working days (with complete documents)</p>
+                    </div>
+
+                    {/* Card 2: Standard Timeline */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                      <div className="card-wrapper">
+                        {/* Front Face */}
+                        <div className="card-face front bg-white shadow-sm border border-gray-100">
+                          <div className="flex flex-col items-center justify-center h-full">
+                            <Clock className="h-16 w-16 text-amber-500 mb-6" />
+                            <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Standard Timeline</h4>
+                          </div>
+                        </div>
+                        {/* Back Face */}
+                        <div className="card-face back bg-dbiz-navy">
+                          <div className="card-duration text-dbiz-teal">5 – 7 Days</div>
+                          <p className="card-description text-blue-50/80 font-medium">
+                            5 – 7 working days normally.
+                          </p>
+                        </div>
                       </div>
-                   </div>
-                   <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex items-center gap-6">
-                      <div className="bg-dbiz-navy/10 p-4 rounded-2xl">
-                         <Shield className="h-8 w-8 text-dbiz-navy" />
-                      </div>
-                      <div>
-                         <h4 className="font-bold text-dbiz-navy text-xl">Standard Timeline</h4>
-                         <p className="text-gray-500 text-sm">5 – 7 working days normally.</p>
-                      </div>
-                   </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -823,41 +898,51 @@ const FSSAIRegistrationPage = () => {
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-gray-50 p-10 rounded-[2rem] border border-gray-100">
-                    <h4 className="text-xl font-bold text-dbiz-navy mb-6">Compliance Requirements</h4>
-                    <ul className="space-y-4">
-                      {[
-                        "Display FSSAI License Number at business premises",
-                        "Print FSSAI number on food packaging, labels, and invoices",
-                        "Maintain hygiene and food safety standards",
-                        "Keep proper records of production, sales, and stock",
-                        "Follow food safety guidelines and storage standards",
-                        "Ensure timely renewal of license before expiry"
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-semibold text-gray-700">
-                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-red-50 p-10 rounded-[2rem] border border-red-100">
-                    <h4 className="text-xl font-bold text-red-900 mb-6 flex items-center gap-2">
-                       <AlertTriangle className="h-6 w-6 text-red-600" /> Statutory Penalties
-                    </h4>
-                    <ul className="space-y-4">
-                      {[
-                        "Operating without License (Heavy fine/Closure)",
-                        "Non-compliance with safety standards",
-                        "Mislabeling or incorrect info (Product recall)",
-                        "Hygiene failure (Suspension/Cancellation)"
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-semibold text-red-800">
-                          <XCircle className="h-5 w-5 text-red-600 shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="flex flex-col gap-12 max-w-5xl mx-auto">
+                    {/* Compliance Section */}
+                    <div className="consultancy-section-card animate-on-scroll">
+                      <p className="consultancy-label">Essential</p>
+                      <h4 className="consultancy-heading">Compliance Requirements</h4>
+                      <div className="compliance-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                          "Display FSSAI License Number at business premises",
+                          "Print FSSAI number on food packaging & invoices",
+                          "Maintain hygiene and food safety standards",
+                          "Keep proper records of production and sales",
+                          "Follow food safety guidelines and storage standards",
+                          "Ensure timely renewal of license before expiry"
+                        ].map((req, i) => (
+                          <div key={i} className="compliance-inner-card">
+                             <div className="compliance-check-icon shadow-[0_0_10px_rgba(20,184,166,0.2)]">
+                               <CheckCircle2 className="h-4 w-4" />
+                             </div>
+                             <span className="compliance-label-text">{req}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Penalties Section */}
+                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                      <p className="consultancy-label">Caution</p>
+                      <h4 className="consultancy-heading">Statutory Penalties</h4>
+                      <div className="penalty-grid grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
+                        {[
+                          { title: "Operating without License", desc: "Heavy fine/Closure" },
+                          { title: "Non-compliance with safety", desc: "Notices & fines" },
+                          { title: "Mislabeling or incorrect info", desc: "Product recall" },
+                          { title: "Hygiene failure", desc: "Suspension/Cancellation" }
+                        ].map((item, i) => (
+                          <div key={i} className="penalty-inner-card group-hover:border-red-200 transition-colors">
+                             <div className="penalty-header">
+                                <div className="penalty-dot bg-red-600 shadow-[0_0_8px_rgba(220,38,38,0.4)]"></div>
+                                <span className="penalty-title">{item.title}</span>
+                             </div>
+                             <p className="penalty-desc">{item.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                 </div>
               </div>
 
@@ -873,50 +958,58 @@ const FSSAIRegistrationPage = () => {
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                  <div className="bg-dbiz-navy rounded-[2.5rem] p-12 text-white shadow-2xl relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-dbiz-teal/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                    <h4 className="text-xl font-bold text-dbiz-teal mb-8 uppercase tracking-widest border-b border-white/10 pb-4">What DBIZ Handles</h4>
-                    <ul className="space-y-4">
-                      {[
-                        "Assessment of correct license type (Basic/State/Central)",
-                        "Document validation and pre-submission review",
-                        "Preparation and filing on Foscos portal",
-                        "Guidance on food category classification",
-                        "Support for layout plans and water reports",
-                        "Handling department queries and clarifications",
-                        "FSSAI license issuance and certificate support",
-                        "Post-license compliance and renewal guidance"
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-bold text-blue-50/90 leading-relaxed">
-                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="bg-white rounded-[2.5rem] p-12 shadow-sm border border-gray-100 text-dbiz-navy">
-                    <h4 className="text-xl font-bold text-dbiz-navy mb-8 uppercase tracking-widest border-b border-gray-100 pb-4">What You Provide</h4>
-                    <ul className="space-y-6">
-                      {[
-                        "Identity/Address proof (PAN & Aadhaar)",
-                        "Nature of food activity and business details",
-                        "Registered premises proof",
-                        "Food product category specific info",
-                        "Basic business information"
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-4 text-sm font-bold text-gray-700 leading-relaxed">
-                          <ArrowRight className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-8 mb-12">
+                   {/* Left Card: What DBIZ Handles */}
+                   <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-xl">
+                      <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center gap-3 border-b border-dbiz-teal/10 pb-4">
+                         <CheckCircle2 className="h-6 w-6 text-dbiz-teal" /> What DBIZ Handles
+                      </h3>
+                      <ul className="space-y-4">
+                        {[
+                          "Assessment of business activity and FSSAI eligibility",
+                          "Expert document validation and pre-upload review",
+                          "Selection of correct license type (Basic, State, or Central)",
+                          "FSSAI application filing on the FoSCoS portal",
+                          "Preparation and submission of mandatory safety forms",
+                          "Coordination with food safety authorities for approval",
+                          "Continuous status tracking and follow-up support",
+                          "Handling of department queries and clarifications",
+                          "License issuance and soft copy delivery post-approval",
+                          "Guidance on post-registration food safety compliance"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                             <CheckCircle className="h-4 w-4 text-dbiz-teal mt-1 shrink-0" />
+                             <span className="text-gray-700 font-medium text-sm leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                   </div>
+
+                   {/* Right Card: What You Provide */}
+                   <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-xl">
+                      <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
+                         <FileText className="h-6 w-6 text-gray-400" /> What You Provide
+                      </h3>
+                      <ul className="space-y-4">
+                        {[
+                          "Business identity and address proof (PAN / Electric Bill)",
+                          "Details of the food products or activity",
+                          "Rental or ownership proof for the business premises",
+                          "Photograph of the applicant or proprietor",
+                          "List of equipment and building layout (if applicable)"
+                        ].map((item, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                             <ArrowRight className="h-4 w-4 text-gray-500 mt-1 shrink-0" />
+                             <span className="text-gray-700 font-medium text-sm leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                   </div>
                 </div>
 
-                {/* Commitment Overlay */}
-                <div className="bg-dbiz-navy rounded-[3rem] p-12 md:p-16 text-white text-center relative overflow-hidden group shadow-[0_40px_100px_rgba(0,0,0,0.2)]">
-                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/20 to-transparent"></div>
-                   <h3 className="text-3xl font-black mb-6 relative z-10">Our Commitment</h3>
-                   <p className="max-w-3xl mx-auto text-[19.125px] font-medium leading-relaxed opacity-90 relative z-10">
+                <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
                      With strong experience in food business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for food entrepreneurs. We handle the entire FSSAI process—so you can focus on building your brand with confidence.
                    </p>
                 </div>

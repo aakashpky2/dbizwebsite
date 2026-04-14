@@ -811,45 +811,48 @@ const IECRegistrationPage = () => {
                   ))}
                 </div>
 
-                {/* Quick Summary Cards */}
-                <div className="mt-12">
-                  <div className="flex items-center gap-3 mb-10">
+                <div className="mt-24">
+                  <div className="flex items-center gap-4 mb-14">
                     <div className="h-px bg-gray-100 flex-1"></div>
-                    <p className="text-xs font-black tracking-[0.3em] text-gray-400 uppercase">Quick Summary</p>
+                    <p className="text-[11px] font-black tracking-[0.6em] text-gray-400 uppercase">Quick Summary</p>
                     <div className="h-px bg-gray-100 flex-1"></div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    {/* Card 1: Fast Track Flip */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    {/* Card 1: Fast Track Approval */}
                     <div className="three-d-card animate-on-scroll">
                       <div className="card-wrapper">
                         {/* Front Face */}
-                        <div className="card-face front">
-                          <i className="fa-solid fa-person-running text-[42px] text-dbiz-teal mb-4"></i>
-                          <h4 className="card-title">Fast Track Approval</h4>
+                        <div className="card-face front bg-white shadow-sm border border-gray-100">
+                          <div className="flex flex-col items-center justify-center h-full">
+                            <Zap className="h-16 w-16 text-dbiz-teal mb-6 animate-pulse" />
+                            <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Fast Track Approval</h4>
+                          </div>
                         </div>
                         {/* Back Face */}
-                        <div className="card-face back">
-                          <div className="card-duration">Same Day</div>
-                          <p className="card-description">
+                        <div className="card-face back bg-dbiz-navy">
+                          <div className="card-duration text-dbiz-teal">Same Day</div>
+                          <p className="card-description text-blue-50/80 font-medium">
                             Typical timeframe for IEC issuance with correct documentation and active Aadhaar verification.
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    {/* Card 2: Delayed Cases Flip */}
-                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
+                    {/* Card 2: Delayed Cases */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
                       <div className="card-wrapper">
                         {/* Front Face */}
-                        <div className="card-face front">
-                          <i className="fa-solid fa-hourglass-half text-[42px] text-amber-500 mb-4"></i>
-                          <h4 className="card-title">Delayed Cases</h4>
+                        <div className="card-face front bg-white shadow-sm border border-gray-100">
+                          <div className="flex flex-col items-center justify-center h-full">
+                            <Clock className="h-16 w-16 text-amber-500 mb-6" />
+                            <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Delayed Cases</h4>
+                          </div>
                         </div>
                         {/* Back Face */}
-                        <div className="card-face back">
-                          <div className="card-duration">1-2 Working Days</div>
-                          <p className="card-description">
+                        <div className="card-face back bg-amber-500">
+                          <div className="card-duration text-white">1-2 Working Days</div>
+                          <p className="card-description text-white font-medium">
                             Applies when DGFT raises queries or clarification is required in the submitted application.
                           </p>
                         </div>
@@ -858,14 +861,14 @@ const IECRegistrationPage = () => {
                   </div>
 
                   {/* Final Hint */}
-                  <div className="mt-12 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                  <div className="mt-12 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '400ms' }}>
                     <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
                     <p className="text-sm text-gray-500 font-semibold italic">
                       Note: <span className="text-dbiz-navy not-italic font-black">Accurate documents and correct details</span> ensure faster IEC approval without delays.
                     </p>
                   </div>
                 </div>
-                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -886,7 +889,7 @@ const IECRegistrationPage = () => {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center mb-10 py-6 max-w-2xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 place-items-center mb-16 py-6 transition-all duration-700">
                   {[
                     { type: "Annual Update", freq: "Once a year (April - June)" },
                     { type: "Trade Reporting", freq: "Based on export activities" }
@@ -901,46 +904,48 @@ const IECRegistrationPage = () => {
                   ))}
                 </div>
 
-                {/* Compliance Section */}
-                <div className="consultancy-section-card animate-on-scroll">
-                  <p className="consultancy-label">Essential</p>
-                  <h4 className="consultancy-heading">Compliance Requirements</h4>
-                  <div className="compliance-grid">
-                    {[
-                      "Update IEC details annually on DGFT portal",
-                      "Ensure correct usage in customs/banking",
-                      "Maintain proper trade transaction records",
-                      "Comply with DGFT & RBI regulations"
-                    ].map((req, i) => (
-                      <div key={i} className="compliance-inner-card">
-                         <div className="compliance-check-icon">
-                           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                         </div>
-                         <span className="compliance-label-text">{req}</span>
+                <div className="flex flex-col gap-12 max-w-5xl mx-auto">
+                    {/* Compliance Section */}
+                    <div className="consultancy-section-card animate-on-scroll">
+                      <p className="consultancy-label">Essential</p>
+                      <h4 className="consultancy-heading">Compliance Requirements</h4>
+                      <div className="compliance-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                          "Update IEC details annually on DGFT portal",
+                          "Ensure correct usage in customs/banking",
+                          "Maintain proper trade transaction records",
+                          "Comply with DGFT & RBI regulations"
+                        ].map((req, i) => (
+                           <div key={i} className="compliance-inner-card">
+                              <div className="compliance-check-icon shadow-[0_0_10px_rgba(20,184,166,0.2)]">
+                                <CheckCircle2 className="h-4 w-4" />
+                              </div>
+                              <span className="compliance-label-text">{req}</span>
+                           </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
 
-                {/* Penalties Section */}
-                <div className="consultancy-section-card animate-on-scroll">
-                  <p className="consultancy-label">Caution</p>
-                  <h4 className="consultancy-heading">Legal Penalties</h4>
-                  <div className="penalty-grid">
-                    {[
-                      { title: "Non-updation", desc: "IEC deactivation by DGFT" },
-                      { title: "Incorrect Info", desc: "Suspension of trade license" },
-                      { title: "Non-compliance", desc: "Hefty fines & legal restrictions" }
-                    ].map((item, i) => (
-                      <div key={i} className="penalty-inner-card">
-                         <div className="penalty-header">
-                            <div className="penalty-dot"></div>
-                            <span className="penalty-title">{item.title}</span>
-                         </div>
-                         <p className="penalty-desc">{item.desc}</p>
+                    {/* Penalties Section */}
+                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                      <p className="consultancy-label">Caution</p>
+                      <h4 className="consultancy-heading">Legal Penalties</h4>
+                      <div className="penalty-grid grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
+                        {[
+                          { title: "Non-updation", desc: "IEC deactivation by DGFT" },
+                          { title: "Incorrect Info", desc: "Suspension of trade license" },
+                          { title: "Non-compliance", desc: "Hefty fines & legal restrictions" }
+                        ].map((item, i) => (
+                          <div key={i} className="penalty-inner-card group-hover:border-red-200 transition-colors">
+                             <div className="penalty-header">
+                                <div className="penalty-dot bg-red-600 shadow-[0_0_8px_rgba(220,38,38,0.4)]"></div>
+                                <span className="penalty-title">{item.title}</span>
+                             </div>
+                             <p className="penalty-desc">{item.desc}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -962,15 +967,16 @@ const IECRegistrationPage = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 mb-20 animate-on-scroll">
-               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-[2.5rem] p-10">
-                  <h3 className="text-[21.25px] font-medium text-dbiz-navy mb-8 flex items-center gap-3">
-                     <CheckCircle2 className="h-7 w-7 text-dbiz-teal" /> What DBIZ Handles
+            <div className="grid md:grid-cols-2 gap-8 mb-12 animate-on-scroll">
+               {/* Left Card: What DBIZ Handles */}
+               <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-xl">
+                  <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center gap-3 border-b border-dbiz-teal/10 pb-4">
+                     <CheckCircle2 className="h-6 w-6 text-dbiz-teal" /> What DBIZ Handles
                   </h3>
                   <ul className="space-y-4">
                      {[
                        "IEC eligibility assessment based on your business activity",
-                       "Document validation and pre-upload review to avoid rejection",
+                       "Document validation and pre-upload review back to avoid rejection",
                        "DGFT portal registration and IEC application filing",
                        "Aadhaar / DSC authentication support",
                        "Application submission and fee payment guidance",
@@ -979,19 +985,20 @@ const IECRegistrationPage = () => {
                        "IEC certificate download and delivery",
                        "Post-registration guidance and compliance support"
                      ].map((item, i) => (
-                       <li key={i} className="flex items-start gap-4 text-gray-700 font-medium text-[17px]">
-                          <CheckCircle className="h-5 w-5 text-dbiz-teal shrink-0 mt-1" />
+                       <li key={i} className="flex items-start gap-3 text-gray-700 font-medium text-sm leading-relaxed">
+                          <CheckCircle className="h-4 w-4 text-dbiz-teal mt-1 shrink-0" />
                           <span>{item}</span>
                        </li>
                      ))}
                   </ul>
                </div>
 
-               <div className="bg-gray-50 border border-gray-100 rounded-[2.5rem] p-10">
-                  <h3 className="text-[21.25px] font-medium text-dbiz-navy mb-8 flex items-center gap-3 font-sans">
-                     <FileText className="h-7 w-7 text-dbiz-navy" /> What You Provide
+               {/* Right Card: What You Provide */}
+               <div className="bg-gray-50 border border-gray-100 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:shadow-xl">
+                  <h3 className="text-xl font-bold text-dbiz-navy mb-6 flex items-center gap-3 border-b border-gray-200 pb-4">
+                     <FileText className="h-6 w-6 text-gray-400" /> What You Provide
                   </h3>
-                  <ul className="space-y-5">
+                  <ul className="space-y-4">
                      {[
                        "PAN and Aadhaar of applicant / business",
                        "Business details and nature of import-export activity",
@@ -999,8 +1006,9 @@ const IECRegistrationPage = () => {
                        "Bank account details (cancelled cheque / statement)",
                        "Photograph (if applicable)"
                      ].map((item, i) => (
-                       <li key={i} className="flex items-center gap-4 text-gray-700 font-medium text-[17px] font-sans">
-                          <CheckCircle2 className="h-6 w-6 text-dbiz-teal shrink-0" /> {item}
+                       <li key={i} className="flex items-start gap-3 text-gray-700 font-medium text-sm leading-relaxed">
+                          <ArrowRight className="h-4 w-4 text-gray-500 mt-1 shrink-0" />
+                          <span>{item}</span>
                        </li>
                      ))}
                   </ul>

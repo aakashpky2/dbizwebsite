@@ -199,13 +199,6 @@ const DigitalSignaturePage = () => {
                   >
                     Apply Now
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-dbiz-navy px-8 py-6 rounded-xl text-lg font-semibold animate-on-scroll [animation-delay:300ms]"
-                    onClick={() => window.open(`tel:${phoneNumber}`)}
-                  >
-                    Get Free Consultation
-                  </Button>
                 </div>
 
                 {/* Status Detail */}
@@ -322,7 +315,10 @@ const DigitalSignaturePage = () => {
                          "Mandatory for MCA filings and company incorporation",
                          "Required for Income Tax and GST filings",
                          "Prevents data tampering and fraud",
-                         "Enables paperless and faster transactions"
+                         "Enables paperless and faster transactions",
+                         "Mandatory for trademark application",
+                         "Mandatory for PF & ESI filing",
+                         "Mandatory for startup India firms"
                        ].map((point, idx) => (
                          <div key={idx} className="flex items-start gap-3">
                            <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-1 shrink-0" />
@@ -337,21 +333,23 @@ const DigitalSignaturePage = () => {
                 <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Minimum Requirements</h3>
-                    <p className="text-gray-600 text-[17px] mb-7 leading-relaxed font-medium">
-                      To apply for a Digital Signature Certificate, the following basic requirements must be fulfilled:
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the Information Technology Act, 2000</h3>
+                    <p className="text-gray-600 text-[15px] mb-7 leading-relaxed font-medium">
+                      Section-wise, the Information Technology Act, 2000 recognizes a Digital Signature Certificate (DSC) as a secure digital key issued by authorized certifying authorities to verify the identity of the signer and authenticate electronic documents.
                     </p>
-                    <ul className="space-y-5">
+                    <ul className="space-y-4">
                       {[
-                        "PAN Card (Mandatory for identity verification)",
-                        "Aadhaar / Address Proof (Required for authentication)",
-                        "Mobile & Email (Required for OTP verification)",
-                        "Passport-sized photograph",
-                        "Video Verification (Required for final approval)"
+                        "Mandatory for MCA & Company Incorporation Filings",
+                        "Required for GST, Income Tax & Government Portal Submissions",
+                        "Ensures Secure Digital Authentication of Documents",
+                        "Enables Legally Valid Electronic Signatures",
+                        "Compulsory for Directors, Partners & Authorized Signatories",
+                        "Protects Data Integrity and Prevents Document Tampering",
+                        "Authorizes Online Filing and E-Tender Participation"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-dbiz-teal mr-4 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 font-normal text-[17px] tracking-tight leading-snug">
+                          <CheckCircle className="h-4 w-4 text-dbiz-teal mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700 font-bold text-[13.5px] tracking-tight leading-snug">
                             {item}
                           </span>
                         </li>
@@ -411,13 +409,13 @@ const DigitalSignaturePage = () => {
                   { icon: Shield, title: "Legal Validity", desc: "Digital signatures are valid and enforceable under the IT Act, 2000, giving electronic signatures legal recognition.", image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=50" },
                   { icon: Lock, title: "Secure Digital Authentication", desc: "Ensures the signer's identity is verified, preventing unauthorized access and ensuring safe transactions.", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=50" },
                   { icon: FileCheck, title: "Data Integrity Protection", desc: "Digitally signed documents cannot be altered without detection, ensuring complete data integrity.", image: "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Building2, title: "Mandatory for Govt Filings", desc: "Required for MCA filings, company incorporation, Income Tax returns (for companies), and GST submissions.", image: "https://images.unsplash.com/photo-1524143899173-04e9c704fd34?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Building2, title: "Mandatory for Govt Filings", desc: "Required for MCA filings, company incorporation, Income Tax returns (for companies), and GST submissions.", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=70" },
                   { icon: Layers, title: "Multiple Types Available", desc: "Choose from different classes based on usage, including Class 3 DSC for e-tendering and MCA filings.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=50" },
                   { icon: Stamp, title: "E-Tendering & Procurement", desc: "Essential for participating in government online bidding processes and e-procurement systems.", image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=500&q=50" },
                   { icon: Zap, title: "Enables Paperless Transactions", desc: "Eliminates the need for physical paperwork, allowing businesses to sign documents digitally and instantly.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=50" },
                   { icon: RefreshCw, title: "Easy Portal Integration", desc: "Can be used seamlessly across MCA, Income Tax, GST, and e-tender platforms.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=50" },
                   { icon: Users, title: "Enhances Business Credibility", desc: "Improves trust and professionalism in digital transactions with clients and vendors.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Clock, title: "Time-Saving Efficiency", desc: "Reduces processing time for approvals and filings by enabling instant, legally valid digital signing.", image: "https://images.unsplash.com/photo-1533227268408-a774ddde4471?auto=format&fit=crop&w=500&q=50" }
+                  { icon: Clock, title: "Time-Saving Efficiency", desc: "Reduces processing time for approvals and filings by enabling instant, legally valid digital signing.", image: "https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&w=600&q=70" }
                 ].map((feature, idx) => (
                   <CarouselItem key={idx} className="pl-4 md:pl-6 md:basis-1/2 lg:basis-1/3 flex animate-on-scroll" style={{ animationDelay: `${idx * 100 + 200}ms` }}>
                     <Card className="border-none shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white overflow-hidden group w-full flex flex-col h-full">
@@ -522,24 +520,29 @@ const DigitalSignaturePage = () => {
                       </TableHeader>
                       <TableBody>
                         <TableRow>
-                          <TableCell className="font-bold">MCA Filings</TableCell>
-                          <TableCell>Mandatory</TableCell>
-                          <TableCell>Required for company incorporation, annual filings, and other MCA submissions.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">MCA Filings</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Mandatory</TableCell>
+                          <TableCell className="text-gray-600">Required for company incorporation, annual filings, and other MCA submissions.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">Income Tax Filing</TableCell>
-                          <TableCell>Mandatory (Cases)</TableCell>
-                          <TableCell>Required for companies, LLPs, and audit cases for filing Income Tax Returns.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Income Tax Filing</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Mandatory (in certain cases)</TableCell>
+                          <TableCell className="text-gray-600">Required for companies, LLPs, and audit cases for filing Income Tax Returns.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold">GST Filings</TableCell>
-                          <TableCell>Mandatory (Entities)</TableCell>
-                          <TableCell>Required for GST registration and return filing for companies/LLPs.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">GST Filings</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Mandatory (in certain cases)</TableCell>
+                          <TableCell className="text-gray-600">Required for GST registration and return filing in many cases.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">E-Tendering</TableCell>
-                          <TableCell>Mandatory</TableCell>
-                          <TableCell>Required for participating in government bidding and e-procurement.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">E-Tendering / Government Contracts</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Mandatory</TableCell>
+                          <TableCell className="text-gray-600">Required for participating in e-tenders, e-procurement, and government bidding.</TableCell>
+                        </TableRow>
+                        <TableRow>
+                          <TableCell className="font-medium text-dbiz-navy">Signing Digital Documents</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Mandatory</TableCell>
+                          <TableCell className="text-gray-600">Required for secure signing of agreements, forms, and official documents online.</TableCell>
                         </TableRow>
                       </TableBody>
                     </Table>
@@ -557,24 +560,24 @@ const DigitalSignaturePage = () => {
                       </TableHeader>
                       <TableBody>
                         <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">Class 3 (Individual)</TableCell>
-                          <TableCell>Directors / Partner</TableCell>
-                          <TableCell>Used for MCA, Income Tax, GST, and general digital signing.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Class 3 (Individual)</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Directors / Partner</TableCell>
+                          <TableCell className="text-gray-600">Used for MCA, Income Tax, GST, and general digital signing.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold text-dbiz-teal">Class 3 (Org)</TableCell>
-                          <TableCell>Companies / LLPs</TableCell>
-                          <TableCell>Used for organizational filings and authorized signatories.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Class 3 (Org)</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Companies / LLPs</TableCell>
+                          <TableCell className="text-gray-600">Used for organizational filings and authorized signatories.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">DGFT DSC</TableCell>
-                          <TableCell>Importers/Exporters</TableCell>
-                          <TableCell>Required for DGFT customs and related trade filings.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">DGFT DSC</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Importers/Exporters</TableCell>
+                          <TableCell className="text-gray-600">Required for DGFT customs and related trade filings.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold text-dbiz-teal">E-Tender DSC</TableCell>
-                          <TableCell>Contractors</TableCell>
-                          <TableCell>Used specifically for government tenders and e-procurement.</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">E-Tender DSC</TableCell>
+                          <TableCell className="font-medium text-dbiz-navy">Contractors</TableCell>
+                          <TableCell className="text-gray-600">Used specifically for government tenders and e-procurement.</TableCell>
                         </TableRow>
                       </TableBody>
                     </Table>
@@ -595,48 +598,85 @@ const DigitalSignaturePage = () => {
               <h2 className="text-3xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight">Structured Document Lists</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
-              <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll">
-                <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                  <Users className="h-6 w-6 text-dbiz-teal" />
+            <div className="grid md:grid-cols-3 gap-10 mb-16">
+              {/* Card 1: Individual */}
+              <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col">
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=600&q=50" 
+                    alt="Individual Documentation" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <Users className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Individual / Proprietor</h3>
-                <ul className="space-y-4">
-                  {["PAN Card (Mandatory)", "Aadhaar Card", "Passport-sized photograph", "Email ID and mobile number", "Address proof (Valid ID)"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[17px]">
-                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Individual / Proprietor</h3>
+                  <ul className="space-y-5">
+                    {["PAN Card (Mandatory)", "Aadhaar Card", "Passport-sized photograph", "Email ID and mobile number (for OTP verification)", "Address proof (Aadhaar / Passport / Driving License / Voter ID)"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll" style={{ animationDelay: '100ms' }}>
-                <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                  <Building2 className="h-6 w-6 text-dbiz-teal" />
+              {/* Card 2: Company / LLP */}
+              <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col" style={{ animationDelay: '100ms' }}>
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=50" 
+                    alt="Corporate Documentation" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <Building2 className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Company / LLP</h3>
-                <ul className="space-y-4">
-                  {["Certificate of Incorporation", "PAN of Company / LLP", "MOA & AOA / LLP Agreement", "Directors’ KYC documents", "Authorization letter"].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[17px]">
-                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" /> {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Company / LLP</h3>
+                  <ul className="space-y-5">
+                    {["Certificate of Incorporation", "PAN of Company / LLP", "MOA & AOA / LLP Agreement", "Directors’ / Authorized Signatory KYC documents", "Authorization letter (for signing authority, if applicable)"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div className="bg-dbiz-navy rounded-3xl p-10 shadow-xl text-white animate-on-scroll" style={{ animationDelay: '200ms' }}>
-                <div className="bg-dbiz-teal/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                  <MapPin className="h-6 w-6 text-white" />
+              {/* Card 3: Specific Support Notice */}
+              <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col" style={{ animationDelay: '200ms' }}>
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=600&q=50" 
+                    alt="Identification" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-black text-white text-xl mb-6 uppercase tracking-tight leading-tight">Support Notice</h3>
-                <p className="text-white/80 leading-relaxed font-bold mb-6">
-                  DSC is person-oriented, so address proof must be applicant-specific. Video verification and Aadhaar-based eKYC are mandatory for final approval.
-                </p>
-                <div className="pt-6 border-t border-white/10">
-                   <div className="flex items-center gap-3">
-                      <Phone className="h-5 w-5 text-dbiz-teal" />
-                      <span className="font-bold underline">Call for Support</span>
-                   </div>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Registered Office</h3>
+                  <ul className="space-y-5">
+                    {[
+                      "Not mandatory for DSC issuance (DSC is person-based, not address-based)",
+                      "However, address details of applicant must be supported with valid ID proof"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -659,10 +699,12 @@ const DigitalSignaturePage = () => {
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     {[
-                      { title: "Detail Consistency", desc: "PAN details must match exactly with the application. Mismatches lead to rejection." },
-                      { title: "Verification Contact", desc: "Mobile number and email must be active for mandatory OTP and video verification." },
+                      { title: "Detail Consistency", desc: "PAN details must match exactly with application. Mismatches lead to rejection." },
+                      { title: "Verification Contact", desc: "Mobile number and email must be active for mandatory OTP verification." },
                       { title: "Authentication eKYC", desc: "Aadhaar-based eKYC or video verification is mandatory for successful DSC issuance." },
-                      { title: "Photo Clarity", desc: "Applicant's photograph must be clear, recent, and in passport-sized format." }
+                      { title: "Photo Clarity", desc: "Applicant's photograph must be clear, recent, and in passport-sized format." },
+                      { title: "Document Alignment", desc: "Details must match across all submitted documents to ensure faster approval." },
+                      { title: "Rejection Risk", desc: "Incorrect or mismatched details may lead to immediate rejection by CA." }
                     ].map((item, idx) => (
                       <tr key={idx} className={`group hover:bg-gray-100 transition-colors ${idx % 2 !== 0 ? 'bg-gray-50/80' : ''}`}>
                         <td className="px-6 py-5 align-top border-r border-gray-50">
@@ -740,176 +782,359 @@ const DigitalSignaturePage = () => {
         </section>
 
         {/* 7. Timeline & Delivery Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white scroll-mt-32">
           <div className="container-custom">
-            <div className="flex flex-col gap-16 max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto flex flex-col gap-20">
               
               <div>
-                <div className="mb-12 text-center">
-                  <h3 className="text-[38.25px] font-bold text-dbiz-navy uppercase tracking-tighter">TIMELINE & DELIVERY</h3>
-                  <div className="w-20 h-1.5 bg-dbiz-teal rounded-full mt-4 mx-auto"></div>
+                {/* Header */}
+                <div className="mb-14 text-center">
+                  <h3 className="text-[38.25px] font-black text-dbiz-navy uppercase tracking-tighter">TIMELINE & DELIVERY</h3>
+                  <div className="w-20 h-2 bg-dbiz-teal rounded-full mt-4 mx-auto shadow-lg shadow-dbiz-teal/30"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {TIMELINE_DESKTOP.map((item, i) => (
-                    <div key={i} className="uiverse-timeline-card animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-                      <div className="uiverse-timeline-card-content">
-                        <div className="card-duration">{item.duration}</div>
-                        <h4 className="card-title">{item.label}</h4>
-                        <p className="card-para">{item.desc}</p>
+                {/* ── UIVERSE ANIMATED CARDS ── */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 px-4">
+                  {[
+                    { label: "Application Filing", duration: "Same Day", desc: "Collection of details, documentation, and submission with Certifying Authority." },
+                    { label: "Processing", duration: "Same Day / Few Hours", desc: "System processing along with Aadhaar OTP verification and initial validation." },
+                    { label: "Approval (Normal)", duration: "Same Day", desc: "DSC is issued if all details are correct and video verification is completed." },
+                    { label: "Approval (Issue)", duration: "1 – 2 Days", desc: "Time may increase if there are mismatches or failed verification steps." }
+                  ].map((item, i) => (
+                    <div 
+                      key={i} 
+                      className="uiverse-timeline-card group/timeline animate-on-scroll shadow-2xl" 
+                      style={{ animationDelay: `${i * 150}ms` }}
+                    >
+                      <div className="uiverse-timeline-card-content p-8">
+                        <div className="card-duration bg-dbiz-navy/10 text-dbiz-navy font-black text-xs px-3 py-1 rounded-full w-fit mb-6 uppercase tracking-widest">{item.duration}</div>
+                        <h4 className="card-title text-2xl font-black text-dbiz-navy mb-4 leading-tight uppercase tracking-tighter">{item.label}</h4>
+                        <p className="card-para text-gray-500 font-medium text-sm leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-12 bg-gray-50/50 p-10 rounded-3xl border border-gray-100 animate-on-scroll">
-                   <div className="grid md:grid-cols-2 gap-10">
-                      <div className="flex items-center gap-6">
-                         <div className="bg-dbiz-teal/10 p-4 rounded-2xl">
-                            <Zap className="h-8 w-8 text-dbiz-teal" />
-                         </div>
-                         <div>
-                            <h4 className="font-bold text-dbiz-navy text-xl">Fast Track Issuance</h4>
-                            <p className="text-gray-500 font-medium">Same day release with complete documents and successful verification.</p>
-                         </div>
-                      </div>
-                      <div className="flex items-center gap-6">
-                         <div className="bg-amber-50 p-4 rounded-2xl">
-                            <Clock className="h-8 w-8 text-amber-600" />
-                         </div>
-                         <div>
-                            <h4 className="font-bold text-dbiz-navy text-xl">Standard Timeline</h4>
-                            <p className="text-gray-500 font-medium">Within 24 hours of successful video verification steps.</p>
-                         </div>
-                      </div>
-                   </div>
-                   <div className="mt-10 flex items-center justify-center gap-3">
-                      <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
-                      <p className="text-sm text-gray-400 font-bold italic">Note: Accurate KYC and successful video session ensure instant approval.</p>
-                   </div>
+                {/* Quick Summary Title Header */}
+                <div className="flex items-center gap-4 mb-20 animate-on-scroll">
+                   <div className="h-px bg-gray-100 flex-1"></div>
+                   <p className="text-[11px] font-black tracking-[0.3em] text-gray-400 uppercase">Quick Summary</p>
+                   <div className="h-px bg-gray-100 flex-1"></div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                  {/* 1. Fast Track Issuance */}
+                  <div className="three-d-card group/card animate-on-scroll">
+                     <div className="card-wrapper">
+                        {/* Front: Premium White Glass */}
+                        <div className="card-face front bg-white shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex items-center justify-center p-8 group-hover/card:border-dbiz-teal/30 transition-all duration-500">
+                           <div className="flex flex-col items-center text-center">
+                              <div className="w-20 h-20 rounded-3xl bg-dbiz-teal/5 flex items-center justify-center mb-8 group-hover/card:scale-110 transition-transform duration-500">
+                                 <Zap className="h-10 w-10 text-dbiz-teal animate-pulse" />
+                              </div>
+                              <h4 className="text-2xl font-black text-dbiz-navy uppercase tracking-tighter leading-none">Fast Track Issuance</h4>
+                           </div>
+                        </div>
+                        {/* Back: High Contrast Navy */}
+                        <div className="card-face back bg-dbiz-navy p-10 flex flex-col items-center justify-center text-center">
+                           <div className="text-dbiz-teal text-[10px] uppercase font-black tracking-widest mb-4">Express Status</div>
+                           <div className="text-white text-3xl font-black mb-4">Same Day</div>
+                           <p className="text-blue-50/70 text-sm font-medium leading-relaxed">
+                              Issued within few hours with complete documentation and successful verification session.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+
+                  {/* 2. Standard Timeline */}
+                  <div className="three-d-card group/card animate-on-scroll" style={{ animationDelay: '100ms' }}>
+                     <div className="card-wrapper">
+                        {/* Front: Premium White Glass */}
+                        <div className="card-face front bg-white shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex items-center justify-center p-8 group-hover/card:border-blue-500/30 transition-all duration-500">
+                           <div className="flex flex-col items-center text-center">
+                              <div className="w-20 h-20 rounded-3xl bg-blue-50 flex items-center justify-center mb-8 group-hover/card:scale-110 transition-transform duration-500">
+                                 <Clock className="h-10 w-10 text-blue-600" />
+                              </div>
+                              <h4 className="text-2xl font-black text-dbiz-navy uppercase tracking-tighter leading-none">Standard Timeline</h4>
+                           </div>
+                        </div>
+                        {/* Back: High Contrast Blue */}
+                        <div className="card-face back bg-blue-600 p-10 flex flex-col items-center justify-center text-center">
+                           <div className="text-blue-100 text-[10px] uppercase font-black tracking-widest mb-4">Typical Status</div>
+                           <div className="text-white text-3xl font-black mb-4">Within 24 Hours</div>
+                           <p className="text-blue-50/90 text-sm font-medium leading-relaxed">
+                              Normal timeframe for processing and issuance post Aadhaar OTP verification.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+
+                  {/* 3. Delayed Cases */}
+                  <div className="three-d-card group/card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                     <div className="card-wrapper">
+                        {/* Front: Premium White Glass */}
+                        <div className="card-face front bg-white shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] border border-gray-100 flex items-center justify-center p-8 group-hover/card:border-amber-500/30 transition-all duration-500">
+                           <div className="flex flex-col items-center text-center">
+                              <div className="w-20 h-20 rounded-3xl bg-amber-50 flex items-center justify-center mb-8 group-hover/card:scale-110 transition-transform duration-500">
+                                 <AlertTriangle className="h-10 w-10 text-amber-600" />
+                              </div>
+                              <h4 className="text-2xl font-black text-dbiz-navy uppercase tracking-tighter leading-none">Delayed Cases</h4>
+                           </div>
+                        </div>
+                        {/* Back: High Contrast Amber */}
+                        <div className="card-face back bg-amber-500 p-10 flex flex-col items-center justify-center text-center">
+                           <div className="text-amber-50 text-[10px] uppercase font-black tracking-widest mb-4">Cautionary Status</div>
+                           <div className="text-white text-3xl font-black mb-4">1–2 Days</div>
+                           <p className="text-white text-sm font-medium leading-relaxed">
+                              Applies if re-verification is required or there are mismatches in the submitted data.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                {/* Final Note Hint */}
+                <div className="mt-20 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '400ms' }}>
+                   <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
+                   <p className="text-sm text-gray-500 font-bold italic">
+                     Note: <span className="text-dbiz-navy not-italic font-black">Accurate details, proper KYC, and successful video verification</span> ensure instant DSC issuance without delays.
+                   </p>
                 </div>
               </div>
 
-              {/* 8. Post-Usage Compliance */}
-              <div className="pt-16 border-t border-gray-100 animate-on-scroll">
-                <div className="mb-10 text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
-                    8. RENEWAL & VALIDITY
-                  </div>
-                  <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">Post-Usage Compliance</h3>
-                </div>
+            </div>
+          </div>
+        </section>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center mb-10 py-6">
-                  {[
-                    { type: "DSC Validity", freq: "1 / 2 / 3 Years" },
-                    { type: "Renewal", freq: "Before Expiry" },
-                    { type: "Compliance", freq: "Usage Support" }
-                  ].map((filing, idx) => (
-                    <div key={idx} className="blob-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
-                       <div className="blob-card-orbit"></div>
-                       <div className="blob-card-bg">
-                          <h4 className="text-[20px] font-black text-dbiz-navy uppercase tracking-tighter mb-1 select-none">{filing.type}</h4>
-                          <p className="text-[10px] font-black text-dbiz-teal uppercase tracking-[0.3em] select-none">{filing.freq}</p>
+        {/* Final Registration Flow Sections */}
+        <section className="py-24 bg-white">
+          <div className="container-custom">
+            <div className="max-w-6xl mx-auto flex flex-col gap-24">
+              {/* 8. Post-Usage Compliance */}
+              <div id="compliance" className="scroll-mt-32">
+                 <div className="mb-14 text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
+                       8. RENEWAL & VALIDITY
+                    </div>
+                    <h3 className="text-4xl md:text-5xl font-black text-dbiz-navy tracking-tight leading-tight uppercase">Compliance & Risks</h3>
+                 </div>
+
+                 <div className="flex flex-col gap-10 max-w-5xl mx-auto">
+                    {/* Card 1: Compliance Requirements */}
+                    <div className="consultancy-section-card animate-on-scroll">
+                       <p className="consultancy-label">Essential</p>
+                       <h4 className="consultancy-heading">Compliance Requirements</h4>
+                       <div className="compliance-grid">
+                          {[
+                             "Use DSC only for authorized and official purposes",
+                             "Keep DSC token/password secure to prevent misuse",
+                             "Ensure timely renewal before expiry to avoid disruption",
+                             "Update DSC on MCA, Income Tax, GST portals when renewed",
+                             "Revoke DSC immediately in case of loss or misuse",
+                             "Maintain proper control over authorized signatory usage"
+                          ].map((req, i) => (
+                             <div key={i} className="compliance-inner-card">
+                                <div className="compliance-check-icon">
+                                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <span className="compliance-label-text">{req}</span>
+                             </div>
+                          ))}
                        </div>
                     </div>
-                  ))}
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-10">
-                   <div className="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100">
-                      <h4 className="text-xl font-bold text-dbiz-navy mb-8 border-b border-gray-200 pb-4">Compliance Requirements</h4>
-                      <ul className="space-y-4">
-                         {[
-                           "Use DSC only for authorized official purposes",
-                           "Keep DSC token/password secure at all times",
-                           "Ensure timely renewal before certificate expiry",
-                           "Update DSC on MCA, Income Tax, GST portals regularly",
-                           "Revoke DSC immediately in case of loss or misuse"
-                         ].map((req, i) => (
-                           <li key={i} className="flex gap-3 text-sm font-bold text-gray-700 leading-relaxed">
-                              <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {req}
-                           </li>
-                         ))}
-                      </ul>
-                   </div>
-                   <div className="bg-red-50 p-10 rounded-[2.5rem] border border-red-100">
-                      <h4 className="text-xl font-bold text-red-900 mb-8 border-b border-red-200 pb-4 flex items-center gap-2">
-                         <AlertTriangle className="h-6 w-6 text-red-600" /> Risks and Penalties
-                      </h4>
-                      <ul className="space-y-4">
-                         {[
-                           "Expired DSC blocks all MCA, GST, and Income Tax filings",
-                           "Misuse leads to legal consequences under IT Act",
-                           "Loss of token risks unauthorized digital usage",
-                           "Incorrect details cause rejection of filings"
-                         ].map((item, i) => (
-                           <li key={i} className="flex gap-3 text-sm font-bold text-red-800 leading-relaxed">
-                              <XCircle className="h-5 w-5 text-red-600 shrink-0" /> {item}
-                           </li>
-                         ))}
-                      </ul>
-                   </div>
-                </div>
+                    {/* Card 2: Renewal & Reissue Guidelines */}
+                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '100ms' }}>
+                       <p className="consultancy-label">Maintenance</p>
+                       <h4 className="consultancy-heading">Renewal & Reissue Guidelines</h4>
+                       <div className="compliance-grid">
+                          {[
+                             "DSC must be renewed before expiry to ensure continuous usage",
+                             "In case of expiry, fresh application is required",
+                             "Change in details (name/email/mobile) requires reissue",
+                             "Lost or damaged DSC token requires re-issuance"
+                          ].map((req, i) => (
+                             <div key={i} className="compliance-inner-card">
+                                <div className="compliance-check-icon bg-blue-500">
+                                   <RefreshCw className="h-3 w-3 text-white" />
+                                </div>
+                                <span className="compliance-label-text">{req}</span>
+                             </div>
+                          ))}
+                       </div>
+                    </div>
+
+                    {/* Card 3: Penalties / Risks */}
+                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                       <p className="consultancy-label">Caution</p>
+                       <h4 className="consultancy-heading">Penalties / Risks</h4>
+                       <div className="penalty-grid">
+                          {[
+                             { title: "Expired DSC", desc: "Unable to file MCA, GST, or Income Tax forms" },
+                             { title: "Misuse of DSC", desc: "Legal consequences under IT Act" },
+                             { title: "Loss of DSC token", desc: "Risk of unauthorized usage" },
+                             { title: "Incorrect details", desc: "Rejection of filings or invalid signatures" }
+                          ].map((item, i) => (
+                             <div key={i} className="penalty-inner-card">
+                                <div className="penalty-header">
+                                   <div className="penalty-dot"></div>
+                                   <span className="penalty-title">{item.title}</span>
+                                </div>
+                                <p className="penalty-desc">{item.desc}</p>
+                             </div>
+                          ))}
+                       </div>
+                    </div>
+
+                    {/* Final Cautionary Note */}
+                    <div className="mt-8 flex items-start gap-3 justify-center animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                       <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-1" />
+                       <p className="text-sm text-gray-500 font-bold italic max-w-2xl text-center">
+                          Note: <span className="text-dbiz-navy not-italic font-black">DSC is a high-security digital tool</span>, and proper handling, timely renewal, and secure usage are essential to ensure uninterrupted compliance and legal validity.
+                       </p>
+                    </div>
+                 </div>
               </div>
 
               {/* 9. Why DBIZ */}
               <div className="pt-20 border-t border-gray-100 animate-on-scroll">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4 uppercase">
-                    9. Why Choose D BIZ
+                <div className="text-center max-w-4xl mx-auto mb-16">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                    <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                    Why D BIZ
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 tracking-tight font-sans">Why DBIZ CONSULTANCY for DSC Services?</h2>
-                  <p className="text-base text-gray-600 font-medium leading-relaxed">
-                    Obtaining a Digital Signature Certificate (DSC) is essential for modern compliance. While appearing simple, it involves critical KYC and authentication steps. We make it fast, secure, and hassle-free by handling everything from application to final installation.
+                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for DSC Services?</h2>
+                  <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                    Obtaining a Digital Signature Certificate (DSC) is an essential requirement for businesses and professionals dealing with government filings, e-tenders, and secure digital transactions. While the process appears simple, it involves accurate KYC verification, proper application filing, and successful authentication steps.
                   </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
-                   <div className="bg-dbiz-navy rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden group">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-dbiz-teal/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                      <h4 className="text-xl font-bold text-dbiz-teal mb-8 uppercase tracking-widest">What DBIZ Handles</h4>
+                   <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-8 md:p-10">
+                      <h3 className="text-xl font-semibold text-dbiz-navy mb-6 flex items-center">
+                         <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                      </h3>
                       <ul className="space-y-4">
                          {[
-                           "Selection of correct DSC type and class",
-                           "Complete application filing with the authority",
+                           "Selection of correct DSC type (Individual / Organization / Class 3)",
+                           "Complete application filing with Certifying Authority",
                            "KYC verification and document validation",
                            "Aadhaar OTP and video verification support",
-                           "Error-free submission for quick issuance",
+                           "Error-free submission to avoid rejection",
+                           "Quick processing and follow-up for fast issuance",
                            "DSC installation and configuration support",
-                           "Guidance on usage for MCA, GST, and tenders",
-                           "Renewal and life-cycle management"
+                           "Guidance on usage for MCA, GST, Income Tax, and tenders",
+                           "Renewal and reissue support"
                          ].map((item, i) => (
-                           <li key={i} className="flex gap-3 text-sm font-bold text-blue-50/90 leading-relaxed">
-                              <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                           <li key={i} className="flex items-start">
+                             <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
+                             <span className="text-gray-700 font-medium">{item}</span>
                            </li>
                          ))}
                       </ul>
                    </div>
-                   <div className="bg-gray-50 border border-gray-100 rounded-[3rem] p-12 shadow-sm">
-                      <h4 className="text-xl font-bold text-dbiz-navy mb-8 uppercase tracking-widest">What You Provide</h4>
+                   <div className="bg-gray-50 border border-gray-200 rounded-xl p-8 md:p-10">
+                      <h3 className="text-xl font-semibold text-dbiz-navy mb-6 flex items-center">
+                         <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
+                      </h3>
                       <ul className="space-y-4">
                          {[
                            "PAN Card and Aadhaar details",
-                           "Mobile number and email ID for OTP",
+                           "Mobile number and email ID (for OTP verification)",
                            "Passport-sized photograph",
                            "Basic personal or business details",
-                           "Availability for short video verification"
+                           "Availability for video verification"
                          ].map((item, i) => (
-                           <li key={i} className="flex gap-3 text-sm font-bold text-gray-700 leading-relaxed">
-                              <ArrowRight className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                           <li key={i} className="flex items-start">
+                             <CheckCircle className="h-4 w-4 text-dbiz-navy mr-2 mt-1 flex-shrink-0" />
+                             <span className="text-gray-700 font-medium">{item}</span>
                            </li>
                          ))}
                       </ul>
                    </div>
                 </div>
 
-                <div className="bg-dbiz-navy rounded-[3rem] p-12 md:p-16 text-white text-center shadow-2xl relative overflow-hidden group">
-                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/20 to-transparent"></div>
-                   <h3 className="text-3xl font-black mb-8 relative z-10">Our Commitment</h3>
-                   <p className="max-w-3xl mx-auto text-[19.125px] font-medium leading-relaxed opacity-90 relative z-10">
-                     With a strong track record in business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for professionals and companies. We take care of the entire DSC process—so you can focus on building your legacy with confidence.
-                   </p>
-                </div>
+                  {/* When Should You Apply? - Strategic Trigger Points */}
+                  <div className="bg-gray-50/80 p-10 md:p-14 rounded-[3rem] border border-gray-100 relative overflow-hidden group mb-12 animate-on-scroll">
+                     <div className="absolute top-0 left-0 w-40 h-40 bg-dbiz-teal/5 rounded-full blur-3xl -ml-20 -mt-20 group-hover:bg-dbiz-teal/10 transition-all"></div>
+                     
+                     <div className="flex flex-col lg:flex-row items-center gap-10">
+                        <div className="lg:w-1/3 text-center lg:text-left relative z-10">
+                           <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                              <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
+                           </div>
+                           <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 tracking-tighter leading-tight font-sans">When Should You Apply?</h3>
+                           <p className="text-[17px] text-gray-500 leading-relaxed font-normal">Identify the key milestones that trigger the need for immediate DSC registration.</p>
+                        </div>
+
+                        <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
+                           {[
+                              "Company or LLP incorporation",
+                              "MCA filings (ROC compliance)",
+                              "Income Tax filings (audit / companies)",
+                              "GST registration and returns",
+                              "Participating in e-tenders or gov contracts",
+                              "Signing digital agreements and documents"
+                           ].map((point, index) => (
+                              <div key={index} className="flex items-center gap-4 group/point">
+                                 <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
+                                 </div>
+                                 <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors">{point}</p>
+                              </div>
+                           ))}
+                        </div>
+                     </div>
+                  </div>
+
+                  {/* Our Advantage Banner (Navy & Teal) */}
+                  <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white relative overflow-hidden group/banner shadow-2xl">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+                    
+                    <div className="grid lg:grid-cols-5 gap-12 items-center relative z-10">
+                      <div className="lg:col-span-2">
+                        <h3 className="text-2xl font-semibold mb-8 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Our Advantage</h3>
+                        <div className="space-y-6">
+                           <p className="text-lg leading-relaxed text-white">
+                             DSC is not just about getting a digital signature—it is about secure authentication and smooth compliance across multiple platforms.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
+                             At DBIZ CONSULTANCY, we ensure a quick, error-free, and secure DSC issuance process, helping you avoid technical issues and delays in filings.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
+                             From documentation to approval and ongoing compliance support, we act as your complete DSC service partner.
+                           </p>
+                        </div>
+                      </div>
+ 
+                      <div className="lg:col-span-3">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {[
+                            { title: "Fast Issuance", desc: "Same day issuance in most verified cases" },
+                            { title: "Expert Handling", desc: "Specialists managing KYC and verification" },
+                            { title: "Error-Free Filing", desc: "Compliance-focused approach to avoid rejection" },
+                            { title: "End-to-End Service", desc: "Assistance from registration to setup" },
+                            { title: "Dedicated Support", desc: "Help for queries and department issues" },
+                            { title: "Ongoing Guidance", desc: "Renewal and lifecycle management support" }
+                          ].map((adv, idx) => (
+                            <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/20 transition-all duration-300">
+                               <CheckCircle2 className="h-6 w-6 text-dbiz-teal mb-4" />
+                               <h4 className="text-white font-bold mb-2">{adv.title}</h4>
+                               <p className="text-blue-100/70 text-sm leading-relaxed">{adv.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Our Commitment Section */}
+                  <div className="mt-16 text-center animate-on-scroll">
+                    <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                    <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                      With a strong track record in business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for professionals and companies. We take care of the entire DSC process—so you can focus on building your legacy with confidence.
+                    </p>
+                  </div>
               </div>
 
               {/* 10. FAQs Section */}
@@ -939,11 +1164,9 @@ const DigitalSignaturePage = () => {
                   </div>
                 </div>
               </section>
-
             </div>
           </div>
         </section>
-
       </main>
       <Footer />
     </div>
@@ -951,7 +1174,11 @@ const DigitalSignaturePage = () => {
 };
 
 const XCircle = (props: any) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10" />
+    <line x1="15" y1="9" x2="9" y2="15" />
+    <line x1="9" y1="9" x2="15" y2="15" />
+  </svg>
 );
 
 export default DigitalSignaturePage;

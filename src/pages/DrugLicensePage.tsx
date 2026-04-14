@@ -200,17 +200,12 @@ const DrugLicensePage = () => {
                   >
                     Apply Now
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-dbiz-navy px-8 py-6 rounded-xl text-lg font-semibold animate-on-scroll [animation-delay:300ms]"
-                    onClick={() => window.open(`tel:${phoneNumber}`)}
-                  >
-                    Get Free Consultation
-                  </Button>
                 </div>
 
                 {/* Status Detail */}
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/80 text-sm font-medium animate-on-scroll [animation-delay:300ms]">
+
+
                    <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-dbiz-teal" />
                       <span>7 – 15 Days</span>
@@ -341,17 +336,18 @@ const DrugLicensePage = () => {
                 <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Minimum Requirements</h3>
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the Drugs and Cosmetics Act, 1940</h3>
                     <p className="text-gray-600 text-[17px] mb-7 leading-relaxed font-medium">
-                      To apply for a Drug License, the following basic requirements must be fulfilled:
+                      Section-wise, the Act defines a Drug License as the legal authorization required for businesses involved in the manufacture, sale, storage, or distribution of drugs and pharmaceutical products.
                     </p>
                     <ul className="space-y-5">
                       {[
-                        "Business Activity: Engaged in sale/dist/mfg of drugs",
-                        "Premises: Minimum area (10–15 sq. meters) required",
-                        "Qualified Person: Registered pharmacist (for retail)",
-                        "Storage: Proper facility including refrigerator",
-                        "Documentation: Valid KYC and business documents"
+                        "Mandatory for Sale & Distribution of Medicines",
+                        "Required for Medical Stores & Pharmacies",
+                        "Compulsory for Drug Manufacturing & Wholesale Businesses",
+                        "Ensures Compliance with Drug Safety & Quality Standards",
+                        "Enables Legal Storage and Handling of Pharmaceutical Products",
+                        "Authorizes Licensed Operation under Drug Control Authorities"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-dbiz-teal mr-4 flex-shrink-0 mt-0.5" />
@@ -361,6 +357,7 @@ const DrugLicensePage = () => {
                         </li>
                       ))}
                     </ul>
+
                   </div>
                 </div>
               </div>
@@ -409,15 +406,15 @@ const DrugLicensePage = () => {
               <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">Key Features of Drug License</h2>
             </div>
 
-            <Carousel opts={{ align: "start", loop: true }} className="w-full relative group/carousel">
+            <Carousel opts={{ align: "start", loop: true, autoplay: true, interval: 2000 }} className="w-full relative group/carousel">
               <CarouselContent className="-ml-4 md:-ml-6">
                 {[
-                  { icon: Shield, title: "Legal Auth for Drug Business", desc: "Establishes the business as a legally authorized entity to manufacture, sell, stock, or distribute medicines.", image: "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Shield, title: "Legal Auth for Drug Business", desc: "Establishes the business as a legally authorized entity to manufacture, sell, stock, or distribute medicines.", image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=800&q=80" },
                   { icon: FileBarChart, title: "Unique Drug License Number", desc: "Issued by the Drug Control Authority, mandatory for premises display and overall compliance usage.", image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=500&q=50" },
                   { icon: Pill, title: "Mandatory Pharma Operations", desc: "All businesses dealing with medicines—including pharmacies, wholesalers, and manufacturers—must comply.", image: "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&w=500&q=50" },
                   { icon: Stethoscope, title: "Ensures Safe Drug Handling", desc: "Guarantees that drugs are stored, handled, and sold under prescribed safety and hygiene conditions.", image: "https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Users, title: "Qualified Personnel Requirement", desc: "Retail drug licenses require a registered pharmacist, ensuring professional handling and dispensing.", image: "https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&w=500&q=50" },
-                  { icon: Hospital, title: "Premises & Storage Compliance", desc: "Strict infrastructure requirements like minimum area and refrigeration facilities must be maintained.", image: "https://images.unsplash.com/photo-1538108149393-fdfd81895907?auto=format&fit=crop&w=500&q=50" },
+                  { icon: Users, title: "Qualified Personnel Requirement", desc: "Retail drug licenses require a registered pharmacist, ensuring professional handling and dispensing.", image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" },
+                  { icon: Hospital, title: "Premises & Storage Compliance", desc: "Strict infrastructure requirements like minimum area and refrigeration facilities must be maintained.", image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=80" },
                   { icon: Search, title: "Inspection-Based Approval", desc: "Licenses are granted only after thorough verification and visual inspection by the Drug Control Authority.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=500&q=50" },
                   { icon: Building2, title: "Applicable Multi-Tier Scaling", desc: "Available for retail pharmacies, wholesale distribution networks, and pharmaceutical manufacturing units.", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=50" },
                   { icon: Award, title: "Enhances Business Credibility", desc: "Builds immense trust among customers, suppliers, hospitals, and all state regulatory authorities.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=500&q=50" },
@@ -460,7 +457,7 @@ const DrugLicensePage = () => {
                   </div>
                   <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-8 tracking-tight leading-tight">Categorized Advantages</h2>
                   <div className="hidden xl:block relative group rounded-3xl overflow-hidden shadow-2xl">
-                    <CachedImage src="https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&w=600&q=50" alt="Pharma Business Excellence" className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Standardized Safety Standards" className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/20 to-transparent z-10"></div>
                     <div className="absolute bottom-6 left-6 right-6 z-20 text-white">
                       <div className="font-bold text-2xl mb-1">Standardized Safety</div>
@@ -526,27 +523,27 @@ const DrugLicensePage = () => {
                       </TableHeader>
                       <TableBody>
                         <TableRow>
-                          <TableCell className="font-bold">Retail Sale of Meds</TableCell>
+                          <TableCell>Retail Sale of Meds</TableCell>
                           <TableCell>Mandatory</TableCell>
                           <TableCell>Required for operating a medical shop or pharmacy selling directly to customers.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">Wholesale Distribution</TableCell>
+                          <TableCell>Wholesale Distribution</TableCell>
                           <TableCell>Mandatory</TableCell>
                           <TableCell>Required for businesses dealing in bulk supply and distribution of pharmaceutical products.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold">Drug Manufacturing</TableCell>
+                          <TableCell>Drug Manufacturing</TableCell>
                           <TableCell>Mandatory</TableCell>
                           <TableCell>Required for manufacturing medicines, medical products, or certain cosmetics.</TableCell>
                         </TableRow>
                         <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold">Stocking Medicines</TableCell>
+                          <TableCell>Stocking Medicines</TableCell>
                           <TableCell>Mandatory</TableCell>
                           <TableCell>Required for businesses storing and handling drugs before sale or distribution.</TableCell>
                         </TableRow>
                         <TableRow>
-                          <TableCell className="font-bold">Hospital Supply</TableCell>
+                          <TableCell>Hospital Supply</TableCell>
                           <TableCell>Mandatory</TableCell>
                           <TableCell>Required for supplying medicines to hospitals, clinics, and healthcare institutions.</TableCell>
                         </TableRow>
@@ -554,40 +551,7 @@ const DrugLicensePage = () => {
                     </Table>
                   </div>
 
-                  <h4 className="text-2xl font-bold text-dbiz-navy mb-8 border-b border-gray-100 pb-3 mt-16">Types of Drug License</h4>
-                  <div className="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-12">
-                    <Table>
-                      <TableHeader className="bg-dbiz-navy">
-                        <TableRow>
-                          <TableHead className="text-white py-4 font-bold">Type</TableHead>
-                          <TableHead className="text-white py-4 font-bold">Suitable For</TableHead>
-                          <TableHead className="text-white py-4 font-bold">Description</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">Retail (RDL)</TableCell>
-                          <TableCell>Medical shops</TableCell>
-                          <TableCell>Sold directly to consumers with a registered pharmacist presence.</TableCell>
-                        </TableRow>
-                        <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold text-dbiz-teal">Wholesale (WDL)</TableCell>
-                          <TableCell>Distributors</TableCell>
-                          <TableCell>For bulk sale and distribution of medicines to retailers and institutions.</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-bold text-dbiz-teal">Manufacturing</TableCell>
-                          <TableCell>Pharma mfg units</TableCell>
-                          <TableCell>Required for manufacturing drugs, medicines, or cosmetics.</TableCell>
-                        </TableRow>
-                        <TableRow className="bg-gray-50/50">
-                          <TableCell className="font-bold text-dbiz-teal">Loan License</TableCell>
-                          <TableCell>Third-party mfg</TableCell>
-                          <TableCell>For companies using another licensed manufacturer's facilities.</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -604,62 +568,110 @@ const DrugLicensePage = () => {
               <h2 className="text-3xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight">Structured Document Lists</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 px-4 md:px-0">
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll">
-                  <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <Users className="h-6 w-6 text-dbiz-teal" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 px-4 md:px-0">
+               {/* 1. Individual / Proprietor */}
+               <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col">
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&w=600&q=50" 
+                    alt="Individual Documentation" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <Users className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Individual / Proprietor</h3>
-                  <ul className="space-y-4">
-                    {["PAN Card", "Aadhaar Card", "Photograph", "Bank account details", "Address proof (Valid ID)"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
+                </div>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Individual / Proprietor</h3>
+                  <ul className="space-y-5">
+                    {["PAN Card", "Aadhaar Card", "Photograph", "Bank details", "Address proof"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
                     ))}
                   </ul>
-               </div>
+                </div>
+              </div>
 
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll" style={{ animationDelay: '100ms' }}>
-                  <div className="bg-dbiz-teal/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <Building2 className="h-6 w-6 text-dbiz-teal" />
+               {/* 2. Company / LLP */}
+               <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col" style={{ animationDelay: '100ms' }}>
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=50" 
+                    alt="Corporate Documentation" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <Building2 className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Company / LLP</h3>
-                  <ul className="space-y-4">
-                    {["Certificate of Inc.", "PAN of Company/LLP", "MOA & AOA / Agreement", "Directors’ KYC docs", "Authorization letter"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
+                </div>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Company / LLP</h3>
+                  <ul className="space-y-5">
+                    {["Certificate of Inc.", "PAN of Company/LLP", "MOA & AOA / Agreement", "Directors’ KYC docs", "Auth letter"].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
                     ))}
                   </ul>
-               </div>
+                </div>
+              </div>
 
-               <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 animate-on-scroll" style={{ animationDelay: '200ms' }}>
-                  <div className="bg-dbiz-navy/5 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <MapPin className="h-6 w-6 text-dbiz-navy" />
+               {/* 3. Business Premises */}
+               <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col" style={{ animationDelay: '200ms' }}>
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <CachedImage 
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=50" 
+                    alt="Business Premises" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <h3 className="font-black text-dbiz-navy text-xl mb-6 uppercase tracking-tight leading-tight">Business Premises</h3>
-                  <ul className="space-y-4">
+                </div>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Business Premises</h3>
+                  <ul className="space-y-5">
                     {["Rent Agreement + NOC", "Utility Bill (Recent)", "Ownership proof"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
                     ))}
                   </ul>
-               </div>
+                </div>
+              </div>
 
-               <div className="bg-dbiz-navy rounded-3xl p-8 shadow-xl text-white animate-on-scroll" style={{ animationDelay: '300ms' }}>
-                  <div className="bg-dbiz-teal/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6">
-                    <FileCheck className="h-6 w-6 text-white" />
+               {/* 4. Drug Specific */}
+               <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 group animate-on-scroll flex flex-col" style={{ animationDelay: '300ms' }}>
+                <div className="relative h-56 overflow-hidden shrink-0">
+                  <img 
+                    src="https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=600&q=50" 
+                    alt="Drug Specific Certification" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dbiz-navy/90 via-dbiz-navy/30 to-transparent flex items-end p-8">
+                    <div className="bg-dbiz-teal/20 backdrop-blur-md p-3 rounded-2xl border border-white/20">
+                      <FileCheck className="h-6 w-6 text-white" />
+                    </div>
                   </div>
-                  <h3 className="font-black text-white text-xl mb-6 uppercase tracking-tight leading-tight">Drug Specific</h3>
-                  <ul className="space-y-4">
+                </div>
+                <div className="p-10 flex-grow">
+                  <h3 className="font-black text-dbiz-navy text-2xl mb-8 uppercase tracking-tighter leading-tight group-hover:text-dbiz-teal transition-colors">Drug Specific</h3>
+                  <ul className="space-y-5">
                     {["Pharmacist reg certificate", "Qualified person appt letter", "Premises layout plan", "Refrigeration details", "Non-conviction affidavit"].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-blue-50/90 font-bold text-[15px]">
-                        <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" /> {item}
+                      <li key={i} className="flex items-center gap-4 text-gray-700 font-bold group/list text-lg">
+                        <CheckCircle2 className="h-6 w-6 text-dbiz-teal group-hover/list:scale-125 transition-transform shrink-0" /> {item}
                       </li>
                     ))}
                   </ul>
-               </div>
+                </div>
+              </div>
             </div>
 
             <div className="max-w-5xl mx-auto bg-white rounded-[2rem] border border-gray-100 p-8 md:p-14 shadow-sm animate-on-scroll">
@@ -680,10 +692,12 @@ const DrugLicensePage = () => {
                   </thead>
                   <tbody className="divide-y divide-gray-50">
                     {[
-                      { title: "Detail Verification", desc: "Details must match across all submitted documents for consistency." },
-                      { title: "Premises Norms", desc: "Premises must meet minimum area (10-15 sqm) and infrastructure requirements." },
-                      { title: "Pharmacist Validity", desc: "Qualified pharmacist details must be valid and registered with authorities." },
-                      { title: "Address Consistency", desc: "Address consistency is critical for successful approval and inspection." }
+                      { title: "Detail Matching", desc: "Details must match across all submitted documents for consistency." },
+                      { title: "Infrastructure Norms", desc: "Premises must meet minimum area and infrastructure requirements." },
+                      { title: "Pharmacist Validity", desc: "Qualified pharmacist details must be valid and registered." },
+                      { title: "Recent Utility Bills", desc: "Utility bills must be recent (within 2 months) for active proof." },
+                      { title: "Address Consistency", desc: "Address consistency is critical for successful approval." },
+                      { title: "Processing Efficiency", desc: "Proper documentation ensures faster processing and avoids rejection." }
                     ].map((item, idx) => (
                       <tr key={idx} className={`group hover:bg-gray-100 transition-colors ${idx % 2 !== 0 ? 'bg-gray-50/80' : ''}`}>
                         <td className="px-6 py-5 align-top border-r border-gray-50">
@@ -719,13 +733,13 @@ const DrugLicensePage = () => {
               <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent hidden md:block rounded-full z-0"></div>
 
               {[
-                { step: "1", title: "Data Collection & Verification", desc: "Collect business/KYC details, premises info, and pharmacist credentials. Correctness prevents delays." },
-                { step: "2", title: "Selection of License Type", desc: "Choose appropriate category: Retail (RDL), Wholesale (WDL), or Manufacturing License." },
-                { step: "3", title: "Filing with Drug Control Dept", desc: "Application submitted to State Drug Control with premises, pharmacist, and activity details." },
-                { step: "4", title: "Infrastructure Verification", desc: "Internal check to ensure premises meet area, storage, and clean environment norms." },
-                { step: "5", title: "Final Application Submission", desc: "Formal submission to authorities, generating an acknowledgment number for tracking." },
-                { step: "6", title: "Inspection by Drug Inspector", desc: "Inspector verifies infrastructure, storage, and pharmacist presence on-site." },
-                { step: "7", title: "Drug License Issuance", desc: "Post-approval, the Drug License Certificate and unique license number are issued for display." }
+                { step: "1", title: "Data Collection & Verification", desc: "Collecting required business/KYC details including PAN, Aadhaar, constitution type, and pharmacist credentials. All documents are verified to prevent mismatches." },
+                { step: "2", title: "Selection of License Type", desc: "Based on activity, the appropriate category is selected: Retail (RDL), Wholesale (WDL), or Manufacturing. Correct selection is crucial for approval." },
+                { step: "3", title: "Application Filing (DCA)", desc: "Submission to the State Drug Control Department with complete premises, pharmacist, and activity details along with supporting documentation." },
+                { step: "4", title: "Infrastructure Verification", desc: "Verification of area requirements (10–15 sq. m), storage facilities (like refrigerators), and clean/hygienic environment compliance." },
+                { step: "5", title: "Application Submission", desc: "Formal online or physical submission (state dependent) to generate an acknowledgment number for tracking and further process." },
+                { step: "6", title: "Inspection by Drug Inspector", desc: "On-site verification of infrastructure, storage conditions, and pharmacist presence by a Drug Inspector to confirm legal compliance." },
+                { step: "7", title: "Drug License Issuance", desc: "Post-approval, the DCA issues the License Certificate and unique number. The business is now legally authorized for drug-related operations." }
               ].map((item, index) => {
                 const isOdd = index % 2 === 0;
                 return (
@@ -782,25 +796,70 @@ const DrugLicensePage = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-                   <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex items-center gap-6">
-                      <div className="bg-dbiz-teal/10 p-4 rounded-2xl">
-                         <Zap className="h-8 w-8 text-dbiz-teal" />
-                      </div>
-                      <div>
-                         <h4 className="font-bold text-dbiz-navy text-xl">Fast Track Approval</h4>
-                         <p className="text-gray-500 text-sm">7 – 10 working days (complete docs & ready premises)</p>
-                      </div>
+                <div className="flex items-center gap-4 mt-16 mb-12">
+                   <div className="h-px bg-gray-100 flex-1"></div>
+                   <div className="px-6 py-2 rounded-full border border-gray-100 bg-gray-50/50 shadow-sm transition-all duration-300 hover:shadow-md hover:scale-105 select-none">
+                     <p className="text-[10px] font-black tracking-[0.3em] text-gray-400 uppercase leading-none">Quick Summary</p>
                    </div>
-                   <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex items-center gap-6">
-                      <div className="bg-dbiz-navy/10 p-4 rounded-2xl">
-                         <Shield className="h-8 w-8 text-dbiz-navy" />
+                   <div className="h-px bg-gray-100 flex-1"></div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                  {/* Card 1: Fast Track */}
+                  <div className="three-d-card animate-on-scroll">
+                    <div className="card-wrapper">
+                      <div className="card-face front">
+                        <Zap className="h-12 w-12 text-dbiz-teal mb-4" />
+                        <h4 className="card-title">Fast Track Approval</h4>
                       </div>
-                      <div>
-                         <h4 className="font-bold text-dbiz-navy text-xl">Standard Timeline</h4>
-                         <p className="text-gray-500 text-sm">10 – 15 working days normally.</p>
+                      <div className="card-face back">
+                        <div className="card-duration">7-10 Days</div>
+                        <p className="card-description">
+                          Complete documents and ready premises ensure rapid processing.
+                        </p>
                       </div>
-                   </div>
+                    </div>
+                  </div>
+
+                  {/* Card 2: Standard Timeline */}
+                  <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
+                    <div className="card-wrapper">
+                      <div className="card-face front">
+                        <Clock className="h-12 w-12 text-dbiz-navy mb-4" />
+                        <h4 className="card-title">Standard Timeline</h4>
+                      </div>
+                      <div className="card-face back">
+                        <div className="card-duration">10-15 Days</div>
+                        <p className="card-description">
+                          Normal processing timeframe for most applications.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card 3: Delayed Cases */}
+                  <div className="three-d-card animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <div className="card-wrapper">
+                      <div className="card-face front">
+                        <AlertTriangle className="h-12 w-12 text-amber-500 mb-4" />
+                        <h4 className="card-title">Delayed Cases</h4>
+                      </div>
+                      <div className="card-face back">
+                        <div className="card-duration">Up to 20 Days</div>
+                        <p className="card-description">
+                          Applies if detailed inspection or clarifications are required.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Final Hint */}
+                <div className="mt-12 flex items-center justify-center gap-3 animate-on-scroll" style={{ animationDelay: '450ms' }}>
+                  <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0" />
+                  <p className="text-sm text-gray-500 font-semibold italic max-w-2xl text-center">
+                    Note: <span className="text-dbiz-navy not-italic font-black">Proper premises setup, qualified pharmacist availability, and accurate documentation</span> help in faster approval without delays.
+                  </p>
                 </div>
               </div>
 
@@ -829,10 +888,11 @@ const DrugLicensePage = () => {
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-gray-50 p-10 rounded-[2rem] border border-gray-100">
-                    <h4 className="text-xl font-bold text-dbiz-navy mb-6">Compliance Requirements</h4>
-                    <ul className="space-y-4">
+                <div className="flex flex-col gap-8 mt-12">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Essential</p>
+                    <h4 className="consultancy-heading">Compliance Requirements</h4>
+                    <div className="compliance-grid">
                       {[
                         "Maintain purchase and sales invoices for medicines",
                         "Maintain accurate stock register and records",
@@ -841,29 +901,36 @@ const DrugLicensePage = () => {
                         "Do not sell expired or unauthorized medicines",
                         "Display Drug License at business premises",
                         "Comply with labeling and packaging regulations"
-                      ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-semibold text-gray-700">
-                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
-                        </li>
+                      ].map((req, i) => (
+                        <div key={i} className="compliance-inner-card">
+                          <div className="compliance-check-icon w-6 h-6 flex-shrink-0 mt-1">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                          </div>
+                          <span className="compliance-label-text text-lg font-bold">{req}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                  <div className="bg-red-50 p-10 rounded-[2rem] border border-red-100">
-                    <h4 className="text-xl font-bold text-red-900 mb-6 flex items-center gap-2">
-                       <AlertTriangle className="h-6 w-6 text-red-600" /> Statutory Penalties
-                    </h4>
-                    <ul className="space-y-4">
+
+                  <div className="consultancy-section-card animate-on-scroll border-red-100 bg-red-50/10">
+                    <p className="consultancy-label text-red-600">Caution</p>
+                    <h4 className="consultancy-heading text-red-900">Statutory Penalties</h4>
+                    <div className="penalty-grid grid grid-cols-1 md:grid-cols-2 gap-6">
                       {[
-                        "Operating without License (Heavy fine/Closure)",
-                        "Sale of expired medicines (Cancellation)",
-                        "Non-maintenance of records (Fine/Inspection)",
-                        "Storage norm violation (Suspension)"
+                        { title: "Operating without License", desc: "Heavy fine/Closure and legal action" },
+                        { title: "Sale of expired medicines", desc: "License cancellation and penalties" },
+                        { title: "Non-maintenance of records", desc: "Heavy fines and department inquiry" },
+                        { title: "Storage norm violation", desc: "Immediate suspension of drug license" }
                       ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-semibold text-red-800">
-                          <XCircle className="h-5 w-5 text-red-600 shrink-0" /> {item}
-                        </li>
+                        <div key={i} className="penalty-inner-card bg-white p-6 rounded-xl border border-red-100 flex flex-col gap-2">
+                          <div className="penalty-header flex items-center gap-3">
+                            <div className="penalty-dot w-2 h-2 rounded-full bg-red-600"></div>
+                            <span className="penalty-title font-black text-red-900 uppercase tracking-tighter text-lg">{item.title}</span>
+                          </div>
+                          <p className="penalty-desc text-red-800 font-medium text-[15px]">{item.desc}</p>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -880,30 +947,37 @@ const DrugLicensePage = () => {
                   </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                  <div className="bg-dbiz-navy rounded-[2.5rem] p-12 text-white shadow-2xl relative overflow-hidden group">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-dbiz-teal/10 rounded-full blur-3xl -mr-10 -mt-10"></div>
-                    <h4 className="text-xl font-bold text-dbiz-teal mb-8 uppercase tracking-widest border-b border-white/10 pb-4">What DBIZ Handles</h4>
+                {/* What We Handle vs What You Provide */}
+                <div className="grid md:grid-cols-2 gap-8 mb-12">
+                  <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-8">
+                    <h3 className="text-xl font-semibold text-dbiz-navy mb-6 flex items-center">
+                      <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
+                    </h3>
                     <ul className="space-y-4">
                       {[
-                        "Assessment of license type (Retail/Wholesale)",
-                        "Verification of pharmacist eligibility",
+                        "Assessment of correct license type (Retail / Wholesale / Manufacturing)",
+                        "Verification of pharmacist eligibility and qualifications",
                         "Document validation and pre-submission review",
                         "Preparation and filing of Drug License application",
-                        "Guidance on premises setup and compliance",
-                        "Coordination with State Drug Control Dept",
-                        "Inspection readiness and compliance checks",
+                        "Guidance on premises setup and compliance requirements",
+                        "Coordination with Drug Control Department",
+                        "Handling inspection readiness and compliance checks",
+                        "Responding to queries and clarifications from authorities",
+                        "Follow-up for faster approval",
                         "Post-license compliance and renewal guidance"
                       ].map((item, i) => (
-                        <li key={i} className="flex gap-3 text-sm font-bold text-blue-50/90 leading-relaxed">
-                          <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                        <li key={i} className="flex items-start">
+                          <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
+                          <span className="text-gray-700 font-medium">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-white rounded-[2.5rem] p-12 shadow-sm border border-gray-100 text-dbiz-navy">
-                    <h4 className="text-xl font-bold text-dbiz-navy mb-8 uppercase tracking-widest border-b border-gray-100 pb-4">What You Provide</h4>
-                    <ul className="space-y-6">
+                  <div className="bg-gray-50 border border-gray-200 rounded-xl p-8">
+                    <h3 className="text-xl font-semibold text-dbiz-navy mb-6 flex items-center">
+                      <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
+                    </h3>
+                    <ul className="space-y-4">
                       {[
                         "Identity/Address proof (PAN & Aadhaar)",
                         "Business registration documents",
@@ -911,26 +985,100 @@ const DrugLicensePage = () => {
                         "Premises details and address proof",
                         "Basic business activity info"
                       ].map((item, i) => (
-                        <li key={i} className="flex gap-4 text-sm font-bold text-gray-700 leading-relaxed">
-                          <ArrowRight className="h-5 w-5 text-dbiz-teal shrink-0" /> {item}
+                        <li key={i} className="flex items-start">
+                          <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
+                          <span className="text-gray-700 font-medium">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                {/* Commitment Overlay */}
-                <div className="bg-dbiz-navy rounded-[3rem] p-12 md:p-16 text-white text-center relative overflow-hidden group shadow-[0_40px_100px_rgba(0,0,0,0.2)]">
-                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/20 to-transparent"></div>
-                   <h3 className="text-3xl font-black mb-6 relative z-10">Our Commitment</h3>
-                   <p className="max-w-3xl mx-auto text-[19.125px] font-medium leading-relaxed opacity-90 relative z-10">
-                     With strong expertise in healthcare registrations and regulatory compliance, DBIZ CONSULTANCY is a trusted partner for medical businesses. We handle the entire Drug License process—so you can focus on building your brand with confidence.
-                   </p>
+                  {/* When Should You Apply? - Strategic Trigger Points */}
+                  <div className="mt-12 bg-gray-50/80 p-10 md:p-14 rounded-[3rem] border border-gray-100 relative overflow-hidden group mb-12 animate-on-scroll">
+                     <div className="absolute top-0 left-0 w-40 h-40 bg-dbiz-teal/5 rounded-full blur-3xl -ml-20 -mt-20 group-hover:bg-dbiz-teal/10 transition-all"></div>
+                     
+                     <div className="flex flex-col lg:flex-row items-center gap-10">
+                        <div className="lg:w-1/3 text-center lg:text-left relative z-10">
+                           <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                              <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
+                           </div>
+                           <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 tracking-tighter leading-tight font-sans">When Should You Apply?</h3>
+                           <p className="text-[17px] text-gray-500 leading-relaxed font-normal">Identify the key milestones and business activities that require immediate Drug License registration.</p>
+                        </div>
+
+                        <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
+                           {[
+                              "Starting a pharmacy or medical shop",
+                              "Selling medicines (retail or wholesale)",
+                              "Distributing pharmaceutical products",
+                              "Supplying medicines to hospitals or clinics",
+                              "Manufacturing drugs or cosmetics",
+                              "Expanding healthcare or medical business"
+                           ].map((point, index) => (
+                              <div key={index} className="flex items-center gap-4 group/point">
+                                 <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
+                                    <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
+                                 </div>
+                                 <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors font-sans">{point}</p>
+                              </div>
+                           ))}
+                        </div>
+                     </div>
+                  </div>
+
+                  {/* Why Choose DBIZ / Our Advantage Banner */}
+                  <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-[2.5rem] p-8 md:p-16 text-white relative overflow-hidden group/banner shadow-2xl">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+                    
+                    <div className="grid lg:grid-cols-5 gap-16 items-start relative z-10">
+                      <div className="lg:col-span-2">
+                        <h3 className="text-2xl font-semibold mb-10 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Why Choose DBIZ?</h3>
+                        <div className="space-y-6">
+                           <p className="text-lg leading-relaxed text-white">
+                             Drug License is not just about getting approval—it is about ensuring strict regulatory compliance, safety standards, and long-term business sustainability.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
+                             At DBIZ CONSULTANCY, we go beyond basic registration. We ensure your business meets all legal and operational requirements before application, reducing the risk of rejection or penalties.
+                           </p>
+                           <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
+                             From documentation to approval and ongoing compliance, we act as your complete Drug License partner.
+                           </p>
+                        </div>
+                      </div>
+ 
+                      <div className="lg:col-span-3">
+                        <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest opacity-60">Our Advantage</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          {[
+                            { title: "Expert Professionals", desc: "Expert handling of Drug License regulations" },
+                            { title: "Compliance Ready", desc: "Guidance on pharmacist and premises requirements" },
+                            { title: "Quick Processing", desc: "Quick turnaround with proactive follow-up" },
+                            { title: "Error-Free Filing", desc: "Error-free application and documentation" },
+                            { title: "Full Support", desc: "End-to-end support including inspection readiness" },
+                            { title: "Lifetime Guidance", desc: "Continuous compliance and renewal support" }
+                          ].map((adv, idx) => (
+                            <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/10 p-7 rounded-2xl hover:bg-white/20 transition-all duration-300">
+                               <CheckCircle2 className="h-6 w-6 text-dbiz-teal mb-4" />
+                               <h4 className="text-white font-bold mb-2 text-lg">{adv.title}</h4>
+                               <p className="text-blue-100/70 text-sm font-medium leading-relaxed">{adv.desc}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Commitment Summary */}
+                  <div className="max-w-4xl mx-auto text-center py-16 animate-on-scroll">
+                    <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                    <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                      With strong expertise in healthcare registrations and regulatory compliance, DBIZ CONSULTANCY is a trusted partner for medical businesses. <span className="text-gray-600">We handle the entire Drug License process—so you can focus on building your brand with confidence.</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
         {/* 10. FAQs Section */}
         <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">

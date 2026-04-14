@@ -200,13 +200,6 @@ const ISOCertificationPage = () => {
                   >
                     Apply Now
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-dbiz-navy px-8 py-6 rounded-xl text-lg font-semibold animate-on-scroll [animation-delay:300ms]"
-                    onClick={() => window.open(`tel:${phoneNumber}`)}
-                  >
-                    Get Free Consultation
-                  </Button>
                 </div>
 
                 {/* Status Detail */}
@@ -341,21 +334,23 @@ const ISOCertificationPage = () => {
                 <div className="bg-gray-50 p-7 rounded-[2rem] border border-gray-100 flex flex-col relative overflow-hidden group mb-auto self-start shadow-sm animate-on-scroll [animation-delay:400ms]">
                   <div className="absolute inset-0 bg-gradient-to-br from-dbiz-teal/5 to-transparent z-0"></div>
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per ISO Standards Certification</h3>
-                    <p className="text-gray-600 text-[17px] mb-7 leading-relaxed font-medium">
-                      ISO Certification is the process of verifying that an organization’s management system, products, or services comply with internationally recognized standards issued by the International Organization for Standardization:
+                    <h3 className="text-xl font-bold mb-6 text-dbiz-navy tracking-tight">Definition as per the Information Technology Act, 2000</h3>
+                    <p className="text-gray-600 text-[15px] mb-7 leading-relaxed font-medium">
+                      Section-wise, the Information Technology Act, 2000 recognizes a Digital Signature Certificate (DSC) as a secure digital key issued by authorized certifying authorities to verify the identity of the signer and authenticate electronic documents.
                     </p>
-                    <ul className="space-y-5">
+                    <ul className="space-y-4">
                       {[
-                        "Confirms Compliance with International Quality Standards",
-                        "Enhances Business Credibility & Customer Trust",
-                        "Improves Operational Efficiency & Process Management",
-                        "Required for Global Trade & Tender Eligibility",
-                        "Demonstrates Commitment to Quality, Safety & Continuous Improvement"
+                        "Mandatory for MCA & Company Incorporation Filings",
+                        "Required for GST, Income Tax & Government Portal Submissions",
+                        "Ensures Secure Digital Authentication of Documents",
+                        "Enables Legally Valid Electronic Signatures",
+                        "Compulsory for Directors, Partners & Authorized Signatories",
+                        "Protects Data Integrity and Prevents Document Tampering",
+                        "Authorizes Online Filing and E-Tender Participation"
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-dbiz-teal mr-4 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 font-normal text-[17px] tracking-tight leading-snug">
+                          <CheckCircle className="h-4 w-4 text-dbiz-teal mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700 font-bold text-[13.5px] tracking-tight leading-snug">
                             {item}
                           </span>
                         </li>
