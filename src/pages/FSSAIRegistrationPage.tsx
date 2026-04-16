@@ -829,46 +829,68 @@ const FSSAIRegistrationPage = () => {
                     <div className="h-px bg-gray-100 flex-1"></div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
                     {/* Card 1: Fast Track Approval */}
                     <div className="three-d-card animate-on-scroll">
                       <div className="card-wrapper">
-                        {/* Front Face */}
                         <div className="card-face front bg-white shadow-sm border border-gray-100">
                           <div className="flex flex-col items-center justify-center h-full">
                             <Zap className="h-16 w-16 text-dbiz-teal mb-6 animate-pulse" />
                             <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Fast Track Approval</h4>
                           </div>
                         </div>
-                        {/* Back Face */}
                         <div className="card-face back bg-dbiz-navy">
                           <div className="card-duration text-dbiz-teal">3 – 5 Days</div>
                           <p className="card-description text-blue-50/80 font-medium">
-                            3 – 5 working days (with complete documents)
+                            3 – 5 working days with complete and accurate documents submitted at first attempt.
                           </p>
                         </div>
                       </div>
                     </div>
 
                     {/* Card 2: Standard Timeline */}
-                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
                       <div className="card-wrapper">
-                        {/* Front Face */}
                         <div className="card-face front bg-white shadow-sm border border-gray-100">
                           <div className="flex flex-col items-center justify-center h-full">
                             <Clock className="h-16 w-16 text-amber-500 mb-6" />
                             <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Standard Timeline</h4>
                           </div>
                         </div>
-                        {/* Back Face */}
                         <div className="card-face back bg-dbiz-navy">
                           <div className="card-duration text-dbiz-teal">5 – 7 Days</div>
                           <p className="card-description text-blue-50/80 font-medium">
-                            5 – 7 working days normally.
+                            5 – 7 working days under normal processing with document scrutiny and portal validation.
                           </p>
                         </div>
                       </div>
                     </div>
+
+                    {/* Card 3: Delayed Cases */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                      <div className="card-wrapper">
+                        <div className="card-face front bg-white shadow-sm border border-gray-100">
+                          <div className="flex flex-col items-center justify-center h-full">
+                            <AlertTriangle className="h-16 w-16 text-rose-400 mb-6" />
+                            <h4 className="card-title text-dbiz-navy text-2xl font-black uppercase tracking-tighter">Delayed Cases</h4>
+                          </div>
+                        </div>
+                        <div className="card-face back bg-dbiz-navy">
+                          <div className="card-duration text-dbiz-teal">Up to 15 Days</div>
+                          <p className="card-description text-blue-50/80 font-medium">
+                            If inspection or queries are involved, approval may take up to 15 days.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Note */}
+                  <div className="mt-14 flex items-start justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-500 font-semibold italic text-left max-w-2xl">
+                      Note: <span className="text-dbiz-navy not-italic font-black">Accurate documentation, correct selection of license type, and proper business details</span> ensure faster approval without delays.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -946,15 +968,23 @@ const FSSAIRegistrationPage = () => {
                 </div>
               </div>
 
+
               {/* 9. Why DBIZ */}
               <div className="pt-20 border-t border-gray-100 animate-on-scroll">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4 uppercase">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-xs font-black tracking-widest uppercase mb-4 border border-dbiz-teal/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-dbiz-teal"></span>
                     9. Why Choose DBIZ
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 tracking-tight">Why DBIZ CONSULTANCY for FSSAI?</h2>
-                  <p className="text-base text-gray-600 font-medium leading-relaxed">
-                    Obtaining an FSSAI License is a crucial step for food business. Classification, documentation, and compliance with safety laws require expert handling. Even minor errors cause rejection. We simplify it for you—from classification to approval.
+                  <h2 className="text-3xl md:text-4xl font-extrabold text-dbiz-navy mb-6 tracking-tight leading-tight">Why DBIZ CONSULTANCY for FSSAI Registration?</h2>
+                  <p className="text-[15px] text-gray-600 font-medium leading-relaxed mb-3">
+                    FSSAI license is not just about getting approval—it is about ensuring food safety compliance, correct classification, and smooth business operations.
+                  </p>
+                  <p className="text-[15px] text-gray-600 font-medium leading-relaxed mb-3">
+                    At DBIZ CONSULTANCY, we go beyond basic registration. We ensure your food business is fully compliant with FSSAI regulations from day one, reducing risks and avoiding future penalties.
+                  </p>
+                  <p className="text-[15px] text-gray-600 font-medium leading-relaxed">
+                    From documentation to approval and ongoing compliance support, we act as your complete FSSAI partner.
                   </p>
                 </div>
 
@@ -1006,6 +1036,76 @@ const FSSAIRegistrationPage = () => {
                       </ul>
                    </div>
                 </div>
+
+                {/* When Should You Apply? */}
+                <div className="bg-gray-50/80 p-10 md:p-14 rounded-[3rem] border border-gray-100 relative overflow-hidden group mb-8 animate-on-scroll">
+                  <div className="absolute top-0 left-0 w-40 h-40 bg-dbiz-teal/5 rounded-full blur-3xl -ml-20 -mt-20 group-hover:bg-dbiz-teal/10 transition-all"></div>
+                  <div className="flex flex-col lg:flex-row items-center gap-10">
+                    <div className="lg:w-1/3 text-center lg:text-left relative z-10">
+                      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-6 mx-auto lg:mx-0">
+                        <Sparkles className="h-6 w-6 text-dbiz-teal animate-pulse" />
+                      </div>
+                      <h3 className="text-[38.25px] font-bold text-dbiz-navy mb-4 tracking-tighter leading-tight font-sans">When Should You Apply?</h3>
+                      <p className="text-[17px] text-gray-500 leading-relaxed font-normal">Identify the key triggers that require immediate FSSAI license registration for your food business.</p>
+                    </div>
+                    <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-12 relative z-10 w-full">
+                      {[
+                        "Starting a food-related business (restaurant, bakery, cloud kitchen, etc.)",
+                        "Manufacturing, processing, storing, or selling food products",
+                        "Selling food online via Swiggy, Zomato, Amazon, etc.",
+                        "Expanding food business operations",
+                        "Required by authorities, vendors, or contracts"
+                      ].map((point, index) => (
+                        <div key={index} className="flex items-center gap-4 group/point">
+                          <div className="w-6 h-6 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover/point:bg-dbiz-teal group-hover/point:border-dbiz-teal transition-all">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-dbiz-teal group-hover/point:text-white" />
+                          </div>
+                          <p className="text-[17px] font-medium text-dbiz-navy/80 tracking-tight leading-snug group-hover/point:text-dbiz-teal transition-colors">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Our Advantage Banner */}
+                <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden group/banner shadow-2xl animate-on-scroll">
+                  <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+                  <div className="grid lg:grid-cols-5 gap-12 items-start relative z-10">
+                    <div className="lg:col-span-2">
+                      <div className="inline-flex items-center gap-2 mb-6">
+                        <span className="w-2 h-2 rounded-full bg-dbiz-teal"></span>
+                        <span className="text-dbiz-teal text-xs font-black tracking-[0.3em] uppercase">Our Advantage</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-6 tracking-tight leading-snug">Why Choose DBIZ CONSULTANCY?</h3>
+                      <div className="space-y-4">
+                        <p className="text-base leading-relaxed text-blue-100/90">
+                          FSSAI license is not just about getting approval—it is about ensuring food safety compliance, correct classification, and smooth business operations.
+                        </p>
+                        <p className="text-base leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-4">
+                          From documentation to approval and ongoing compliance support, we act as your complete FSSAI partner.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {[
+                          "Expert handling of FSSAI licensing requirements",
+                          "Correct license category selection (avoids rejection)",
+                          "Quick turnaround with proactive follow-up",
+                          "Error-free application filing",
+                          "End-to-end support from registration to compliance",
+                          "Dedicated assistance for queries and inspections"
+                        ].map((adv, i) => (
+                          <div key={i} className="flex items-start gap-3 bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-xl hover:bg-white/20 transition-all duration-300">
+                            <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
+                            <span className="text-white font-medium text-sm leading-snug">{adv}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
 
                 <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
                    <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>

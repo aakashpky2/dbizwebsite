@@ -649,64 +649,188 @@ const StartupIndiaRegistrationPage = () => {
         </section>
 
         {/* 6. Process Section */}
-        <section id="process" className="py-24 scroll-mt-32 relative overflow-hidden bg-dbiz-navy/90">
-          <div className="absolute inset-0 bg-dbiz-navy/75 backdrop-blur-[2px] z-0"></div>
+        <section
+          id="process"
+          className="py-24 scroll-mt-32 relative overflow-hidden border-y border-[#c8e6e6]"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1440&q=40')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "local",
+          }}
+        >
+          {/* Dark overlay to keep cards readable */}
+          <div className="absolute inset-0 bg-dbiz-navy/80 backdrop-blur-[2px] z-0"></div>
           <div className="container-custom relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-20 animate-on-scroll">
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-4 border border-dbiz-teal/20 tracking-wider">
-                6. PROCESS
+                6. REGISTRATION PROCESS
               </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Step-by-Step Guide</h2>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight [animation-delay:200ms]">DPIIT Startup Registration Process – Step-by-Step Detailed Guide</h2>
             </div>
 
+            {/* Timeline Container */}
             <div className="max-w-5xl mx-auto relative py-8">
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent hidden md:block rounded-full"></div>
+
+              {/* Vertical center line — desktop only */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent hidden md:block rounded-full z-0"></div>
 
               {[
-                { s: "1", t: "Data Collection", d: "Collecting business details, incorporation certificates, and verifying eligibility." },
-                { s: "2", t: "Portal Account", d: "Registering on the Startup India portal with basic contact details and credentials." },
-                { s: "3", t: "Application Filing", d: "Filling entity details, founder info, business sector, and innovation summary." },
-                { s: "4", t: "Document Upload", d: "Uploading COI, PAN, and detailed business pitch or website details." },
-                { s: "5", t: "Self-Declaration", d: "Confirming startup criteria and accuracy of provided information." },
-                { s: "6", t: "DPIIT Verification", d: "Authority reviews the application. Response to queries if any." },
-                { s: "7", t: "Certificate Issuance", d: "On approval, the unique Recognition Certificate is issued for download." }
+                {
+                  step: "1", title: "Data Collection & Eligibility Verification",
+                  desc: "The process begins with collecting all required business details such as incorporation certificate, PAN, founder details, and business activity.",
+                  bullets: [
+                    "Eligibility checked: age of business (less than 10 years)",
+                    "Turnover limit verified (below ₹100 crore)",
+                    "Innovation/scalability of the startup assessed"
+                  ]
+                },
+                {
+                  step: "2", title: "Create Startup India Portal Account",
+                  desc: "The applicant registers on the official Startup India portal by providing basic details such as name, email ID, and mobile number.",
+                  bullets: [
+                    "Login credentials are created",
+                    "Access to the DPIIT application dashboard"
+                  ]
+                },
+                {
+                  step: "3", title: "Application Filing for DPIIT Recognition",
+                  desc: "The Startup Recognition application is filled online, including:",
+                  bullets: [
+                    "Entity details (Company / LLP / Partnership)",
+                    "Founder details",
+                    "Business activity and sector",
+                    "Description of innovation / scalability",
+                    "Employment and growth potential"
+                  ]
+                },
+                {
+                  step: "4", title: "Upload Supporting Documents",
+                  desc: "Required documents are uploaded — proper documentation improves approval chances:",
+                  bullets: [
+                    "Certificate of Incorporation",
+                    "PAN details",
+                    "Business description / pitch",
+                    "Website or product details (if available)"
+                  ]
+                },
+                {
+                  step: "5", title: "Self-Declaration & Submission",
+                  desc: "The applicant provides self-declaration confirming that:",
+                  bullets: [
+                    "The business meets DPIIT startup criteria",
+                    "It is not formed by splitting an existing business",
+                    "All information provided is accurate",
+                    "Application is submitted for processing"
+                  ]
+                },
+                {
+                  step: "6", title: "Verification by DPIIT Authority",
+                  desc: "The DPIIT reviews the submitted application carefully:",
+                  bullets: [
+                    "If details are correct → Application approved",
+                    "If clarification required → Query may be raised",
+                    "Applicants must respond promptly to avoid delays"
+                  ]
+                },
+                {
+                  step: "7", title: "DPIIT Recognition Certificate Issuance",
+                  desc: "Once approved, the Startup Recognition Certificate is issued:",
+                  bullets: [
+                    "Unique Recognition Number is generated",
+                    "Certificate is available for download",
+                    "Business is officially recognized as a Startup under Government of India"
+                  ]
+                }
               ].map((item, index) => {
-                const isOdd = index % 2 === 0;
+                const isOdd = index % 2 === 0; // 0,2,4,6 → left; 1,3,5 → right
+                const isEvenStep = !isOdd;
                 return (
-                  <div key={index} className="hidden md:grid grid-cols-[1fr_auto_1fr] items-start gap-x-8 animate-on-scroll mt-12 first:mt-0">
+                  <div
+                    key={index}
+                    className={`hidden md:grid grid-cols-[1fr_auto_1fr] items-start gap-x-8 animate-on-scroll ${isEvenStep ? '-mt-20' : index > 0 ? 'mt-12' : ''}`}
+                    style={{ animationDelay: `${index * 150}ms` }}
+                  >
+                    {/* LEFT slot */}
                     {isOdd ? (
-                      <div className="flex justify-end pr-4 text-right">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all max-w-sm">
-                          <h3 className="text-xl font-semibold text-dbiz-navy mb-3">Step {item.s}: {item.t}</h3>
-                          <p className="text-gray-600 text-sm">{item.d}</p>
+                      <div className="flex justify-end pr-4">
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-dbiz-teal/30 transition-all duration-300 max-w-sm text-right">
+                          <h3 className="text-xl lg:text-2xl font-semibold text-dbiz-navy mb-3 hover:text-dbiz-teal transition-colors">Step {item.step}: {item.title}</h3>
+                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base mb-3">{item.desc}</p>
+                          {item.bullets && (
+                            <ul className="space-y-1.5 text-right">
+                              {item.bullets.map((b, bi) => (
+                                <li key={bi} className="text-gray-500 text-sm flex items-start justify-end gap-2">
+                                  <span>{b}</span>
+                                  <span className="text-dbiz-teal mt-1 shrink-0">•</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       </div>
-                    ) : <div />}
-                    <div className="w-12 h-12 rounded-full bg-white border-4 border-dbiz-teal flex items-center justify-center text-dbiz-navy font-bold text-xl shadow-lg shrink-0">
-                      {item.s}
+                    ) : (
+                      <div></div>
+                    )}
+
+                    {/* CENTER — numbered circle */}
+                    <div className="flex flex-col items-center z-10 relative">
+                      <div className="w-12 h-12 rounded-full bg-white border-4 border-dbiz-teal flex items-center justify-center text-dbiz-navy font-bold text-xl shadow-lg hover:bg-dbiz-teal hover:text-white transition-colors duration-300 shrink-0">
+                        {item.step}
+                      </div>
                     </div>
-                    {!isOdd ? (
-                      <div className="flex justify-start pl-4 text-left">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all max-w-sm">
-                          <h3 className="text-xl font-semibold text-dbiz-navy mb-3">Step {item.s}: {item.t}</h3>
-                          <p className="text-gray-600 text-sm">{item.d}</p>
+
+                    {/* RIGHT slot */}
+                    {isEvenStep ? (
+                      <div className="flex justify-start pl-4">
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl hover:border-dbiz-teal/30 transition-all duration-300 max-w-sm text-left">
+                          <h3 className="text-xl lg:text-2xl font-semibold text-dbiz-navy mb-3 hover:text-dbiz-teal transition-colors">Step {item.step}: {item.title}</h3>
+                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base mb-3">{item.desc}</p>
+                          {item.bullets && (
+                            <ul className="space-y-1.5">
+                              {item.bullets.map((b, bi) => (
+                                <li key={bi} className="text-gray-500 text-sm flex items-start gap-2">
+                                  <span className="text-dbiz-teal mt-1 shrink-0">•</span>
+                                  <span>{b}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       </div>
-                    ) : <div />}
+                    ) : (
+                      <div></div>
+                    )}
                   </div>
                 );
               })}
 
-              <div className="md:hidden space-y-8 relative pl-10 mt-8">
-                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-dbiz-teal/40"></div>
-                {[1,2,3,4,5,6,7].map(num => (
-                  <div key={num} className="relative bg-white p-6 rounded-2xl shadow-sm border border-gray-100 animate-on-scroll">
-                    <div className="absolute -left-10 top-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-4 border-dbiz-teal flex items-center justify-center text-dbiz-navy font-bold shadow-md z-10">{num}</div>
-                    <p className="font-bold text-dbiz-navy">Step {num}</p>
+              {/* Mobile: vertical stacked list */}
+              <div className="md:hidden space-y-8 relative pl-10">
+                <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-dbiz-teal via-dbiz-teal/40 to-transparent rounded-full"></div>
+                {[
+                  { step: "1", title: "Data Collection & Eligibility Verification", desc: "Collecting all required business details, checking age of business, turnover limits, and innovation/scalability criteria." },
+                  { step: "2", title: "Create Startup India Portal Account", desc: "Registering on the Startup India portal with name, email and mobile. Login credentials created for the DPIIT dashboard." },
+                  { step: "3", title: "Application Filing for DPIIT Recognition", desc: "Entity details, founder info, business activity, innovation description, and employment/growth potential filled online." },
+                  { step: "4", title: "Upload Supporting Documents", desc: "Uploading COI, PAN, business description/pitch, and website or product details to improve approval chances." },
+                  { step: "5", title: "Self-Declaration & Submission", desc: "Confirming the business meets DPIIT criteria, is not formed by splitting an existing business, and all details are accurate." },
+                  { step: "6", title: "Verification by DPIIT Authority", desc: "DPIIT reviews the application. If correct → approved. If clarification needed → query raised. Respond promptly." },
+                  { step: "7", title: "DPIIT Recognition Certificate Issuance", desc: "Unique Recognition Number generated, certificate issued for download. Business officially recognized as a Startup under GoI." }
+                ].map((item, index) => (
+                  <div key={index} className="relative animate-on-scroll" style={{ animationDelay: `${index * 150}ms` }}>
+                    <div className="absolute -left-10 top-6 -translate-y-1/2 w-10 h-10 rounded-full bg-white border-4 border-dbiz-teal flex items-center justify-center text-dbiz-navy font-bold shadow-md z-10">
+                      {item.step}
+                    </div>
+                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                      <h3 className="text-xl font-semibold text-dbiz-navy mb-3">Step {item.step}: {item.title}</h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+
             </div>
+
           </div>
         </section>
 
@@ -732,22 +856,24 @@ const StartupIndiaRegistrationPage = () => {
                   ))}
                 </div>
 
-                <div className="mt-12 text-center">
-                  <p className="text-xs font-black tracking-[0.3em] text-gray-400 uppercase mb-8">Quick Summary</p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="mt-12">
+                  <div className="flex items-center gap-3 mb-10">
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                    <p className="text-xs font-black tracking-[0.3em] text-gray-400 uppercase">Quick Summary</p>
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {/* Card 1: Fast Track Flip */}
                     <div className="three-d-card animate-on-scroll">
                       <div className="card-wrapper">
-                        {/* Front Face */}
                         <div className="card-face front">
                           <Zap className="h-12 w-12 text-dbiz-teal mb-4" />
                           <h4 className="card-title">Fast Track Approval</h4>
                         </div>
-                        {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">1-2 Days</div>
+                          <div className="card-duration">2 – 3 Days</div>
                           <p className="card-description">
-                            Typical timeframe with perfect documentation and immediate digital signature verification.
+                            Complete and accurate application with a well-drafted innovation description ensures the fastest recognition.
                           </p>
                         </div>
                       </div>
@@ -756,33 +882,163 @@ const StartupIndiaRegistrationPage = () => {
                     {/* Card 2: Standard Timeline Flip */}
                     <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
                       <div className="card-wrapper">
-                        {/* Front Face */}
                         <div className="card-face front">
                           <Shield className="h-12 w-12 text-amber-500 mb-4" />
                           <h4 className="card-title">Standard Timeline</h4>
                         </div>
-                        {/* Back Face */}
                         <div className="card-face back">
-                          <div className="card-duration">3-5 Days</div>
+                          <div className="card-duration">3 – 5 Days</div>
                           <p className="card-description">
-                            Applicable for applications requiring additional clarifications or manual departmental review.
+                            Typical processing time for applications that are complete but require standard departmental review.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 3: Delayed Cases Flip */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                      <div className="card-wrapper">
+                        <div className="card-face front">
+                          <Clock className="h-12 w-12 text-rose-400 mb-4" />
+                          <h4 className="card-title">Delayed Cases</h4>
+                        </div>
+                        <div className="card-face back">
+                          <div className="card-duration">Up to 7 Days</div>
+                          <p className="card-description">
+                            Applies when DPIIT raises queries or requires clarification on the business description or supporting details.
                           </p>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  {/* Note */}
+                  <div className="mt-12 flex items-start justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-500 font-semibold italic text-left max-w-2xl">
+                      Note: <span className="text-dbiz-navy not-italic font-black">Approval time depends on quality of business description, clarity of innovation, and accuracy of submitted details.</span> A well-drafted application ensures faster approval.
+                    </p>
+                  </div>
                 </div>
               </div>
 
+              {/* 8. Post-Registration Compliance Section */}
+              <div className="pt-16 border-t border-gray-100 animate-on-scroll">
+                <div className="mb-10 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
+                    <Shield className="h-3 w-3" /> Mandatory Maintenance
+                  </div>
+                  <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">8. Post-Registration Compliance</h3>
+                  <p className="text-gray-500 font-medium text-sm max-w-2xl">
+                    Once recognised, your startup must continue meeting DPIIT criteria and maintain these mandatory filings to retain recognition and avail ongoing benefits.
+                  </p>
+                </div>
 
+                {/* Mandatory Filings — Blob Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center mb-10 py-6">
+                  {[
+                    { type: "Income Tax Return (ITR)", freq: "Annually" },
+                    { type: "MCA Compliance", freq: "Annually / As Applicable" },
+                    { type: "Startup Portal Updates", freq: "As Required" }
+                  ].map((filing, idx) => (
+                    <div key={idx} className="blob-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
+                      <div className="blob-card-orbit"></div>
+                      <div className="blob-card-bg">
+                        <h4 className="text-[16px] font-black text-dbiz-navy uppercase tracking-tighter mb-1 select-none text-center">{filing.type}</h4>
+                        <p className="text-[10px] font-black text-dbiz-teal uppercase tracking-[0.3em] select-none text-center">{filing.freq}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Compliance Requirements */}
+                <div className="consultancy-section-card animate-on-scroll">
+                  <p className="consultancy-label">Essential</p>
+                  <h4 className="consultancy-heading">Compliance Requirements</h4>
+                  <div className="compliance-grid">
+                    {[
+                      "Maintain proper books of accounts and financial records",
+                      "Continue to meet DPIIT eligibility criteria (turnover & age limits)",
+                      "Ensure business activity aligns with declared innovation or scalability",
+                      "File income tax returns regularly to claim tax benefits",
+                      "Comply with MCA requirements (for Pvt Ltd / LLP)",
+                      "Update Startup India portal in case of changes in business details"
+                    ].map((req, i) => (
+                      <div key={i} className="compliance-inner-card">
+                        <div className="compliance-check-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span className="compliance-label-text">{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tax & Regulatory Compliance */}
+                <div className="consultancy-section-card animate-on-scroll mt-8">
+                  <p className="consultancy-label uppercase tracking-widest bg-blue-50 text-blue-600 border-blue-100">Tax & Regulatory</p>
+                  <h4 className="consultancy-heading">Tax & Regulatory Compliance</h4>
+                  <div className="compliance-grid">
+                    {[
+                      "Apply separately for tax exemption under Section 80IAC (if eligible)",
+                      "Maintain proper documentation for claiming tax benefits",
+                      "Ensure compliance under labour and environmental laws (self-certification)",
+                      "Follow applicable GST and other statutory requirements"
+                    ].map((req, i) => (
+                      <div key={i} className="compliance-inner-card">
+                        <div className="compliance-check-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span className="compliance-label-text">{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Penalties / Risks */}
+                <div className="consultancy-section-card animate-on-scroll mt-8">
+                  <p className="consultancy-label uppercase tracking-widest bg-red-100 text-red-600 border-red-200">Caution</p>
+                  <h4 className="consultancy-heading">Penalties / Risks</h4>
+                  <div className="penalty-grid">
+                    {[
+                      { title: "Incorrect Information", desc: "Cancellation of DPIIT recognition" },
+                      { title: "Non-compliance with Criteria", desc: "Loss of startup benefits" },
+                      { title: "Failure to File Returns", desc: "Penalties under Income Tax / MCA" },
+                      { title: "Misuse of Benefits", desc: "Legal action or disqualification" }
+                    ].map((item, i) => (
+                      <div key={i} className="penalty-inner-card">
+                        <div className="penalty-header">
+                          <div className="penalty-dot bg-red-500"></div>
+                          <span className="penalty-title">{item.title}</span>
+                        </div>
+                        <p className="penalty-desc">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Validity Note */}
+                <div className="mt-10 flex items-start gap-3 animate-on-scroll">
+                  <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-500 font-semibold italic">
+                    Note: <span className="text-dbiz-navy not-italic font-black">DPIIT recognition has lifetime validity (up to 10 years or ₹100 crore turnover limit)</span>, but continued compliance and portal updates are essential to retain recognition and avail all associated benefits.
+                  </p>
+                </div>
+              </div>
 
               {/* 9. Why DBIZ Section */}
-              <div id="whydbiz" className="pt-20 border-t border-gray-100">
-                <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">Why DBIZ</div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy">Why DBIZ CONSULTANCY for Startup India Registration?</h2>
-                  <p className="text-lg text-gray-600 mt-6 leading-relaxed">
-                    We make the entire DPIIT registration process simple, accurate, and approval-focused by handling every stage—from eligibility assessment to final recognition and post-registration guidance.
+              <div id="whydbiz" className="pt-20 border-t border-gray-100 animate-on-scroll">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                    <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                    Why D BIZ
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why DBIZ CONSULTANCY for DPIIT Startup Registration?</h2>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    Registering under DPIIT is a crucial step for startups looking to unlock tax benefits, funding opportunities, and government support. While the process may appear simple, approval largely depends on accurate documentation, proper classification, and a strong description of innovation and scalability. Even small mistakes or vague business descriptions can lead to rejection or delays.
+                  </p>
+                  <p className="text-lg text-gray-600 leading-relaxed mt-4">
+                    At DBIZ CONSULTANCY, we go beyond basic filing. We make the entire DPIIT registration process simple, accurate, and approval-focused by handling every stage—from eligibility assessment to final recognition and post-registration guidance. Our team ensures that your application is strategically prepared and filed correctly the first time, minimizing delays and improving approval chances.
                   </p>
                 </div>
 
@@ -792,7 +1048,18 @@ const StartupIndiaRegistrationPage = () => {
                       <CheckCircle2 className="h-6 w-6 text-dbiz-teal mr-2" /> What DBIZ Handles
                     </h3>
                     <ul className="space-y-4">
-                      {["Eligibility assessment", "Strong drafting of innovation description", "Document validation", "DPIIT portal filing", "Query handling", "Status tracking"].map((item, i) => (
+                      {[
+                        "DPIIT eligibility assessment based on business model and criteria",
+                        "Drafting strong business description highlighting innovation & scalability",
+                        "Document validation and pre-submission review",
+                        "Selection of correct entity structure (Pvt Ltd / LLP / Partnership)",
+                        "DPIIT application filing on Startup India portal",
+                        "Assistance with self-declaration and compliance requirements",
+                        "Continuous status tracking and follow-up",
+                        "Handling DPIIT queries and clarification responses",
+                        "Recognition certificate download and delivery",
+                        "Post-registration guidance (tax benefits, funding, compliance)"
+                      ].map((item, i) => (
                         <li key={i} className="flex items-start">
                           <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 mt-1 flex-shrink-0" />
                           <span className="text-gray-700 font-medium">{item}</span>
@@ -805,7 +1072,14 @@ const StartupIndiaRegistrationPage = () => {
                       <FileText className="h-6 w-6 text-dbiz-navy mr-2" /> What You Provide
                     </h3>
                     <ul className="space-y-4">
-                      {["COI / Registration", "PAN & KYC of founders", "Business nature activity", "Product/Service description", "Website details"].map((item, i) => (
+                      {[
+                        "Certificate of Incorporation / Registration",
+                        "PAN and KYC details of founders",
+                        "Business details and nature of activity",
+                        "Description of product/service and innovation",
+                        "Website / product details (if available)",
+                        "Basic business address details"
+                      ].map((item, i) => (
                         <li key={i} className="flex items-start">
                           <ArrowRight className="h-4 w-4 text-gray-500 mr-2 mt-1 flex-shrink-0" />
                           <span className="text-gray-700 font-medium">{item}</span>
@@ -848,15 +1122,46 @@ const StartupIndiaRegistrationPage = () => {
                    </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white mt-12 animate-on-scroll">
-                  <h3 className="text-2xl font-semibold mb-8 text-dbiz-teal tracking-tighter uppercase">Our Advantage</h3>
-                  <div className="grid lg:grid-cols-2 gap-12">
-                     <p className="text-lg leading-relaxed text-blue-100/90 font-medium">At DBIZ CONSULTANCY, we ensure that your application is well-structured, compliant, and approval-ready, increasing your chances of recognition and long-term benefits.</p>
-                     <div className="grid grid-cols-2 gap-4">
-                        {["Expert Advisory", "Quick Turnaround", "Error-free filing", "Dedicated support"].map((adv, i) => (
-                          <div key={i} className="bg-white/10 p-4 rounded-xl border border-white/10 flex items-center gap-3"><CheckCircle2 className="h-4 w-4 text-dbiz-teal" /><span className="text-xs font-bold">{adv}</span></div>
+                <div className="mt-16 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white relative overflow-hidden group/banner shadow-2xl animate-on-scroll">
+                  <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+
+                  <div className="grid lg:grid-cols-5 gap-12 items-center relative z-10">
+                    <div className="lg:col-span-2">
+                      <h3 className="text-2xl font-semibold mb-8 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Why Choose DBIZ?</h3>
+                      <div className="space-y-6">
+                        <p className="text-lg leading-relaxed text-white">
+                          DPIIT registration is not just about getting a certificate—it is about how effectively your startup is positioned in terms of innovation, scalability, and compliance.
+                        </p>
+                        <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
+                          At DBIZ CONSULTANCY, we go beyond basic filing. We ensure that your application is well-structured, compliant, and approval-ready, increasing your chances of recognition and long-term benefits.
+                        </p>
+                        <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
+                          From documentation to approval and strategic guidance, we act as your complete startup compliance partner.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-3">
+                      <div className="mb-8">
+                        <h4 className="text-xl font-bold text-dbiz-teal uppercase tracking-widest border-b border-white/10 pb-4">Our Advantage</h4>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                          { title: "Expert Advisory", desc: "Expert startup advisory with practical experience" },
+                          { title: "Innovation Drafting", desc: "Strong drafting of innovation-focused applications" },
+                          { title: "Quick Turnaround", desc: "Quick turnaround with proactive follow-up" },
+                          { title: "Error-Free Filing", desc: "Error-free filing with compliance-focused approach" },
+                          { title: "End-to-End Service", desc: "End-to-end service from application to recognition" },
+                          { title: "Dedicated Support", desc: "Dedicated support for queries and clarifications" }
+                        ].map((adv, idx) => (
+                          <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/20 transition-all duration-300">
+                            <CheckCircle2 className="h-6 w-6 text-dbiz-teal mb-4" />
+                            <h4 className="text-white font-bold mb-2">{adv.title}</h4>
+                            <p className="text-blue-100/70 text-sm leading-relaxed">{adv.desc}</p>
+                          </div>
                         ))}
-                     </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

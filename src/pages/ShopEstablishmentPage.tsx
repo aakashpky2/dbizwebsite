@@ -1004,6 +1004,50 @@ const ShopEstablishmentPage = () => {
                    </div>
                 </div>
 
+                {/* Why Choose DBIZ CONSULTANCY? & Our Advantage Section */}
+                <div className="mt-16 bg-gradient-to-br from-dbiz-navy to-dbiz-navy/90 rounded-xl p-8 md:p-12 text-white relative overflow-hidden group/banner shadow-2xl animate-on-scroll">
+                  <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/10 rounded-full blur-[120px] -mr-48 -mt-48 group-hover/banner:bg-dbiz-teal/20 transition-all duration-1000"></div>
+                  
+                  <div className="grid lg:grid-cols-5 gap-12 items-center relative z-10">
+                    <div className="lg:col-span-2">
+                      <h3 className="text-2xl font-semibold mb-8 text-dbiz-teal tracking-tighter uppercase underline underline-offset-8 decoration-dbiz-teal/30">Why Choose DBIZ?</h3>
+                      <div className="space-y-6">
+                         <p className="text-lg leading-relaxed text-white">
+                           Shop & Establishment registration is not just about getting a certificate—it is about ensuring proper compliance with labour laws, maintaining employee records, and avoiding future risks.
+                         </p>
+                         <p className="text-lg leading-relaxed text-blue-100/90 font-medium">
+                           At DBIZ CONSULTANCY, we ensure your registration is done correctly from the start, minimizing errors and ensuring smooth approval.
+                         </p>
+                         <p className="text-lg leading-relaxed text-blue-100/90 font-bold border-l-2 border-dbiz-teal pl-6">
+                           From application to compliance guidance, we act as your complete business compliance partner.
+                         </p>
+                      </div>
+                    </div>
+
+                    <div className="lg:col-span-3">
+                      <div className="mb-8">
+                        <h4 className="text-xl font-bold text-dbiz-teal uppercase tracking-widest border-b border-white/10 pb-4">Our Advantage</h4>
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                          { title: "Expert Knowledge", desc: "Expert knowledge of state-specific labour laws" },
+                          { title: "Quick Processing", desc: "Quick processing with accurate filing" },
+                          { title: "Error-Free Filing", desc: "Error-free documentation and submission" },
+                          { title: "End-to-End Service", desc: "End-to-end service from registration to compliance" },
+                          { title: "Dedicated Support", desc: "Dedicated support for queries and updates" },
+                          { title: "Ongoing Guidance", desc: "Ongoing guidance for labour law compliance" }
+                        ].map((adv, idx) => (
+                          <div key={idx} className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/20 transition-all duration-300">
+                             <CheckCircle2 className="h-6 w-6 text-dbiz-teal mb-4" />
+                             <h4 className="text-white font-bold mb-2">{adv.title}</h4>
+                             <p className="text-blue-100/70 text-sm leading-relaxed">{adv.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               {/* Our Commitment Section */}
               <section className="py-12 bg-white mt-12">
                 <div className="max-w-4xl mx-auto text-center animate-on-scroll">

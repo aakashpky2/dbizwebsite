@@ -816,41 +816,68 @@ const ISOCertificationPage = () => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-                  {/* Card 1: Fast Track Flip */}
-                  <div className="three-d-card animate-on-scroll">
-                    <div className="card-wrapper">
-                      {/* Front Face */}
-                      <div className="card-face front">
-                        <Zap className="h-12 w-12 text-dbiz-teal mb-4" />
-                        <h4 className="card-title">Fast Track Certification</h4>
+                <div className="mt-12">
+                  <div className="flex items-center gap-3 mb-10">
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                    <p className="text-xs font-black tracking-[0.3em] text-gray-400 uppercase">Quick Summary</p>
+                    <div className="h-px bg-gray-100 flex-1"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    {/* Card 1: Fast Track Flip */}
+                    <div className="three-d-card animate-on-scroll">
+                      <div className="card-wrapper">
+                        <div className="card-face front">
+                          <Zap className="h-12 w-12 text-dbiz-teal mb-4" />
+                          <h4 className="card-title">Fast Track Certification</h4>
+                        </div>
+                        <div className="card-face back">
+                          <div className="card-duration">5 – 7 Days</div>
+                          <p className="card-description">
+                            For small businesses with quick process implementation and active team participation in documentation.
+                          </p>
+                        </div>
                       </div>
-                      {/* Back Face */}
-                      <div className="card-face back">
-                        <div className="card-duration">5-7 Days</div>
-                        <p className="card-description">
-                          Optimized for small businesses with quick process implementation and active team participation.
-                        </p>
+                    </div>
+
+                    {/* Card 2: Standard Timeline Flip */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
+                      <div className="card-wrapper">
+                        <div className="card-face front">
+                          <Shield className="h-12 w-12 text-amber-500 mb-4" />
+                          <h4 className="card-title">Standard Timeline</h4>
+                        </div>
+                        <div className="card-face back">
+                          <div className="card-duration">7 – 10 Days</div>
+                          <p className="card-description">
+                            Complete audit cycle including internal gap analysis and final external certification review.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Card 3: Delayed Cases Flip */}
+                    <div className="three-d-card animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                      <div className="card-wrapper">
+                        <div className="card-face front">
+                          <Clock className="h-12 w-12 text-rose-400 mb-4" />
+                          <h4 className="card-title">Delayed Cases</h4>
+                        </div>
+                        <div className="card-face back">
+                          <div className="card-duration">Up to 15 Days</div>
+                          <p className="card-description">
+                            Applies when major corrections are required in documentation or processes before certification can be granted.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Card 2: Standard Timeline Flip */}
-                  <div className="three-d-card animate-on-scroll" style={{ animationDelay: '150ms' }}>
-                    <div className="card-wrapper">
-                      {/* Front Face */}
-                      <div className="card-face front">
-                        <Shield className="h-12 w-12 text-amber-500 mb-4" />
-                        <h4 className="card-title">Standard Timeline</h4>
-                      </div>
-                      {/* Back Face */}
-                      <div className="card-face back">
-                        <div className="card-duration">7-10 Days</div>
-                        <p className="card-description">
-                          Complete audit cycle including internal gap analysis and final external certification review.
-                        </p>
-                      </div>
-                    </div>
+                  {/* Note */}
+                  <div className="mt-12 flex items-start justify-center gap-3 animate-on-scroll" style={{ animationDelay: '300ms' }}>
+                    <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                    <p className="text-sm text-gray-500 font-semibold italic text-left max-w-2xl">
+                      Note: <span className="text-dbiz-navy not-italic font-black">Timeline may vary based on type of ISO standard, business size, readiness of documentation, and audit requirements.</span> Proper documentation and quick implementation ensure faster certification.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -864,58 +891,75 @@ const ISOCertificationPage = () => {
                   <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">Mandatory Requirements</h3>
                 </div>
 
+                {/* Blob Cards — Mandatory Requirement Types */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center mb-10 py-6">
                   {[
                     { type: "Surveillance Audit", freq: "Annually" },
-                    { type: "Re-Certification", freq: "Every 3 Years" },
-                    { type: "Internal Audit", freq: "Periodically" }
+                    { type: "Re-Certification Audit", freq: "Every 3 Years" },
+                    { type: "Internal Audit", freq: "Quarterly / Half-Yearly" }
                   ].map((filing, idx) => (
                     <div key={idx} className="blob-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
-                       <div className="blob-card-orbit"></div>
-                       <div className="blob-card-bg">
-                          <h4 className="text-[20px] font-black text-dbiz-navy uppercase tracking-tighter mb-1 select-none">{filing.type}</h4>
-                          <p className="text-[10px] font-black text-dbiz-teal uppercase tracking-[0.3em] select-none">{filing.freq}</p>
-                       </div>
+                      <div className="blob-card-orbit"></div>
+                      <div className="blob-card-bg">
+                        <h4 className="text-[18px] font-black text-dbiz-navy uppercase tracking-tighter mb-1 select-none text-center">{filing.type}</h4>
+                        <p className="text-[10px] font-black text-dbiz-teal uppercase tracking-[0.3em] select-none text-center">{filing.freq}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 mb-12">
-                   <div className="consultancy-section-card h-full animate-on-scroll">
-                      <p className="consultancy-label">Requirements</p>
-                      <h4 className="consultancy-heading">Compliance Requirements</h4>
-                      <ul className="space-y-4">
-                        {[
-                          "Maintain proper documentation, SOPs, and process records",
-                          "Follow defined ISO standards in daily operations",
-                          "Conduct regular internal audits to ensure compliance",
-                          "Address non-conformities and implement corrections",
-                          "Train employees on ISO procedures and standards"
-                        ].map((l, i) => (
-                           <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
-                              <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                              <span className="text-[14.875px] tracking-tight">{l}</span>
-                           </li>
-                        ))}
-                      </ul>
-                   </div>
-                   <div className="consultancy-section-card h-full animate-on-scroll" style={{ animationDelay: '200ms' }}>
-                      <p className="consultancy-label">Caution</p>
-                      <h4 className="consultancy-heading">Risks of Default</h4>
-                      <div className="space-y-4">
-                        {[
-                          { t: "Non-compliance", d: "Leads to suspension of certificate" },
-                          { t: "Audit Failure", d: "Results in immediate cancellation" },
-                          { t: "Improper Records", d: "Causes non-conformity remarks" },
-                          { t: "Missed Audit", d: "Makes certificate invalid" }
-                        ].map((l, i) => (
-                           <div key={i} className="penalty-inner-card">
-                              <span className="penalty-title">{l.t}</span>
-                              <p className="penalty-desc">{l.d}</p>
-                           </div>
-                        ))}
+                {/* Compliance Requirements */}
+                <div className="consultancy-section-card animate-on-scroll">
+                  <p className="consultancy-label uppercase tracking-widest bg-emerald-100 text-emerald-600 border-emerald-200">Mandatory</p>
+                  <h4 className="consultancy-heading">Compliance Requirements</h4>
+                  <div className="compliance-grid">
+                    {[
+                      "Maintain proper documentation, SOPs, and process records",
+                      "Follow defined ISO standards in daily operations",
+                      "Conduct regular internal audits to ensure compliance",
+                      "Address non-conformities and implement corrective actions",
+                      "Ensure continuous improvement in processes and quality",
+                      "Train employees on ISO procedures and standards",
+                      "Maintain records for audit verification"
+                    ].map((req, i) => (
+                      <div key={i} className="compliance-inner-card">
+                        <div className="compliance-check-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span className="compliance-label-text">{req}</span>
                       </div>
-                   </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Penalties / Risks */}
+                <div className="consultancy-section-card animate-on-scroll mt-8">
+                  <p className="consultancy-label uppercase tracking-widest bg-red-100 text-red-600 border-red-200">Caution</p>
+                  <h4 className="consultancy-heading">Penalties / Risks</h4>
+                  <div className="penalty-grid">
+                    {[
+                      { title: "Non-compliance with ISO standards", desc: "Suspension of certification" },
+                      { title: "Failure in audit", desc: "Delay or cancellation of certificate" },
+                      { title: "Improper documentation", desc: "Non-conformity remarks during audit" },
+                      { title: "Not attending surveillance audit", desc: "Certificate may become invalid" }
+                    ].map((item, i) => (
+                      <div key={i} className="penalty-inner-card">
+                        <div className="penalty-header">
+                          <div className="penalty-dot bg-red-500"></div>
+                          <span className="penalty-title">{item.title}</span>
+                        </div>
+                        <p className="penalty-desc">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Validity Note */}
+                <div className="mt-10 flex items-start gap-3 animate-on-scroll">
+                  <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-500 font-semibold italic">
+                    Note: <span className="text-dbiz-navy not-italic font-black">ISO certification is typically valid for 3 years</span> but requires annual surveillance audits to ensure continuous compliance and validity.
+                  </p>
                 </div>
               </div>
 

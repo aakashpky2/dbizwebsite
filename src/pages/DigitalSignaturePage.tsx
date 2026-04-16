@@ -906,95 +906,115 @@ const DigitalSignaturePage = () => {
           </div>
         </section>
 
-        {/* Final Registration Flow Sections */}
+        {/* 8. Post-Usage Compliance + Why DBIZ */}
         <section className="py-24 bg-white">
           <div className="container-custom">
             <div className="max-w-6xl mx-auto flex flex-col gap-24">
+
               {/* 8. Post-Usage Compliance */}
-              <div id="compliance" className="scroll-mt-32">
-                 <div className="mb-14 text-center">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
-                       8. RENEWAL & VALIDITY
-                    </div>
-                    <h3 className="text-4xl md:text-5xl font-black text-dbiz-navy tracking-tight leading-tight uppercase">Compliance & Risks</h3>
-                 </div>
+              <div id="compliance" className="scroll-mt-32 animate-on-scroll">
+                <div className="mb-10 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black tracking-widest uppercase mb-4 border border-blue-100">
+                    <Shield className="h-3 w-3" /> Mandatory Maintenance
+                  </div>
+                  <h3 className="text-3xl font-extrabold text-dbiz-navy mb-4 tracking-tight leading-tight">Post-Usage Compliance (Renewal & Validity)</h3>
+                  <p className="text-gray-500 font-medium text-sm max-w-2xl">
+                    Once issued, your DSC must be maintained, renewed on time, and used only for authorized purposes to ensure uninterrupted compliance and legal validity.
+                  </p>
+                </div>
 
-                 <div className="flex flex-col gap-10 max-w-5xl mx-auto">
-                    {/* Card 1: Compliance Requirements */}
-                    <div className="consultancy-section-card animate-on-scroll">
-                       <p className="consultancy-label">Essential</p>
-                       <h4 className="consultancy-heading">Compliance Requirements</h4>
-                       <div className="compliance-grid">
-                          {[
-                             "Use DSC only for authorized and official purposes",
-                             "Keep DSC token/password secure to prevent misuse",
-                             "Ensure timely renewal before expiry to avoid disruption",
-                             "Update DSC on MCA, Income Tax, GST portals when renewed",
-                             "Revoke DSC immediately in case of loss or misuse",
-                             "Maintain proper control over authorized signatory usage"
-                          ].map((req, i) => (
-                             <div key={i} className="compliance-inner-card">
-                                <div className="compliance-check-icon">
-                                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                </div>
-                                <span className="compliance-label-text">{req}</span>
-                             </div>
-                          ))}
-                       </div>
+                {/* Mandatory Requirements — Blob Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center mb-10 py-6">
+                  {[
+                    { type: "DSC Validity", freq: "1 / 2 / 3 Years (as selected)" },
+                    { type: "Renewal", freq: "Before Expiry" },
+                    { type: "Usage Compliance", freq: "As Required for Filings" }
+                  ].map((filing, idx) => (
+                    <div key={idx} className="blob-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
+                      <div className="blob-card-orbit"></div>
+                      <div className="blob-card-bg">
+                        <h4 className="text-[16px] font-black text-dbiz-navy uppercase tracking-tighter mb-1 select-none text-center">{filing.type}</h4>
+                        <p className="text-[10px] font-black text-dbiz-teal uppercase tracking-[0.3em] select-none text-center">{filing.freq}</p>
+                      </div>
                     </div>
+                  ))}
+                </div>
 
-                    {/* Card 2: Renewal & Reissue Guidelines */}
-                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '100ms' }}>
-                       <p className="consultancy-label">Maintenance</p>
-                       <h4 className="consultancy-heading">Renewal & Reissue Guidelines</h4>
-                       <div className="compliance-grid">
-                          {[
-                             "DSC must be renewed before expiry to ensure continuous usage",
-                             "In case of expiry, fresh application is required",
-                             "Change in details (name/email/mobile) requires reissue",
-                             "Lost or damaged DSC token requires re-issuance"
-                          ].map((req, i) => (
-                             <div key={i} className="compliance-inner-card">
-                                <div className="compliance-check-icon bg-blue-500">
-                                   <RefreshCw className="h-3 w-3 text-white" />
-                                </div>
-                                <span className="compliance-label-text">{req}</span>
-                             </div>
-                          ))}
-                       </div>
-                    </div>
+                {/* Compliance Requirements */}
+                <div className="consultancy-section-card animate-on-scroll">
+                  <p className="consultancy-label uppercase tracking-widest bg-emerald-100 text-emerald-600 border-emerald-200">Essential</p>
+                  <h4 className="consultancy-heading">Compliance Requirements</h4>
+                  <div className="compliance-grid">
+                    {[
+                      "Use DSC only for authorized and official purposes",
+                      "Keep DSC token/password secure to prevent misuse",
+                      "Ensure timely renewal before expiry to avoid disruption",
+                      "Update DSC on MCA, Income Tax, GST portals when renewed",
+                      "Revoke DSC immediately in case of loss or misuse",
+                      "Maintain proper control over authorized signatory usage"
+                    ].map((req, i) => (
+                      <div key={i} className="compliance-inner-card">
+                        <div className="compliance-check-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </div>
+                        <span className="compliance-label-text">{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Card 3: Penalties / Risks */}
-                    <div className="consultancy-section-card animate-on-scroll" style={{ animationDelay: '200ms' }}>
-                       <p className="consultancy-label">Caution</p>
-                       <h4 className="consultancy-heading">Penalties / Risks</h4>
-                       <div className="penalty-grid">
-                          {[
-                             { title: "Expired DSC", desc: "Unable to file MCA, GST, or Income Tax forms" },
-                             { title: "Misuse of DSC", desc: "Legal consequences under IT Act" },
-                             { title: "Loss of DSC token", desc: "Risk of unauthorized usage" },
-                             { title: "Incorrect details", desc: "Rejection of filings or invalid signatures" }
-                          ].map((item, i) => (
-                             <div key={i} className="penalty-inner-card">
-                                <div className="penalty-header">
-                                   <div className="penalty-dot"></div>
-                                   <span className="penalty-title">{item.title}</span>
-                                </div>
-                                <p className="penalty-desc">{item.desc}</p>
-                             </div>
-                          ))}
-                       </div>
-                    </div>
+                {/* Renewal & Reissue Guidelines */}
+                <div className="consultancy-section-card animate-on-scroll mt-8">
+                  <p className="consultancy-label uppercase tracking-widest bg-blue-50 text-blue-600 border-blue-100">Maintenance</p>
+                  <h4 className="consultancy-heading">Renewal & Reissue Guidelines</h4>
+                  <div className="compliance-grid">
+                    {[
+                      "DSC must be renewed before expiry to ensure continuous usage",
+                      "In case of expiry, fresh application is required",
+                      "Change in details (name/email/mobile) requires reissue",
+                      "Lost or damaged DSC token requires re-issuance"
+                    ].map((req, i) => (
+                      <div key={i} className="compliance-inner-card">
+                        <div className="compliance-check-icon bg-blue-500">
+                          <RefreshCw className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="compliance-label-text">{req}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-                    {/* Final Cautionary Note */}
-                    <div className="mt-8 flex items-start gap-3 justify-center animate-on-scroll" style={{ animationDelay: '300ms' }}>
-                       <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-1" />
-                       <p className="text-sm text-gray-500 font-bold italic max-w-2xl text-center">
-                          Note: <span className="text-dbiz-navy not-italic font-black">DSC is a high-security digital tool</span>, and proper handling, timely renewal, and secure usage are essential to ensure uninterrupted compliance and legal validity.
-                       </p>
-                    </div>
-                 </div>
+                {/* Penalties / Risks */}
+                <div className="consultancy-section-card animate-on-scroll mt-8">
+                  <p className="consultancy-label uppercase tracking-widest bg-red-100 text-red-600 border-red-200">Caution</p>
+                  <h4 className="consultancy-heading">Penalties / Risks</h4>
+                  <div className="penalty-grid">
+                    {[
+                      { title: "Expired DSC", desc: "Unable to file MCA, GST, or Income Tax forms" },
+                      { title: "Misuse of DSC", desc: "Legal consequences under IT Act" },
+                      { title: "Loss of DSC token", desc: "Risk of unauthorized usage" },
+                      { title: "Incorrect details", desc: "Rejection of filings or invalid signatures" }
+                    ].map((item, i) => (
+                      <div key={i} className="penalty-inner-card">
+                        <div className="penalty-header">
+                          <div className="penalty-dot bg-red-500"></div>
+                          <span className="penalty-title">{item.title}</span>
+                        </div>
+                        <p className="penalty-desc">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Validity Note */}
+                <div className="mt-10 flex items-start gap-3 animate-on-scroll">
+                  <Sparkles className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                  <p className="text-sm text-gray-500 font-semibold italic">
+                    Note: <span className="text-dbiz-navy not-italic font-black">DSC is a high-security digital tool</span>, and proper handling, timely renewal, and secure usage are essential to ensure uninterrupted compliance and legal validity.
+                  </p>
+                </div>
               </div>
+
 
               {/* 9. Why DBIZ */}
               <div className="pt-20 border-t border-gray-100 animate-on-scroll">
@@ -1137,33 +1157,34 @@ const DigitalSignaturePage = () => {
                   </div>
               </div>
 
-              {/* 10. FAQs Section */}
-              <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">
-                <div className="container-custom">
-                  <div className="text-center max-w-4xl mx-auto mb-16 animate-on-scroll">
-                    <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20 uppercase">
-                      FAQs
-                    </div>
-                    <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-6 tracking-tight">FAQs on Digital Signature Certificate</h2>
-                    <p className="text-sm text-gray-400 font-black tracking-widest mb-4">Last updated: March 2026</p>
-                  </div>
+            </div>
+          </div>
+        </section>
 
-                  <div className="max-w-4xl mx-auto">
-                    <Accordion type="single" collapsible className="w-full space-y-4">
-                      {dscFaq.map((faq, idx) => (
-                        <AccordionItem key={faq.value} value={faq.value} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 overflow-hidden animate-on-scroll" style={{ animationDelay: `${idx * 50 + 100}ms` }}>
-                          <AccordionTrigger className="text-[17px] font-bold text-dbiz-navy hover:text-dbiz-teal hover:no-underline py-6 text-left">
-                            {faq.question}
-                          </AccordionTrigger>
-                          <AccordionContent className="text-gray-600 leading-relaxed pb-8 pt-2">
-                            {faq.answer}
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </div>
-                </div>
-              </section>
+        {/* 10. FAQs Section */}
+        <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="text-center max-w-4xl mx-auto mb-16 animate-on-scroll">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-wider mb-6 border border-dbiz-teal/20 uppercase">
+                FAQs
+              </div>
+              <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-6 tracking-tight">FAQs on Digital Signature Certificate</h2>
+              <p className="text-sm text-gray-400 font-black tracking-widest mb-4">Last updated: March 2026</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {dscFaq.map((faq, idx) => (
+                  <AccordionItem key={faq.value} value={faq.value} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 overflow-hidden animate-on-scroll" style={{ animationDelay: `${idx * 50 + 100}ms` }}>
+                    <AccordionTrigger className="text-[17px] font-bold text-dbiz-navy hover:text-dbiz-teal hover:no-underline py-6 text-left">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed pb-8 pt-2">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
