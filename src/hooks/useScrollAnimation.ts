@@ -25,13 +25,19 @@ export const useScrollAnimation = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-big');
     
     animatedElements.forEach((el) => {
-      // Add the initial animation class if not present
-      if (!el.classList.contains('fade-up')) {
+      // Handle regular scroll animations
+      if (el.classList.contains('animate-on-scroll') && !el.classList.contains('fade-up')) {
         el.classList.add('fade-up');
       }
+      
+      // Handle 'big' scroll animations
+      if (el.classList.contains('animate-on-scroll-big') && !el.classList.contains('fade-in-big-up')) {
+        el.classList.add('fade-in-big-up');
+      }
+      
       observer.observe(el);
     });
 
