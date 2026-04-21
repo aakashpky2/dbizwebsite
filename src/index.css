@@ -729,7 +729,7 @@
   height: 100%;
   padding: 30px;
   box-sizing: border-box;
-  background-color: #fff;
+  background-image: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
   opacity: 0;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   display: flex;
@@ -767,3 +767,823 @@
 }
 
 
+
+/* From Uiverse.io by Smit-Prajapati - 3D Challenge Card */ 
+.uiverse-3d-parent {
+  width: 100%;
+  padding: 10px;
+  perspective: 1000px;
+}
+
+.uiverse-3d-card {
+  padding-top: 50px;
+  border: 3px solid rgb(255, 255, 255);
+  transform-style: preserve-3d;
+  background: linear-gradient(135deg,#0000 18.75%,#f3f3f3 0 31.25%,#0000 0),
+      repeating-linear-gradient(45deg,#f3f3f3 -6.25% 6.25%,#ffffff 0 18.75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 0;
+  background-color: #f0f0f0;
+  width: 100%;
+  box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+
+.uiverse-3d-card:hover {
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.uiverse-3d-content-box {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  transition: all 0.5s ease-in-out;
+  padding: 60px 25px 25px 25px;
+  transform-style: preserve-3d;
+}
+
+.uiverse-3d-content-box .card-title {
+  display: inline-block;
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 50px);
+}
+
+.uiverse-3d-content-box .card-title:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-3d-content-box .card-content {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f2f2f2;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 30px);
+}
+
+.uiverse-3d-content-box .card-content:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-3d-content-box .see-more {
+  cursor: pointer;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #14b8a6;
+  background: white;
+  padding: 0.5rem 0.7rem;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(0px, 0px, 20px);
+}
+
+.uiverse-3d-content-box .see-more:hover {
+  transform: translate3d(0px, 0px, 60px);
+}
+
+.uiverse-3d-date-box {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  background: white;
+  border: 1px solid #14b8a6;
+  padding: 10px;
+  transform: translate3d(0px, 0px, 80px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uiverse-3d-date-box span {
+  display: block;
+  text-align: center;
+}
+
+.uiverse-3d-date-box .month {
+  color: #14b8a6;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.uiverse-3d-date-box .date {
+  font-size: 20px;
+  font-weight: 900;
+  color: #14b8a6;
+}
+
+
+/* From Uiverse.io by SouravBandyopadhyay - Corner Card */ 
+.uiverse-corner-card-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background-color: #f2f8f9;
+  border-radius: 16px;
+  padding: 2.5em 2em;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+  transition: all 0.35s ease-out;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.uiverse-corner-card-container:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.uiverse-corner-card-container:hover:before {
+  transform: scale(38);
+}
+
+.uiverse-corner-card-container .card-title {
+  color: #0b1d33;
+  font-size: 1.6em;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 0.6em;
+  transition: all 0.4s ease-out;
+}
+
+.uiverse-corner-card-container .small-desc {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #475569;
+  transition: all 0.4s ease-out;
+}
+
+.uiverse-corner-card-container:hover .small-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.uiverse-corner-card-container:hover .card-title {
+  color: #ffffff;
+}
+
+.uiverse-corner-card-container .go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #14b8a6, #0b1d33);
+  border-radius: 0 4px 0 32px;
+  transition: all 0.3s ease;
+}
+
+.uiverse-corner-card-container .go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.uiverse-corner-card-container:hover .go-corner {
+  transform: scale(1.1);
+}
+
+
+/* Custom Solution Card - Simple Version */
+.solution-simple-card {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px 40px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 6px solid #14b8a6;
+    margin: 0 auto;
+}
+
+.solution-simple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.solution-card-icon {
+    width: 54px;
+    height: 54px;
+    background: #f0fdfa;
+    color: #14b8a6;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.solution-simple-card h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #0b1d33;
+    font-weight: 900;
+}
+
+.solution-simple-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #475569;
+    font-weight: 500;
+}
+
+.solution-card-btn {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background: #14b8a6;
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+}
+
+.solution-card-btn:hover {
+    background: #0d9488;
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
+    transform: scale(1.02);
+}
+
+
+
+/* Uiverse.io 3D Tilt Card - Optimized for DBIZ */
+.uiverse-tilt-card-wrapper {
+  perspective: 1000px;
+}
+
+.uiverse-tilt-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 280px;
+  transition: 300ms;
+  margin: 0 auto;
+}
+
+.uiverse-tilt-container:active {
+  transform: scale(0.95);
+}
+
+.uiverse-tilt-card {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  transition: 700ms;
+  background: linear-gradient(135deg, #0c1222 0%, #134e4a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.uiverse-tilt-subtitle {
+  transform: translateY(100px);
+  color: rgba(20, 184, 166, 0.8);
+  text-align: center;
+  width: 100%;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: 400ms;
+}
+
+.uiverse-tilt-title {
+  opacity: 0;
+  transition: 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 0 1.5rem;
+  line-height: 1.4;
+  z-index: 10;
+  transform: scale(0.8) translateY(20px);
+}
+
+.uiverse-tilt-container:hover .uiverse-tilt-card .uiverse-tilt-title {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.uiverse-tilt-prompt {
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 20;
+  font-size: 1.75rem;
+  font-weight: 900;
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  color: white;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.uiverse-tilt-tracker {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+
+.uiverse-tilt-tracker:hover {
+  cursor: pointer;
+}
+
+.uiverse-tilt-container:hover .uiverse-tilt-card .uiverse-tilt-prompt {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.uiverse-tilt-container:hover .uiverse-tilt-card .uiverse-tilt-subtitle {
+  opacity: 0;
+}
+
+.uiverse-tilt-container:hover .uiverse-tilt-card {
+  transition: 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.6);
+  border-color: rgba(20, 184, 166, 0.5);
+}
+
+.uiverse-tilt-card::before {
+  content: '';
+  background: linear-gradient(135deg, #14b8a6 0%, #0f172a 100%);
+  filter: blur(3rem);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  transition: 800ms ease;
+}
+
+.uiverse-tilt-container:hover .uiverse-tilt-card::before {
+  opacity: 0.5;
+}
+
+.uiverse-tilt-canvas {
+  perspective: 1200px;
+  inset: 0;
+  z-index: 200;
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 0;
+}
+
+/* Tracking Perspective Rotations */
+.uiverse-tilt-tr-1:hover ~ .uiverse-tilt-card { transform: rotateX(20deg) rotateY(-15deg); }
+.uiverse-tilt-tr-2:hover ~ .uiverse-tilt-card { transform: rotateX(20deg) rotateY(-10deg); }
+.uiverse-tilt-tr-3:hover ~ .uiverse-tilt-card { transform: rotateX(20deg) rotateY(0deg); }
+.uiverse-tilt-tr-4:hover ~ .uiverse-tilt-card { transform: rotateX(20deg) rotateY(10deg); }
+.uiverse-tilt-tr-5:hover ~ .uiverse-tilt-card { transform: rotateX(20deg) rotateY(15deg); }
+.uiverse-tilt-tr-6:hover ~ .uiverse-tilt-card { transform: rotateX(10deg) rotateY(-15deg); }
+.uiverse-tilt-tr-7:hover ~ .uiverse-tilt-card { transform: rotateX(10deg) rotateY(-10deg); }
+.uiverse-tilt-tr-8:hover ~ .uiverse-tilt-card { transform: rotateX(10deg) rotateY(0deg); }
+.uiverse-tilt-tr-9:hover ~ .uiverse-tilt-card { transform: rotateX(10deg) rotateY(10deg); }
+.uiverse-tilt-tr-10:hover ~ .uiverse-tilt-card { transform: rotateX(10deg) rotateY(15deg); }
+.uiverse-tilt-tr-11:hover ~ .uiverse-tilt-card { transform: rotateX(0deg) rotateY(-15deg); }
+.uiverse-tilt-tr-12:hover ~ .uiverse-tilt-card { transform: rotateX(0deg) rotateY(-10deg); }
+.uiverse-tilt-tr-13:hover ~ .uiverse-tilt-card { transform: rotateX(0deg) rotateY(0deg); }
+.uiverse-tilt-tr-14:hover ~ .uiverse-tilt-card { transform: rotateX(0deg) rotateY(10deg); }
+.uiverse-tilt-tr-15:hover ~ .uiverse-tilt-card { transform: rotateX(0deg) rotateY(15deg); }
+.uiverse-tilt-tr-16:hover ~ .uiverse-tilt-card { transform: rotateX(-10deg) rotateY(-15deg); }
+.uiverse-tilt-tr-17:hover ~ .uiverse-tilt-card { transform: rotateX(-10deg) rotateY(-10deg); }
+.uiverse-tilt-tr-18:hover ~ .uiverse-tilt-card { transform: rotateX(-10deg) rotateY(0deg); }
+.uiverse-tilt-tr-19:hover ~ .uiverse-tilt-card { transform: rotateX(-10deg) rotateY(10deg); }
+.uiverse-tilt-tr-20:hover ~ .uiverse-tilt-card { transform: rotateX(-10deg) rotateY(15deg); }
+.uiverse-tilt-tr-21:hover ~ .uiverse-tilt-card { transform: rotateX(-20deg) rotateY(-15deg); }
+.uiverse-tilt-tr-22:hover ~ .uiverse-tilt-card { transform: rotateX(-20deg) rotateY(-10deg); }
+.uiverse-tilt-tr-23:hover ~ .uiverse-tilt-card { transform: rotateX(-20deg) rotateY(0deg); }
+.uiverse-tilt-tr-24:hover ~ .uiverse-tilt-card { transform: rotateX(-20deg) rotateY(10deg); }
+.uiverse-tilt-tr-25:hover ~ .uiverse-tilt-card { transform: rotateX(-20deg) rotateY(15deg); }
+
+/* Uiverse.io Color-Fill Card - DBIZ Customization */
+.uiverse-fill-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  padding: 32px;
+  overflow: hidden;
+  border-radius: 2rem;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  min-height: 220px;
+}
+
+.uiverse-fill-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  color: #1e293b;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 10;
+}
+
+.uiverse-fill-card:hover .uiverse-fill-content {
+  color: #ffffff;
+}
+
+.uiverse-fill-heading {
+  font-weight: 900;
+  font-size: 1.75rem;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.uiverse-fill-para {
+  line-height: 1.6;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.uiverse-fill-btn {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  background: #14b8a6;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.uiverse-fill-card:hover .uiverse-fill-content {
+  color: #ffffff;
+}
+
+.uiverse-fill-card::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.uiverse-fill-card:hover::before {
+  width: 100%;
+}
+
+.uiverse-fill-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-color: transparent;
+}
+
+.uiverse-fill-card:hover .uiverse-fill-btn {
+  color: #0c1222;
+  background: #ffffff;
+}
+
+.uiverse-fill-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Uiverse.io Logo-Reveal Card - DBIZ Customization */
+.uiverse-reveal-card {
+  width: 100%;
+  max-width: 380px;
+  height: 260px;
+  background: #0c1222;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid rgba(20, 184, 166, 0.1);
+  margin: 0 auto;
+}
+
+.uiverse-reveal-border {
+  position: absolute;
+  inset: 0px;
+  border: 2px solid #14b8a6;
+  opacity: 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+.uiverse-reveal-bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  font-size: 8px;
+  text-transform: uppercase;
+  padding: 0px 10px;
+  color: #14b8a6;
+  background: #0c1222;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.5s ease-in-out;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.uiverse-reveal-content {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.uiverse-reveal-icon-box {
+  height: 40px;
+  position: relative;
+  width: 40px;
+  overflow: hidden;
+  transition: all 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #14b8a6;
+}
+
+.uiverse-reveal-icon-box svg {
+  min-width: 32px;
+  height: 32px;
+}
+
+.uiverse-reveal-logo-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 40px;
+  color: #14b8a6;
+  font-size: 14px;
+  font-weight: 900;
+  opacity: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  transition: all 0.5s ease-in-out 0.3s;
+  pointer-events: none;
+}
+
+.uiverse-reveal-card:hover {
+  border-radius: 1rem;
+  transform: scale(1.05);
+  background: #0f172a;
+}
+
+.uiverse-reveal-card:hover .uiverse-reveal-icon-box {
+  width: 160px;
+  animation: uiverse-reveal-opacity 1s ease-in-out;
+}
+
+.uiverse-reveal-card:hover .uiverse-reveal-border {
+  inset: 20px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.uiverse-reveal-card:hover .uiverse-reveal-bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+}
+
+.uiverse-reveal-card:hover .uiverse-reveal-logo-text {
+  opacity: 1;
+  letter-spacing: 2px;
+}
+
+@keyframes uiverse-reveal-opacity {
+  0% { border-right: 1px solid transparent; }
+  10% { border-right: 1px solid #14b8a6; }
+  80% { border-right: 1px solid #14b8a6; }
+  100% { border-right: 1px solid transparent; }
+}
+
+/* Uiverse.io Circular Explosion Card - DBIZ Customization */
+.uiverse-explosion-card {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  background: #ffffff;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  border: 1px solid #f1f5f9;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.uiverse-explosion-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0c1222 0%, #1e293b 100%);
+  clip-path: circle(0% at 100% 0%);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+  z-index: 1;
+}
+
+.uiverse-explosion-card:hover .uiverse-explosion-bg {
+  clip-path: circle(150% at 100% 0%);
+}
+
+.uiverse-explosion-content {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+}
+
+.uiverse-explosion-card:hover .uiverse-explosion-content {
+  color: white;
+}
+
+.uiverse-explosion-icon {
+  width: 60px;
+  height: 60px;
+  background: #f8fafc;
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  color: #14b8a6;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.uiverse-explosion-card:hover .uiverse-explosion-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: rotate(360deg);
+}
+
+.uiverse-explosion-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #0c1222;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  transition: all 0.5s ease;
+}
+
+.uiverse-explosion-card:hover .uiverse-explosion-title {
+  color: white;
+}
+
+.uiverse-explosion-list {
+  margin-top: auto;
+  opacity: 0.6;
+  transition: all 0.5s ease;
+}
+
+.uiverse-explosion-card:hover .uiverse-explosion-list {
+  opacity: 1;
+}
+
+.uiverse-explosion-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 80px -15px rgba(12, 18, 34, 0.3);
+}
+
+/* Specialized Service Card - Glint Sheen Effect */
+.uiverse-specialized-card {
+  position: relative;
+  background: white;
+  border: 1px solid #f1f5f9 !important;
+  border-radius: 2.5rem !important;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.uiverse-specialized-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(20, 184, 166, 0.1),
+    rgba(255, 255, 255, 0.6),
+    rgba(20, 184, 166, 0.1),
+    transparent
+  );
+  transition: 0.6s;
+  z-index: 2;
+}
+
+.uiverse-specialized-card:hover::before {
+  left: 100%;
+}
+/* 3D Flip Card - DBIZ Style */
+.uiverse-flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 380px;
+  perspective: 1000px;
+}
+
+.uiverse-flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.uiverse-flip-card:hover .uiverse-flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.uiverse-flip-card-front, .uiverse-flip-card-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.uiverse-flip-card-front {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.uiverse-flip-card-back {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: white;
+  transform: rotateY(180deg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
