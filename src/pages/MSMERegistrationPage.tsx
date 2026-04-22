@@ -141,7 +141,7 @@ const MSMERegistrationPage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -247,31 +247,33 @@ const MSMERegistrationPage = () => {
         </section>
 
         {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'features', icon: Shield, label: 'Features' },
-                { id: 'benefits', icon: TrendingUp, label: 'Benefits & Mandates' },
+                { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1139,6 +1141,58 @@ const MSMERegistrationPage = () => {
               </div> {/* End of flex-col 871 */}
             </div> {/* End of container-custom 870 */}
         </section> {/* End of section 869 */}
+
+          {/* Deadlines Section */}
+          <div id="deadlines" className="py-20 scroll-mt-32">
+            <div className="container-custom">
+              <div className="consultancy-section-card animate-on-scroll">
+                <p className="consultancy-label">Timelines</p>
+                <h4 className="consultancy-heading">MSME Compliance Deadlines</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[
+                    { title: "Udyam Registration", due: "Immediate / Anytime", desc: "Registration can be done anytime after starting business operations." },
+                    { title: "Data Update", due: "Annual (by 31st Oct)", desc: "Mandatory annual update of turnover and investment details on Udyam portal." },
+                    { title: "Delayed Payment Filing", due: "Half-Yearly (MSME-1)", desc: "For companies: Filings regarding outstanding payments to MSME suppliers." }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                      <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                      <div>
+                        <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                        <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                        <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Penalties Section */}
+          <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+            <div className="container-custom">
+              <div className="consultancy-section-card animate-on-scroll">
+                <p className="consultancy-label">Legal Risks</p>
+                <h4 className="consultancy-heading">Consequences & Penalties</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    { title: "False Information", desc: "Furnishing false information in Udyam registration can lead to penalties under the MSME Act." },
+                    { title: "Penalty for 1st Offence", desc: "Fine up to ₹1,000 as per statutory provisions." },
+                    { title: "Subsequent Offences", desc: "Fine ranging from ₹1,000 to ₹10,000 for repeated violations." },
+                    { title: "Loss of Benefits", desc: "Incorrect registration may lead to cancellation of MSME benefits and subsidies." }
+                  ].map((item, i) => (
+                    <div key={i} className="penalty-inner-card">
+                       <div className="penalty-header">
+                          <div className="penalty-dot"></div>
+                          <span className="penalty-title">{item.title}</span>
+                       </div>
+                       <p className="penalty-desc text-gray-500">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
          {/* Our Commitment Section */}
          <section className="py-12 bg-white">

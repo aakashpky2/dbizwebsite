@@ -47,7 +47,7 @@ const EnhancedPublicLimitedPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({
@@ -118,37 +118,36 @@ const EnhancedPublicLimitedPage = () => {
         </div>
       </section>
 
-      {/* Navigation Section */}
-      <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-        <div className="container-custom py-2">
-          <div className="flex items-center overflow-x-auto no-scrollbar">
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
-              <Building2 className="mr-2 h-4 w-4" /> Overview
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('features')}>
-              <Shield className="mr-2 h-4 w-4" /> Key Features
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('benefits')}>
-              <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('comparison')}>
-              <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('documents')}>
-              <FileText className="mr-2 h-4 w-4" /> Documents
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('process')}>
-              <ArrowRight className="mr-2 h-4 w-4" /> Process
-            </div>
-
-            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
-              <Users className="mr-2 h-4 w-4" /> FAQs
-            </div>
+      <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+        <div className="container-custom py-1">
+          <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+            {[
+              { id: 'overview', icon: Building2, label: 'Overview' },
+              { id: 'features', icon: Shield, label: 'Features' },
+              { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
+              { id: 'documents', icon: FileText, label: 'Documents' },
+              { id: 'process', icon: ArrowRight, label: 'Process' },
+              { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+              { id: 'penalties', icon: Gavel, label: 'Penalties' },
+              { id: 'faqs', icon: Users, label: 'FAQs' }
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                  isActive(item.id)
+                    ? 'bg-dbiz-teal text-white shadow-md'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSectionClick(item.id);
+                }}
+              >
+                <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                {item.label}
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -439,78 +438,7 @@ const EnhancedPublicLimitedPage = () => {
         </div>
       </section>
 
-      {/* Structure Comparison Section */}
-      <section id="comparison" className="py-16 bg-gray-50 scroll-mt-32">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
-              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-              Comparison
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Comparison of Business Structures</h2>
-
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Understand how a Public Limited Company compares with other common business entities in India.
-            </p>
-          </div>
-
-          <div className="rounded-xl bg-white shadow-md border border-gray-100 overflow-hidden">
-            <div className="overflow-x-auto">
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-gray-50">
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Feature</TableHead>
-                    <TableHead className="bg-dbiz-teal/10 py-4 text-dbiz-navy font-bold">Public Limited</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Private Limited</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">LLP</TableHead>
-                    <TableHead className="py-4 text-dbiz-navy font-bold">Proprietorship</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Liability</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r">Limited</TableCell>
-                    <TableCell className="border-r">Limited</TableCell>
-                    <TableCell className="border-r">Limited</TableCell>
-                    <TableCell>Unlimited</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Legal Entity</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r">Separate</TableCell>
-                    <TableCell className="border-r">Separate</TableCell>
-                    <TableCell className="border-r">Separate</TableCell>
-                    <TableCell>Not separate</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Ownership</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r">Min 7 members</TableCell>
-                    <TableCell className="border-r">2–200 members</TableCell>
-                    <TableCell className="border-r">2+ partners</TableCell>
-                    <TableCell>Single owner</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Capital Raising</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r">Public investment</TableCell>
-                    <TableCell className="border-r">Private investment</TableCell>
-                    <TableCell className="border-r">Partner contribution</TableCell>
-                    <TableCell>Personal funds</TableCell>
-                  </TableRow>
-                  <TableRow>
-                    <TableCell className="font-medium border-r">Compliance</TableCell>
-                    <TableCell className="bg-dbiz-teal/5 border-r">High</TableCell>
-                    <TableCell className="border-r">Moderate</TableCell>
-                    <TableCell className="border-r">Moderate</TableCell>
-                    <TableCell>Minimal</TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Documents Required Section — matching Private Limited design */}
+      {/* Documents Required Section */}
       <section id="documents" className="py-16 scroll-mt-32">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -526,7 +454,6 @@ const EnhancedPublicLimitedPage = () => {
             </p>
           </div>
 
-          {/* Common rejection prevention tip */}
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
             <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
@@ -682,10 +609,7 @@ const EnhancedPublicLimitedPage = () => {
 
       {/* Registration Process Section */}
       <section id="process" className="py-24 bg-dbiz-navy text-white scroll-mt-32 relative overflow-hidden">
-        {/* Subtle patterned background for depth */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        
-        {/* Decorative glows */}
         <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-dbiz-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-dbiz-teal/10 rounded-full blur-[120px] pointer-events-none"></div>
         
@@ -700,242 +624,18 @@ const EnhancedPublicLimitedPage = () => {
             
             <div className="text-lg text-white/80 mb-8 leading-relaxed max-w-5xl mx-auto flex flex-col items-center">
               <p className="text-center">Registering a Public Limited Company{location ? ` in ${cityName}` : ""} involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA).</p>
-              <p className="text-center">The process includes obtaining digital signatures, reserving the company name, filing incorporation documents with the Registrar of Companies (ROC),</p>
-              <p className="text-center">and completing post-incorporation formalities.</p>
             </div>
-            
-            <p className="text-dbiz-teal font-medium mb-12 border-l-4 border-dbiz-teal pl-6 italic bg-white/5 py-4 rounded-r-lg">
-              With professional assistance from D BIZ CONSULTANCY, businesses can complete the Public Limited Company registration process efficiently while ensuring full compliance with statutory requirements.
-            </p>
-
-            <h3 className="text-2xl font-bold mt-12 mb-8 text-center text-white">Step-by-Step Public Limited Company Registration Process</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                step: "1",
-                title: "Obtain Digital Signature Certificate (DSC)",
-                desc: "The first step in registering a Public Limited Company is obtaining a Digital Signature Certificate (DSC) for all proposed directors. A DSC is required to digitally sign electronic documents submitted to the MCA portal.",
-                points: ["Mandatory for all directors and authorized signatories", "Used for signing incorporation documents online", "Issued by government-approved certifying authorities"]
-              },
-              {
-                step: "2",
-                title: "Apply for Director Identification Number (DIN)",
-                desc: "A Director Identification Number (DIN) is a unique identification number allotted to individuals who wish to become directors of a company.",
-                points: ["Mandatory for all directors under the Companies Act, 2013", "Applied through MCA during incorporation", "Remains valid for lifetime once allotted"]
-              },
-              {
-                step: "3",
-                title: "Company Name Reservation",
-                desc: "The next step is reserving the proposed company name through the MCA portal. It must be unique and not identical to existing companies.",
-                points: ["Must comply with Companies (Incorporation) Rules", "Should avoid conflicts with registered trademarks", "Reserved for 20 days for incorporation filing"]
-              },
-              {
-                step: "4",
-                title: "Drafting MOA and AOA",
-                desc: "The Memorandum of Association (MOA) and Articles of Association (AOA) are the most critical documents created for the company.",
-                points: ["MOA defines objectives and operational scope", "AOA outlines internal rules and governance", "Rights of directors and shareholders defined"]
-              },
-              {
-                step: "5",
-                title: "Filing with Registrar of Companies",
-                desc: "Incorporation forms are filed with the ROC through the MCA portal. Supporting documents like ID proofs and declarations are mandatory.",
-                points: ["INC-32 (SPICe+) application for incorporation", "DIR-12 for appointment of directors", "INC-22 for registered office address"]
-              },
-              {
-                step: "6",
-                title: "Certificate of Incorporation (COI)",
-                desc: "After successful verification, the ROC issues the Certificate of Incorporation (COI), legally confirming the company's existence.",
-                points: ["Contains Company Identification Number (CIN)", "Official date of incorporation mentioned", "Conclusive proof of legal existence"]
-              },
-              {
-                step: "7",
-                title: "PAN and TAN Allocation",
-                desc: "After incorporation, the company receives its unique tax identifiers issuing by the Income Tax Department.",
-                points: ["PAN for income tax and financial identity", "TAN for tax deduction and collection (TDS)", "Essential for opening bank accounts"]
-              },
-              {
-                step: "8",
-                title: "Opening a Company Bank Account",
-                desc: "The company must open a current account in its name. Banks generally require the COI, PAN, and constitutional documents.",
-                points: ["Requires Board Resolution and COI", "KYC documents of all directors", "Allows legal business transactions"]
-              },
-              {
-                step: "9",
-                title: "Commencement of Business",
-                desc: "Public companies must file a declaration for commencement of business within 180 days of incorporation.",
-                points: ["Form INC-20A is mandatory filing", "Requires proof of share capital payment", "Crucial for starting legal operations"]
-              }
+              { step: "1", title: "Obtain Digital Signature Certificate (DSC)", desc: "Mandatory for all directors to sign electronic documents on the MCA portal." },
+              { step: "2", title: "Apply for Director Identification Number (DIN)", desc: "A unique identification number for individuals intended to be directors." },
+              { step: "3", title: "Company Name Reservation", desc: "Reserve a unique name for the company via the MCA portal." },
+              { step: "4", title: "Drafting MOA and AOA", desc: "Creation of company's core governing documents (Memorandum & Articles of Association)." },
+              { step: "5", title: "Filing with ROC", desc: "Filing incorporation forms (SPICe+) with necessary documentation." },
+              { step: "6", title: "Certificate of Incorporation", desc: "Issuance of COI by the ROC confirming the company's legal status." }
             ].map((s, i) => (
-              <div key={i} className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-all group">
-                <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-5 text-white">
-                  <h4 className="text-lg font-semibold flex items-center">
-                    <span className="flex items-center justify-center bg-white text-dbiz-navy rounded-full h-8 w-8 text-lg mr-3 font-bold group-hover:scale-110 transition-transform">{s.step}</span>
-                    {s.title}
-                  </h4>
-                </div>
-                <div className="p-6 flex-grow">
-                  <p className="text-gray-700 mb-4 leading-relaxed text-sm">
-                    {s.desc}
-                  </p>
-                  <div className="space-y-2 mt-auto">
-                    <p className="font-semibold text-dbiz-navy text-xs uppercase">Key Highlights:</p>
-                    <ul className="text-sm text-gray-600 space-y-1">
-                      {s.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-dbiz-teal mt-0.5 flex-shrink-0" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center">Estimated Timeline for Registration</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-dbiz-teal font-bold text-sm">1-2</span>
-                </div>
-                <p className="text-sm font-medium text-dbiz-navy">Days</p>
-                <p className="text-xs text-gray-600 mt-1">DSC and DIN Acquisition</p>
-              </div>
-
-              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-dbiz-teal font-bold text-sm">2-3</span>
-                </div>
-                <p className="text-sm font-medium text-dbiz-navy">Days</p>
-                <p className="text-xs text-gray-600 mt-1">Name Reservation (RUN)</p>
-              </div>
-
-              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-dbiz-teal font-bold text-sm">2-4</span>
-                </div>
-                <p className="text-sm font-medium text-dbiz-navy">Days</p>
-                <p className="text-xs text-gray-600 mt-1">Document Preparation (MOA/AOA)</p>
-              </div>
-
-              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all">
-                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-dbiz-teal font-bold text-sm">7-15</span>
-                </div>
-                <p className="text-sm font-medium text-dbiz-navy">Days</p>
-                <p className="text-xs text-gray-600 mt-1">ROC Approval & Incorporation</p>
-              </div>
-
-              <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm text-center hover:border-dbiz-teal/30 hover:shadow-md transition-all sm:col-span-2 lg:col-span-1">
-                <div className="bg-dbiz-teal/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-dbiz-teal font-bold text-sm">20-30</span>
-                </div>
-                <p className="text-sm font-medium text-dbiz-navy">Working Days</p>
-                <p className="text-xs text-gray-600 mt-1 font-bold">Total Registration Time</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance Section */}
-      <section id="compliance" className="py-16 bg-dbiz-navy text-white scroll-mt-32">
-        <div className="container-custom">
-           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Mandatory Compliance for Public Limited Companies</h2>
-            <p className="text-lg opacity-80 leading-relaxed">
-              Ongoing compliance is critical for Public Limited Companies to maintain legal standing and avoid penalties.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto rounded-xl bg-white/5 border border-white/10 overflow-hidden shadow-2xl backdrop-blur-sm">
-            <Table>
-              <TableHeader>
-                <TableRow className="border-white/10 hover:bg-transparent">
-                  <TableHead className="py-5 text-dbiz-teal font-bold text-lg">Compliance Requirement</TableHead>
-                  <TableHead className="py-5 text-dbiz-teal font-bold text-lg text-right">Timeline</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">First Board Meeting</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Within 30 days of incorporation</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Appointment of Auditor</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Within 30 days</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Board Meetings</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Minimum 4 per year</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Statutory Audit</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Annually</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Annual General Meeting</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Once every year</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Financial Statement Filing (AOC-4)</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Within 30 days of AGM</TableCell>
-                </TableRow>
-                <TableRow className="border-white/10 hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Annual Return Filing (MGT-7)</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Within 60 days of AGM</TableCell>
-                </TableRow>
-                <TableRow className="border-none hover:bg-white/5 transition-colors">
-                  <TableCell className="py-4 font-medium text-white">Income tax Return</TableCell>
-                  <TableCell className="py-4 text-right text-gray-300">Annually</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-sm opacity-60 italic">
-              * Non-compliance can lead to heavy penalties and legal consequences for directors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Section */}
-      <section className="py-20 bg-gray-50 overflow-hidden">
-        <div className="container-custom">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 overflow-hidden relative animate-fade-in">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-dbiz-teal/5 rounded-full -mr-32 -mt-32"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-dbiz-navy/5 rounded-full -ml-32 -mb-32"></div>
-            
-            <div className="relative z-10">
-              <div className="flex flex-col lg:flex-row gap-12">
-                <div className="lg:w-1/2">
-                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-6">
-                    <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                    Why Choose Us
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Why Choose D BIZ CONSULTANCY?</h2>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-                    D BIZ CONSULTANCY is a trusted business consultancy firm based in <span className="font-semibold text-dbiz-navy">Trivandrum and Kochi</span>, providing comprehensive support for business registrations, statutory compliance, taxation services, and corporate advisory.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed mb-8">
-                    With extensive experience in company incorporation and regulatory compliance, our team ensures that entrepreneurs, startups, and growing businesses receive reliable guidance, accurate documentation, and complete compliance support under the applicable laws and regulations.
-                  </p>
-                  
-                  <div className="bg-dbiz-teal/5 p-6 rounded-2xl border border-dbiz-teal/10 hover:bg-dbiz-teal/10 transition-colors duration-300">
-                    <p className="text-dbiz-navy font-medium italic">
-                      "By choosing D BIZ CONSULTANCY, businesses benefit from professional expertise, streamlined processes, and end-to-end support, enabling them to focus on growth while we handle the legal and regulatory requirements."
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="lg:w-1/2">
-                  <h3 className="text-2xl font-bold text-dbiz-navy mb-8">Our Key Services</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
                       "Public Limited Company Registration",
@@ -965,7 +665,61 @@ const EnhancedPublicLimitedPage = () => {
         </div>
       </section>
 
-      {/* FAQs Section */}
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">Public Limited Compliance Deadlines</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Financials (AOC-4)", due: "30 Days from AGM", desc: "Mandatory filing of audited financial statements including balance sheet and P&L." },
+                        { title: "Annual Return (MGT-7)", due: "60 Days from AGM", desc: "Statutory return providing details of shareholders, directors, and shareholding patterns." },
+                        { title: "Auditor Appointment", due: "Within 15 Days of BM", desc: "Filing Form ADT-1 after the first Board Meeting following the AGM appointment." },
+                        { title: "Director KYC (DIR-3)", due: "By 30th September", desc: "Annual KYC verification for all directors holding a DIN as per MCA regulations." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Late ROC Filing Fees", desc: "A penalty of ₹100 per day is levied for each day of delay in filing mandatory MCA forms." },
+                        { title: "Director Disqualification", desc: "Failure to file annual returns for 3 consecutive years leads to disqualification of directors." },
+                        { title: "SEBI Violations", desc: "Listed public companies face heavy fines and potential suspension for non-compliance with SEBI norms." },
+                        { title: "Company Strike-off", desc: "Prolonged non-compliance may lead the ROC to strike off the company name from the register." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-16 text-center animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With strong experience in corporate governance and large-scale business compliance, DBIZ CONSULTANCY is a trusted partner for Public Limited Companies. We handle the entire incorporation and statutory process—so you can focus on building market leadership with confidence.
+                   </p>
+                </div>
       <section id="faqs" className="py-20 bg-gray-50 scroll-mt-32">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">

@@ -95,7 +95,7 @@ const IECRegistrationPage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -219,32 +219,33 @@ const IECRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'features', icon: Shield, label: 'Features' },
                 { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1081,12 +1082,61 @@ const IECRegistrationPage = () => {
                </div>
             </div>
 
-            <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
-               <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
-               <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
-                 With strong experience in business registrations and compliance services, DBIZ CONSULTANCY is a trusted partner for businesses entering global markets. We handle the entire IEC process—so you can focus on expanding your business internationally with confidence.
-               </p>
-            </div>
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">IEC Deadlines & Compliance</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Annual Update", due: "April – June (Every Year)", desc: "Mandatory annual update of IEC details on DGFT portal to keep the code active." },
+                        { title: "Initial Allotment", due: "Same Day", desc: "IEC number is typically issued instantly after successful Aadhaar/DSC verification." },
+                        { title: "Query Response", due: "Immediate", desc: "Response to DGFT queries must be filed promptly to ensure quick approval." },
+                        { title: "Profile Modification", due: "As Needed", desc: "Updates to bank details or address should be done immediately after changes." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Consequences</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "IEC Deactivation", desc: "Failure to update IEC annually leads to automatic deactivation on the DGFT portal." },
+                        { title: "Trade Suspension", desc: "Import and export activities are suspended while the IEC is inactive or deactivated." },
+                        { title: "Benefit Forfeiture", desc: "Inability to claim export incentives or subsidies if IEC compliance is not maintained." },
+                        { title: "Customs Delays", desc: "Incorrect or inactive IEC leads to significant delays and storage costs at customs ports." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With strong experience in business registrations and compliance services, DBIZ CONSULTANCY is a trusted partner for businesses entering global markets. We handle the entire IEC process—so you can focus on expanding your business internationally with confidence.
+                   </p>
+                </div>
           </div>
         </section>
 

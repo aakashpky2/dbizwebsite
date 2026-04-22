@@ -100,7 +100,7 @@ const TDSFilingsPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -167,27 +167,33 @@ const TDSFilingsPage = () => {
           </div>
         </section>
 
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`}
-                onClick={() => handleSectionClick('overview')}
-              >
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`}
-                onClick={() => handleSectionClick('benefits')}
-              >
-                <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </div>
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`}
-                onClick={() => handleSectionClick('faqs')}
-              >
-                <FileText className="mr-2 h-4 w-4" /> FAQs
-              </div>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'deadlines', icon: FileText, label: 'Deadlines' },
+                { id: 'penalties', icon: FileText, label: 'Penalties' },
+                { id: 'faqs', icon: FileText, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -209,6 +215,59 @@ const TDSFilingsPage = () => {
                   <p className="ml-4 text-gray-700">{item}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-16 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">TDS Filing Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "Q1 Return (Apr–Jun)", due: "31st July", desc: "TDS return for Q1 must be filed by July 31 of the assessment year." },
+                  { title: "Q2 Return (Jul–Sep)", due: "31st October", desc: "TDS return for Q2 must be filed by October 31." },
+                  { title: "Q3 Return (Oct–Dec)", due: "31st January", desc: "TDS return for Q3 must be filed by January 31." },
+                  { title: "Q4 Return (Jan–Mar)", due: "31st May", desc: "TDS return for Q4 must be filed by May 31. Form 16/16A issuance by June 15." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <FileText className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-16 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Consequences</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Late Filing Fee", desc: "₹200 per day penalty under Section 234E until the return is filed, subject to TDS amount cap." },
+                  { title: "Interest on Late Payment", desc: "1.5% per month interest under Section 201(1A) on delayed TDS deposit from date of deduction." },
+                  { title: "Penalty u/s 271H", desc: "Penalty ranging from ₹10,000 to ₹1,00,000 for failure to file TDS statements within one year." },
+                  { title: "Prosecution u/s 276B", desc: "Non-deposit of deducted TDS can lead to rigorous imprisonment from 3 months to 7 years." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

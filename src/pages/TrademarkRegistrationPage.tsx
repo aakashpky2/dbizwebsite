@@ -90,7 +90,7 @@ const TrademarkRegistrationPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 140; // Adjusted for sticky nav
+      const headerOffset = 160; // Adjusted for sticky nav
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({
@@ -192,61 +192,40 @@ const TrademarkRegistrationPage = () => {
         </section>
 
         {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-            <a 
-              href="#overview"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('overview'); }}
-            >
-              <Building2 className="mr-2 h-4 w-4" /> Overview
-            </a>
-            <a 
-              href="#features"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('features'); }}
-            >
-              <Shield className="mr-2 h-4 w-4" /> Key Features
-            </a>
-            <a 
-              href="#benefits"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('benefits'); }}
-            >
-              <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-            </a>
-            <a 
-              href="#comparison"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('comparison'); }}
-            >
-              <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-            </a>
-            <a 
-              href="#documents"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('documents'); }}
-            >
-              <FileText className="mr-2 h-4 w-4" /> Documents
-            </a>
-            <a 
-              href="#process"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('process'); }}
-            >
-              <ArrowRight className="mr-2 h-4 w-4" /> Process
-            </a>
-            <a 
-              href="#faqs"
-              className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-              onClick={(e) => { e.preventDefault(); handleSectionClick('faqs'); }}
-            >
-              <Users className="mr-2 h-4 w-4" /> FAQs
-            </a>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Overview Section */}
         <section id="overview" className="py-16 scroll-mt-32">
@@ -617,6 +596,59 @@ const TrademarkRegistrationPage = () => {
                  </div>
               </div>
            </div>
+        </section>
+
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">Trademark Compliance Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "Application to TM Status", due: "Same Day", desc: "Upon filing, the application number is issued immediately, allowing use of the ™ symbol." },
+                  { title: "Examination Report", due: "1–3 Months", desc: "The Registrar issues an examination report within 30–90 days of filing the application." },
+                  { title: "Opposition Period", due: "4 Months (Post-Journal)", desc: "After publication in the Trademark Journal, a 4-month window is open for third-party opposition." },
+                  { title: "Renewal", due: "Every 10 Years", desc: "Trademark registration is valid for 10 years and must be renewed 6 months before expiry." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Infringement Damages", desc: "Using a registered trademark without permission can result in damages, injunctions, and legal costs." },
+                  { title: "Passing Off Claims", desc: "Even unregistered marks can lead to passing off lawsuits if deceptive similarity is proven." },
+                  { title: "Criminal Prosecution", desc: "Trademark counterfeiting is a criminal offence with imprisonment up to 3 years and fines up to ₹2 lakh." },
+                  { title: "Brand Loss", desc: "Failure to register leaves your brand unprotected—competitors can legally adopt similar marks." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* FAQs Section */}

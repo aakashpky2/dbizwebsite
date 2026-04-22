@@ -143,7 +143,7 @@ const DrugLicensePage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -251,7 +251,7 @@ const DrugLicensePage = () => {
         </section>
 
         {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
             <div className="flex items-center overflow-x-auto no-scrollbar py-2">
               {[
@@ -260,22 +260,24 @@ const DrugLicensePage = () => {
                 { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1079,6 +1081,59 @@ const DrugLicensePage = () => {
               </div>
             </div>
           </section>
+
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">Drug License Compliance Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "License Renewal", due: "Every 5 Years", desc: "Drug Licenses must be renewed before expiry. Apply at least 3 months prior to avoid lapse in operations." },
+                  { title: "Record Maintenance", due: "Ongoing / Daily", desc: "Mandatory maintenance of purchase, sale, and stock registers with batch-wise details as per Rule 65." },
+                  { title: "Annual Returns", due: "Yearly (State-Specific)", desc: "Annual returns on drug sales and storage must be filed with the Drug Control Authority per state rules." },
+                  { title: "Pharmacist Availability", due: "During All Business Hours", desc: "A qualified registered pharmacist must be present during all operational hours as per the Pharmacy Act." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Legal Consequences</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Imprisonment", desc: "Operating without a valid Drug License can lead to imprisonment up to 3–5 years under the Drugs Act." },
+                  { title: "License Cancellation", desc: "Non-compliance with storage, record-keeping, or pharmacist norms can result in permanent license revocation." },
+                  { title: "Product Seizure", desc: "Drug Inspectors can seize and confiscate drugs stored or sold in violation of prescribed conditions." },
+                  { title: "Business Closure", desc: "Authorities can order immediate closure of premises found operating without proper licensing." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* 10. FAQs Section */}
         <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32">

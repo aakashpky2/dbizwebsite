@@ -142,7 +142,7 @@ const FSSAIRegistrationPage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -247,32 +247,33 @@ const FSSAIRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'features', icon: Shield, label: 'Features' },
                 { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1107,10 +1108,59 @@ const FSSAIRegistrationPage = () => {
                 </div>
 
 
-                <div className="mt-20 text-center max-w-4xl mx-auto border-t border-gray-100 pt-16 animate-on-scroll">
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">FSSAI Deadlines & Renewal</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "License Renewal", due: "30 Days Before Expiry", desc: "Renewal application must be filed to avoid late fees and business suspension." },
+                        { title: "Annual Return (Form D1)", due: "By 31st May", desc: "Mandatory for manufacturers and importers to file annual returns every financial year." },
+                        { title: "Half-Yearly Return", due: "Every 6 Months", desc: "Specific requirement for milk and milk product manufacturers (Form D2)." },
+                        { title: "Initial Approval", due: "3 – 7 Working Days", desc: "Estimated timeline for basic registration and state license in normal cases." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Consequences</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Operating Without License", desc: "Imprisonment up to 6 months and fine up to ₹5 Lakhs for unauthorized food business." },
+                        { title: "Sub-standard Food", desc: "Fine up to ₹5 Lakhs for selling food products not meeting quality standards." },
+                        { title: "Misbranded Food", desc: "Fine up to ₹3 Lakhs for incorrect or misleading labeling on products." },
+                        { title: "Failure to Comply", desc: "Fine up to ₹2 Lakhs for not following improvement notices from FSSAI authorities." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-16 text-center animate-on-scroll">
                    <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
-                   <p className="text-[19.125px] text-gray-700 leading-relaxed font-medium">
-                     With strong experience in food business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for food entrepreneurs. We handle the entire FSSAI process—so you can focus on building your brand with confidence.
+                   <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With strong experience in food safety regulations and business compliance, DBIZ CONSULTANCY is a trusted partner for Food Business Operators. We handle the entire FSSAI process—so you can focus on serving your customers with confidence.
                    </p>
                 </div>
               </div>

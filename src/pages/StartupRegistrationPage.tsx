@@ -62,7 +62,7 @@ const StartupRegistrationPage = () => {
     
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -170,72 +170,37 @@ const StartupRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('overview')}
-              >
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('features')}
-              >
-                <Shield className="mr-2 h-4 w-4" /> Key Features
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('benefits')}
-              >
-                <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('eligibility') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('eligibility')}
-              >
-                <FileBarChart className="mr-2 h-4 w-4" /> Eligibility
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('documents')}
-              >
-                <FileText className="mr-2 h-4 w-4" /> Documents
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('process')}
-              >
-                <ArrowRight className="mr-2 h-4 w-4" /> Process
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('faqs')}
-              >
-                <CheckCircle className="mr-2 h-4 w-4" /> FAQs
-              </div>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'eligibility', icon: FileBarChart, label: 'Eligibility' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -679,7 +644,61 @@ const StartupRegistrationPage = () => {
           </div>
         </section>
 
-        {/* FAQs Section */}
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">Startup Compliance Deadlines</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Annual Self-Certification", due: "Every Financial Year", desc: "Mandatory self-certification under labor and environmental laws for the first 5 years." },
+                        { title: "Section 80-IAC Tax Holiday", due: "Post Recognition", desc: "Application for income tax exemption can be filed anytime after receiving DPIIT recognition." },
+                        { title: "Angel Tax Exemption", due: "One-time Application", desc: "Application for exemption under Section 56(2)(viib) to avoid tax on share premium." },
+                        { title: "Parent Entity Compliance", due: "ROC/LLP Timelines", desc: "Regular annual filings (AOC-4, MGT-7, Form 8/11) as per the parent entity structure." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Risks</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Loss of Recognition", desc: "Startup status is lost if turnover exceeds ₹100 Crore or entity age crosses 10 years." },
+                        { title: "Tax Benefit Forfeiture", desc: "Failure to maintain compliance or meeting 80-IAC criteria results in loss of tax holidays." },
+                        { title: "False Self-Certification", desc: "Incorrect self-certification under labor/environmental laws leads to heavy fines and legal action." },
+                        { title: "Standard MCA Penalties", desc: "Regular late filing fees for ROC/LLP returns apply as per standard government norms." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-16 text-center animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With deep expertise in the startup ecosystem and government regulations, DBIZ CONSULTANCY is a trusted partner for emerging entrepreneurs. We handle the entire recognition and compliance process—so you can focus on building your vision with confidence.
+                   </p>
+                </div>
         <section id="faqs" className="py-16 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">

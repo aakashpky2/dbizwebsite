@@ -199,72 +199,37 @@ const LLPRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Navigation Section */}
-        <section className="sticky top-20 z-50 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('overview')}
-              >
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('features')}
-              >
-                <Shield className="mr-2 h-4 w-4" /> Key Features
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('benefits')}
-              >
-                <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('comparison')}
-              >
-                <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('documents')}
-              >
-                <FileText className="mr-2 h-4 w-4" /> Documents
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('process')}
-              >
-                <ArrowRight className="mr-2 h-4 w-4" /> Process
-              </div>
-              
-              <div 
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${
-                  isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'
-                }`}
-                onClick={() => handleSectionClick('faqs')}
-              >
-                <Users className="mr-2 h-4 w-4" /> FAQs
-              </div>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>

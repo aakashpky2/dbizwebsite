@@ -75,7 +75,7 @@ const NidhiCompanyPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({
@@ -149,65 +149,36 @@ const NidhiCompanyPage = () => {
           </div>
         </section>
 
-        {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <a 
-                href="#overview"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('overview'); }}
-              >
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </a>
-
-              <a 
-                href="#features"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('features'); }}
-              >
-                <Shield className="mr-2 h-4 w-4" /> Key Features
-              </a>
-
-              <a 
-                href="#comparison"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('comparison'); }}
-              >
-                <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-              </a>
-
-              <a 
-                href="#documents"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('documents'); }}
-              >
-                <FileText className="mr-2 h-4 w-4" /> Documents
-              </a>
-
-              <a 
-                href="#process"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('process'); }}
-              >
-                <ArrowRight className="mr-2 h-4 w-4" /> Process
-              </a>
-
-              <a 
-                href="#compliance"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('compliance') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('compliance'); }}
-              >
-                <Clock className="mr-2 h-4 w-4" /> Compliance
-              </a>
-
-              <a 
-                href="#faqs"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('faqs'); }}
-              >
-                <Users className="mr-2 h-4 w-4" /> FAQs
-              </a>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -755,7 +726,61 @@ const NidhiCompanyPage = () => {
           </div>
         </section>
 
-        {/* FAQs Section */}
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">Nidhi Statutory Deadlines</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Form NDH-4", due: "Within 120 Days", desc: "Mandatory application for declaration as a Nidhi company after incorporation." },
+                        { title: "Form NDH-1", due: "90 Days from FY Close", desc: "Statutory return detailing membership and Net Owned Funds (NOF) compliance." },
+                        { title: "Form NDH-3", due: "Within 30 Days (Half-Yearly)", desc: "Half-yearly return to be filed with the ROC to ensure ongoing compliance with Nidhi Rules." },
+                        { title: "Annual MCA Filings", due: "AOC-4 & MGT-7", desc: "Standard public company filings for financial statements and annual returns." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Consequences</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "NDH-4 Rejection", desc: "Failure or rejection of NDH-4 bars the company from accepting any further deposits from members." },
+                        { title: "Rule Violation Fine", desc: "Non-compliance with Nidhi Rules attracts a penalty of up to ₹5,000 per violation." },
+                        { title: "Continuing Default", desc: "A further fine of ₹500 per day is levied for defaults that continue after the initial penalty." },
+                        { title: "Insolvency Risk", desc: "Breach of deposit-to-NOF ratios or reserve requirements can lead to mandatory winding up." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-16 text-center animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With deep expertise in Nidhi Rules and MCA regulations, DBIZ CONSULTANCY is a trusted partner for mutual benefit companies. We handle the entire incorporation and NDH-4 declaration process—so you can foster thrift and savings with confidence.
+                   </p>
+                </div>
         <section id="faqs" className="py-16 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">

@@ -61,7 +61,7 @@ const AnnualCompliancePage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -105,7 +105,7 @@ const AnnualCompliancePage = () => {
           </div>
         </section>
 
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
+        <section className="sticky top-[70px] lg:top-[90px] z-10 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
               <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>

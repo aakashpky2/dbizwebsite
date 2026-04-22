@@ -124,7 +124,7 @@ const MCACompliancePage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -138,7 +138,7 @@ const MCACompliancePage = () => {
   const isActive = (section: string) => activeSection === section;
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
         
@@ -227,7 +227,7 @@ const MCACompliancePage = () => {
                   
                   {/* Hero Image */}
                   <img 
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=60" 
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" 
                     alt="MCA Compliance Professional Services" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-white/20 mb-6"
                   />
@@ -251,9 +251,9 @@ const MCACompliancePage = () => {
         </section>
 
         {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100 animate-on-scroll-big">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'challenges', icon: AlertTriangle, label: 'Common Challenges' },
                 { id: 'overview', icon: Building2, label: 'Overview' },
@@ -262,23 +262,24 @@ const MCACompliancePage = () => {
                 { id: 'advantage', icon: Award, label: 'Our Advantage' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
                 { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[13px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -295,7 +296,7 @@ const MCACompliancePage = () => {
                 Common Challenges
               </div>
               <h2 className="text-[42px] font-extrabold text-dbiz-navy mb-6 tracking-tight leading-tight animate-on-scroll">
-                Facing Challenges in MCA Annual Compliance?
+                Common Challenges
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed font-medium animate-on-scroll [animation-delay:100ms]">
                 Many companies and LLPs face difficulties in managing MCA compliance due to changing regulations, strict deadlines, and complex filing requirements.
@@ -344,10 +345,10 @@ const MCACompliancePage = () => {
               </button>
             </div>
 
-            <div className="mt-32 scroll-mt-32" id="about-mca">
+            <div className="mt-32 scroll-mt-32" id="overview">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20 animate-on-scroll">
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">What is MCA Annual Compliance?</h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Overview</h2>
                   <p className="text-xl text-gray-700 font-bold leading-relaxed mb-10">
                     MCA Annual Compliance is the process of filing mandatory returns and documents with the Ministry of Corporate Affairs (MCA) to ensure that a company or LLP remains legally compliant under the Companies Act, 2013 and applicable rules.
                   </p>
@@ -356,7 +357,7 @@ const MCACompliancePage = () => {
                     <div className="absolute -inset-4 bg-dbiz-teal/5 rounded-[2.5rem] blur-2xl group-hover:bg-dbiz-teal/10 transition-all"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 h-[300px]">
                       <img 
-                        src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
+                        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" 
                         alt="Corporate Compliance" 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -427,7 +428,7 @@ const MCACompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 3. Eligibility Matrix
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-6 tracking-tight leading-tight">Who Should File MCA Annual Compliance?</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-6 tracking-tight leading-tight">Applicability</h2>
               <p className="text-lg text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">
                 To ensure proper compliance, it is important to identify entities required to file MCA returns. The table below outlines the categories and their applicability.
               </p>
@@ -519,7 +520,7 @@ const MCACompliancePage = () => {
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                   5. Full Coverage
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight">Compliances Covered Under MCA Annual Filing</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight">Filing Services</h2>
                 <p className="text-xl text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">We handle all aspects of MCA annual compliance with proper classification and adherence to the Companies Act requirements.</p>
               </div>
 
@@ -560,7 +561,7 @@ const MCACompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 6. Our Advantage
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Why Choose D BIZ CONSULTANCY for MCA Annual Compliance Services?</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Our Advantage</h2>
               <div className="space-y-6 text-xl text-gray-700 font-medium max-w-5xl mx-auto">
                  <p>D BIZ CONSULTANCY has experienced professionals who handle MCA compliance with accuracy and efficiency. We ensure proper filing of ROC forms, reducing the risk of penalties, late fees, and legal complications.</p>
                  <p>Our approach focuses on precise documentation, correct filing, and complete transparency in pricing. There are no hidden charges, and every service is delivered with clarity and reliability.</p>
@@ -680,7 +681,7 @@ const MCACompliancePage = () => {
                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal text-white text-[11px] font-black tracking-[0.3em] mb-6 uppercase animate-on-scroll">
                 8. Workflow
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight animate-on-scroll [animation-delay:100ms]">Structured Step-by-Step Process</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight animate-on-scroll [animation-delay:100ms]">Process</h2>
               <p className="text-xl text-white/60 font-medium animate-on-scroll [animation-delay:200ms]">We follow a structured and systematic approach to ensure accurate filing and smooth corporate management.</p>
             </div>
 
@@ -742,7 +743,7 @@ const MCACompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 9. DOCUMENTATION
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Document Requirements for MCA Annual Compliance</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Documents</h2>
               <p className="text-xl text-gray-600 font-medium max-w-4xl mx-auto">
                 To ensure accurate MCA filing and smooth compliance, it is important to maintain proper records and provide complete documentation. The following details are required for efficient preparation and filing of ROC returns.
               </p>
@@ -824,7 +825,7 @@ const MCACompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 10. BENEFITS
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Benefits of Professional MCA Annual Compliance</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Our Advantage</h2>
               <p className="text-xl text-gray-600 font-medium max-w-3xl leading-relaxed mx-auto">
                 Professional MCA compliance ensures smooth corporate functioning and helps companies avoid legal risks and penalties.
               </p>
@@ -876,7 +877,12 @@ const MCACompliancePage = () => {
             {/* High-Fidelity Deadline Cards Grid */}
             <div className="max-w-6xl mx-auto animate-on-scroll-big">
                <div id="deadlines" className="animate-on-scroll-big">
-                  <h2 className="text-[38.25px] font-black text-dbiz-navy mb-4 tracking-tight leading-tight text-center uppercase">MCA Compliance Deadlines</h2>
+                  <div className="text-center mb-6">
+                    <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] uppercase">
+                      11. TIMELINES
+                    </div>
+                  </div>
+                  <h2 className="text-[38.25px] font-black text-dbiz-navy mb-4 tracking-tight leading-tight text-center uppercase">Deadlines</h2>
                   <p className="text-gray-600 font-bold mb-12 text-lg leading-relaxed text-center max-w-3xl mx-auto">
                     To ensure smooth compliance and avoid penalties, it is important to be aware of key MCA filing deadlines.
                   </p>
@@ -922,47 +928,92 @@ const MCACompliancePage = () => {
           </div>
         </section>
 
+        {/* 12. Penalties & Risks Section - Navy Premium Split Layout */}
+        <section id="penalties" className="py-[80px] px-[8%] bg-[linear-gradient(135deg,#f4f7fb,#ffffff)] scroll-mt-32 animate-on-scroll font-['Poppins',_sans-serif]">
+          <div className="container-custom">
+            <div className="flex flex-wrap lg:flex-nowrap gap-[60px] items-center justify-between">
+              
+              {/* Left Side: Context & Heading */}
+              <div className="flex-1 min-w-[320px]">
+                <h2 className="text-[#0b3c5d] text-[36px] font-black mb-[12px] tracking-tight">12. Critical Risk</h2>
+                <p className="text-[22px] font-bold text-[#0f172a] mb-[14px]">
+                  Penalties
+                </p>
+                <p className="text-[#475569] text-lg leading-[1.7] font-medium">
+                  Non-filing or delayed MCA compliance may result in serious legal, financial, and operational consequences for your company.
+                </p>
+              </div>
+
+              {/* Right Side: Risk Grid */}
+              <div className="flex-1 min-w-[320px] grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+                {[
+                  "Heavy penalties and late fees",
+                  "Disqualification of directors",
+                  "Company strike-off by ROC",
+                  "Legal notices and compliance actions",
+                  "Restrictions on business operations"
+                ].map((risk, i) => (
+                  <div 
+                    key={i} 
+                    className="bg-white p-[20px] rounded-[12px] shadow-[0_10px_25px_rgba(0,0,0,0.06)] border-l-[5px] border-[#0b3c5d] font-semibold text-[#1e293b] transition-all duration-350 ease-in-out hover:-translate-y-[6px] hover:shadow-[0_18px_35px_rgba(0,0,0,0.12)]"
+                  >
+                    {risk}
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Bottom Advisory Line */}
+            <div className="mt-[60px] pt-8 border-t border-gray-100 text-center animate-on-scroll">
+               <p className="text-lg font-bold text-gray-500 italic leading-relaxed max-w-4xl mx-auto">
+                 Timely and accurate MCA compliance ensures smooth business operations and protects your company from legal consequences.
+               </p>
+            </div>
+          </div>
+        </section>
+
         {/* 13. FAQ Section - Centered Layout */}
         <section id="faqs" className="py-24 scroll-mt-32 animate-on-scroll-big">
           <div className="container-custom">
             {/* Centered Header Section */}
             <div className="text-center max-w-4xl mx-auto mb-20 animate-on-scroll-big">
                <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase animate-on-scroll-big">
-                10. Knowledge Base
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight animate-on-scroll-big [animation-delay:100ms]">Frequently Asked Questions</h2>
-              <p className="text-xl text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed animate-on-scroll-big [animation-delay:200ms]">
-                Detailed answers to clarify statutory requirements, filings, and procedures under the Companies Act.
-              </p>
+                 13. FAQ HUB
+               </div>
+               <h2 className="text-4xl md:text-6xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight animate-on-scroll-big [animation-delay:100ms]">FAQs</h2>
+               <p className="text-xl text-gray-600 font-bold max-w-4xl mx-auto leading-relaxed animate-on-scroll-big [animation-delay:200ms]">
+                 To help you better understand MCA compliance and clear common doubts, we have answered some frequently asked questions below. These provide clarity on statutory requirements, filings, and compliance procedures under the Companies Act.
+               </p>
             </div>
 
             {/* Centered Accordion List */}
             <div className="max-w-4xl mx-auto mb-20 animate-on-scroll-big">
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {[
-                  { q: "What is MCA Annual Compliance?", a: "MCA Annual Compliance refers to mandatory filings such as financial statements and annual returns with the Ministry of Corporate Affairs to ensure that a company or LLP remains legally compliant under the Companies Act, 2013 and applicable rules." },
+                  { q: "What is MCA Annual Compliance?", a: "MCA Annual Compliance refers to mandatory filings such as financial statements and annual returns with the Ministry of Corporate Affairs." },
                   { q: "Is MCA compliance mandatory for all companies?", a: "Yes, all registered companies and LLPs must comply with annual filing requirements, even if there is no business activity." },
-                  { q: "What happens if MCA compliance is not done on time?", a: "Delayed compliance leads to heavy penalties, late fees of ₹100 per day, and possible disqualification of directors or company strike-off." },
-                  { q: "What is AOC-4?", a: "AOC-4 is a mandatory e-form used to file the financial statements (Balance Sheet, P&L, etc.) of the company with the Registrar of Companies (ROC)." },
-                  { q: "What is MGT-7 / MGT-7A?", a: "MGT-7 (for normal companies) or MGT-7A (for small/OPC) are forms used to file the annual return of a company with details of shareholders and directors." },
-                  { q: "What is DIR-3 KYC?", a: "DIR-3 KYC is mandatory for all directors holding a DIN. Directors must update their KYC details annually. Web-based filing is now required once in 3 years as per latest updates." },
-                  { q: "Is MCA filing required for inactive companies?", a: "Yes. Inactive companies are not exempt. A company registered as dormant must file Form MSC-3, otherwise regular annual filings are required." },
-                  { q: "What is an Annual General Meeting (AGM)?", a: "AGM is a mandatory annual meeting where shareholders approve financial statements and discuss company matters. Annual filings are based on the date of this meeting." },
-                  { q: "Can MCA returns be revised after filing?", a: "Yes, in certain cases, corrected filings or resubmissions can be made if errors are identified, often through a specific correction procedure." },
-                  { q: "What is the penalty for late ROC filing?", a: "Late filing attracts an additional fee of ₹100 per day. In some cases, there is no maximum limit for this additional fee." },
-                  { q: "What happens if a company does not file returns for years?", a: "The company may be struck off from the MCA register by the ROC, and directors can be disqualified for up to 5 years." },
-                  { q: "Is auditor appointment mandatory every year?", a: "No. Auditors are generally appointed for a block of 5 years. Form ADT-1 is filed at the time of appointment or reappointment." },
-                  { q: "What is DPT-3?", a: "DPT-3 is a return filed for reporting loans, deposits, or internal outstanding amounts received by the company." },
-                  { q: "Can directors be disqualified for non-compliance?", a: "Yes, continuous non-compliance (missing filings for 3 consecutive years) leads to automatic disqualification of directors." },
-                  { q: "How can I check MCA filing status?", a: "Filing status can be checked on the MCA portal under 'Master Data' or 'My Application' using the company CIN or SRN." },
-                  { q: "Is MCA compliance required for LLPs?", a: "Yes, LLPs must file Form 11 (Annual Return) and Form 8 (Statement of Accounts & Solvency) every year." },
-                  { q: "What is the role of ROC in compliance?", a: "The Registrar of Companies (ROC) is the body that monitors, regulates, and administers company compliance under the Companies Act." },
-                  { q: "Can a struck-off company be revived?", a: "Yes, a struck-off company can be restored through legal procedures by filing an application with the NCLT (National Company Law Tribunal)." },
-                  { q: "Is professional help required for MCA compliance?", a: "Highly recommended. Professional assistance ensures accurate preparation of financials and avoids technical filing errors and compliance risks." },
-                  { q: "What documents are required for MCA compliance?", a: "Key documents include Financial Statements, Director KYC documents, Statutory meeting minutes, and shareholding details." }
+                  { q: "What happens if MCA compliance is not done on time?", a: "Delayed compliance leads to heavy penalties, late fees, and possible disqualification of directors." },
+                  { q: "What is AOC-4?", a: "AOC-4 is a form used to file financial statements of the company with the ROC." },
+                  { q: "What is MGT-7 / MGT-7A?", a: "These forms are used to file the annual return of a company with details of shareholders and directors." },
+                  { q: "What is DIR-3 KYC?", a: "DIR-3 KYC is mandatory for directors to update their KYC details annually with MCA." },
+                  { q: "Is MCA filing required for inactive companies?", a: "Inactive companies are not exempt from MCA compliance. There is no separate nil-return form for a normal company; however, a company registered as dormant files Form MSC-3 under the dormant company provisions." },
+                  { q: "What is an Annual General Meeting (AGM)?", a: "AGM is a mandatory meeting where financial statements and company matters are approved by shareholders." },
+                  { q: "Can MCA returns be revised after filing?", a: "In some cases, corrected filings or resubmissions can be made if errors are identified." },
+                  { q: "What is the penalty for late ROC filing?", a: "Late filing attracts additional fees on a per-day basis without any maximum limit in certain cases." },
+                  { q: "What happens if a company does not file returns for years?", a: "The company may be struck off from the MCA register, and directors may be disqualified." },
+                  { q: "Is auditor appointment mandatory every year?", a: "No. Auditor appointment is not required every year. An auditor is generally appointed for a period of 5 years, and Form ADT-1 is filed at the time of appointment or reappointment, as applicable." },
+                  { q: "What is DPT-3?", a: "DPT-3 is a return filed for reporting loans, deposits, or outstanding amounts." },
+                  { q: "Can directors be disqualified for non-compliance?", a: "Yes, continuous non-compliance can lead to director disqualification for a specified period." },
+                  { q: "How can I check MCA filing status?", a: "The filing status can be checked on the MCA portal using the company CIN or SRN. However, the filing will be shown in the “My Application” section only under the login through which the form was filed." },
+                  { q: "Is MCA compliance required for LLPs?", a: "Yes, LLPs must file Form 11 (Annual Return) and Form 8 (Statement of Accounts & Solvency) annually as part of MCA compliance." },
+                  { q: "What is the role of ROC in compliance?", a: "ROC (Registrar of Companies) monitors and regulates company compliance under the Companies Act." },
+                  { q: "Can a struck-off company be revived?", a: "Yes, under certain conditions, a company can be restored through legal procedures." },
+                  { q: "Is professional help required for MCA compliance?", a: "Yes, professional assistance ensures accurate filing and avoids compliance risks." },
+                  { q: "What documents are required for MCA compliance?", a: "Financial statements, director details, statutory records, and previous filings are required." }
                 ].map((faq, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="bg-white border border-gray-100 rounded-[2rem] px-8 overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-on-scroll-big" style={{ animationDelay: `${index * 50}ms` }}>
-                    <AccordionTrigger className="text-left font-black text-dbiz-navy hover:text-dbiz-teal transition-colors py-6 text-xl tracking-tight">
+                    <AccordionTrigger className="text-left font-medium text-dbiz-navy hover:text-dbiz-teal transition-colors py-6 text-xl tracking-tight">
                       {faq.q}
                     </AccordionTrigger>
                     <AccordionContent className="text-gray-600 text-[17px] leading-relaxed pb-8 pt-0 font-medium">
@@ -973,65 +1024,9 @@ const MCACompliancePage = () => {
               </Accordion>
             </div>
 
-            {/* Horizontal Consultation Banner */}
-            <div className="max-w-4xl mx-auto animate-on-scroll-big">
-               <div className="bg-dbiz-navy rounded-[3rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden group">
-                  <div className="absolute -top-10 -right-10 w-64 h-64 bg-dbiz-teal/20 rounded-full blur-[100px] group-hover:bg-dbiz-teal/30 transition-colors"></div>
-                  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-600/10 rounded-full blur-[80px]"></div>
-                  
-                  <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
-                    <div>
-                      <p className="text-3xl md:text-4xl font-black mb-3 leading-tight">Need a Personalized Consultation?</p>
-                      <p className="text-blue-50/60 font-medium text-lg">Connect with our statutory experts for clear, direct guidance.</p>
-                    </div>
-                    <Button 
-                     className="w-full md:w-auto px-10 bg-dbiz-teal hover:bg-dbiz-teal/90 text-white font-black py-8 rounded-2xl text-xl shadow-[0_15px_30px_rgba(20,184,166,0.3)] min-w-[240px]"
-                     onClick={() => window.open(`https://wa.me/${phoneNumber.replace('+', '')}`, '_blank')}
-                    >
-                      Chat with Expert
-                    </Button>
-                  </div>
-               </div>
-            </div>
           </div>
         </section>
 
-        {/* 14. Final CTA Section - Compact Version */}
-        <section className="py-20 relative overflow-hidden bg-dbiz-navy animate-on-scroll-big">
-           <div className="absolute inset-0 z-0">
-             <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[140%] bg-dbiz-teal/20 rounded-full blur-[120px] opacity-40 animate-pulse"></div>
-             <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[140%] bg-blue-600/10 rounded-full blur-[120px] opacity-30"></div>
-           </div>
-           
-           <div className="container-custom relative z-10">
-              <div className="bg-white/5 backdrop-blur-xl border border-white/20 rounded-[3rem] p-10 md:p-14 text-center max-w-4xl mx-auto shadow-2xl animate-on-scroll-big">
-                 <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-[11px] font-black tracking-widest mb-6 border border-white/10 uppercase animate-on-scroll-big [animation-delay:100ms]">
-                    <Zap className="h-4 w-4" /> Final Step
-                 </div>
-                 <h2 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight animate-on-scroll-big [animation-delay:200ms]">
-                   Complete Your MCA Annual Compliance with Experts Today
-                 </h2>
-                 <p className="text-lg md:text-xl text-blue-50/70 mb-10 max-w-2xl mx-auto font-medium animate-on-scroll-big [animation-delay:300ms]">
-                   Avoid penalties, ensure 100% accurate filings, and maintain your company’s legal status with D BIZ CONSULTANCY.
-                 </p>
-                 <div className="flex flex-wrap justify-center gap-5 animate-on-scroll-big [animation-delay:400ms]">
-                    <Button 
-                      className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white px-10 py-7 rounded-[1.5rem] text-xl font-black shadow-2xl transition-all hover:-translate-y-2 flex items-center gap-3"
-                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    >
-                       Start Now <ArrowRight className="h-5 w-5" />
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      className="bg-white/10 hover:bg-white/20 text-white border-white/30 px-10 py-7 rounded-[1.5rem] text-xl font-black shadow-2xl transition-all hover:-translate-y-2 flex items-center gap-3"
-                      onClick={() => window.open(`tel:${phoneNumber}`)}
-                    >
-                       Get Support <Phone className="h-5 w-5" />
-                    </Button>
-                 </div>
-              </div>
-           </div>
-        </section>
 
       </main>
       <Footer />

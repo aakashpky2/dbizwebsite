@@ -77,7 +77,7 @@ const ProducerCompanyPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({
@@ -173,36 +173,36 @@ const ProducerCompanyPage = () => {
         </section>
 
         {/* Navigation Section */}
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('features')}>
-                <Shield className="mr-2 h-4 w-4" /> Key Features
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('comparison')}>
-                <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('documents')}>
-                <FileText className="mr-2 h-4 w-4" /> Documents
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('process')}>
-                <ArrowRight className="mr-2 h-4 w-4" /> Process
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('compliance') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('compliance')}>
-                <Clock className="mr-2 h-4 w-4" /> Compliance
-              </div>
-
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
-                <Users className="mr-2 h-4 w-4" /> FAQs
-              </div>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -875,78 +875,55 @@ const ProducerCompanyPage = () => {
           </div>
         </section>
 
-        {/* Compliance Section */}
-        <section id="compliance" className="py-20 bg-gray-50 border-y border-gray-100 scroll-mt-32">
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
           <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
-                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Compliance
-              </div>
-
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Mandatory MCA Compliance for Producer Companies</h2>
-
-              <p className="text-gray-700 leading-relaxed">
-                Incorporating a Producer Company is just the beginning; maintaining compliance with the Ministry of Corporate Affairs (MCA) and other applicable laws is essential to retain legal status and avoid penalties. Regular filings, meetings, and audits ensure smooth functioning and transparency.
-              </p>
-            </div>
-
-            <div className="rounded-xl bg-white shadow-lg border border-gray-100 overflow-hidden">
-              <div className="overflow-x-auto">
-                <Table>
-                  <TableHeader>
-                    <TableRow className="bg-[#1a365d] hover:bg-[#1a365d]/95 transition-colors">
-                      <TableHead className="py-5 font-semibold text-white min-w-[180px]">Aspect</TableHead>
-                      <TableHead className="py-5 font-bold text-white min-w-[280px]">Compliance Requirement</TableHead>
-                      <TableHead className="py-5 font-bold text-white min-w-[200px]">Frequency / Timeline</TableHead>
-                      <TableHead className="py-5 font-bold text-white min-w-[220px]">Why It's Important</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {[
-                      { a: "First Board Meeting", r: "Conduct first Board Meeting and record initial resolutions", t: "Within 30 days of incorporation", w: "Establishes governance structure and records" },
-                      { a: "Appointment of First Auditor", r: "Appoint statutory auditor and file ADT-1 (if applicable)", t: "Within 30 days (or 90 days by members)", w: "Ensures audit compliance and financial transparency" },
-                      { a: "Commencement of Business (INC-20A)", r: "File declaration before starting business", t: "Within 180 days of incorporation", w: "Mandatory to commence operations legally" },
-                      { a: "Board Meetings", r: "Conduct Board Meetings and maintain minutes", t: "Minimum 4 per year (or as applicable)", w: "Ensures proper governance and decision-making" },
-                      { a: "Statutory Audit", r: "Audit of financial statements by Chartered Accountant", t: "Annually", w: "Ensures compliance and financial accuracy" },
-                      { a: "Annual General Meeting (AGM)", r: "Hold AGM for approval of financials and decisions", t: "Annually (within 6 months of FY end)", w: "Ensures member participation and compliance" },
-                      { a: "Financial Statements Filing (AOC-4)", r: "File financial statements with ROC", t: "Within 30 days of AGM", w: "Mandatory statutory filing" },
-                      { a: "Annual Return Filing (MGT-7)", r: "File annual return with ROC", t: "Within 60 days of AGM", w: "Updates company records with MCA" },
-                      { a: "Director KYC (DIR-3 KYC)", r: "File KYC for directors and update changes", t: "As per MCA timelines", w: "Avoids DIN deactivation" },
-                      { a: "Income Tax Filing", r: "File Income Tax Return (ITR-6)", t: "Annually", w: "Ensures tax compliance and avoids penalties" }
-                    ].map((row, i) => (
-                      <TableRow key={i} className="hover:bg-gray-50 transition-colors even:bg-gray-50">
-                        <TableCell className="font-medium text-[#1a365d] align-top py-4">{row.a}</TableCell>
-                        <TableCell className="text-gray-700 align-top py-4">{row.r}</TableCell>
-                        <TableCell className="text-[#1a365d] font-medium align-top py-4">{row.t}</TableCell>
-                        <TableCell className="text-gray-600 align-top py-4 text-sm leading-relaxed">{row.w}</TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            </div>
-
-            {/* Post-Incorporation Compliance Timeline */}
-            <div className="mt-20">
-              <h3 className="text-2xl font-bold text-[#1a365d] mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
-              <div className="grid md:grid-cols-4 gap-6">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">Producer Company Compliance Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { time: "30", unit: "Days", text: "First Board Meeting + First Auditor Appointment" },
-                  { time: "180", unit: "Days", text: "INC-20A (Commencement of Business)" },
-                  { time: "FY End", unit: "Annual Cycle", text: "Audit → AGM → AOC-4 (30d) → MGT-7 (60d)" },
-                  { time: "3 Yr", unit: "DIR-3 KYC-Web", text: "Every 3rd FY cycle (effective March 2026)" }
+                  { title: "First Auditor Appointment", due: "Within 30 Days", desc: "The first auditor must be appointed by the Board of Directors within 30 days of incorporation." },
+                  { title: "Commencement of Business", due: "Within 180 Days", desc: "Form INC-20A must be filed with the ROC within 180 days of incorporation to start operations." },
+                  { title: "Annual General Meeting", due: "Within 6 Months", desc: "The first AGM must be held within 18 months of incorporation or 6 months from the end of the financial year." },
+                  { title: "Financials Filing (AOC-4)", due: "Within 30 Days of AGM", desc: "The audited financial statements must be filed with the ROC within 30 days of the AGM." }
                 ].map((item, i) => (
-                  <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center">
-                    <div className="w-[72px] h-[72px] rounded-full bg-[#f0f9f9] flex flex-col items-center justify-center mb-4">
-                      <span className="text-[#0891b2] font-bold text-lg leading-tight">{item.time}</span>
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                    <p className="font-semibold text-[#1a365d] mb-2 text-sm">{item.unit}</p>
-                    <p className="text-[13px] text-gray-500 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-center text-sm text-gray-400 mt-10 italic">Last updated: Feb 2026</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Delayed Filing Penalties", desc: "Late filing of AOC-4 and MGT-7 attracts a penalty of ₹100 per day per form until compliance is met." },
+                  { title: "Director Disqualification", desc: "Failure to file financial statements for three consecutive years results in director disqualification for five years." },
+                  { title: "Strike-off Risk", desc: "Non-filing of INC-20A (Commencement of Business) allows the ROC to strike off the company's name from the register." },
+                  { title: "Financial Penalties for Directors", desc: "Non-compliance with Board meeting or AGM requirements can lead to fines ranging from ₹5,000 to ₹1 Lakh on directors." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users, FileText, Calendar, AlertTriangle } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users, FileText, Calendar, AlertTriangle, Clock } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { indianCities } from "@/data/keralaLocations";
@@ -72,7 +72,7 @@ const NidhiCompanyCompliancePage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -147,21 +147,35 @@ const NidhiCompanyCompliancePage = () => {
           </div>
         </section>
 
-        <section className="sticky top-16 z-40 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </div>
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('features')}>
-                <FileText className="mr-2 h-4 w-4" /> Services
-              </div>
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('benefits')}>
-                <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </div>
-              <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
-                <Users className="mr-2 h-4 w-4" /> FAQs
-              </div>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: FileText, label: 'Services' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -1365,7 +1379,58 @@ const NidhiCompanyCompliancePage = () => {
           </div>
         </section>
 
-        <section id="faqs" className="py-16 bg-white scroll-mt-32">
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">Nidhi Company Statutory Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "NDH-1 Filing", due: "Within 90 Days", desc: "Return of statutory compliance within 90 days from the close of the first financial year." },
+                  { title: "NDH-3 Filing", due: "Within 30 Days", desc: "Half-yearly return to be filed within 30 days from the end of each half-year (Sept & March)." },
+                  { title: "Annual Return (MGT-7)", due: "Within 60 Days", desc: "Annual return containing member and management details must be filed within 60 days of AGM." },
+                  { title: "Financial Statements (AOC-4)", due: "Within 30 Days", desc: "Audited financial statements and board report must be filed within 30 days of the AGM." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Statutory Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Monetary Penalties", desc: "Failure to comply with Nidhi Rules attracts a penalty of up to ₹5,000, plus ₹500 per day for continuing defaults." },
+                  { title: "Restriction on Deposits", desc: "Non-compliance with NDH-4 or NOF requirements can lead to a ban on accepting fresh deposits from members." },
+                  { title: "Director Disqualification", desc: "Persistent non-filing of AOC-4/MGT-7 for three years results in director disqualification under Section 164(2)." },
+                  { title: "Loss of Nidhi Status", desc: "Failure to maintain minimum member count (200) or NOF ratio can lead to cancellation of Nidhi recognition by the MCA." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">

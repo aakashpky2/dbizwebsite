@@ -150,7 +150,7 @@ const EnhancedGSTRegistrationPage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -255,32 +255,33 @@ const EnhancedGSTRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'features', icon: Shield, label: 'Features' },
-                { id: 'benefits', icon: TrendingUp, label: 'Benefits & Mandates' },
+                { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1031,15 +1032,39 @@ const EnhancedGSTRegistrationPage = () => {
                       </div>
                     </div>
 
+                    {/* Deadlines Section */}
+                    <div id="deadlines" className="consultancy-section-card animate-on-scroll scroll-mt-32">
+                      <p className="consultancy-label">Timelines</p>
+                      <h4 className="consultancy-heading">GST Filing Deadlines</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[
+                          { type: "GSTR-1", due: "11th of next month", desc: "For outward supplies / sales details." },
+                          { type: "GSTR-3B", due: "20th of next month", desc: "For summary return and tax payment." },
+                          { type: "QRMP Scheme", due: "13th of next quarter", desc: "For small taxpayers (Quarterly filing)." },
+                          { type: "Annual Return", due: "31st December", desc: "GSTR-9 annual reconciliation." }
+                        ].map((item, i) => (
+                          <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                            <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                            <div>
+                              <p className="font-bold text-dbiz-navy text-lg">{item.type}</p>
+                              <p className="text-dbiz-teal font-bold text-sm mb-1">Due: {item.due}</p>
+                              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
                     {/* Penalties Section */}
-                    <div className="consultancy-section-card animate-on-scroll">
+                    <div id="penalties" className="consultancy-section-card animate-on-scroll scroll-mt-32">
                       <p className="consultancy-label">Caution</p>
                       <h4 className="consultancy-heading">Legal Penalties</h4>
                       <div className="penalty-grid">
                         {[
-                          { title: "Late Filing", desc: "Late fee + interest" },
-                          { title: "Non-registration", desc: "Heavy penalty" },
-                          { title: "Wrong Filing", desc: "Notices & fines" }
+                          { title: "Late Filing", desc: "₹50 per day (₹20 for Nil returns) + 18% interest p.a." },
+                          { title: "Non-registration", desc: "100% of tax amount or ₹10,000 (whichever is higher)" },
+                          { title: "Wrong Filing", desc: "Up to 100% penalty for tax evasion or fraud" },
+                          { title: "Invoice Default", desc: "₹25,000 penalty for incorrect or missing invoices" }
                         ].map((item, i) => (
                           <div key={i} className="penalty-inner-card">
                              <div className="penalty-header">
@@ -1184,6 +1209,55 @@ const EnhancedGSTRegistrationPage = () => {
                           ))}
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">GST Statutory Deadlines</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "New Registration", due: "Within 30 Days", desc: "Mandatory application within 30 days of crossing the turnover threshold." },
+                        { title: "GSTR-3B (Monthly)", due: "By 20th of next Month", desc: "Summary return for outward/inward supplies and tax payment." },
+                        { title: "GSTR-1 (Monthly)", due: "By 11th of next Month", desc: "Return for outward supplies containing invoice-wise details." },
+                        { title: "GSTR-9 (Annual)", due: "By 31st December", desc: "Consolidated annual return for the entire financial year." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Late Return Fee", desc: "A late fee of ₹50 per day (₹20 for NIL) is charged for delay in filing returns beyond the due date." },
+                        { title: "Operating Without GST", desc: "Operating without registration when liable can attract a penalty of 10% of tax due or ₹10,000." },
+                        { title: "GSTIN Cancellation", desc: "The GST department can cancel the registration if returns are not filed for 6 consecutive months." },
+                        { title: "Fraudulent ITC Claims", desc: "Claiming Input Tax Credit through fake invoices can lead to severe penalties and prosecution." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

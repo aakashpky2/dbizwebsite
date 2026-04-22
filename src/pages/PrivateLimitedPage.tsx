@@ -143,6 +143,46 @@ const PrivateLimitedPage = () => {
               </div>
             </div>
           </div>
+        {/* Sticky Navigation */}
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'features', icon: Shield, label: 'Features' },
+                { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
+                { id: 'documents', icon: FileText, label: 'Documents' },
+                { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    activeSection === item.id
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(item.id);
+                    if (element) {
+                      const headerOffset = 160;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+                    }
+                    setActiveSection(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${activeSection === item.id ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Overview Section */}
@@ -704,42 +744,65 @@ const PrivateLimitedPage = () => {
           </div>
         </section>
 
-        {/* Post-Incorporation Compliance Timeline Section */}
-        <section className="py-20 bg-white border-t border-gray-100">
+        {/* Deadlines Section */}
+        <div id="deadlines" className="py-20 scroll-mt-32">
           <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
-                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                Compliance
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Mandatory MCA Compliance Timeline</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Incorporating a Private Limited Company is just the beginning; maintaining compliance with the Ministry of Corporate Affairs (MCA) and other applicable laws is essential to retain legal status and avoid penalties. Regular filings, meetings, and audits ensure smooth functioning and transparency.
-              </p>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-2xl font-semibold text-[#1a365d] mb-12 text-center">Post-Incorporation Compliance Timeline</h3>
-              <div className="grid md:grid-cols-4 gap-6">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">Private Limited Compliance Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { time: "30", unit: "Days", text: "First Board Meeting + First Auditor Appointment" },
-                  { time: "180", unit: "Days", text: "INC-20A (Commencement of Business)" },
-                  { time: "FY End", unit: "Annual Cycle", text: "Audit → AGM → AOC-4 (30d) → MGT-7 (60d)" },
-                  { time: "3 Yr", unit: "DIR-3 KYC-Web", text: "Every 3rd FY cycle (effective March 2026)" }
+                  { title: "Auditor Appointment", due: "Within 30 Days", desc: "First auditor must be appointed by the Board within 30 days of incorporation." },
+                  { title: "Commencement (INC-20A)", due: "Within 180 Days", desc: "Mandatory declaration to be filed before starting business operations." },
+                  { title: "AOC-4 (Financials)", due: "By 29th October", desc: "Filing of financial statements with ROC (30 days from AGM)." },
+                  { title: "MGT-7 (Annual Return)", due: "By 28th November", desc: "Annual return filing containing shareholding and director details (60 days from AGM)." }
                 ].map((item, i) => (
-                  <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center">
-                    <div className="w-[72px] h-[72px] rounded-full bg-[#f0f9f9] flex flex-col items-center justify-center mb-4">
-                      <span className="text-[#0891b2] font-bold text-lg leading-tight">{item.time}</span>
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                    <p className="font-semibold text-[#1a365d] mb-2 text-sm">{item.unit}</p>
-                    <p className="text-[13px] text-gray-500 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
-              <p className="text-center text-sm text-gray-400 mt-10 italic">Last updated: Feb 2026</p>
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* Penalties Section */}
+        <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "ROC Late Filing Fees", desc: "A penalty of ₹100 per day per form is levied for any delay in filing mandatory MCA forms." },
+                  { title: "Director Disqualification", desc: "Directors may be disqualified for 5 years if the company fails to file returns for 3 consecutive years." },
+                  { title: "Company Strike-off", desc: "The Registrar may strike off the company name if it fails to commence business within 180 days." },
+                  { title: "Legal Prosecution", desc: "Severe non-compliance with the Companies Act 2013 can lead to fines and prosecution of officers in default." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                     <div className="penalty-header">
+                        <div className="penalty-dot"></div>
+                        <span className="penalty-title">{item.title}</span>
+                     </div>
+                     <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center animate-on-scroll pb-16">
+           <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+           <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+             With deep expertise in corporate law and MCA regulations, DBIZ CONSULTANCY is the gold standard for company registrations in India. We handle the entire incorporation and compliance lifecycle—so you can build your empire with absolute peace of mind.
+           </p>
+        </div>
 
       </main>
       <Footer />

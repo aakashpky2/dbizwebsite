@@ -54,7 +54,7 @@ const NgoRegistrationPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -154,26 +154,28 @@ const NgoRegistrationPage = () => {
         </section>
 
         {/* Dynamic Navigation Sidebar/Tabs */}
-        <section className="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm">
-          <div className="container-custom">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
-                { id: "overview", label: "Overview", icon: Building2 },
-                { id: "types", label: "NGO Types", icon: FileText },
-                { id: "process", label: "Process", icon: Clock },
-                { id: "documents", label: "Documents", icon: Shield },
-                { id: "faqs", label: "FAQs", icon: Users },
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'types', icon: FileText, label: 'NGO Types' },
+                { id: 'process', icon: Clock, label: 'Process' },
+                { id: 'documents', icon: Shield, label: 'Documents' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleSectionClick(item.id)}
-                  className={`flex items-center px-6 py-3 whitespace-nowrap text-sm font-semibold transition-all border-b-2 ${
-                    isActive(item.id) 
-                      ? "text-dbiz-teal border-dbiz-teal bg-dbiz-teal/5" 
-                      : "text-gray-500 border-transparent hover:text-dbiz-navy"
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                 >
-                  <item.icon size={16} className="mr-2" />
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
                   {item.label}
                 </button>
               ))}
@@ -839,6 +841,59 @@ const NgoRegistrationPage = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">NGO / Trust Statutory Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "Trust Deed Registration", due: "Immediate", desc: "The Trust Deed must be registered with the Sub-Registrar as soon as it is executed on stamp paper." },
+                  { title: "12A & 80G Application", due: "Within 6 Months", desc: "Ideally, apply for 12A and 80G registrations within 6 months of incorporation to avail tax benefits." },
+                  { title: "Income Tax Filing (ITR-7)", due: "By 30th Sept / Oct", desc: "Annual income tax return must be filed by Sept 30th (or Oct 31st if audit is mandatory)." },
+                  { title: "FCRA Annual Return", due: "By 31st Dec", desc: "For NGOs with FCRA registration, the annual return (Form FC-4) must be filed by Dec 31st every year." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "ITR Late Filing Fee", desc: "Late filing of ITR-7 attracts a penalty of ₹5,000 to ₹10,000 depending on the delay and income level." },
+                  { title: "Loss of Tax Exemptions", desc: "Failure to comply with 12A/80G conditions can lead to the cancellation of tax-exempt status for the NGO." },
+                  { title: "FCRA Cancellation", desc: "Non-filing of FCRA returns or misutilization of foreign funds results in suspension or cancellation of FCRA license." },
+                  { title: "Trustee Personal Liability", desc: "Trustees can be held personally liable for breach of trust, fraud, or gross negligence in managing NGO assets." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

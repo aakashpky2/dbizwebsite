@@ -142,7 +142,7 @@ const DigitalSignaturePage = () => {
 
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -247,32 +247,33 @@ const DigitalSignaturePage = () => {
           </div>
         </section>
 
-        {/* Navigation Wrapper */}
-        <section className="sticky top-16 z-40 bg-white shadow-sm border-b border-gray-100">
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'features', icon: Shield, label: 'Features' },
                 { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: Gavel, label: 'Penalties' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
               ].map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className={`px-5 py-2.5 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[17px] font-normal transition-all duration-300 mr-2 ${
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
                     isActive(item.id)
                       ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-100 hover:text-dbiz-navy'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
                   }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleSectionClick(item.id);
                   }}
                 >
-                  <item.icon className={`mr-2 h-4 w-4 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
                   {item.label}
                 </a>
               ))}
@@ -1148,13 +1149,111 @@ const DigitalSignaturePage = () => {
                     </div>
                   </div>
 
-                  {/* Our Commitment Section */}
-                  <div className="mt-16 text-center animate-on-scroll">
-                    <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
-                    <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
-                      With a strong track record in business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for professionals and companies. We take care of the entire DSC process—so you can focus on building your legacy with confidence.
-                    </p>
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">DSC Deadlines & Validity</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Certificate Validity", due: "2 or 3 Years", desc: "DSC is issued with a fixed validity. It must be renewed before expiry to ensure uninterrupted filing." },
+                        { title: "Video Verification", due: "Within 30 Days", desc: "The mandatory video verification must be completed within 30 days of application submission." },
+                        { title: "Issuance Time", due: "Same Day", desc: "DSC is typically issued within a few hours post-successful video and mobile verification." },
+                        { title: "Renewal Application", due: "Before Expiry", desc: "We recommend starting the renewal process 7 days before the current certificate expires." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Security Risks</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Misuse of DSC", desc: "Unauthorized use of someone else's DSC is a punishable offense under the IT Act, 2000." },
+                        { title: "Identity Theft", desc: "Sharing your private key or USB token password can lead to serious legal and financial fraud." },
+                        { title: "Late Filing Fees", desc: "Expired DSC prevents timely statutory filings, resulting in heavy government late fees." },
+                        { title: "Revocation", desc: "Certifying authorities may revoke DSC if it is found to be obtained using false information." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Timelines</p>
+                    <h4 className="consultancy-heading">DSC Validity & Renewal Deadlines</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      {[
+                        { title: "Standard Validity", due: "2 Years", desc: "Most Digital Signature Certificates are issued with a validity of 2 years from the date of issuance." },
+                        { title: "Renewal Window", due: "7-10 Days Before Expiry", desc: "Initiate renewal at least a week before expiry to ensure uninterrupted access to filing portals." },
+                        { title: "Token Warranty", due: "1 Year", desc: "The USB crypto-token typically comes with a hardware warranty of one year against manufacturing defects." },
+                        { title: "Revocation Request", due: "Immediate", desc: "In case of loss or theft of the token, a revocation request must be filed immediately to prevent misuse." }
+                      ].map((item, i) => (
+                        <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                          <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                          <div>
+                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="consultancy-section-card animate-on-scroll">
+                    <p className="consultancy-label">Legal Risks</p>
+                    <h4 className="consultancy-heading">Penalties & Risks</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {[
+                        { title: "Filing Interruptions", desc: "An expired DSC prevents the filing of ROC, GST, and Income Tax returns, leading to heavy late fees." },
+                        { title: "Tender Disqualification", desc: "Inability to sign and submit government tender documents before the specified bid deadlines." },
+                        { title: "Legal Liability", desc: "Unauthorized use of a DSC by another person can lead to serious legal consequences for the owner." },
+                        { title: "Token Replacement Cost", desc: "Loss or physical damage to the USB token requires fresh issuance with additional hardware costs." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Our Commitment Section */}
+                <div className="mt-16 text-center animate-on-scroll">
+                  <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                  <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                    With a strong track record in business registrations and compliance, DBIZ CONSULTANCY is a trusted partner for professionals and companies. We take care of the entire DSC process—so you can focus on building your legacy with confidence.
+                  </p>
+                </div>
               </div>
 
             </div>

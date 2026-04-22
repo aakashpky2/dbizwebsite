@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users } from "lucide-react";
+import { CheckCircle2, ArrowDownCircle, Phone, MessageCircle, Building2, Shield, Users, Clock, AlertTriangle, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -54,7 +54,7 @@ const TwelveAEightyGPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -98,30 +98,33 @@ const TwelveAEightyGPage = () => {
           </div>
         </section>
 
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-          <div className="container-custom py-2">
-            <div className="flex items-center overflow-x-auto no-scrollbar">
-              <a 
-                href="#overview"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('overview'); }}
-              >
-                <Building2 className="mr-2 h-4 w-4" /> Overview
-              </a>
-              <a 
-                href="#benefits"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('benefits') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('benefits'); }}
-              >
-                <CheckCircle2 className="mr-2 h-4 w-4" /> Benefits
-              </a>
-              <a 
-                href="#faqs"
-                className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} 
-                onClick={(e) => { e.preventDefault(); handleSectionClick('faqs'); }}
-              >
-                <Users className="mr-2 h-4 w-4" /> FAQs
-              </a>
+        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+          <div className="container-custom py-1">
+            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+              {[
+                { id: 'overview', icon: Building2, label: 'Overview' },
+                { id: 'benefits', icon: CheckCircle2, label: 'Benefits' },
+                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                { id: 'faqs', icon: Users, label: 'FAQs' }
+              ].map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                    isActive(item.id)
+                      ? 'bg-dbiz-teal text-white shadow-md'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSectionClick(item.id);
+                  }}
+                >
+                  <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -147,7 +150,58 @@ const TwelveAEightyGPage = () => {
           </div>
         </section>
 
-        <section id="faqs" className="py-16 scroll-mt-32">
+        {/* Deadlines Section */}
+        <section id="deadlines" className="py-20 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Timelines</p>
+              <h4 className="consultancy-heading">12A & 80G Compliance Deadlines</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  { title: "Renewal Filing", due: "6 Months Before Expiry", desc: "Organizations must apply for renewal of 12A/80G registration at least six months before the expiry of the 5-year validity." },
+                  { title: "Annual Audit", due: "By 30th September", desc: "Audit of accounts by a Chartered Accountant is mandatory for maintaining 12A/80G status." },
+                  { title: "Form 10B/10BB", due: "With Income Tax Return", desc: "Filing of audit report in Form 10B/10BB along with the income tax return is required." },
+                  { title: "Donation Reporting", due: "By 31st May", desc: "NGOs must file Form 10BD annually to report all donations received during the financial year." }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                    <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                    <div>
+                      <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                      <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Penalties Section */}
+        <section id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32">
+          <div className="container-custom">
+            <div className="consultancy-section-card animate-on-scroll">
+              <p className="consultancy-label">Legal Risks</p>
+              <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Loss of Tax Exemption", desc: "Failure to comply with registration conditions leads to withdrawal of tax exemption on the organization's income." },
+                  { title: "Donor Deduction Rejection", desc: "Donors cannot claim tax deductions if the organization's 80G registration is expired or cancelled." },
+                  { title: "Late Filing Fees", desc: "Delayed filing of donation reports (Form 10BD) attracts a late fee of ₹200 per day u/s 234G." },
+                  { title: "Taxation at Maximum Marginal Rate", desc: "In case of cancellation of registration, the organization's income may be taxed at the maximum marginal rate." }
+                ].map((item, i) => (
+                  <div key={i} className="penalty-inner-card">
+                    <div className="penalty-header">
+                      <div className="penalty-dot"></div>
+                      <span className="penalty-title">{item.title}</span>
+                    </div>
+                    <p className="penalty-desc text-gray-500">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
           <div className="container-custom">
             <h2 className="text-3xl font-bold text-dbiz-navy mb-8 text-center">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="w-full">

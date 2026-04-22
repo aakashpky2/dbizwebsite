@@ -78,7 +78,7 @@ const NbfcRegistrationPage = () => {
         setActiveSection(activeSection === section ? null : section);
         const element = document.getElementById(section);
         if (element) {
-            const headerOffset = 100;
+            const headerOffset = 160;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             window.scrollTo({
@@ -165,36 +165,37 @@ const NbfcRegistrationPage = () => {
                 </section>
 
                 {/* Navigation Section */}
-                <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
-                    <div className="container-custom py-2">
-                        <div className="flex items-center overflow-x-auto no-scrollbar">
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('overview') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('overview')}>
-                                <Building2 className="mr-2 h-4 w-4" /> Overview
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('features') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('features')}>
-                                <Shield className="mr-2 h-4 w-4" /> Key Features
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('comparison') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('comparison')}>
-                                <FileBarChart className="mr-2 h-4 w-4" /> Comparison
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('documents') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('documents')}>
-                                <FileText className="mr-2 h-4 w-4" /> Documents
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('process') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('process')}>
-                                <ArrowRight className="mr-2 h-4 w-4" /> Process
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('compliance') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('compliance')}>
-                                <Clock className="mr-2 h-4 w-4" /> Compliance
-                            </div>
-
-                            <div className={`px-4 py-3 whitespace-nowrap cursor-pointer flex items-center border-b-2 font-medium ${isActive('faqs') ? 'text-dbiz-teal border-dbiz-teal' : 'text-gray-600 border-transparent hover:text-dbiz-navy'}`} onClick={() => handleSectionClick('faqs')}>
-                                <Users className="mr-2 h-4 w-4" /> FAQs
-                            </div>
+                <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+                    <div className="container-custom py-1">
+                        <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+                            {[
+                                { id: 'overview', icon: Building2, label: 'Overview' },
+                                { id: 'features', icon: Shield, label: 'Features' },
+                                { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
+                                { id: 'documents', icon: FileText, label: 'Documents' },
+                                { id: 'process', icon: ArrowRight, label: 'Process' },
+                                { id: 'compliance', icon: Clock, label: 'Compliance' },
+                                { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+                                { id: 'penalties', icon: AlertTriangle, label: 'Penalties' },
+                                { id: 'faqs', icon: Users, label: 'FAQs' }
+                            ].map((item) => (
+                                <a
+                                    key={item.id}
+                                    href={`#${item.id}`}
+                                    className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                                        isActive(item.id)
+                                            ? 'bg-dbiz-teal text-white shadow-md'
+                                            : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                                    }`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        handleSectionClick(item.id);
+                                    }}
+                                >
+                                    <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} />
+                                    {item.label}
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -744,6 +745,59 @@ const NbfcRegistrationPage = () => {
                                         </li>
                                     ))}
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Deadlines Section */}
+                <section id="deadlines" className="py-16 scroll-mt-32">
+                    <div className="container-custom">
+                        <div className="consultancy-section-card">
+                            <p className="consultancy-label">Timelines</p>
+                            <h4 className="consultancy-heading">NBFC Statutory Deadlines</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {[
+                                    { title: "RBI SBR Returns", due: "Half-Yearly / Annually", desc: "Mandatory filing of prudential returns under the Scale-Based Regulation framework to the RBI." },
+                                    { title: "NOF Maintenance", due: "Continuous", desc: "Net Owned Fund must be maintained at or above the RBI-prescribed minimum at all times." },
+                                    { title: "Board Meetings", due: "Minimum 4 per Year", desc: "At least one board meeting every quarter with proper notice and quorum compliance." },
+                                    { title: "Statutory Audit & ROC Filings", due: "Within 30/60 Days of AGM", desc: "AOC-4 within 30 days and MGT-7 within 60 days of AGM; annual CA audit mandatory." }
+                                ].map((item, i) => (
+                                    <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                                        <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                                        <div>
+                                            <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                                            <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                                            <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Penalties Section */}
+                <section id="penalties" className="py-16 bg-gray-50 scroll-mt-32">
+                    <div className="container-custom">
+                        <div className="consultancy-section-card">
+                            <p className="consultancy-label">Legal Risks</p>
+                            <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    { title: "CoR Cancellation", desc: "RBI can cancel the Certificate of Registration for non-compliance with prudential norms or repeated violations." },
+                                    { title: "Monetary Penalties", desc: "Heavy fines by RBI for failure to file returns, breach of NOF limits, or non-adherence to KYC/AML directions." },
+                                    { title: "Director Disqualification", desc: "Directors may be disqualified under Companies Act for failure to file annual returns or financial statements." },
+                                    { title: "Prosecution & Winding Up", desc: "RBI can initiate winding-up proceedings under Section 45-MC if the NBFC conducts business fraudulently." }
+                                ].map((item, i) => (
+                                    <div key={i} className="penalty-inner-card">
+                                        <div className="penalty-header">
+                                            <div className="penalty-dot"></div>
+                                            <span className="penalty-title">{item.title}</span>
+                                        </div>
+                                        <p className="penalty-desc text-gray-500">{item.desc}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

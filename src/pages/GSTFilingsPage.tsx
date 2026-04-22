@@ -100,7 +100,7 @@ const GSTFilingsPage = () => {
     setActiveSection(activeSection === section ? null : section);
     const element = document.getElementById(section);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -167,7 +167,7 @@ const GSTFilingsPage = () => {
           </div>
         </section>
 
-        <section className="sticky top-16 z-10 bg-white shadow-md border-b border-gray-200">
+        <section className="sticky top-[70px] lg:top-[90px] z-10 bg-white shadow-md border-b border-gray-200">
           <div className="container-custom py-2">
             <div className="flex items-center overflow-x-auto no-scrollbar">
               <div 
