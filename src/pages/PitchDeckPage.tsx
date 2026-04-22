@@ -225,6 +225,7 @@ const PitchDeckPage = () => {
             </div>
           </div>
         </section>
+        <section id="faqs" className="py-16 scroll-mt-32">
           <div className="container-custom">
             <h2 className="text-3xl font-bold text-dbiz-navy mb-8 text-center">Frequently Asked Questions</h2>
             <Accordion type="single" collapsible className="w-full">

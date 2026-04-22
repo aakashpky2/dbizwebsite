@@ -1431,6 +1431,7 @@ const NidhiCompanyCompliancePage = () => {
             </div>
           </div>
         </section>
+        <section id="faqs" className="py-16 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">

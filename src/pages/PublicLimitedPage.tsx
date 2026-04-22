@@ -636,31 +636,14 @@ const EnhancedPublicLimitedPage = () => {
               { step: "5", title: "Filing with ROC", desc: "Filing incorporation forms (SPICe+) with necessary documentation." },
               { step: "6", title: "Certificate of Incorporation", desc: "Issuance of COI by the ROC confirming the company's legal status." }
             ].map((s, i) => (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {[
-                      "Public Limited Company Registration",
-                      "Private Limited Company Incorporation",
-                      "GST Registration and Compliance",
-                      "ROC Filing and Law Compliance",
-                      "Startup Advisory and Structuring",
-                      "Annual Compliance and Audit"
-                    ].map((service, index) => (
-                      <div key={index} className="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-100 group hover:border-dbiz-teal/30 hover:bg-white hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
-                        <CheckCircle2 className="h-5 w-5 text-dbiz-teal mr-3 flex-shrink-0 group-hover:rotate-12 transition-transform" />
-                        <span className="text-dbiz-navy font-medium text-sm">{service}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-10">
-                    <Button className="bg-dbiz-navy hover:bg-dbiz-navy/90 text-white px-8 py-6 rounded-xl text-lg group hover:scale-105 transition-all">
-                      Get Started with D BIZ
-                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </div>
+              <div key={i} className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-dbiz-teal/30 hover:bg-white/10 transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-dbiz-teal/20 flex items-center justify-center text-dbiz-teal text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                  {s.step}
                 </div>
+                <h3 className="text-xl font-bold mb-4">{s.title}</h3>
+                <p className="text-white/70 leading-relaxed">{s.desc}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

@@ -140,9 +140,10 @@ const PrivateLimitedPage = () => {
                 >
                   <ArrowDownCircle className="mr-2 h-4 w-4" /> Learn More
                 </Button>
-              </div>
             </div>
           </div>
+        </div>
+      </section>
         {/* Sticky Navigation */}
         <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
           <div className="container-custom py-1">
