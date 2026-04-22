@@ -21,7 +21,8 @@ import {
   AlertTriangle,
   Clock,
   Star,
-  ArrowRight
+  ArrowRight,
+  Gavel
 } from "lucide-react";
 import { 
   Accordion, 

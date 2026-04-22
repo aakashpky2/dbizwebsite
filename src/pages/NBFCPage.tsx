@@ -16,7 +16,8 @@ import {
   Phone,
   Clock,
   CheckCircle,
-  MessageCircle
+  MessageCircle,
+  Gavel
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 

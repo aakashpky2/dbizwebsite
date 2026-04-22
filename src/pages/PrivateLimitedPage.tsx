@@ -27,7 +27,8 @@ import {
   File,
   Award,
   AlertTriangle,
-  HelpCircle
+  HelpCircle,
+  Gavel
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { privateLimitedContent } from "@/data/serviceContent";
