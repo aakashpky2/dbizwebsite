@@ -97,7 +97,7 @@ const ContactOptions = () => {
   );
 };
 
-const NidhiCompanyCompliancePage = () => {
+const GSTFilingServicePage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -166,20 +166,20 @@ const NidhiCompanyCompliancePage = () => {
                 </div>
 
                 <h1 className="text-[63.75px] font-extrabold mb-4 leading-tight tracking-tight animate-on-scroll [animation-delay:100ms]">
-                  Nidhi Company Compliance Services
+                  GST Filing Services
                   {location && <span className="block text-2xl md:text-3xl mt-2 text-dbiz-teal font-semibold">in {cityName}</span>}
                 </h1>
 
                 <p className="text-2xl font-bold text-dbiz-teal mb-8 animate-on-scroll [animation-delay:150ms]">
-                  Accurate, Timely & Fully Compliant Nidhi Company Compliance for Businesses
+                  Accurate, Timely & Fully Compliant GST Filing for Businesses & Professionals
                 </p>
 
                 <div className="space-y-6 text-lg opacity-95 leading-relaxed max-w-2xl animate-on-scroll [animation-delay:200ms] mb-10">
                   <p>
-                    Managing Nidhi Company compliance is more than a statutory requirement—it is essential for maintaining regulatory approval, avoiding penalties, and ensuring smooth financial operations. Whether you are a newly incorporated Nidhi Company or an existing one, proper compliance is crucial to continue operations without restrictions or legal issues.
+                    Filing your GST returns is more than a compliance requirement—it is essential for maintaining proper tax records, avoiding penalties, and ensuring smooth business operations. Whether you are a small business, trader, service provider, or company, accurate GST filing is crucial to stay compliant and avoid notices.
                   </p>
                   <p>
-                    D BIZ CONSULTANCY provides expert-driven Nidhi Company compliance services ensuring accurate filings, timely submissions, and complete adherence to regulatory requirements.
+                    D BIZ CONSULTANCY provides expert-driven GST filing services ensuring accurate reporting, timely submissions, and complete compliance with GST regulations.
                   </p>
                 </div>
 
@@ -187,7 +187,7 @@ const NidhiCompanyCompliancePage = () => {
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white px-8 py-6 rounded-xl text-lg font-bold flex items-center gap-3 shadow-xl transition-all hover:-translate-y-1">
-                        <CheckCircle2 className="h-5 w-5" /> Ensure Your Nidhi Compliance
+                        <CheckCircle2 className="h-5 w-5" /> File Your GST Returns Now
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-56 p-0 border-none shadow-2xl">
@@ -206,7 +206,7 @@ const NidhiCompanyCompliancePage = () => {
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-white/80 text-sm font-medium animate-on-scroll [animation-delay:350ms]">
                    <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-dbiz-teal" />
-                      <span>Reliable Nidhi Compliance</span>
+                      <span>Reliable GST Filing</span>
                    </div>
                    <div className="flex items-center gap-2">
                       <Shield className="w-4 h-4 text-dbiz-teal" />
@@ -227,8 +227,8 @@ const NidhiCompanyCompliancePage = () => {
                   
                   {/* Hero Image */}
                   <img 
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" 
-                    alt="Nidhi Compliance Professional Services" 
+                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" 
+                    alt="GST Filing Professional Services" 
                     className="w-full aspect-[4/3] object-cover rounded-2xl shadow-lg border border-white/20 mb-6"
                   />
                   
@@ -296,21 +296,20 @@ const NidhiCompanyCompliancePage = () => {
                 Common Challenges
               </div>
               <h2 className="text-[42px] font-extrabold text-dbiz-navy mb-6 tracking-tight leading-tight animate-on-scroll">
-                Common Challenges
+                Facing Challenges in GST Filing?
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed font-medium animate-on-scroll [animation-delay:100ms]">
-                Many Nidhi Companies face difficulties in managing compliance due to strict regulatory requirements and continuous monitoring by authorities.
+                Many businesses face difficulties in managing GST compliance due to frequent changes in regulations and complex reporting requirements.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
               {[
-                { title: "Form Selection", desc: "Confusion in filing correct Nidhi forms (NDH-1, NDH-3, NDH-4, etc.)", icon: FileText },
-                { title: "NOF Requirements", desc: "Difficulty in maintaining minimum members and Net Owned Fund (NOF)", icon: Scale },
-                { title: "ROC Filings", desc: "Errors in annual ROC filings and compliance reporting", icon: Clock },
-                { title: "Ratio Maintenance", desc: "Non-maintenance of deposit and loan ratios as per rules", icon: AlertTriangle },
-                { title: "ROC Compliance", desc: "Notices and compliance issues from Registrar of Companies", icon: Users },
-                { title: "Legal Action", desc: "Notice and operational restrictions", icon: AlertTriangle }
+                { title: "Return Selection", desc: "Confusion in selecting correct GST returns (GSTR-1, GSTR-3B, etc.)", icon: FileText },
+                { title: "ITC Mismatch", desc: "Mismatch between GSTR-2A, GSTR-2B, and purchase records", icon: Clock },
+                { title: "Incorrect ITC", desc: "Incorrect or excess Input Tax Credit (ITC) claims", icon: AlertTriangle },
+                { title: "Sales Errors", desc: "Errors in sales reporting and tax calculation", icon: Scale },
+                { title: "GST Notices", desc: "Notices and compliance issues from GST department", icon: Users },
               ].map((challenge, idx) => (
                 <div key={idx} className="uiverse-corner-card-container animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
                   <div className="go-corner">
@@ -332,7 +331,7 @@ const NidhiCompanyCompliancePage = () => {
               <h3>Our Solution</h3>
 
               <p>
-                We simplify Nidhi Company compliance with expert handling, ensuring accurate filings, proper documentation, and complete adherence to regulatory laws, helping you avoid risks, penalties, and operational restrictions.
+                We simplify GST compliance with expert handling, ensuring accurate data reporting, correct ITC claims, and complete adherence to GST laws, helping you avoid risks and penalties.
               </p>
 
               <button 
@@ -346,16 +345,16 @@ const NidhiCompanyCompliancePage = () => {
             <div className="mt-32 scroll-mt-32" id="overview">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20 animate-on-scroll">
                 <div>
-                  <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">What is Nidhi Company Compliance?</h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">What is GST Filing?</h2>
                   <p className="text-xl text-gray-700 font-bold leading-relaxed mb-10">
-                    Nidhi Company Compliance is the process of fulfilling periodic and event-based requirements under the Companies Act, 2013 and Nidhi Rules, 2014, including filings, financial reporting, and regulatory adherence.
+                    GST Filing is the process of submitting periodic returns to the GST Department, reporting details of sales, purchases, tax collected, and input tax credit (ITC) claimed for a specific period.
                   </p>
                   
                   <div className="relative group">
                     <div className="absolute -inset-4 bg-dbiz-teal/5 rounded-[2.5rem] blur-2xl group-hover:bg-dbiz-teal/10 transition-all"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 h-[300px]">
                       <img 
-                        src="https://images.unsplash.com/photo-1454165205736-662b2ac14761?auto=format&fit=crop&w=800&q=80" 
+                        src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" 
                         alt="Corporate Compliance" 
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -366,11 +365,11 @@ const NidhiCompanyCompliancePage = () => {
 
                 <div className="space-y-6 self-center">
                   {[
-                    { title: "Member Compliance", desc: "Maintenance of minimum 200 members" },
-                    { title: "NOF Compliance", desc: "Net Owned Fund (NOF) compliance" },
-                    { title: "Deposit Ratios", desc: "Deposit to NOF ratio maintenance" },
-                    { title: "NDH Filings", desc: "Filing of NDH returns and ROC forms" },
-                    { title: "Financial Statements", desc: "Financial statements and audit compliance" }
+                    { title: "Details of outward supplies (sales)", desc: "Reporting of all sales and tax collected." },
+                    { title: "Details of inward supplies (purchases)", desc: "Reporting of all purchases and input tax credit." },
+                    { title: "Output tax liability", desc: "Calculation of total tax payable on sales." },
+                    { title: "Input Tax Credit (ITC) claimed", desc: "Claiming credit for tax paid on business purchases." },
+                    { title: "Net tax payable or refund", desc: "Final tax to be paid or refund to be claimed." }
                   ].map((item, i) => (
                     <div key={i} className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.04)] flex items-center gap-6 group hover:border-dbiz-teal hover:shadow-xl transition-all duration-300 animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
                       <div className="bg-dbiz-teal/5 w-14 h-14 rounded-full flex items-center justify-center text-dbiz-teal shrink-0 group-hover:bg-dbiz-teal group-hover:text-white transition-all duration-500">
@@ -392,16 +391,16 @@ const NidhiCompanyCompliancePage = () => {
                 
                 <h3 className="text-3xl font-black text-dbiz-navy mb-10 flex items-center gap-5">
                   <div className="bg-dbiz-teal/10 p-4 rounded-[1.5rem] text-dbiz-teal"><Shield className="h-8 w-8" /></div>
-                  Importance of Nidhi Company Compliance
+                  Importance of GST Filing
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
                   {[
-                    "Ensures legal compliance under MCA regulations",
-                    "Enables smooth acceptance of deposits and operations",
-                    "Avoids penalties, restrictions, and notices",
-                    "Maintains accurate financial and statutory records",
-                    "Builds credibility among members and stakeholders"
+                    "Ensures legal compliance under GST laws",
+                    "Enables proper claim of Input Tax Credit",
+                    "Avoids penalties, interest, and notices",
+                    "Maintains accurate business records",
+                    "Builds credibility with customers and vendors"
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-5 group/item">
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-dbiz-teal/5 flex items-center justify-center text-dbiz-teal group-hover/item:bg-dbiz-teal group-hover/item:text-white transition-all duration-300 shadow-sm">
@@ -426,9 +425,9 @@ const NidhiCompanyCompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 3. Eligibility Matrix
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-6 tracking-tight leading-tight">Applicability</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-6 tracking-tight leading-tight">Who Should File GST Returns</h2>
               <p className="text-lg text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">
-                To help you clearly understand your Nidhi Company compliance obligations, the table below outlines the categories of entities and their respective applicability under Nidhi Rules and the Companies Act, 2013.
+                To help you clearly understand your GST filing obligations, the table below outlines the categories of taxpayers and their respective applicability under GST laws.
               </p>
             </div>
 
@@ -440,14 +439,14 @@ const NidhiCompanyCompliancePage = () => {
               </div>
               <div className="bg-white divide-y divide-gray-50">
                 {[
-                  { cat: "Nidhi Companies", app: "Mandatory compliance" },
-                  { cat: "Newly Incorporated Nidhi Companies", app: "Must meet initial compliance requirements" },
-                  { cat: "Existing Nidhi Companies", app: "Continuous and annual compliance required" },
-                  { cat: "Companies Applying for Nidhi Status", app: "Required to file NDH-4" },
-                  { cat: "Companies Accepting Deposits from Members", app: "Mandatory compliance under Nidhi Rules" },
-                  { cat: "Companies with Member-Based Financing Activities", app: "Required to comply with Nidhi provisions" },
-                  { cat: "Companies Failing Minimum Member Requirement", app: "Must regularize compliance" },
-                  { cat: "Companies under ROC Monitoring", app: "Strict compliance required" }
+                  { cat: "Registered Businesses", app: "Mandatory GST return filing" },
+                  { cat: "Traders & Dealers", app: "Required for supply of goods" },
+                  { cat: "Service Providers", app: "Required for taxable services" },
+                  { cat: "Companies & LLPs", app: "Compulsory compliance" },
+                  { cat: "E-commerce Sellers", app: "Mandatory under GST" },
+                  { cat: "Composition Scheme Dealers", app: "Filing under composition scheme" },
+                  { cat: "Casual Taxable Persons", app: "Required during business period" },
+                  { cat: "Input Service Distributors", app: "Mandatory return filing" }
                 ].map((item, i) => (
                   <div key={i} className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-8 py-5 px-10 items-center group hover:bg-dbiz-teal/5 transition-colors">
                     <div className="flex items-center gap-4">
@@ -463,7 +462,7 @@ const NidhiCompanyCompliancePage = () => {
                 ))}
               </div>
               <div className="p-6 bg-dbiz-teal/5 text-center text-dbiz-navy font-black text-[13px] border-t border-gray-100">
-                * All Nidhi Companies are required to comply with regulations regularly, even if there are no significant transactions or changes during the period.
+                * All entities registered under GST are required to file returns regularly, even if there are no transactions (Nil returns).
               </div>
             </div>
           </div>
@@ -476,22 +475,23 @@ const NidhiCompanyCompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 4. Statutory Forms
               </div>
-              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Which Nidhi Compliance Applies to You?</h2>
+              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Which GST Return Applies to You?</h2>
               <p className="text-xl text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">
-                To ensure accurate compliance and avoid errors, it is important to follow the correct Nidhi compliance requirements based on your company’s status and operations. The table below provides a clear understanding of different Nidhi compliances and their applicability.
+                To ensure accurate compliance and avoid errors, it is important to select the correct GST return based on your business type and transactions.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto animate-on-scroll">
               {[
-                { task: "NDH-1", desc: "Member and deposit compliance reporting" },
-                { task: "NDH-3", desc: "Half-yearly return of members and deposits" },
-                { task: "NDH-4", desc: "Application for declaration as Nidhi Company" },
-                { task: "AOC-4", desc: "Filing of financial statements" },
-                { task: "MGT-7", desc: "Annual return filing" },
-                { task: "DIR-3 KYC", desc: "Director KYC compliance" },
-                { task: "ADT-1", desc: "Appointment of auditor" },
-                { task: "Board Meetings & AGM", desc: "Mandatory governance compliance" }
+                { task: "GSTR-1", desc: "Reporting outward supplies (sales)" },
+                { task: "GSTR-3B", desc: "Monthly summary return & tax payment" },
+                { task: "GSTR-2A / 2B", desc: "ITC reconciliation (auto-generated)" },
+                { task: "GSTR-9", desc: "Annual return for regular taxpayers" },
+                { task: "GSTR-9C", desc: "GST audit & reconciliation" },
+                { task: "CMP-08", desc: "Composition scheme tax payment" },
+                { task: "GSTR-4", desc: "Annual return for composition dealers" },
+                { task: "GSTR-7", desc: "TDS under GST" },
+                { task: "GSTR-8", desc: "E-commerce operators" }
               ].map((item, i) => (
                 <div key={i} className="uiverse-fill-card group animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
                   <div className="uiverse-fill-content">
@@ -505,7 +505,7 @@ const NidhiCompanyCompliancePage = () => {
             <div className="mt-16 flex items-center justify-center gap-3 animate-on-scroll">
               <AlertTriangle className="h-5 w-5 text-amber-500 shrink-0" />
               <p className="text-gray-500 font-bold text-sm italic tracking-tight">
-                Choosing the correct compliance and completing it accurately is essential to avoid penalties, restrictions, and regulatory issues.
+                Choosing the correct GST return and filing it accurately is essential to avoid penalties, notices, and compliance issues.
               </p>
             </div>
           </div>
@@ -518,20 +518,20 @@ const NidhiCompanyCompliancePage = () => {
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                   5. Full Coverage
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight">Transactions Covered in Nidhi Company Compliance</h2>
-                <p className="text-xl text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">We handle all types of Nidhi-related transactions with proper classification and compliance as per regulatory requirements: This comprehensive coverage ensures accurate reporting of all financial activities, proper compliance with Nidhi rules, and smooth company operations.</p>
+                <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight">Transactions Covered in GST Filing</h2>
+                <p className="text-xl text-gray-700 font-bold leading-relaxed max-w-3xl mx-auto">We handle all types of GST transactions with proper classification and compliance as per GST regulations:</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {[
-                  { title: "Member Deposits", desc: "Member deposits (Fixed Deposits, Recurring, Savings)", icon: FileBarChart, img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" },
-                  { title: "Loan Disbursement", desc: "Loan disbursement to members", icon: FileText, img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" },
-                  { title: "Share Capital", desc: "Share capital transactions", icon: UserPlus, img: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=600&q=80" },
-                  { title: "Interest Reporting", desc: "Interest calculation and financial reporting", icon: Calendar, img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" },
-                  { title: "NOF & Deposit Ratios", desc: "Maintenance of Net Owned Fund (NOF) and ratios", icon: BookOpen, img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" },
-                  { title: "Statutory Registers", desc: "Member register and documentation maintenance", icon: ClipboardCheck, img: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&w=600&q=80" },
-                  { title: "ROC Filings", desc: "Statutory filings and compliance records", icon: Zap, img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" },
-                  { title: "Corrections", desc: "Amendments and corrections in compliance filings", icon: RefreshCw, img: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" }
+                  { title: "Outward Supplies", desc: "Sales of goods and services.", icon: FileBarChart, img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" },
+                  { title: "Inward Supplies", desc: "Purchases and expenses.", icon: FileText, img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" },
+                  { title: "Input Tax Credit", desc: "Input Tax Credit (ITC) claims.", icon: CheckCircle2, img: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=600&q=80" },
+                  { title: "RCM Transactions", desc: "Reverse Charge Mechanism (RCM) transactions.", icon: Repeat, img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80" },
+                  { title: "Export Supplies", desc: "Export and Zero-rated supplies.", icon: Globe2, img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" },
+                  { title: "Interstate Transactions", desc: "Interstate and Intrastate transactions.", icon: MapPin, img: "https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&w=600&q=80" },
+                  { title: "E-commerce Sales", desc: "E-commerce and online sales transactions.", icon: ShoppingCart, img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" },
+                  { title: "Amendments", desc: "Amendments and corrections in returns.", icon: RefreshCw, img: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=600&q=80" }
                 ].map((item, idx) => (
                   <div key={idx} className="uiverse-service-card animate-on-scroll-big" style={{ animationDelay: `${idx * 100}ms` }}>
                     <CachedImage 
@@ -559,11 +559,11 @@ const NidhiCompanyCompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 6. Our Advantage
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Our Advantage</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Why Choose D BIZ CONSULTANCY for GST Filing Services?</h2>
               <div className="space-y-6 text-xl text-gray-700 font-medium max-w-5xl mx-auto">
-                 <p>D BIZ CONSULTANCY has experienced professionals who handle even complex Nidhi Company compliance requirements with ease. We ensure accurate and compliant filings, reducing the risk of errors, penalties, and regulatory restrictions.</p>
-                 <p>Our approach focuses on precise compliance tracking, correct financial structuring, and adherence to Nidhi Rules while maintaining complete transparency in pricing. There are no hidden charges, and every service is delivered with clarity and trust.</p>
-                 <p>We follow an efficient process to ensure timely compliance within deadlines. With dedicated support at every stage, we provide a smooth, reliable, and hassle-free Nidhi compliance experience.</p>
+                 <p>D BIZ CONSULTANCY has experienced professionals who handle even complex GST compliance with ease. We ensure accurate and compliant GST filing, reducing the risk of errors, penalties, and notices.</p>
+                 <p>Our approach focuses on precise transaction reporting and correct tax calculations while maintaining complete transparency in pricing. There are no hidden charges, and every service is delivered with clarity and trust.</p>
+                 <p>We follow an efficient process to ensure timely filing within deadlines. With dedicated support at every stage, we provide a smooth, reliable, and hassle-free GST compliance experience.</p>
               </div>
             </div>
 
@@ -571,33 +571,33 @@ const NidhiCompanyCompliancePage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20 px-4 md:px-0">
                {[
                  {
-                   title: "Compliance Analysis & Structuring",
-                   points: ["Identify company status, members, and deposit structure", "Proper classification as per Nidhi Rules"],
+                   title: "GST Data Analysis & Structuring",
+                   points: ["Identify all sales and purchase transactions", "Proper classification as per GST rules"],
                    icon: Search
                  },
                  {
-                   title: "Regulatory Compliance & Ratio Management",
-                   points: ["Ensure Net Owned Fund (NOF) compliance", "Maintain deposit to NOF ratio", "Verify member requirements"],
-                   icon: FileText
+                   title: "Tax Calculation & Optimization",
+                   points: ["Accurate output tax computation", "Correct Input Tax Credit (ITC) utilization", "Minimize tax liability within legal limits"],
+                   icon: Activity
                  },
                  {
                    title: "Data Reconciliation",
-                   points: ["Financial data and compliance matching", "Member and deposit reconciliation", "Compliance verification"],
-                   icon: ClipboardCheck
+                   points: ["GSTR-2A & 2B matching", "Purchase and sales reconciliation", "ITC verification"],
+                   icon: CheckCircle
                  },
                  {
-                   title: "Nidhi Return Preparation & Filing",
-                   points: ["Selection of correct compliance forms (NDH-1, NDH-3, etc.)", "Preparation of required ROC filings", "Timely filing on MCA portal"],
-                   icon: Send
+                   title: "GST Return Preparation & Filing",
+                   points: ["Selection of correct GST returns", "Preparation of GSTR-1, GSTR-3B, etc.", "Timely filing on GST portal"],
+                   icon: FileText
                  },
                  {
                    title: "Post-Filing Support",
-                   points: ["Compliance status tracking", "Amendments and corrections", "Ongoing compliance support"],
+                   points: ["Return status tracking", "Amendments and corrections", "Ongoing compliance support"],
                    icon: RefreshCw
                  },
                  {
                    title: "Notice Handling & Compliance",
-                   points: ["ROC notices response", "Department queries handling", "Compliance and audit support"],
+                   points: ["GST notices response", "Department queries handling", "Compliance and audit support"],
                    icon: MessageCircle
                  }
                ].map((item, idx) => (
@@ -630,22 +630,22 @@ const NidhiCompanyCompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 7. Advanced Support
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Advanced & Specialized Nidhi Company Compliance Services</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Advanced & Specialized GST Filing Services</h2>
               <p className="text-xl text-gray-700 font-medium max-w-3xl mx-auto">
-                We provide expert support for complex Nidhi compliance requirements, ensuring accurate compliance and efficient regulatory management.
+                We provide expert support for complex GST requirements, ensuring accurate compliance and efficient tax management.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll">
                {[
-                 { title: "Belated Filings", desc: "Belated Nidhi Compliance Filing", icon: History },
-                 { title: "Revised Amendments", desc: "Revised Filings & Amendments", icon: RefreshCw },
-                 { title: "Nidhi Application", desc: "Nidhi Status Application (NDH-4)", icon: Zap },
-                 { title: "Ratio Correction", desc: "Compliance Ratio Correction (NOF & Deposits)", icon: Scale },
-                 { title: "Audit Reconciliation", desc: "Audit Support & Financial Reconciliation", icon: FileCheck2 },
-                 { title: "Member Structuring", desc: "Member and Deposit Structuring", icon: Users },
-                 { title: "Complex Issues", desc: "Handling Complex Compliance Issues", icon: Shield },
-                 { title: "Regulatory Advisory", desc: "Nidhi Advisory & Regulatory Support for Companies", icon: HardHat }
+                 { title: "Belated GST Return Filing", desc: "Filing of overdue GST returns.", icon: History },
+                 { title: "Revised GST Return & Amendments", desc: "Amendments and corrections in GST returns.", icon: RefreshCw },
+                 { title: "GST Liability Calculation & Tax Planning", desc: "Optimization of GST liability and tax planning.", icon: Activity },
+                 { title: "GST Audit Support & Reconciliation", desc: "Support for GSTR-9C and GST audits.", icon: FileCheck2 },
+                 { title: "GSTR-2A & 2B ITC Reconciliation", desc: "Reconciliation of Input Tax Credit (ITC).", icon: CheckCircle },
+                 { title: "GST & Accounting Data Reconciliation", desc: "Matching GST data with accounting records.", icon: BookOpen },
+                 { title: "Handling Complex Transactions", desc: "Support for RCM, exports, and e-commerce.", icon: Zap },
+                 { title: "GST Advisory & Compliance Support", desc: "Advisory and support for businesses.", icon: Shield }
                ].map((item, idx) => (
                  <div key={idx} className="uiverse-specialized-card group animate-on-scroll" style={{ animationDelay: `${idx * 100}ms` }}>
                     <div className="absolute -right-4 -top-4 w-24 h-24 bg-dbiz-teal/5 rounded-full blur-2xl group-hover:bg-dbiz-teal/10 transition-all"></div>
@@ -676,7 +676,7 @@ const NidhiCompanyCompliancePage = () => {
                 8. Workflow
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight animate-on-scroll [animation-delay:100ms]">Process</h2>
-              <p className="text-xl text-white/60 font-medium animate-on-scroll [animation-delay:200ms]">We follow a structured and systematic approach to ensure accurate compliance, timely filing, and smooth Nidhi Company operations.</p>
+              <p className="text-xl text-white/60 font-medium animate-on-scroll [animation-delay:200ms]">We follow a structured and systematic approach to ensure accurate filing, timely compliance, and smooth GST management.</p>
             </div>
 
             <Carousel
@@ -700,12 +700,12 @@ const NidhiCompanyCompliancePage = () => {
 
               <CarouselContent className="-ml-4 md:-ml-6">
                 {[
-                  { stage: "Stage 1", title: "Client Onboarding & Data Collection", color: "bg-blue-500", items: ["Understand company structure and compliance status", "Collect CIN, financial data, and member details", "Gather previous filings and compliance records"] },
-                  { stage: "Stage 2", title: "Compliance Evaluation & Validation", color: "bg-purple-500", items: ["Analyze member count and deposit structure", "Verify Net Owned Fund (NOF) and ratios", "Identify gaps, mismatches, or non-compliance"] },
-                  { stage: "Stage 3", title: "Compliance Structuring & Planning", color: "bg-indigo-500", items: ["Plan corrective actions for compliance gaps", "Align operations with Nidhi Rules and requirements"] },
-                  { stage: "Stage 4", title: "Return Preparation & Review", color: "bg-cyan-500", items: ["Select applicable forms (NDH-1, NDH-3, etc.)", "Prepare draft filings based on validated data", "Share summary with client for review and approval"] },
-                  { stage: "Stage 5", title: "Filing & Submission", color: "bg-dbiz-teal", items: ["File returns on MCA portal", "Ensure timely submission within due dates", "Generate acknowledgment and compliance reports"] },
-                  { stage: "Stage 6", title: "Post-Compliance Monitoring", color: "bg-emerald-500", items: ["Track compliance status and updates", "Handle notices, corrections, or follow-ups", "Provide ongoing compliance support and advisory services"] }
+                  { stage: "Stage 1", title: "Client Onboarding & Data Collection", color: "bg-blue-500", items: ["Understand business nature and GST registration details", "Collect GSTIN, sales data, purchase data, and accounting records", "Gather invoices, expense details, and previous return data"] },
+                  { stage: "Stage 2", title: "Data Evaluation & Validation", color: "bg-purple-500", items: ["Analyze sales and purchase transactions", "Reconcile data with GSTR-2A, GSTR-2B, and books of accounts", "Identify mismatches, missing invoices, or incorrect entries"] },
+                  { stage: "Stage 3", title: "Tax Computation & ITC Optimization", color: "bg-indigo-500", items: ["Calculate output tax liability", "Verify and optimize Input Tax Credit (ITC)", "Ensure correct tax payable after ITC adjustment"] },
+                  { stage: "Stage 4", title: "Return Preparation & Review", color: "bg-cyan-500", items: ["Select applicable GST returns (GSTR-1, GSTR-3B, etc.)", "Prepare draft returns based on validated data", "Share summary with client for review and approval"] },
+                  { stage: "Stage 5", title: "Filing & Submission", color: "bg-dbiz-teal", items: ["File GST returns on the GST portal", "Ensure timely submission within due dates", "Generate filing acknowledgment and reports"] },
+                  { stage: "Stage 6", title: "Post-Filing Monitoring", color: "bg-emerald-500", items: ["Track return status and compliance updates", "Handle notices, mismatches, or corrections", "Provide ongoing GST support and advisory services"] }
                 ].map((process, idx) => (
                   <CarouselItem key={idx} className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3">
                     <div className="bg-white/5 border border-white/10 p-10 rounded-[3rem] h-full relative group hover:bg-white/[0.08] transition-all">
@@ -739,7 +739,7 @@ const NidhiCompanyCompliancePage = () => {
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Documents</h2>
               <p className="text-xl text-gray-600 font-medium max-w-4xl mx-auto">
-                To ensure accurate Nidhi Company compliance and smooth filing, it is important to maintain proper records and provide complete documentation. The following details are required for efficient preparation and submission of compliance filings.
+                To ensure accurate GST filing and smooth compliance, it is important to maintain proper records and provide complete documentation. The following details are required for efficient preparation and filing of GST returns.
               </p>
             </div>
 
@@ -749,31 +749,31 @@ const NidhiCompanyCompliancePage = () => {
                    title: "Basic Details",
                    icon: Building2,
                    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=50",
-                   items: ["CIN (Corporate Identification Number)", "PAN of the company", "Bank account details", "Director details (DIN & KYC status)"]
+                   items: ["GSTIN and login credentials", "PAN of the business", "Bank account details"]
                  },
                  {
-                   title: "Financial Documents",
+                   title: "Sales Documents",
                    icon: FileBarChart,
                    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=50",
-                   items: ["Balance Sheet", "Profit & Loss Statement", "Net Owned Fund (NOF) calculation", "Auditor’s report"]
+                   items: ["Sales invoices (B2B & B2C)", "Debit and credit notes", "Export invoices (if applicable)"]
                  },
                  {
-                   title: "Member & Deposit",
+                   title: "Purchase Documents",
                    icon: ClipboardCheck,
                    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=50",
-                   items: ["List of members (minimum 200)", "Shareholding details", "Deposit details (FD, RD, savings)", "Loan details provided to members"]
+                   items: ["Purchase invoices", "Expense bills", "Import documents (if applicable)"]
                  },
                  {
-                   title: "Compliance Filings",
+                   title: "Tax & Reconciliation",
                    icon: FileCheck2,
                    image: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=600&q=50",
-                   items: ["Previous NDH filings (NDH-1, NDH-3, etc.)", "Annual return (MGT-7)", "Financial statements (AOC-4)"]
+                   items: ["GSTR-2A & GSTR-2B", "Previous GST returns", "Input Tax Credit (ITC) details"]
                  },
                  {
-                   title: "Additional Records",
+                   title: "Additional Documents",
                    icon: AlertCircle,
                    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=50",
-                   items: ["NDH-4 application documents", "Board resolutions and meeting records", "Compliance correction details", "ROC notices and replies"]
+                   items: ["E-way bill details", "RCM (Reverse Charge Mechanism) transactions", "E-commerce transaction reports"]
                  }
                ].map((cat, idx) => (
                  <div key={idx} className="bg-white rounded-[3rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 group animate-on-scroll flex flex-col overflow-hidden" style={{ animationDelay: `${idx * 100}ms` }}>
@@ -802,7 +802,7 @@ const NidhiCompanyCompliancePage = () => {
             {/* Standalone Advisory Line */}
             <div className="mt-16 pt-8 border-t border-gray-100 text-center animate-on-scroll">
                <p className="text-lg font-bold text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                 This ensures accurate compliance filing, proper regulatory adherence, and smooth functioning of the Nidhi Company.
+                 This ensures accurate GST filing, proper ITC claims, and full compliance with GST regulations.
                </p>
                <div className="mt-6 flex justify-center">
                   <div className="h-1 w-16 bg-dbiz-teal/30 rounded-full"></div>
@@ -819,42 +819,42 @@ const NidhiCompanyCompliancePage = () => {
               <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-[11px] font-black tracking-[0.3em] mb-6 uppercase">
                 10. BENEFITS
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Our Advantage</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight leading-tight">Benefits of Professional GST Filing</h2>
               <p className="text-xl text-gray-600 font-medium max-w-3xl leading-relaxed mx-auto">
-                Professional Nidhi Company compliance plays a crucial role in ensuring accurate reporting and smooth company operations. It helps companies stay compliant, reduce risks, and efficiently manage regulatory requirements.
+                Professional GST compliance ensures smooth business operations and helps avoid legal risks and penalties.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                {[
                  {
-                   title: "Accurate compliance and reporting",
-                   desc: "Ensures correct filing of all Nidhi forms and regulatory documents.",
+                   title: "Accurate reporting and data analysis",
+                   desc: "Ensures correct preparation and submission of sales and purchase data.",
                    icon: FileCheck2
                  },
                  {
-                   title: "Avoid penalties, restrictions, and notices",
-                   desc: "Reduces the risk of non-compliance, fines, and operational restrictions.",
+                   title: "Proper claim of Input Tax Credit (ITC)",
+                   desc: "Optimizes tax liability and ensures correct ITC claims.",
+                   icon: CheckCircle2
+                 },
+                 {
+                   title: "Avoid penalties, late fees, and notices",
+                   desc: "Reduces the risk of heavy fines and compliance actions.",
                    icon: Gavel
                  },
                  {
-                   title: "Timely compliance management",
-                   desc: "Ensures all filings are completed within due dates without delays.",
-                   icon: Clock
-                 },
-                 {
-                   title: "Smooth business operations",
-                   desc: "Prevents disruptions due to compliance failures.",
+                   title: "Maintain compliance with GST laws",
+                   desc: "Ensures all filings meet statutory and regulatory requirements.",
                    icon: Building2
                  },
                  {
-                   title: "Improved credibility and trust",
-                   desc: "Builds confidence among members, depositors, and authorities.",
+                   title: "Enhance business credibility",
+                   desc: "Builds trust with customers, vendors, and stakeholders.",
                    icon: Award
                  },
                  {
-                   title: "Complete adherence to Nidhi Rules",
-                   desc: "Maintains proper records and compliance with all regulatory requirements.",
+                   title: "Focus on core business activities",
+                   desc: "We handle compliance so you can focus on growth.",
                    icon: Shield
                  }
                ].map((benefit, idx) => (
@@ -878,18 +878,16 @@ const NidhiCompanyCompliancePage = () => {
                   </div>
                   <h2 className="text-[38.25px] font-black text-dbiz-navy mb-4 tracking-tight leading-tight text-center uppercase">Deadlines</h2>
                   <p className="text-gray-600 font-bold mb-12 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                    To ensure smooth compliance and avoid penalties, it is important to be aware of the due dates for various Nidhi filings. The table below provides a clear overview of key compliance deadlines.
+                    To ensure smooth compliance and avoid late fees, it is important to be aware of key GST filing deadlines.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                      {[
-                       { cat: "NDH-1", label: "Annual Requirements", due: "Within 90 days from the close of financial year", icon: FileBarChart },
-                       { cat: "NDH-3", label: "Half-Yearly Return", due: "Within 30 days from half-year end", icon: FileCheck2 },
-                       { cat: "NDH-4", label: "Nidhi Status Declaration", due: "As applicable", icon: Users },
-                       { cat: "AOC-4", label: "Financial Statements", due: "Within 30 days of AGM", icon: CreditCard },
-                       { cat: "MGT-7", label: "Annual Return", due: "Within 60 days of AGM", icon: BookOpen },
-                       { cat: "DIR-3 KYC", label: "Director KYC", due: "Annually (as per MCA due date)", icon: Shield }
-                     ].map((item, i) => (
+                        { cat: "GSTR-1", label: "Outward Supplies", due: "11th / 13th Next Month", icon: FileBarChart },
+                        { cat: "GSTR-3B", label: "Summary & Tax Payment", due: "20th / 22nd / 24th Next Month", icon: FileCheck2 },
+                        { cat: "GSTR-9", label: "Annual Return", due: "31st Dec Next FY", icon: Calendar },
+                        { cat: "CMP-08", label: "Composition Scheme", due: "18th Next Quarter", icon: CreditCard }
+                      ].map((item, i) => (
                        <div key={i} className="uiverse-flip-card group animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
                           <div className="uiverse-flip-card-inner">
                              {/* Front Side */}
@@ -909,7 +907,7 @@ const NidhiCompanyCompliancePage = () => {
                                 <p className="text-dbiz-teal font-black text-xs uppercase tracking-[0.3em] mb-6">Filing Deadline</p>
                                 <h4 className="text-2xl font-black text-white leading-tight mb-4">{item.due}</h4>
                                 <div className="h-1 w-12 bg-white/20 rounded-full mb-6"></div>
-                                <p className="text-white/70 font-bold italic text-sm px-4">Mandatory annual filing for {item.label.toLowerCase()} under the Companies Act.</p>
+                                <p className="text-white/70 font-bold italic text-sm px-4">Mandatory filing for {item.label.toLowerCase()} under GST laws.</p>
                              </div>
                           </div>
                        </div>
@@ -917,7 +915,7 @@ const NidhiCompanyCompliancePage = () => {
                   </div>
                   
                   <p className="text-gray-500 font-bold italic text-[17px] text-center">
-                    Timely filing of Nidhi compliance is essential to avoid penalties, restrictions, and regulatory issues.
+                    Timely filing of GST returns is essential to avoid late fees, interest, and compliance issues.
                   </p>
                </div>
             </div>
@@ -936,19 +934,18 @@ const NidhiCompanyCompliancePage = () => {
                   Penalties
                 </p>
                 <p className="text-[#475569] text-lg leading-[1.7] font-medium">
-                  Non-compliance or delay in Nidhi Company filings may result in:
+                  Non-filing or delayed GST compliance may result in serious legal, financial, and operational consequences.
                 </p>
               </div>
 
               {/* Right Side: Risk Grid */}
               <div className="flex-1 min-w-[320px] grid grid-cols-1 md:grid-cols-2 gap-[20px]">
                 {[
-                  "Late fees for delayed filing",
-                  "Heavy penalties from ROC",
-                  "Restrictions on accepting deposits",
-                  "Notices and compliance actions from authorities",
-                  "Loss of Nidhi Company status",
-                  "Disqualification of directors"
+                  "Late fees of ₹50 per day (₹20 for Nil returns)",
+                  "Interest at 18% p.a. on late tax payment",
+                  "Blockage of e-way bill generation",
+                  "Cancellation of GST registration",
+                  "Legal notices and compliance actions"
                 ].map((risk, i) => (
                   <div 
                     key={i} 
@@ -964,7 +961,7 @@ const NidhiCompanyCompliancePage = () => {
             {/* Bottom Advisory Line */}
             <div className="mt-[60px] pt-8 border-t border-gray-100 text-center animate-on-scroll">
                <p className="text-lg font-bold text-gray-500 italic leading-relaxed max-w-4xl mx-auto">
-                 Timely and accurate compliance is essential to avoid financial loss and ensure smooth operations of the Nidhi Company.
+                 Timely and accurate GST compliance ensures smooth business operations and protects you from legal consequences.
                </p>
             </div>
           </div>
@@ -980,7 +977,7 @@ const NidhiCompanyCompliancePage = () => {
                </div>
                <h2 className="text-4xl md:text-6xl font-black text-dbiz-navy mb-8 tracking-tighter leading-tight animate-on-scroll-big [animation-delay:100ms]">FAQs</h2>
                <p className="text-xl text-gray-600 font-bold max-w-4xl mx-auto leading-relaxed animate-on-scroll-big [animation-delay:200ms]">
-                 To help you better understand Nidhi Company compliance and clear common doubts, we have answered some frequently asked questions below. These will provide clarity on key concepts, compliance requirements, and practical aspects of Nidhi regulations.
+                 To help you better understand GST compliance and clear common doubts, we have answered some frequently asked questions below.
                </p>
             </div>
 
@@ -988,27 +985,17 @@ const NidhiCompanyCompliancePage = () => {
             <div className="max-w-4xl mx-auto mb-20 animate-on-scroll-big">
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {[
-  { q: "What is Nidhi Company compliance?", a: "Nidhi Company compliance refers to fulfilling statutory requirements under the Companies Act, 2013 and Nidhi Rules, including filings, member management, and financial compliance." },
-  { q: "Is compliance mandatory for all Nidhi Companies?", a: "Yes, all Nidhi Companies must comply with regulatory requirements, even if there are no major transactions." },
-  { q: "What happens if Nidhi compliance is not done on time?", a: "Non-compliance may lead to penalties, restrictions on operations, and possible loss of Nidhi status." },
-  { q: "What is NDH-1?", a: "NDH-1 is a return that contains details of members, deposits, and compliance with Nidhi requirements." },
-  { q: "What is NDH-3?", a: "NDH-3 is a half-yearly return showing details of members, deposits, and loans." },
-  { q: "What is Net Owned Fund (NOF)?", a: "NOF is the minimum capital requirement that a Nidhi Company must maintain to operate legally." },
-  { q: "What is the minimum number of members required?", a: "A Nidhi Company must have at least 200 members." },
-  { q: "Can a Nidhi Company accept deposits from non-members?", a: "No, Nidhi Companies can accept deposits only from their members." },
-  { q: "What is NDH-4?", a: "NDH-4 is a form used to apply for declaration as a Nidhi Company." },
-  { q: "What is the penalty for late compliance?", a: "Late filing attracts penalties and additional fees as per MCA rules." },
-  { q: "Is audit mandatory for Nidhi Companies?", a: "Yes, annual audit of financial statements is mandatory." },
-  { q: "Can compliance be revised after filing?", a: "Certain corrections can be made, but penalties may apply for delays or errors." },
-  { q: "What happens if minimum requirements are not met?", a: "The company may face restrictions and may need to apply for extension or corrective measures." },
-  { q: "Are directors required to complete KYC?", a: "Yes, directors must file DIR-3 KYC annually." },
-  { q: "Can a Nidhi Company lose its status?", a: "Yes, continuous non-compliance can result in cancellation of Nidhi status." },
-  { q: "Is annual return filing mandatory?", a: "Yes, filing of MGT-7 and AOC-4 is compulsory every year." },
-  { q: "What is the deposit to NOF ratio?", a: "Nidhi Companies must maintain prescribed limits between deposits and NOF." },
-  { q: "Can a Nidhi Company operate without compliance?", a: "No, non-compliance can lead to legal actions and operational restrictions." },
-  { q: "How can I check compliance status?", a: "You can check the status on the MCA portal using your company details." },
-  { q: "What support is available for compliance?", a: "Professional consultancy services help ensure accurate filings and full compliance." }
-].map((faq, index) => (
+                  { q: "What is GST filing?", a: "GST filing is the submission of details related to sales, purchases, and tax payments to the GST department." },
+                  { q: "Is GST filing mandatory for all registered businesses?", a: "Yes, all registered taxpayers must file GST returns, even if there are no business transactions (Nil returns)." },
+                  { q: "What is the penalty for late GST filing?", a: "A late fee of ₹50 per day (₹20 for Nil returns) is levied for delayed filing, along with 18% interest on late tax payment." },
+                  { q: "What is GSTR-1?", a: "GSTR-1 is a monthly/quarterly return containing details of all outward supplies (sales)." },
+                  { q: "What is GSTR-3B?", a: "GSTR-3B is a monthly/quarterly summary return where tax liability is calculated, ITC is claimed, and tax is paid." },
+                  { q: "What is Input Tax Credit (ITC)?", a: "ITC allows businesses to reduce their tax liability by claiming credit for the GST paid on purchases." },
+                  { q: "Can I revise a filed GST return?", a: "No, GST returns cannot be revised once filed. Any corrections must be made in the return for the subsequent period." },
+                  { q: "What is the QRMP scheme?", a: "QRMP (Quarterly Return Monthly Payment) scheme allows eligible small taxpayers to file returns quarterly while paying taxes monthly." },
+                  { q: "What happens if I don't file GST returns for 6 months?", a: "Your GST registration may be cancelled by the tax officer, and e-way bill generation will be blocked." },
+                  { q: "Is GSTR-9 mandatory for all taxpayers?", a: "GSTR-9 (Annual Return) is mandatory for taxpayers with an aggregate turnover exceeding ₹2 Crores." }
+                ].map((faq, index) => (
                   <AccordionItem key={index} value={`faq-${index}`} className="bg-white border border-gray-100 rounded-[2rem] px-8 overflow-hidden shadow-sm hover:shadow-md transition-shadow animate-on-scroll-big" style={{ animationDelay: `${index * 50}ms` }}>
                     <AccordionTrigger className="text-left font-medium text-dbiz-navy hover:text-dbiz-teal transition-colors py-6 text-xl tracking-tight">
                       {faq.q}
@@ -1031,4 +1018,4 @@ const NidhiCompanyCompliancePage = () => {
   );
 };
 
-export default NidhiCompanyCompliancePage;
+export default GSTFilingServicePage;

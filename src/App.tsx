@@ -36,7 +36,6 @@ const AdminLogin = lazy(() => import("./pages/Admin/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
 const ServiceEditor = lazy(() => import("./pages/Admin/ServiceEditor"));
 const LLPContentEditor = lazy(() => import("./pages/Admin/LLPContentEditor"));
-const NidhiCompanyPage = lazy(() => import("./pages/NidhiCompanyPage"));
 const ProducerCompanyPage = lazy(() => import("./pages/ProducerCompanyPage"));
 const NBFCPage = lazy(() => import("./pages/NBFCPage"));
 const PartnershipPage = lazy(() => import("./pages/PartnershipPage"));
@@ -49,11 +48,12 @@ const ShopEstablishmentPage = lazy(() => import("./pages/ShopEstablishmentPage")
 const TrademarkRegistrationPage = lazy(() => import("./pages/TrademarkRegistrationPage"));
 const PatentRegistrationPage = lazy(() => import("./pages/PatentRegistrationPage"));
 const CopyrightRegistrationPage = lazy(() => import("./pages/CopyrightRegistrationPage"));
-const TDSFilingsPage = lazy(() => import("./pages/TDSFilingsPage"));
-const GSTFilingsPage = lazy(() => import("./pages/GSTFilingsPage"));
+const TDSFilingsPage = lazy(() => import("./pages/TDSFilingServicesPage"));
+const GSTFilingsPage = lazy(() => import("./pages/GSTFilingServicesPage"));
 const IncomeTaxFilingPage = lazy(() => import("./pages/IncomeTaxFilingPage"));
 const MCACompliancePage = lazy(() => import("./pages/MCACompliancePage"));
 const PublicLimitedPage = lazy(() => import("./pages/PublicLimitedPage"));
+const NidhiCompanyPage = lazy(() => import("./pages/NidhiCompanyPage"));
 const NidhiCompanyCompliancePage = lazy(() => import("./pages/NidhiCompanyCompliancePage"));
 const AnnualCompliancePage = lazy(() => import("./pages/AnnualCompliancePage"));
 const BusinessPlanPage = lazy(() => import("./pages/BusinessPlanPage"));
@@ -111,8 +111,6 @@ const App = () => {
                   <Route path="/limited-liability-partnership/:location" element={<LLPRegistrationPage />} />
                   <Route path="/one-person-company" element={<OnePersonCompanyPage />} />
                   <Route path="/one-person-company/:location" element={<OnePersonCompanyPage />} />
-                  <Route path="/nidhi-company" element={<NidhiCompanyPage />} />
-                  <Route path="/nidhi-company/:location" element={<NidhiCompanyPage />} />
                   <Route path="/producer-company" element={<ProducerCompanyPage />} />
                   <Route path="/producer-company/:location" element={<ProducerCompanyPage />} />
                   <Route path="/nbfc" element={<NBFCPage />} />
@@ -163,6 +161,8 @@ const App = () => {
                   <Route path="/admin/edit/:service" element={<ServiceEditor />} />
                   <Route path="/public-limited" element={<PublicLimitedPage />} />
                   <Route path="/public-limited/:location" element={<PublicLimitedPage />} />
+                  <Route path="/nidhi-company" element={<NidhiCompanyPage />} />
+                  <Route path="/nidhi-company/:location" element={<NidhiCompanyPage />} />
                   <Route path="/nidhi-company-compliance" element={<NidhiCompanyCompliancePage />} />
                   <Route path="/nidhi-company-compliance/:location" element={<NidhiCompanyCompliancePage />} />
                   <Route path="/annual-compliance" element={<AnnualCompliancePage />} />

@@ -16,6 +16,10 @@
         "component": "NidhiCompanyPage"
     },
     {
+        "path": "/nidhi-company-compliance",
+        "component": "NidhiCompanyCompliancePage"
+    },
+    {
         "path": "/producer-company",
         "component": "ProducerCompanyPage"
     },

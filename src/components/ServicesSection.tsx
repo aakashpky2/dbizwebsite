@@ -85,7 +85,7 @@ const ServicesSection = () => {
         { name: "SOLE PROPRIETORSHIP", path: "/sole-proprietorship" },
         { name: "NGO/TRUST", path: "/ngo-trust-registration" },
         { name: "PRODUCER COMPANY", path: "/producer-company" },
-        { name: "NIDHI COMPANY", path: "/nidhi-company-compliance" }
+        { name: "NIDHI COMPANY", path: "/nidhi-company" }
       ]
     },
     {
