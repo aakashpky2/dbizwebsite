@@ -1597,3 +1597,1203 @@
   transform: rotateY(180deg);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+
+/* --- Uiverse Trademark Type Cards (Custom Interactive) --- */
+.uiverse-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 380px;
+  transition: 200ms;
+  margin: 0 auto;
+}
+
+.uiverse-container:active {
+  transform: scale(0.98);
+}
+
+.uiverse-card {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  transition: 700ms;
+  background: linear-gradient(45deg, #1a1a1a, #262626);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.uiverse-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.uiverse-prompt {
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: 300ms ease-in-out;
+  position: absolute;
+  text-align: center;
+  color: rgba(0, 255, 170, 0.8);
+  text-shadow: 0 0 10px rgba(0, 255, 170, 0.3);
+}
+
+.uiverse-title {
+  opacity: 0;
+  transition: 300ms ease-in-out;
+  position: absolute;
+  top: 20%;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  width: 100%;
+  padding: 0 15px;
+  background: linear-gradient(45deg, #00ffaa, #00a2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.3));
+}
+
+.uiverse-subtitle {
+  position: absolute;
+  bottom: 60px;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  transform: translateY(30px);
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: 300ms ease-in-out;
+}
+
+.uiverse-glowing-elements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.uiverse-glow-1,
+.uiverse-glow-2,
+.uiverse-glow-3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 170, 0.3) 0%,
+    rgba(0, 255, 170, 0) 70%
+  );
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.uiverse-glow-1 { top: -20px; left: -20px; }
+.uiverse-glow-2 { top: 50%; right: -30px; transform: translateY(-50%); }
+.uiverse-glow-3 { bottom: -20px; left: 30%; }
+
+.uiverse-card-particles span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00ffaa;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover effects */
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-title {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-glowing-elements div {
+  opacity: 1;
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-card-particles span {
+  animation: uiverse-particleFloat 2s infinite;
+}
+
+@keyframes uiverse-particleFloat {
+  0% { transform: translate(0, 0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(calc(var(--x, 0) * 30px), calc(var(--y, 0) * 30px)); opacity: 0; }
+}
+
+/* Particle positions */
+.uiverse-card-particles span:nth-child(1) { --x: 1; --y: -1; top: 40%; left: 20%; }
+.uiverse-card-particles span:nth-child(2) { --x: -1; --y: -1; top: 60%; right: 20%; }
+.uiverse-card-particles span:nth-child(3) { --x: 0.5; --y: 1; top: 20%; left: 40%; }
+.uiverse-card-particles span:nth-child(4) { --x: -0.5; --y: 1; top: 80%; right: 40%; }
+.uiverse-card-particles span:nth-child(5) { --x: 1; --y: 0.5; top: 30%; left: 60%; }
+.uiverse-card-particles span:nth-child(6) { --x: -1; --y: 0.5; top: 70%; right: 60%; }
+
+.uiverse-card::before {
+  content: "";
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 255, 170, 0.1) 0%,
+    rgba(0, 162, 255, 0.05) 50%,
+    transparent 100%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.uiverse-tracker:hover ~ .uiverse-card::before {
+  opacity: 1;
+}
+
+.uiverse-tracker {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+
+.uiverse-tracker:hover {
+  cursor: pointer;
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-prompt {
+  opacity: 0;
+}
+
+.uiverse-tracker:hover ~ .uiverse-card {
+  transition: 300ms;
+  filter: brightness(1.1);
+}
+
+.uiverse-canvas {
+  perspective: 800px;
+  inset: 0;
+  z-index: 200;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "tr-1 tr-2 tr-3 tr-4 tr-5"
+    "tr-6 tr-7 tr-8 tr-9 tr-10"
+    "tr-11 tr-12 tr-13 tr-14 tr-15"
+    "tr-16 tr-17 tr-18 tr-19 tr-20"
+    "tr-21 tr-22 tr-23 tr-24 tr-25";
+}
+
+.uiverse-tr-1 { grid-area: tr-1; } .uiverse-tr-2 { grid-area: tr-2; } .uiverse-tr-3 { grid-area: tr-3; } .uiverse-tr-4 { grid-area: tr-4; } .uiverse-tr-5 { grid-area: tr-5; } .uiverse-tr-6 { grid-area: tr-6; } .uiverse-tr-7 { grid-area: tr-7; } .uiverse-tr-8 { grid-area: tr-8; } .uiverse-tr-9 { grid-area: tr-9; } .uiverse-tr-10 { grid-area: tr-10; } .uiverse-tr-11 { grid-area: tr-11; } .uiverse-tr-12 { grid-area: tr-12; } .uiverse-tr-13 { grid-area: tr-13; } .uiverse-tr-14 { grid-area: tr-14; } .uiverse-tr-15 { grid-area: tr-15; } .uiverse-tr-16 { grid-area: tr-16; } .uiverse-tr-17 { grid-area: tr-17; } .uiverse-tr-18 { grid-area: tr-18; } .uiverse-tr-19 { grid-area: tr-19; } .uiverse-tr-20 { grid-area: tr-20; } .uiverse-tr-21 { grid-area: tr-21; } .uiverse-tr-22 { grid-area: tr-22; } .uiverse-tr-23 { grid-area: tr-23; } .uiverse-tr-24 { grid-area: tr-24; } .uiverse-tr-25 { grid-area: tr-25; }
+
+.uiverse-tr-1:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(-10deg) rotateZ(0deg); }
+.uiverse-tr-2:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(-5deg) rotateZ(0deg); }
+.uiverse-tr-3:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg); }
+.uiverse-tr-4:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(5deg) rotateZ(0deg); }
+.uiverse-tr-5:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(10deg) rotateZ(0deg); }
+.uiverse-tr-6:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg); }
+.uiverse-tr-7:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(-5deg) rotateZ(0deg); }
+.uiverse-tr-8:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg); }
+.uiverse-tr-9:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(5deg) rotateZ(0deg); }
+.uiverse-tr-10:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg); }
+.uiverse-tr-11:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg); }
+.uiverse-tr-12:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg); }
+.uiverse-tr-13:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+.uiverse-tr-14:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg); }
+.uiverse-tr-15:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg); }
+.uiverse-tr-16:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-10deg) rotateZ(0deg); }
+.uiverse-tr-17:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-5deg) rotateZ(0deg); }
+.uiverse-tr-18:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg); }
+.uiverse-tr-19:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(5deg) rotateZ(0deg); }
+.uiverse-tr-20:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(10deg) rotateZ(0deg); }
+.uiverse-tr-21:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-10deg) rotateZ(0deg); }
+.uiverse-tr-22:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-5deg) rotateZ(0deg); }
+.uiverse-tr-23:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg); }
+.uiverse-tr-24:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(5deg) rotateZ(0deg); }
+.uiverse-tr-25:hover ~ .uiverse-card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(10deg) rotateZ(0deg); }
+
+.uiverse-noselect {
+  user-select: none;
+}
+
+.uiverse-card-glare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.uiverse-cyber-lines span {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 170, 0.2),
+    transparent
+  );
+}
+
+.uiverse-cyber-lines span:nth-child(1) { top: 20%; left: 0; width: 100%; height: 1px; transform: scaleX(0); transform-origin: left; animation: uiverse-lineGrow 3s linear infinite; }
+.uiverse-cyber-lines span:nth-child(2) { top: 40%; right: 0; width: 100%; height: 1px; transform: scaleX(0); transform-origin: right; animation: uiverse-lineGrow 3s linear infinite 1s; }
+.uiverse-cyber-lines span:nth-child(3) { top: 60%; left: 0; width: 100%; height: 1px; transform: scaleX(0); transform-origin: left; animation: uiverse-lineGrow 3s linear infinite 2s; }
+.uiverse-cyber-lines span:nth-child(4) { top: 80%; right: 0; width: 100%; height: 1px; transform: scaleX(0); transform-origin: right; animation: uiverse-lineGrow 3s linear infinite 1.5s; }
+
+.uiverse-corner-elements span {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(0, 255, 170, 0.3);
+  transition: all 0.3s ease;
+}
+
+.uiverse-corner-elements span:nth-child(1) { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+.uiverse-corner-elements span:nth-child(2) { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+.uiverse-corner-elements span:nth-child(3) { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+.uiverse-corner-elements span:nth-child(4) { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+.uiverse-scan-line {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 255, 170, 0.1),
+    transparent
+  );
+  transform: translateY(-100%);
+  animation: uiverse-scanMove 2s linear infinite;
+}
+
+@keyframes uiverse-lineGrow {
+  0% { transform: scaleX(0); opacity: 0; }
+  50% { transform: scaleX(1); opacity: 1; }
+  100% { transform: scaleX(0); opacity: 0; }
+}
+
+@keyframes uiverse-scanMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-card-glare {
+  opacity: 1;
+}
+
+.uiverse-tracker:hover ~ .uiverse-card .uiverse-corner-elements span {
+  border-color: rgba(0, 255, 170, 0.8);
+  box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+}
+
+
+
+/* --- Uiverse Glassmorphism Importance Cards --- */
+.importance-glass-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 220px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.importance-glass-card:hover {
+  border: 1px solid #14b8a6;
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.importance-glass-card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.importance-glass-card .icon-container {
+  width: 56px;
+  height: 56px;
+  background: rgba(20, 184, 166, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.5s;
+  color: #14b8a6;
+}
+
+.importance-glass-card:hover .icon-container {
+  background: #14b8a6;
+  color: white;
+  transform: rotate(360deg);
+}
+
+.importance-glass-card h4 {
+  font-weight: 800;
+  color: #0b1d33;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.importance-glass-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+
+
+/* --- Uiverse Trademark Type Cards (SteveBloX Glassmorphism) --- */
+.steveblox-card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  height: 280px;
+  background: #8c8abd;
+  background: linear-gradient(90deg, rgba(140, 138, 189, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.steveblox-card:hover {
+  border: 1px solid white;
+  transform: scale(1.05);
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.35);
+}
+
+.steveblox-card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.steveblox-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.steveblox-card-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.steveblox-card-desc {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+
+/* --- Trademark Legal Framework Card --- */
+.tm-legal-card {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-legal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+}
+
+.tm-header {
+    background: #0b1d33; /* Adjusted to DBIZ Navy */
+    color: #fff;
+    padding: 35px 40px;
+}
+
+.tm-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.tm-header p {
+    margin-top: 8px;
+    opacity: 0.8;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tm-body {
+    padding: 40px;
+    color: #374151;
+    line-height: 1.8;
+}
+
+.tm-body h4 {
+    color: #0b1d33;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tm-body p {
+    margin-bottom: 15px;
+}
+
+.tm-body ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.tm-body li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.tm-body li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    color: #14b8a6; /* DBIZ Teal */
+    font-weight: 900;
+}
+
+.tm-footer {
+    background: #f8fafc;
+    padding: 25px 40px;
+    text-align: right;
+    border-top: 1px solid #f1f5f9;
+}
+
+.tm-footer a {
+    text-decoration: none;
+    color: #14b8a6;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.tm-footer a:hover {
+    color: #0b1d33;
+    gap: 12px;
+}
+
+
+
+/* --- Split Legal Framework Card --- */
+.legal-framework-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    margin: 60px auto;
+    max-width: 1280px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.legal-left {
+    flex: 1;
+    background: #0b1d33;
+    color: #fff;
+    padding: 40px 60px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.legal-left h2 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.legal-badge {
+    display: inline-block;
+    background: rgba(20, 184, 166, 0.2);
+    color: #14b8a6;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.legal-left p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.legal-btn-custom {
+    background: #fff;
+    color: #0b1d33;
+    padding: 16px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.legal-btn-custom:hover {
+    background: #14b8a6;
+    color: white;
+    transform: scale(1.05);
+}
+
+.legal-right {
+    flex: 1.2;
+    padding: 40px 60px;
+    min-width: 320px;
+    background: #fff;
+}
+
+.legal-right h4 {
+    color: #0b1d33;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.legal-point-box {
+    background: #f8fafc;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #475569;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legal-point-box:hover {
+    background: #fff;
+    border-color: rgba(20, 184, 166, 0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    transform: translateX(10px);
+    color: #0b1d33;
+}
+
+.legal-point-icon {
+    color: #14b8a6;
+    font-weight: 900;
+}
+
+.legal-authority-text {
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+
+
+/* --- Trademark Information Card --- */
+.trademark-card {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.07);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.trademark-card:hover {
+    transform: translateY(-5px);
+}
+
+.tm-title {
+    background: #0b1d33;
+    color: #fff;
+    padding: 45px 50px;
+}
+
+.tm-title h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.tm-title p {
+    opacity: 0.9;
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+.tm-content {
+    padding: 50px;
+}
+
+.tm-section {
+    margin-bottom: 40px;
+}
+
+.tm-section:last-child {
+    margin-bottom: 0;
+}
+
+.tm-section h4 {
+    color: #0b1d33;
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tm-section ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+.tm-section li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.tm-section li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    color: #14b8a6;
+    font-weight: 900;
+}
+
+.tm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.tm-grid span {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: #0b1d33;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.tm-grid span:hover {
+    background: #fff;
+    border-color: #14b8a6;
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.1);
+    color: #14b8a6;
+}
+
+
+
+/* --- Clean Trademark Definition Section --- */
+.trademark-clean-section {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.trademark-clean-section h2 {
+    font-size: 42px;
+    color: #0b1d33;
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.trademark-clean-section h3 {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    color: #0b1d33;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.trademark-clean-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.tm-clean-list {
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.tm-clean-list li {
+    background: #f8fafc;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #0b1d33;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.tm-clean-list li:hover {
+    border-color: #14b8a6;
+    background: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.tm-clean-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #14b8a6;
+    border-radius: 50%;
+}
+
+
+
+/* --- Uiverse Importance Cards (PriyanshuGupta28) --- */
+.uiverse-importance-card {
+  width: 100%;
+  max-width: 320px;
+  min-height: 260px;
+  border-radius: 1.5rem;
+  background-color: #09203f;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px -23px 25px 0px inset, 
+              rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, 
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, 
+              rgba(0, 0, 0, 0.08) 0px 2px 1px, 
+              rgba(0, 0, 0, 0.1) 0px 4px 2px, 
+              rgba(0, 0, 0, 0.1) 0px 8px 4px, 
+              rgba(0, 0, 0, 0.1) 0px 16px 8px, 
+              rgba(0, 0, 0, 0.1) 0px 32px 16px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uiverse-importance-card:hover {
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
+}
+
+.uiverse-importance-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.uiverse-importance-card h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.uiverse-importance-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13.5px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+
+
+/* --- Uiverse Document Rotation Cards (gharsh11032000) --- */
+.uiverse-doc-card {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f1f5f9;
+}
+
+.uiverse-doc-card .icon-display {
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #14b8a6;
+}
+
+.uiverse-doc-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.uiverse-doc-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: #0b1d33; /* DBIZ Navy for the reveal */
+  color: white;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.uiverse-doc-card:hover .uiverse-doc-content {
+  transform: rotateX(0deg);
+}
+
+.uiverse-doc-title {
+  margin: 0;
+  font-size: 20px;
+  color: #14b8a6;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.uiverse-doc-card:hover .icon-display {
+  scale: 0;
+  opacity: 0;
+}
+
+.uiverse-doc-description {
+  margin: 12px 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+
+/* From Uiverse.io by joe-watson-sbf - Flip Card for Timeline */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  max-width: 240px;
+  height: 260px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: white;
+}
+
+.flip-card-back {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front .title {
+  font-size: 1.25em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* --- Uiverse Trademark Symbol Cards (joe-watson-sbf) --- */
+.uiverse-symbol-container {
+  color: white;
+  position: relative;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.uiverse-symbol-container::before,
+.uiverse-symbol-container::after {
+  content: "";
+ background-color: #fab5704c;
+ position: absolute;
+}
+
+.uiverse-symbol-container::before {
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  top: 30%;
+  right: 7%;
+  z-index: 0;
+}
+
+.uiverse-symbol-container::after {
+  content: "";
+  position: absolute;
+  height: 2rem;
+  top: 8%;
+  right: 5%;
+  border: 1px solid;
+  z-index: 0;
+}
+
+.uiverse-symbol-box {
+  width: 100%;
+  min-width: 240px;
+  height: 280px;
+  padding: 1.5rem;
+ background-color: rgba(255, 255, 255, 0.1);
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ -webkit-backdrop-filter: blur(20px);
+ backdrop-filter: blur(20px);
+ border-radius: 2rem;
+ transition: all ease 0.3s;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ position: relative;
+ z-index: 10;
+ cursor: pointer;
+}
+
+.uiverse-symbol-box .symbol-title {
+  font-size: 3rem;
+ font-weight: 800;
+ letter-spacing: 0.1em;
+ line-height: 1;
+ color: white;
+}
+
+.uiverse-symbol-box div strong {
+ display: block;
+ margin-bottom: 0.5rem;
+ font-size: 1.25rem;
+ color: white;
+}
+
+.uiverse-symbol-box div p {
+ margin: 0;
+ font-size: 0.95rem;
+ font-weight: 400;
+ color: rgba(255, 255, 255, 0.9);
+ line-height: 1.6;
+}
+
+.uiverse-symbol-box:hover {
+ box-shadow: 0px 0px 30px 1px rgba(255, 187, 118, 0.2);
+ border: 1px solid rgba(255, 255, 255, 0.5);
+ transform: translateY(-10px);
+}
+
+/* --- Uiverse Trademark Rights Reveal Cards (samuelfcosta18) --- */
+.uiverse-rights-card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 280px;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid #f1f5f9;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.uiverse-rights-card .icon-wrapper {
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.uiverse-rights-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(11, 29, 51, 0.1);
+}
+
+.uiverse-rights-content {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #0b1d33;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.uiverse-rights-card:hover .uiverse-rights-content {
+  transform: rotateX(0deg);
+}
+
+.uiverse-rights-title {
+  margin: 0;
+  font-size: 20px;
+  color: #14b8a6;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.uiverse-rights-card:hover .icon-wrapper {
+  scale: 0;
+}
+
+.uiverse-rights-description {
+  margin: 1rem 0 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-weight: 500;
+}
