@@ -125,12 +125,12 @@ const TrademarkRegistrationPage = () => {
         <Breadcrumbs items={breadcrumbs.map(b => ({ name: b.name, path: b.item, current: b.item === seoUrl }))} />
 
         {/* Hero Section */}
-        <section className="relative bg-dbiz-navy text-white py-24 md:py-40 overflow-hidden">
+        <section className="relative bg-dbiz-navy text-white py-24 md:py-32 overflow-hidden">
           <div
             className="absolute inset-0 z-0 bg-cover bg-center select-none pointer-events-none"
-            style={{ backgroundImage: "url('/dbiz-uploads/hero-horizontal.png')" }}
+            style={{ backgroundImage: "url('/growth-v2.png')" }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d33] via-[#0b1d33]/80 to-transparent"></div>
+            <div className="absolute inset-0 bg-black/20"></div>
           </div>
           <div className="container-custom relative z-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
