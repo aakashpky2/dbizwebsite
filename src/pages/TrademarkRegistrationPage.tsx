@@ -128,7 +128,7 @@ const TrademarkRegistrationPage = () => {
         <section className="relative bg-dbiz-navy text-white py-24 md:py-40 overflow-hidden">
           <div
             className="absolute inset-0 z-0 bg-cover bg-center select-none pointer-events-none"
-            style={{ backgroundImage: "url('/dbiz-uploads/trademark-hero-v3.png')" }}
+            style={{ backgroundImage: "url('/dbiz-uploads/growth-v2.png')" }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#0b1d33] via-[#0b1d33]/85 to-transparent"></div>
           </div>
