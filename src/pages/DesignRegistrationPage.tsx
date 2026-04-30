@@ -29,12 +29,13 @@ import {
   Gavel,
   User,
   ShieldCheck,
-  Music,
-  Video,
-  Code,
-  Image as ImageIcon,
-  BookOpen,
-  Clapperboard
+  Package,
+  Truck,
+  Shirt,
+  Box,
+  Layout,
+  Shapes,
+  Palette
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -70,7 +71,7 @@ const ContactOptions = () => {
   </div>;
 };
 
-const CopyrightRegistrationPage = () => {
+const DesignRegistrationPage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -82,21 +83,21 @@ const CopyrightRegistrationPage = () => {
   const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "India";
 
   const seoTitle = location === undefined
-    ? "Copyright Registration Services in India | Register Original Work | D BIZ CONSULTANCY"
-    : `Copyright Registration in ${cityName} | Register Original Work in ${cityName}`;
+    ? "Design Registration Services in India | Protect Product Appearance | D BIZ CONSULTANCY"
+    : `Design Registration in ${cityName} | Protect Product Appearance in ${cityName}`;
 
   const seoDescription = location === undefined
-    ? "Register your copyright in India with D Biz Consultancy Private Limited. Secure your creative works, software, music, and designs with expert support."
-    : `Copyright Registration in ${cityName}. Secure your creative works and intellectual property with D Biz Consultancy. Expert support for copyright filing in ${cityName}.`;
+    ? "Register your product design in India with D Biz Consultancy Private Limited. Secure your unique shapes, patterns, and configurations with expert support."
+    : `Design Registration in ${cityName}. Secure your product designs and visual assets with D Biz Consultancy. Expert support for design filing in ${cityName}.`;
 
-  const seoUrl = location ? `/copyright-registration/${location}` : "/copyright-registration";
+  const seoUrl = location ? `/design-registration/${location}` : "/design-registration";
 
   const breadcrumbs = [
     { name: "Services", item: "/#services" },
-    { name: "Copyright Registration", item: "/copyright-registration" }
+    { name: "Design Registration", item: "/design-registration" }
   ];
   if (location) {
-    breadcrumbs.push({ name: cityName as string, item: `/copyright-registration/${location}` });
+    breadcrumbs.push({ name: cityName as string, item: `/design-registration/${location}` });
   }
 
   if (location && !isValidLocation) {
@@ -124,7 +125,7 @@ const CopyrightRegistrationPage = () => {
         publishDate={publishDate}
         modifiedDate={modifiedDate}
         breadcrumbs={breadcrumbs.map(b => ({ name: b.name, item: b.item }))}
-        keywords={`copyright registration ${cityName}, register original work ${cityName}, intellectual property protection, copyright act 1957`}
+        keywords={`design registration ${cityName}, protect product design ${cityName}, intellectual property, designs act 2000`}
       />
       <Navbar />
       <main className="flex-grow pt-20">
@@ -132,10 +133,14 @@ const CopyrightRegistrationPage = () => {
 
         {/* Hero Section */}
         <section className="relative bg-dbiz-navy text-white py-24 md:py-40 overflow-hidden">
-          <div
-            className="absolute inset-0 z-0 bg-cover bg-center select-none pointer-events-none"
-            style={{ backgroundImage: "url('/dbiz-uploads/growth-v2.png')" }}
-          >
+          <div className="absolute inset-0 z-0 select-none pointer-events-none">
+            <CachedImage
+              src="/dbiz-uploads/design-registration-hero-new.png"
+              alt="Design Registration Services Hero Background"
+              className="w-full h-full object-cover object-center"
+              loading="eager"
+              fetchPriority="high"
+            />
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
           <div className="container-custom relative z-10">
@@ -146,10 +151,10 @@ const CopyrightRegistrationPage = () => {
                   Intellectual Property Services
                 </div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                  Copyright Registration Services{location ? ` in ${cityName}` : ""}
+                  Design Registration Services{location ? ` in ${cityName}` : ""}
                 </h1>
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                  Register your copyright in India with D Biz Consultancy Private Limited. Secure your creative works, software, music, and designs with expert support.
+                  Register your product design in India with D Biz Consultancy Private Limited. Secure your unique shapes, patterns, and configurations with expert support.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
@@ -180,11 +185,11 @@ const CopyrightRegistrationPage = () => {
               {[
                 { id: 'overview', icon: Building2, label: 'Overview' },
                 { id: 'legal', icon: Scale, label: 'Legal Framework' },
-                { id: 'definition', icon: FileText, label: 'What is Copyright?' },
+                { id: 'definition', icon: FileText, label: 'What is it?' },
                 { id: 'features', icon: Shield, label: 'Types & Importance' },
                 { id: 'documents', icon: FileText, label: 'Documents' },
                 { id: 'process', icon: ArrowRight, label: 'Process' },
-                { id: 'classes', icon: Search, label: 'Timeline & Validity' },
+                { id: 'classes', icon: Search, label: 'Classes & Timeline' },
                 { id: 'risks', icon: AlertTriangle, label: 'Challenges' },
                 { id: 'why-us', icon: Award, label: 'Why Choose Us' },
                 { id: 'faqs', icon: Users, label: 'FAQs' }
@@ -214,12 +219,8 @@ const CopyrightRegistrationPage = () => {
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-[#1E4DB7] text-xs font-bold tracking-widest mb-6">
                   INTRODUCTION
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-[#0B2C5F] mb-6 leading-tight">
-                  In today’s digital and creative world<br />
-                  Copyright Registration – Legal Protection
-                </h2>
                 <div className="text-gray-700 leading-relaxed mb-8 text-lg">
-                  <p>In today’s digital and creative world, intellectual property is a valuable asset for individuals and businesses alike. Original works such as content, designs, software, music, and artistic creations involve creativity, effort, and commercial value, making legal protection important. Protecting such work helps creators and businesses preserve ownership and prevent unauthorized use. Copyright Registration is a legal process that grants exclusive rights to the creator or owner of an original work. It gives legal control over reproduction, distribution, publication, and commercial use of the work, helping prevent copying, misuse, or exploitation by others. It also creates a stronger legal foundation for establishing ownership and protecting creative assets. Without proper protection, original works may be vulnerable to infringement and unauthorized use. A structured copyright registration process helps establish clear ownership rights and strengthens legal protection in the event of disputes. Governed by the Copyright Act, 1957 and administered by the Copyright Office, copyright protection is important for creators, authors, software developers, artists, and businesses seeking to safeguard their intellectual assets. At D Biz Consultancy Private Limited, we provide professional end-to-end copyright registration services, from application filing to final registration, helping clients protect their creative work with clarity and confidence.</p>
+                  <p>In today’s competitive business environment, product appearance plays a crucial role in attracting customers and building a strong market identity. A unique design enhances product value, creates differentiation, and strengthens brand positioning. Design Registration is a legal process that protects the visual appearance of a product, including its shape, configuration, pattern, or ornamentation. It grants exclusive rights to the owner and prevents unauthorized copying or imitation by competitors. Without proper design protection, businesses may face duplication, loss of uniqueness, and reduced market value. A structured design registration process helps establish legal ownership and supports enforcement in case of infringement. Governed by the Designs Act, 2000 and administered by the Design Office, design protection is essential for manufacturers, designers, startups, and businesses. At D Biz Consultancy Private Limited, we provide professional end-to-end design registration services, helping clients protect their product designs with clarity and confidence.</p>
                 </div>
 
               </div>
@@ -227,8 +228,8 @@ const CopyrightRegistrationPage = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(11,44,95,0.1)] group">
                   <div className="absolute inset-0 bg-dbiz-navy/5 mix-blend-multiply transition-colors group-hover:bg-transparent duration-500 z-10"></div>
                   <CachedImage
-                    src="/dbiz-uploads/trademark-intro-v2.jpg"
-                    alt="Copyright Registration Protection"
+                    src="/dbiz-uploads/design-intro-final.jpg"
+                    alt="Design Registration Protection"
                     aspectRatio={1.2}
                     className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                   />
@@ -242,39 +243,40 @@ const CopyrightRegistrationPage = () => {
         <section className="py-24 bg-gray-50/50">
           <div className="container-custom">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-stretch">
-              {/* Left Column: What is Copyright? */}
+              {/* Left Column: What is Design Registration? */}
               <div id="definition" className="flex-1 text-left scroll-mt-32 pt-4">
-                <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-8">3. What is Copyright?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-8">3. What is Design Registration?</h2>
+                <div className="text-gray-700 mb-8 text-lg font-medium">
+                  <p>Design registration is a legal right granted to protect the visual appearance of a product, ensuring that its unique look is not copied or misused by others. It focuses on the aesthetic aspects of a product, such as its shape, configuration, pattern, or ornamentation, which contribute to its overall visual appeal and market identity.</p>
+                </div>
                 <ul className="list-disc pl-6 space-y-4 text-lg text-gray-700 font-medium">
-                  <li>Copyright is a legal right granted to the creator of an original work.</li>
-                  <li>It protects original creative expressions such as literary works, artistic works, musical works, software, and digital content.</li>
-                  <li>It gives the creator exclusive rights to use, reproduce, distribute, publish, perform, and adapt the work.</li>
-                  <li>It helps prevent unauthorized copying, misuse, or commercial exploitation of the work.</li>
-                  <li>Copyright protects the expression of an idea, not the idea itself.</li>
-                  <li>In simple terms, a concept or theme cannot be protected, but the original way it is written, designed, composed, or created can be protected.</li>
-                  <li>It acts as an important legal safeguard for creators, authors, artists, designers, software developers, and businesses.</li>
-                  <li>Copyright protection strengthens ownership rights and supports legal action in case of infringement.</li>
+                  <li>Legal Protection of Appearance – Design registration protects the external look of a product, including its shape, configuration, pattern, and decorative elements.</li>
+                  <li>Covers Aesthetic Features Only – It applies only to visual aspects and does not protect functionality, technical features, or working mechanism.</li>
+                  <li>Exclusive Rights to Use – The registered owner gets exclusive rights to use, apply, and commercially exploit the design.</li>
+                  <li>Prevents Unauthorized Use – It helps prevent copying, imitation, or reproduction of the design by competitors.</li>
+                  <li>Builds Product Identity – A unique design enhances product recognition and helps create a strong market presence.</li>
+                  <li>Strengthens Legal Position – Registration provides enforceable legal rights in case of infringement or disputes.</li>
                 </ul>
               </div>
 
               {/* Right Column: Legal Framework */}
               <div id="legal" className="lg:w-[500px] xl:w-[600px] shrink-0 scroll-mt-32">
                 <div className="bg-white p-6 rounded-[1.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.04)] border border-gray-100 text-left w-full h-full flex flex-col">
-                  <h2 className="text-xl md:text-2xl font-bold font-sans text-dbiz-navy mb-4">2. Copyright Registration – Legal Framework</h2>
+                  <h2 className="text-xl md:text-2xl font-bold font-sans text-dbiz-navy mb-4">2. Design Registration – Legal Framework</h2>
                   
-                  <h3 className="text-base font-bold text-dbiz-teal mb-2">Definition under the Copyright Act, 1957</h3>
+                  <h3 className="text-base font-bold text-dbiz-teal mb-2">Definition under the Designs Act, 2000</h3>
                   <p className="text-gray-700 mb-4 font-medium leading-relaxed text-sm">
-                    The Copyright Act, 1957 provides legal protection to creators of original works and grants them exclusive rights over their creations. Copyright is a legal right that arises automatically upon creation and can be formally registered for stronger legal recognition.
+                    The Designs Act, 2000 provides legal protection to the visual design of articles and grants exclusive rights to the registered proprietor to apply the design.
                   </p>
 
                   <h3 className="text-base font-bold text-dbiz-teal mb-3">Key Legal Provisions Include:</h3>
                   <ul className="space-y-2 mb-6">
                     {[
-                      "Protection is granted for original literary, artistic, musical, dramatic, and digital works",
-                      "Copyright protects the expression of an idea, not the idea itself",
-                      "Registration creates official evidence of ownership and strengthens legal claims",
-                      "Rights include reproduction, distribution, publication, licensing, and commercial use",
-                      "Moral rights protect authorship and the reputation of the creator"
+                      "Protection is granted only for aesthetic features, not functionality",
+                      "Design must be new and original",
+                      "Registration provides exclusive rights over the design",
+                      "Rights apply to specific articles and classifications",
+                      "Design registration is valid for an initial period of 10 years and may be extended for a further period of 5 years"
                     ].map((item, idx) => (
                       <li key={idx} className="flex gap-2.5 items-start group">
                         <div className="w-5 h-5 rounded-full bg-dbiz-teal/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-dbiz-teal transition-colors duration-300">
@@ -287,7 +289,7 @@ const CopyrightRegistrationPage = () => {
 
                   <h3 className="text-base font-bold text-dbiz-teal mb-2">Registration Authority</h3>
                   <p className="text-gray-700 mb-6 font-medium leading-relaxed text-sm">
-                    The process is administered by the Copyright Office, Government of India, which examines applications and issues registration certificates.
+                    The process is administered by the Design Office (Patent Office), which examines applications, handles objections, and grants registration.
                   </p>
 
                   <div className="mt-auto bg-dbiz-navy/5 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 border border-dbiz-navy/10 relative overflow-hidden">
@@ -321,34 +323,33 @@ const CopyrightRegistrationPage = () => {
                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                 Classification & Benefits
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Types of Copyright Works & Importance</h2>
-              <p className="text-lg text-gray-600 leading-relaxed">Under the Copyright Act, copyright protection is available for a wide range of original creative works. If a work is original and expressed in a creative form, it can generally be registered and legally protected.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Types of Designs & Importance</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">Designs can be registered in different forms based on how the visual features are applied to a product. The type of design depends on the nature of appearance that needs protection.</p>
             </div>
-            <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center">Types of Works that can be Registered</h3>
+            <h3 className="text-2xl font-bold text-dbiz-navy mb-8 text-center">Types of Designs</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6 mb-16">
               {[
-                { title: "Literary Works", desc: "books, articles, blogs, poems, scripts, written content, computer programs, software code, and databases." },
-                { title: "Dramatic Works", desc: "plays, screenplays, dramatic scripts, and choreographic notations." },
-                { title: "Musical Works", desc: "original musical compositions, sheet music, and musical notations." },
-                { title: "Artistic Works", desc: "paintings, drawings, sketches, logos, designs, photographs, and architectural works." },
-                { title: "Cinematograph Films", desc: "movies, documentaries, videos, animations, and other visual recordings." },
-                { title: "Sound Recordings", desc: "recorded music, audio tracks, voice recordings, and podcasts." }
+                { title: "Shape Design", desc: "Protects the three-dimensional (3D) shape of a product, such as containers, bottles, or product structures." },
+                { title: "Pattern Design", desc: "Protects surface patterns, prints, or repeated designs applied to products like textiles, wallpapers, or packaging." },
+                { title: "Configuration Design", desc: "Protects the specific arrangement or structure of elements in a product that gives it a distinctive look." },
+                { title: "Ornamental Design", desc: "Protects decorative features, artistic elements, or aesthetic enhancements applied to a product." },
+                { title: "Combination Design", desc: "Protects a combination of shape, pattern, and ornamentation, creating a complete and distinctive product appearance." }
               ].map((item, idx) => (
                 <TrademarkTypeCard key={idx} title={item.title} desc={item.desc} />
               ))}
             </div>
-            <h3 className="text-3xl font-black text-dbiz-navy mb-8 text-center uppercase tracking-tighter">5. Why Copyright Registration is Important</h3>
+            <h3 className="text-3xl font-black text-dbiz-navy mb-8 text-center uppercase tracking-tighter">5. Why Design Registration is Important</h3>
             <p className="text-center text-gray-600 max-w-4xl mx-auto mb-16 text-lg leading-relaxed font-medium px-4">
-              Copyright registration is important because it strengthens the legal protection available for an original work and creates a formal record of ownership. Although copyright exists from the moment a work is created, registration provides stronger evidentiary value in case of disputes, infringement, or unauthorized use.
+              Design registration is important because it protects the unique visual identity of a product and gives the owner exclusive legal rights over its use. It helps businesses maintain originality and prevents competitors from copying or imitating their designs.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
-                { icon: Shield, title: "Establishes Proof of Ownership", desc: "Creates an official record of ownership and helps support the creator’s legal claim over the work." },
-                { icon: AlertTriangle, title: "Protects Against Unauthorized Use", desc: "Helps prevent copying, misuse, reproduction, or exploitation of the work without permission." },
-                { icon: Gavel, title: "Strengthens Legal Protection", desc: "Enables the owner to take legal action more effectively in case of infringement or disputes." },
-                { icon: Globe, title: "Adds Commercial Value", desc: "Makes it easier to license, sell, assign, transfer, or monetize the work." },
-                { icon: Award, title: "Supports Brand and Creative Identity", desc: "Helps protect the originality, reputation, and identity associated with the creator or business." },
-                { icon: ShieldCheck, title: "Acts as a Deterrent", desc: "Discourages potential infringers by creating a formal and recognized claim over the work." }
+                { icon: Shield, title: "Exclusive Ownership", desc: "Grants full legal rights over the use and application of the design." },
+                { icon: AlertTriangle, title: "Prevents Copying", desc: "Stops competitors from imitating or reproducing the design without permission." },
+                { icon: Award, title: "Builds Market Identity", desc: "Enhances product recognition and strengthens brand positioning in the market." },
+                { icon: Globe, title: "Commercial Advantage", desc: "Enables licensing, assignment, and monetization of the design." },
+                { icon: Scale, title: "Creates Intellectual Property Asset", desc: "Adds value to the business as a recognized IP asset." },
+                { icon: Gavel, title: "Legal Protection", desc: "Provides the right to take action against infringement and unauthorized use." }
               ].map((item, idx) => (
                 <div key={idx} className="uiverse-importance-card">
                   <div className="uiverse-importance-icon-wrapper">
@@ -368,14 +369,14 @@ const CopyrightRegistrationPage = () => {
         <section id="documents" className="py-24 bg-white scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-4xl font-black text-dbiz-navy mb-8 tracking-tighter uppercase">6. Documents Required for Copyright Registration</h2>
+              <h2 className="text-4xl font-black text-dbiz-navy mb-8 tracking-tighter uppercase">6. Documents Required for Design Registration</h2>
               <p className="text-lg text-gray-600 leading-relaxed font-medium px-4">
-                The documents required for copyright registration may vary depending on whether the applicant is an individual or a company/entity, but certain basic documents are commonly required in all cases.
+                The documents required for design registration may vary depending on whether the applicant is an individual designer or a company/LLP, but proper documentation is essential in all cases.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-              {/* Individuals */}
+              {/* Individuals / Designers */}
               <div className="relative">
                 <div className="absolute -top-6 -left-6 w-24 h-24 bg-dbiz-teal/5 rounded-full -z-10"></div>
                 <div className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden group hover:shadow-[0_30px_80px_rgba(0,0,0,0.1)] transition-all duration-500 h-full flex flex-col">
@@ -387,16 +388,16 @@ const CopyrightRegistrationPage = () => {
                     />
                     <div className="absolute inset-0 bg-dbiz-navy/60 backdrop-blur-[2px]"></div>
                     <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                      <h3 className="text-2xl font-black uppercase tracking-tighter text-white relative z-10">For Individuals</h3>
-                      <p className="text-dbiz-teal font-bold mt-1 relative z-10">Personal Identity & Original Work</p>
+                      <h3 className="text-2xl font-black uppercase tracking-tighter text-white relative z-10">For Individuals / Designers</h3>
+                      <p className="text-dbiz-teal font-bold mt-1 relative z-10">Personal Identity & Design Drawings</p>
                     </div>
                   </div>
                   <div className="p-8 space-y-6">
                     {[
-                      { label: "Identity proof", desc: "PAN, Aadhaar, Passport, or other valid ID." },
-                      { label: "Address proof", desc: "Required to confirm the address details of the applicant." },
-                      { label: "Soft copy of original work", desc: "In relevant format such as PDF, JPG, MP3, MP4, or source file." },
-                      { label: "Details of creator/author", desc: "Information about the actual creator of the work." }
+                      { label: "PAN Card", desc: "Used as identity proof of the applicant for official verification." },
+                      { label: "Aadhaar / Address Proof", desc: "Required to confirm the address details of the applicant." },
+                      { label: "Design Images or Drawings", desc: "Clear representations from multiple views showing complete visual appearance." },
+                      { label: "Description of Design", desc: "Brief description explaining nature and visual features proposed for registration." }
                     ].map((doc, idx) => (
                       <div key={idx} className="flex gap-4 items-start group/item">
                         <div className="w-10 h-10 rounded-xl bg-dbiz-teal/10 flex items-center justify-center shrink-0 group-hover/item:bg-dbiz-teal group-hover/item:text-white transition-colors">
@@ -424,16 +425,16 @@ const CopyrightRegistrationPage = () => {
                     />
                     <div className="absolute inset-0 bg-dbiz-navy/60 backdrop-blur-[2px]"></div>
                     <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                      <h3 className="text-2xl font-black uppercase tracking-tighter text-white relative z-10">For Companies, LLPs, or Entities</h3>
-                      <p className="text-dbiz-teal font-bold mt-1 relative z-10">Entity Registration & Ownership Proof</p>
+                      <h3 className="text-2xl font-black uppercase tracking-tighter text-white relative z-10">For Companies / LLP</h3>
+                      <p className="text-dbiz-teal font-bold mt-1 relative z-10">Entity Registration & Authorization</p>
                     </div>
                   </div>
                   <div className="p-8 space-y-6">
                     {[
-                      { label: "Entity Registration", desc: "PAN, Certificate of Incorporation, or Partnership Deed of the entity." },
-                      { label: "Authorization", desc: "Board Resolution or Authorization Letter for filing the application." },
-                      { label: "Ownership Proof", desc: "Proof showing that the work belongs to the company or entity." },
-                      { label: "NOC from Creators", desc: "Required from employees, contractors, or creators wherever applicable." }
+                      { label: "Company PAN", desc: "Identity proof of the company or LLP." },
+                      { label: "Certificate of Incorporation", desc: "Proof of legal existence and registration of the entity." },
+                      { label: "Authorization Letter", desc: "Board Resolution authorizing a representative to handle the application." },
+                      { label: "Design Representations", desc: "Clear design images, drawings, and relevant details to be registered." }
                     ].map((doc, idx) => (
                       <div key={idx} className="flex gap-4 items-start group/item">
                         <div className="w-10 h-10 rounded-xl bg-dbiz-teal/10 flex items-center justify-center shrink-0 group-hover/item:bg-dbiz-teal group-hover/item:text-white transition-colors">
@@ -454,24 +455,24 @@ const CopyrightRegistrationPage = () => {
               <div className="absolute top-0 left-0 w-2 h-full bg-dbiz-teal"></div>
               <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
                 <p className="text-dbiz-navy text-lg font-bold leading-relaxed">
-                  Proper documentation is crucial to ensure a smooth filing process and avoid objections or delays. Well-drafted employment or assignment agreements are necessary to clearly establish ownership.
+                  Proper documentation plays an important role in the design registration process. It helps ensure correct filing, smooth examination, and reduces the possibility of objections or delays.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-                    <span className="block font-bold text-dbiz-teal">Identity Proof</span>
-                    <span className="text-xs text-gray-500">Applicant verification</span>
+                    <span className="block font-bold text-dbiz-teal">Form 1</span>
+                    <span className="text-xs text-gray-500">Design application form</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-                    <span className="block font-bold text-dbiz-teal">Soft Copy</span>
-                    <span className="text-xs text-gray-500">Original creative work</span>
+                    <span className="block font-bold text-dbiz-teal">Images</span>
+                    <span className="text-xs text-gray-500">Multi-view representations</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-                    <span className="block font-bold text-dbiz-teal">NOC</span>
-                    <span className="text-xs text-gray-500">Author authorization</span>
+                    <span className="block font-bold text-dbiz-teal">PAN Card</span>
+                    <span className="text-xs text-gray-500">Identity verification</span>
                   </div>
                   <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
-                    <span className="block font-bold text-dbiz-teal">Declaration</span>
-                    <span className="text-xs text-gray-500">Authorship confirmation</span>
+                    <span className="block font-bold text-dbiz-teal">Auth Letter</span>
+                    <span className="text-xs text-gray-500">Entity authorization</span>
                   </div>
                 </div>
               </div>
@@ -483,7 +484,7 @@ const CopyrightRegistrationPage = () => {
         <section id="process" className="py-24 bg-gray-50/50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-4xl font-bold font-sans text-dbiz-navy mb-8">7. Step-by-Step Copyright Registration Process</h2>
+              <h2 className="text-4xl font-bold font-sans text-dbiz-navy mb-8">7. Step-by-Step Design Registration Process</h2>
               <p className="text-lg text-gray-600 leading-relaxed font-medium">We provide end-to-end professional support to ensure a smooth and professionally managed process from start to finish.</p>
             </div>
             
@@ -504,56 +505,44 @@ const CopyrightRegistrationPage = () => {
                   { 
                     s: "01", 
                     t: "Preparation of Application", 
-                    d: "The process begins with collecting the complete details of the original work and the applicant. Nature of the work is identified and supporting documents are prepared.",
+                    d: "The process begins with collecting details of the applicant and the design. Design is reviewed for novelty and originality, classification is identified, and representations are prepared.",
                     img: "/dbiz-uploads/tm-step1.png"
                   },
                   { 
                     s: "02", 
-                    t: "Filing of Copyright Application", 
-                    d: "The process is carried out entirely through an online system. The application is filed in the prescribed format along with the required government fee.",
+                    t: "Filing of Design Application", 
+                    d: "Application is filed in the prescribed format, generally Form 1, along with the required fee. Includes applicant details, representations, class, and brief description.",
                     img: "/dbiz-uploads/tm-step2.png"
                   },
                   { 
                     s: "03", 
-                    t: "Diary Number Generation", 
-                    d: "After successful filing, an official Diary Number is generated. This number acts as an acknowledgment of submission and is used for tracking status.",
+                    t: "Application Number Generation", 
+                    d: "After successful filing, an official application number is generated for tracking the status and future communication with the authority.",
                     img: "/dbiz-uploads/tm-step3.png"
                   },
                   { 
                     s: "04", 
-                    t: "Mandatory Waiting Period", 
-                    d: "The application is kept under a mandatory waiting period of 30 days to allow any third party to raise an objection.",
+                    t: "Examination of Application", 
+                    d: "The Design Office examines the application for novelty, originality, classification, and overall compliance under the Designs Act, 2000.",
                     img: "/dbiz-uploads/tm-step4.png"
                   },
                   { 
                     s: "05", 
-                    t: "Examination of Application", 
-                    d: "If no objection is received, the application is taken up for examination by the authority to verify details and documents.",
+                    t: "Reply to Objection, if Any", 
+                    d: "If objections are raised, the applicant must submit an appropriate reply addressing issues with explanation, corrections, or supporting documents.",
                     img: "/dbiz-uploads/tm-step5.png"
                   },
                   { 
                     s: "06", 
-                    t: "Objection or Discrepancy Handling", 
-                    d: "If any objection is filed or discrepancy found, the applicant is required to submit a reply within the prescribed time.",
+                    t: "Registration Approval", 
+                    d: "Once authority is satisfied and objections resolved, the application is approved for entry in the official register.",
                     img: "/dbiz-uploads/tm-step6.png"
                   },
                   { 
                     s: "07", 
-                    t: "Hearing, if Required", 
-                    d: "If the authority is not satisfied with the reply, a hearing may be scheduled where the applicant can explain the claim.",
-                    img: "/dbiz-uploads/tm-step7.png"
-                  },
-                  { 
-                    s: "08", 
-                    t: "Approval and Registration", 
-                    d: "Once the authority is satisfied, the application is approved and details are entered in the official Register of Copyrights.",
-                    img: "/dbiz-uploads/tm-step8.png"
-                  },
-                  { 
-                    s: "09", 
                     t: "Issue of Registration Certificate", 
-                    d: "After registration, the Copyright Registration Certificate is issued, serving as official proof of ownership and rights.",
-                    img: "/dbiz-uploads/tm-step9.png"
+                    d: "Registration certificate is issued, serving as official proof of ownership and granting legal protection against unauthorized copying or misuse.",
+                    img: "/dbiz-uploads/tm-step7.png"
                   }
                 ].map((item, idx) => (
                   <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3 p-4">
@@ -586,7 +575,7 @@ const CopyrightRegistrationPage = () => {
           </div>
         </section>
 
-        {/* Categories Section (Replacing Classes) */}
+        {/* Classification Section */}
         <section id="classes" className="py-24 bg-white scroll-mt-32">
           <div className="container-custom">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -594,19 +583,15 @@ const CopyrightRegistrationPage = () => {
               {/* Left Side Image */}
               <div className="lg:w-[45%] shrink-0">
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group min-h-[500px]">
-                  <video 
-                    src="https://v1.pinimg.com/videos/iht/expMp4/0c/24/44/0c2444073f97ca37892ec777b6b7a1b5_360w.mp4"
-                    poster="https://i.pinimg.com/videos/thumbnails/originals/0c/24/44/0c2444073f97ca37892ec777b6b7a1b5.0000000.jpg"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
+                  <img
+                    src="/dbiz-uploads/design-classification-v2.png"
+                    alt="Design Classification Visual"
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                   />
                   <div className="absolute inset-0 bg-dbiz-navy/10 mix-blend-multiply z-10 transition-colors duration-500 group-hover:bg-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-dbiz-navy/90 to-transparent z-20">
-                    <h3 className="text-white text-2xl font-bold mb-2">Digital & Creative Content</h3>
-                    <p className="text-gray-200 font-medium">Protecting websites, mobile applications, UI/UX designs, and online media.</p>
+                    <h3 className="text-white text-2xl font-bold mb-2">Aesthetic Features</h3>
+                    <p className="text-gray-200 font-medium">Protecting the shape, configuration, and pattern of your products.</p>
                   </div>
                 </div>
               </div>
@@ -614,34 +599,34 @@ const CopyrightRegistrationPage = () => {
               {/* Right Side Writings */}
               <div className="lg:w-[55%] flex flex-col">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-4">4. Software and Digital Content</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-4">8. Design Classification</h2>
                   <p className="text-gray-600 mb-6 leading-relaxed text-lg">
-                    Modern digital content such as websites, mobile applications, UI/UX designs, and online media are also eligible for copyright protection. Any original literary, artistic, musical, digital, audio, or visual work can be considered.
+                    Design registration follows the Locarno Classification system, which classifies designs based on the category of the article. Selecting the correct class is essential for proper examination and accurate legal protection.
                   </p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                     <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                       <div className="w-10 h-10 bg-dbiz-teal/10 rounded-xl flex items-center justify-center mb-3">
-                        <Code className="w-5 h-5 text-dbiz-teal" />
+                        <Shirt className="w-5 h-5 text-dbiz-teal" />
                       </div>
-                      <span className="font-bold text-dbiz-navy text-xl block mb-1">Software Code</span>
-                      <span className="text-gray-600 font-medium">Databases & Programs</span>
+                      <span className="font-bold text-dbiz-navy text-xl block mb-1">Class 2</span>
+                      <span className="text-gray-600 font-medium">Apparel</span>
                     </div>
                     <div className="bg-gray-50 p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
                       <div className="w-10 h-10 bg-dbiz-teal/10 rounded-xl flex items-center justify-center mb-3">
-                        <ImageIcon className="w-5 h-5 text-dbiz-teal" />
+                        <Box className="w-5 h-5 text-dbiz-teal" />
                       </div>
-                      <span className="font-bold text-dbiz-navy text-xl block mb-1">Digital Design</span>
-                      <span className="text-gray-600 font-medium">Multimedia & UI/UX</span>
+                      <span className="font-bold text-dbiz-navy text-xl block mb-1">Class 9</span>
+                      <span className="text-gray-600 font-medium">Packaging</span>
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">Creative Media Examples:</h3>
+                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">Classification Examples:</h3>
                   <ul className="space-y-2 mb-6">
                     {[
-                      { c: "Audio Visual", d: "Cinematograph films, videos, and animations" },
-                      { c: "Sound Tracks", d: "Music, voice recordings, and podcasts" },
-                      { c: "Digital Apps", d: "Software applications and digital programs" }
+                      { c: "Transport", d: "Class 12 - Transport equipment and vehicles" },
+                      { c: "Furnishing", d: "Class 6 - Furnishing and household goods" },
+                      { c: "Electronics", d: "Class 14 - Recording or communication equipment" }
                     ].map((ex, idx) => (
                       <li key={idx} className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors">
                         <CheckCircle className="text-dbiz-teal w-5 h-5 shrink-0 mt-0.5" />
@@ -657,7 +642,7 @@ const CopyrightRegistrationPage = () => {
                     <div className="flex gap-4 items-start">
                       <AlertTriangle className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
                       <p className="text-amber-900 leading-relaxed font-semibold">
-                        Copyright protects the expression of an idea, not the idea, concept, method, or procedure itself.
+                        Incorrect classification may lead to objections, delays, or limited scope of protection for your registered design.
                       </p>
                     </div>
                   </div>
@@ -667,13 +652,15 @@ const CopyrightRegistrationPage = () => {
 
             {/* Timeline & Validity Full Width */}
             <div className="mt-24">
-              <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-12 text-center">8. Timeline and Validity of Copyright</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-12 text-center">9. Timeline & Validity</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 max-w-[1200px] mx-auto px-4">
                 {[
-                  { v: "Same Day", u: "Filing", t: "Application Filing", d: "Immediate submission upon document readiness" },
-                  { v: "30-60", u: "Days", t: "Waiting Period", d: "Includes mandatory waiting and examination phase" },
-                  { v: "2-6", u: "Months", t: "Registration", d: "Usual completion time if no objections are raised" },
-                  { v: "8-12+", u: "Months", t: "Objection/Hearing", d: "Extended timeline depending on the case complexity" }
+                  { v: "Day 1", u: "Filing", t: "Application Filing", d: "Same day submission" },
+                  { v: "1–2", u: "Months", t: "Examination Stage", d: "1 to 2 months" },
+                  { v: "2–4", u: "Months", t: "Registration Completion", d: "Usually 2 to 4 months, if no objection is raised" },
+                  { v: "Varies", u: "If Objection", t: "If Objection Arises", d: "The timeline may extend depending on the case" },
+                  { v: "10", u: "Years", t: "Validity of Registered Design", d: "10 years from the date of registration" },
+                  { v: "+5", u: "Years", t: "Extension", d: "Additional 5 years upon application" }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm text-center hover:shadow-xl hover:border-dbiz-teal/20 transition-all duration-300 group">
                     <div className="bg-dbiz-teal/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 group-hover:bg-dbiz-teal group-hover:scale-110 transition-all duration-300">
@@ -685,58 +672,55 @@ const CopyrightRegistrationPage = () => {
                   </div>
                 ))}
               </div>
-
-              {/* Validity Details */}
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto px-4">
-                {[
-                  { t: "Literary & Artistic", v: "Life + 60 Years", d: "Covers books, music, and art works" },
-                  { t: "Films & Sound", v: "60 Years", d: "From the date of publication" },
-                  { v: "No Renewal", t: "Required", d: "Once registered for the validity period" }
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-[#0b1d33] rounded-2xl p-6 text-center text-white border border-white/10">
-                    <p className="text-dbiz-teal font-black text-xl mb-1">{item.v}</p>
-                    <p className="text-sm font-bold uppercase tracking-widest mb-2">{item.t}</p>
-                    <p className="text-xs text-white/60 font-medium">{item.d}</p>
-                  </div>
-                ))}
-              </div>
-              
-              <p className="text-center text-gray-500 mt-8 text-sm italic font-medium">No renewal is required during the validity period once copyright is registered. Validity periods vary by type of work as per the Copyright Act.</p>
+              <p className="text-center text-gray-500 mt-8 text-sm italic font-medium">The timeline may vary depending on examination, objections, and processing time of the authority. Extension must be applied for as per applicable law.</p>
             </div>
           </div>
         </section>
 
-        {/* Rights Section */}
-        <section id="rights" className="py-24 bg-white scroll-mt-32">
-          <div className="container-custom relative">
-            <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-16 text-center">9. Copyright Rights and Protection</h2>
-            
+        {/* Rights Intro Section (Mapped to Symbols Section 10) */}
+        <section id="rights-intro" className="py-24 bg-white scroll-mt-32">
+          <div className="container-custom relative text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-8">10. Design Rights and Protection</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
+              Design registration grants the owner important legal rights and protection over the registered design. It helps secure the visual identity of a product and gives the owner a stronger legal position in the market. Once a design is registered, the owner gets exclusive control over its use and can prevent unauthorized copying or imitation by others.
+            </p>
+            <div className="inline-flex items-center justify-center gap-3 text-dbiz-navy font-bold italic">
+              <ShieldCheck className="w-6 h-6 text-dbiz-teal" />
+              <span>Exclusive legal protection for your product's visual identity</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Rights Details Section (Mapped to Rights Section 11) */}
+        <section id="rights" className="py-24 bg-gray-50 scroll-mt-32">
+          <div className="container-custom">
+            <h3 className="text-2xl md:text-3xl font-bold font-sans text-dbiz-navy mb-16 text-center">Design Rights Overview</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 { 
-                  t: "Economic Rights", 
-                  d: "Right to reproduce, publish, distribute, perform, license, sell, or commercially exploit the work.",
-                  icon: TrendingUp
-                },
-                { 
-                  t: "Moral Rights", 
-                  d: "Right to claim authorship and protect work from distortion or misuse that harms reputation.",
+                  t: "Exclusive Right to Use", 
+                  d: "The registered owner gets the exclusive legal right to apply and use the design in relation to the article for which it is registered.",
                   icon: Shield
                 },
                 { 
-                  t: "Control & Distribution", 
-                  d: "Enables the owner to control the use, distribution, and commercial exploitation of the creation.",
-                  icon: Users
-                },
-                { 
-                  t: "Legal Enforcement", 
-                  d: "Registration helps strengthen claims by serving as official evidence of ownership and rights.",
+                  t: "Prevent Copying", 
+                  d: "Registration helps stop competitors or third parties from copying, reproducing, or imitating the registered design without permission.",
                   icon: Gavel
                 },
                 { 
-                  t: "Commercialization", 
-                  d: "Supports the commercial use of the work by making ownership clearer and more enforceable.",
+                  t: "Licensing & Transfer", 
+                  d: "A registered design becomes an IP asset that can be licensed, assigned, sold, or otherwise commercially transferred.",
+                  icon: Scale
+                },
+                { 
+                  t: "Legal Enforcement", 
+                  d: "The owner gets the right to take legal action against infringement or unauthorized use of the design.",
                   icon: Briefcase
+                },
+                { 
+                  t: "Market Position", 
+                  d: "A protected design helps create product recognition, supports brand value, and improves competitive strength in the market.",
+                  icon: Award
                 }
               ].map((item, idx) => (
                 <div key={idx} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-dbiz-teal/20 transition-all duration-300 flex flex-col items-center text-center group">
@@ -748,33 +732,27 @@ const CopyrightRegistrationPage = () => {
                 </div>
               ))}
             </div>
-            
-            <div className="mt-16 flex items-center justify-center gap-3 text-gray-600 font-bold italic">
-              <ShieldCheck className="w-5 h-5 text-dbiz-teal" />
-              <span>Copyright grants the creator or owner important legal rights and protection over the original work.</span>
-            </div>
           </div>
         </section>
 
-        {/* Common Challenges Section */}
-        <section id="risks" className="py-24 bg-gray-50 scroll-mt-32">
+        {/* Common Challenges Section (Mapped to Risks Section 12) */}
+        <section id="risks" className="py-24 bg-white scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-6">10. Common Challenges and Risks</h2>
+              <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-6">11. Common Challenges and Risks</h2>
               <p className="text-gray-600 text-lg leading-relaxed font-medium">
-                Copyright registration involves several risks that can be effectively minimized through proper documentation and professional guidance.
+                Design registration may involve certain challenges and risks if the application is not properly prepared, reviewed, or filed.
               </p>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
               <div className="space-y-4">
                 {[
-                  { t: "Lack of Originality", d: "Protection is available only for original expression. Ideas or methods cannot be registered." },
-                  { t: "Incorrect Documentation", d: "Incomplete or incorrect documents may lead to delays, objections, or rejection." },
-                  { t: "Ownership Disputes", d: "Issues arise when creator/employer/contractor relationships are not properly documented." },
-                  { t: "Categorization Errors", d: "Filing under the wrong category can create legal confusion and affect registration." }
+                  { t: "Lack of Originality", d: "A design must be new and original. If it is already known or not sufficiently distinctive, it may not qualify." },
+                  { t: "Similar Existing Designs", d: "If a similar design already exists or has been registered earlier, the application may face refusal." },
+                  { t: "Incorrect Classification", d: "Choosing the wrong design class may affect the scope of protection and delay the process." }
                 ].map((item, idx) => (
-                  <div key={idx} className="p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
+                  <div key={idx} className="p-6 bg-gray-50 rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
                     <div>
                       <strong className="text-dbiz-navy block text-lg mb-1 font-bold leading-tight">{item.t}</strong>
                       <p className="text-gray-600 font-medium text-sm leading-relaxed">{item.d}</p>
@@ -785,12 +763,11 @@ const CopyrightRegistrationPage = () => {
               
               <div className="space-y-4">
                 {[
-                  { t: "Third-Party Objections", d: "Objections raised during the waiting period can delay registration and require response." },
-                  { t: "Strict Originality Checks", d: "Copyright Office closely examines work for plagiarism and proof of originality." },
-                  { t: "Digital Misuse & Piracy", d: "Unauthorized online use, copying, or infringement remain practical challenges after registration." },
-                  { t: "International Theft", d: "Stopping piracy in other countries requires taking extra legal steps in those locations." }
+                  { t: "Errors in Drawings", d: "Incomplete drawings, unclear representations, or inaccurate documents lead to objections." },
+                  { t: "Prior Public Disclosure", d: "If design is published or displayed before filing, it may lose novelty and eligibility." },
+                  { t: "Procedural Deficiencies", d: "Inaccurate planning or incorrect legal understanding can lead to objections or rejection." }
                 ].map((item, idx) => (
-                  <div key={idx} className="p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
+                  <div key={idx} className="p-6 bg-gray-50 rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
                     <div>
                       <strong className="text-dbiz-navy block text-lg mb-1 font-bold leading-tight">{item.t}</strong>
                       <p className="text-gray-600 font-medium text-sm leading-relaxed">{item.d}</p>
@@ -799,21 +776,21 @@ const CopyrightRegistrationPage = () => {
                 ))}
               </div>
             </div>
-            <p className="text-center text-gray-500 mt-12 font-bold italic">Prevention of delays and risks through accurate filing and structured professional support.</p>
+            <p className="text-center text-gray-500 mt-12 font-bold italic">With proper guidance, accurate documentation, and professional support, these risks can be effectively minimized.</p>
           </div>
         </section>
 
-        {/* Why Choose Us Section */}
-        <section id="why-us" className="py-24 bg-white scroll-mt-32">
+        {/* Why Choose Us Section (Mapped to Why Us Section 13) */}
+        <section id="why-us" className="py-24 bg-gray-50 scroll-mt-32">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-3xl md:text-5xl font-bold text-dbiz-navy mb-8">11. Why Choose D BIZ CONSULTANCY for Copyright Registration?</h2>
+              <h2 className="text-3xl md:text-5xl font-bold text-dbiz-navy mb-8">12. Why Choose D BIZ CONSULTANCY for Design Registration?</h2>
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                  Protecting original creative work requires more than simply filing an application. Copyright registration involves proper classification of the work, careful preparation of documents, verification of ownership, and timely compliance with procedural requirements. Any error, mismatch, or incomplete submission may lead to objections, delay, or rejection.
+                  Protecting a product design requires more than simply filing an application. Design registration involves proper classification, accurate preparation of drawings and documents, verification of novelty, and timely compliance with legal requirements. Any error, mismatch, or prior disclosure may lead to objections, delay, or rejection.
                 </p>
                 <p className="text-lg text-black leading-relaxed font-medium">
-                  D BIZ CONSULTANCY offers complete support to make the copyright registration process smooth, accurate, and professionally managed. We assist clients from the initial stage of evaluating the work up to the final stage of registration, helping ensure that creative assets are legally protected without unnecessary complications.
+                  D BIZ CONSULTANCY provides complete support to make the design registration process smooth, accurate, and professionally managed. We assist clients from the initial stage of evaluating the design up to the final stage of registration, ensuring that their product designs are legally protected without complications.
                 </p>
               </div>
             </div>
@@ -827,22 +804,22 @@ const CopyrightRegistrationPage = () => {
                   {
                     t: "Initial Review",
                     d: "Pre-Filing Assistance",
-                    items: ["Review of originality", "Copyright eligibility guidance", "Category identification", "Content organization"],
+                    items: ["Design search and novelty review", "Risk analysis of approval", "Guidance on presentation", "Classification identification"],
                   },
                   {
                     t: "Documentation",
                     d: "Filing Support",
-                    items: ["Application preparation", "Document verification", "Accurate submission", "Official system filing"],
+                    items: ["Preparation of application", "Verification of drawings", "Selection of design class", "Official system filing"],
                   },
                   {
                     t: "Follow-Up",
                     d: "Objection Handling",
-                    items: ["Status tracking", "Response to queries", "Department follow-up", "Hearing coordination"],
+                    items: ["Status tracking", "Responding to queries", "Authority follow-up", "Clarification coordination"],
                   },
                   {
                     t: "Post-Registration",
                     d: "Assistance",
-                    items: ["Licensing support", "Protection advisory", "Maintenance of records", "Compliance matters"],
+                    items: ["Renewal and extension", "Assignment or transfer", "Commercial use advisory", "Ongoing IP matters"],
                   }
                 ].map((cat, idx) => (
                   <div key={idx} className="bg-white rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 p-10 hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group">
@@ -866,7 +843,7 @@ const CopyrightRegistrationPage = () => {
                 <div>
                   <h3 className="text-3xl font-bold text-white mb-6">What You Need to Provide</h3>
                   <p className="text-white/80 text-lg mb-8 font-medium leading-relaxed">
-                    To begin your copyright registration journey, we require a few essential details to ensure the application is technically complete and accurate.
+                    To begin your design registration journey, we require a few essential details to ensure the application is complete and accurate.
                   </p>
                   <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold border border-white/20 shadow-xl">
                     <AlertTriangle className="w-6 h-6 text-dbiz-teal" />
@@ -875,11 +852,11 @@ const CopyrightRegistrationPage = () => {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    "Identity and address proof",
-                    "Soft copy of original work",
-                    "Details of creator or author",
-                    "Ownership details/NOC",
-                    "Basic information about the work"
+                    "Applicant details",
+                    "Design images or drawings",
+                    "Product details and class",
+                    "Use details, if any",
+                    "Authorization documents"
                   ].map((item, idx) => (
                     <div key={idx} className={`bg-white/5 backdrop-blur-sm p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-white/10 hover:border-dbiz-teal transition-all duration-300 ${idx === 4 ? 'sm:col-span-2' : ''}`}>
                       <span className="font-bold text-white">{item}</span>
@@ -892,7 +869,7 @@ const CopyrightRegistrationPage = () => {
               {[
                 { t: "Professional Guidance", d: "Experienced support at every stage", i: User },
                 { t: "Complete Management", d: "End-to-end assistance for registration", i: Briefcase },
-                { t: "Accurate Filing", d: "Careful handling of documentation", i: FileText },
+                { t: "Accurate Filing", d: "Careful handling of drawings and class", i: FileText },
                 { t: "Transparent Support", d: "Simple communication and coordination", i: Users },
                 { t: "Timely Follow-Up", d: "Active monitoring to reduce delays", i: Clock }
               ].map((item, idx) => (
@@ -905,7 +882,7 @@ const CopyrightRegistrationPage = () => {
                 </div>
               ))}
             </div>
-            <p className="text-center text-gray-500 mt-12 font-medium italic">With D BIZ CONSULTANCY, your creative assets are handled with care, clarity, and professional attention, allowing you to focus on your creativity and growth.</p>
+            <p className="text-center text-gray-500 mt-12 font-medium italic">With D BIZ CONSULTANCY, your design registration is handled with care, clarity, and professional attention, allowing you to focus on your product while we take care of the process.</p>
           </div>
         </section>
 
@@ -914,32 +891,31 @@ const CopyrightRegistrationPage = () => {
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <h2 className="text-4xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight">Frequently Asked Questions</h2>
-              <p className="text-gray-500 mb-8 font-medium italic">Essential knowledge for creators and businesses.</p>
+              <p className="text-gray-500 mb-8 font-medium italic">Essential knowledge for design protection and compliance.</p>
             </div>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="w-full space-y-4">
                 {[
-                  { q: "Is copyright registration mandatory?", a: "No. Copyright generally exists from the moment an original work is created. However, registration is highly recommended because it provides stronger legal proof of ownership and helps in enforcement against infringement." },
-                  { q: "How long does copyright registration take?", a: "The registration process usually takes around 2 to 4 months in normal cases. If objections, discrepancies, or hearings arise, it may take longer." },
-                  { q: "What is the validity of copyright?", a: "For most literary, dramatic, musical, and artistic works, copyright is valid for the lifetime of the author plus 60 years. Certain other works may have a different validity period based on publication." },
-                  { q: "Can published or unpublished work be registered?", a: "Yes. Both published and unpublished works can be registered under copyright." },
-                  { q: "Can digital content or online content be protected?", a: "Yes. Copyright protection is available for digital content, website content, software, code, online media, and other creative digital works." },
-                  { q: "Can a logo be registered under copyright?", a: "Yes. A logo may be protected as an artistic work under copyright law. It may also be protected separately under trademark law, depending on its use." },
-                  { q: "Can a name, title, or slogan be copyrighted?", a: "Generally, no. Names, titles, short phrases, and slogans are not usually protected under copyright. Such elements are more commonly protected under trademark law." },
-                  { q: "Who is the owner of copyright?", a: "The creator of the work is usually the original owner of copyright, unless the rights are assigned, transferred, or created under specific employment or contractual arrangements." },
-                  { q: "Can multiple authors claim copyright in the same work?", a: "Yes. In the case of a jointly created work, all eligible contributors may be recognized as co-authors or joint owners." },
-                  { q: "Can freelancers or contractors claim copyright?", a: "Yes. Freelancers or independent creators generally own the copyright in their work unless they have assigned those rights to a client through a written agreement." },
-                  { q: "Can copyright be sold, licensed, or transferred?", a: "Yes. Copyright can be licensed, assigned, sold, or transferred through a proper legal agreement." },
-                  { q: "What is copyright infringement?", a: "Copyright infringement means the unauthorized use, reproduction, publication, distribution, or commercial exploitation of a protected work without permission." },
-                  { q: "What happens if someone copies my work without permission?", a: "You may take legal action against the infringer. Registration helps strengthen your claim by serving as official evidence of ownership." },
-                  { q: "Can I modify my work after registration?", a: "Yes. However, if the modified version is substantially different, a fresh application may be required for the updated work." },
-                  { q: "Is copyright protection automatic?", a: "Yes. Copyright generally arises automatically upon creation of an original work, but registration provides stronger legal and evidentiary support." },
-                  { q: "Is copyright valid internationally?", a: "Copyright protection is recognized in many countries through international arrangements, but enforcement depends on the laws and procedures of the country where protection is sought." },
-                  { q: "Do I need to renew copyright registration?", a: "No renewal is generally required during the validity period of copyright." },
-                  { q: "Can ideas be protected under copyright?", a: "No. Copyright protects the expression of an idea, not the idea, concept, method, or procedure itself." },
-                  { q: "What is the role of the Copyright Office?", a: "The authority examines applications, records ownership details, and issues the registration certificate after completion of the process." },
-                  { q: "Can the application be filed online?", a: "Yes. The copyright registration process is generally carried out online through the official system." },
-                  { q: "What types of works are not eligible for copyright?", a: "Ideas, facts, concepts, methods, procedures, and other non-original material are generally not eligible for copyright protection." }
+                  { q: "Is design registration mandatory?", a: "No, it is not mandatory, but it is important for legal protection and to prevent copying." },
+                  { q: "What is the validity of design registration?", a: "It is valid for 10 years, extendable by 5 years." },
+                  { q: "Can I protect the shape of my product?", a: "Yes, if the shape is unique and visually distinctive." },
+                  { q: "Can I sell or transfer design rights?", a: "Yes, design rights can be licensed, assigned, or transferred." },
+                  { q: "What happens if someone copies my design?", a: "You can take legal action for infringement." },
+                  { q: "Can an old design be registered?", a: "No, the design must be new and original." },
+                  { q: "Is design protection international?", a: "No, it is territorial and requires separate registration in other countries." },
+                  { q: "Can packaging design be registered?", a: "Yes, if it is unique and visually distinctive." },
+                  { q: "Can a design be cancelled?", a: "Yes, if it is not original or previously published." },
+                  { q: "Can I apply for design registration online?", a: "Yes, the process can be completed online." },
+                  { q: "What is considered a “new” design?", a: "A design is new if it has not been published or disclosed anywhere before filing." },
+                  { q: "Can I register multiple designs in one application?", a: "Generally, one application is for one design, except in specific cases." },
+                  { q: "What is design infringement?", a: "It is the unauthorized copying or imitation of a registered design." },
+                  { q: "Can I modify my design after filing?", a: "Only minor corrections are allowed; major changes require a new application." },
+                  { q: "Who can apply for design registration?", a: "Individuals, designers, startups, and companies can apply." },
+                  { q: "What is the role of the design examiner?", a: "The examiner checks novelty, originality, and compliance with legal requirements." },
+                  { q: "Do I need physical presence for registration?", a: "No, the process can be completed online." },
+                  { q: "Can I license my registered design?", a: "Yes, you can allow others to use your design through licensing." },
+                  { q: "What documents are required for design registration?", a: "Identity proof, design drawings, and applicant details are required." },
+                  { q: "What happens after design registration is granted?", a: "You receive exclusive rights and legal protection over the design." }
                 ].map((faq, idx) => (
                   <AccordionItem key={idx} value={`item-${idx}`} className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 overflow-hidden">
                     <AccordionTrigger className="text-[17px] font-bold text-dbiz-navy hover:text-dbiz-teal hover:no-underline py-5 text-left">
@@ -961,4 +937,4 @@ const CopyrightRegistrationPage = () => {
   );
 };
 
-export default CopyrightRegistrationPage;
+export default DesignRegistrationPage;

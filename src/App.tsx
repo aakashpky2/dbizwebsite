@@ -48,6 +48,7 @@ const ShopEstablishmentPage = lazy(() => import("./pages/ShopEstablishmentPage")
 const TrademarkRegistrationPage = lazy(() => import("./pages/TrademarkRegistrationPage"));
 const PatentRegistrationPage = lazy(() => import("./pages/PatentRegistrationPage"));
 const CopyrightRegistrationPage = lazy(() => import("./pages/CopyrightRegistrationPage"));
+const DesignRegistrationPage = lazy(() => import("./pages/DesignRegistrationPage"));
 const TDSFilingsPage = lazy(() => import("./pages/TDSFilingServicesPage"));
 const GSTFilingsPage = lazy(() => import("./pages/GSTFilingServicesPage"));
 const IncomeTaxFilingPage = lazy(() => import("./pages/IncomeTaxFilingPage"));
@@ -148,6 +149,8 @@ const App = () => {
                   <Route path="/patent-registration/:location" element={<PatentRegistrationPage />} />
                   <Route path="/copyright-registration" element={<CopyrightRegistrationPage />} />
                   <Route path="/copyright-registration/:location" element={<CopyrightRegistrationPage />} />
+                  <Route path="/design-registration" element={<DesignRegistrationPage />} />
+                  <Route path="/design-registration/:location" element={<DesignRegistrationPage />} />
                   <Route path="/tds-filings" element={<TDSFilingsPage />} />
                   <Route path="/tds-filings/:location" element={<TDSFilingsPage />} />
                   <Route path="/gst-filings" element={<GSTFilingsPage />} />

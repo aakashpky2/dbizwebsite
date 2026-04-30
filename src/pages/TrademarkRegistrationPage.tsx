@@ -789,10 +789,7 @@ const TrademarkRegistrationPage = () => {
                   { t: "Lack of Uniqueness", d: "Marks that are too generic, descriptive, or non-distinctive may not qualify for registration." },
                   { t: "Delay in Replying to Objections", d: "Failure to respond within the prescribed time can negatively affect the application or even lead to abandonment." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-5 p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
-                    <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-6 h-6 text-amber-600" />
-                    </div>
+                  <div key={idx} className="p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
                     <div>
                       <strong className="text-dbiz-navy block text-lg mb-1 font-bold leading-tight">{item.t}</strong>
                       <p className="text-gray-600 font-medium text-sm leading-relaxed">{item.d}</p>
@@ -807,10 +804,7 @@ const TrademarkRegistrationPage = () => {
                   { t: "Non-Use of Trademark", d: "If a registered trademark is not used for a continuous period, it may become vulnerable to cancellation." },
                   { t: "Online and International Infringement", d: "Even after registration, misuse of the mark through digital platforms or in other jurisdictions may still create practical challenges." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-5 p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
-                    <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-6 h-6 text-amber-600" />
-                    </div>
+                  <div key={idx} className="p-6 bg-white rounded-[2rem] shadow-sm border border-gray-100 hover:border-amber-200 hover:shadow-[0_20px_40px_rgba(180,83,9,0.05)] transition-all duration-300">
                     <div>
                       <strong className="text-dbiz-navy block text-lg mb-1 font-bold leading-tight">{item.t}</strong>
                       <p className="text-gray-600 font-medium text-sm leading-relaxed">{item.d}</p>
@@ -878,15 +872,15 @@ const TrademarkRegistrationPage = () => {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-[3rem] p-12 lg:p-16 border border-gray-100 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-dbiz-teal/5 rounded-full -mr-32 -mt-32"></div>
+            <div className="bg-[#0b1d33] rounded-[3rem] p-12 lg:p-16 border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-dbiz-teal/20 rounded-full -mr-32 -mt-32"></div>
               <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h3 className="text-3xl font-bold text-dbiz-navy mb-6">What You Need to Provide</h3>
-                  <p className="text-gray-600 text-lg mb-8 font-medium leading-relaxed">
+                  <h3 className="text-3xl font-bold text-white mb-6">What You Need to Provide</h3>
+                  <p className="text-white/80 text-lg mb-8 font-medium leading-relaxed">
                     To begin your trademark registration journey, we require a few essential details to ensure the application is complete and accurate.
                   </p>
-                  <div className="inline-flex items-center gap-3 bg-dbiz-navy text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-dbiz-navy/20">
+                  <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold border border-white/20 shadow-xl">
                     <AlertTriangle className="w-6 h-6 text-dbiz-teal" />
                     <span>Essential Checklist</span>
                   </div>
@@ -899,11 +893,8 @@ const TrademarkRegistrationPage = () => {
                     "Use details, if any",
                     "Authorization, wherever applicable"
                   ].map((item, idx) => (
-                    <div key={idx} className={`bg-white p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-gray-100 hover:border-dbiz-teal transition-colors ${idx === 4 ? 'sm:col-span-2' : ''}`}>
-                      <div className="w-10 h-10 bg-dbiz-teal/10 rounded-xl flex items-center justify-center shrink-0">
-                        <ArrowRight className="w-5 h-5 text-dbiz-teal" />
-                      </div>
-                      <span className="font-bold text-dbiz-navy">{item}</span>
+                    <div key={idx} className={`bg-white/5 backdrop-blur-sm p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-white/10 hover:border-dbiz-teal transition-all duration-300 ${idx === 4 ? 'sm:col-span-2' : ''}`}>
+                      <span className="font-bold text-white">{item}</span>
                     </div>
                   ))}
                 </div>

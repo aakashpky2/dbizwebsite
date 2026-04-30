@@ -111,7 +111,7 @@ const ServicesSection = () => {
         { name: "Trademark", path: "/trademark-registration" },
         { name: "Patent", path: "/patent-registration" },
         { name: "Copyright", path: "/copyright-registration" },
-        { name: "Design Registration", path: "/coming-soon" }
+        { name: "Design Registration", path: "/design-registration" }
       ]
     },
     {
