@@ -660,22 +660,20 @@ const TrademarkRegistrationPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-12 text-center">9. Timeline & Validity</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 max-w-[1400px] mx-auto px-4">
                 {[
-                  { t: "Application Filing", d: "Same day submission" },
-                  { t: "Examination Stage", d: "Usually 1 to 3 months" },
-                  { t: "Registration Completion", d: "Usually 6 to 12 months" },
-                  { t: "Legal Challenges", d: "Timeline may extend if objections arise" },
-                  { t: "Trademark Validity", d: "10 Years from filing date" },
-                  { t: "Infinite Renewal", d: "Renewable every 10 years indefinitely" }
+                  { v: "Now", u: "Filing", t: "Application Filing", d: "Same day submission" },
+                  { v: "1-3", u: "Months", t: "Examination Stage", d: "Usually 1 to 3 months" },
+                  { v: "6-12", u: "Months", t: "Registration Completion", d: "Usually 6 to 12 months, if no objection or opposition is raised" },
+                  { v: "Alert", u: "Case", t: "If Objection / Hearing / Opposition Arises", d: "The timeline may extend further depending on the case" },
+                  { v: "10", u: "Years", t: "Validity of Registered Trademark", d: "10 years from the date of application" },
+                  { v: "∞", u: "Renewal", t: "Renewal", d: "Renewable indefinitely for further periods of 10 years each" }
                 ].map((item, idx) => (
-                  <div key={idx} className="flip-card">
-                    <div className="flip-card-inner">
-                      <div className="flip-card-front">
-                        <p className="title">{item.t}</p>
-                      </div>
-                      <div className="flip-card-back">
-                        <p className="title !text-xl !font-bold leading-relaxed">{item.d}</p>
-                      </div>
+                  <div key={idx} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm text-center hover:shadow-xl hover:border-dbiz-teal/20 transition-all duration-300 group">
+                    <div className="bg-dbiz-teal/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 group-hover:bg-dbiz-teal group-hover:scale-110 transition-all duration-300">
+                      <span className="text-dbiz-teal font-black text-sm group-hover:text-white">{item.v}</span>
                     </div>
+                    <p className="text-sm font-bold text-dbiz-navy uppercase tracking-wider mb-1">{item.u}</p>
+                    <p className="text-xs font-bold text-dbiz-teal mb-3">{item.t}</p>
+                    <p className="text-[11px] leading-relaxed text-gray-500 font-medium">{item.d}</p>
                   </div>
                 ))}
               </div>
@@ -684,9 +682,9 @@ const TrademarkRegistrationPage = () => {
         </section>
 
         {/* Trademark Symbols Section */}
-        <section id="symbols" className="py-24 bg-[#0b1d33] scroll-mt-32 overflow-hidden">
+        <section id="symbols" className="py-24 bg-gray-50 scroll-mt-32 overflow-hidden">
           <div className="container-custom relative">
-            <h2 className="text-3xl md:text-4xl font-bold font-sans text-white mb-16 text-center">10. Trademark Symbols</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-sans text-dbiz-navy mb-16 text-center">10. Trademark Symbols</h2>
             
             <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
               <div className="uiverse-symbol-container">
@@ -715,10 +713,10 @@ const TrademarkRegistrationPage = () => {
             </div>
             
             <div className="mt-16 max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-8 py-4 rounded-full font-bold border border-white/20 shadow-xl">
-                <ShieldCheck className="w-6 h-6 text-dbiz-teal" />
-                <span>These symbols indicate the legal status of the trademark and strengthen brand protection.</span>
-              </div>
+            <div className="mt-16 flex items-center justify-center gap-3 text-gray-600 font-bold italic">
+              <ShieldCheck className="w-5 h-5 text-dbiz-teal" />
+              <span>These symbols indicate the legal status of the trademark and strengthen brand protection.</span>
+            </div>
             </div>
           </div>
         </section>
@@ -733,49 +731,40 @@ const TrademarkRegistrationPage = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[
                 { 
                   t: "Exclusive Right to Use the Mark", 
                   d: "The registered owner gets the exclusive legal right to use the trademark in relation to the goods or services for which it is registered.",
-                  image: "/dbiz-uploads/exclusive-right.png"
+                  icon: Shield
                 },
                 { 
                   t: "Right to Take Legal Action Against Infringement", 
                   d: "Registration allows the owner to take legal action against any person using an identical or deceptively similar mark without permission.",
-                  image: "/dbiz-uploads/legal-action.png"
+                  icon: Gavel
                 },
                 { 
                   t: "Protection Across Registered Classes", 
                   d: "Trademark protection applies to the specific class or classes in which the mark is registered, ensuring legal rights within that business category.",
-                  image: "/dbiz-uploads/class-protection.png"
+                  icon: Scale
                 },
                 { 
                   t: "Ability to License, Sell, or Transfer the Trademark", 
                   d: "A registered trademark is an intangible asset that can be licensed, assigned, sold, or transferred for commercial benefit.",
-                  image: "/dbiz-uploads/license-transfer.png"
+                  icon: Briefcase
                 },
                 { 
                   t: "Strengthens Brand Identity and Market Position", 
                   d: "It enhances customer trust, protects goodwill, and gives the business a stronger identity and competitive position in the market.",
-                  image: "/dbiz-uploads/brand-identity.png"
+                  icon: Award
                 }
               ].map((item, idx) => (
-                <div key={idx} className="uiverse-rights-card group">
-                  <div className="icon-wrapper !p-0 !gap-0 w-full h-full relative overflow-hidden">
-                    <img 
-                      src={item.image} 
-                      alt={item.t} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1d33]/90 via-transparent to-transparent flex items-end p-8">
-                      <span className="text-xl font-bold text-white group-hover:opacity-0 transition-opacity duration-300 leading-tight">{item.t}</span>
-                    </div>
+                <div key={idx} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:border-dbiz-teal/20 transition-all duration-300 flex flex-col items-center text-center group">
+                  <div className="w-16 h-16 rounded-2xl bg-dbiz-teal/10 flex items-center justify-center mb-6 group-hover:bg-dbiz-teal group-hover:rotate-12 transition-all duration-300">
+                    <item.icon className="w-8 h-8 text-dbiz-teal group-hover:text-white" />
                   </div>
-                  <div className="uiverse-rights-content">
-                    <h4 className="uiverse-rights-title">{item.t}</h4>
-                    <p className="uiverse-rights-description">{item.d}</p>
-                  </div>
+                  <h4 className="text-xl font-bold text-dbiz-navy mb-4 leading-tight">{item.t}</h4>
+                  <p className="text-sm text-gray-600 leading-relaxed font-medium">{item.d}</p>
                 </div>
               ))}
             </div>
@@ -848,10 +837,8 @@ const TrademarkRegistrationPage = () => {
             </div>
 
             <div className="mb-24">
-              <h3 className="text-2xl md:text-3xl font-bold text-dbiz-navy mb-12 text-center flex items-center justify-center gap-4">
-                <div className="h-1 w-12 bg-dbiz-teal rounded-full"></div>
+              <h3 className="text-2xl md:text-3xl font-bold text-dbiz-navy mb-12 text-center">
                 How We Support You
-                <div className="h-1 w-12 bg-dbiz-teal rounded-full"></div>
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {[

@@ -14,9 +14,9 @@ const TrademarkTypeCard: React.FC<TrademarkTypeCardProps> = ({ title, desc }) =>
           width: 100%;
           max-width: 320px;
           height: 280px;
-          background: #f5f7fa;
-          background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
-          border: 1px solid rgba(255, 255, 255, 0.8);
+          background: #ffffff !important;
+          background-image: none !important;
+          border: 1px solid rgba(0, 0, 0, 0.05);
           box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.1);
           backdrop-filter: blur(8px);
           border-radius: 20px;
