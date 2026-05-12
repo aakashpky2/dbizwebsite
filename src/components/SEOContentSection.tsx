@@ -50,7 +50,7 @@ const SEOContentSection = () => {
                                     "Private Limited Company Registration",
                                     "LLP, OPC & Partnership Registration",
                                     "GST Registration & GST Compliance",
-                                    "Startup India Registration & Recognition",
+                                    "STARTUP GRANTS (DPIIT Recognition)",
                                     "Trademark & Intellectual Property Filing",
                                     "ROC / MCA Compliance Management",
                                     "Income Tax Filing & TDS Returns",

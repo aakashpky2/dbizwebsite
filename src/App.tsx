@@ -184,6 +184,8 @@ const App = () => {
                   <Route path="/market-research/:location" element={<MarketResearchPage />} />
                   <Route path="/pitch-deck" element={<PitchDeckPage />} />
                   <Route path="/pitch-deck/:location" element={<PitchDeckPage />} />
+                  <Route path="/startup-grants" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-grants/:location" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-india-recognition" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-india-recognition/:location" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-india-registration" element={<StartupIndiaRegistrationPage />} />

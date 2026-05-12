@@ -42,8 +42,8 @@ const content = {
     { title: "Post-Recognition Support", description: "Guidance on availing benefits after recognition" }
   ],
   faqs: [
-    { question: "What is Startup India Recognition?", answer: "Startup India Recognition is a certification issued by DPIIT that identifies a business entity as a startup under the Startup India initiative. This recognition unlocks various benefits like tax exemptions, easier compliance, and access to funding." },
-    { question: "Who is eligible for Startup India Recognition?", answer: "To be eligible, your entity must be incorporated as Private Limited Company, Partnership Firm, or LLP, be less than 10 years old, have annual turnover not exceeding ₹100 crore, and be working towards innovation or improvement of products/services." },
+    { question: "What is STARTUP GRANTS?", answer: "STARTUP GRANTS (Startup India Recognition) is a certification issued by DPIIT that identifies a business entity as a startup under the Startup India initiative. This recognition unlocks various benefits like tax exemptions, easier compliance, and access to funding." },
+    { question: "Who is eligible for STARTUP GRANTS?", answer: "To be eligible for STARTUP GRANTS, your entity must be incorporated as Private Limited Company, Partnership Firm, or LLP, be less than 10 years old, have annual turnover not exceeding ₹100 crore, and be working towards innovation or improvement of products/services." },
     { question: "How long does the recognition process take?", answer: "The recognition process typically takes 2-3 weeks after submitting all required documents. Our experts ensure error-free applications for faster approval." },
     { question: "What documents are required?", answer: "Required documents include Certificate of Incorporation, PAN card of entity, brief description of business, authorization letter, and details of directors/partners." }
   ]
@@ -81,7 +81,7 @@ const StartupIndiaRecognitionPage = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="max-w-3xl">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 leading-tight">
-                  Startup India Recognition{location && <span className="block text-2xl md:text-3xl mt-2">in {cityName}</span>}
+                  STARTUP GRANTS{location && <span className="block text-2xl md:text-3xl mt-2">in {cityName}</span>}
                 </h1>
                 <p className="text-lg opacity-90 mb-8 leading-relaxed">{content.description}</p>
                 <div className="flex flex-wrap gap-4">
@@ -139,7 +139,7 @@ const StartupIndiaRecognitionPage = () => {
 
         <section id="overview" className="py-16 scroll-mt-32">
           <div className="container-custom">
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">What is Startup India Recognition?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">What is STARTUP GRANTS?</h2>
             <p className="text-gray-700 mb-4 leading-relaxed">{content.description}</p>
           </div>
         </section>
@@ -161,7 +161,7 @@ const StartupIndiaRecognitionPage = () => {
 
         <section id="benefits" className="py-16 scroll-mt-32">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold text-dbiz-navy mb-8 text-center">Benefits of Startup India Recognition</h2>
+            <h2 className="text-3xl font-bold text-dbiz-navy mb-8 text-center">Benefits of STARTUP GRANTS</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {content.benefits.map((item, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex">

@@ -1,77 +1,102 @@
 export const startupFaq = [
   {
     value: "item-1",
-    question: "What is DPIIT Startup Registration?",
-    answer: "It is a recognition given by the Government of India to eligible startups under the Startup India initiative to avail benefits like tax exemptions and funding support."
+    question: "Do I need to have a registered company to apply for grants?",
+    answer: "Usually yes. Most schemes require a registered entity (Private Ltd/LLP/Partnership)."
   },
   {
     value: "item-2",
-    question: "Is DPIIT registration mandatory for startups?",
-    answer: "No, it is not mandatory, but highly recommended to avail tax benefits, government schemes, and improve credibility."
+    question: "Is DPIIT recognition mandatory for all grants?",
+    answer: "Not for all, but it improves eligibility and is required for some central schemes."
   },
   {
     value: "item-3",
-    question: "Who can apply for DPIIT Startup Registration?",
-    answer: "Private Limited Companies, LLPs, and Partnership Firms that meet the eligibility criteria can apply."
+    question: "Can an idea-stage startup without revenue get grants?",
+    answer: "Yes, many schemes specifically target idea/prototype-stage ventures."
   },
   {
     value: "item-4",
-    question: "What are the eligibility criteria for DPIIT registration?",
-    answer: "The business must be less than 10 years old, have turnover below ₹100 crore, and work on innovation or scalable business model."
+    question: "Can I apply for multiple grants at the same time?",
+    answer: "Yes, but you must avoid double-funding for the same cost items."
   },
   {
     value: "item-5",
-    question: "What is the time required for DPIIT registration?",
-    answer: "Usually 2–5 working days if the application is complete and properly drafted."
+    question: "Do I have to return the grant money?",
+    answer: "Generally no, but misuse or non-compliance can lead to recovery and penalties."
   },
   {
     value: "item-6",
-    question: "What is the validity of DPIIT recognition?",
-    answer: "It is valid until the startup completes 10 years from incorporation or exceeds ₹100 crore turnover."
+    question: "How long does it typically take to receive funds?",
+    answer: "Often 3–6 months from application, depending on the scheme."
   },
   {
     value: "item-7",
-    question: "Can a trading business apply for DPIIT registration?",
-    answer: "Pure trading businesses are generally not eligible unless they show innovation or value addition."
+    question: "Can solo founders apply?",
+    answer: "Many schemes prefer teams, but solo founders are not automatically disqualified."
   },
   {
     value: "item-8",
-    question: "What is Section 80IAC benefit?",
-    answer: "It provides income tax exemption for 3 consecutive years to eligible startups after separate approval."
+    question: "Do I need a detailed financial projection?",
+    answer: "Yes, a realistic 3–5 year projection is often required."
   },
   {
     value: "item-9",
-    question: "Is tax exemption automatic after DPIIT registration?",
-    answer: "No, startups must separately apply for tax exemption under Section 80IAC."
+    question: "What happens if I miss milestones?",
+    answer: "Future tranches may be delayed or cancelled; reporting and communication are crucial."
   },
   {
     value: "item-10",
-    question: "Can I update details after registration?",
-    answer: "Yes, changes in business details can be updated through the Startup India portal."
+    question: "Can non-tech startups get grants?",
+    answer: "Yes, but innovation and impact must be clearly demonstrated, even in non-tech sectors."
   },
   {
     value: "item-11",
-    question: "What happens if incorrect details are submitted?",
-    answer: "The application may be rejected or the recognition may be cancelled."
+    question: "Are grants taxable?",
+    answer: "Tax treatment varies; you should consult a tax professional for your specific case."
   },
   {
     value: "item-12",
-    question: "Is a pitch deck mandatory for DPIIT registration?",
-    answer: "Not mandatory, but highly recommended to improve approval chances."
+    question: "Do grants cover salaries and operational costs?",
+    answer: "Many schemes allow limited salaries and operations as part of approved budgets."
   },
   {
     value: "item-13",
-    question: "Can an existing business apply for DPIIT?",
-    answer: "Yes, if it meets eligibility criteria and is not formed by splitting an existing business."
+    question: "Can I pivot my startup after getting a grant?",
+    answer: "Major changes require approval; minor pivots are possible with proper communication."
   },
   {
     value: "item-14",
-    question: "Does DPIIT help in getting funding?",
-    answer: "Yes, it improves credibility and gives access to government funding schemes and investor networks."
+    question: "What if my application is rejected?",
+    answer: "You can improve your proposal and apply in future rounds or to other schemes."
   },
   {
     value: "item-15",
-    question: "Is GST required for DPIIT registration?",
-    answer: "GST is not mandatory for DPIIT registration but may be required based on business activity."
+    question: "Do I need a patent to qualify?",
+    answer: "Not mandatory, but strong IP can significantly strengthen your case."
+  },
+  {
+    value: "item-16",
+    question: "Can existing MSMEs apply, or is it only for new startups?",
+    answer: "Some schemes are open to MSMEs; others are strictly for DPIIT-recognised startups."
+  },
+  {
+    value: "item-17",
+    question: "Is sector choice important?",
+    answer: "Yes; many schemes are sector-specific (biotech, clean energy, agritech, etc.)."
+  },
+  {
+    value: "item-18",
+    question: "Can I get both grant and equity funding?",
+    answer: "Yes; grants can complement angel/VC funding and reduce dilution."
+  },
+  {
+    value: "item-19",
+    question: "How does D Biz charge for services?",
+    answer: "We usually work on a transparent mix of fixed fees and, in some cases, success-linked components."
+  },
+  {
+    value: "item-20",
+    question: "How do I get started with D Biz?",
+    answer: "Share brief details of your startup, stage, and goals. We conduct an initial assessment and suggest suitable grant pathways."
   }
 ];

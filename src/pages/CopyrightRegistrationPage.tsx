@@ -134,7 +134,7 @@ const CopyrightRegistrationPage = () => {
         <section className="relative bg-dbiz-navy text-white py-24 md:py-40 overflow-hidden">
           <div
             className="absolute inset-0 z-0 bg-cover bg-center select-none pointer-events-none"
-            style={{ backgroundImage: "url('/dbiz-uploads/growth-v2.png')" }}
+            style={{ backgroundImage: "url('/dbiz-uploads/copyright-registration-hero.png')" }}
           >
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
@@ -227,7 +227,7 @@ const CopyrightRegistrationPage = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(11,44,95,0.1)] group">
                   <div className="absolute inset-0 bg-dbiz-navy/5 mix-blend-multiply transition-colors group-hover:bg-transparent duration-500 z-10"></div>
                   <CachedImage
-                    src="/dbiz-uploads/trademark-intro-v2.jpg"
+                    src="/dbiz-uploads/copyright-intro-final.png"
                     alt="Copyright Registration Protection"
                     aspectRatio={1.2}
                     className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
@@ -594,13 +594,9 @@ const CopyrightRegistrationPage = () => {
               {/* Left Side Image */}
               <div className="lg:w-[45%] shrink-0">
                 <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group min-h-[500px]">
-                  <video 
-                    src="https://v1.pinimg.com/videos/iht/expMp4/0c/24/44/0c2444073f97ca37892ec777b6b7a1b5_360w.mp4"
-                    poster="https://i.pinimg.com/videos/thumbnails/originals/0c/24/44/0c2444073f97ca37892ec777b6b7a1b5.0000000.jpg"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
+                  <img 
+                    src="/dbiz-uploads/copyright-digital-content.png"
+                    alt="Digital & Creative Content Copyright"
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                   />
                   <div className="absolute inset-0 bg-dbiz-navy/10 mix-blend-multiply z-10 transition-colors duration-500 group-hover:bg-transparent"></div>

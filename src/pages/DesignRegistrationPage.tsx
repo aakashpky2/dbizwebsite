@@ -804,22 +804,42 @@ const DesignRegistrationPage = () => {
                   {
                     t: "Initial Review",
                     d: "Pre-Filing Assistance",
-                    items: ["Design search and novelty review", "Risk analysis of approval", "Guidance on presentation", "Classification identification"],
+                    items: [
+                      "Design search to verify originality",
+                      "Risk analysis and chances of approval",
+                      "Guidance on improving design presentation",
+                      "Support in identifying correct classification"
+                    ],
                   },
                   {
                     t: "Documentation",
                     d: "Filing Support",
-                    items: ["Preparation of application", "Verification of drawings", "Selection of design class", "Official system filing"],
+                    items: [
+                      "Preparation of design application",
+                      "Verification of drawings and supporting documents",
+                      "Selection of appropriate design class",
+                      "Accurate filing through the official system"
+                    ],
                   },
                   {
                     t: "Follow-Up",
                     d: "Objection Handling",
-                    items: ["Status tracking", "Responding to queries", "Authority follow-up", "Clarification coordination"],
+                    items: [
+                      "Tracking the status of the application",
+                      "Responding to examination queries or objections",
+                      "Continuous follow-up with the authority",
+                      "Coordination for clarification, if required"
+                    ],
                   },
                   {
                     t: "Post-Registration",
                     d: "Assistance",
-                    items: ["Renewal and extension", "Assignment or transfer", "Commercial use advisory", "Ongoing IP matters"],
+                    items: [
+                      "Support for renewal and extension",
+                      "Guidance on assignment or transfer of design",
+                      "Advisory on protection and commercial use",
+                      "Ongoing assistance for related IP matters"
+                    ],
                   }
                 ].map((cat, idx) => (
                   <div key={idx} className="bg-white rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 p-10 hover:-translate-y-2 transition-all duration-500 flex flex-col h-full group">
@@ -854,9 +874,9 @@ const DesignRegistrationPage = () => {
                   {[
                     "Applicant details",
                     "Design images or drawings",
-                    "Product details and class",
+                    "Product details and classification",
                     "Use details, if any",
-                    "Authorization documents"
+                    "Authorization, wherever applicable"
                   ].map((item, idx) => (
                     <div key={idx} className={`bg-white/5 backdrop-blur-sm p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-white/10 hover:border-dbiz-teal transition-all duration-300 ${idx === 4 ? 'sm:col-span-2' : ''}`}>
                       <span className="font-bold text-white">{item}</span>
@@ -890,6 +910,9 @@ const DesignRegistrationPage = () => {
         <section id="faqs" className="py-24 bg-gray-50 scroll-mt-32 border-t border-gray-200">
           <div className="container-custom">
             <div className="text-center max-w-4xl mx-auto mb-16">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold tracking-widest mb-6 border border-dbiz-teal/20 uppercase">
+                FAQs
+              </div>
               <h2 className="text-4xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight">Frequently Asked Questions</h2>
               <p className="text-gray-500 mb-8 font-medium italic">Essential knowledge for design protection and compliance.</p>
             </div>
