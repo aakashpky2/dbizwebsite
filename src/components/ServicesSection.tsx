@@ -93,11 +93,11 @@ const ServicesSection = () => {
       title: "Business Registrations",
       items: [
         { name: "GST Registration", path: "/gst-registration" },
+        { name: "Startup Registration (DPIIT)", path: "/startup-grants" },
         { name: "Import Export Code (IEC)", path: "/iec-registration" },
         { name: "Udyam MSME Registration", path: "/udyam-msme-registration" },
         { name: "Trade License", path: "/trade-license" },
         { name: "Shop & Establishment License", path: "/shop-establishment" },
-        { name: "Startup Registration (DPIIT)", path: "/startup-grants" },
         { name: "ISO Certification", path: "/iso-certification" },
         { name: "Digital Signature (DSC)", path: "/digital-signature" },
         { name: "FSSAI License", path: "/fssai-registration" },
@@ -129,9 +129,8 @@ const ServicesSection = () => {
       icon: TrendingUp,
       title: "Fund Raising",
       items: [
-        { name: "STARTUP INDIA REGISTRATION", path: "/startup-india-registration" },
-        { name: "STARTUP LOANS", path: "/startup-loans" },
         { name: "Funding Assistance", path: "/funding-assistance" },
+        { name: "STARTUP LOANS", path: "/startup-loans" },
         { name: "Growth Strategy", path: "/growth-strategy" },
         { name: "Incubation Support", path: "/incubation-support" },
         { name: "Pitch Deck Preparation", path: "/pitch-deck" }
