@@ -448,7 +448,7 @@ const EnhancedPublicLimitedPage = () => {
             <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6 tracking-wide shadow-sm border border-dbiz-teal/5">
               ● Documents Required
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight">
+            <h2 className="font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight font-sans" style={{ fontSize: "38.25px" }}>
               Documents Required for Public Limited Company
             </h2>
             <div className="space-y-4">
