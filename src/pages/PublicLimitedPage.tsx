@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, AlertTriangle,
-  Gavel
+  Gavel, TrendingUp
 } from "lucide-react";
 import { publicLimitedContent } from "@/data/serviceContent";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
