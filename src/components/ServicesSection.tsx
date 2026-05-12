@@ -130,6 +130,7 @@ const ServicesSection = () => {
       title: "Fund Raising",
       items: [
         { name: "START UP GRANTS", path: "/startup-grants" },
+        { name: "STARTUP LOANS", path: "/startup-loans" },
         { name: "Funding Assistance", path: "/funding-assistance" },
         { name: "Growth Strategy", path: "/growth-strategy" },
         { name: "Incubation Support", path: "/incubation-support" },
