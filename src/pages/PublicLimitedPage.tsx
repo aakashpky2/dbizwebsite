@@ -477,35 +477,250 @@ const PublicLimitedPage = () => {
       {/* Registration Process Section */}
       <section id="process" className="py-16 bg-white scroll-mt-32">
         <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step Public Limited Company Registration</h2>
-            <p className="text-lg text-gray-600">Our systematic approach ensures regulatory precision and timely incorporation.</p>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+              Registration Process
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step Public Limited Company Registration Process</h2>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Registering a Public Limited Company in India involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA). The process includes obtaining digital signatures, reserving the company name, filing incorporation documents with the Registrar of Companies (ROC), and completing post-incorporation formalities.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-x-12 gap-y-16 relative">
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-dbiz-navy/10 hidden md:block"></div>
-            
-            {[
-              { s: 1, t: "Digital Signature Certificate (DSC)", d: "Obtain DSC for all proposed directors to electronically sign mandatory MCA forms." },
-              { s: 2, t: "Director Identification Number (DIN)", d: "Apply for a unique identification number (DIN) for each director from the MCA." },
-              { s: 3, t: "Company Name Reservation", d: "Reserving the proposed company name through the MCA portal (RUN facility)." },
-              { s: 4, t: "Drafting MOA and AOA", d: "Preparation of the constitutional documents defining company objects and internal rules." },
-              { s: 5, t: "Filing Incorporation Documents", d: "Submission of forms (INC-7, DIR-12, INC-22) with identity and address proofs to ROC." },
-              { s: 6, t: "Certificate of Incorporation (COI)", d: "ROC issues the COI including the unique Corporate Identification Number (CIN)." },
-              { s: 7, t: "PAN and TAN Allocation", d: "Application and receipt of tax registration numbers from the IT Department." },
-              { s: 8, t: "Opening Company Bank Account", d: "Setting up a corporate current account for all financial operations." },
-              { s: 9, t: "Commencement of Business", d: "Depositing capital and filing Form INC-20A to officially start business operations." }
-            ].map((step, idx) => (
-              <div key={idx} className={`relative flex items-start gap-8 ${idx % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:mt-8'}`}>
-                <div className="flex-shrink-0 bg-dbiz-navy text-white w-14 h-14 rounded-2xl flex items-center justify-center text-2xl font-bold shadow-lg z-10">
-                  {step.s}
+          <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Step 1 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">1</div>
+                  <h3 className="text-xl font-bold">Obtain Digital Signature Certificate (DSC)</h3>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 flex-grow shadow-sm">
-                  <h3 className="text-xl font-bold text-dbiz-navy mb-3">{step.t}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{step.d}</p>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    The first step in registering a Public Limited Company is obtaining a Digital Signature Certificate (DSC) for all proposed directors. A DSC is required to digitally sign electronic documents submitted to the Ministry of Corporate Affairs (MCA) portal.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "Mandatory for all directors and authorized signatories",
+                      "Used for signing incorporation documents online",
+                      "Issued by government-approved certifying authorities"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-            ))}
+
+              {/* Step 2 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">2</div>
+                  <h3 className="text-xl font-bold">Apply for Director Identification Number (DIN)</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    A Director Identification Number (DIN) is a unique identification number allotted to individuals who wish to become directors of a company.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "Mandatory for all directors under the Companies Act, 2013",
+                      "Applied through MCA during incorporation",
+                      "Remains valid for lifetime once allotted"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">3</div>
+                  <h3 className="text-xl font-bold">Company Name Reservation</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    The next step is reserving the proposed company name through the MCA portal. Once approved, the name is reserved for incorporation filing.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "Must be unique and not identical to existing companies",
+                      "Should comply with Companies (Incorporation) Rules",
+                      "Should avoid conflicts with registered trademarks"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">4</div>
+                  <h3 className="text-xl font-bold">Drafting MOA and AOA</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    The Memorandum of Association (MOA) and Articles of Association (AOA) are fundamental documents required for company incorporation.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "MOA defines the company's main objectives and scope",
+                      "AOA specifies internal rules and governance structure",
+                      "Documents define rights of directors and shareholders"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">5</div>
+                  <h3 className="text-xl font-bold">Filing Incorporation with ROC</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    Incorporation forms are filed with the Registrar of Companies (ROC) through the MCA portal along with supporting documents.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "INC-7 – Application for company incorporation",
+                      "DIR-12 – Appointment of directors",
+                      "INC-22 – Registered office address declaration"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 6 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">6</div>
+                  <h3 className="text-xl font-bold">Certificate of Incorporation (COI)</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    After successful verification of the documents, the ROC issues the Certificate of Incorporation (COI), making the PLC a legal entity.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "Includes unique Company Identification Number (CIN)",
+                      "Contains the official date of incorporation",
+                      "Serves as legal confirmation of company existence"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 7 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">7</div>
+                  <h3 className="text-xl font-bold">PAN and TAN Allocation</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    The company receives a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) from the Income Tax Department.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "PAN is essential for income tax purposes",
+                      "TAN is required for TDS compliance",
+                      "Both are issued by the Income Tax Department"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Step 8 */}
+              <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow">
+                <div className="bg-dbiz-navy p-5 text-white flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-white text-dbiz-navy flex items-center justify-center font-bold text-lg mr-4 shrink-0">8</div>
+                  <h3 className="text-xl font-bold">Opening Company Bank Account</h3>
+                </div>
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 text-sm leading-relaxed">
+                    The newly incorporated company must open a current bank account in its name to conduct business transactions.
+                  </p>
+                  <ul className="space-y-3 mt-auto">
+                    {[
+                      "Requires COI, PAN, MOA, and AOA documents",
+                      "Need a board resolution authorizing account opening",
+                      "KYC documents of all directors are mandatory"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                        <CheckCircle className="h-4 w-4 text-dbiz-teal shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 9 - Full width for the final step */}
+            <div className="bg-dbiz-teal text-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all">
+                <div className="p-8 flex flex-col md:flex-row gap-8 items-center">
+                  <div className="w-20 h-20 rounded-full bg-white text-dbiz-teal flex items-center justify-center font-bold text-3xl shrink-0">9</div>
+                  <div className="flex-grow text-center md:text-left">
+                    <h3 className="text-2xl font-bold mb-4">Commencement of Business</h3>
+                    <p className="opacity-90 mb-6 max-w-3xl">
+                      Before starting business operations, the company must complete commencement of business formalities. This includes depositing share capital in the company bank account and filing the commencement declaration with MCA (INC-20A).
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                          <CheckCircle className="h-5 w-5" />
+                          <span className="text-sm font-medium">Deposit share capital in bank account</span>
+                       </div>
+                       <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg">
+                          <CheckCircle className="h-5 w-5" />
+                          <span className="text-sm font-medium">File Form INC-20A with MCA</span>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div className="mt-12 p-8 bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl text-center">
+             <p className="text-gray-700 font-medium max-w-3xl mx-auto italic">
+               "With professional assistance from D BIZ CONSULTANCY, businesses can complete the Public Limited Company registration process efficiently while ensuring full compliance with statutory requirements."
+             </p>
           </div>
         </div>
       </section>
