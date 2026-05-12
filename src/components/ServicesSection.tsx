@@ -129,7 +129,7 @@ const ServicesSection = () => {
       icon: TrendingUp,
       title: "Fund Raising",
       items: [
-        { name: "START UP GRANTS", path: "/startup-grants" },
+        { name: "STARTUP INDIA REGISTRATION", path: "/startup-india-registration" },
         { name: "STARTUP LOANS", path: "/startup-loans" },
         { name: "Funding Assistance", path: "/funding-assistance" },
         { name: "Growth Strategy", path: "/growth-strategy" },
