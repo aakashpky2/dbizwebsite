@@ -449,14 +449,11 @@ const EnhancedPublicLimitedPage = () => {
               ● Documents Required
             </div>
             <h2 className="font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight font-sans" style={{ fontSize: "38.25px" }}>
-              Documents Required for Public Limited Company
+              Documents Required – Public Limited Company
             </h2>
             <div className="space-y-4">
               <p className="text-gray-600 text-lg font-medium leading-relaxed max-w-4xl mx-auto">
-                D BIZ CONSULTANCY assists clients in collecting, verifying, and preparing all mandatory documents required for incorporation of a Public Limited Company under the Companies Act, 2013.
-              </p>
-              <p className="text-gray-500 text-base font-medium italic">
-                Proper documentation ensures faster approval from the Ministry of Corporate Affairs (MCA) and prevents application resubmissions or rejection during processing.
+                D BIZ CONSULTANCY assists clients with collecting and preparing all required documentation for Public Limited Company incorporation.
               </p>
             </div>
           </div>
@@ -469,14 +466,12 @@ const EnhancedPublicLimitedPage = () => {
               </div>
               <div>
                 <h4 className="text-xl font-bold text-amber-900 mb-4">Common Rejection Prevention Tips</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3">
+                <div className="space-y-3">
                   {[
-                    "Name spelling must match across PAN, Aadhaar, Passport, and forms.",
-                    "Address proof details must be consistent across all documents.",
-                    "Registered office documents must establish ownership or authorization.",
-                    "Utility bills must be recent (not older than 2 months).",
-                    "Director details must match income tax and identity records.",
-                    "Signatures in declarations must match ID proofs."
+                    "Name and address spelling must match across PAN / Aadhaar / Passport and SPICe+ application.",
+                    "Registered office documents must be consistent (owner name, NOC, rent agreement, utility bill).",
+                    "Utility bills and bank statements should be dated within the last 2 months.",
+                    "Ensure all directors’ details and signatures match submitted identity proofs."
                   ].map((tip, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-amber-800 font-medium">
                       <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></div>
@@ -494,7 +489,8 @@ const EnhancedPublicLimitedPage = () => {
             {/* 1. For Indian Directors/Shareholders */}
             <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <div className="bg-dbiz-navy p-8 text-white">
-                <h3 className="text-2xl font-bold tracking-tight uppercase">For Domestic Nationals</h3>
+                <h3 className="text-2xl font-bold tracking-tight uppercase">For Indian Directors / Shareholders</h3>
+                <p className="text-dbiz-teal text-xs font-bold mt-1 opacity-80">(Domestic Nationals)</p>
               </div>
               <div className="p-10 space-y-8">
                 <div className="flex gap-5">
@@ -503,7 +499,7 @@ const EnhancedPublicLimitedPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Identity Proof</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">PAN Card (Mandatory), Aadhaar, Passport, Voter ID, or Driving License.</p>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">PAN Card (Mandatory), Aadhaar Card, Passport, Voter ID, Driving License</p>
                   </div>
                 </div>
                 <div className="flex gap-5">
@@ -512,7 +508,7 @@ const EnhancedPublicLimitedPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Address Proof</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Latest Bank Statement, Electricity Bill, Telephone/Mobile Bill, or Gas Bill (within 2 months).</p>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Utility Bills or Bank Statements (dated within last 2 months)</p>
                   </div>
                 </div>
                 <div className="flex gap-5">
@@ -521,13 +517,13 @@ const EnhancedPublicLimitedPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Photographs</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Recent passport-sized photographs of all proposed directors and shareholders.</p>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Recent passport-sized photographs</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* 2. For Foreign Directors/Shareholders */}
+            {/* 2. For Foreign Nationals / NRIs */}
             <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <div className="bg-dbiz-navy p-8 text-white">
                 <h3 className="text-2xl font-bold tracking-tight uppercase">For Foreign Nationals / NRIs</h3>
@@ -538,8 +534,17 @@ const EnhancedPublicLimitedPage = () => {
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Identity & Address Proof</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Passport (Mandatory), Driving License, Bank Statement, Residence Card, or Utility Bill showing overseas address.</p>
+                    <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Identity Proof</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Passport (Mandatory)</p>
+                  </div>
+                </div>
+                <div className="flex gap-5">
+                  <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
+                    <CheckCircle2 className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Address Proof</h4>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Driver’s License, Bank Statement, or Residence Card</p>
                   </div>
                 </div>
                 <div className="flex gap-5">
@@ -548,22 +553,17 @@ const EnhancedPublicLimitedPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Notarisation / Apostille</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Documents must be Notarised or Apostilled in the country of origin as per nationality/MCA regulations.</p>
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Required depending on director/shareholder status and MCA regulations</p>
                   </div>
                 </div>
-                <div className="flex gap-5">
-                  <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                    <CheckCircle2 className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Resident Director Note</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium italic">At least one director must be an Indian Resident (stayed 182+ days in the previous financial year).</p>
-                  </div>
+                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-dbiz-teal"></div>
+                  <p className="text-gray-400 text-xs italic font-bold leading-none">Note: A Public Limited Company must have at least one Resident Director (182+ days stay in India).</p>
                 </div>
               </div>
             </div>
 
-            {/* 3. Statutory Incorporation Documents */}
+            {/* 3. For Public Limited Company Registration */}
             <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <div className="bg-dbiz-navy p-8 text-white flex items-center gap-4">
                 <FileText className="h-6 w-6 text-dbiz-teal" />
@@ -571,9 +571,11 @@ const EnhancedPublicLimitedPage = () => {
               </div>
               <div className="p-10 space-y-6">
                 {[
-                  { title: "MOA & AOA", desc: "Memorandum of Association (objectives/scope) and Articles of Association (governance/rights)." },
-                  { title: "Declaration & Consent", desc: "Director Consent (DIR-2), Declarations by Professionals, and Subscriber Declarations." },
-                  { title: "DSC & DIN", desc: "Digital Signature Certificate for e-filing and Director Identification Number issued by MCA." }
+                  { title: "Memorandum of Association (MOA)", desc: "Company's core objectives and scope." },
+                  { title: "Articles of Association (AOA)", desc: "Internal governance rules and bylaws." },
+                  { title: "Declaration & Consent Forms", desc: "Mandatory forms signed by directors and professionals." },
+                  { title: "Digital Signature Certificate (DSC)", desc: "Electronic signature for MCA filing." },
+                  { title: "Director Identification Number (DIN)", desc: "Unique ID number for all company directors." }
                 ].map((doc, i) => (
                   <div key={i} className="flex gap-5">
                     <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal shrink-0 mt-2.5"></div>
@@ -586,30 +588,47 @@ const EnhancedPublicLimitedPage = () => {
               </div>
             </div>
 
-            {/* 4. Registered Office Proof */}
+            {/* 4. For Registered Office */}
             <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
               <div className="bg-dbiz-navy p-8 text-white flex items-center gap-4">
                 <Building2 className="h-6 w-6 text-dbiz-teal" />
                 <h3 className="text-2xl font-bold tracking-tight uppercase">Registered Office</h3>
               </div>
-              <div className="p-10 space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="font-bold text-dbiz-navy text-sm mb-3 uppercase tracking-wider">If Premises Is Rented</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Rent Agreement and No Objection Certificate (NOC) from the property owner.</p>
+              <div className="p-10 space-y-8">
+                <div className="space-y-6">
+                  <div className="flex gap-5">
+                    <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
+                      <Building2 className="h-5 w-5 text-dbiz-teal" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-dbiz-navy text-base mb-1">Rented Premises</h4>
+                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Rent Agreement + No Objection Certificate (NOC) from property owner.</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-dbiz-navy text-sm mb-3 uppercase tracking-wider">If Premises Is Owned</h4>
-                    <p className="text-gray-500 text-sm leading-relaxed font-medium">Ownership Proof (Sale Deed/Property Tax Receipt) and recent Utility Bill.</p>
+                  <div className="flex gap-5">
+                    <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
+                      <FileText className="h-5 w-5 text-dbiz-teal" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-dbiz-navy text-base mb-1">Owned Premises</h4>
+                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Property Ownership Documents / Property Tax Receipt.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-gray-400 text-xs italic">Note: Utility bills must be within last 2 months and name must match property documents.</p>
+                  <div className="flex gap-5">
+                    <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
+                      <Clock className="h-5 w-5 text-dbiz-teal" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-dbiz-navy text-base mb-1">Utility Bill</h4>
+                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Recent Electricity/Water bill (within 2 months) with matching owner name.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
           </div>
+
 
           {/* Additional Compliance: Public Limited Specifics */}
           <div className="mt-16 max-w-5xl mx-auto">
