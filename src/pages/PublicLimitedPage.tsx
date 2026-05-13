@@ -1,910 +1,940 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import {
-  CheckCircle2,
-  ArrowRight,
-  FileText,
-  Users,
-  Shield,
-  Building2,
-  FileBarChart,
-  ArrowDownCircle,
-  Phone,
-  Clock,
-  CheckCircle,
-  MessageCircle,
-  AlertTriangle,
-  Award,
-  TrendingUp,
-  CreditCard,
-  Target,
-  Sparkles,
-  Layers,
-  MapPin,
-  Zap,
-  Activity,
-  Repeat,
-  RefreshCw,
-  Gavel,
-  Rocket,
-  Search,
-  Layout,
-  Briefcase,
-  Globe,
-  HandCoins,
-  Hash,
-  UserCircle2,
-  Presentation,
-  PieChart,
-  Handshake,
-  Calendar,
-  BadgeCheck,
-  Check
+import { CheckCircle2, ArrowRight, FileText, Users, Shield, Building2, FileBarChart, ArrowDownCircle, Phone, Clock, CheckCircle, MessageCircle, AlertTriangle,
+  Gavel, TrendingUp, File
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { publicLimitedContent } from "@/data/serviceContent";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from "@/components/ui/accordion";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { indianCities } from "@/data/keralaLocations";
 import NotFound from "./NotFound";
-import CachedImage from "@/components/CachedImage";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { faqData } from "@/data/publicLimitedFaq";
 
-const PublicLimitedPage = () => {
+const phoneNumber = "+918075273408";
+
+const ContactOptions = () => {
+  return <div className="grid grid-cols-2 gap-3 p-2">
+    <a href={`tel:${phoneNumber}`} className="flex items-center justify-center gap-2 bg-dbiz-teal text-white px-4 py-2 rounded-md hover:bg-dbiz-teal/90 transition-colors">
+      <Phone size={16} />
+      <span>Call</span>
+    </a>
+    <a href={`https://wa.me/${phoneNumber.replace('+', '')}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors">
+      <MessageCircle size={16} />
+      <span>WhatsApp</span>
+    </a>
+  </div>;
+};
+
+// Public Limited Company Registration Page - SEO Optimized
+const EnhancedPublicLimitedPage = () => {
   const params = useParams();
   const location = params?.location as string;
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  useScrollAnimation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  // Check if location is valid (if provided)
   const isValidLocation = !location || indianCities.map(city => city.toLowerCase().replace(/\s+/g, '-')).includes(location);
 
+  const cityName = location ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location) : "";
   if (location && !isValidLocation) {
     return <NotFound />;
   }
 
-  const cityName = location
-    ? indianCities.find(city => city.toLowerCase().replace(/\s+/g, '-') === location)
-    : "India";
-
   const handleSectionClick = (section: string) => {
     setActiveSection(activeSection === section ? null : section);
-
     const element = document.getElementById(section);
     if (element) {
       const headerOffset = 160;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
       });
     }
   };
-
   const isActive = (section: string) => activeSection === section;
-
-  const faqs = [
-    {
-      question: "What is a Public Limited Company?",
-      answer: "A Public Limited Company (PLC) is a company incorporated under Section 2(71) of the Companies Act, 2013, which allows the public to invest in its shares or securities. It is considered a separate legal entity from its shareholders and provides limited liability protection, meaning shareholders are liable only to the extent of the unpaid value of their shares."
-    },
-    {
-      question: "What are the basic eligibility requirements to start a Public Limited Company in India?",
-      answer: "To register a Public Limited Company, the following minimum conditions must be satisfied: At least three directors, Minimum seven shareholders, At least one resident director in India, A registered office address in India, and Valid identity and address proofs of directors and shareholders."
-    },
-    {
-      question: "What is the minimum number of directors required for a Public Limited Company?",
-      answer: "A Public Limited Company must have at least three directors. One of the directors must qualify as a resident director, meaning the individual has stayed in India for 182 days or more during the financial year."
-    },
-    {
-      question: "Is there a maximum limit on the number of shareholders in a Public Limited Company?",
-      answer: "No. Unlike Private Limited Companies, Public Limited Companies do not have a maximum limit on shareholders, allowing them to raise capital from a large number of investors."
-    },
-    {
-      question: "What is the minimum capital required to incorporate a Public Limited Company?",
-      answer: "Although the Companies Act, 2013 removed strict minimum capital requirements, Public Limited Companies are generally formed with a minimum paid-up capital of ₹5,00,000 to meet regulatory and operational expectations."
-    },
-    {
-      question: "Can a Public Limited Company invite the public to invest in shares?",
-      answer: "Yes. A Public Limited Company can issue shares, debentures, or other securities to the public for raising capital. If the company wishes to trade shares publicly, it must comply with SEBI regulations and stock exchange listing requirements."
-    },
-    {
-      question: "What are the main documents required for Public Limited Company registration?",
-      answer: "The important documents required include: PAN card of directors and shareholders, Identity proof such as Aadhaar or Passport, Address proof such as bank statement or utility bill, Passport-size photographs, Registered office proof and owner NOC, Memorandum of Association (MOA), and Articles of Association (AOA)."
-    },
-    {
-      question: "What is the process for registering a Public Limited Company in India?",
-      answer: "The incorporation process generally includes: 1. Obtaining Digital Signature Certificates (DSC) for directors, 2. Applying for Director Identification Numbers (DIN), 3. Reserving the company name through the MCA portal, 4. Preparing the MOA and AOA, 5. Filing incorporation forms with the Registrar of Companies (ROC), and 6. Receiving the Certificate of Incorporation."
-    },
-    {
-      question: "How long does it take to complete Public Limited Company registration?",
-      answer: "The incorporation process typically takes 20 to 30 working days, depending on document verification, name approval, and ROC processing timelines."
-    },
-    {
-      question: "Can the entire Public Limited Company registration process be completed online?",
-      answer: "Yes. The incorporation process can be completed online through the Ministry of Corporate Affairs (MCA) portal, where documents are digitally signed and submitted for approval."
-    },
-    {
-      question: "What happens after a Public Limited Company is incorporated?",
-      answer: "After incorporation, the company must complete several initial compliances such as: Holding the first Board Meeting within 30 days, Appointing a statutory auditor, Opening a company bank account, and Maintaining statutory registers and records."
-    },
-    {
-      question: "Is statutory audit mandatory for a Public Limited Company?",
-      answer: "Yes. All Public Limited Companies must appoint a Chartered Accountant as statutory auditor and conduct annual statutory audits, irrespective of turnover."
-    },
-    {
-      question: "What are the annual compliance requirements for a Public Limited Company?",
-      answer: "Public Limited Companies must comply with several annual filings, including: Conducting Annual General Meetings (AGM), Filing Financial Statements (AOC-4), Filing Annual Return (MGT-7), and Filing Income Tax Returns."
-    },
-    {
-      question: "Can a Public Limited Company operate without listing its shares on the stock exchange?",
-      answer: "Yes. A Public Limited Company may function as an unlisted public company without listing its shares on stock exchanges. Listing is required only if the company intends to raise funds from the public through stock markets."
-    },
-    {
-      question: "What is the role of the Registrar of Companies (ROC) in company registration?",
-      answer: "The Registrar of Companies (ROC) verifies incorporation documents, approves company names, registers companies under the Companies Act, and issues the Certificate of Incorporation, which confirms the legal existence of the company."
-    },
-    {
-      question: "Can foreign nationals or NRIs become shareholders or directors of a Public Limited Company?",
-      answer: "Yes. Foreign nationals and Non-Resident Indians (NRIs) can become shareholders or directors in a Public Limited Company, subject to Foreign Direct Investment (FDI) regulations and sector-specific restrictions."
-    },
-    {
-      question: "Can an existing Private Limited Company be converted into a Public Limited Company?",
-      answer: "Yes. A Private Limited Company can be converted into a Public Limited Company by altering its Memorandum and Articles of Association, increasing the number of shareholders and directors as required, and filing the necessary forms with the Registrar of Companies."
-    },
-    {
-      question: "What are the major advantages of forming a Public Limited Company?",
-      answer: "Key advantages include: Ability to raise capital from the public, Limited Liability protection for shareholders, Higher credibility among investors and financial institutions, and Greater opportunities for business expansion."
-    },
-    {
-      question: "Why do large businesses prefer the Public Limited Company structure?",
-      answer: "Large businesses often choose this structure because it provides access to large-scale capital, investor participation, and greater corporate credibility, which helps in expanding operations and attracting institutional funding."
-    },
-    {
-      question: "Why choose D BIZ CONSULTANCY for Public Limited Company registration?",
-      answer: "D BIZ CONSULTANCY offers end-to-end support for Public Limited Company incorporation, including documentation preparation, company name approval, ROC filing, compliance guidance, and post-incorporation support, ensuring a smooth and legally compliant registration process."
-    }
-  ];
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-24 pb-16">
-        
-        {/* Hero Section */}
-        <section className="relative bg-dbiz-navy text-white py-24 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <CachedImage
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1440&q=60"
-              alt="Public Limited Company Background"
-              className="w-full h-full object-cover object-center"
-              loading="eager"
-              fetchPriority="high"
-            />
-          </div>
-          
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-dbiz-navy/95 via-dbiz-navy/70 to-transparent"></div>
+    <Navbar />
+    <main className="flex-grow pt-24 pb-16">
+      {/* Hero Section with Side-by-Side Design */}
+      <section className="relative bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <img 
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50" 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
 
-          <div className="container-custom relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-10 gap-12 items-start">
-              <div className="md:col-span-6">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-6 animate-on-scroll">
-                  <span className="w-2.5 h-2.5 rounded-full bg-dbiz-teal mr-2"></span>
-                  Quick Registration • Regulatory Compliance • Expert Advisory
-                </div>
-
-                <h1 className="text-[63.75px] font-extrabold mb-6 leading-tight tracking-tight animate-on-scroll">
-                  PUBLIC LIMITED COMPANY REGISTRATION
-                  {location && <span className="block text-2xl md:text-3xl mt-2 text-dbiz-teal font-semibold">in {cityName}</span>}
-                </h1>
-
-                <p className="text-lg opacity-90 mb-10 leading-relaxed max-w-2xl animate-on-scroll">
-                  D BIZ CONSULTANCY provides complete Public Limited Company registration services. Our expert team ensures a seamless and compliant incorporation process — from company name approval and documentation to ROC filing and post-incorporation compliance management.
-                </p>
-
-                <div className="flex flex-wrap gap-4 mb-10">
-                  <Button
-                    onClick={() => handleSectionClick('overview')}
-                    className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white px-8 py-6 rounded-xl text-lg font-semibold flex items-center gap-3 shadow-xl transition-all hover:-translate-y-1 animate-on-scroll"
-                  >
-                    Start Registration <ArrowDownCircle className="h-5 w-5" />
-                  </Button>
-                </div>
+        <div className="container-custom relative z-10">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-6">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Business Registration Services
               </div>
 
-              <div className="hidden md:block md:col-span-4 animate-on-scroll">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-2xl relative">
-                   <div className="absolute top-0 right-0 p-4"><Building2 className="h-12 w-12 text-dbiz-teal/40" /></div>
-                   <CachedImage 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=60" 
-                    alt="Corporate Office" 
-                    className="w-full aspect-[4/3] object-cover rounded-2xl mb-6 shadow-inner"
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in [animation-delay:200ms]">
+                Public Limited Company Registration
+              </h1>
+
+              <p className="text-lg md:text-xl opacity-90 mb-10 leading-relaxed max-w-3xl animate-fade-in [animation-delay:400ms]">
+                D BIZ CONSULTANCY provides complete Public Limited Company registration services. Our expert team ensures a seamless and compliant incorporation process — from company name approval and documentation to ROC filing and post-incorporation compliance management.
+              </p>
+
+              <div className="flex flex-wrap gap-4 animate-fade-in [animation-delay:600ms]">
+                <Button size="lg" variant="outline" onClick={() => handleSectionClick('features')} className="border-white text-slate-50 bg-dbiz-navy px-8 py-6 text-lg hover:scale-105 transition-transform duration-300">
+                  <ArrowDownCircle className="mr-2 h-5 w-5" /> Learn More
+                </Button>
+              </div>
+
+              <div className="mt-12 flex items-center text-sm font-medium text-white/80 animate-fade-in [animation-delay:800ms]">
+                <Clock className="h-4 w-4 mr-2 text-dbiz-teal animate-pulse" />
+                <span>Quick Registration • Regulatory Compliance • Expert Advisory</span>
+              </div>
+            </div>
+
+            <div className="hidden md:block animate-fade-in [animation-delay:1000ms]">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
+                  <img 
+                    src="/public-limited-hero.png" 
+                    alt="Public Limited Company Meeting" 
+                    className="w-full h-auto rounded-lg shadow-lg" 
                   />
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="bg-dbiz-navy p-4 rounded-xl border border-white/10">
-                      <div className="text-2xl font-bold">3 Min</div>
-                      <div className="text-[10px] uppercase opacity-80">Directors</div>
-                    </div>
-                    <div className="bg-dbiz-navy p-4 rounded-xl border border-white/10">
-                      <div className="text-2xl font-bold">7 Min</div>
-                      <div className="text-[10px] uppercase opacity-80">Shareholders</div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Sticky Nav */}
-        <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
-          <div className="container-custom py-1">
-            <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
-              {[
-                { id: 'overview', icon: Search, label: 'Introduction' },
-                { id: 'features', icon: Layers, label: 'Key Features' },
-                { id: 'benefits', icon: Award, label: 'Benefits' },
-                { id: 'comparison', icon: Gavel, label: 'Comparison' },
-                { id: 'documents', icon: FileText, label: 'Documents' },
-                { id: 'process', icon: RefreshCw, label: 'Process' },
-                { id: 'compliance', icon: Shield, label: 'Compliance' },
-                { id: 'faqs', icon: Users, label: 'FAQs' }
-              ].map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className={`px-4 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-sm font-medium transition-all ${
-                    isActive(item.id)
-                      ? 'bg-dbiz-teal text-white shadow-md'
-                      : 'text-gray-600 hover:bg-gray-50'
-                  }`}
-                  onClick={(e) => { e.preventDefault(); handleSectionClick(item.id); }}
-                >
-                  <item.icon className="mr-2 h-4 w-4" />
-                  {item.label}
-                </a>
-              ))}
-            </div>
+      <section className="sticky top-[70px] lg:top-[90px] z-40 bg-white shadow-sm border-b border-gray-100">
+        <div className="container-custom py-1">
+          <div className="flex items-center overflow-x-auto no-scrollbar py-2 gap-1 justify-start lg:justify-center">
+            {[
+              { id: 'overview', icon: Building2, label: 'Overview' },
+              { id: 'features', icon: Shield, label: 'Features' },
+              { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
+              { id: 'documents', icon: FileText, label: 'Documents' },
+              { id: 'process', icon: ArrowRight, label: 'Process' },
+              { id: 'deadlines', icon: Clock, label: 'Deadlines' },
+              { id: 'penalties', icon: Gavel, label: 'Penalties' },
+              { id: 'faqs', icon: Users, label: 'FAQs' }
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                className={`px-2.5 py-2 whitespace-nowrap cursor-pointer flex items-center rounded-full text-[14px] font-medium transition-all duration-300 ${
+                  isActive(item.id)
+                    ? 'bg-dbiz-teal text-white shadow-md'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-dbiz-navy'
+                }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleSectionClick(item.id);
+                }}
+              >
+                <item.icon className={`mr-1.5 h-3.5 w-3.5 ${isActive(item.id) ? 'text-white' : 'text-dbiz-teal'}`} /> 
+                {item.label}
+              </a>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 1. Introduction Section */}
-        <section id="overview" className="py-20 scroll-mt-32">
-          <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-10 gap-8 items-start">
-              <div className="md:col-span-6">
-                <h2 className="text-[38.25px] font-bold text-dbiz-navy mb-8 tracking-tight">What is a Public Limited Company?</h2>
-                <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-                  <p className="font-medium leading-relaxed">
-                    A Public Limited Company (PLC) is a company incorporated under the Companies Act, 2013 that allows the public to subscribe to its shares and invest in its capital. It is considered a separate legal entity distinct from its shareholders, enabling it to own property, enter contracts, and initiate legal proceedings in its own name.
-                  </p>
-                  <p className="leading-relaxed">
-                    Public Limited Companies are commonly formed by businesses that intend to raise capital from the public, attract institutional investors, and expand operations on a large scale. These companies operate under the regulatory framework of the Ministry of Corporate Affairs (MCA) and, where applicable, the Securities and Exchange Board of India (SEBI).
-                  </p>
-                  
-                  <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-2xl p-6 mt-8">
-                    <h3 className="text-xl font-bold text-dbiz-navy mb-4 flex items-center gap-2">
-                      <Zap className="text-dbiz-teal h-6 w-6" /> Minimum Requirements at a Glance:
-                    </h3>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {[
-                        "Minimum 3 Directors (at least one Indian resident director)",
-                        "Minimum 7 Shareholders (no maximum limit)",
-                        "Minimum Paid-up Capital generally ₹5,00,000",
-                        "Limited Liability protection for shareholders",
-                        "Perpetual Succession regardless of ownership changes"
-                      ].map((item, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm font-semibold text-gray-700">
-                          <CheckCircle2 className="h-4 w-4 text-dbiz-teal shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
+      {/* Overview Section */}
+      <section id="overview" className="py-16 scroll-mt-32">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row gap-12">
+            <div className="md:w-2/3">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-medium mb-6">
+                <span className="w-2 h-2 rounded-full bg-dbiz-navy mr-2"></span>
+                Overview
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">What is a Public Limited Company?</h2>
+
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  A Public Limited Company (PLC) is a company incorporated under the Companies Act, 2013 that allows the public to subscribe to its shares and invest in its capital. It is considered a separate legal entity distinct from its shareholders, enabling it to own property, enter contracts, and initiate legal proceedings in its own name.
+                </p>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Public Limited Companies are commonly formed by businesses that intend to raise capital from the public, attract institutional investors, and expand operations on a large scale. These companies operate under the regulatory framework of the Ministry of Corporate Affairs (MCA) and, where applicable, the Securities and Exchange Board of India (SEBI).
+                </p>
+              </div>
+
+              {/* Minimum Requirements Mini-block */}
+              <div className="bg-dbiz-teal/5 border border-dbiz-teal/20 rounded-xl p-6 mt-6">
+                <h3 className="text-xl font-semibold text-dbiz-navy mb-4">Minimum Requirements at a Glance</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-dbiz-navy">Minimum 3 Directors</p>
+                      <p className="text-sm text-gray-600">At least one must be a local resident director</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-dbiz-navy">Minimum 7 Shareholders</p>
+                      <p className="text-sm text-gray-600">No maximum limit on the number of members</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-dbiz-navy">Minimum Paid-up Capital</p>
+                      <p className="text-sm text-gray-600">Generally ₹5,00,000 for public companies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-dbiz-navy">Limited Liability</p>
+                      <p className="text-sm text-gray-600">Protection for shareholders limited to their shareholding</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-dbiz-navy">Perpetual Succession</p>
+                      <p className="text-sm text-gray-600">Company continues regardless of ownership changes</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="md:col-span-4">
-                <div className="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-dbiz-navy rounded-2xl flex items-center justify-center text-white">
-                      <Gavel className="h-6 w-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-dbiz-navy">Legal Definition</h3>
-                  </div>
-                  <p className="text-sm font-bold text-dbiz-teal mb-4 uppercase tracking-wider">As per the Companies Act, 2013</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
+
+            </div>
+
+            <div className="md:w-1/3">
+              <div className="bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                <img 
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" 
+                  alt="Companies Act Legal Definition" 
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold mb-4 text-dbiz-navy">Definition as per the Companies Act, 2013</h3>
+                  <p className="text-gray-700 mb-4 text-sm leading-relaxed">
                     As per Section 2(71) of the Companies Act, 2013, a Public Limited Company is a company that:
                   </p>
-                  <ul className="space-y-4">
-                    {[
-                      "Does not restrict the transfer of shares, allowing shareholders to freely transfer their shares.",
-                      "Requires a minimum of 7 members, with no maximum limit on the number of members.",
-                      "May invite the public to subscribe to its shares, debentures, or other securities for raising capital."
-                    ].map((point, i) => (
-                      <li key={i} className="flex gap-3 text-sm font-semibold text-gray-700">
-                        <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal mt-2 shrink-0"></div>
-                        {point}
-                      </li>
-                    ))}
+                  <ul className="space-y-3 text-sm">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Does not restrict the transfer of shares, allowing shareholders to freely transfer their shares.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">Requires a minimum of 7 members, with no maximum limit on the number of members.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-dbiz-teal mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">May invite the public to subscribe to its shares, debentures, or other securities for raising capital.</span>
+                    </li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* 2. Key Features Carousel */}
-        <section id="features" className="py-28 bg-gray-50 scroll-mt-32">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-5xl font-extrabold text-dbiz-navy mb-6 tracking-tight">Key Features of a Public Limited Company</h2>
-              <p className="text-lg text-gray-500">A Public Limited Company offers several advantages for businesses looking to scale.</p>
-            </div>
-
-            <Carousel 
-              opts={{ align: "start", loop: true }} 
-              plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
-              className="w-full"
-            >
-              <CarouselContent className="-ml-4">
-                {[
-                  { 
-                    title: "Separate Legal Entity", 
-                    desc: "A Public Limited Company has its own independent legal identity, separate from its shareholders and directors. This allows the company to own property, enter contracts, and undertake legal actions in its own name.", 
-                    icon: Shield,
-                    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=60"
-                  },
-                  { 
-                    title: "Limited Liability Protection", 
-                    desc: "Shareholders are liable only to the extent of the unpaid value of the shares they hold. This protects the personal assets of shareholders from the company’s debts and financial liabilities.", 
-                    icon: BadgeCheck,
-                    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=60"
-                  },
-                  { 
-                    title: "Ability to Raise Public Capital", 
-                    desc: "Public Limited Companies can raise substantial capital by issuing shares or debentures to the public. This provides businesses with greater opportunities to secure funding for expansion and long-term growth.", 
-                    icon: TrendingUp,
-                    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=60"
-                  },
-                  { 
-                    title: "Large Shareholder Base", 
-                    desc: "A Public Limited Company must have a minimum of seven shareholders, and there is no upper limit on the number of members. This structure enables businesses to attract a wide pool of investors.", 
-                    icon: Users,
-                    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=60"
-                  },
-                  { 
-                    title: "Free Transferability of Shares", 
-                    desc: "Shares of a Public Limited Company can generally be transferred without major restrictions. For listed companies, shares can be traded on recognized stock exchanges, providing liquidity to investors.", 
-                    icon: Repeat,
-                    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=60"
-                  },
-                  { 
-                    title: "Perpetual Succession", 
-                    desc: "The company continues to exist regardless of changes in shareholders, directors, or management. Its existence remains unaffected until it is legally dissolved under the Companies Act.", 
-                    icon: Clock,
-                    image: "https://images.unsplash.com/photo-1491336477066-31156b5e4f35?auto=format&fit=crop&w=600&q=60"
-                  }
-                ].map((type, idx) => (
-                  <CarouselItem key={idx} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                    <Card className="h-full border-none shadow-sm hover:shadow-xl transition-all rounded-[2rem] bg-white group overflow-hidden">
-                      <div className="relative h-48 overflow-hidden">
-                        <img 
-                          src={type.image} 
-                          alt={type.title} 
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-dbiz-navy/20 group-hover:bg-transparent transition-colors"></div>
-                        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl shadow-lg border border-white/20">
-                          <type.icon className="h-5 w-5 text-dbiz-teal" />
-                        </div>
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex items-center">
+                      <div className="bg-dbiz-teal/10 p-2 rounded-full">
+                        <Phone className="h-5 w-5 text-dbiz-teal" />
                       </div>
-                      <CardContent className="p-8">
-                        <h3 className="text-xl font-black text-dbiz-navy mb-4 uppercase tracking-tighter">{type.title}</h3>
-                        <p className="text-gray-600 font-medium leading-relaxed text-sm">{type.desc}</p>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-end gap-3 mt-8">
-                <CarouselPrevious className="static translate-y-0 h-12 w-12 rounded-xl border-dbiz-teal/20 hover:bg-dbiz-teal hover:text-white transition-all" />
-                <CarouselNext className="static translate-y-0 h-12 w-12 rounded-xl border-dbiz-teal/20 hover:bg-dbiz-teal hover:text-white transition-all" />
-              </div>
-            </Carousel>
-          </div>
-        </section>
-
-        {/* 3. Benefits Section */}
-        <section id="benefits" className="py-24 scroll-mt-32">
-          <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6 tracking-wide">● Benefits</span>
-                <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight">Benefits of a Public Limited Company</h2>
-                <div className="space-y-6">
-                  {[
-                    "Access to large capital through public investment",
-                    "Increased credibility among investors and institutions",
-                    "Liquidity for shareholders through share transferability",
-                    "Business expansion opportunities",
-                    "Professional corporate governance structure",
-                    "Eligibility for government incentives and support"
-                  ].map((benefit, i) => (
-                    <div key={i} className="flex gap-4 items-start group">
-                      <div className="w-6 h-6 rounded-full bg-dbiz-teal/10 flex items-center justify-center shrink-0 mt-1 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                        <Check className="h-3.5 w-3.5 text-dbiz-teal group-hover:text-white" />
+                      <div className="ml-3">
+                        <p className="text-sm text-gray-500">Need expert guidance?</p>
+                        <p className="text-dbiz-navy font-medium">Contact Our Team</p>
                       </div>
-                      <p className="text-gray-700 font-bold text-lg">{benefit}</p>
                     </div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative">
-                <CachedImage 
-                  src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" 
-                  alt="Business Benefits" 
-                  className="rounded-[3rem] shadow-2xl"
-                />
-                <div className="absolute -bottom-8 -left-8 bg-dbiz-navy p-8 rounded-[2rem] text-white shadow-xl max-w-xs">
-                  <div className="text-4xl font-black text-dbiz-teal mb-2 tracking-tighter uppercase">SCALE</div>
-                  <p className="text-sm font-medium opacity-80">Ideal for businesses aiming for large-scale operations and public funding.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 4. Comparison Section */}
-        <section id="comparison" className="py-24 bg-dbiz-navy text-white scroll-mt-32">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tight uppercase">Comparison of Business Structures</h2>
-              <p className="text-lg opacity-80">Choose the right structure for your business needs.</p>
+      {/* Key Features Section */}
+      <section id="features" className="py-16 bg-gray-50 scroll-mt-32 overflow-hidden">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+              Features
             </div>
-            
-            <div className="bg-white/5 backdrop-blur-md rounded-[2.5rem] border border-white/10 overflow-hidden">
-              <Table>
-                <TableHeader className="bg-white/10">
-                  <TableRow className="hover:bg-transparent border-white/10">
-                    <TableHead className="text-white font-black uppercase text-center p-6 border-r border-white/10">Feature</TableHead>
-                    <TableHead className="text-dbiz-teal font-black uppercase text-center p-6 border-r border-white/10">Public Limited</TableHead>
-                    <TableHead className="text-white font-black uppercase text-center p-6 border-r border-white/10">Private Limited</TableHead>
-                    <TableHead className="text-white font-black uppercase text-center p-6 border-r border-white/10">LLP</TableHead>
-                    <TableHead className="text-white font-black uppercase text-center p-6">Proprietorship</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {[
-                    { feature: "Liability", public: "Limited", private: "Limited", llp: "Limited", prop: "Unlimited" },
-                    { feature: "Legal Entity", public: "Separate", private: "Separate", llp: "Separate", prop: "Not separate" },
-                    { feature: "Ownership", public: "Min 7 members", private: "2–200 members", llp: "2+ partners", prop: "Single owner" },
-                    { feature: "Capital Raising", public: "Public investment", private: "Private investment", llp: "Partner contribution", prop: "Personal funds" },
-                    { feature: "Compliance", public: "High", private: "Moderate", llp: "Moderate", prop: "Minimal" }
-                  ].map((row, i) => (
-                    <TableRow key={i} className="hover:bg-white/5 border-white/10 transition-colors">
-                      <TableCell className="font-bold p-6 border-r border-white/10">{row.feature}</TableCell>
-                      <TableCell className="text-center p-6 border-r border-white/10 font-black text-dbiz-teal">{row.public}</TableCell>
-                      <TableCell className="text-center p-6 border-r border-white/10 font-semibold">{row.private}</TableCell>
-                      <TableCell className="text-center p-6 border-r border-white/10 font-semibold">{row.llp}</TableCell>
-                      <TableCell className="text-center p-6 font-semibold">{row.prop}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Key Features of a Public Limited Company</h2>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              D BIZ CONSULTANCY helps entrepreneurs across {cityName} understand and leverage these key features for scalable business success.
+            </p>
           </div>
-        </section>
 
-        {/* 5. Documents Required Section */}
-        <section id="documents" className="py-24 bg-gray-50 scroll-mt-32">
-          <div className="container-custom">
-            {/* Header */}
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6 tracking-wide shadow-sm border border-dbiz-teal/5">
-                ● Documents Required
-              </div>
-              <h2 className="font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight font-sans" style={{ fontSize: "38.25px" }}>
-                Documents Required – Public Limited Company
-              </h2>
-              <div className="space-y-4">
-                <p className="text-gray-600 text-lg font-medium leading-relaxed max-w-4xl mx-auto">
-                  D BIZ CONSULTANCY assists clients with collecting and preparing all required documentation for Public Limited Company incorporation.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                Icon: Building2, 
+                title: "Separate Legal Entity", 
+                content: "A Public Limited Company has its own independent legal identity, separate from its shareholders and directors. This allows the company to own property, enter contracts, and undertake legal actions in its own name."
+              },
+              { 
+                Icon: Shield, 
+                title: "Limited Liability Protection", 
+                content: "Shareholders are liable only to the extent of the unpaid value of the shares they hold. This protects the personal assets of shareholders from the company’s debts and financial liabilities."
+              },
+              { 
+                Icon: FileBarChart, 
+                title: "Ability to Raise Public Capital", 
+                content: "Public Limited Companies can raise substantial capital by issuing shares or debentures to the public. This provides businesses with greater opportunities to secure funding for expansion and long-term growth."
+              },
+              { 
+                Icon: Users, 
+                title: "Large Shareholder Base", 
+                content: "A Public Limited Company must have a minimum of seven shareholders, and there is no upper limit on the number of members. This structure enables businesses to attract a wide pool of investors."
+              },
+              { 
+                Icon: FileText, 
+                title: "Free Transferability of Shares", 
+                content: "Shares of a Public Limited Company can generally be transferred without major restrictions. For listed companies, shares can be traded on recognized stock exchanges, providing liquidity to investors."
+              },
+              { 
+                Icon: Clock, 
+                title: "Perpetual Succession", 
+                content: "The company continues to exist regardless of changes in shareholders, directors, or management. Its existence remains unaffected until it is legally dissolved under the Companies Act."
+              }
+            ].map((feature, idx) => (
+              <Card key={idx} className="border-none shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 bg-gradient-to-br from-white to-gray-50 group animate-fade-in" style={{ animationDelay: `${idx * 100}ms` }}>
+                <CardHeader className="pb-3">
+                  <feature.Icon className="h-10 w-10 text-dbiz-teal mb-4 group-hover:scale-110 transition-transform duration-300" />
+                  <CardTitle className="text-xl font-semibold text-dbiz-navy group-hover:text-dbiz-teal transition-colors">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{feature.content}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section id="benefits" className="py-16 scroll-mt-32">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row gap-8">
+            <div className="md:w-2/5">
+              <div className="sticky top-32">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                  <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                  Benefits
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 min-h-[80px]">
+                  Benefits of a Public Limited Company
+                  {location !== undefined && <span className="block text-xl mt-2">in {cityName}</span>}
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  D BIZ CONSULTANCY helps businesses {location ? `in ${cityName}` : ""} leverage the practical advantages for maximum growth and protection.
                 </p>
-              </div>
-            </div>
 
-            {/* Warning Box: Rejection Prevention */}
-            <div className="max-w-5xl mx-auto mb-16">
-              <div className="bg-amber-50 border-l-4 border-amber-500 rounded-2xl p-8 shadow-sm flex items-start gap-6 animate-fade-in">
-                <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center shrink-0">
-                  <AlertTriangle className="h-6 w-6 text-amber-600" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-amber-900 mb-4">Common Rejection Prevention Tips</h4>
-                  <div className="space-y-3">
-                    {[
-                      "Name and address spelling must match across PAN / Aadhaar / Passport and SPICe+ application.",
-                      "Registered office documents must be consistent (owner name, NOC, rent agreement, utility bill).",
-                      "Utility bills and bank statements should be dated within the last 2 months.",
-                      "Ensure all directors’ details and signatures match submitted identity proofs."
-                    ].map((tip, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-amber-800 font-medium">
-                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></div>
-                        {tip}
-                      </div>
-                    ))}
-                  </div>
+                <div className="hidden md:block mt-8 relative group">
+                  <div className="absolute inset-0 bg-gray-200 rounded-lg animate-pulse -z-10"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" 
+                    alt="Business Growth" 
+                    className="rounded-lg shadow-lg max-w-sm transition-opacity duration-500 opacity-0 bg-gray-100" 
+                    onLoad={(e) => (e.currentTarget.classList.remove('opacity-0'))}
+                    width="400"
+                    height="300"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* Documents Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              
-              {/* 1. For Indian Directors/Shareholders */}
-              <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                <div className="bg-dbiz-navy p-8 text-white">
-                  <h3 className="text-2xl font-bold tracking-tight uppercase">For Indian Directors / Shareholders</h3>
-                  <p className="text-dbiz-teal text-xs font-bold mt-1 opacity-80">(Domestic Nationals)</p>
-                </div>
-                <div className="p-10 space-y-8">
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
+            <div className="md:w-3/5">
+              <div className="grid grid-cols-1 gap-4">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Identity Proof</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">PAN Card (Mandatory), Aadhaar Card, Passport, Voter ID, Driving License</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Address Proof</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Utility Bills or Bank Statements (dated within last 2 months)</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Photographs</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Recent passport-sized photographs</p>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Access to Large Capital</h3>
+                      <p className="text-gray-700">Public Limited Companies can raise substantial funds through public investment, issuing shares or debentures to a wide pool of investors.</p>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* 2. For Foreign Nationals / NRIs */}
-              <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                <div className="bg-dbiz-navy p-8 text-white">
-                  <h3 className="text-2xl font-bold tracking-tight uppercase">For Foreign Nationals / NRIs</h3>
-                </div>
-                <div className="p-10 space-y-8">
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Identity Proof</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Passport (Mandatory)</p>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Increased Credibility</h3>
+                      <p className="text-gray-700">Being a public entity enhances the business's standing and trust among investors, financial institutions, and global partners.</p>
                     </div>
-                  </div>
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Address Proof</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Driver’s License, Bank Statement, or Residence Card</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                    <div className="w-10 h-10 bg-dbiz-teal/10 rounded-full flex items-center justify-center shrink-0 text-dbiz-teal border border-dbiz-teal/20 group-hover:bg-dbiz-teal group-hover:text-white transition-colors">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-dbiz-navy text-lg mb-1 leading-none">Notarisation / Apostille</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed font-medium">Required depending on director/shareholder status and MCA regulations</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-dbiz-teal"></div>
-                    <p className="text-gray-400 text-xs italic font-bold leading-none">Note: A Public Limited Company must have at least one Resident Director (182+ days stay in India).</p>
                   </div>
                 </div>
-              </div>
 
-              {/* 3. For Public Limited Company Registration */}
-              <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                <div className="bg-dbiz-navy p-8 text-white flex items-center gap-4">
-                  <FileText className="h-6 w-6 text-dbiz-teal" />
-                  <h3 className="text-2xl font-bold tracking-tight uppercase">For Public Limited Company Registration</h3>
-                </div>
-                <div className="p-10 space-y-6">
-                  {[
-                    { title: "Memorandum of Association (MOA)", desc: "Company's core objectives and scope." },
-                    { title: "Articles of Association (AOA)", desc: "Internal governance rules and bylaws." },
-                    { title: "Declaration & Consent Forms", desc: "Mandatory forms signed by directors and professionals." },
-                    { title: "Digital Signature Certificate (DSC)", desc: "Electronic signature for MCA filing." },
-                    { title: "Director Identification Number (DIN)", desc: "Unique ID number for all company directors." }
-                  ].map((doc, i) => (
-                    <div key={i} className="flex gap-5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-dbiz-teal shrink-0 mt-2.5"></div>
-                      <div>
-                        <h4 className="font-bold text-dbiz-navy text-base mb-1">{doc.title}</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed font-medium">{doc.desc}</p>
-                      </div>
+                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* 4. For Registered Office */}
-              <div className="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden group hover:shadow-2xl transition-all duration-500">
-                <div className="bg-dbiz-navy p-8 text-white flex items-center gap-4">
-                  <Building2 className="h-6 w-6 text-dbiz-teal" />
-                  <h3 className="text-2xl font-bold tracking-tight uppercase">For Registered Office</h3>
-                </div>
-                <div className="p-10 space-y-8">
-                  <div className="space-y-6">
-                    <div className="flex gap-5">
-                      <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
-                        <Building2 className="h-5 w-5 text-dbiz-teal" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-dbiz-navy text-base mb-1">Rent Agreement + NOC</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed font-medium">For rented premises, including property owner's authorization.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-5">
-                      <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
-                        <FileText className="h-5 w-5 text-dbiz-teal" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-dbiz-navy text-base mb-1">Property Ownership Documents</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed font-medium">For owned premises, including tax receipts or sale deeds.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-5">
-                      <div className="w-10 h-10 bg-dbiz-teal/5 rounded-xl flex items-center justify-center shrink-0 border border-dbiz-teal/10">
-                        <Clock className="h-5 w-5 text-dbiz-teal" />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-dbiz-navy text-base mb-1">Recent Utility Bill</h4>
-                        <p className="text-gray-500 text-sm leading-relaxed font-medium">Electricity/Water bill with matching owner name.</p>
-                      </div>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Shareholder Liquidity</h3>
+                      <p className="text-gray-700">The free transferability of shares provides liquidity, allowing shareholders to buy and sell their interests with relative ease.</p>
                     </div>
                   </div>
                 </div>
-              </div>
 
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
+                    </div>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Expansion Opportunities</h3>
+                      <p className="text-gray-700">Access to public funding and a robust structure enables businesses to scale operations and explore large-scale expansion opportunities.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
+                    </div>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Corporate Governance</h3>
+                      <p className="text-gray-700">Operates under a formal board and strict regulatory framework, ensuring professional management and transparency.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-dbiz-teal/30 hover:shadow-md transition-all">
+                  <div className="flex">
+                    <div className="flex-shrink-0 bg-dbiz-teal/10 p-2 rounded-full h-10 w-10 flex items-center justify-center mt-1">
+                      <CheckCircle2 className="text-dbiz-teal h-5 w-5" />
+                    </div>
+                    <div className="ml-5">
+                      <h3 className="text-lg font-semibold text-dbiz-navy mb-1">Government Incentives</h3>
+                      <p className="text-gray-700">Public Limited Companies are often eligible for various government incentives, subsidies, and support schemes for large enterprises.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 6. Process Section */}
-        <section id="process" className="py-24 bg-dbiz-navy text-white scroll-mt-32 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-          <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-dbiz-teal/20 rounded-full blur-[120px] pointer-events-none"></div>
-          
-          <div className="container-custom relative z-10">
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight uppercase leading-tight animate-on-scroll">Public Limited Company Registration Process in India</h2>
-              <p className="text-lg opacity-80 mb-10 leading-relaxed animate-on-scroll">
-                Registering a Public Limited Company in India involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA). The process includes obtaining digital signatures, reserving the company name, filing incorporation documents with the Registrar of Companies (ROC), and completing post-incorporation formalities.
-              </p>
-              <p className="text-dbiz-teal font-black text-xl animate-on-scroll">
-                With professional assistance from D BIZ CONSULTANCY, businesses can complete the Public Limited Company registration process efficiently while ensuring full compliance with statutory requirements.
-              </p>
+      {/* Documents Required Section */}
+      <section id="documents" className="py-16 scroll-mt-32">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+              Documents
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { step: "01", title: "Obtain Digital Signature Certificate (DSC)", desc: "The first step in registering a Public Limited Company is obtaining a Digital Signature Certificate (DSC) for all proposed directors. A DSC is required to digitally sign electronic documents submitted to the MCA portal." },
-                { step: "02", title: "Apply for Director Identification Number (DIN)", desc: "A Director Identification Number (DIN) is a unique identification number allotted to individuals who wish to become directors of a company. It is mandatory for all directors under the Companies Act, 2013." },
-                { step: "03", title: "Company Name Reservation", desc: "The next step is reserving the proposed company name through the MCA portal. It must be unique, comply with Incorporation Rules, and avoid conflicts with registered trademarks." },
-                { step: "04", title: "Drafting MOA and AOA", desc: "The Memorandum of Association (MOA) and Articles of Association (AOA) are fundamental documents required for company incorporation, defining objectives and governance rules." },
-                { step: "05", title: "Filing Incorporation Documents", desc: "Incorporation forms (SPICe+) are filed with the Registrar of Companies (ROC) along with supporting documents such as identity proofs, address proofs, and declarations." },
-                { step: "06", title: "Certificate of Incorporation (COI)", desc: "After successful verification, the ROC issues the COI, which includes the CIN and legal confirmation of the company's existence." },
-                { step: "07", title: "PAN and TAN Allocation", desc: "After incorporation, the company receives its Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for tax compliance." },
-                { step: "08", title: "Opening a Company Bank Account", desc: "The company must open a current bank account in its name using the COI, PAN, and other statutory documents to conduct business transactions." },
-                { step: "09", title: "Commencement of Business", desc: "Before starting operations, the company must deposit share capital and file the commencement declaration (INC-20A) with the MCA." }
-              ].map((item, i) => (
-                <div key={i} className="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 group hover:bg-white/10 transition-all duration-500 animate-on-scroll" style={{ animationDelay: `${i * 0.1}s` }}>
-                  <div className="text-5xl font-black text-dbiz-teal/20 mb-6 group-hover:text-dbiz-teal/40 transition-colors">{item.step}</div>
-                  <h4 className="text-xl font-bold mb-4 tracking-tight leading-tight">{item.title}</h4>
-                  <p className="text-sm opacity-70 leading-relaxed font-medium">{item.desc}</p>
-                </div>
-              ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Documents Required</h2>
+
+            <p className="text-lg text-gray-600 leading-relaxed">
+              D BIZ CONSULTANCY assists clients {location ? `in ${cityName}` : ""} with collecting and preparing all required documentation.
+            </p>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
+            <AlertTriangle className="h-6 w-6 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-amber-800 mb-1">Common Rejection Prevention Tips</p>
+              <ul className="text-sm text-amber-700 space-y-1">
+                <li>• Address proofs must match spelling across PAN / Aadhaar / Passport and the SPICe+ application.</li>
+                <li>• Registered office proofs must be consistent (owner name on utility bill, rent agreement, and NOC).</li>
+                <li>• Utility bills and bank statements should be dated within the last 2 months.</li>
+              </ul>
             </div>
           </div>
-        </section>
 
-        {/* 7. Timeline & Compliance Section */}
-        <section id="compliance" className="py-24 scroll-mt-32">
-          <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Timeline */}
-              <div>
-                <h2 className="text-[38.25px] font-black text-dbiz-navy mb-8 tracking-tight uppercase">Timeline for Registration</h2>
-                <div className="bg-white rounded-[2.5rem] shadow-xl border border-gray-100 overflow-hidden">
-                  <Table>
-                    <TableHeader className="bg-gray-50">
-                      <TableRow>
-                        <TableHead className="text-dbiz-navy font-bold p-6">Stage</TableHead>
-                        <TableHead className="text-dbiz-navy font-bold p-6 text-right">Typical Time Required</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {[
-                        { stage: "DSC and DIN", time: "1 – 2 Days" },
-                        { stage: "Name Reservation", time: "2 – 3 Days" },
-                        { stage: "Document Preparation", time: "2 – 4 Days" },
-                        { stage: "ROC Approval", time: "7 – 15 Days" },
-                        { stage: "Total Registration Time", time: "20 – 30 Working Days" }
-                      ].map((row, i) => (
-                        <TableRow key={i} className="border-gray-100">
-                          <TableCell className="font-bold text-gray-700 p-6">{row.stage}</TableCell>
-                          <TableCell className="text-right p-6 font-black text-dbiz-teal">{row.time}</TableCell>
-                        </TableRow>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-semibold">For Domestic Nationals</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Identity Proof</p>
+                    <p className="text-gray-600 mt-1">PAN Card (Mandatory), Passport, Aadhar Card, Voter ID</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Address Proof</p>
+                    <p className="text-gray-600 mt-1">Utility Bills, Bank Statements (dated within last 2 months)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Photographs</p>
+                    <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-semibold">For Foreign Nationals / NRIs</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Identity Proof</p>
+                    <p className="text-gray-600 mt-1">Passport (Mandatory)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Address Proof</p>
+                    <p className="text-gray-600 mt-1">Driver's License, Bank Statement, or Residence Card</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Notarisation / Apostille</p>
+                    <p className="text-gray-600 mt-1">May be required depending on director/shareholder status and current MCA practice</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Photographs</p>
+                    <p className="text-gray-600 mt-1">Recent passport-sized photographs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-semibold">For Company Registration</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Memorandum of Association (MOA)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Articles of Association (AOA)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Declaration and Consent Forms</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Digital Signature Certificate (DSC)</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Director Identification Number (DIN)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-dbiz-navy to-dbiz-navy/90 p-6 text-white">
+                <h3 className="text-xl font-semibold">For Registered Office</h3>
+              </div>
+              <div className="p-6 space-y-4">
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Rent Agreement + NOC</p>
+                    <p className="text-gray-600 mt-1">For a rented office/residential address, with NOC from the owner</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Property Documents</p>
+                    <p className="text-gray-600 mt-1">For owned property, proof of ownership</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-dbiz-teal mr-3 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-dbiz-navy">Utility Bills</p>
+                    <p className="text-gray-600 mt-1">Recent electricity or water bill of the premises (owner name must match)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Registration Process Section - NEW */}
+      <section id="process" className="py-20 bg-white scroll-mt-32">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+              Registration Process
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step Public Limited Company Registration Process</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Registering a Public Limited Company in India involves several legal and procedural steps under the Companies Act, 2013 and regulations issued by the Ministry of Corporate Affairs (MCA).
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Step 1 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">1</div>
+                <h3 className="text-xl font-bold text-white">Obtain Digital Signature Certificate (DSC)</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  The first step is obtaining a Digital Signature Certificate (DSC) for all proposed directors. A DSC is required to digitally sign electronic documents submitted to the MCA portal.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Required for all directors and authorized signatories.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Ensures security and authenticity for all online filings.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">2</div>
+                <h3 className="text-xl font-bold text-white">Apply for Director Identification Number (DIN)</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  A Director Identification Number (DIN) is a unique identification number allotted to individuals who wish to become directors of a company.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Mandatory for all directors under the Companies Act, 2013.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">One-time allocation that remains valid for a lifetime.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">3</div>
+                <h3 className="text-xl font-bold text-white">Company Name Reservation</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Reserving the proposed company name through the MCA portal is critical for establishing your corporate brand identity.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Ensures name uniqueness and prevents trademark conflicts.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Must follow specific naming guidelines provided by the ROC.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">4</div>
+                <h3 className="text-xl font-bold text-white">Drafting MOA and AOA</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  The Memorandum of Association (MOA) and Articles of Association (AOA) define the company's constitution and internal regulations.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <File className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700"><strong>MOA:</strong> Specifies business objectives and capital structure.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <File className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700"><strong>AOA:</strong> Outlines internal rules and director responsibilities.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">5</div>
+                <h3 className="text-xl font-bold text-white">Filing Incorporation Documents</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Filing the formal incorporation documents with the Registrar of Companies (ROC) is the definitive step toward legal formation.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Submission of SPICe+ forms and required identity proofs.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Payment of statutory fees and stamp duties as per state norms.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 6 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">6</div>
+                <h3 className="text-xl font-bold text-white">Certificate of Incorporation (COI)</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Upon successful review, the ROC issues the Certificate of Incorporation, officially bringing your company into legal existence.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Includes the Company Identification Number (CIN).</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Provides permanent proof of the company's registration date.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 7 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">7</div>
+                <h3 className="text-xl font-bold text-white">PAN and TAN Allocation</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Tax registration is integrated into the incorporation process, providing your company with PAN and TAN automatically.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">PAN is essential for all financial transactions and tax filings.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">TAN is required for tax deduction and collection at source.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 8 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">8</div>
+                <h3 className="text-xl font-bold text-white">Company Bank Account Opening</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  A dedicated current account is necessary to manage your public company's capital and daily business operations.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Requires COI, PAN, MOA, and Board resolutions for opening.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Facilitates the deposit of share capital and business transactions.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+
+            {/* Step 9 */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll md:col-span-2 md:max-w-2xl md:mx-auto w-full">
+              <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">9</div>
+                <h3 className="text-xl font-bold text-white">Commencement of Business</h3>
+              </div>
+              <div className="p-6 flex-grow flex flex-col">
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  The final step is completing the commencement of business formalities as required by the Companies Act.
+                </p>
+                <ul className="space-y-4 mb-6 flex-grow">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Depositing share capital and filing the declaration (Form INC-20A).</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                    <span className="ml-3 text-gray-700">Mandatory requirement before starting operational activities.</span>
+                  </li>
+                </ul>
+                    {/* Removed D BIZ Advantage block */}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+                {/* Deadlines Section */}
+                <div id="deadlines" className="py-20 scroll-mt-32">
+                  <div className="container-custom">
+                    <div className="consultancy-section-card animate-on-scroll">
+                      <p className="consultancy-label">Timelines</p>
+                      <h4 className="consultancy-heading">Public Limited Compliance Deadlines</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                          { title: "Financials (AOC-4)", due: "30 Days from AGM", desc: "Mandatory filing of audited financial statements including balance sheet and P&L." },
+                          { title: "Annual Return (MGT-7)", due: "60 Days from AGM", desc: "Statutory return providing details of shareholders, directors, and shareholding patterns." },
+                          { title: "Auditor Appointment", due: "Within 15 Days of BM", desc: "Filing Form ADT-1 after the first Board Meeting following the AGM appointment." },
+                          { title: "Director KYC (DIR-3)", due: "By 30th September", desc: "Annual KYC verification for all directors holding a DIN as per MCA regulations." }
+                        ].map((item, i) => (
+                          <div key={i} className="bg-white p-6 rounded-xl border border-gray-100 flex items-start gap-4 hover:shadow-md transition-all">
+                            <Clock className="h-6 w-6 text-dbiz-teal shrink-0 mt-1" />
+                            <div>
+                              <p className="font-bold text-dbiz-navy text-lg">{item.title}</p>
+                              <p className="text-dbiz-teal font-bold text-sm mb-1">{item.due}</p>
+                              <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Penalties Section */}
+                <div id="penalties" className="py-20 bg-gray-50/50 scroll-mt-32 rounded-[3rem]">
+                  <div className="container-custom">
+                    <div className="consultancy-section-card animate-on-scroll">
+                      <p className="consultancy-label">Legal Risks</p>
+                      <h4 className="consultancy-heading">Penalties & Legal Risks</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[
+                          { title: "Late ROC Filing Fees", desc: "A penalty of ₹100 per day is levied for each day of delay in filing mandatory MCA forms." },
+                          { title: "Director Disqualification", desc: "Failure to file annual returns for 3 consecutive years leads to disqualification of directors." },
+                          { title: "SEBI Violations", desc: "Listed public companies face heavy fines and potential suspension for non-compliance with SEBI norms." },
+                        { title: "Company Strike-off", desc: "Prolonged non-compliance may lead the ROC to strike off the company name from the register." }
+                      ].map((item, i) => (
+                        <div key={i} className="penalty-inner-card">
+                           <div className="penalty-header">
+                              <div className="penalty-dot"></div>
+                              <span className="penalty-title">{item.title}</span>
+                           </div>
+                           <p className="penalty-desc text-gray-500">{item.desc}</p>
+                        </div>
                       ))}
-                    </TableBody>
-                  </Table>
-                </div>
-              </div>
-
-              {/* Mandatory Compliance */}
-              <div>
-                <h2 className="text-[38.25px] font-black text-dbiz-navy mb-8 tracking-tight uppercase">Mandatory Compliance</h2>
-                <div className="space-y-4">
-                  {[
-                    { title: "First Board Meeting", time: "Within 30 days of incorporation" },
-                    { title: "Appointment of Auditor", time: "Within 30 days" },
-                    { title: "Board Meetings", time: "Minimum 4 per year" },
-                    { title: "Statutory Audit", time: "Annually" },
-                    { title: "Annual General Meeting", time: "Once every year" },
-                    { title: "Financial Statement Filing (AOC-4)", time: "Within 30 days of AGM" },
-                    { title: "Annual Return Filing (MGT-7)", time: "Within 60 days of AGM" },
-                    { title: "Income Tax Return", time: "Annually" }
-                  ].map((item, i) => (
-                    <div key={i} className="bg-gray-50 p-6 rounded-2xl flex justify-between items-center group hover:bg-dbiz-navy hover:text-white transition-all duration-300">
-                      <span className="font-bold">{item.title}</span>
-                      <span className="text-sm font-black text-dbiz-teal group-hover:text-dbiz-teal">{item.time}</span>
                     </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Why Choose D Biz Section */}
-        <section id="services" className="py-24 bg-gray-50 scroll-mt-32">
-          <div className="container-custom">
-            {/* Header */}
-            <div className="text-center max-w-4xl mx-auto mb-20">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6 tracking-wide shadow-sm border border-dbiz-teal/5">
-                ● Why Choose D BIZ
-              </div>
-              <h2 className="text-3xl md:text-5xl font-black text-dbiz-navy mb-8 tracking-tight uppercase leading-tight">
-                Why Choose D BIZ CONSULTANCY?
-              </h2>
-              <p className="text-gray-500 text-lg font-medium leading-relaxed">
-                D BIZ CONSULTANCY is a trusted business consultancy firm based in Trivandrum and Kochi, providing comprehensive support for business registrations, statutory compliance, taxation services, and corporate advisory across Kerala and major states in India.
-              </p>
-            </div>
-
-            {/* Why Choose Consolidated Card */}
-            <div className="max-w-5xl mx-auto mb-24">
-              <div className="bg-white rounded-[3.5rem] p-10 md:p-16 shadow-xl border border-gray-100 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-dbiz-teal/5 rounded-full -mr-48 -mt-48 blur-3xl transition-transform duration-1000 group-hover:scale-150"></div>
-                <div className="relative z-10">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-                    {[
-                      { title: "Expert Guidance", desc: "Our team ensures that entrepreneurs and businesses receive reliable guidance and accurate documentation under applicable laws." },
-                      { title: "End-to-End Support", desc: "From name approval and ROC filing to post-incorporation compliance, we handle the legal and regulatory requirements." },
-                      { title: "Professional Expertise", desc: "With extensive experience in company incorporation, we ensure a smooth and legally compliant registration process." },
-                      { title: "Trivandrum & Kochi Based", desc: "We provide localized support across Kerala and major states in India for accessible advisory." }
-                    ].map((item, i) => (
-                      <div key={i} className="flex gap-5">
-                        <div className="w-10 h-10 bg-dbiz-teal/10 rounded-xl flex items-center justify-center shrink-0 text-dbiz-teal shadow-sm border border-dbiz-teal/10">
-                          <CheckCircle2 className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-dbiz-navy text-lg mb-2 leading-tight">{item.title}</h4>
-                          <p className="text-gray-500 text-sm leading-relaxed font-medium">{item.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-12 pt-10 border-t border-gray-100">
-                    <p className="text-center text-dbiz-navy text-lg font-bold italic opacity-80">
-                      "By choosing D BIZ CONSULTANCY, businesses benefit from professional expertise and streamlined processes."
-                    </p>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Services Grid */}
-            <div className="max-w-5xl mx-auto">
-              <div className="bg-dbiz-navy p-10 md:p-14 rounded-[3.5rem] text-white">
-                <h3 className="text-2xl md:text-3xl font-black mb-10 tracking-tight uppercase text-center">Our Key Services</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[
-                    "Public Limited Company Registration",
-                    "Private Limited Company Incorporation",
-                    "GST Registration and Compliance",
-                    "ROC Filing and Company Law",
-                    "Startup Advisory and Business Structuring",
-                    "Annual Compliance and Audit Support"
-                  ].map((service, i) => (
-                    <div key={i} className="flex items-center gap-4 bg-white/5 p-6 rounded-2xl border border-white/10 group hover:bg-dbiz-teal transition-all">
-                      <BadgeCheck className="h-6 w-6 text-dbiz-teal group-hover:text-white" />
-                      <span className="font-bold">{service}</span>
-                    </div>
-                  ))}
+                <div className="mt-16 text-center animate-on-scroll">
+                   <h3 className="text-3xl font-bold text-dbiz-navy mb-6">Our Commitment</h3>
+                   <p className="max-w-4xl mx-auto text-[19.125px] text-gray-700 leading-relaxed font-medium">
+                     With strong experience in corporate governance and large-scale business compliance, DBIZ CONSULTANCY is a trusted partner for Public Limited Companies. We handle the entire incorporation and statutory process—so you can focus on building market leadership with confidence.
+                   </p>
                 </div>
-              </div>
+      <section id="faqs" className="py-20 bg-gray-50 scroll-mt-32">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+            <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+              <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+              FAQs
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">FAQs on Public Limited Company Registration</h2>
+            <p className="text-sm text-gray-500 mb-2 italic">Last updated: Feb 2026</p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Whether you're curious about the SPICe+ process, post-incorporation compliance, institutional investor interest, or stock exchange listing requirements — we've covered the most-searched questions with accurate, statute-aligned answers.
+            </p>
           </div>
-        </section>
 
-        {/* 11. FAQs Section */}
-        <section id="faqs" className="py-24 scroll-mt-32 bg-gray-50">
-          <div className="container-custom">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-bold mb-6">FAQ</div>
-              <h2 className="text-3xl md:text-5xl font-bold text-dbiz-navy mb-4 uppercase tracking-tight">Frequently Asked Questions</h2>
-              <p className="text-gray-500">Everything you need to know about Public Limited Company Registration in India.</p>
-            </div>
-            <div className="max-w-4xl mx-auto">
-              <Accordion type="single" collapsible className="w-full space-y-4">
-                {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="bg-white px-8 rounded-2xl border border-gray-100 shadow-sm">
-                    <AccordionTrigger className="text-left font-bold text-dbiz-navy hover:text-dbiz-teal hover:no-underline text-lg py-6">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 text-base leading-relaxed pb-6 pt-2 font-medium">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqData.map((faq, index) => (
+                <AccordionItem 
+                  key={`faq-${index}`} 
+                  value={`item-${index}`} 
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
+                >
+                  <AccordionTrigger className="px-6 py-5 hover:no-underline text-left group-hover:bg-gray-50/50 transition-colors">
+                    <span className="font-semibold text-dbiz-navy text-lg">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50 bg-white">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-        </section>
+        </div>
+      </section>
 
       </main>
       <Footer />
@@ -912,4 +942,4 @@ const PublicLimitedPage = () => {
   );
 };
 
-export default PublicLimitedPage;
+export default EnhancedPublicLimitedPage;

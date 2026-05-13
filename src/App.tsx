@@ -66,6 +66,7 @@ const MarketResearchPage = lazy(() => import("./pages/MarketResearchPage"));
 const PitchDeckPage = lazy(() => import("./pages/PitchDeckPage"));
 const StartupIndiaRecognitionPage = lazy(() => import("./pages/StartupIndiaRecognitionPage"));
 const StartupIndiaRegistrationPage = lazy(() => import("./pages/StartupIndiaRegistrationPage"));
+const StartupLoansPage = lazy(() => import("./pages/StartupLoansPage"));
 const NgoRegistrationPage = lazy(() => import("./pages/NgoRegistrationPage"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon"));
 
@@ -186,6 +187,8 @@ const App = () => {
                   <Route path="/pitch-deck/:location" element={<PitchDeckPage />} />
                   <Route path="/startup-grants" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-grants/:location" element={<StartupIndiaRegistrationPage />} />
+                  <Route path="/startup-loans" element={<StartupLoansPage />} />
+                  <Route path="/startup-loans/:location" element={<StartupLoansPage />} />
                   <Route path="/startup-india-recognition" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-india-recognition/:location" element={<StartupIndiaRegistrationPage />} />
                   <Route path="/startup-india-registration" element={<StartupIndiaRegistrationPage />} />

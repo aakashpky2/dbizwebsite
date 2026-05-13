@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -19,7 +18,7 @@ import {
     CheckCircle,
     MessageCircle,
     AlertTriangle,
-  Gavel
+    Gavel
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,7 +54,6 @@ const ContactOptions = () => {
     );
 };
 
-// LLP Registration Page - SEO Optimized Feb 2026
 const LlpRegistrationPage = () => {
     const params = useParams();
     const location = params?.location as string;
@@ -99,14 +97,13 @@ const LlpRegistrationPage = () => {
                             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=50" 
                             alt="Background" 
                             className="w-full h-full object-cover" 
-                            loading="eager"
-                            fetchPriority="high"
+                            fetchpriority="high"
                         />
                     </div>
 
                     <div className="container-custom relative z-10">
-                        <div className="grid md:grid-cols-2 gap-8 items-center">
-                            <div className="max-w-3xl">
+                        <div className="grid md:grid-cols-2 gap-12 items-center">
+                            <div className="max-w-3xl animate-fade-in">
                                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/20 text-dbiz-teal text-sm font-medium mb-6">
                                     <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
                                     Business Registration Services
@@ -116,43 +113,46 @@ const LlpRegistrationPage = () => {
                                     LLP Registration in {cityName || "India"}
                                 </h1>
 
-                                <p className="text-lg opacity-90 mb-8 leading-relaxed">
-                                    This page provides SEO-aligned, regulatory-accurate, website-ready content: LLP registration in India, eligibility, documents, FiLLiP-based incorporation steps, LLP agreement filing, "designated partner" obligations, tax position, FDI conditions, and a compliance calendar.
+                                <p className="text-lg opacity-90 mb-10 leading-relaxed max-w-2xl">
+                                    D BIZ CONSULTANCY provides end-to-end Limited Liability Partnership (LLP) registration. We handle everything from name reservation and DPIN allotment to the final LLP agreement filing.
                                 </p>
 
                                 <div className="flex flex-wrap gap-4">
-                                    <Button size="lg" variant="outline" onClick={() => handleSectionClick('features')} className="border-white text-slate-50 bg-dbiz-navy">
-                                        <ArrowDownCircle className="mr-2 h-4 w-4" /> Learn More
+                                    <Button 
+                                        size="lg" 
+                                        className="bg-dbiz-teal hover:bg-dbiz-teal/90 text-white px-8 h-14 text-lg"
+                                        onClick={() => handleSectionClick('features')}
+                                    >
+                                        <ArrowDownCircle className="mr-2 h-5 w-5" /> Explore Features
                                     </Button>
                                 </div>
 
                                 <div className="mt-8 flex items-center text-sm font-medium text-white/80">
-                                    <Clock className="h-4 w-4 mr-2" />
+                                    <Clock className="h-4 w-4 mr-2 text-dbiz-teal" />
                                     <span>Quick Registration • Guaranteed Compliance • Expert Support</span>
                                 </div>
                             </div>
 
-                            <div className="hidden md:block">
+                            <div className="hidden md:block animate-on-scroll">
                                 <div className="relative">
-                                    <div className="absolute -inset-4 bg-gradient-to-tr from-dbiz-teal/40 to-transparent rounded-lg blur-lg"></div>
-                                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 shadow-2xl relative">
+                                    <div className="absolute -inset-4 bg-dbiz-teal/20 rounded-2xl blur-2xl"></div>
+                                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-2xl relative">
                                         <img 
                                             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" 
                                             alt="LLP Registration" 
-                                            className="w-full h-auto rounded-lg shadow-lg" 
-                                            loading="eager"
-                                            fetchPriority="high"
+                                            className="w-full h-auto rounded-xl shadow-lg border border-white/10" 
+                                            fetchpriority="high"
                                         />
 
                                         <div className="mt-6 grid grid-cols-2 gap-4">
-                                            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                                                <div className="text-4xl font-bold">10-15</div>
-                                                <div className="text-sm opacity-80">Days (Typical)</div>
+                                            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                                                <div className="text-3xl font-bold">10-15</div>
+                                                <div className="text-[10px] opacity-80 uppercase tracking-widest font-bold mt-1">Days (Typical)</div>
                                             </div>
 
-                                            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                                                <div className="text-4xl font-bold">100%</div>
-                                                <div className="text-sm opacity-80">Compliance Assured</div>
+                                            <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                                                <div className="text-3xl font-bold">100%</div>
+                                                <div className="text-[10px] opacity-80 uppercase tracking-widest font-bold mt-1">Compliance</div>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ const LlpRegistrationPage = () => {
                       {[
                         { id: 'overview', icon: Building2, label: 'Overview' },
                         { id: 'features', icon: Shield, label: 'Features' },
-                        { id: 'benefits', icon: TrendingUp, label: 'Benefits' },
+                        { id: 'benefits', icon: Shield, label: 'Benefits' },
                         { id: 'comparison', icon: FileBarChart, label: 'Comparison' },
                         { id: 'documents', icon: FileText, label: 'Documents' },
                         { id: 'process', icon: ArrowRight, label: 'Process' },
@@ -597,40 +597,83 @@ const LlpRegistrationPage = () => {
                 </section>
 
                 {/* Process Section */}
-                <section id="process" className="py-16 bg-gray-50 scroll-mt-32">
-                    <div className="container-custom">
+                <section id="process" className="py-24 bg-white text-dbiz-navy scroll-mt-32 relative overflow-hidden">
+                    <div className="container-custom relative z-10">
                         <div className="text-center max-w-3xl mx-auto mb-16">
                             <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
                                 <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
-                                Registration Process
+                                Execution Workflow
                             </div>
 
-                            <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6">Step-by-Step LLP Registration Process</h2>
-
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Step-by-Step LLP Registration Process</h2>
                             <p className="text-lg text-gray-600 leading-relaxed">
-                                We guide you through the entire FiLLiP-based incorporation process.
+                                We guide you through the entire FiLLiP-based incorporation process with 100% statutory accuracy.
                             </p>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                             {[
-                                { step: "1", title: "Name Planning", desc: "Shortlist compliant name ending with “LLP”. Based on LLP name rules." },
-                                { step: "2", title: "FiLLiP Filing", desc: "File incorporation document with Registrar (MCA). FiLLiP is the prescribed incorporation form." },
-                                { step: "3", title: "DP Setup", desc: "Ensure 2 designated partners + 1 resident DP; DPIN/DIN." },
-                                { step: "4", title: "Incorporation Approval", desc: "Registrar issues certificate; LLPIN allotted. Certificate is conclusive evidence of incorporation." },
-                                { step: "5", title: "LLP Agreement Execution", desc: "Draft, execute, pay stamp duty as applicable. Agreement governs." },
-                                { step: "6", title: "File LLP Agreement", desc: "File Form 3 within 30 days of incorporation; changes within 30 days." },
-                                { step: "7", title: "Operational Setup", desc: "Bank account, GST/other registrations as applicable." }
+                                { 
+                                    step: "1", 
+                                    title: "Name Planning", 
+                                    desc: "Shortlist a compliant name ending with “LLP”. Our team performs the trademark and MCA registry checks for approval.",
+                                    highlights: ["Trademark risk assessment", "MCA name guideline check", "3 preferred name choices"]
+                                },
+                                { 
+                                    step: "2", 
+                                    title: "FiLLiP Filing", 
+                                    desc: "We file the integrated incorporation document (FiLLiP) with the Registrar (MCA) for approval.",
+                                    highlights: ["Integrated e-form filing", "DPIN allotment support", "Statutory fee handling"]
+                                },
+                                { 
+                                    step: "3", 
+                                    title: "DP Setup & DSC", 
+                                    desc: "Ensuring 2 designated partners are appointed with valid DSCs for legal electronic signing.",
+                                    highlights: ["DSC procurement", "DPIN/DIN activation", "Resident DP compliance"]
+                                },
+                                { 
+                                    step: "4", 
+                                    title: "Incorporation Approval", 
+                                    desc: "Registrar issues the Certificate of Incorporation and allotts the unique LLPIN.",
+                                    highlights: ["LLPIN allotment", "Official COI issuance", "Conclusive legal proof"]
+                                },
+                                { 
+                                    step: "5", 
+                                    title: "Agreement Execution", 
+                                    desc: "Drafting and executing the LLP Agreement on appropriate stamp paper to define partner rights.",
+                                    highlights: ["Custom agreement drafting", "Stamp duty optimization", "Mutual rights definition"]
+                                },
+                                { 
+                                    step: "6", 
+                                    title: "Filing Form 3", 
+                                    desc: "Filing the executed LLP Agreement with the ROC within 30 days of incorporation.",
+                                    highlights: ["Mandatory 30-day filing", "ROC coordination", "Compliance certificate"]
+                                },
+                                { 
+                                    step: "7", 
+                                    title: "Operational Setup", 
+                                    desc: "Opening a current bank account and obtaining GST/other registrations as required.",
+                                    highlights: ["PAN/TAN procurement", "Bank account support", "GST registration help"]
+                                }
                             ].map((process, i) => (
-                                <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden">
-                                    <div className="flex flex-col md:flex-row items-center border-l-4 border-dbiz-navy">
-                                        <div className="p-6 bg-dbiz-navy/5 h-full flex items-center justify-center min-w-[120px]">
-                                            <span className="text-3xl font-bold text-dbiz-navy">Step {process.step}</span>
-                                        </div>
-                                        <div className="p-6">
-                                            <h3 className="text-xl font-semibold text-dbiz-navy mb-2">{process.title}</h3>
-                                            <p className="text-gray-700">{process.desc}</p>
-                                        </div>
+                                <div key={i} className={`bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full hover:border-dbiz-teal/30 transition-all ${i === 6 ? 'md:col-span-2 md:max-w-2xl md:mx-auto w-full' : ''}`}>
+                                    <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                                        <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">{process.step}</div>
+                                        <h3 className="text-xl font-bold text-white">{process.title}</h3>
+                                    </div>
+                                    <div className="p-8 flex-grow flex flex-col">
+                                        <p className="text-gray-700 mb-6 leading-relaxed font-medium">
+                                            {process.desc}
+                                        </p>
+                                        <ul className="space-y-3 mb-6 flex-grow">
+                                            {process.highlights.map((highlight, j) => (
+                                                <li key={j} className="flex items-start">
+                                                    <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                                                    <span className="ml-3 text-gray-600 text-sm">{highlight}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                        {/* Removed D BIZ ADVANTAGE block */}
                                     </div>
                                 </div>
                             ))}

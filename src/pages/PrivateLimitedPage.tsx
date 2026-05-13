@@ -432,87 +432,66 @@ const PrivateLimitedPage = () => {
         </section>
 
         {/* Detailed Registration Process Section - NEW */}
-        <section className="py-16 bg-white">
+        <section id="process" className="py-20 bg-white scroll-mt-32">
           <div className="container-custom">
-            <h2 className="section-title text-center">Step-by-Step Private Limited Company Registration Process</h2>
-            <p className="section-subtitle text-center">
-              A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs{location ? ` in ${cityName}` : ""}.
-            </p>
+            <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-dbiz-teal/10 text-dbiz-teal text-sm font-medium mb-4">
+                <span className="w-2 h-2 rounded-full bg-dbiz-teal mr-2"></span>
+                Registration Process
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-dbiz-navy mb-6 text-center mx-auto block w-full">Step-by-Step Private Limited Company Registration Process</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A Private Limited Company offers limited liability protection to its shareholders, making it one of the most popular business structures for entrepreneurs{location ? ` in ${cityName}` : ""}. The registration process requires submitting key documents, adhering to compliance regulations, and opening a current account for financial transactions.
+              </p>
+            </div>
 
-            <div className="mt-12 space-y-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Step 1 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">1</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Obtain a Digital Signature Certificate (DSC)</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Digital Signature"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">1</div>
+                  <h3 className="text-xl font-bold text-white">Obtain a Digital Signature Certificate (DSC)</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     A Digital Signature Certificate (DSC) is mandatory for filing electronically signed documents with the Ministry of Corporate Affairs (MCA). The DSC ensures the authenticity of all filings and transactions.
                   </p>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     Our team will assist you in procuring your DSC from a certified authority on your behalf.
                   </p>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
-                    <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">We handle the entire DSC application process, including document submission and verification.</p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Step 2 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">2</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">File the SPICe+ Form</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="SPICe Form Filing"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">2</div>
+                  <h3 className="text-xl font-bold text-white">File the SPICe+ Form</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     The SPICe+ form (Simplified Proforma for Incorporating Company Electronically Plus) is an integrated online form that simplifies the incorporation process by including multiple services:
                   </p>
-                  <ul className="space-y-3 mb-4">
+                  <ul className="space-y-4 mb-6 flex-grow">
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700"><strong>Part A:</strong> For name reservation.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700"><strong>Part A:</strong> For name reservation.</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700"><strong>Part B:</strong> For incorporation, DIN allocation, PAN, TAN, GST registration, and more.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700"><strong>Part B:</strong> For incorporation, DIN allocation, PAN, TAN, GST registration, and more.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700"><strong>AGILE-PRO-S (INC-35):</strong> Linked form covering GSTIN, ESIC, EPFO, professional tax, bank account opening, and Shops & Establishment registration.</span>
                     </li>
                   </ul>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">Our team ensures accurate form filing with all required details to avoid delays in processing.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">Our team ensures accurate form filing with all required details to avoid delays in processing.</p>
                       </div>
                     </div>
                   </div>
@@ -520,51 +499,34 @@ const PrivateLimitedPage = () => {
               </div>
 
               {/* Step 3 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">3</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Draft and File the MOA and AOA</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1586282391129-76a6df230234?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="MOA and AOA"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">3</div>
+                  <h3 className="text-xl font-bold text-white">Draft and File the MOA and AOA</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     The two foundational documents of your company are:
                   </p>
-                  <ul className="space-y-3 mb-4">
+                  <ul className="space-y-4 mb-6 flex-grow">
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <File className="h-5 w-5" />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-gray-700"><strong>Memorandum of Association (MOA):</strong> Defines the company's objectives and operational scope.</p>
-                      </div>
+                      <File className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700"><strong>Memorandum of Association (MOA):</strong> Defines the company's objectives and operational scope.</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <File className="h-5 w-5" />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-gray-700"><strong>Articles of Association (AOA):</strong> Outlines the internal rules and governance structure.</p>
-                      </div>
+                      <File className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700"><strong>Articles of Association (AOA):</strong> Outlines the internal rules and governance structure.</span>
                     </li>
                   </ul>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     We will prepare and file these documents, ensuring all vital clauses are accurately included to reflect your company's purpose and management structure.
                   </p>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">Our legal experts customize these documents to suit your specific business needs and future growth plans.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">Our legal experts customize these documents to suit your specific business needs and future growth plans.</p>
                       </div>
                     </div>
                   </div>
@@ -572,30 +534,21 @@ const PrivateLimitedPage = () => {
               </div>
 
               {/* Step 4 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">4</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Obtain the Certificate of Incorporation</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Certificate of Incorporation"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">4</div>
+                  <h3 className="text-xl font-bold text-white">Obtain the Certificate of Incorporation</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     The Certificate of Incorporation is issued by the Registrar of Companies (ROC) as proof that your company is officially registered. This certificate includes your Company Identification Number (CIN), PAN, and TAN.
                   </p>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">We follow up with the ROC to ensure timely issuance and help you understand all details of your incorporation certificate.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">We follow up with the ROC to ensure timely issuance and help you understand all details of your incorporation certificate.</p>
                       </div>
                     </div>
                   </div>
@@ -603,44 +556,31 @@ const PrivateLimitedPage = () => {
               </div>
 
               {/* Step 5 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">5</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Opening Bank Account</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Opening Bank Account"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">5</div>
+                  <h3 className="text-xl font-bold text-white">Opening Bank Account</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
                     After receiving the Certificate of Incorporation, the next step is to open a current bank account in the company's name. This is essential for conducting all business transactions legally.
                   </p>
-                  <ul className="space-y-3 mb-4">
+                  <ul className="space-y-4 mb-6 flex-grow">
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Submit the Certificate of Incorporation, PAN, MOA, AOA, and board resolution to the bank.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">Submit the Certificate of Incorporation, PAN, MOA, AOA, and board resolution to the bank.</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Provide KYC documents of all directors and authorized signatories.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">Provide KYC documents of all directors and authorized signatories.</span>
                     </li>
                   </ul>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">We assist with preparing all required bank documents and guide you through the account opening process with our banking partners.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">We assist with preparing all required bank documents and guide you through the account opening process.</p>
                       </div>
                     </div>
                   </div>
@@ -648,44 +588,31 @@ const PrivateLimitedPage = () => {
               </div>
 
               {/* Step 6 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">6</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Depositing Capital Contribution</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Capital Contribution"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">6</div>
+                  <h3 className="text-xl font-bold text-white">Depositing Capital Contribution</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
-                    Once the company bank account is opened, the subscribers to the MOA must deposit their capital contribution (share value) into the company's bank account. This is a mandatory requirement before filing for commencement of business.
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    Once the company bank account is opened, the subscribers to the MOA must deposit their capital contribution into the company's bank account.
                   </p>
-                  <ul className="space-y-3 mb-4">
+                  <ul className="space-y-4 mb-6 flex-grow">
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Each subscriber must deposit the amount equal to the value of shares agreed to be taken as per the MOA.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">Each subscriber must deposit the agreed amount as per the MOA.</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">A bank statement or certificate confirming the deposit is required for the next step.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">A bank certificate confirming the deposit is required for the next step.</span>
                     </li>
                   </ul>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">We guide you on the exact capital amount to be deposited and ensure proper documentation for compliance.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">We ensure proper documentation for compliance during the capital deposit process.</p>
                       </div>
                     </div>
                   </div>
@@ -693,50 +620,31 @@ const PrivateLimitedPage = () => {
               </div>
 
               {/* Step 7 */}
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="md:w-1/3">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-dbiz-navy text-white w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold mr-3">7</div>
-                    <h3 className="text-xl font-semibold text-dbiz-navy">Filing INC-20A Form – Commencement of Business</h3>
-                  </div>
-                  <img
-                    src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                    alt="Commencement of Business"
-                    className="rounded-lg shadow-md w-full h-auto object-cover"
-                  />
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full animate-on-scroll md:col-span-2 md:max-w-2xl md:mx-auto w-full">
+                <div className="bg-dbiz-navy p-5 flex items-center gap-4">
+                  <div className="bg-white text-dbiz-navy w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold shrink-0 shadow-sm">7</div>
+                  <h3 className="text-xl font-bold text-white">Commencement of Business (INC-20A)</h3>
                 </div>
-                <div className="md:w-2/3 bg-gray-50 p-6 rounded-lg border border-gray-100">
-                  <p className="mb-4 text-gray-700">
-                    Filing Form INC-20A is the final mandatory step to commence business operations. As per the Companies (Amendment) Act, 2019, every company incorporated after November 2, 2018, must file this declaration within 180 days of incorporation.
+                <div className="p-6 flex-grow flex flex-col">
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    The final step is filing the declaration for commencement of business (Form INC-20A) with the MCA. This is a mandatory requirement before starting operational activities.
                   </p>
-                  <ul className="space-y-3 mb-4">
+                  <ul className="space-y-4 mb-6 flex-grow">
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Declaration that subscribers have paid the value of shares agreed to be taken.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">Submit the declaration within 180 days of incorporation.</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Verified by a Chartered Accountant or Company Secretary in practice.</p>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mt-1 text-dbiz-navy flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
-                      <p className="ml-3 text-gray-700">Failure to file within 180 days may attract penalties and restrictions on business operations.</p>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-navy shrink-0 mt-0.5" />
+                      <span className="ml-3 text-gray-700">Attach proof of capital deposit and registered office address.</span>
                     </li>
                   </ul>
-                  <div className="mt-4 bg-dbiz-teal/10 p-4 rounded-md">
+                  <div className="mt-auto bg-dbiz-teal/5 p-4 rounded-lg border border-dbiz-teal/10">
                     <div className="flex items-start">
-                      <div className="mt-1 text-dbiz-teal flex-shrink-0">
-                        <CheckCircle2 className="h-5 w-5" />
-                      </div>
+                      <CheckCircle2 className="h-5 w-5 text-dbiz-teal shrink-0 mt-0.5" />
                       <div className="ml-3">
-                        <h4 className="font-medium text-dbiz-navy">D BIZ Advantage</h4>
-                        <p className="text-sm text-gray-600">We ensure timely filing of INC-20A with all required documents and professional certification, so your company can legally commence business without delays.</p>
+                        <p className="font-bold text-dbiz-navy text-sm">REMOVED</p>
+                        <p className="text-xs text-gray-600">We ensure timely filing of INC-20A with all required documents and professional certification, so your company can legally commence business without delays.</p>
                       </div>
                     </div>
                   </div>
